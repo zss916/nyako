@@ -1,0 +1,42 @@
+library settlement_page;
+
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:oliapro/agora/rtm_msg_sender.dart';
+import 'package:oliapro/common/app_constants.dart';
+import 'package:oliapro/common/call_status.dart';
+import 'package:oliapro/common/charge_path.dart';
+import 'package:oliapro/common/language_key.dart';
+import 'package:oliapro/database/entity/app_her_entity.dart';
+import 'package:oliapro/entities/app_hot_entity.dart';
+import 'package:oliapro/generated/assets.dart';
+import 'package:oliapro/http/index.dart';
+import 'package:oliapro/pages/call/end/widget/build_chat_button.dart';
+import 'package:oliapro/pages/charge/charge_dialog_manager.dart';
+import 'package:oliapro/pages/main/home/widget/hot/hot_chat_button.dart';
+import 'package:oliapro/pages/main/match/util/bgm_control.dart';
+import 'package:oliapro/pages/widget/base_empty.dart';
+import 'package:oliapro/pages/widget/line_state.dart';
+import 'package:oliapro/routes/a_routes.dart';
+import 'package:oliapro/routes/app_pages.dart';
+import 'package:oliapro/routes/route_name.dart';
+import 'package:oliapro/services/storage_service.dart';
+import 'package:oliapro/services/user_info.dart';
+import 'package:oliapro/utils/app_extends.dart';
+import 'package:oliapro/utils/app_format_util.dart';
+import 'package:oliapro/utils/app_loading.dart';
+import 'package:oliapro/utils/app_permission_handler.dart';
+import 'package:oliapro/widget/app_ball_beat.dart';
+
+import '../../../entities/app_end_call_entity.dart';
+import '../../../entities/app_host_entity.dart';
+import '../../../services/event_bus_bean.dart';
+import '../../../utils/app_event_bus.dart';
+import '../../../widget/base_app_bar.dart';
+
+part 'binding.dart';
+part 'logic.dart';
+part 'view.dart';
