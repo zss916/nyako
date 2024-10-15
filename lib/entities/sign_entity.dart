@@ -170,7 +170,7 @@ class SignBean {
         path = Assets.signRewardCallCard;
         break;
       case 5:
-        path = Assets.lotteryDrawEmpty;
+        path = Assets.lotteryLotteryEmpty;
         break;
       case 6:
         path = Assets.signGift;
@@ -204,7 +204,7 @@ class SignBean {
         path = Assets.signCallCard;
         break;
       case 5:
-        path = Assets.lotteryDrawEmpty;
+        path = Assets.lotteryLotteryEmpty;
         break;
       case 6:
         path = Assets.signGift;

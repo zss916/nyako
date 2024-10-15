@@ -1,4 +1,6 @@
 const language_en = {
+  "mira_use": "Use",
+  "mira_copy": "Copy",
   "mira_change": "Change",
   "mira_next_pay_dialog_title": "Event Rules",
   "mira_next_pay_title_tip2": "Only VIP users can participate",
@@ -135,7 +137,7 @@ const language_en = {
   "mira_message_free_coins_value":
       "Watch the video can get free diamonds twice a day ",
   "mira_cost_ad_reward": "Ad reward",
-  'mira_lottery_title': '— Congratulations on getting %s lucky draw chances —',
+  'mira_lottery_title': 'Congratulations on getting %s lucky draw chances',
   'mira_to_lottery': 'draw now',
   'mira_lottery': 'Draw',
   'mira_lottery_hint': 'How to get more chances of Grand Lucky Draw?',
@@ -176,6 +178,7 @@ const language_en = {
   'mira_contribution_list': 'Weekly Contribution List',
   'mira_public_moment': 'Posting stories',
   'mira_my_binding_code': 'Binding invitation code',
+  'mira_my_binding_code2': 'Binding \ninvitation code',
   'mira_quick_buy': 'Buy now',
   'mira_to_update_vip': 'Are you not a VIP yet? Upgrade VIP now',
   'mira_home_recommend': 'Recommended anchor',

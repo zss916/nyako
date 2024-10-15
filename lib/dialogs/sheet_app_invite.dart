@@ -21,6 +21,7 @@ void sheetToInvite(String url) {
           padding:
               const EdgeInsets.only(top: 23, left: 25, right: 25, bottom: 40),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               GestureDetector(
                 onTap: () {
@@ -31,9 +32,9 @@ void sheetToInvite(String url) {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      Assets.imgWhatApp,
-                      width: 52,
-                      height: 52,
+                      Assets.iconWhatApp,
+                      width: 60,
+                      height: 60,
                       matchTextDirection: true,
                     ),
                     const SizedBox(
@@ -49,9 +50,6 @@ void sheetToInvite(String url) {
                   ],
                 ),
               ),
-              const SizedBox(
-                width: 25,
-              ),
               GestureDetector(
                 onTap: () {
                   Get.back();
@@ -62,9 +60,9 @@ void sheetToInvite(String url) {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      Assets.imgCopyLink,
-                      width: 52,
-                      height: 52,
+                      Assets.iconCopyLink,
+                      width: 60,
+                      height: 60,
                       matchTextDirection: true,
                     ),
                     const SizedBox(
@@ -80,7 +78,6 @@ void sheetToInvite(String url) {
                   ],
                 ),
               ),
-              const Spacer(),
             ],
           ),
         ),

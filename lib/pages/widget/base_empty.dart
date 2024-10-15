@@ -13,9 +13,9 @@ class BaseEmpty extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
-            Assets.imgBaseEmpty,
-            width: 120,
-            height: 120,
+            Assets.iconEmpty,
+            width: 97,
+            height: 97,
             matchTextDirection: true,
           ),
           const SizedBox(

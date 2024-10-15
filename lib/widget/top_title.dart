@@ -18,7 +18,7 @@ class TopTitle extends StatelessWidget {
             maxFontSize: 24,
             minFontSize: 12,
             style: const TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ),
       ],

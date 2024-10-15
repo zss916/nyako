@@ -1,0 +1,46 @@
+ext {
+
+    android = [
+            //applicationId           : "com.xxx.xxx",
+            applicationId           : "com.olialite.olialiteapplication",
+            namespace               : "com.olialite.oliapro",
+            compileSdkVersion       : 34,
+            minSdkVersion           : 23,
+            targetSdkVersion        : 34
+    ]
+
+    dependencies = [
+            // screen-protector
+            "screen-protector"                       : "com.github.prongbang:screen-protector:1.0.1"
+    ]
+
+    releaseDependencies = [
+            // installreferrer
+            "installreferrer"                            : "com.android.installreferrer:installreferrer:2.2",
+            // play-services-ads-identifier
+            "play-services-ads-identifier"                       : "com.google.android.gms:play-services-ads-identifier:18.0.1"
+    ]
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

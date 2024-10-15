@@ -8,10 +8,11 @@ class InviteCodePage extends GetView<InviteCodeLogic> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BaseAppBar(
-        title: Tr.app_my_binding_code.tr,
-      ),
-      backgroundColor: AppColors.splashBg,
-      body: InviteCodeBody(controller),
+          // title: Tr.app_my_binding_code.tr,
+          ),
+      backgroundColor: Colors.white,
+      extendBodyBehindAppBar: true,
+      body: const InviteCodeBody(),
     );
   }
 }

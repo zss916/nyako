@@ -11,6 +11,7 @@ class Tr {
   static const appLastLogin = "${appName}_last_login";
   static const appPayOrder = "${appName}_pay_order";
   static const appSign = "${appName}_sign";
+  static const appCopy = "${appName}_copy";
   static const appExtraSend = "${appName}_extra_send";
   static const appUseOtherAccount = "${appName}_use_other_account";
   static const app_vip_sign_extra = "${appName}_benefit_7_";
@@ -62,6 +63,7 @@ class Tr {
   static const follow = "follow";
   static const appChange = "change";
   static const msg = "msg";
+  static const appUse = "${appName}_use";
   static const search = "search";
   static const app_message_free_coins = "${appName}_message_free_coins";
   static const app_message_free_coins_value =
@@ -179,7 +181,7 @@ class Tr {
   static const app_me = "${appName}_me";
   static const app_off = "${appName}_off";
   static const app_save_image = '${appName}_save_image';
-
+  static const app_my_binding_code2 = "${appName}_my_binding_code2";
   //refesh
   static const canLoadingText = "canLoadingText";
   static const canRefreshText = "canRefreshText";

@@ -18,7 +18,7 @@ class SetLogic extends GetxController {
       'type': 'about'
     },
     {
-      "image": Assets.iconAboutUs,
+      "image": Assets.iconSearch,
       'title': Tr.app_setting_search.tr,
       'type': 'search'
     },

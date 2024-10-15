@@ -14,12 +14,12 @@ class MatchLogic extends GetxController with BgmControl {
   void onInit() {
     super.onInit();
     sub = StorageService.to.eventBus.on<String>().listen((event) {
-      if (event == "vipRefresh") {
-        getVip();
+      if (event == vipRefresh) {
+        getVip(showLoading: false);
         getMatchCount();
       }
       if (event == "userRefresh") {
-        getVip();
+        getVip(showLoading: false);
         getMatchCount();
       }
     });
@@ -49,8 +49,8 @@ class MatchLogic extends GetxController with BgmControl {
     });
   }
 
-  getVip() async {
-    final data = await ProfileAPI.info();
+  getVip({bool showLoading = true}) async {
+    final data = await ProfileAPI.info(showLoading: showLoading);
     UserInfo.to.setMyDetail = data;
     isUserVip = (data.isVip == 1);
     update(["vip", "count"]);

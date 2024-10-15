@@ -26,11 +26,10 @@ class _MainPageState extends State<MainPage>
     backHomeEvent = AppEventBus.eventBus.on<BackHomeEvent>().listen((event) {
       AppPages.isAppBackground = false;
       pageController.jumpToPage(0);
-      if (mounted) {
-        setState(() {
-          select = 0;
-        });
-      }
+      setState(() {
+        select = 0;
+        handleNavBarTap(0);
+      });
     });
 
     StorageService.to.eventBus.on<EventUnRead>().listen((event) {

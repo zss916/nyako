@@ -18,7 +18,7 @@ class BuildMsgUnRead extends StatelessWidget {
           height: 20,
           width: 20,
           decoration: BoxDecoration(
-            border: Border.all(color: const Color(0xFF160C20), width: 1.5),
+            border: Border.all(color: Colors.white, width: 1.5),
             color: const Color(0xFFFF2A48),
             borderRadius: BorderRadius.circular(20),
           ),
@@ -40,7 +40,7 @@ class BuildMsgUnRead extends StatelessWidget {
           //height: 18,
           width: 26,
           decoration: BoxDecoration(
-            border: Border.all(color: const Color(0xFF160C20), width: 1.5),
+            border: Border.all(color: Colors.white, width: 1.5),
             color: const Color(0xFFFF2A48),
             borderRadius: BorderRadius.circular(20),
           ),
@@ -65,7 +65,7 @@ class BuildMsgUnRead extends StatelessWidget {
           // height: 18,
           // width: 28,
           decoration: BoxDecoration(
-            border: Border.all(color: const Color(0xFF160C20), width: 1.5),
+            border: Border.all(color: Colors.white, width: 1.5),
             color: const Color(0xFFFF2A48),
             borderRadius: BorderRadius.circular(20),
           ),

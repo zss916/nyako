@@ -1,0 +1,47 @@
+apply from: "confige.gradle"
+
+buildscript {
+    ext.kotlin_version = '1.7.10'
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+       // classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+    //去除高版本 Rtm屏幕共享插件
+    configurations.configureEach {
+        exclude group: "io.agora.rtc", module: "full-screen-sharing"
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+
+    //>>>>>>>>>>>>>>>>>>> Add this  >>>>>>>>>>>>
+    afterEvaluate {
+        android {
+            compileSdkVersion 34
+        }
+    }
+    //>>>>>>>>>>>>> End  >>>>>>>>>>>>>
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

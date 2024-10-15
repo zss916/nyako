@@ -44,7 +44,7 @@ class MsgListLogic extends GetxController implements IFollowLoadService {
       reloadAllData();
     });
     vipSub = StorageService.to.eventBus.on<String>().listen((event) {
-      if (event == "vipRefresh") {
+      if (event == vipRefresh) {
         refreshMe();
       }
     });

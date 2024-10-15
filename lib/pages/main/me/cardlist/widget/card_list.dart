@@ -74,102 +74,129 @@ class CardList extends StatelessWidget {
         children: [
           Container(
             width: double.maxFinite,
-            alignment: AlignmentDirectional.center,
-            height: 94,
+            height: 140,
             margin:
                 const EdgeInsetsDirectional.only(top: 10, start: 15, end: 15),
-            padding: const EdgeInsetsDirectional.only(bottom: 0, end: 20),
+            padding:
+                const EdgeInsetsDirectional.only(bottom: 0, end: 16, top: 16),
             decoration: BoxDecoration(
                 gradient: LinearGradient(
+                    begin: AlignmentDirectional.topStart,
+                    end: AlignmentDirectional.bottomEnd,
                     colors: item.isPropCard
                         ? [
-                            const Color(0xFF9E49E0),
-                            const Color(0xFFFF88F8),
+                            const Color(0xFFF5EEFF),
+                            const Color(0xFFFFEFF5),
                           ]
                         : [
-                            const Color(0xFFFF7634),
-                            const Color(0xFFFFC767),
+                            const Color(0xFFFFEDE5),
+                            const Color(0xFFFFF9EF),
                           ]),
                 borderRadius: BorderRadiusDirectional.circular(16)),
-            child: Container(
-              //color: Colors.black,
-              padding: const EdgeInsetsDirectional.only(start: 10, end: 0),
-              child: Row(
-                children: [
-                  Container(
-                    margin: const EdgeInsetsDirectional.only(end: 10),
-                    child: Image.asset(
-                      item.isPropCard ? Assets.imgCallCard : Assets.imgAddCard,
-                      width: 60,
-                      height: 60,
-                      matchTextDirection: true,
-                    ),
-                  ),
-                  Expanded(
-                      child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
+            child: Column(
+              children: [
+                Expanded(
+                    child: Container(
+                  //color: Colors.green,
+                  padding: const EdgeInsetsDirectional.only(start: 16, end: 0),
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
+                      Container(
+                        margin: const EdgeInsetsDirectional.only(end: 10),
+                        child: Image.asset(
+                          item.isPropCard
+                              ? Assets.iconCallCard
+                              : Assets.iconAddCard,
+                          width: 64,
+                          height: 64,
+                          matchTextDirection: true,
+                        ),
+                      ),
+                      Expanded(
+                          child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 160),
+                            constraints: const BoxConstraints(maxWidth: 230),
                             child: AutoSizeText(
                               item.title,
                               maxLines: 1,
                               maxFontSize: 18,
-                              minFontSize: 8,
+                              minFontSize: 13,
+                              overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
-                          AutoSizeText(
-                            item.num,
-                            maxLines: 1,
-                            maxFontSize: 16,
-                            minFontSize: 8,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          Container(
+                            margin: const EdgeInsetsDirectional.only(
+                                top: 5, end: 20),
+                            width: double.maxFinite,
+                            child: AutoSizeText(
+                              item.content,
+                              maxFontSize: 12,
+                              minFontSize: 6,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              style: const TextStyle(
+                                  color: Color(0xFF9B989D), fontSize: 12),
+                            ),
+                          )
                         ],
-                      ),
+                      )),
+                    ],
+                  ),
+                )),
+                const Divider(
+                  height: 1,
+                  indent: 16 + 64 + 15,
+                  color: Color(0x0f000000),
+                ),
+                Container(
+                  height: 42,
+                  margin: const EdgeInsetsDirectional.only(start: 16 + 64 + 15),
+                  width: double.maxFinite,
+                  child: Row(
+                    children: [
                       Container(
-                        margin:
-                            const EdgeInsetsDirectional.only(top: 6, end: 20),
-                        width: double.maxFinite,
-                        child: AutoSizeText(
-                          item.content,
-                          maxFontSize: 12,
-                          minFontSize: 5,
-                          maxLines: 2,
+                        margin: const EdgeInsetsDirectional.only(start: 0),
+                        child: Text(
+                          Tr.appUse.tr,
                           style: const TextStyle(
-                              color: Colors.white70, fontSize: 12),
+                              color: Color(0xFF9341FF), fontSize: 13),
                         ),
+                      ),
+                      const Spacer(),
+                      Image.asset(
+                        Assets.iconNextPurple,
+                        matchTextDirection: true,
+                        width: 14,
+                        height: 14,
                       )
                     ],
-                  )),
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
           ),
           PositionedDirectional(
               top: 10,
-              end: 15,
+              start: 15,
               child: Container(
                 padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 3, vertical: 2),
+                    horizontal: 6, vertical: 2),
                 decoration: const BoxDecoration(
                     color: Color(0xFFFE2C55),
                     borderRadius: BorderRadiusDirectional.only(
-                        topStart: Radius.zero,
-                        bottomStart: Radius.circular(10),
-                        topEnd: Radius.circular(10),
-                        bottomEnd: Radius.zero)),
+                        topStart: Radius.circular(11),
+                        bottomStart: Radius.zero,
+                        topEnd: Radius.circular(11),
+                        bottomEnd: Radius.circular(11))),
                 child: AutoSizeText(
                   item.num,
                   maxLines: 1,
@@ -180,7 +207,7 @@ class CardList extends StatelessWidget {
                       fontSize: 13,
                       fontWeight: FontWeight.normal),
                 ),
-              ))
+              )),
         ],
       ),
     );
@@ -194,80 +221,122 @@ class CardList extends StatelessWidget {
         children: [
           Container(
             width: double.maxFinite,
-            height: 94,
+            height: 140,
             margin:
                 const EdgeInsetsDirectional.only(top: 10, start: 15, end: 15),
-            padding: const EdgeInsetsDirectional.only(bottom: 0, end: 20),
+            padding:
+                const EdgeInsetsDirectional.only(bottom: 0, end: 16, top: 16),
             decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: [
-                  Color(0xFF5A34FF),
-                  Color(0xFF65C8FF),
-                ]),
-                borderRadius: BorderRadiusDirectional.circular(16)),
-            child: Container(
-              padding: const EdgeInsetsDirectional.only(start: 10, end: 0),
-              child: Row(
-                children: [
-                  Container(
-                    margin: const EdgeInsetsDirectional.only(end: 10),
-                    child: Image.asset(
-                      Assets.imgChatCard2,
-                      width: 60,
-                      height: 60,
-                      matchTextDirection: true,
-                    ),
-                  ),
-                  Expanded(
-                      child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                gradient: const LinearGradient(
+                    begin: AlignmentDirectional.topStart,
+                    end: AlignmentDirectional.bottomEnd,
+                    colors: [
+                      Color(0xFFF5EEFF),
+                      Color(0xFFEFF8FF),
+                    ]),
+                borderRadius: BorderRadiusDirectional.circular(15)),
+            child: Column(
+              children: [
+                Expanded(
+                    child: Container(
+                  //color: Colors.green,
+                  padding: const EdgeInsetsDirectional.only(start: 16, end: 0),
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 160),
-                        child: AutoSizeText(
-                          item.showChatCardTitle,
-                          maxLines: 1,
-                          maxFontSize: 18,
-                          minFontSize: 8,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                      Container(
+                        margin: const EdgeInsetsDirectional.only(end: 15),
+                        child: Image.asset(
+                          Assets.iconToolsChatCard,
+                          width: 64,
+                          height: 64,
+                          matchTextDirection: true,
                         ),
                       ),
+                      Expanded(
+                          child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 230),
+                            child: AutoSizeText(
+                              item.showChatCardTitle,
+                              maxLines: 1,
+                              maxFontSize: 18,
+                              minFontSize: 13,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsetsDirectional.only(
+                                top: 5, end: 20),
+                            width: double.maxFinite,
+                            child: AutoSizeText(
+                              item.showChatCardContent,
+                              maxFontSize: 12,
+                              minFontSize: 6,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              style: const TextStyle(
+                                  color: Color(0xFF9B989D), fontSize: 12),
+                            ),
+                          )
+                        ],
+                      )),
+                    ],
+                  ),
+                )),
+                const Divider(
+                  height: 1,
+                  indent: 16 + 64 + 15,
+                  color: Color(0x0f000000),
+                ),
+                Container(
+                  height: 42,
+                  margin: const EdgeInsetsDirectional.only(start: 16 + 64 + 15),
+                  width: double.maxFinite,
+                  child: Row(
+                    children: [
                       Container(
-                        margin:
-                            const EdgeInsetsDirectional.only(top: 6, end: 20),
-                        width: double.maxFinite,
-                        child: AutoSizeText(
-                          item.showChatCardContent,
-                          maxFontSize: 12,
-                          minFontSize: 5,
-                          maxLines: 2,
+                        margin: const EdgeInsetsDirectional.only(start: 0),
+                        child: Text(
+                          Tr.appUse.tr,
                           style: const TextStyle(
-                              color: Colors.white70, fontSize: 12),
+                              color: Color(0xFF9341FF), fontSize: 13),
                         ),
+                      ),
+                      const Spacer(),
+                      Image.asset(
+                        Assets.iconNextPurple,
+                        matchTextDirection: true,
+                        width: 14,
+                        height: 14,
                       )
                     ],
-                  )),
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
           ),
           PositionedDirectional(
               top: 10,
-              end: 15,
+              start: 15,
               child: Container(
                 padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 3, vertical: 2),
+                    horizontal: 6, vertical: 2),
                 decoration: const BoxDecoration(
                     color: Color(0xFFFE2C55),
                     borderRadius: BorderRadiusDirectional.only(
-                        topStart: Radius.zero,
-                        bottomStart: Radius.circular(10),
-                        topEnd: Radius.circular(10),
-                        bottomEnd: Radius.zero)),
+                        topStart: Radius.circular(11),
+                        bottomStart: Radius.zero,
+                        topEnd: Radius.circular(11),
+                        bottomEnd: Radius.circular(11))),
                 child: const AutoSizeText(
                   " x1 ",
                   maxLines: 1,
@@ -279,7 +348,7 @@ class CardList extends StatelessWidget {
                       fontWeight: FontWeight.normal),
                 ),
               )),
-          if (item.propStatus != null)
+          /*if (item.propStatus != null)
             PositionedDirectional(
                 top: 0,
                 start: 0,
@@ -309,7 +378,7 @@ class CardList extends StatelessWidget {
                         fontSize: 14,
                         fontWeight: FontWeight.normal),
                   ),
-                )),
+                )),*/
         ],
       ),
     );

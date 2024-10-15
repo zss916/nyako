@@ -194,7 +194,7 @@ class AppSocketManager extends GetxService {
             // productType 1.普通商品，2.折扣商品，3.vip商品
             if (jsonMap['productType'] == 3) {
               UserInfo.to.myDetail?.isVip = 1;
-              StorageService.to.eventBus.fire("vipRefresh");
+              StorageService.to.eventBus.fire(vipRefresh);
               getUserInfo();
             }
             // 更新缓存信息

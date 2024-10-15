@@ -395,6 +395,8 @@ class AppPages {
 
   static const vipRechargeSheet = 'vip_recharge_sheet';
 
+  static const setPassWordSheet = 'set_pass_word_sheet';
+
   static const selectAreaSheet = 'select_area_sheet';
 
   static const toInviteSheet = 'to_invite_sheet';

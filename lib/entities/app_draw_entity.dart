@@ -79,6 +79,27 @@ class DrawData {
     }
   }
 
+  String getResult2() {
+    switch (drawType) {
+      case 0:
+        return "";
+      case 1:
+        return Tr.app_luck_diamond.trArgs(["$value"]);
+      case 2:
+        return Get.locale?.languageCode == "vi"
+            ? "VIP ${value} \nngày"
+            : Tr.app_draw2.trArgs(["$value"]);
+      case 3:
+        return Tr.app_prop_add_title.trArgs(["$value"]);
+      case 4:
+        return "$name";
+      case 5:
+        return Tr.appSignMsgCard.trArgs(["$value"]);
+      default:
+        return "";
+    }
+  }
+
   String getContent() {
     switch (drawType) {
       case 0:
@@ -89,6 +110,23 @@ class DrawData {
         return Tr.app_draw2.trArgs(["$value"]);
       case 3:
         return Get.isTr ? "%$value" : "$value%";
+      case 5:
+        return "$name";
+      default:
+        return "$value";
+    }
+  }
+
+  String getContent2() {
+    switch (drawType) {
+      case 0:
+        return "";
+      case 1:
+        return "x$value";
+      case 2:
+        return "+$value";
+      case 3:
+        return Get.isTr ? "+%$value" : "+$value%";
       case 5:
         return "$name";
       default:

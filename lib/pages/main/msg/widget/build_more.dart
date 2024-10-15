@@ -21,7 +21,7 @@ class BuildMore extends StatelessWidget {
         child: Container(
           padding: const EdgeInsetsDirectional.all(5),
           child: Image.asset(
-            Assets.imgMore,
+            Assets.iconMore,
             width: 24,
             height: 24,
             fit: BoxFit.fill,

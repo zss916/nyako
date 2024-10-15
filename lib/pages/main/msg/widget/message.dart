@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/database/entity/app_conversation_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -11,7 +10,6 @@ import 'package:oliapro/pages/main/msg/widget/build_avatars.dart';
 import 'package:oliapro/pages/main/msg/widget/build_compliance.dart';
 import 'package:oliapro/pages/main/msg/widget/build_msg_content.dart';
 import 'package:oliapro/pages/main/msg/widget/build_msg_unread.dart';
-import 'package:oliapro/pages/main/msg/widget/build_next_pay_activity.dart';
 import 'package:oliapro/services/user_info.dart';
 import 'package:oliapro/utils/app_some_extension.dart';
 import 'package:oliapro/utils/app_voice_player.dart';
@@ -32,7 +30,7 @@ class MessageListView extends StatelessWidget {
               init: MsgListLogic(),
               builder: (logic) => BuildCompliance(logic: logic)),
         ),
-      if (!AppConstants.isFakeMode)
+      /*if (!AppConstants.isFakeMode)
         SliverToBoxAdapter(
           child: Container(
             height: 100,
@@ -49,7 +47,7 @@ class MessageListView extends StatelessWidget {
                       logic: logic,
                     )),
           ),
-        ),
+        ),*/
       SliverToBoxAdapter(
         child: buildAiHelp(logic),
       ),
@@ -143,7 +141,7 @@ class MessageListView extends StatelessWidget {
                         style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                            color: Colors.black),
                       ),
                       BuildMsgContent(entity)
                     ],
@@ -156,7 +154,7 @@ class MessageListView extends StatelessWidget {
                     Text(
                       entity.showTime,
                       style: const TextStyle(
-                          color: Color(0x4dffffff), fontSize: 12),
+                          color: Color(0xFFBCB6C4), fontSize: 12),
                     ),
                     // BuildMsgUnRead(entity.unReadQuality),
                   ],
@@ -175,34 +173,44 @@ class MessageListView extends StatelessWidget {
       width: 60,
       margin: const EdgeInsetsDirectional.only(top: 5, end: 5),
       child: GestureDetector(
-        onHorizontalDragCancel: () {},
+        onHorizontalDragStart: (details) {
+          debugPrint("onHorizontalDragStart");
+        },
+        onHorizontalDragDown: (details) {
+          debugPrint("onHorizontalDragDown");
+        },
+        onHorizontalDragEnd: (details) {
+          debugPrint("onHorizontalDragEnd");
+        },
+        onHorizontalDragUpdate: (details) {
+          debugPrint("onHorizontalDragUpdate");
+        },
+        onHorizontalDragCancel: () {
+          debugPrint("onHorizontalDragCancel");
+        },
         child: Slidable(
           key: ValueKey("msg$index"),
           groupTag: "slidable",
           useTextDirection: true,
           endActionPane: ActionPane(
-            extentRatio: 0.25,
+            extentRatio: 0.20,
             motion: const DrawerMotion(),
             children: [
               CustomSlidableAction(
-                flex: 1,
-                backgroundColor: Colors.transparent,
-                onPressed: (BuildContext context) {},
-                child: const SizedBox(
-                  width: 10,
-                ),
-              ),
-              CustomSlidableAction(
-                flex: 8,
                 onPressed: (BuildContext context) =>
                     logic.removeMessage(index, data.herId),
                 borderRadius: const BorderRadius.all(Radius.circular(0)),
                 autoClose: true,
-                backgroundColor: const Color(0x33FE2C55),
-                child: Image.asset(
-                  Assets.imgMsgDelete,
-                  width: 32,
-                  height: 32,
+                backgroundColor: const Color(0xFFFF4864),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    Image.asset(
+                      Assets.iconMsgDelete,
+                      width: 32,
+                      height: 32,
+                    )
+                  ],
                 ),
               ),
             ],
@@ -231,11 +239,10 @@ class MessageListView extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(0),
                   child: Image.asset(
-                    Assets.imgOrderDetailsService,
-                    width: 45,
-                    height: 45,
+                    Assets.iconCustomer,
+                    width: 50,
+                    height: 50,
                     matchTextDirection: true,
-                    fit: BoxFit.fill,
                   ),
                 ),
                 Expanded(
@@ -262,7 +269,7 @@ class MessageListView extends StatelessWidget {
                               style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white),
+                                  color: Colors.black),
                             ),
                           ],
                         ),

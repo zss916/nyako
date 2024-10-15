@@ -15,7 +15,7 @@ class ActionWidget extends StatelessWidget {
         child: Container(
           padding: const EdgeInsetsDirectional.all(5),
           child: Image.asset(
-            Assets.imgShareSet,
+            Assets.iconShareSet,
             width: 25,
             height: 25,
             matchTextDirection: true,

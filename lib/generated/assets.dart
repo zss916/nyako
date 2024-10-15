@@ -65,28 +65,45 @@ class Assets {
   static const String frameSignFrame = 'assets/frame/sign_frame.png';
   static const String frameVipFrame = 'assets/frame/vip_frame.png';
   static const String iconAboutUs = 'assets/icon/about_us.png';
+  static const String iconAddCard = 'assets/icon/add_card.png';
+  static const String iconAddInviteFriend = 'assets/icon/add_invite_friend.png';
   static const String iconBack = 'assets/icon/back.png';
+  static const String iconBigDiamond = 'assets/icon/big_diamond.png';
+  static const String iconBindCodeBg = 'assets/icon/bind_code_bg.png';
   static const String iconBlacklist = 'assets/icon/blacklist.png';
+  static const String iconCallCard = 'assets/icon/call_card.png';
   static const String iconCheckIn = 'assets/icon/check_in.png';
+  static const String iconCopyLink = 'assets/icon/copy_link.png';
+  static const String iconCustomer = 'assets/icon/customer.png';
   static const String iconDeleteAccount = 'assets/icon/delete_account.png';
   static const String iconDeleteBg = 'assets/icon/delete_bg.png';
   static const String iconDiamond = 'assets/icon/diamond.png';
   static const String iconDiamondF = 'assets/icon/diamond_f.png';
   static const String iconDisturb = 'assets/icon/disturb.png';
+  static const String iconDrawBg = 'assets/icon/draw_bg.png';
+  static const String iconDrawResultBg = 'assets/icon/draw_result_bg.png';
   static const String iconEdit = 'assets/icon/edit.png';
+  static const String iconEmpty = 'assets/icon/empty.png';
   static const String iconFemale = 'assets/icon/female.png';
   static const String iconFemaleS = 'assets/icon/female_s.png';
   static const String iconFollow = 'assets/icon/follow.png';
   static const String iconFollowed = 'assets/icon/followed.png';
   static const String iconInvite = 'assets/icon/invite.png';
+  static const String iconInviteBg = 'assets/icon/invite_bg.png';
+  static const String iconInviteBtn = 'assets/icon/invite_btn.png';
   static const String iconMale = 'assets/icon/male.png';
   static const String iconMaleS = 'assets/icon/male_s.png';
   static const String iconMatchForeground = 'assets/icon/match_foreground.png';
   static const String iconMatchingBg = 'assets/icon/matching_bg.png';
+  static const String iconMore = 'assets/icon/more.png';
+  static const String iconMsgDelete = 'assets/icon/msg_delete.png';
   static const String iconNext = 'assets/icon/next.png';
   static const String iconNextP = 'assets/icon/next_p.png';
+  static const String iconNextPurple = 'assets/icon/next_purple.png';
   static const String iconNextW = 'assets/icon/next_w.png';
   static const String iconNyako = 'assets/icon/Nyako.png';
+  static const String iconPassword = 'assets/icon/password.png';
+  static const String iconPsdS = 'assets/icon/psd_s.png';
   static const String iconRemove = 'assets/icon/remove.png';
   static const String iconReport = 'assets/icon/report.png';
   static const String iconScan = 'assets/icon/scan.png';
@@ -94,6 +111,20 @@ class Assets {
   static const String iconService = 'assets/icon/service.png';
   static const String iconSetPsd = 'assets/icon/set_psd.png';
   static const String iconSetting = 'assets/icon/setting.png';
+  static const String iconShareAr = 'assets/icon/share_ar.png';
+  static const String iconShareBg = 'assets/icon/share_bg.png';
+  static const String iconShareEn = 'assets/icon/share_en.png';
+  static const String iconShareEs = 'assets/icon/share_es.png';
+  static const String iconShareHi = 'assets/icon/share_hi.png';
+  static const String iconShareInd = 'assets/icon/share_ind.png';
+  static const String iconSharePt = 'assets/icon/share_pt.png';
+  static const String iconShareSet = 'assets/icon/share_set.png';
+  static const String iconShareTh = 'assets/icon/share_th.png';
+  static const String iconShareTr = 'assets/icon/share_tr.png';
+  static const String iconShareVi = 'assets/icon/share_vi.png';
+  static const String iconSwitchClose = 'assets/icon/switch_close.png';
+  static const String iconSwitchOpen = 'assets/icon/switch_open.png';
+  static const String iconSystem = 'assets/icon/system.png';
   static const String iconTabDiscover = 'assets/icon/tab_discover.png';
   static const String iconTabDiscoverS = 'assets/icon/tab_discover_s.png';
   static const String iconTabHome = 'assets/icon/tab_home.png';
@@ -104,10 +135,13 @@ class Assets {
   static const String iconTabMsgS = 'assets/icon/tab_msg_s.png';
   static const String iconTabProfile = 'assets/icon/tab_profile.png';
   static const String iconTabProfileS = 'assets/icon/tab_profile_s.png';
+  static const String iconToolsChatCard = 'assets/icon/tools_chat_card.png';
   static const String iconVip = 'assets/icon/vip.png';
   static const String iconVipBadge = 'assets/icon/vip_badge.png';
   static const String iconVipOpenBg = 'assets/icon/vip_open_bg.png';
+  static const String iconWarmS = 'assets/icon/warm_s.png';
   static const String iconWarming = 'assets/icon/warming.png';
+  static const String iconWhatApp = 'assets/icon/what_app.png';
   static const String imageRechageQuickBg = 'assets/image/rechage_quick_bg.png';
   static const String imgAddCard = 'assets/img/add_card.webp';
   static const String imgAddCard2 = 'assets/img/add_card2.webp';
@@ -307,32 +341,19 @@ class Assets {
   static const String jsonDiamondAddAnima =
       'assets/json/diamond_add_anima.json';
   static const String jsonDrag = 'assets/json/drag.json';
-  static const String lotteryDrawCallCard =
-      'assets/lottery/draw_call_card.webp';
-  static const String lotteryDrawDiamond = 'assets/lottery/draw_diamond.webp';
-  static const String lotteryDrawDiamondCard =
-      'assets/lottery/draw_diamond_card.webp';
-  static const String lotteryDrawEmpty = 'assets/lottery/draw_empty.webp';
-  static const String lotteryDrawKing = 'assets/lottery/draw_king.webp';
   static const String lotteryLotteryAddCard =
       'assets/lottery/lottery_add_card.png';
-  static const String lotteryLotteryBg2 = 'assets/lottery/lottery_bg2.webp';
-  static const String lotteryLotteryBtn = 'assets/lottery/lottery_btn.webp';
   static const String lotteryLotteryCallCard =
       'assets/lottery/lottery_call_card.png';
+  static const String lotteryLotteryCenter =
+      'assets/lottery/lottery_center.png';
   static const String lotteryLotteryDiamond =
       'assets/lottery/lottery_diamond.png';
-  static const String lotteryLotteryDraw = 'assets/lottery/lottery_draw.webp';
-  static const String lotteryLotteryDrawB = 'assets/lottery/lottery_draw_b.png';
-  static const String lotteryLotteryDrawBg =
-      'assets/lottery/lottery_draw_bg.png';
-  static const String lotteryLotteryDrawF = 'assets/lottery/lottery_draw_f.png';
   static const String lotteryLotteryEmpty = 'assets/lottery/lottery_empty.png';
-  static const String lotteryLotteryInfoBg =
-      'assets/lottery/lottery_info_bg.png';
+  static const String lotteryLotteryIc = 'assets/lottery/lottery_ic.png';
   static const String lotteryLotteryKing = 'assets/lottery/lottery_king.png';
   static const String lotteryLotteryPointer =
-      'assets/lottery/lottery_pointer.webp';
+      'assets/lottery/lottery_pointer.png';
   static const String matchMatchBg = 'assets/match/match_bg.png';
   static const String matchMatchCardBg = 'assets/match/match_card_bg.webp';
   static const String matchMatchLeftTitle = 'assets/match/match_left_title.png';

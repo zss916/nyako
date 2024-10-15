@@ -11,9 +11,9 @@ class BuildAvatars extends StatelessWidget {
   Widget build(BuildContext context) {
     return isSystem
         ? Image.asset(
-            Assets.imgSystemIcon,
-            width: 45,
-            height: 45,
+            Assets.iconSystem,
+            width: 50,
+            height: 50,
             matchTextDirection: true,
             fit: BoxFit.fill,
           )

@@ -10,8 +10,7 @@ class PropPage extends GetView<PropLogic> {
       appBar: BaseAppBar(
         title: Tr.app_mine_my_prop.tr,
       ),
-      backgroundColor: AppColors.splashBg,
-      //extendBodyBehindAppBar: true,
+      backgroundColor: Colors.white,
       body: const CardListBody(),
     );
   }

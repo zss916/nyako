@@ -16,7 +16,7 @@ class Environment {
       bool.fromEnvironment('openShowAiv', defaultValue: false);
 
   static const bool showLogger =
-      bool.fromEnvironment('showLogger', defaultValue: false);
+      bool.fromEnvironment('showLogger', defaultValue: true);
 
   static const bool openSettingTest =
       bool.fromEnvironment('openSettingTest', defaultValue: false);

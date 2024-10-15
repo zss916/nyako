@@ -28,7 +28,7 @@ class LuckyDrawPaint extends CustomPainter {
 
   void drawAcr(Canvas canvas, Size size) {
     double startAngles = 0;
-    // 把画布坐标放中间
+    // 把画布坐标放中间1
     canvas.translate(size.width / 2, size.height / 2);
     // 因为现在0度在右边x轴，先逆时针90度，为了从上边作为第一个，顺时针绘制
     canvas.rotate(-pi);
@@ -46,8 +46,9 @@ class LuckyDrawPaint extends CustomPainter {
         selectSize, (index) => (2 * pi / selectSize) * (index + 1));
     //画扇形
     for (int i = 0; i < selectSize; i++) {
-      paint.color = colors[i];
-
+      // paint.color = colors[i];
+      paint.color = Colors.transparent;
+      // paint.color = Colors.black;
       // - (pi / 2) 是为了圆形绘制起始点在头部，而不是右手边
       double acStartAngles = startAngles - (pi / 2);
       canvas.drawArc(rect, acStartAngles, angles[i] - startAngles, true, paint);
@@ -65,7 +66,7 @@ class LuckyDrawPaint extends CustomPainter {
         fontStyle: FontStyle.normal,
         fontSize: 10,
       ));
-      pb.pushStyle(ui.TextStyle(color: Colors.white));
+      pb.pushStyle(ui.TextStyle(color: Colors.transparent));
 
       pb.addText(contents[i]);
       // 设置文本的宽度约束
@@ -82,22 +83,51 @@ class LuckyDrawPaint extends CustomPainter {
       // 先把画布转到指定扇形中心，这时x轴在扇形中心，绘制文字会在扇形方向
       canvas.rotate((1) * roaAngle);
       // 先沿x轴移动一定距离，再转动90度，绘制文字就在扇形中心垂直方向了
-      canvas.translate(80, 0);
+      canvas.translate(80 + 20, 0);
       canvas.rotate(pi / 2);
       // 文字左上角起始点
-      Offset offset = Offset(0 - paragraph.width / 2, 0);
+      Offset offset = Offset(0 - paragraph.width / 2, -0);
       canvas.drawParagraph(paragraph, offset);
 
       // 位置 图片宽高36
-      Rect pR = const Rect.fromLTWH(-18, -36, 30, 30);
+      Rect pR = const Rect.fromLTWH(-22, -45, 45, 45);
       var image = images[i];
       if (image != null) {
         // 图片
         Rect iR = Rect.fromLTRB(
             0, 0, image.width.toDouble(), image.height.toDouble());
-        canvas.drawImageRect(image, iR, pR, paint);
+        canvas.drawImageRect(image, iR, pR, paint..color = Colors.white);
       }
+
       startAngles = angles[i];
+
+      //画一个白色的Container
+      canvas.drawRRect(
+          RRect.fromRectAndRadius(
+              const Rect.fromLTRB(-20, -10, 20, 10), const Radius.circular(20)),
+          paint
+            ..color =
+                contents[i].isNotEmpty ? Colors.white : Colors.transparent);
+
+      ////
+      // 新建一个段落建造器，然后将文字基本信息填入;
+      ui.ParagraphBuilder pb2 = ui.ParagraphBuilder(ui.ParagraphStyle(
+        textAlign: TextAlign.center,
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.normal,
+        fontSize: 13,
+      ));
+      pb2.pushStyle(ui.TextStyle(color: const Color(0xFF9341FF)));
+
+      pb2.addText(contents[i]);
+      // 设置文本的宽度约束
+      ui.ParagraphConstraints pc2 = const ui.ParagraphConstraints(width: 55);
+      // 这里需要先layout,将宽度约束填入，否则无法绘制
+      ui.Paragraph paragraph2 = pb2.build()..layout(pc2);
+      // 文字左上角起始点
+      Offset offset2 = Offset(0 - paragraph.width / 2, -8);
+      canvas.drawParagraph(paragraph2, offset2);
+
       canvas.restore();
     }
   }
@@ -132,83 +162,5 @@ class LuckyDrawPaint extends CustomPainter {
       tp = _getTextPainter(temSpan, size, angle);
     }
     return tp;
-  }
-
-  @Deprecated("废弃")
-  drawAcr2(Canvas canvas, Size size) {
-    ///绘制扇形
-    // 画笔
-    Paint paint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 1.0
-      ..isAntiAlias = true
-      ..style = PaintingStyle.fill;
-
-    // 定义一个Rect，指定扇形的面积
-    Rect rect = Rect.fromCircle(
-      center: Offset(
-        size.width / 2,
-        size.height / 2,
-      ),
-      radius: size.width / 2,
-    );
-
-    double startAngles = 0;
-
-    // 根据总扇形数划分各扇形对应结束角度
-    List<double> angles = List.generate(
-        selectSize, (index) => (2 * pi / selectSize) * (index + 1));
-
-    for (int i = 0; i < selectSize; i++) {
-      paint.color = colors[i];
-      // - (pi / 2) 是为了圆形绘制起始点在头部，而不是右手边
-      double acStartAngles = startAngles - (pi / 2);
-      canvas.drawArc(rect, acStartAngles, angles[i] - startAngles, true, paint);
-      startAngles = angles[i];
-    }
-
-    ///绘制文字和icon
-    startAngles = 0;
-    for (int i = 0; i < contents.length; i++) {
-      // 先保存位置
-      canvas.save();
-
-      // 记得 - (pi / 2) 跟上边的处理一样，保证起始标准一致
-      double acStartAngles = startAngles - (pi / 2);
-      double acTweenAngles = angles[i] - (pi / 2);
-      // + pi 的原因是 文本做了向左偏移到另一边的操作，为了文本方向是从外到里，偏移后旋转半圈，即一个pi
-      double roaAngle = acStartAngles / 2 + acTweenAngles / 2 + pi * 1;
-
-      // canvas移动到中间
-      canvas.translate(size.width / 2, size.height / 2);
-      // 旋转画布
-      canvas.rotate(roaAngle);
-      // 定义文本的样式
-      TextSpan span = TextSpan(
-        style: const TextStyle(
-          color: Color(0xFFB4442D),
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-          letterSpacing: -1.0,
-        ),
-        text: contents[i],
-      );
-
-      // 文本的画笔
-      TextPainter tp = _getTextPainter(span, size, angles.first);
-      // 需要给定
-      tp.layout(minWidth: size.width / 4, maxWidth: size.width / 4);
-
-      tp.paint(canvas, Offset(-size.width / 2 + 30, 0 - (tp.height / 2)));
-
-      //绘制icon
-      if (images[i] != null) {
-        canvas.drawImage(images[i]!,
-            Offset(-size.width / 2 + 6, 0 - (tp.height / 2) - 5), paint);
-      }
-      // 转回来
-      canvas.restore();
-      startAngles = angles[i];
-    }
   }
 }

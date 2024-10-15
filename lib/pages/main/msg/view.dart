@@ -6,7 +6,7 @@ class MsgListPage extends GetView<MsgListLogic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.splashBgNew,
+      backgroundColor: Colors.white,
       body: MsgListBody(controller),
     );
   }

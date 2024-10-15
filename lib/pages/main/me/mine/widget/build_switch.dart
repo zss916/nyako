@@ -28,13 +28,13 @@ class _BuildSwitchState extends State<BuildSwitch> {
         children: [
           widget.isSwitch
               ? Image.asset(
-                  Assets.imgSwitchOpen,
+                  Assets.iconSwitchOpen,
                   width: 40,
                   height: 23,
                   matchTextDirection: true,
                 )
               : Image.asset(
-                  Assets.imgSwitchClose,
+                  Assets.iconSwitchClose,
                   width: 40,
                   height: 23,
                   matchTextDirection: true,

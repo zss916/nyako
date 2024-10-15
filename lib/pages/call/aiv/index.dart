@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/end_type.dart';
 import 'package:oliapro/dialogs/sheet_gift_list.dart';
 import 'package:oliapro/http/index.dart';

@@ -6,6 +6,7 @@ import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/mine/index.dart';
+import 'package:oliapro/pages/main/me/mine/widget/build_trouble.dart';
 import 'package:oliapro/pages/main/me/mine/widget/gradient_text.dart';
 
 class BuildContentList extends StatelessWidget {
@@ -34,10 +35,10 @@ class BuildContentList extends StatelessWidget {
           BuildBindingGoogle(logic),*/
         Container(
           margin: const EdgeInsetsDirectional.only(
-              start: 20, end: 20, bottom: 30, top: 5),
+              start: 20, end: 20, bottom: 10, top: 5),
           child: contentList(),
         ),
-        // if (AppConstants.isFakeMode == false) BuildTrouble()
+        if (AppConstants.isFakeMode == false) BuildTrouble()
       ],
     );
   }
@@ -85,11 +86,11 @@ class BuildContentList extends StatelessWidget {
                     height: 15,
                   ),
                   buildCell(6, logic, color: const Color(0x333BC2FF)),
-                  const SizedBox(
+                  /*const SizedBox(
                     width: double.maxFinite,
                     height: 15,
-                  ),
-                  buildCell(8, logic, color: const Color(0x33B181FF)),
+                  ),*/
+                  // buildCell(8, logic, color: const Color(0x33B181FF)),
                 ],
               ),
             ));

@@ -100,6 +100,6 @@ class AppConstants {
 
   static bool isCreatePayOrder = false;
 
-  static String fontsRegular = 'prompt-regular';
-  static String fontsBold = 'prompt-bold';
+  static String fontsRegular = 'NotoSans-Regular';
+  static String fontsBold = 'NotoSans-Bold';
 }

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/pages/widget/base_button.dart';
 import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
+import 'package:oliapro/pages/widget/short_base_button.dart';
 import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/routes/app_pages.dart';
 import 'package:oliapro/utils/app_loading.dart';
@@ -27,6 +26,7 @@ class SearchConfirmWdg extends StatefulWidget {
 class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
   late final TextEditingController __textEditingCtrl = TextEditingController();
   FocusNode? _focusNode;
+  bool isSave = false;
 
   @override
   void initState() {
@@ -35,6 +35,13 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
     _focusNode?.addListener(() {
       if (_focusNode!.hasFocus) {
       } else {}
+    });
+    __textEditingCtrl.addListener(() {
+      if (mounted) {
+        setState(() {
+          isSave = __textEditingCtrl.text.isNotEmpty;
+        });
+      }
     });
   }
 
@@ -50,10 +57,10 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
     return BottomArrowWidget(
       child: Container(
         width: Get.width,
-        decoration: BoxDecoration(
-            gradient: AppColors.gradientDialogsBg,
-            borderRadius: const BorderRadiusDirectional.only(
-                topStart: Radius.circular(20), topEnd: Radius.circular(20))),
+        decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadiusDirectional.only(
+                topStart: Radius.circular(24), topEnd: Radius.circular(24))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
@@ -79,7 +86,7 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             Container(
@@ -88,7 +95,7 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
               margin: const EdgeInsetsDirectional.only(
                   top: 15, start: 15, end: 15, bottom: 5),
               decoration: const BoxDecoration(
-                  color: Colors.black,
+                  color: Color(0xFFF4F5F6),
                   borderRadius: BorderRadius.all(Radius.circular(14))),
               child: Row(
                 children: [
@@ -108,7 +115,7 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
                     child: TextField(
                       keyboardType: TextInputType.number,
                       cursorColor: const Color(0xFFAC53FB),
-                      style: const TextStyle(fontSize: 16, color: Colors.white),
+                      style: const TextStyle(fontSize: 16, color: Colors.black),
                       controller: __textEditingCtrl,
                       focusNode: _focusNode,
                       inputFormatters: [
@@ -142,6 +149,9 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             AnimatedButton(
               onCall: () async {
                 _focusNode?.unfocus();
@@ -152,12 +162,14 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
                   AppLoading.toast(Tr.app_not_entered.tr);
                 }
               },
-              child: Container(
-                margin: const EdgeInsetsDirectional.only(
-                    top: 20, bottom: 30, start: 40, end: 40),
-                child: BaseButton(Tr.app_base_confirm.tr),
+              child: ShortBaseButton(
+                Tr.app_base_confirm.tr,
+                isSave: isSave,
               ),
-            )
+            ),
+            const SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),

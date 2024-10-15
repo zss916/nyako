@@ -108,7 +108,7 @@ class ChatLogic extends GetxController {
     });
 
     vipSub = StorageService.to.eventBus.on<String>().listen((event) {
-      if (event == "vipRefresh") {
+      if (event == vipRefresh) {
         getVip();
       }
     });
@@ -123,7 +123,7 @@ class ChatLogic extends GetxController {
   }
 
   getVip() async {
-    InfoDetail data = await ProfileAPI.info(showLoading: true);
+    InfoDetail data = await ProfileAPI.info(showLoading: false);
     UserInfo.to.setMyDetail = data;
     update();
     await loadSignFrameAndChatCard();

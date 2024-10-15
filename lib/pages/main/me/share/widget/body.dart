@@ -8,7 +8,7 @@ import 'package:oliapro/dialogs/sheet_app_invite.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/share/index.dart';
 import 'package:oliapro/pages/main/me/share/widget/ActionWidget.dart';
-import 'package:oliapro/pages/main/me/share/widget/text_widget.dart';
+import 'package:oliapro/pages/main/me/share/widget/share_title_image.dart';
 import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/widget/animated_button.dart';
 import 'package:oliapro/widget/base_app_bar.dart';
@@ -26,6 +26,7 @@ class _ShareBodyState extends State<ShareBody> {
   late double toolbarOpacity = 0;
   late String content = Tr.app_share_tip.tr;
   late String title = Tr.app_receive_gift.tr;
+  final String copy = Tr.appCopy.tr;
 
   @override
   void initState() {
@@ -57,37 +58,55 @@ class _ShareBodyState extends State<ShareBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: BaseAppBar(
-          title: toolbarOpacity == 0 ? "" : title,
-          isDark: true,
-          isSetBg: true,
-          actions: const [ActionWidget()],
-          backgroundColor: const Color(0xFFFF3689).withOpacity(toolbarOpacity)),
-      extendBodyBehindAppBar: true,
-      backgroundColor: const Color(0xFFFF3689),
-      body: SingleChildScrollView(
-        controller: scrollCtrl,
-        child: SizedBox(
-          width: Get.width,
-          height: isSmall ? (Get.height * 2) + 10 : (Get.height * 1.8),
-          child: Stack(
-            alignment: AlignmentDirectional.topCenter,
-            children: [
-              PositionedDirectional(
-                  top: 0,
-                  start: 0,
-                  end: 0,
-                  child: Image.asset(
-                    Assets.imgShareBg3,
-                    fit: BoxFit.fitWidth,
-                    matchTextDirection: true,
-                  )),
-              Positioned.fill(child: buildContent())
-            ],
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
+      children: [
+        PositionedDirectional(
+            top: 0,
+            start: 0,
+            end: 0,
+            bottom: 0,
+            child: Image.asset(
+              Assets.iconShareBg,
+              fit: BoxFit.fitWidth,
+              matchTextDirection: true,
+            )),
+        PositionedDirectional(
+            top: 0,
+            start: 0,
+            end: 0,
+            child: Container(
+              height: 250,
+              padding:
+                  const EdgeInsetsDirectional.only(start: 5, end: 5, bottom: 0),
+              width: double.maxFinite,
+              alignment: AlignmentDirectional.bottomCenter,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      matchTextDirection: true,
+                      fit: BoxFit.fitWidth,
+                      image: ExactAssetImage(Assets.iconInviteBg))),
+              child: const ShareTitleImage(),
+            )),
+        Scaffold(
+          appBar: BaseAppBar(
+              title: toolbarOpacity == 0 ? "" : title,
+              actions: const [ActionWidget()],
+              backgroundColor:
+                  const Color(0xFFFEC3B3).withOpacity(toolbarOpacity)),
+          extendBodyBehindAppBar: true,
+          backgroundColor: Colors.transparent,
+          //backgroundColor: const Color(0xFFFEC3B3),
+          body: SingleChildScrollView(
+            controller: scrollCtrl,
+            child: SizedBox(
+              width: Get.width,
+              height: isSmall ? (Get.height * 2) + 10 : (Get.height * 1.8),
+              child: buildContent(),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 
@@ -95,165 +114,112 @@ class _ShareBodyState extends State<ShareBody> {
     return Column(
       children: [
         Container(
-          margin: const EdgeInsetsDirectional.only(start: 10, end: 10, top: 80),
-          child: const TextWidget(),
-        ),
-        GetBuilder<ShareLogic>(
-          assignId: true,
-          init: ShareLogic(),
-          builder: (logic) {
-            return AnimatedButton(
-              child: Container(
-                margin: const EdgeInsetsDirectional.only(
-                    top: 10, start: 25, end: 25),
-                decoration: BoxDecoration(
-                    color: const Color(0xFFFA3485),
-                    borderRadius: BorderRadiusDirectional.circular(12)),
-                child: _myInviteCode(logic.data?.inviteCode ?? "--", logic),
-              ),
-              onCall: () => logic.copyId(),
-            );
-          },
-        ),
-        Container(
           width: double.maxFinite,
           padding: const EdgeInsetsDirectional.only(bottom: 15),
           margin: const EdgeInsetsDirectional.only(
-              top: 250, start: 15, end: 15, bottom: 15),
+              top: 245, start: 15, end: 15, bottom: 0),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadiusDirectional.circular(20)),
           child: Column(
             children: [
-              Container(
-                width: double.maxFinite,
-                padding: const EdgeInsetsDirectional.symmetric(vertical: 14),
-                alignment: AlignmentDirectional.center,
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: AlignmentDirectional.topCenter,
-                        end: AlignmentDirectional.bottomCenter,
-                        colors: [
-                          Color(0xFFFFE0A2),
-                          Color(0xFFFFF6E6),
-                        ]),
-                    borderRadius: BorderRadiusDirectional.vertical(
-                        top: Radius.circular(14))),
-                child: Text(
-                  Tr.app_invite_friends.tr,
-                  style: const TextStyle(
-                      color: Color(0xFF935B0A),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
               GetBuilder<ShareLogic>(
                 assignId: true,
                 init: ShareLogic(),
                 builder: (logic) {
-                  return Column(
+                  return Row(
                     children: [
-                      GestureDetector(
+                      Expanded(
+                          child: GestureDetector(
                         onTap: () => ARoutes.toRewardDetails(),
                         child: Container(
-                          width: double.maxFinite,
-                          color: Colors.transparent,
-                          child: Row(
+                          // color: Colors.blue,
+                          margin: const EdgeInsetsDirectional.only(
+                              start: 10, end: 10, top: 30, bottom: 10),
+                          child: Column(
                             children: [
                               Container(
-                                margin: const EdgeInsetsDirectional.only(
-                                    start: 20, end: 10, top: 10, bottom: 10),
-                                child: Image.asset(Assets.imgAddInviteFriend,
+                                margin:
+                                    const EdgeInsetsDirectional.only(bottom: 5),
+                                child: Image.asset(Assets.iconBigDiamond,
                                     width: 48,
                                     height: 48,
                                     matchTextDirection: true),
                               ),
-                              Expanded(
-                                  child: Container(
-                                margin: const EdgeInsetsDirectional.only(
-                                    start: 5, end: 20),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      (logic.data?.inviteCount ?? 0).toString(),
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 24,
-                                          fontFamily: AppConstants.fontsBold,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      Tr.app_invite_num.tr,
-                                      style: const TextStyle(
-                                          color: Color(0xFF8C899C),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12),
-                                    )
-                                  ],
+                              Text(
+                                (logic.data?.awardIncome ?? 0).toString(),
+                                style: TextStyle(
+                                    color: const Color(0xFFFF4864),
+                                    fontSize: 20,
+                                    fontFamily: AppConstants.fontsBold,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Container(
+                                margin:
+                                    const EdgeInsetsDirectional.only(top: 10),
+                                child: Text(
+                                  Tr.app_rewards.tr,
+                                  style: const TextStyle(
+                                      color: Color(0xFF9B989D),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12),
                                 ),
-                              ))
+                              )
                             ],
                           ),
                         ),
+                      )),
+                      const SizedBox(
+                        height: 84,
+                        child: VerticalDivider(
+                          width: 1,
+                          color: Color(0xFFEEEEEE),
+                        ),
                       ),
-                      Container(
-                        margin: const EdgeInsetsDirectional.symmetric(
-                            horizontal: 20),
-                        width: double.maxFinite,
-                        height: 1,
-                        color: const Color(0xFFEEEEEE),
-                      ),
-                      GestureDetector(
+                      Expanded(
+                          child: GestureDetector(
                         onTap: () => ARoutes.toRewardDetails(),
                         child: Container(
-                          width: double.maxFinite,
-                          color: Colors.transparent,
-                          child: Row(
+                          margin: const EdgeInsetsDirectional.only(
+                              start: 10, end: 10, top: 30, bottom: 10),
+                          // color: Colors.green,
+                          child: Column(
                             children: [
                               Container(
-                                margin: const EdgeInsetsDirectional.only(
-                                    start: 20, end: 10, top: 10, bottom: 10),
-                                child: Image.asset(Assets.imgDiamond,
+                                margin:
+                                    const EdgeInsetsDirectional.only(bottom: 5),
+                                child: Image.asset(Assets.iconAddInviteFriend,
                                     width: 48,
                                     height: 48,
                                     matchTextDirection: true),
                               ),
-                              Expanded(
-                                  child: Container(
-                                margin: const EdgeInsetsDirectional.only(
-                                    start: 5, end: 20),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      (logic.data?.awardIncome ?? 0).toString(),
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 24,
-                                          fontFamily: AppConstants.fontsBold,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Text(
-                                      Tr.app_rewards.tr,
-                                      style: const TextStyle(
-                                          color: Color(0xFF8C899C),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12),
-                                    )
-                                  ],
+                              Text(
+                                (logic.data?.inviteCount ?? 0).toString(),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: const Color(0xFFFF4864),
+                                    fontSize: 20,
+                                    fontFamily: AppConstants.fontsBold,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Container(
+                                margin:
+                                    const EdgeInsetsDirectional.only(top: 10),
+                                child: Text(
+                                  Tr.app_invite_num.tr,
+                                  style: const TextStyle(
+                                      color: Color(0xFF9B989D),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12),
                                 ),
-                              ))
+                              )
                             ],
                           ),
                         ),
-                      ),
+                      )),
                     ],
                   );
                 },
-              ),
-              const SizedBox(
-                height: 0,
               ),
               GetBuilder<ShareLogic>(
                 assignId: true,
@@ -265,7 +231,7 @@ class _ShareBodyState extends State<ShareBody> {
               ),
               Container(
                 margin: const EdgeInsetsDirectional.only(
-                    top: 13, start: 15, end: 15),
+                    top: 5, start: 15, end: 15),
                 child: AutoSizeText(
                   content,
                   textAlign: TextAlign.center,
@@ -278,6 +244,24 @@ class _ShareBodyState extends State<ShareBody> {
               ),
             ],
           ),
+        ),
+        GetBuilder<ShareLogic>(
+          assignId: true,
+          init: ShareLogic(),
+          builder: (logic) {
+            return InkWell(
+              child: Container(
+                height: 60,
+                margin: const EdgeInsetsDirectional.only(
+                    top: 10, start: 15, end: 15, bottom: 10),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadiusDirectional.circular(12)),
+                child: _myInviteCode(logic.data?.inviteCode ?? "--", logic),
+              ),
+              onTap: () => logic.copyId(),
+            );
+          },
         ),
         _buildTip(),
       ],
@@ -298,30 +282,20 @@ class _ShareBodyState extends State<ShareBody> {
             width: double.maxFinite,
             padding: const EdgeInsetsDirectional.symmetric(vertical: 14),
             alignment: AlignmentDirectional.center,
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: AlignmentDirectional.topCenter,
-                    end: AlignmentDirectional.bottomCenter,
-                    colors: [
-                      Color(0xFFFFE0A2),
-                      Color(0xFFFFF6E6),
-                    ]),
-                borderRadius:
-                    BorderRadiusDirectional.vertical(top: Radius.circular(14))),
             child: Text(
               Tr.app_reward_tip.tr,
               style: const TextStyle(
-                  color: Color(0xFF935B0A),
+                  color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.bold),
             ),
           ),
           Container(
             alignment: Alignment.centerLeft,
-            margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
+            margin: const EdgeInsets.only(top: 0, left: 15, right: 15),
             child: Text(
               Tr.app_reward_content1.trArgs([inviteAward]),
-              style: const TextStyle(color: Color(0xFF666666), fontSize: 14),
+              style: const TextStyle(color: Color(0xFFA78068), fontSize: 14),
             ),
           ),
           Container(
@@ -329,7 +303,7 @@ class _ShareBodyState extends State<ShareBody> {
             margin: const EdgeInsets.only(top: 15, left: 15, right: 15),
             child: Text(
               Tr.app_reward_content2.trArgs([rechargeAward]),
-              style: const TextStyle(color: Color(0xFF666666), fontSize: 14),
+              style: const TextStyle(color: Color(0xFFA78068), fontSize: 14),
             ),
           ),
           if (AppConstants.isFakeMode == false)
@@ -338,7 +312,7 @@ class _ShareBodyState extends State<ShareBody> {
               margin: const EdgeInsets.only(top: 15, left: 15, right: 15),
               child: Text(
                 Tr.app_reward_content3.trArgs([inviteeCardCount]),
-                style: const TextStyle(color: Color(0xFF666666), fontSize: 14),
+                style: const TextStyle(color: Color(0xFFA78068), fontSize: 14),
               ),
             )
         ],
@@ -374,13 +348,14 @@ class _ShareBodyState extends State<ShareBody> {
       },
       child: Container(
         width: double.maxFinite,
-        height: 54,
-        margin: const EdgeInsetsDirectional.symmetric(horizontal: 45),
+        height: 76,
+        //margin: const EdgeInsetsDirectional.symmetric(horizontal: 45),
         alignment: Alignment.center,
-        padding: const EdgeInsets.all(8),
+        padding:
+            const EdgeInsetsDirectional.only(bottom: 10, start: 10, end: 10),
         decoration: BoxDecoration(
             image: const DecorationImage(
-                image: ExactAssetImage(Assets.imgInviteBtn)),
+                image: ExactAssetImage(Assets.iconInviteBtn)),
             borderRadius: BorderRadiusDirectional.circular(35)),
         child: AutoSizeText(
           Tr.app_invite_friends.tr,
@@ -396,28 +371,47 @@ class _ShareBodyState extends State<ShareBody> {
 
   Widget _myInviteCode(String code, ShareLogic logic) {
     return Container(
-      margin: const EdgeInsets.only(top: 0, left: 20, right: 20),
-      padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.only(top: 0, left: 15, right: 5),
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             Tr.app_my_invite_code.trArgs([":"]),
-            style: const TextStyle(color: Colors.white, fontSize: 14),
+            style: const TextStyle(
+                color: Color(0xFF6A4B39),
+                fontSize: 13,
+                fontWeight: FontWeight.w400),
+          ),
+          const SizedBox(
+            width: 5,
           ),
           Text(code,
               style: TextStyle(
-                  color: const Color(0xFFFFEB95),
-                  fontSize: 14,
+                  color: const Color(0xFFFF4864),
+                  fontSize: 16,
                   fontFamily: AppConstants.fontsRegular,
-                  fontWeight: FontWeight.normal)),
+                  fontWeight: FontWeight.bold)),
+          const Spacer(),
+          const VerticalDivider(
+            width: 1,
+            color: Color(0xFFEEEEEE),
+            indent: 12,
+            endIndent: 12,
+          ),
           Container(
-            margin: const EdgeInsetsDirectional.only(start: 3),
-            child: Image.asset(
-              Assets.imgCopyID,
-              width: 14,
-              height: 14,
-              matchTextDirection: true,
+            height: double.maxFinite,
+            alignment: AlignmentDirectional.center,
+            constraints: const BoxConstraints(maxWidth: 80),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 5),
+            margin: const EdgeInsetsDirectional.symmetric(
+                horizontal: 5, vertical: 5),
+            child: Text(
+              copy,
+              style: const TextStyle(
+                  color: Color(0xFF9341FF),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500),
             ),
           )
         ],

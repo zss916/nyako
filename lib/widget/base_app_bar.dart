@@ -28,7 +28,7 @@ class BaseAppBar extends AppBar {
                 maxFontSize: 20,
                 minFontSize: 14,
                 style: TextStyle(
-                    color: isDark ? Colors.black : Colors.black,
+                    color: isDark ? Colors.black : Colors.white,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
@@ -51,7 +51,7 @@ class BaseAppBar extends AppBar {
                       matchTextDirection: true,
                       width: 24,
                       height: 24,
-                      color: isDark ? Colors.black : Colors.black,
+                      color: isDark ? Colors.black : Colors.white,
                     ),
                   ),
                 ),
@@ -59,29 +59,16 @@ class BaseAppBar extends AppBar {
           centerTitle: centerTitle ?? true,
           foregroundColor: Colors.transparent,
           systemOverlayStyle: systemOverlayStyle ??
-              const SystemUiOverlayStyle(
+              SystemUiOverlayStyle(
                 statusBarColor: Colors.transparent,
-                statusBarBrightness: Brightness.dark,
-                statusBarIconBrightness: Brightness.dark,
+                statusBarBrightness:
+                    isDark ? Brightness.dark : Brightness.light,
+                statusBarIconBrightness:
+                    isDark ? Brightness.dark : Brightness.light,
                 systemNavigationBarDividerColor: Colors.transparent,
                 systemNavigationBarColor: Colors.transparent,
-                systemNavigationBarIconBrightness: Brightness.dark,
+                systemNavigationBarIconBrightness:
+                    isDark ? Brightness.dark : Brightness.light,
               ),
-          flexibleSpace: FlexibleSpaceBar(
-            background: Container(
-              width: double.maxFinite,
-              height: double.maxFinite,
-              decoration: isSetBg != null
-                  ? const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: AlignmentDirectional.topCenter,
-                          end: AlignmentDirectional.bottomCenter,
-                          colors: [
-                          Color(0xFF381853),
-                          Color(0xFF491E61),
-                        ]))
-                  : const BoxDecoration(),
-            ),
-          ),
         );
 }

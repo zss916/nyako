@@ -10,8 +10,8 @@ class BaseMsgPortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 45,
-      height: 45,
+      width: 50,
+      height: 50,
       clipBehavior: Clip.hardEdge,
       padding: const EdgeInsetsDirectional.all(0),
       decoration: BoxDecoration(

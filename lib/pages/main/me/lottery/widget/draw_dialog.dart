@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/language_key.dart';
@@ -21,48 +20,49 @@ Widget getImg(int drawType, String icon) {
   switch (drawType) {
     case 0:
       return Image.asset(
-        Assets.lotteryDrawEmpty,
-        width: 255,
-        height: 146,
+        Assets.lotteryLotteryEmpty,
+        width: 80,
+        height: 80,
         fit: BoxFit.cover,
+        matchTextDirection: true,
       );
     case 1:
       return Image.asset(
-        Assets.lotteryDrawDiamond,
-        width: 255,
-        height: 146,
+        Assets.lotteryLotteryDiamond,
+        width: 36,
+        height: 36,
         fit: BoxFit.cover,
         matchTextDirection: true,
       );
     case 2:
       return Image.asset(
-        Assets.lotteryDrawKing,
-        width: 255,
-        height: 146,
+        Assets.lotteryLotteryKing,
+        width: 36,
+        height: 36,
         fit: BoxFit.cover,
         matchTextDirection: true,
       );
     case 3:
       return Image.asset(
-        Assets.lotteryDrawDiamondCard,
-        width: 255,
-        height: 146,
+        Assets.lotteryLotteryAddCard,
+        width: 36,
+        height: 36,
         fit: BoxFit.cover,
         matchTextDirection: true,
       );
     case 5:
       return Image.asset(
-        Assets.lotteryDrawCallCard,
-        width: 255,
-        height: 146,
+        Assets.lotteryLotteryCallCard,
+        width: 36,
+        height: 36,
         fit: BoxFit.cover,
         matchTextDirection: true,
       );
     default:
       return cachedImage(
         icon,
-        width: 255,
-        height: 146,
+        width: 36,
+        height: 36,
       );
   }
 }
@@ -86,104 +86,103 @@ class _DrawDialogState extends State<DrawDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.center,
-      children: [
-        Container(
-            height: 280,
-            width: 320,
-            alignment: Alignment.center,
+    return SizedBox(
+      width: double.maxFinite,
+      height: double.maxFinite,
+      child: Stack(
+        alignment: AlignmentDirectional.topCenter,
+        children: [
+          if (widget.data.drawType != 0)
+            PositionedDirectional(
+                top: 0,
+                start: 0,
+                end: 0,
+                child: Image.asset(
+                  Assets.iconDrawResultBg,
+                  matchTextDirection: true,
+                )),
+          Container(
+            width: double.maxFinite,
+            padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: 20, vertical: 30),
+            margin:
+                const EdgeInsetsDirectional.only(top: 160, start: 40, end: 40),
             decoration: BoxDecoration(
                 gradient: const LinearGradient(
                     begin: AlignmentDirectional.bottomStart,
                     end: AlignmentDirectional.topEnd,
-                    colors: [
-                      Color(0xFF8940FF),
-                      Color(0xFFD34BFD),
-                    ]),
+                    colors: [Colors.white, Color(0xFFFFFBC1)]),
                 borderRadius: BorderRadiusDirectional.circular(30)),
-            margin: const EdgeInsetsDirectional.only(top: 0),
-            padding: const EdgeInsetsDirectional.only(
-                start: 20, end: 20, bottom: 30, top: 80),
-            child: buildContent(widget.data.drawType ?? 0)),
-        SizedBox(
-            height: 280 + 150,
-            width: 320,
-            child: Column(
-              children: [
-                getImg(widget.data.drawType ?? 0, widget.data.icon ?? "")
-              ],
-            )),
-      ],
+            child: buildContent(widget.data.drawType ?? 0, widget.data),
+          )
+        ],
+      ),
     );
   }
 
-  Widget buildContent(int type) {
+  Widget buildContent(int type, DrawData data) {
     return switch (type) {
-      _ when type == 0 => Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Spacer(),
-            AutoSizeText(widget.data.getResult(),
-                maxLines: 3,
-                maxFontSize: 20,
-                minFontSize: 20,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center),
-            const Spacer(),
-            GestureDetector(
-              onTap: () => Get.back(),
-              child: BaseButton2(Tr.app_base_confirm.tr),
-            )
-          ],
-        ),
-      _ when (type == 1 || type == 2 || type == 3 || type == 4 || type == 5) =>
+      _
+          when (type == 0 ||
+              type == 1 ||
+              type == 2 ||
+              type == 3 ||
+              type == 4 ||
+              type == 5) =>
         Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (widget.data.drawType != 0)
-              Container(
-                margin: const EdgeInsetsDirectional.only(top: 0),
-                child: Text(
-                  Tr.app_congratulations_get.trArgs(['']),
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            const Spacer(),
-            AutoSizeText(widget.data.getResult(),
-                maxLines: 3,
-                maxFontSize: 15,
-                minFontSize: 15,
+            Container(
+              margin: const EdgeInsetsDirectional.only(bottom: 30),
+              child: Text(
+                (widget.data.drawType != 0)
+                    ? "${Tr.app_congratulations_get.tr} ${widget.data.getResult2()}"
+                    : Tr.app_draw0.tr,
                 style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.normal),
-                textAlign: TextAlign.center),
-            const Spacer(),
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                getImg(widget.data.drawType ?? 0, widget.data.icon ?? ""),
+                Container(
+                  margin: const EdgeInsetsDirectional.only(start: 3),
+                  child: Text(
+                    data.getContent2(),
+                    style: const TextStyle(
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF9341FF)),
+                  ),
+                )
+              ],
+            ),
+            type == 0
+                ? const SizedBox(
+                    height: 30,
+                  )
+                : Container(
+                    margin:
+                        const EdgeInsetsDirectional.only(top: 18, bottom: 30),
+                    child: Image.asset(
+                      Assets.lotteryLotteryIc,
+                      width: 200,
+                      height: 10,
+                    ),
+                  ),
             GestureDetector(
               onTap: () => Get.back(),
               child: BaseButton2(Tr.app_base_confirm.tr),
             )
           ],
         ),
-      _ => const SizedBox(
-          width: 18,
-          height: 18,
-        ),
+      _ => const SizedBox.shrink(),
     };
   }
-
-  /*FractionallySizedBox(
-  widthFactor: 1.0,
-  heightFactor: 0.7,
-  child: ,
-  )*/
 }

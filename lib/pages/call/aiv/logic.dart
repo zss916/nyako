@@ -397,7 +397,8 @@ class AivLogic extends GetxController {
   }
 
   void sendGift(GiftEntity gift) {
-    GiftUtils.sendAivGift(gift, herId, success: () {
+    ///这里为不让主播有收益，所以anchorId = "999"
+    GiftUtils.sendAivGift(gift, AppConstants.systemId, success: () {
       myVapController.playGift(gift);
       giftValue = giftValue + (gift.diamonds ?? 0);
     });

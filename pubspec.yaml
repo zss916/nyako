@@ -172,10 +172,10 @@ flutter:
     - assets/sign/
 
   fonts:
-    - family: prompt-regular
+    - family: NotoSans-Regular
       fonts:
-        - asset: fonts/Prompt-Regular.ttf
-    - family: prompt-bold
+        - asset: fonts/NotoSans-Regular.ttf
+    - family: NotoSans-Bold
       fonts:
-        - asset: fonts/Prompt-Bold.ttf
+        - asset: fonts/NotoSans-Bold.ttf
 

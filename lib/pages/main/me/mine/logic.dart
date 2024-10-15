@@ -19,7 +19,7 @@ class MeLogic extends GetxController {
       } else if (event == eventBusRefreshMeFromCache) {
         state.myDetail = UserInfo.to.myDetail;
         update();
-      } else if (event == "vipRefresh") {
+      } else if (event == vipRefresh) {
         refreshMe();
       }
     });

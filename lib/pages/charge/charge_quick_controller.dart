@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
 import 'package:oliapro/http/index.dart';
 import 'package:oliapro/pages/charge/billing.dart';
+import 'package:oliapro/services/event_bus_bean.dart';
 import 'package:oliapro/services/storage_service.dart';
 import 'package:oliapro/utils/app_loading.dart';
 import 'package:oliapro/utils/cache/product_cache.dart';
@@ -58,7 +59,7 @@ class ChargeQuickController extends GetxController {
     super.onInit();
     myDetail = UserInfo.to.myDetail;
     vipSub = StorageService.to.eventBus.on<String>().listen((event) {
-      if (event == "vipRefresh") {
+      if (event == vipRefresh) {
         loadData();
       }
     });

@@ -44,7 +44,7 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
 
   @override
   Widget build(BuildContext context) {
-    //return buildConsumptionItem(BalanceListData());
+    // return buildConsumptionItem(BalanceListData());
     return GetBuilder<RewardDetailsLogic>(
       assignId: true,
       builder: (logic) {
@@ -136,7 +136,7 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                 maxFontSize: 14,
                 minFontSize: 6,
                 style: TextStyle(
-                    color: isSelect ? Colors.white : Colors.white,
+                    color: isSelect ? Colors.black : Colors.black,
                     fontSize: 14,
                     fontWeight: isSelect ? FontWeight.bold : FontWeight.w500),
               ),
@@ -152,7 +152,7 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
       margin: const EdgeInsetsDirectional.only(start: 15, top: 15, end: 15),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Colors.white10),
+          borderRadius: BorderRadius.circular(16), color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -173,7 +173,7 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                       minFontSize: 6,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                      style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
                   const SizedBox(
@@ -186,7 +186,8 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                                 data.createdAt!),
                             [yyyy, '.', mm, '.', dd, '-', HH, ':', nn])
                         : "--",
-                    style: const TextStyle(color: Colors.white, fontSize: 12),
+                    style:
+                        const TextStyle(color: Color(0xFFBCB6C4), fontSize: 12),
                   ),
                 ],
               )),
@@ -199,15 +200,15 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                         Text(
                           "${data.type == 2 ? '+' : '-'}${data.diamonds ?? '--'}",
                           style: TextStyle(
-                              color: const Color(0xFFFFF890),
-                              fontSize: 24,
+                              color: const Color(0xFF9341FF),
+                              fontSize: 14,
                               fontFamily: AppConstants.fontsBold,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                         ),
                         Container(
                           margin: const EdgeInsetsDirectional.only(start: 2),
                           child: Image.asset(
-                            Assets.imgDiamond,
+                            Assets.iconDiamond,
                             matchTextDirection: true,
                             width: 16,
                             height: 16,

@@ -1,0 +1,181 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def jksFile = rootProject.file("jks.properties")
+def jks = new Properties()
+jks.load(new FileInputStream(jksFile))
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    namespace rootProject.ext.android["namespace"]
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    compileSdk flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId rootProject.ext.android["applicationId"]
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    signingConfigs {
+
+        release {
+            if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
+                storeFile file(System.getenv()["CM_KEYSTORE_PATH"])
+                storePassword System.getenv()["CM_KEYSTORE_PASSWORD"]
+                keyAlias System.getenv()["CM_KEY_ALIAS"]
+                keyPassword System.getenv()["CM_KEY_PASSWORD"]
+            } else {
+                keyAlias jks['keyAlias']
+                keyPassword jks['keyPassword']
+                storeFile file(jks['storeFile'])
+                storePassword jks['storePassword']
+            }
+        }
+
+       /* release {
+            keyAlias jks['keyAlias']
+            keyPassword jks['keyPassword']
+            storeFile file(jks['storeFile'])
+            storePassword jks['storePassword']
+        }
+        debug {
+            keyAlias jks['keyAlias']
+            keyPassword jks['keyPassword']
+            storeFile file(jks['storeFile'])
+            storePassword jks['storePassword']
+        }*/
+    }
+1
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            ndk{
+              abiFilters 'armeabi-v7a', 'arm64-v8a'
+           }
+        }
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            ndk{
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+           }
+        }
+    }
+
+    packagingOptions{
+        exclude "**/libagora_drm_loader_extension.so"
+        exclude "**/libagora_udrm3_extension.so"
+        exclude "**/libagora_content_inspect_extensio.so"
+        exclude "**/libagora_clear_vision_extension.so"
+        exclude "**/libagora_audio_beauty_extension.so"
+        exclude "**/libagora_ai_noise_suppression_extension.so"
+        exclude "**/libagora_face_detection_extension.so"
+        exclude "**/libagora_screen_capture_extension.so"
+        exclude "**/libagora_video_quality_analyzer_extension.so"
+        exclude "**/libagora_ai_echo_cancellation_extension.so"
+        exclude "**/libagora_video_encoder_extension.so"
+        exclude "**/video_enc.so"
+        exclude "**/libagora_video_decoder_extension.so"
+        exclude "**/video_dec.so"
+        exclude "**/libagora_ai_denoise_extension.so"
+        exclude "**/libagora_dav1d_extension.so"
+        exclude "**/libagora_fd_extension.so"
+        exclude "**/libagora_segmentation_extension.so"
+        exclude "**/libagora_super_resolution_extension.so"
+        exclude "**/libagora_video_process_extension.so"
+        exclude "**/libagora_full_audio_format_extension.so"
+        exclude "**/libagora_ci_extension.so"
+        exclude "**/libagora_spatial_audio_extension.so"
+    }
+
+    packagingOptions {
+        dex {
+            useLegacyPackaging true
+        }
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+//    packagingOptions {
+//        //AI 降噪插件
+//        exclude "**/libagora_ai_denoise_extension.so"
+//        //提升屏幕共享中文本共享的清晰度
+//        exclude "**/libagora_dav1d_extension.so"
+//        //ROI 插件
+//        exclude "**/libagora_fd_extension.so"
+//        //虚拟背景插件
+//        exclude "**/libagora_segmentation_extension.so"
+//        //超分辨率（beta 功能）
+//        exclude "**/libagora_super_resolution_extension.so"
+//        //视频增强插件
+//        exclude "**/libagora_video_process_extension.so"
+//        //全格式音频解码插件
+//        exclude "**/libagora-full-audio-format-extension.so"
+//        //视频截图上传插件
+//        exclude "**/libagora_ci_extension.so"
+//        //空间音效插件
+//        exclude "**/libagora_spatial_audio_extension.so"
+//    }
+}
+
+flutter {
+    source '../..'
+}
+
+def implementationDependencies = rootProject.ext.dependencies
+def releaseImplementationDependencies = rootProject.ext.releaseDependencies
+
+dependencies {
+    implementationDependencies.each { k, v -> implementation v }
+    releaseImplementationDependencies.each { k, v -> implementation v }
+}

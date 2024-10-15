@@ -9,7 +9,7 @@ class ChangePasswordPage extends GetView<ChangePasswordLogic> {
         appBar: BaseAppBar(
           title: Tr.app_change_pwd.tr,
         ),
-        backgroundColor: AppColors.splashBg,
-        body: const ChangePasswordBody(),
+        backgroundColor: Colors.white,
+        body: SetPassWord(),
       );
 }

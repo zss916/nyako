@@ -10,7 +10,7 @@ class RewardDetailsPage extends GetView<RewardDetailsLogic> {
       appBar: BaseAppBar(
         title: Tr.app_reward_details.tr,
       ),
-      backgroundColor: AppColors.splashBg,
+      backgroundColor: const Color(0xFFF4F5F6),
       body: RewardDetailsBody(controller),
     );
   }

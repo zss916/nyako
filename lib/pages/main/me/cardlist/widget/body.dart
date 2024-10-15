@@ -29,28 +29,29 @@ class CardListBody extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadiusDirectional.circular(0)),
-              child: TabBar(
+              child: KuGouTabBar(
                 isScrollable: true,
-                tabAlignment: TabAlignment.start,
+                //tabAlignment: TabAlignment.start,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicator: const RRecTabIndicator(
                     radius: 2,
-                    insets: EdgeInsets.only(bottom: 0),
-                    color: Colors.transparent),
-                labelColor: Colors.white,
+                    insets: EdgeInsets.only(bottom: 3),
+                    color: Color(0xFF9341FF)),
+                labelColor: Colors.black,
                 tabs: [
                   Tab(text: Tr.app_mine_my_prop.tr),
                   Tab(text: Tr.app_my_gift.tr),
                   Tab(text: Tr.appSignHeader.tr),
                 ],
                 labelStyle: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500),
                 unselectedLabelStyle: const TextStyle(
-                    fontSize: 15,
-                    color: Colors.white60,
-                    fontWeight: FontWeight.normal),
+                    fontSize: 18,
+                    color: Color(0xFFB9BBCB),
+                    fontWeight: FontWeight.w500),
+                indicatorMinWidth: 20,
               ),
             ),
           ),

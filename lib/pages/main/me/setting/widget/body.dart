@@ -62,6 +62,13 @@ class SetBody extends StatelessWidget {
                 color: Color(0xFFE3E3E3),
               ),
               buildCell(logic.listData[2]),
+              const Divider(
+                height: 1,
+                indent: 10,
+                endIndent: 10,
+                color: Color(0xFFE3E3E3),
+              ),
+              buildCell(logic.listData[3]),
             ],
           ),
         ),

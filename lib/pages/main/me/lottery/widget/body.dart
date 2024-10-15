@@ -8,6 +8,7 @@ import 'package:oliapro/entities/app_draw_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/lottery/index.dart';
 import 'package:oliapro/pages/main/me/lottery/widget/draw_dialog.dart';
+import 'package:oliapro/pages/main/me/lottery/widget/gradient_title.dart';
 import 'package:oliapro/routes/a_routes.dart';
 
 import 'lucky_draw_paint.dart';
@@ -68,93 +69,54 @@ class _LotteryBodyState extends State<LotteryBody>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const SizedBox(
-          height: 60,
-        ),
         Stack(
           alignment: AlignmentDirectional.topCenter,
           children: [
             Obx(
               () => Align(
                 alignment: Alignment.topCenter,
-                child: Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: [
-                    Image.asset(
-                      Assets.lotteryLotteryInfoBg,
-                      matchTextDirection: true,
-                    ),
-                    Container(
-                        constraints: const BoxConstraints(maxWidth: 280),
-                        margin: const EdgeInsetsDirectional.only(
-                            top: 0, bottom: 45),
-                        alignment: Alignment.center,
-                        child: AutoSizeText(
-                          Tr.app_lottery_title
-                              .trArgs(["${widget.logic.drawNum.value}"]),
-                          maxLines: 2,
-                          textAlign: TextAlign.center,
-                          maxFontSize: 14,
-                          minFontSize: 7,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 14),
-                        ))
-                  ],
-                ),
+                child: Container(
+                    //constraints: const BoxConstraints(maxWidth: 280),
+                    margin:
+                        const EdgeInsetsDirectional.only(top: 90, bottom: 45),
+                    alignment: Alignment.center,
+                    child: GradientTitle(
+                        title: Tr.app_lottery_title
+                            .trArgs(["${widget.logic.drawNum.value}"]))),
               ),
             ),
             Container(
-              margin: const EdgeInsetsDirectional.only(top: 123),
-              child: Image.asset(
-                Assets.lotteryLotteryDrawB,
-                width: 375,
-                height: 375,
-                matchTextDirection: true,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 150),
+              margin: const EdgeInsets.only(top: 135),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   Container(
                     alignment: Alignment.topCenter,
-                    height: 410,
-                    // color: Colors.white,
-                    /*decoration: BoxDecoration(
-              image: DecorationImage(image: ExactAssetImage(Assets.lotteryBg))),*/
+                    height: 470,
                     child: Stack(
                       alignment: AlignmentDirectional.topCenter,
                       children: [
                         Positioned(
-                          top: 15,
-                          child: Stack(
-                            alignment: AlignmentDirectional.topCenter,
-                            children: [
-                              Image.asset(
-                                Assets.lotteryLotteryDrawBg,
-                                width: 287,
-                                height: 287,
-                                matchTextDirection: true,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Positioned(
                             bottom: 0,
                             child: GestureDetector(
                               child: Container(
-                                width: 180,
-                                height: 64,
+                                width: 290,
+                                height: 52,
                                 alignment: Alignment.center,
+                                margin: const EdgeInsetsDirectional.symmetric(
+                                    horizontal: 10),
                                 padding:
-                                    const EdgeInsetsDirectional.only(bottom: 5),
-                                decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                        fit: BoxFit.fill,
-                                        matchTextDirection: true,
-                                        image: ExactAssetImage(
-                                            Assets.lotteryLotteryBtn))),
+                                    const EdgeInsetsDirectional.only(bottom: 0),
+                                decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                        begin: AlignmentDirectional.topStart,
+                                        end: AlignmentDirectional.bottomEnd,
+                                        colors: [
+                                          Color(0xFF8E48FF),
+                                          Color(0xFFFF35FF),
+                                        ]),
+                                    borderRadius:
+                                        BorderRadiusDirectional.circular(30)),
                                 child: isClick
                                     ? Obx(() => AutoSizeText(
                                           "${Tr.app_to_lottery.tr}(${widget.logic.num.value})",
@@ -180,71 +142,109 @@ class _LotteryBodyState extends State<LotteryBody>
                               onTap: () => goDraw(),
                             )),
                         Positioned(
-                          top: 40,
+                          top: 10,
                           left: 0,
                           right: 0,
                           child: Container(
-                            width: double.maxFinite,
-                            height: radius * 2,
-                            alignment: Alignment.center,
+                            //color: Colors.blue,
+                            width: Get.width,
+                            height: Get.width,
+                            alignment: Alignment.topCenter,
                             child: Stack(
                               alignment: Alignment.center,
                               clipBehavior: Clip.none,
                               children: [
-                                Stack(
-                                  alignment: Alignment.center,
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    const SizedBox(
-                                      width: 130,
-                                      height: 130,
-                                    ),
-                                    GetBuilder<LotteryLogic>(
+                                PositionedDirectional(
+                                    top: 35,
+                                    child: GetBuilder<LotteryLogic>(
                                       assignId: true,
                                       init: LotteryLogic(),
                                       builder: (logic) {
                                         return logic.draw.isEmpty
-                                            ? const SizedBox.shrink()
+                                            ? Stack(
+                                                alignment:
+                                                    AlignmentDirectional.center,
+                                                children: [
+                                                  Transform.rotate(
+                                                    angle: 18 * pi / 180.0,
+                                                    child: Image.asset(
+                                                      Assets.iconDrawBg,
+                                                      width: 360,
+                                                      height: 360,
+                                                      matchTextDirection: true,
+                                                    ),
+                                                  ),
+                                                  Image.asset(
+                                                    Assets.lotteryLotteryCenter,
+                                                    width: 130,
+                                                    height: 130,
+                                                    matchTextDirection: true,
+                                                  )
+                                                ],
+                                              )
                                             : RepaintBoundary(
                                                 child: Transform.rotate(
                                                   angle: _angle * (pi * 2) -
                                                       _prizeResultPi,
-                                                  child: CustomPaint(
-                                                    size: const Size.fromRadius(
-                                                        radius),
-                                                    painter: LuckyDrawPaint(
-                                                        selectSize:
-                                                            logic.draw.length,
-                                                        colors: logic.draw
-                                                            .map((e) =>
-                                                                e.color ??
-                                                                Colors
-                                                                    .transparent)
-                                                            .toList(),
-                                                        contents: logic.draw
-                                                            .map((e) =>
-                                                                e.content ?? "")
-                                                            .toList(),
-                                                        images: logic.draw
-                                                            .map((e) => e.image)
-                                                            .toList()),
+                                                  child: Stack(
+                                                    alignment:
+                                                        AlignmentDirectional
+                                                            .center,
+                                                    children: [
+                                                      Transform.rotate(
+                                                        angle: 18 * pi / 180.0,
+                                                        child: Image.asset(
+                                                          Assets.iconDrawBg,
+                                                          width: 360,
+                                                          height: 360,
+                                                          matchTextDirection:
+                                                              true,
+                                                        ),
+                                                      ),
+                                                      CustomPaint(
+                                                        size: const Size
+                                                            .fromRadius(radius),
+                                                        painter: LuckyDrawPaint(
+                                                            selectSize: logic
+                                                                .draw.length,
+                                                            colors: logic.draw
+                                                                .map((e) =>
+                                                                    e.color ??
+                                                                    Colors
+                                                                        .transparent)
+                                                                .toList(),
+                                                            contents: logic.draw
+                                                                .map((e) =>
+                                                                    e.content ??
+                                                                    "")
+                                                                .toList(),
+                                                            images: logic.draw
+                                                                .map((e) =>
+                                                                    e.image)
+                                                                .toList()),
+                                                      ),
+                                                      Image.asset(
+                                                        Assets
+                                                            .lotteryLotteryCenter,
+                                                        width: 130,
+                                                        height: 130,
+                                                        matchTextDirection:
+                                                            true,
+                                                      )
+                                                    ],
                                                   ),
                                                 ),
                                               );
                                       },
-                                    ),
-                                    Positioned(
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        child: Image.asset(
-                                          Assets.lotteryLotteryPointer,
-                                          width: 80,
-                                          height: 80,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                    )),
+                                PositionedDirectional(
+                                    top: 0,
+                                    child: Image.asset(
+                                      Assets.lotteryLotteryPointer,
+                                      width: 90,
+                                      height: 90,
+                                      matchTextDirection: true,
+                                    ))
                               ],
                             ),
                           ),
@@ -255,33 +255,15 @@ class _LotteryBodyState extends State<LotteryBody>
                 ],
               ),
             ),
-            Container(
-              margin: const EdgeInsetsDirectional.only(top: 130),
-              child: Image.asset(
-                Assets.lotteryLotteryDrawF,
-                width: 355,
-                height: 355,
-                matchTextDirection: true,
-              ),
-            ),
           ],
         ),
-        /* Obx(
-          () => Container(
-            margin: const EdgeInsets.all(15),
-            child: Text(
-              Tr.app_lottery_num.trArgs(['${widget.logic.num.value}']),
-              style: const TextStyle(color: Colors.white, fontSize: 14),
-            ),
-          ),
-        ),*/
         GestureDetector(
           onTap: () => ARoutes.toRecharge(),
           child: Container(
             width: double.maxFinite,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: const Color(0x1AC3A0FF)),
+                color: Colors.transparent),
             padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: 15, vertical: 12),
             margin: const EdgeInsetsDirectional.only(
@@ -290,10 +272,10 @@ class _LotteryBodyState extends State<LotteryBody>
               Tr.app_lottery_hint.tr,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color: Color(0xFFC3A0FF),
+                color: Color(0x80FFFFFF),
                 fontSize: 14,
                 decoration: TextDecoration.underline,
-                decorationColor: Color(0xFFC3A0FF),
+                decorationColor: Color(0x80FFFFFF),
                 //decorationStyle: TextDecorationStyle.solid,
                 decorationThickness: 1,
               ),
@@ -309,22 +291,18 @@ class _LotteryBodyState extends State<LotteryBody>
   void goDraw() {
     if (isClick) {
       widget.logic.toDraw((index, data) {
-        if (mounted) {
-          setState(() {
-            isClick = false;
-          });
-        }
+        setState(() {
+          isClick = false;
+        });
         _prizeResult = (index / widget.logic.draw.length) +
             _midTweenDouble(widget.logic.draw);
         _angleController.forward(from: 0);
         Future.delayed(const Duration(seconds: 3), () {
           //showDrawResult(0);
           toDrawDialog(data);
-          if (mounted) {
-            setState(() {
-              isClick = true;
-            });
-          }
+          setState(() {
+            isClick = true;
+          });
         });
       });
     }
