@@ -6,7 +6,6 @@ import 'package:oliapro/dialogs/login_agree_dialog.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/init/login/index.dart';
 import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/animated_button.dart';
 
 class BuildGoogleLogin extends StatelessWidget {
   final LoginLogic logic;
@@ -15,16 +14,23 @@ class BuildGoogleLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedButton(
+    return GestureDetector(
       child: Container(
         width: double.maxFinite,
-        height: 52,
+        height: 56,
         padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
         margin: const EdgeInsetsDirectional.only(
-            start: 50, end: 50, top: 15, bottom: 0),
+            start: 40, end: 40, top: 15, bottom: 0),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadiusDirectional.circular(37),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x669341FF),
+              blurRadius: 15.0,
+              offset: Offset(0.0, 5.0),
+            ),
+          ],
+          borderRadius: BorderRadiusDirectional.circular(24),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -35,23 +41,20 @@ class BuildGoogleLogin extends StatelessWidget {
               width: 20,
               height: 20,
             ),
-            const Spacer(),
             Container(
               margin: const EdgeInsetsDirectional.symmetric(horizontal: 5),
               child: Text(
                 Tr.app_login_google.tr,
                 style: const TextStyle(
                     color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold),
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal),
               ),
             ),
-            const Spacer(),
-            const SizedBox(width: 24, height: 24)
           ],
         ),
       ),
-      onCall: () {
+      onTap: () {
         if (AppConstants.isTestMode) return;
         if (UserInfo.to.getCheck()) {
           logic.toGoogleSignIn();

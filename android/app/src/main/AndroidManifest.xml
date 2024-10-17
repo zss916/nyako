@@ -53,7 +53,7 @@
 
 
     <application
-        android:label="Mira"
+        android:label="Nyako"
         android:name="${applicationName}"
         android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">

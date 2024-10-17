@@ -4,7 +4,6 @@ import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/login_agree_dialog.dart';
 import 'package:oliapro/pages/init/login/index.dart';
 import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/animated_button.dart';
 
 class BuildTouristLogin extends StatelessWidget {
   final LoginLogic logic;
@@ -13,28 +12,25 @@ class BuildTouristLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedButton(
+    return GestureDetector(
       child: Container(
         width: double.maxFinite,
-        height: 52,
+        height: 56,
         alignment: AlignmentDirectional.center,
         margin: const EdgeInsetsDirectional.only(
-            start: 50, end: 50, top: 15, bottom: 0),
+            start: 40, end: 40, top: 15, bottom: 0),
         padding:
             const EdgeInsetsDirectional.symmetric(horizontal: 15, vertical: 10),
         decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color(0xFFAC53FB),
-              Color(0xFF7934F0),
-            ]),
-            borderRadius: BorderRadiusDirectional.all(Radius.circular(30))),
+            color: Color(0xFF9341FF),
+            borderRadius: BorderRadiusDirectional.all(Radius.circular(24))),
         child: Text(
           Tr.app_guest_login.tr,
           style: const TextStyle(
-              color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 18, fontWeight: FontWeight.normal),
         ),
       ),
-      onCall: () {
+      onTap: () {
         if (UserInfo.to.getCheck()) {
           logic.visitorLogin();
         } else {

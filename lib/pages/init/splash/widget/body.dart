@@ -6,27 +6,16 @@ class SplashBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
       children: [
-        Container(
-          margin: const EdgeInsetsDirectional.only(top: 120, bottom: 10),
-          child: Image.asset(
-            Assets.imgAppLogo,
-            width: 95,
-            height: 95,
-            matchTextDirection: false,
-          ),
-        ),
-        Image.asset(
-          Assets.imgMira,
-          scale: 3,
-          matchTextDirection: false,
-        ),
-        /*  const Text(
-          AppConstants.appName,
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
-        )*/
+        PositionedDirectional(
+            top: 0,
+            start: 0,
+            end: 0,
+            child: Image.asset(
+              Assets.iconSplashBg,
+            ))
       ],
     );
   }

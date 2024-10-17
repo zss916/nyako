@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_colors.dart';
 
 class LoginBtn extends StatelessWidget {
   final Widget child;
@@ -8,10 +7,17 @@ class LoginBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.maxFinite,
-      height: 54,
+      height: 56,
       decoration: BoxDecoration(
-          borderRadius: BorderRadiusDirectional.circular(30),
-          gradient: AppColors.btnGradient),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x669341FF),
+              blurRadius: 15.0,
+              offset: Offset(0.0, 5.0),
+            ),
+          ],
+          borderRadius: BorderRadiusDirectional.circular(24),
+          color: const Color(0xFF9341FF)),
       margin: const EdgeInsets.only(top: 20, bottom: 10, left: 40, right: 40),
       child: child,
     );

@@ -5,7 +5,6 @@ import 'package:oliapro/dialogs/login_agree_dialog.dart';
 import 'package:oliapro/pages/init/login/index.dart';
 import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/animated_button.dart';
 
 class BuildAccountLogin extends StatelessWidget {
   final LoginLogic logic;
@@ -14,28 +13,25 @@ class BuildAccountLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedButton(
+    return GestureDetector(
       child: Container(
         width: double.maxFinite,
-        height: 52,
+        height: 56,
         alignment: AlignmentDirectional.center,
         margin: const EdgeInsetsDirectional.only(
-            start: 50, end: 50, top: 15, bottom: 8),
+            start: 40, end: 40, top: 15, bottom: 8),
         padding:
             const EdgeInsetsDirectional.symmetric(horizontal: 15, vertical: 10),
         decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color(0xFF7770FF),
-              Color(0xFF5138FF),
-            ]),
-            borderRadius: BorderRadiusDirectional.all(Radius.circular(30))),
+            color: Color(0xFFF82DF4),
+            borderRadius: BorderRadiusDirectional.all(Radius.circular(24))),
         child: Text(
           Tr.app_login_username.tr,
           style: const TextStyle(
-              color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 18, fontWeight: FontWeight.normal),
         ),
       ),
-      onCall: () {
+      onTap: () {
         if (UserInfo.to.getCheck()) {
           logic.isShowGust
               ? ARoutes.toAccountLogin()

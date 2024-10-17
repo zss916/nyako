@@ -6,11 +6,15 @@ class SplashPage extends GetView<SplashLogic> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          toolbarHeight: 0,
+          leading: const SizedBox.shrink(),
+          systemOverlayStyle: lightBarStyle,
+        ),
         backgroundColor: Colors.black,
         extendBodyBehindAppBar: true,
-        body: SplashBg(
-          child: SplashBody(),
-        ));
+        body: const SplashBody());
   }
 }

@@ -8,7 +8,6 @@ import 'package:oliapro/pages/init/login/widget/build_account_login.dart';
 import 'package:oliapro/pages/init/login/widget/build_google_login.dart';
 import 'package:oliapro/pages/init/login/widget/build_tourist_login.dart';
 import 'package:oliapro/pages/init/login/widget/login_check.dart';
-import 'package:oliapro/pages/init/login/widget/login_logo.dart';
 import 'package:oliapro/services/user_info.dart';
 
 class LoginBody extends StatelessWidget {
@@ -24,10 +23,26 @@ class LoginBody extends StatelessWidget {
           child: Stack(
             alignment: AlignmentDirectional.topCenter,
             children: [
-              const LoginLogo(),
+              PositionedDirectional(
+                  top: 0,
+                  start: 0,
+                  end: 0,
+                  child: Image.asset(
+                    Assets.iconLoginBg,
+                    matchTextDirection: true,
+                  )),
+
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
+                  Container(
+                    margin: const EdgeInsetsDirectional.only(top: 100),
+                    child: Image.asset(
+                      Assets.iconLoginLogo,
+                      width: 142,
+                      height: 142,
+                    ),
+                  ),
                   const Spacer(
                     flex: 1,
                   ),
@@ -38,18 +53,20 @@ class LoginBody extends StatelessWidget {
                       if (logic.isShowGoogle)
                         PositionedDirectional(
                             top: 2,
-                            end: 50,
+                            end: 44,
                             child: Container(
                               width: 90,
-                              height: 33,
+                              height: 24,
                               alignment: AlignmentDirectional.topCenter,
                               padding: const EdgeInsetsDirectional.only(
-                                  top: 3, start: 2, end: 2),
+                                  top: 3, start: 2, end: 2, bottom: 3),
                               decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                      matchTextDirection: true,
-                                      image: ExactAssetImage(
-                                          Assets.imgLastLoginBg))),
+                                  borderRadius: BorderRadiusDirectional.only(
+                                      topStart: Radius.circular(10),
+                                      bottomStart: Radius.circular(10),
+                                      bottomEnd: Radius.zero,
+                                      topEnd: Radius.circular(10)),
+                                  color: Color(0xFF4AFFE4)),
                               child: AutoSizeText(
                                 Tr.appLastLogin.tr,
                                 maxLines: 1,
@@ -57,7 +74,7 @@ class LoginBody extends StatelessWidget {
                                 maxFontSize: 12,
                                 minFontSize: 8,
                                 style: const TextStyle(
-                                    color: Color(0xFF8A1292), fontSize: 12),
+                                    color: Color(0xFF07435E), fontSize: 12),
                               ),
                             ))
                     ],
@@ -70,18 +87,20 @@ class LoginBody extends StatelessWidget {
                       if (!logic.isShowGoogle && !logic.isShowGust)
                         PositionedDirectional(
                             top: 2,
-                            end: 50,
+                            end: 40,
                             child: Container(
                               width: 90,
-                              height: 33,
+                              height: 24,
                               alignment: AlignmentDirectional.topCenter,
                               padding: const EdgeInsetsDirectional.only(
-                                  top: 3, start: 2, end: 2),
+                                  top: 3, start: 2, end: 2, bottom: 3),
                               decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                      matchTextDirection: true,
-                                      image: ExactAssetImage(
-                                          Assets.imgLastLoginBg))),
+                                  borderRadius: BorderRadiusDirectional.only(
+                                      topStart: Radius.circular(10),
+                                      bottomStart: Radius.circular(10),
+                                      bottomEnd: Radius.zero,
+                                      topEnd: Radius.circular(10)),
+                                  color: Color(0xFF4AFFE4)),
                               child: AutoSizeText(
                                 Tr.appLastLogin.tr,
                                 maxLines: 1,
@@ -89,7 +108,7 @@ class LoginBody extends StatelessWidget {
                                 maxFontSize: 12,
                                 minFontSize: 8,
                                 style: const TextStyle(
-                                    color: Color(0xFF8A1292), fontSize: 12),
+                                    color: Color(0xFF07435E), fontSize: 12),
                               ),
                             ))
                     ],

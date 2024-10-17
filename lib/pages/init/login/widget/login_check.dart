@@ -41,7 +41,7 @@ class _LoginCheckState extends State<LoginCheck> {
                 ),
                 color: Colors.transparent,
                 child: Image.asset(
-                  widget.checked ? Assets.imgChecked : Assets.imgUncheck,
+                  widget.checked ? Assets.iconChecked : Assets.iconUncheck,
                   fit: BoxFit.fill,
                   height: 20,
                   width: 20,
@@ -57,7 +57,8 @@ class _LoginCheckState extends State<LoginCheck> {
                     const TextSpan(text: ' '),
                     TextSpan(
                         style: TextStyle(
-                            color: widget.color ?? const Color(0xFFF447FF),
+                            decorationColor: const Color(0xFF9341FF),
+                            color: widget.color ?? const Color(0xFF9341FF),
                             decoration: TextDecoration.underline),
                         text: Tr.app_login_privacy_policy.tr,
                         recognizer: TapGestureRecognizer()
@@ -69,7 +70,8 @@ class _LoginCheckState extends State<LoginCheck> {
                     const TextSpan(text: ' '),
                     TextSpan(
                         style: TextStyle(
-                            color: widget.color ?? const Color(0xFFF447FF),
+                            decorationColor: const Color(0xFF9341FF),
+                            color: widget.color ?? const Color(0xFF9341FF),
                             decoration: TextDecoration.underline),
                         text: Tr.app_login_terms_service.tr,
                         recognizer: TapGestureRecognizer()
@@ -78,7 +80,7 @@ class _LoginCheckState extends State<LoginCheck> {
                           }),
                   ],
                   style: TextStyle(
-                      color: widget.color ?? Colors.white70,
+                      color: widget.color ?? const Color(0xFF5B5A5B),
                       fontSize: 12,
                       height: 1.4),
                 )

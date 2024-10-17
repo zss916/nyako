@@ -25,12 +25,12 @@ class AppConstants {
   static bool openShowCall = false;
 
   /// adjust默认值，(上线放开)
-  static String adjustId = 'qxb79pco0sg0';
+  static String adjustId = '';
 
-  static String adjustEventKey = 'jlkvtl';
+  static String adjustEventKey = '';
 
   ///appName
-  static const appName = 'Mira';
+  static const appName = 'Nyako';
   static const channelName = 'olialite';
 
   /// 个人隐私和协议

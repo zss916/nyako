@@ -3,7 +3,7 @@ library account_login_page;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/agora/rtm/rtm.dart';
-import 'package:oliapro/common/app_colors.dart';
+import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/http/api/index.dart';
 import 'package:oliapro/pages/init/account/login/widget/body.dart';
 import 'package:oliapro/routes/a_routes.dart';

@@ -1,7 +1,6 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/login_agree_dialog.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -10,7 +9,6 @@ import 'package:oliapro/pages/init/account/login/widget/login_btn.dart';
 import 'package:oliapro/pages/init/login/widget/login_check.dart';
 import 'package:oliapro/routes/app_pages.dart';
 import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/animated_button.dart';
 
 class AccountLoginBody extends StatefulWidget {
   final AccountLoginLogic logic;
@@ -58,136 +56,206 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return SizedBox(
+      width: Get.width,
+      height: Get.height,
+      child: Stack(
+        alignment: AlignmentDirectional.topCenter,
         children: [
-          Container(
-            width: Get.width,
-            height: 250.h,
-            padding: const EdgeInsetsDirectional.only(
-                start: 10, end: 10, bottom: 10),
-            alignment: AlignmentDirectional.bottomCenter,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: ExactAssetImage(Assets.imgLoginTopBg))),
-            child: AutoSizeText(
-              Tr.app_login_username.tr,
-              maxLines: 1,
-              maxFontSize: 36,
-              minFontSize: 20,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          Container(
-            margin: const EdgeInsetsDirectional.only(
-                top: 5, bottom: 10, start: 15, end: 15),
-            child: TextField(
-              controller: _editNameCtrl,
-              maxLength: 15,
-              cursorColor: const Color(0xFF982AFF),
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
-              decoration: InputDecoration(
-                fillColor: Colors.transparent,
-                filled: true,
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
-                counterText: '',
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xFF7934F0)),
-                ),
-                /*border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red)),*/
-                hintText: Tr.app_details_edit_name.tr,
-                hintStyle: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal),
-              ),
-            ),
-          ),
-          Container(
-            margin: const EdgeInsetsDirectional.only(
-                top: 10, bottom: 10, start: 15, end: 15),
-            child: TextField(
-              controller: _editPwdCtrl,
-              maxLength: 15,
-              obscureText: _obscureText,
-              cursorColor: const Color(0xFF982AFF),
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
-              decoration: InputDecoration(
-                  fillColor: Colors.transparent,
-                  filled: true,
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                  counterText: '',
-                  /*border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide.none),*/
-                  focusedBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xFF7934F0)),
+          PositionedDirectional(
+              top: 0,
+              start: 0,
+              end: 0,
+              child: Image.asset(
+                Assets.iconAccountLoginBg,
+                matchTextDirection: true,
+              )),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  margin:
+                      const EdgeInsetsDirectional.only(top: 100, bottom: 10),
+                  child: Image.asset(
+                    Assets.iconSmallLogo,
+                    width: 52,
+                    height: 52,
                   ),
-                  hintText: Tr.app_promapp_password.tr,
-                  hintStyle: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal),
-                  suffix: InkWell(
-                    borderRadius: BorderRadius.circular(30),
-                    onTap: () {
-                      if (mounted) {
-                        setState(() {
-                          _obscureText = !_obscureText;
-                        });
-                      }
-                    },
-                    child: Container(
-                      margin: const EdgeInsetsDirectional.all(1),
-                      child: Image.asset(
-                        _obscureText ? Assets.imgPsdH : Assets.imgPsdV,
-                        height: 22,
-                        width: 22,
-                        matchTextDirection: true,
+                ),
+                Container(
+                  padding: const EdgeInsetsDirectional.only(
+                      start: 10, end: 10, bottom: 0),
+                  child: Text(
+                    Tr.app_login_username.tr,
+                    maxLines: 1,
+                    style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 10,
+                    end: 10,
+                  ),
+                  child: Text(
+                    Tr.app_login_top_title.trArgs([AppConstants.appName]),
+                    maxLines: 1,
+                    style: const TextStyle(
+                        color: Color(0xFF7D6E87),
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                  height: 54,
+                  width: double.maxFinite,
+                  padding:
+                      const EdgeInsetsDirectional.symmetric(horizontal: 12),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadiusDirectional.circular(16)),
+                  margin: const EdgeInsetsDirectional.only(
+                      top: 5, bottom: 10, start: 40, end: 40),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsetsDirectional.only(end: 12),
+                        child: Image.asset(
+                          Assets.iconAccountIc,
+                          matchTextDirection: true,
+                          width: 22,
+                          height: 22,
+                        ),
+                      ),
+                      const VerticalDivider(
+                        width: 1,
+                        color: Color(0xFFD8D8D8),
+                        indent: 15,
+                        endIndent: 15,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Expanded(
+                          child: TextField(
+                        controller: _editNameCtrl,
+                        cursorColor: const Color(0xFF982AFF),
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: Tr.app_details_edit_name.tr,
+                          hintStyle: const TextStyle(
+                              fontSize: 15,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal),
+                        ),
+                      ))
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 54,
+                  width: double.maxFinite,
+                  padding:
+                      const EdgeInsetsDirectional.symmetric(horizontal: 12),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadiusDirectional.circular(16)),
+                  margin: const EdgeInsetsDirectional.only(
+                      top: 10, bottom: 10, start: 40, end: 40),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsetsDirectional.only(end: 12),
+                        child: Image.asset(
+                          Assets.iconPsdIc,
+                          matchTextDirection: true,
+                          width: 22,
+                          height: 22,
+                        ),
+                      ),
+                      const VerticalDivider(
+                        width: 1,
+                        color: Color(0xFFD8D8D8),
+                        indent: 15,
+                        endIndent: 15,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Expanded(
+                          child: TextField(
+                        controller: _editPwdCtrl,
+                        //maxLength: 15,
+                        obscureText: _obscureText,
+                        cursorColor: const Color(0xFF982AFF),
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.normal),
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: Tr.app_promapp_password.tr,
+                            hintStyle: const TextStyle(
+                                fontSize: 15,
+                                color: Color(0xFFBCB6C4),
+                                fontWeight: FontWeight.normal),
+                            suffix: InkWell(
+                              borderRadius: BorderRadius.circular(30),
+                              onTap: () {
+                                if (mounted) {
+                                  setState(() {
+                                    _obscureText = !_obscureText;
+                                  });
+                                }
+                              },
+                              child: Container(
+                                margin: const EdgeInsetsDirectional.all(1),
+                                child: Image.asset(
+                                  _obscureText
+                                      ? Assets.iconPsdH
+                                      : Assets.iconPsdV,
+                                  height: 22,
+                                  width: 22,
+                                  matchTextDirection: true,
+                                ),
+                              ),
+                            )),
+                      ))
+                    ],
+                  ),
+                ),
+                GestureDetector(
+                  child: LoginBtn(
+                    child: Center(
+                      child: Text(
+                        Tr.app_account_login.tr,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
-                  )),
-            ),
-          ),
-          AnimatedButton(
-            child: LoginBtn(
-              child: Center(
-                child: Text(
-                  Tr.app_account_login.tr,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
+                  ),
+                  onTap: () {
+                    final account = _editNameCtrl.value.text.trim();
+                    final password = _editPwdCtrl.value.text.trim();
+                    if (UserInfo.to.getCheck()) {
+                      widget.logic.onSubmit(account, password);
+                    } else {
+                      showAgreeDialog(() {
+                        widget.logic.onSubmit(account, password);
+                      });
+                    }
+                  },
                 ),
-              ),
-            ),
-            onCall: () {
-              final account = _editNameCtrl.value.text.trim();
-              final password = _editPwdCtrl.value.text.trim();
-              if (UserInfo.to.getCheck()) {
-                widget.logic.onSubmit(account, password);
-              } else {
-                showAgreeDialog(() {
-                  widget.logic.onSubmit(account, password);
-                });
-              }
-            },
-          ),
 
-          /* Container(
+                /* Container(
             width: Get.width,
             margin:
                 const EdgeInsetsDirectional.only(top: 15, start: 15, end: 15),
@@ -211,12 +279,16 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                       decoration: TextDecoration.underline),
                 )),
           ),*/
-          Container(
-            margin: EdgeInsetsDirectional.only(top: h, start: 15, end: 15),
-            child: LoginCheck(
-              UserInfo.to.getCheck(),
+                Container(
+                  margin:
+                      EdgeInsetsDirectional.only(top: h, start: 15, end: 15),
+                  child: LoginCheck(
+                    UserInfo.to.getCheck(),
+                  ),
+                ),
+              ],
             ),
-          ),
+          )
         ],
       ),
     );

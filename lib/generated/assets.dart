@@ -65,6 +65,8 @@ class Assets {
   static const String frameSignFrame = 'assets/frame/sign_frame.png';
   static const String frameVipFrame = 'assets/frame/vip_frame.png';
   static const String iconAboutUs = 'assets/icon/about_us.png';
+  static const String iconAccountIc = 'assets/icon/account_ic.png';
+  static const String iconAccountLoginBg = 'assets/icon/account_login_bg.png';
   static const String iconAddCard = 'assets/icon/add_card.png';
   static const String iconAddCardSmall = 'assets/icon/add_card_small.png';
   static const String iconAddInviteFriend = 'assets/icon/add_invite_friend.png';
@@ -74,6 +76,8 @@ class Assets {
   static const String iconBlacklist = 'assets/icon/blacklist.png';
   static const String iconCallCard = 'assets/icon/call_card.png';
   static const String iconCheckIn = 'assets/icon/check_in.png';
+  static const String iconChecked = 'assets/icon/checked.png';
+  static const String iconClosePage = 'assets/icon/close_page.png';
   static const String iconCodeCopy = 'assets/icon/code_copy.png';
   static const String iconCopyLink = 'assets/icon/copy_link.png';
   static const String iconCustomer = 'assets/icon/customer.png';
@@ -104,6 +108,8 @@ class Assets {
   static const String iconInviteBtn = 'assets/icon/invite_btn.png';
   static const String iconKingBig = 'assets/icon/king_big.png';
   static const String iconKingVip = 'assets/icon/king_vip.png';
+  static const String iconLoginBg = 'assets/icon/login_bg.png';
+  static const String iconLoginLogo = 'assets/icon/login_logo.png';
   static const String iconMale = 'assets/icon/male.png';
   static const String iconMaleS = 'assets/icon/male_s.png';
   static const String iconMatchForeground = 'assets/icon/match_foreground.png';
@@ -119,7 +125,10 @@ class Assets {
   static const String iconNyakoVipIc = 'assets/icon/nyako_vip_ic.png';
   static const String iconOrderList = 'assets/icon/order_list.png';
   static const String iconPassword = 'assets/icon/password.png';
+  static const String iconPsdH = 'assets/icon/psd_h.png';
+  static const String iconPsdIc = 'assets/icon/psd_ic.png';
   static const String iconPsdS = 'assets/icon/psd_s.png';
+  static const String iconPsdV = 'assets/icon/psd_v.png';
   static const String iconRechargeGift = 'assets/icon/recharge_gift.png';
   static const String iconRechargeSuccessIcon =
       'assets/icon/recharge_success_icon.png';
@@ -142,6 +151,8 @@ class Assets {
   static const String iconShareTh = 'assets/icon/share_th.png';
   static const String iconShareTr = 'assets/icon/share_tr.png';
   static const String iconShareVi = 'assets/icon/share_vi.png';
+  static const String iconSmallLogo = 'assets/icon/small_logo.png';
+  static const String iconSplashBg = 'assets/icon/splash_bg.png';
   static const String iconSwitchClose = 'assets/icon/switch_close.png';
   static const String iconSwitchOpen = 'assets/icon/switch_open.png';
   static const String iconSystem = 'assets/icon/system.png';
@@ -156,6 +167,7 @@ class Assets {
   static const String iconTabProfile = 'assets/icon/tab_profile.png';
   static const String iconTabProfileS = 'assets/icon/tab_profile_s.png';
   static const String iconToolsChatCard = 'assets/icon/tools_chat_card.png';
+  static const String iconUncheck = 'assets/icon/uncheck.png';
   static const String iconVip = 'assets/icon/vip.png';
   static const String iconVipBadge = 'assets/icon/vip_badge.png';
   static const String iconVipOpenBg = 'assets/icon/vip_open_bg.png';
