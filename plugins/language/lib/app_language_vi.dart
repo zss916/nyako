@@ -1,4 +1,5 @@
 const language_vi = {
+  "mira_to_recharge": "Tiếp tục nạp tiền",
   "mira_use": "Sử dụng",
   "mira_copy": "Sao chép",
   "mira_next_pay_content":

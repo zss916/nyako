@@ -1,4 +1,5 @@
 const language_pt = {
+  "mira_to_recharge": "Continuar a recarga",
   "mira_use": "Usar",
   "mira_copy": "Copiar",
   "mira_next_pay_content":

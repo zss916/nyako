@@ -1,4 +1,5 @@
 const language_ar = {
+  "mira_to_recharge": "استمر في إعادة الشحن",
   "mira_use": "إستعمال",
   "mira_copy": "نسخ",
   "mira_next_pay_content": "",

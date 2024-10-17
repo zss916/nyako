@@ -96,7 +96,7 @@ class OrderData {
         break;
       case 1:
         {
-          txtColor = Colors.green;
+          txtColor = const Color(0xFF3BC2FF);
         }
         break;
       case 2:

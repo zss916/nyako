@@ -1,5 +1,6 @@
 // 印度
 const language_hi = {
+  "mira_to_recharge": "टॉप-अप करना जारी रखें",
   "mira_use": "उपयोग",
   "mira_copy": "कॉपी",
   "mira_next_pay_content":

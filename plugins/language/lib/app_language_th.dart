@@ -1,5 +1,6 @@
 // 泰语
 const language_th = {
+  "mira_to_recharge": "เติมเงินต่อไป",
   "mira_use": "ใช้",
   "mira_copy": "สำเนา",
   "mira_next_pay_content":

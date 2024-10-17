@@ -1,4 +1,5 @@
 const language_ind = {
+  "mira_to_recharge": "Lanjutkan untuk mengisi ulang",
   "mira_use": "Menggunakan",
   "mira_copy": "Salin",
   "mira_next_pay_content":

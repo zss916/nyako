@@ -28,14 +28,16 @@ class CostListPage extends GetView<CostListLogic> {
             length: 3,
             child: Scaffold(
               appBar: AppBar(
+                titleSpacing: 0,
                 backgroundColor: Colors.transparent,
                 elevation: 0,
                 leading: const SizedBox.shrink(),
                 centerTitle: true,
                 leadingWidth: 0,
                 title: Container(
+                  width: double.maxFinite,
                   decoration: BoxDecoration(
-                      color: Colors.transparent,
+                      color: Colors.white,
                       borderRadius: BorderRadiusDirectional.circular(0)),
                   child: TabBar(
                     onTap: (index) {
@@ -64,7 +66,7 @@ class CostListPage extends GetView<CostListLogic> {
                     ],
                     labelStyle: const TextStyle(
                         fontSize: 14,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold),
                     unselectedLabelStyle: const TextStyle(
                         fontSize: 14,
@@ -156,7 +158,7 @@ class CostListPage extends GetView<CostListLogic> {
                       Text(
                         "${data.type == 2 ? '+' : '-'}${data.diamonds ?? '--'}",
                         style: const TextStyle(
-                            color: Color(0xFF9341FF),
+                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
@@ -211,12 +213,12 @@ class CostListPage extends GetView<CostListLogic> {
             child: AutoSizeText(
               text,
               maxLines: 1,
-              maxFontSize: 17,
+              maxFontSize: 14,
               minFontSize: 8,
               style: const TextStyle(
-                  fontSize: 17,
+                  fontSize: 14,
                   color: Colors.black,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w500),
             ),
           )
         : Tab(
@@ -224,8 +226,8 @@ class CostListPage extends GetView<CostListLogic> {
               text,
               style: const TextStyle(
                   color: Color(0xFF9B989D),
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
             ),
           );
   }

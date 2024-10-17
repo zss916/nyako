@@ -2,10 +2,19 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/language_key.dart';
+import 'package:oliapro/dialogs/sheet_service.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/charge/billing.dart';
+import 'package:oliapro/routes/app_pages.dart';
+
+void showChargeFailDialog({String? state}) {
+  Get.dialog(
+      ChargeFail(
+        state: state,
+      ),
+      routeSettings: const RouteSettings(name: AppPages.rechargeFailDialog));
+}
 
 class ChargeFail extends StatelessWidget {
   final String? state;
@@ -31,16 +40,10 @@ class ChargeFail extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            width: 305,
-            height: 367,
+            width: 315,
+            height: 344,
             decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: AlignmentDirectional.topCenter,
-                    end: AlignmentDirectional.bottomCenter,
-                    colors: [
-                      Color(0xFF201436),
-                      Color(0xFF0C0C32),
-                    ]),
+                color: Colors.white,
                 borderRadius: BorderRadiusDirectional.all(Radius.circular(30))),
             padding:
                 const EdgeInsets.only(left: 20, right: 20, bottom: 5, top: 0),
@@ -50,23 +53,23 @@ class ChargeFail extends StatelessWidget {
                 Container(
                   margin: const EdgeInsetsDirectional.only(top: 30, bottom: 20),
                   child: Image.asset(
-                    Assets.imgFail,
+                    Assets.iconWarming,
                     matchTextDirection: true,
-                    width: 84,
-                    height: 84,
+                    width: 60,
+                    height: 60,
                   ),
                 ),
                 Text(
                   title,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
+                      color: Colors.black,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
                 Container(
                   margin: const EdgeInsets.only(
-                      top: 10, bottom: 20, left: 10, right: 10),
+                      top: 16, bottom: 20, left: 10, right: 10),
                   child: AutoSizeText(
                     content2,
                     maxLines: 3,
@@ -74,20 +77,15 @@ class ChargeFail extends StatelessWidget {
                     maxFontSize: 15,
                     minFontSize: 13,
                     style: const TextStyle(
-                        color: Color(0xFFC3A0FF),
+                        color: Color(0xFF9B989D),
                         fontSize: 15,
-                        fontWeight: FontWeight.normal),
+                        fontWeight: FontWeight.w500),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    if (cancelFunc != null) {
-                      cancelFunc?.call();
-                    } else {
-                      Get.back();
-                    }
-                    call?.call();
+                    Get.back();
                     Billing.payCallBack(type: Billing.type, code: 3006);
                   },
                   child: Container(
@@ -97,10 +95,10 @@ class ChargeFail extends StatelessWidget {
                     margin:
                         const EdgeInsetsDirectional.symmetric(horizontal: 15),
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        gradient: AppColors.btnGradient,
-                        borderRadius: const BorderRadiusDirectional.all(
-                            Radius.circular(30))),
+                    decoration: const BoxDecoration(
+                        color: Color(0xFF9341FF),
+                        borderRadius:
+                            BorderRadiusDirectional.all(Radius.circular(30))),
                     child: Text(
                       btn1,
                       style: const TextStyle(
@@ -112,11 +110,8 @@ class ChargeFail extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    if (cancelFunc != null) {
-                      cancelFunc?.call();
-                    } else {
-                      Get.back();
-                    }
+                    Get.back();
+                    showServiceSheet();
                     Billing.payCallBack(type: Billing.type, code: 3007);
                   },
                   child: Container(
@@ -135,7 +130,7 @@ class ChargeFail extends StatelessWidget {
                     child: Text(
                       btn2,
                       style: const TextStyle(
-                          color: Colors.white,
+                          color: Color(0xFF9B989D),
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
@@ -144,7 +139,7 @@ class ChargeFail extends StatelessWidget {
               ],
             ),
           ),
-          PositionedDirectional(
+          /* PositionedDirectional(
               top: 10,
               end: 10,
               child: GestureDetector(
@@ -161,7 +156,7 @@ class ChargeFail extends StatelessWidget {
                   width: 30,
                   height: 30,
                 ),
-              ))
+              ))*/
         ],
       ),
     );

@@ -16,6 +16,7 @@ dependencies:
 
 
   #shimmer: ^2.0.0
+  #flutter_ringtone_player: ^4.0.0+3
   cupertino_icons: ^1.0.2
   avatar_glow: ^3.0.1
   get: 4.6.6

@@ -1,5 +1,6 @@
 // 土耳其
 const language_tr = {
+  "mira_to_recharge": "satın almaya devam et",
   "mira_use": "Kullanım",
   "mira_copy": "Kopyala",
   "mira_next_pay_content":

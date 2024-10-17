@@ -83,6 +83,11 @@ class MeLogic extends GetxController {
         ARoutes.toChatRecord();
         break;
       case 3:
+        /*GameDialogManager.openRechargeSuccess(
+            drawCount: 0, diamonds: "200", isVipOrder: true, isBot: false);
+*/
+        /*showSheetRechargeSuccess(
+            drawCount: 0, diamonds: "200", isVipOrder: true);*/
         showServiceSheet();
         break;
       case 4:

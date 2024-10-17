@@ -446,9 +446,13 @@ class AppPages {
 
   static const googleRateSheet = 'google_rate_sheet';
 
+  static const rechargeSuccessSheet = 'recharge_success_sheet';
+
   static const vipGetDialog = 'vip_get_dialog';
 
   static const appUpdateDialog = 'app_update_dialog';
 
   static const homeQuickRechargeDialog = 'home quick recharge dialog';
+
+  static const rechargeFailDialog = 'recharge_fail_dialog';
 }

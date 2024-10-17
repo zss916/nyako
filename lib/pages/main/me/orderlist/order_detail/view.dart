@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_order_entity.dart';
@@ -23,7 +22,7 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
         appBar: BaseAppBar(
           title: Tr.app_order_one_details.tr,
         ),
-        backgroundColor: AppColors.splashBg,
+        backgroundColor: const Color(0xFFF4F5F6),
         body: SingleChildScrollView(
           padding: const EdgeInsetsDirectional.only(
               top: 20, start: 20, end: 20, bottom: 20),
@@ -40,17 +39,17 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
   Container buildHeader(String titleStr, Color txtColor, OrderData data) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white10,
-        borderRadius: BorderRadius.circular(20),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
       ),
       constraints: const BoxConstraints(minHeight: 145),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Image.asset(
-            (data.vipDays == null) ? Assets.imgDiamond : Assets.imgKing,
-            width: 46,
-            height: 46,
+            (data.vipDays == null) ? Assets.iconDiamond : Assets.iconKingBig,
+            width: 48,
+            height: 48,
             matchTextDirection: true,
           ),
           Container(
@@ -63,7 +62,7 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                       Text(
                         '${controller.data.diamonds ?? 0}',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontFamily: AppConstants.fontsBold,
                             fontSize: 24,
                             fontWeight: FontWeight.w500),
@@ -95,7 +94,7 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                           softWrap: true,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                              color: Colors.white, fontSize: 16),
+                              color: Colors.black, fontSize: 16),
                         ),
                       ),
                       if (data.showDiamond != 0)
@@ -114,7 +113,7 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                               margin:
                                   const EdgeInsetsDirectional.only(start: 2),
                               child: Image.asset(
-                                Assets.imgDiamond,
+                                Assets.iconDiamond,
                                 matchTextDirection: true,
                                 width: 14,
                                 height: 14,
@@ -134,8 +133,8 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
     return Container(
       margin: const EdgeInsets.only(top: 15),
       decoration: BoxDecoration(
-        color: Colors.white10,
-        borderRadius: BorderRadius.circular(20),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(14),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
       child: Column(
@@ -145,15 +144,17 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_price.tr,
-                style: const TextStyle(color: Colors.white, fontSize: 14),
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
               ),
               Text(
                 "${AppFormatUtil.currencyToSymbol(data.currencyCode)} ${data.currencyFee != null ? data.currencyFee! / 100.0 : '--'}",
-                style: TextStyle(
-                    color: Colors.white54,
+                style: const TextStyle(
+                    color: Color(0xFF999999),
                     fontSize: 14,
-                    fontFamily: AppConstants.fontsBold,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.w500),
               ),
             ],
           ),
@@ -165,15 +166,17 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_product_info.tr,
-                style: const TextStyle(color: Colors.white, fontSize: 14),
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14),
               ),
               Text(
                 "${data.diamonds}${Tr.app_diamond.tr}",
-                style: TextStyle(
-                    color: Colors.white54,
-                    fontFamily: AppConstants.fontsBold,
+                style: const TextStyle(
+                    color: Color(0xFF999999),
                     fontSize: 14,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.w500),
               ),
             ],
           ),
@@ -185,13 +188,16 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_createAt.tr,
-                style: const TextStyle(color: Colors.white, fontSize: 14),
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
               ),
               Text(
                 data.createdAtTime,
                 style: const TextStyle(
-                    color: Colors.white54,
-                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF999999),
+                    fontWeight: FontWeight.w500,
                     fontSize: 14),
               ),
             ],
@@ -206,7 +212,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                 constraints: const BoxConstraints(maxWidth: 180),
                 child: Text(
                   Tr.app_order_channelName.tr,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               Expanded(
@@ -216,8 +225,8 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                 child: Text(
                   (data.channelName ?? "--"),
                   style: const TextStyle(
-                      color: Colors.white54,
-                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF999999),
+                      fontWeight: FontWeight.w500,
                       fontSize: 14),
                 ),
               )),
@@ -233,7 +242,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
               children: [
                 Text(
                   Tr.app_order_tradeNo.tr,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 ),
                 Expanded(
                     child: Container(
@@ -249,20 +261,20 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                         textAlign: TextAlign.end,
                         softWrap: true,
                         style: TextStyle(
-                            color: Colors.white54,
+                            color: const Color(0xFF999999),
                             fontFamily: AppConstants.fontsBold,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                             fontSize: 12),
                       )),
-                      /* const SizedBox(
-                        width: 6,
+                      const SizedBox(
+                        width: 3,
                       ),
                       Image.asset(
-                        Assets.imageCodeCopy,
+                        Assets.iconCodeCopy,
                         width: 14,
                         height: 14,
                         matchTextDirection: true,
-                      )*/
+                      )
                     ],
                   ),
                 ))
@@ -277,14 +289,16 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_orderNo.tr,
-                style: const TextStyle(color: Colors.white, fontSize: 14),
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500),
               ),
               Text(
                 data.orderNo ?? '--',
-                style: TextStyle(
-                    color: Colors.white54,
-                    fontFamily: AppConstants.fontsBold,
-                    fontWeight: FontWeight.bold,
+                style: const TextStyle(
+                    color: Color(0xFF999999),
+                    fontWeight: FontWeight.w500,
                     fontSize: 14),
               ),
             ],
@@ -301,14 +315,14 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
         margin: const EdgeInsets.only(top: 15),
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
         decoration: BoxDecoration(
-          color: Colors.white10,
-          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(14),
         ),
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.asset(
-              Assets.imgOrderDetailsService,
+              Assets.iconCustomer,
               matchTextDirection: true,
               width: 30,
               height: 30,
@@ -324,14 +338,14 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                 minFontSize: 10,
                 textAlign: TextAlign.start,
                 style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 14,
                     fontWeight: FontWeight.bold),
               ),
             )),
             Image.asset(
               matchTextDirection: true,
-              Assets.imgArrowEnd,
+              Assets.iconNextB,
               width: 16,
               height: 16,
             )

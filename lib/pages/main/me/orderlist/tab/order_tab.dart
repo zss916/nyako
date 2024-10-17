@@ -74,14 +74,14 @@ class _OrderTabState extends State<OrderTab>
         isScrollable: true,
         padding: EdgeInsets.zero,
         controller: controller,
-        labelColor: Colors.black,
-        unselectedLabelColor: const Color(0xFF9B989D),
+        labelColor: const Color(0xFF9341FF),
+        unselectedLabelColor: Colors.black,
         labelStyle: const TextStyle(
-            fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+            fontSize: 21,
+            color: Color(0xFF9341FF),
+            fontWeight: FontWeight.bold),
         unselectedLabelStyle: const TextStyle(
-            fontSize: 16,
-            color: Color(0xFF9B989D),
-            fontWeight: FontWeight.w400),
+            fontSize: 21, color: Colors.black, fontWeight: FontWeight.bold),
         indicator: const RRecTabIndicator(
             radius: 2,
             insets: EdgeInsets.only(bottom: 5),

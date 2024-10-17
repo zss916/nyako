@@ -35,9 +35,9 @@ class OrderListPage extends GetView<OrderListLogic> {
                 elevation: 0,
                 backgroundColor: Colors.transparent,
                 title: Container(
-                  margin: const EdgeInsetsDirectional.symmetric(horizontal: 15),
+                  //margin: const EdgeInsetsDirectional.symmetric(horizontal: 15),
                   decoration: BoxDecoration(
-                      color: Colors.transparent,
+                      color: Colors.white,
                       borderRadius: BorderRadiusDirectional.circular(0)),
                   child: TabBar(
                     onTap: (index) {
@@ -69,12 +69,12 @@ class OrderListPage extends GetView<OrderListLogic> {
                     ],
                     labelColor: Colors.black,
                     labelStyle: const TextStyle(
-                        fontSize: 14,
+                        fontSize: 13,
                         color: Colors.black,
                         fontWeight: FontWeight.bold),
                     unselectedLabelStyle: const TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFF2A272A),
+                        fontSize: 13,
+                        color: Colors.black,
                         fontWeight: FontWeight.normal),
                   ),
                 ),
@@ -116,9 +116,7 @@ class OrderListPage extends GetView<OrderListLogic> {
         width: double.maxFinite,
         margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
         decoration: BoxDecoration(
-          color: Colors.white10,
-          gradient: const LinearGradient(
-              colors: [Color(0xFFFFE3ED), Color(0xFFFFF2F6)]),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(14),
         ),
         padding: const EdgeInsets.all(15),
@@ -150,19 +148,19 @@ class OrderListPage extends GetView<OrderListLogic> {
                             Container(
                               margin: const EdgeInsetsDirectional.only(end: 3),
                               child: Image.asset(
-                                Assets.imgDiamond,
+                                Assets.iconDiamond,
                                 width: 25,
                                 height: 25,
                                 matchTextDirection: true,
                               ),
                             ),
                             AutoSizeText(
-                              "+${data.diamonds ?? '--'}",
+                              "${data.diamonds ?? '--'}",
                               maxFontSize: 24,
                               minFontSize: 12,
                               maxLines: 1,
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 24,
                                   fontFamily: AppConstants.fontsBold,
                                   fontWeight: FontWeight.w500),
@@ -177,7 +175,7 @@ class OrderListPage extends GetView<OrderListLogic> {
                                 margin:
                                     const EdgeInsetsDirectional.only(end: 5),
                                 child: Image.asset(
-                                  Assets.imgKing,
+                                  Assets.iconKingBig,
                                   matchTextDirection: true,
                                   width: 25,
                                   height: 25,
@@ -193,7 +191,7 @@ class OrderListPage extends GetView<OrderListLogic> {
                                 minFontSize: 12,
                                 maxLines: 2,
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.black,
                                     fontSize: 24,
                                     fontFamily: AppConstants.fontsBold,
                                     fontWeight: FontWeight.w500),
@@ -210,14 +208,14 @@ class OrderListPage extends GetView<OrderListLogic> {
                                   "+${(data.showDiamond)}",
                                   style: TextStyle(
                                       fontFamily: AppConstants.fontsRegular,
-                                      color: const Color(0xFFFFF890),
+                                      color: const Color(0xFF9341FF),
                                       fontSize: 14),
                                 ),
                                 Container(
                                   margin: const EdgeInsetsDirectional.only(
                                       start: 3),
                                   child: Image.asset(
-                                    Assets.imgDiamond,
+                                    Assets.iconDiamond,
                                     matchTextDirection: true,
                                     width: 14,
                                     height: 14,
@@ -231,7 +229,7 @@ class OrderListPage extends GetView<OrderListLogic> {
                 Text(
                   "${AppFormatUtil.currencyToSymbol(data.currencyCode)} ${data.currencyFee != null ? data.currencyFee! / 100.0 : '--'}",
                   style: TextStyle(
-                      color: Colors.white,
+                      color: const Color(0xFF666666),
                       fontSize: 16,
                       fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.w500),
@@ -243,7 +241,7 @@ class OrderListPage extends GetView<OrderListLogic> {
             ),
             Text(
               '${Tr.app_order_channelName.tr}: ${data.channelName}',
-              style: const TextStyle(color: Colors.white, fontSize: 12),
+              style: const TextStyle(color: Color(0xFF999999), fontSize: 12),
             ),
             const SizedBox(
               height: 10,
@@ -252,12 +250,13 @@ class OrderListPage extends GetView<OrderListLogic> {
               children: [
                 Text(
                   '${Tr.app_order_orderNo.tr}:',
-                  style: const TextStyle(color: Colors.white, fontSize: 12),
+                  style:
+                      const TextStyle(color: Color(0xFF999999), fontSize: 12),
                 ),
                 Text(
                   '${data.orderNo}',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: const Color(0xFF999999),
                       fontFamily: AppConstants.fontsRegular,
                       fontSize: 12),
                 ),
@@ -265,7 +264,7 @@ class OrderListPage extends GetView<OrderListLogic> {
             ),
             Container(
               height: 1,
-              color: Colors.white,
+              color: const Color(0x0f000000),
               margin: const EdgeInsets.only(top: 20, bottom: 15),
             ),
             Row(
@@ -273,11 +272,14 @@ class OrderListPage extends GetView<OrderListLogic> {
               children: [
                 Text(
                   Tr.app_order_one_details.tr,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
                 ),
                 Image.asset(
                   matchTextDirection: true,
-                  Assets.imgArrowEnd,
+                  Assets.iconNextB,
                   width: 16,
                   height: 16,
                 )
@@ -295,20 +297,20 @@ class OrderListPage extends GetView<OrderListLogic> {
             child: AutoSizeText(
               text,
               maxLines: 1,
-              maxFontSize: 17,
+              maxFontSize: 13,
               minFontSize: 8,
               style: const TextStyle(
-                  fontSize: 17,
+                  fontSize: 13,
                   color: Colors.black,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w500),
             ),
           )
         : Tab(
             child: Text(
               text,
               style: const TextStyle(
-                  color: Color(0xFF9B989D),
-                  fontSize: 15,
+                  color: Colors.black,
+                  fontSize: 13,
                   fontWeight: FontWeight.normal),
             ),
           );

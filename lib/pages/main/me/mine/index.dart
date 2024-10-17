@@ -4,7 +4,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/app_common_dialog.dart';
 import 'package:oliapro/common/app_common_type.dart';
 import 'package:oliapro/common/charge_path.dart';
@@ -17,6 +16,7 @@ import 'package:oliapro/dialogs/sheet_search.dart';
 import 'package:oliapro/dialogs/sheet_service.dart';
 import 'package:oliapro/dialogs/sign/dialog_sign.dart';
 import 'package:oliapro/entities/app_info_entity.dart';
+import 'package:oliapro/game/game_dialog_manager.dart';
 import 'package:oliapro/http/api/index.dart';
 import 'package:oliapro/http/index.dart';
 import 'package:oliapro/pages/main/me/mine/widget/body.dart';
