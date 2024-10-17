@@ -15,17 +15,17 @@ class RechargeLogic extends GetxController {
 
   AreaData? area;
 
-  String icon(int index) => index > 7 ? Assets.imgDiamond8 : icons[index];
+  String icon(int index) => index > 7 ? Assets.iconDiamond7 : icons[index];
 
   final icons = [
-    Assets.imgDiamond1,
-    Assets.imgDiamond2,
-    Assets.imgDiamond3,
-    Assets.imgDiamond4,
-    Assets.imgDiamond5,
-    Assets.imgDiamond6,
-    Assets.imgDiamond7,
-    Assets.imgDiamond8
+    Assets.iconBigDiamond,
+    Assets.iconDiamond2,
+    Assets.iconDiamond3,
+    Assets.iconDiamond4,
+    Assets.iconDiamond5,
+    Assets.iconDiamond6,
+    Assets.iconDiamond7,
+    Assets.iconDiamond7
   ];
 
   @override

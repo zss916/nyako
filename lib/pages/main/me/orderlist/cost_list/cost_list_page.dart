@@ -47,7 +47,7 @@ class CostListPage extends GetView<CostListLogic> {
                         radius: 2,
                         insets: EdgeInsets.only(bottom: 0),
                         color: Colors.transparent),
-                    labelColor: Colors.white,
+                    labelColor: Colors.black,
                     tabs: [
                       tab(
                         isSelect: logic.choosedIndex == 0,
@@ -105,7 +105,7 @@ class CostListPage extends GetView<CostListLogic> {
       margin: const EdgeInsetsDirectional.only(
           start: 15, top: 7, end: 15, bottom: 8),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Colors.white10),
+          borderRadius: BorderRadius.circular(20), color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -127,7 +127,9 @@ class CostListPage extends GetView<CostListLogic> {
                           minFontSize: 6,
                           maxLines: 2,
                           style: const TextStyle(
-                              color: Colors.white, fontSize: 16),
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                       const SizedBox(
@@ -153,16 +155,15 @@ class CostListPage extends GetView<CostListLogic> {
                     children: [
                       Text(
                         "${data.type == 2 ? '+' : '-'}${data.diamonds ?? '--'}",
-                        style: TextStyle(
-                            color: Colors.white,
+                        style: const TextStyle(
+                            color: Color(0xFF9341FF),
                             fontSize: 16,
-                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                       Container(
                         margin: const EdgeInsetsDirectional.only(start: 2),
                         child: Image.asset(
-                          Assets.imgDiamond,
+                          Assets.iconDiamond,
                           matchTextDirection: true,
                           width: 19,
                           height: 19,
@@ -214,7 +215,7 @@ class CostListPage extends GetView<CostListLogic> {
               minFontSize: 8,
               style: const TextStyle(
                   fontSize: 17,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
           )
@@ -222,7 +223,7 @@ class CostListPage extends GetView<CostListLogic> {
             child: Text(
               text,
               style: const TextStyle(
-                  color: Colors.white,
+                  color: Color(0xFF9B989D),
                   fontSize: 15,
                   fontWeight: FontWeight.normal),
             ),

@@ -299,7 +299,7 @@ class OrderListPage extends GetView<OrderListLogic> {
               minFontSize: 8,
               style: const TextStyle(
                   fontSize: 17,
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold),
             ),
           )
@@ -307,7 +307,7 @@ class OrderListPage extends GetView<OrderListLogic> {
             child: Text(
               text,
               style: const TextStyle(
-                  color: Colors.white,
+                  color: Color(0xFF9B989D),
                   fontSize: 15,
                   fontWeight: FontWeight.normal),
             ),

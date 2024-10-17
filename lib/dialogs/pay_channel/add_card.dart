@@ -13,121 +13,143 @@ class BuildAddCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // debugPrint("buildAddCard===>> ${diamondCard?.toJson()}");
-    return (diamondCard == null)
-        ? const SizedBox.shrink()
-        : Container(
-            width: double.maxFinite,
+    return Container(
+      width: double.maxFinite,
+      decoration: BoxDecoration(
+          gradient: const LinearGradient(colors: [
+            Color(0xFFFF741A),
+            Color(0xFFFF17D6),
+          ]),
+          borderRadius: BorderRadiusDirectional.circular(12)),
+      padding: const EdgeInsetsDirectional.all(6),
+      margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: 6, vertical: 7),
             decoration: BoxDecoration(
-                color: const Color(0x33FFAB50),
+                color: const Color(0x33000000),
                 borderRadius: BorderRadiusDirectional.circular(12)),
-            padding: const EdgeInsetsDirectional.all(12),
-            margin: const EdgeInsets.only(top: 10, left: 15, right: 15),
-            child: Column(
+            child: Row(
               children: [
-                Row(
-                  children: [
-                    Expanded(
-                        child: AutoSizeText(
-                      Tr.app_prop_add_title
-                          .trArgs(["${diamondCard?.propDuration ?? "0"}"]),
-                      maxFontSize: 14,
-                      minFontSize: 6,
-                      maxLines: 1,
-                      softWrap: true,
-                      style: const TextStyle(
-                          color: Color(0xFFC3A0FF),
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                    )),
-                    Container(
-                      margin: const EdgeInsetsDirectional.only(start: 10),
-                      child: Image.asset(
-                        Assets.imgAddCard2,
-                        matchTextDirection: true,
-                        width: 40,
-                        height: 30,
-                      ),
-                    )
-                  ],
+                Container(
+                  margin: const EdgeInsetsDirectional.only(end: 6),
+                  child: Image.asset(
+                    Assets.iconAddCardSmall,
+                    matchTextDirection: true,
+                    width: 26,
+                    height: 27,
+                  ),
                 ),
-                const SizedBox(
-                  height: 12,
-                ),
-                const Divider(
-                  color: Colors.white10,
-                  height: 1,
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                        child: AutoSizeText(
-                      Tr.app_prop_add_content
-                          .trArgs(["${diamondCard?.propDuration ?? "0"}"]),
-                      maxFontSize: 14,
-                      minFontSize: 6,
-                      maxLines: 1,
-                      softWrap: true,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal),
-                    )),
-                    Container(
-                      margin:
-                          const EdgeInsetsDirectional.only(start: 10, end: 5),
-                      child: Text(
+                Expanded(
+                    child: AutoSizeText(
+                  Tr.app_prop_add_title
+                      .trArgs(["${diamondCard?.propDuration ?? "0"}"]),
+                  maxFontSize: 14,
+                  minFontSize: 6,
+                  maxLines: 1,
+                  softWrap: true,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal),
+                )),
+              ],
+            ),
+          ),
+          Container(
+            margin: const EdgeInsetsDirectional.symmetric(
+                horizontal: 6, vertical: 12),
+            width: double.maxFinite,
+            child: Row(
+              children: [
+                Expanded(
+                    child: AutoSizeText(
+                  Tr.app_prop_add_content
+                      .trArgs(["${diamondCard?.propDuration ?? "0"}"]),
+                  maxFontSize: 14,
+                  minFontSize: 6,
+                  maxLines: 1,
+                  softWrap: true,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal),
+                )),
+                Container(
+                  margin: const EdgeInsetsDirectional.only(start: 10, end: 5),
+                  child: Row(
+                    children: [
+                      Text(
                         "+${diamondCard?.increaseDiamonds ?? 0}",
+                        style: TextStyle(
+                            color: const Color(0xFFFFE986),
+                            fontFamily: AppConstants.fontsRegular,
+                            fontSize: 14),
+                      ),
+                      Image.asset(
+                        Assets.iconDiamond,
+                        width: 16,
+                        height: 16,
+                        matchTextDirection: true,
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          const Divider(
+            color: Colors.white10,
+            indent: 6,
+            endIndent: 6,
+            height: 1,
+          ),
+          Container(
+            margin: const EdgeInsetsDirectional.only(
+                start: 6, end: 6, bottom: 6, top: 12),
+            width: double.maxFinite,
+            child: Row(
+              children: [
+                Expanded(
+                    child: AutoSizeText(
+                  Tr.app_total.tr,
+                  maxFontSize: 14,
+                  minFontSize: 6,
+                  maxLines: 1,
+                  softWrap: true,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal),
+                )),
+                Container(
+                  margin: const EdgeInsetsDirectional.only(start: 10, end: 5),
+                  child: Row(
+                    children: [
+                      Text(
+                        "${diamondCard?.totalDiamonds ?? 0}",
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: AppConstants.fontsRegular,
                             fontSize: 14),
                       ),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                const Divider(
-                  color: Colors.white10,
-                  height: 1,
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                        child: AutoSizeText(
-                      Tr.app_total.tr,
-                      maxFontSize: 14,
-                      minFontSize: 6,
-                      maxLines: 1,
-                      softWrap: true,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal),
-                    )),
-                    Container(
-                      margin:
-                          const EdgeInsetsDirectional.only(start: 10, end: 5),
-                      child: Text(
-                        "${diamondCard?.totalDiamonds ?? 0}",
-                        style: TextStyle(
-                            color: const Color(0xFFFFF890),
-                            fontFamily: AppConstants.fontsRegular,
-                            fontSize: 14),
-                      ),
-                    )
-                  ],
-                ),
+                      Image.asset(
+                        Assets.iconDiamond,
+                        width: 16,
+                        height: 16,
+                        matchTextDirection: true,
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
-          );
+          ),
+        ],
+      ),
+    );
   }
 }
 

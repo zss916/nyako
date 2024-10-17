@@ -6,16 +6,6 @@ import 'package:oliapro/generated/assets.dart';
 class Banner3 extends StatelessWidget {
   Banner3({super.key});
 
-  final List<String> icons = [
-    Assets.benefitBenefitDiamond,
-    Assets.benefitBenefitMsg,
-    Assets.benefitBenefitMatch,
-    Assets.benefitBenefitLocation,
-    Assets.benefitBenefitAlbum,
-    Assets.benefitBenefitGift,
-    Assets.benefitBenefitVip,
-  ];
-
   final List<String> content = [
     Tr.app_vip_sign_extra.tr,
     Tr.app_benefit_1.tr,
@@ -36,19 +26,19 @@ class Banner3 extends StatelessWidget {
             Container(
               margin: const EdgeInsetsDirectional.only(end: 10),
               child: Image.asset(
-                icons[6],
-                width: 42,
-                height: 42,
+                Assets.iconGou,
+                width: 20,
+                height: 20,
                 matchTextDirection: true,
               ),
             ),
             Expanded(
               child: Text(
-                content[6],
+                "${Tr.app_benefit.trArgs(["7: "])}${content[6]}",
                 style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white60),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black),
               ),
             )
           ],

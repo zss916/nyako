@@ -22,7 +22,7 @@ class BuildDiamondCard extends StatelessWidget {
         padding: const EdgeInsetsDirectional.only(start: 0),
         child: Container(
           margin: const EdgeInsetsDirectional.only(top: 5),
-          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 14),
+          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: Row(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             //crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,15 +32,24 @@ class BuildDiamondCard extends StatelessWidget {
                 child: Text(
                   Tr.app_base_balance.trArgs([""]).replaceAll(":", ""),
                   style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFFC3A0FF)),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
               ),
               const Spacer(),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  Container(
+                    margin: const EdgeInsetsDirectional.only(start: 10, end: 5),
+                    child: Image.asset(
+                      Assets.iconDiamond,
+                      width: 16,
+                      height: 16,
+                      matchTextDirection: true,
+                    ),
+                  ),
                   Container(
                     constraints: BoxConstraints(maxWidth: 220.w),
                     child: Obx(
@@ -49,23 +58,14 @@ class BuildDiamondCard extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.start,
-                        maxFontSize: 22,
-                        minFontSize: 12,
+                        maxFontSize: 15,
+                        minFontSize: 10,
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
+                            color: const Color(0xFF9341FF),
+                            fontSize: 15,
                             fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsetsDirectional.only(start: 5),
-                    child: Image.asset(
-                      Assets.imgDiamond,
-                      width: 24,
-                      height: 24,
-                      matchTextDirection: true,
                     ),
                   ),
                 ],
@@ -74,53 +74,4 @@ class BuildDiamondCard extends StatelessWidget {
           ),
         ));
   }
-
-/*  Widget buildAddCardTip() {
-    return GetBuilder<RechargeLogic>(
-        id: "addRechargeCard",
-        init: RechargeLogic(),
-        builder: (logic) {
-          return logic.propDuration == 0
-              ? const SizedBox.shrink()
-              : Container(
-                  width: double.maxFinite,
-                  decoration: BoxDecoration(
-                      color: const Color(0x1FFFF890),
-                      borderRadius: BorderRadiusDirectional.circular(10)),
-                  margin: const EdgeInsetsDirectional.only(
-                      start: 15, end: 15, top: 0),
-                  alignment: AlignmentDirectional.bottomCenter,
-                  padding: const EdgeInsetsDirectional.only(
-                      top: 8, start: 10, end: 10, bottom: 8),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        Assets.imgSmallAddCard,
-                        width: 30,
-                        height: 20,
-                        matchTextDirection: true,
-                        fit: BoxFit.cover,
-                      ),
-                      Expanded(
-                          child: Container(
-                        margin:
-                            const EdgeInsetsDirectional.only(start: 4, end: 4),
-                        child: Text(
-                          Tr.app_add_card_tip
-                              .trArgs(["${logic.propDuration}%"]),
-                          maxLines: 5,
-                          textAlign: TextAlign.start,
-                          style: const TextStyle(
-                              color: Color(0xFFFFF890),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ))
-                    ],
-                  ),
-                );
-        });
-  }*/
 }

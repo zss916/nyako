@@ -7,8 +7,13 @@ class ToVipPage extends GetView<VipLogic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(title: Tr.app_buy_vip.tr, isDark: false),
-      backgroundColor: const Color(0xFF1E1226),
+      appBar: BaseAppBar(
+        // title: Tr.app_buy_vip.tr,
+        isDark: false,
+        backgroundColor: Colors.transparent,
+      ),
+      backgroundColor: Colors.white,
+      extendBodyBehindAppBar: true,
       body: ToVipBody(),
     );
   }

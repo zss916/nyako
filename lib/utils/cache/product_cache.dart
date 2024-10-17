@@ -5,14 +5,14 @@ import 'package:oliapro/services/storage_service.dart';
 
 class ProductCache {
   static final icons = [
-    Assets.imgDiamond1,
-    Assets.imgDiamond2,
-    Assets.imgDiamond3,
-    Assets.imgDiamond4,
-    Assets.imgDiamond5,
-    Assets.imgDiamond6,
-    Assets.imgDiamond7,
-    Assets.imgDiamond8
+    Assets.iconDiamond,
+    Assets.iconDiamond2,
+    Assets.iconDiamond3,
+    Assets.iconDiamond4,
+    Assets.iconDiamond5,
+    Assets.iconDiamond6,
+    Assets.iconDiamond7,
+    Assets.iconDiamond7
   ];
 
   static List<PayQuickCommodite> save(List<PayQuickCommodite> data) {

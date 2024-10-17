@@ -16,7 +16,7 @@ class BaseTopEmpty extends StatelessWidget {
           height: h ?? 80,
         ),
         Image.asset(
-          Assets.imgBaseEmpty,
+          Assets.iconEmpty,
           width: 120,
           height: 120,
           matchTextDirection: true,

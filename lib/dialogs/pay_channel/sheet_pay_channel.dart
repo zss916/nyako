@@ -6,7 +6,6 @@ import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/pay_channel/add_card.dart';
 import 'package:oliapro/dialogs/pay_channel/build_content.dart';
 import 'package:oliapro/dialogs/pay_channel/widget/build_google_pay.dart';
-import 'package:oliapro/dialogs/pay_select_area/sheet_select_area.dart';
 import 'package:oliapro/dialogs/reward_dialog/pdd_util.dart';
 import 'package:oliapro/entities/app_charge_quick_entity.dart';
 import 'package:oliapro/entities/app_hot_entity.dart';
@@ -17,8 +16,6 @@ import 'package:oliapro/pages/charge/billing.dart';
 import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/routes/app_pages.dart';
 import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/widget/base_app_bar.dart';
 
 ///快捷支付(Google/三方)
 toQuickPayChannel(PayQuickCommodite data,
@@ -137,6 +134,7 @@ class _PayChannelState extends State<PayChannel> {
     if (mounted) {
       setState(() {
         path = widget.area?.path ?? '';
+        title = widget.area?.title ?? '';
       });
     }
   }
@@ -151,181 +149,275 @@ class _PayChannelState extends State<PayChannel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      clipBehavior: Clip.hardEdge,
-      padding: const EdgeInsetsDirectional.only(top: 23),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-            begin: AlignmentDirectional.topCenter,
-            end: AlignmentDirectional.bottomCenter,
-            colors: [
-              Color(0xFF381853),
-              Color(0xFF491E61),
-            ]),
-        borderRadius: BorderRadiusDirectional.only(
-            topStart: Radius.circular(0), topEnd: Radius.circular(0)),
-      ),
       width: Get.width,
       height: Get.height,
-      child: Scaffold(
-        backgroundColor: const Color(0xFF1E1226),
-        appBar: BaseAppBar(
-          title: Tr.appPayOrder.tr,
-          actions: [
-            Container(
-              margin: const EdgeInsetsDirectional.only(end: 15, start: 5),
-              child: GestureDetector(
-                onTap: () {
-                  showSelectAreaSheet(data, (item) {
-                    if (item != null) {
-                      _loadCountryProduct(widget.commodite.productId ?? "",
-                          (item.countryCode ?? -1), (data) {
-                        if (mounted) {
-                          setState(() {
-                            widget.commodite = data;
-                            path = item.path;
-                            title = item.title;
-                            countryCode = item.countryCode;
-                          });
-                        }
-                      });
-                    } else {
-                      if (mounted) {
-                        setState(() {
-                          isDown = !isDown;
-                        });
-                      }
-                    }
-                  });
-                  if (mounted) {
-                    setState(() {
-                      isDown = !isDown;
-                    });
-                  }
-                },
-                child: _selectArea(path, title),
-              ),
-            )
-          ],
-        ),
-        body: SingleChildScrollView(
-          child: Column(
+      color: const Color(0xFFF4F5F6),
+      child: Stack(
+        alignment: AlignmentDirectional.topCenter,
+        children: [
+          PositionedDirectional(
+              top: 0,
+              start: 0,
+              end: 0,
+              child: Container(
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: AlignmentDirectional.topCenter,
+                        end: AlignmentDirectional.bottomCenter,
+                        colors: [Color(0xFFFFE4AF), Color(0xFFF4F5F6)])),
+                width: Get.width,
+                height: 150,
+              )),
+          Column(
             children: [
-              topTitle(),
-              if (((widget.isVip && (widget.commodite.value ?? 0) != 0)) ||
-                  (!widget.isVip && (widget.commodite.bonus ?? 0) != 0))
-                Container(
-                  width: double.maxFinite,
-                  padding: const EdgeInsetsDirectional.all(12),
-                  margin: const EdgeInsetsDirectional.only(start: 15, end: 15),
-                  decoration: BoxDecoration(
-                      color: Colors.white12,
-                      borderRadius: BorderRadiusDirectional.circular(12)),
-                  child: Row(
-                    children: [
-                      Text(
-                        Tr.appExtraSend.tr,
-                        style: const TextStyle(
-                            color: Color(0xFFC3A0FF),
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const Spacer(),
-                      Container(
-                        margin: const EdgeInsetsDirectional.only(start: 5),
-                        padding: const EdgeInsetsDirectional.symmetric(
-                            horizontal: 5, vertical: 3),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadiusDirectional.circular(20),
-                            gradient: const LinearGradient(colors: [
-                              Color(0xFFFF40A3),
-                              Color(0xFFFF8D1E),
-                            ])),
-                        child: UnconstrainedBox(
-                          child: Row(
-                            children: [
-                              if (widget.isVip &&
-                                  (widget.commodite.value ?? 0) != 0)
-                                Text.rich(TextSpan(
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontFamily: AppConstants.fontsRegular,
-                                        fontWeight: FontWeight.normal),
-                                    children: [
-                                      TextSpan(text: Tr.appSend.tr),
-                                      TextSpan(
-                                        text: "${widget.commodite.value} ",
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                      WidgetSpan(
-                                          alignment:
-                                              PlaceholderAlignment.middle,
-                                          child: Image.asset(
-                                            Assets.imgDiamond,
-                                            matchTextDirection: true,
-                                            width: 14,
-                                            height: 14,
-                                          )),
-                                    ])),
-                              if (!widget.isVip &&
-                                  (widget.commodite.bonus ?? 0) != 0)
-                                Text.rich(TextSpan(
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontFamily: AppConstants.fontsRegular,
-                                        fontWeight: FontWeight.normal),
-                                    children: [
-                                      TextSpan(text: Tr.appSend.tr),
-                                      TextSpan(
-                                        text: "${widget.commodite.bonus} ",
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                      WidgetSpan(
-                                          alignment:
-                                              PlaceholderAlignment.middle,
-                                          child: Image.asset(
-                                            Assets.imgDiamond,
-                                            matchTextDirection: true,
-                                            width: 14,
-                                            height: 14,
-                                          )),
-                                    ])),
-                            ],
-                          ),
+              Container(
+                margin: const EdgeInsetsDirectional.only(top: 48, bottom: 0),
+                width: double.maxFinite,
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () => Get.back(),
+                      child: Container(
+                        padding: const EdgeInsetsDirectional.all(10),
+                        margin: const EdgeInsetsDirectional.only(start: 2),
+                        child: Image.asset(
+                          Assets.iconBack,
+                          width: 24,
+                          height: 24,
+                          matchTextDirection: true,
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              BuildAddCard(widget.commodite.diamondCard),
-              Container(
-                margin: const EdgeInsetsDirectional.only(
-                    start: 20, end: 10, top: 30),
-                alignment: AlignmentDirectional.centerStart,
-                child: Text(
-                  Tr.app_order_channelName.tr,
-                  style:
-                      const TextStyle(color: Color(0xFFC3A0FF), fontSize: 14),
+                    ),
+                    const Spacer(),
+                    Container(
+                      margin:
+                          const EdgeInsetsDirectional.only(end: 15, start: 5),
+                      child: GestureDetector(
+                        onTap: () {
+                          if (mounted) {
+                            setState(() {
+                              isDown = !isDown;
+                              List<AreaData> arr = [];
+                              List<AreaData> data1 = data
+                                  .where((e) => e.isSelect == true)
+                                  .toList();
+                              List<AreaData> data2 = data
+                                  .where((e) => e.isSelect != true)
+                                  .toList();
+                              arr.addAll(data1);
+                              arr.addAll(data2);
+                              data.clear();
+                              data.addAll(arr);
+                            });
+                          }
+                        },
+                        child: _selectArea(path, title),
+                      ),
+                    )
+                  ],
                 ),
               ),
-              if (UserInfo.to.isTransferApp)
-                BuildGooglePay(
-                  price: widget.commodite.showPrice,
-                ),
-              BuildContent(
-                widget.commodite.ppp ?? [],
-                countryCode: countryCode,
-                createPath: widget.createPath,
-                upid: widget.upid,
+              SizedBox(
+                width: double.maxFinite,
+                height: 60,
+                // color: Colors.green,
+                child: isDown
+                    ? const SizedBox.shrink()
+                    : ListView.separated(
+                        padding: const EdgeInsetsDirectional.only(
+                            start: 12, end: 12, top: 15, bottom: 15),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: data.length,
+                        itemBuilder: (BuildContext context, int index) =>
+                            InkWell(
+                          onTap: () {
+                            setState(() {
+                              for (var element in data) {
+                                element.isSelect = false;
+                              }
+                              AreaData item = data[index]..isSelect = true;
+                              path = item.path;
+                              title = item.title;
+                              countryCode = item.countryCode;
+                              isDown = true;
+                            });
+
+                            _loadCountryProduct(
+                                widget.commodite.productId ?? "",
+                                (data[index].countryCode ?? -1), (data) {
+                              setState(() {
+                                widget.commodite = data;
+                              });
+                            });
+                          },
+                          child: Container(
+                            height: 30,
+                            padding: const EdgeInsetsDirectional.symmetric(
+                                horizontal: 12),
+                            alignment: AlignmentDirectional.center,
+                            decoration: BoxDecoration(
+                                color: data[index].isSelect == true
+                                    ? const Color(0xFF625969)
+                                    : Colors.white,
+                                borderRadius:
+                                    BorderRadiusDirectional.circular(8)),
+                            child: Text(
+                              data[index].title ?? "--",
+                              style: TextStyle(
+                                  color: data[index].isSelect == true
+                                      ? Colors.white
+                                      : Colors.black,
+                                  fontSize: 13),
+                            ),
+                          ),
+                        ),
+                        separatorBuilder: (BuildContext context, int index) =>
+                            const VerticalDivider(
+                          width: 10,
+                          color: Colors.transparent,
+                        ),
+                      ),
               ),
+              Text(
+                Tr.appPayOrder.tr,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.black, fontSize: 15),
+              ),
+              topTitle(),
+              Expanded(
+                  child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    if (((widget.isVip &&
+                            (widget.commodite.value ?? 0) != 0)) ||
+                        (!widget.isVip && (widget.commodite.bonus ?? 0) != 0))
+                      Container(
+                        width: double.maxFinite,
+                        padding: const EdgeInsetsDirectional.all(12),
+                        margin: const EdgeInsetsDirectional.only(
+                            start: 15, end: 15),
+                        decoration: BoxDecoration(
+                            color: const Color(0xFFFFE986),
+                            borderRadius: BorderRadiusDirectional.circular(12)),
+                        child: Row(
+                          children: [
+                            Text(
+                              Tr.appExtraSend.tr,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            const Spacer(),
+                            Container(
+                              margin:
+                                  const EdgeInsetsDirectional.only(start: 5),
+                              padding: const EdgeInsetsDirectional.symmetric(
+                                  horizontal: 5, vertical: 3),
+                              child: UnconstrainedBox(
+                                child: Row(
+                                  children: [
+                                    if (widget.isVip &&
+                                        (widget.commodite.value ?? 0) != 0)
+                                      Text.rich(TextSpan(
+                                          style: TextStyle(
+                                              color: const Color(0xFF9341FF),
+                                              fontSize: 15,
+                                              fontFamily:
+                                                  AppConstants.fontsRegular,
+                                              fontWeight: FontWeight.normal),
+                                          children: [
+                                            TextSpan(
+                                                text: Tr.appSend.tr,
+                                                style: const TextStyle(
+                                                  color: Color(0xFF9341FF),
+                                                )),
+                                            TextSpan(
+                                              text:
+                                                  "${widget.commodite.value} ",
+                                              style: const TextStyle(
+                                                color: Color(0xFF9341FF),
+                                              ),
+                                            ),
+                                            WidgetSpan(
+                                                alignment:
+                                                    PlaceholderAlignment.middle,
+                                                child: Image.asset(
+                                                  Assets.iconDiamond,
+                                                  matchTextDirection: true,
+                                                  width: 14,
+                                                  height: 14,
+                                                )),
+                                          ])),
+                                    if (!widget.isVip &&
+                                        (widget.commodite.bonus ?? 0) != 0)
+                                      Text.rich(TextSpan(
+                                          style: TextStyle(
+                                              color: const Color(0xFF9341FF),
+                                              fontSize: 15,
+                                              fontFamily:
+                                                  AppConstants.fontsRegular,
+                                              fontWeight: FontWeight.normal),
+                                          children: [
+                                            TextSpan(
+                                                text: Tr.appSend.tr,
+                                                style: const TextStyle(
+                                                  color: Color(0xFF9341FF),
+                                                )),
+                                            TextSpan(
+                                              text:
+                                                  "${widget.commodite.bonus} ",
+                                              style: const TextStyle(
+                                                color: Color(0xFF9341FF),
+                                              ),
+                                            ),
+                                            WidgetSpan(
+                                                alignment:
+                                                    PlaceholderAlignment.middle,
+                                                child: Image.asset(
+                                                  Assets.iconDiamond,
+                                                  matchTextDirection: true,
+                                                  width: 14,
+                                                  height: 14,
+                                                )),
+                                          ])),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    if (widget.commodite.diamondCard != null)
+                      BuildAddCard(widget.commodite.diamondCard),
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(
+                          start: 16, end: 16, top: 16, bottom: 40),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadiusDirectional.circular(16),
+                          color: Colors.white),
+                      width: double.maxFinite,
+                      child: Column(
+                        children: [
+                          if (UserInfo.to.isTransferApp)
+                            BuildGooglePay(
+                              price: widget.commodite.showPrice,
+                            ),
+                          BuildContent(
+                            widget.commodite.ppp ?? [],
+                            countryCode: countryCode,
+                            createPath: widget.createPath,
+                            upid: widget.upid,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ))
             ],
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
@@ -333,25 +425,29 @@ class _PayChannelState extends State<PayChannel> {
   Widget topTitle() {
     return Container(
       margin: const EdgeInsetsDirectional.only(
-          start: 15, end: 15, top: 15, bottom: 15),
+          start: 15, end: 15, top: 0, bottom: 15),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
           widget.isVip == true
-              ? Column(
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      Assets.imgKing,
-                      width: 90,
-                      height: 90,
-                      matchTextDirection: true,
-                      fit: BoxFit.cover,
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(end: 3),
+                      child: Image.asset(
+                        Assets.iconKingBig,
+                        width: 42,
+                        height: 42,
+                        matchTextDirection: true,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Text(
                       Tr.app_str_day
                           .trArgs([(widget.commodite.vipDays ?? 0).toString()]),
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold,
                           fontSize: 30),
@@ -366,8 +462,8 @@ class _PayChannelState extends State<PayChannel> {
                           const EdgeInsetsDirectional.symmetric(horizontal: 5),
                       child: Image.asset(
                         widget.commodite.diamondIcon ?? Assets.imgBigDiamond,
-                        width: 50,
-                        height: 50,
+                        width: 42,
+                        height: 42,
                         matchTextDirection: true,
                         fit: BoxFit.cover,
                       ),
@@ -375,7 +471,7 @@ class _PayChannelState extends State<PayChannel> {
                     Text(
                       "${widget.commodite.value ?? "--"}",
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold,
                           fontSize: 30),
@@ -392,27 +488,22 @@ class _PayChannelState extends State<PayChannel> {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadiusDirectional.circular(20),
-          color: const Color(0x26FFFFFF)),
+          color: const Color(0xFFAC6712)),
       padding: const EdgeInsetsDirectional.only(start: 3, end: 3),
       child: Row(
         children: [
-          path == null
-              ? Image.asset(
-                  Assets.imgLocationIcon,
-                  matchTextDirection: true,
-                  // color: Colors.black,
-                  width: 20,
-                  height: 20,
-                )
-              : ClipRRect(
-                  borderRadius: BorderRadius.circular(22),
-                  child: cachedImage(path, width: 18, height: 18),
-                ),
+          Container(
+            padding: const EdgeInsetsDirectional.only(start: 10, end: 3),
+            child: Text(
+              title ?? "--",
+              style: const TextStyle(color: Colors.white, fontSize: 15),
+            ),
+          ),
           isDown
               ? const Icon(Icons.arrow_drop_down_rounded,
-                  size: 30, color: Color(0xB3FFFFFF))
+                  size: 30, color: Colors.white)
               : const Icon(Icons.arrow_drop_up_rounded,
-                  size: 30, color: Color(0xB3FFFFFF)),
+                  size: 30, color: Colors.white),
         ],
       ),
     );
@@ -424,7 +515,12 @@ class _PayChannelState extends State<PayChannel> {
     Http.instance
         .post<List<AreaData>>(NetPath.getPayCountry2, errCallback: (err) {})
         .then((value) {
-      data.addAll(value);
+      setState(() {
+        //value.where((e) => e.showCanChoose)
+        List<AreaData> map =
+            value.map((e) => e..isSelect = (e.title == title)).toList();
+        data.addAll(map);
+      });
     });
   }
 
@@ -434,6 +530,7 @@ class _PayChannelState extends State<PayChannel> {
     Http.instance
         .post<PayQuickCommodite>(
       '${NetPath.getCountryProduct2}/$productId/$countryCode',
+      showLoading: true,
       errCallback: (err) {},
     )
         .then((value) {

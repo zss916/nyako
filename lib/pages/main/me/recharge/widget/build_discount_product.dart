@@ -22,22 +22,21 @@ class BuildDiscountProduct extends StatelessWidget {
       child: Stack(
         children: [
           Container(
+            margin: const EdgeInsetsDirectional.only(top: 3),
+            constraints: const BoxConstraints(minHeight: 72),
             padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: 12, vertical: 8),
             decoration: BoxDecoration(
-                gradient: const LinearGradient(colors: [
-                  Color(0xFFFF2753),
-                  Color(0xFFFFC84E),
-                ]),
-                borderRadius: BorderRadiusDirectional.circular(12)),
+                color: const Color(0xFF721EFF),
+                borderRadius: BorderRadiusDirectional.circular(16)),
             child: Row(
               children: [
                 Container(
                   margin: const EdgeInsetsDirectional.only(end: 10),
                   child: Image.asset(
-                    Assets.imgDiamond,
-                    width: 48,
-                    height: 48,
+                    Assets.iconDiamond3,
+                    width: 40,
+                    height: 40,
                     matchTextDirection: true,
                   ),
                 ),
@@ -58,15 +57,13 @@ class BuildDiscountProduct extends StatelessWidget {
                         children: [
                           Text(
                             '${Tr.appSend.tr}${data.showBonus}',
-                            style: TextStyle(
-                                color: const Color(0xFFFFF890),
-                                fontFamily: AppConstants.fontsRegular,
-                                fontSize: 14),
+                            style: const TextStyle(
+                                color: Color(0xFFFFE986), fontSize: 14),
                           ),
                           Container(
                             margin: const EdgeInsetsDirectional.only(start: 3),
                             child: Image.asset(
-                              Assets.imgDiamond,
+                              Assets.iconDiamond,
                               width: 16,
                               height: 16,
                               matchTextDirection: true,
@@ -79,16 +76,15 @@ class BuildDiscountProduct extends StatelessWidget {
                 Container(
                   margin: const EdgeInsetsDirectional.only(start: 10),
                   padding: const EdgeInsetsDirectional.symmetric(
-                      horizontal: 15, vertical: 7),
+                      horizontal: 15, vertical: 6),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadiusDirectional.circular(30)),
                   child: Text(
                     data.showPrice,
-                    style: TextStyle(
-                        color: const Color(0xFF61300B),
-                        fontSize: 14,
-                        fontFamily: AppConstants.fontsBold,
+                    style: const TextStyle(
+                        color: Color(0xFF9341FF),
+                        fontSize: 15,
                         fontWeight: FontWeight.bold),
                   ),
                 )
@@ -105,19 +101,19 @@ class BuildDiscountProduct extends StatelessWidget {
                   decoration: const BoxDecoration(
                       borderRadius: BorderRadiusDirectional.only(
                         topStart: Radius.circular(12),
+                        topEnd: Radius.circular(15),
                         bottomEnd: Radius.circular(15),
                       ),
                       gradient: LinearGradient(colors: [
-                        Color(0xFFB5FFFC),
-                        Color(0xFFFFF66E),
+                        Color(0xFFFF1A45),
+                        Color(0xFFFF17D6),
                       ])),
                   child: Text(
                     Tr.app_off.trArgs(["${data.discount}"]),
-                    style: TextStyle(
-                        color: const Color(0xFF620F0F),
-                        fontFamily: AppConstants.fontsRegular,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12),
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 11),
                   ),
                 ))
         ],

@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/app_constants.dart';
 
 class CommonButton extends StatelessWidget {
@@ -19,17 +18,19 @@ class CommonButton extends StatelessWidget {
       padding: const EdgeInsets.only(left: 5, right: 5, top: 10, bottom: 10),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          borderRadius: BorderRadiusDirectional.circular(30),
-          gradient: AppColors.btnGradient),
+        color: const Color(0xFF9341FF),
+        borderRadius: BorderRadiusDirectional.circular(30),
+      ),
       child: AutoSizeText(
         title,
         maxFontSize: 12,
         minFontSize: 6,
         maxLines: 1,
-        style:  TextStyle(
+        style: TextStyle(
             color: Colors.white,
             fontFamily: AppConstants.fontsBold,
-            fontSize: 12, fontWeight: FontWeight.bold),
+            fontSize: 12,
+            fontWeight: FontWeight.bold),
       ),
     );
   }

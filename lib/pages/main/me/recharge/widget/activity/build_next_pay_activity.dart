@@ -77,32 +77,34 @@ class BuildNextPayActivity extends StatelessWidget {
             routeSettings: const RouteSettings(name: "activity dialog"));
       },
       child: Container(
-        height: 100,
+        height: 64,
         width: double.maxFinite,
         margin: const EdgeInsetsDirectional.only(start: 12, end: 12, top: 10),
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                matchTextDirection: true,
-                image: ExactAssetImage(Assets.imgNextPayBg))),
+        decoration: BoxDecoration(
+            gradient: const LinearGradient(colors: [
+              Color(0xFFFF821A),
+              Color(0xFFFFC417),
+            ]),
+            borderRadius: BorderRadiusDirectional.circular(14)),
         child: Row(
           children: [
-            Container(
-              margin: const EdgeInsetsDirectional.only(end: 10, start: 5),
-              child: Image.asset(
-                Assets.imgDiamond8,
-                width: 85,
-                height: 85,
-                matchTextDirection: true,
-              ),
-            ),
             Expanded(
                 child: Text(
               logic.activityTitle,
               style: const TextStyle(
-                  color: Color(0xFF8A0000),
-                  fontSize: 16,
+                  color: Colors.white,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold),
-            ))
+            )),
+            Container(
+              margin: const EdgeInsetsDirectional.only(end: 5, start: 10),
+              child: Image.asset(
+                Assets.iconDiamondM,
+                width: 66,
+                height: 44,
+                matchTextDirection: true,
+              ),
+            )
           ],
         ),
       ),

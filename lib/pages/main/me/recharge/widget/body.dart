@@ -1,16 +1,11 @@
-import 'dart:math';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_charge_quick_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/recharge/index.dart';
-import 'package:oliapro/pages/main/me/recharge/widget/activity/build_draw.dart';
 import 'package:oliapro/pages/main/me/recharge/widget/activity/build_next_pay_activity.dart';
 import 'package:oliapro/pages/main/me/recharge/widget/build_diamond_add_card_anima.dart';
 import 'package:oliapro/pages/main/me/recharge/widget/build_diamond_card.dart';
@@ -44,54 +39,19 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
         child: Stack(
           alignment: AlignmentDirectional.topCenter,
           children: [
-            PositionedDirectional(
-                start: 0,
-                top: 0,
-                end: 0,
-                child: Container(
-                  width: Get.width,
-                  height: 270.h,
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: AlignmentDirectional.topCenter,
-                          end: AlignmentDirectional.bottomCenter,
-                          colors: [
-                        Color(0xFF551FB2),
-                        Color(0xFF7D269A),
-                      ])),
-                )),
             SizedBox(
               width: Get.width,
               height: Get.height,
-              child: Stack(
-                alignment: AlignmentDirectional.topCenter,
+              child: Column(
                 children: [
-                  PositionedDirectional(
-                      top: 0,
-                      start: 0,
-                      end: 0,
-                      child: BuildDiamondCard(widget.logic)),
-                  PositionedDirectional(
-                      bottom: 0,
-                      start: 0,
-                      end: 0,
-                      top: 120,
-                      child: Column(
-                        children: [
-                          buildAddCardTip(),
-                          Expanded(
-                              child: Container(
-                            width: double.maxFinite,
-                            height: double.maxFinite,
-                            decoration: const BoxDecoration(
-                                color: Color(0xFF993DE4),
-                                borderRadius: BorderRadiusDirectional.only(
-                                    topStart: Radius.circular(20),
-                                    topEnd: Radius.circular(20))),
-                            child: buildContent(),
-                          ))
-                        ],
-                      ))
+                  BuildDiamondCard(widget.logic),
+                  buildTip(),
+                  Expanded(
+                      child: SizedBox(
+                    width: double.maxFinite,
+                    height: double.maxFinite,
+                    child: buildContent(),
+                  ))
                 ],
               ),
             ),
@@ -115,6 +75,24 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
             buildDiamondAddAnima()
           ],
         ),
+      ),
+    );
+  }
+
+  Widget buildTip() {
+    return Container(
+      //color: Colors.green,
+      width: double.maxFinite,
+      alignment: AlignmentDirectional.center,
+      margin: const EdgeInsets.only(top: 0),
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+      child: Text(
+        Tr.app_lucky_draw_tip.tr,
+        textAlign: TextAlign.start,
+        style: const TextStyle(
+            color: Color(0xFF9B989D),
+            fontSize: 13,
+            fontWeight: FontWeight.w400),
       ),
     );
   }
@@ -159,7 +137,7 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                           maxLines: 5,
                           textAlign: TextAlign.start,
                           style: const TextStyle(
-                              color: Color(0xFFFFF890),
+                              color: Colors.black,
                               fontSize: 12,
                               fontWeight: FontWeight.w400),
                         ),
@@ -182,32 +160,11 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                   init: RechargeLogic(),
                   builder: (logic) {
                     return logic.isOpenActivity
-                        ? SizedBox(
-                            width: double.maxFinite,
-                            height: 110,
-                            child: Swiper(
-                              itemBuilder: (BuildContext context, int index) {
-                                return index == 0
-                                    ? const BuildDraw()
-                                    : BuildNextPayActivity(
-                                        logic: logic,
-                                      );
-                              },
-                              itemCount: 2,
-                              autoplay: true,
-                              autoplayDelay: 5600,
-                              duration: 1200,
-                            ),
+                        ? BuildNextPayActivity(
+                            logic: logic,
                           )
-                        : const BuildDraw();
+                        : const SizedBox.shrink();
                   }),
-            if (!AppConstants.isFakeMode)
-              Container(
-                margin: const EdgeInsetsDirectional.only(top: 5),
-                color: const Color(0xFFC073FF),
-                width: double.maxFinite,
-                height: 6,
-              ),
             Expanded(
                 child: CustomScrollView(
               slivers: [
@@ -215,7 +172,7 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                   SliverToBoxAdapter(
                     child: Container(
                       margin: const EdgeInsetsDirectional.only(
-                          top: 15, start: 15, end: 15),
+                          top: 10, start: 20, end: 20),
                       child: BuildDiscountProduct(
                         data: logic.discountProduct ?? PayQuickCommodite(),
                         logic: logic,
@@ -224,25 +181,19 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                   ),
                 SliverPadding(
                   padding: const EdgeInsetsDirectional.only(
-                      top: 12, start: 12, end: 12, bottom: 30),
-                  sliver: SliverGrid(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 6,
-                      mainAxisSpacing: 10,
-                      childAspectRatio: 113 / 185,
-                    ),
-                    delegate: SliverChildBuilderDelegate(
-                      (BuildContext context, int index) {
-                        final payItem = logic.payList[index];
-                        return InkWell(
-                          onTap: () => logic.createPay(payItem),
-                          child: buildItem(payItem, index),
-                        );
-                      },
-                      childCount: logic.payList.length,
-                    ),
+                      top: 12, start: 20, end: 20, bottom: 30),
+                  sliver: SliverList.separated(
+                    itemCount: logic.payList.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      final payItem = logic.payList[index];
+                      return InkWell(
+                        onTap: () => logic.createPay(payItem),
+                        child: buildItem(payItem, index),
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return const Divider(height: 1, color: Color(0xFFEEEEEE));
+                    },
                   ),
                 ),
               ],
@@ -254,94 +205,149 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
   }
 
   Widget buildItem(PayQuickCommodite data, int index) {
-    return Container(
-      decoration: BoxDecoration(
-          color: const Color(0xFFE554FF),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(width: 1, color: const Color(0xFF6F09AA))),
-      child: Column(
-        children: [
-          Container(
-            alignment: AlignmentDirectional.center,
-            margin: const EdgeInsetsDirectional.only(
-                top: 10, start: 5, end: 5, bottom: 5),
-            width: double.maxFinite,
-            child: Text(
-              "${data.value ?? "--"}",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: AppConstants.fontsBold,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          Expanded(
-              child: Stack(
-            alignment: AlignmentDirectional.center,
+    bool showAdd = (data.diamondCard != null &&
+        ((data.diamondCard?.propDuration ?? 0) != 0));
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
+      children: [
+        Container(
+          //color: Colors.green.withOpacity(0.3),
+          width: double.maxFinite,
+          height: 80,
+          child: Row(
             children: [
-              //widget.logic.icon(index),
-              Image.asset(
-                data.diamondIcon ?? Assets.imgBigDiamond,
-                width: 95,
-                height: 95,
-                matchTextDirection: true,
+              Container(
+                //color: Colors.blue,
+                margin: const EdgeInsetsDirectional.only(end: 10),
+                child: Image.asset(
+                  data.diamondIcon ?? Assets.iconBigDiamond,
+                  width: 32,
+                  height: 32,
+                  matchTextDirection: true,
+                ),
               ),
-              if (data.showBonus != 0)
-                PositionedDirectional(
-                    top: 0,
-                    start: 0,
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      alignment: AlignmentDirectional.center,
-                      padding: const EdgeInsetsDirectional.symmetric(
-                          horizontal: 5, vertical: 5),
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
+              Expanded(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "${data.value ?? "--"}",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: AppConstants.fontsBold,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Row(
+                    children: [
+                      if (data.showBonus != 0)
+                        Row(
+                          children: [
+                            Text(
+                              '${Tr.appSend.tr}${data.showBonus}',
+                              style: const TextStyle(
+                                  color: Color(0xFF9341FF),
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13),
+                            ),
+                            Image.asset(
+                              Assets.iconDiamond,
+                              width: 14,
+                              height: 14,
                               matchTextDirection: true,
-                              image: ExactAssetImage(
-                                  Assets.imgRechargeDiamondAddBg))),
-                      child: Transform.rotate(
-                        angle: -25 * pi / 180,
-                        child: AutoSizeText(
-                          '${Tr.appSend.tr}${data.showBonus}',
-                          textAlign: TextAlign.center,
-                          maxLines: 1,
-                          maxFontSize: 14,
-                          minFontSize: 6,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                              color: const Color(0xFFFFFF1A),
-                              fontFamily: AppConstants.fontsRegular,
-                              fontSize: 14),
+                            )
+                          ],
                         ),
-                      ),
-                    )),
+                      if (showAdd)
+                        Container(
+                          padding: const EdgeInsetsDirectional.only(start: 5),
+                          decoration: BoxDecoration(
+                              //color: const Color(0x80FFEBAA),
+                              borderRadius:
+                                  BorderRadiusDirectional.circular(30)),
+                          margin: const EdgeInsetsDirectional.only(start: 0),
+                          child: Row(
+                            children: [
+                              Text(
+                                "+${data.diamondCard?.increaseDiamonds ?? 0}",
+                                style: const TextStyle(
+                                    color: Color(0xFFFF5112),
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.normal),
+                              ),
+                              Container(
+                                margin:
+                                    const EdgeInsetsDirectional.only(start: 1),
+                                child: Image.asset(
+                                  Assets.iconDiamond,
+                                  matchTextDirection: true,
+                                  height: 14,
+                                  width: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                    ],
+                  )
+                ],
+              )),
+              Container(
+                alignment: AlignmentDirectional.center,
+                height: 30,
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+                decoration: BoxDecoration(
+                    color: const Color(0xFF9341FF),
+                    borderRadius: BorderRadiusDirectional.circular(30)),
+                child: AutoSizeText(
+                  data.showPrice,
+                  maxFontSize: 15,
+                  minFontSize: 8,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500),
+                ),
+              )
             ],
-          )),
-          Container(
-            width: double.maxFinite,
-            alignment: AlignmentDirectional.center,
-            height: 40,
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadiusDirectional.vertical(
-                    bottom: Radius.circular(20))),
-            child: AutoSizeText(
-              data.showPrice,
-              maxFontSize: 16,
-              minFontSize: 8,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: const Color(0xFFF447FF),
-                  fontFamily: AppConstants.fontsBold,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
-            ),
-          )
-        ],
-      ),
+          ),
+        ),
+        if (showAdd)
+          PositionedDirectional(
+              top: 0,
+              start: 0,
+              child: Container(
+                margin: const EdgeInsetsDirectional.only(start: 0),
+                padding: const EdgeInsetsDirectional.only(
+                    start: 6, end: 6, top: 2, bottom: 2),
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(colors: [
+                      Color(0xFFFF8929),
+                      Color(0xFFFF5112),
+                    ]),
+                    borderRadius: BorderRadiusDirectional.only(
+                      topStart: Radius.circular(6),
+                      bottomStart: Radius.zero,
+                      topEnd: Radius.circular(6),
+                      bottomEnd: Radius.circular(6),
+                    )),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      " +${data.diamondCard?.propDuration ?? 0}%",
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
+              ))
+      ],
     );
   }
 

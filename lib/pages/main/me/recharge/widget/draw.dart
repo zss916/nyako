@@ -30,7 +30,7 @@ class _RechargeDrawAnimationState extends State<RechargeDrawAnimation>
           });
         }
       });
-    var begin = const Offset(2.0, .0);
+    var begin = const Offset(-2.0, .0);
     var end = const Offset(0.0, .0);
     _animation = Tween(begin: begin, end: end).animate(CurvedAnimation(
       parent: _animationController,
@@ -81,26 +81,27 @@ class _RechargeDrawAnimationState extends State<RechargeDrawAnimation>
       children: [
         Container(
           width: Get.width,
-          // height: 60,
+          margin: const EdgeInsetsDirectional.only(end: 30),
           constraints: const BoxConstraints(minHeight: 60),
           alignment: Alignment.centerLeft,
           padding: const EdgeInsetsDirectional.only(
-              top: 10, bottom: 5, start: 10, end: 50),
+              top: 5, bottom: 5, start: 10, end: 50),
           decoration: const BoxDecoration(
+              //color: Colors.blue,
               image: DecorationImage(
                   matchTextDirection: true,
-                  centerSlice: Rect.fromLTRB(150, 10, 200, 50),
-                  image: ExactAssetImage(Assets.imgRewardInfoBg),
+                  centerSlice: Rect.fromLTRB(150, 5, 200, 45),
+                  image: ExactAssetImage(Assets.iconRewardInfoBg),
                   fit: BoxFit.fill)),
           child: Row(
             children: [
               Container(
-                width: 36,
-                height: 36,
+                width: 30,
+                height: 30,
                 clipBehavior: Clip.hardEdge,
-                margin: const EdgeInsetsDirectional.only(start: 3),
+                margin: const EdgeInsetsDirectional.only(end: 10),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.transparent, width: 1),
+                  border: Border.all(color: Colors.white, width: 0.5),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 foregroundDecoration: const BoxDecoration(),
@@ -111,15 +112,23 @@ class _RechargeDrawAnimationState extends State<RechargeDrawAnimation>
                 ),
               ),
               Expanded(
-                  child: AutoSizeText(data.getContent() ?? "",
-                      maxFontSize: 13,
+                  child: AutoSizeText(data.getContent(),
+                      maxFontSize: 12,
                       minFontSize: 6,
                       maxLines: 2,
-                      style:
-                          const TextStyle(color: Colors.white, fontSize: 13))),
+                      style: const TextStyle(
+                          color: Color(0xFFFFFA6D), fontSize: 12))),
             ],
           ),
         ),
+        PositionedDirectional(
+            end: 10,
+            child: Image.asset(
+              Assets.iconRechargeGift,
+              width: 50,
+              height: 50,
+              matchTextDirection: true,
+            ))
       ],
     );
   }

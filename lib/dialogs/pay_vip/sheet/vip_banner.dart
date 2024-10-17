@@ -23,6 +23,7 @@ class VipBanner extends StatelessWidget {
   ];
 
   final List<String> content = [
+    Tr.app_benefit.trArgs([]),
     Tr.app_vip_sign_extra.tr,
     Tr.app_benefit_1.tr,
     Tr.app_benefit_2.tr,
@@ -32,7 +33,7 @@ class VipBanner extends StatelessWidget {
     Tr.app_benefit_6.tr,
   ];
 
-  List<Widget> w = [
+  final List<Widget> w = [
     Banner1(),
     Banner2(),
     Banner3(),
@@ -42,9 +43,10 @@ class VipBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      height: 180,
+      height: 170,
+      //color: Colors.blue,
       margin: const EdgeInsetsDirectional.only(
-          top: 5, start: 15, end: 15, bottom: 5),
+          top: 20, start: 20, end: 20, bottom: 10),
       padding: const EdgeInsets.only(top: 0, left: 0, right: 0, bottom: 10),
       child: RepaintBoundary(
         child: Swiper(
@@ -63,8 +65,8 @@ class VipBanner extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             margin: EdgeInsets.only(bottom: 0),
             builder: DotSwiperPaginationBuilder(
-                activeColor: Colors.white,
-                color: Color(0x7FFFFFFF),
+                activeColor: Color(0xFF9341FF),
+                color: Color(0x339341FF),
                 size: 7,
                 activeSize: 7),
           ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/routes/route_name.dart';
 import 'package:oliapro/widget/base_app_bar.dart';
@@ -48,7 +47,7 @@ class _OrderTabState extends State<OrderTab>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.splashBg,
+      backgroundColor: const Color(0xFFF4F5F6),
       appBar: BaseAppBar(
         titleWidget: buildTabBar(),
       ),
@@ -75,12 +74,14 @@ class _OrderTabState extends State<OrderTab>
         isScrollable: true,
         padding: EdgeInsets.zero,
         controller: controller,
-        labelColor: Colors.white,
-        unselectedLabelColor: Colors.white,
+        labelColor: Colors.black,
+        unselectedLabelColor: const Color(0xFF9B989D),
         labelStyle: const TextStyle(
-            fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+            fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
         unselectedLabelStyle: const TextStyle(
-            fontSize: 16, color: Colors.white, fontWeight: FontWeight.w400),
+            fontSize: 16,
+            color: Color(0xFF9B989D),
+            fontWeight: FontWeight.w400),
         indicator: const RRecTabIndicator(
             radius: 2,
             insets: EdgeInsets.only(bottom: 5),
