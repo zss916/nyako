@@ -8,7 +8,7 @@ class FollowPage extends GetView<FollowLogic> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BaseAppBar(title: Tr.app_home_tab_follow.tr),
-      backgroundColor: AppColors.pageBg,
+      backgroundColor: const Color(0xFFF4F5F6),
       body: const FollowList(),
     );
   }

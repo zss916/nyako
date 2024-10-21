@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
+import 'package:oliapro/common/app_style.dart';
 import 'package:oliapro/database/entity/app_her_entity.dart';
 import 'package:oliapro/entities/app_banner_entity.dart';
 import 'package:oliapro/entities/app_host_entity.dart';

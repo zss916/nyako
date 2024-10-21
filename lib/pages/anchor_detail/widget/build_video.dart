@@ -13,8 +13,9 @@ import 'package:oliapro/pages/widget/base_top_empty.dart';
 class BuildVideo extends StatelessWidget {
   final AnchorDetailLogic logic;
   final List<HostMedia> data;
+  final ScrollController sc;
 
-  const BuildVideo(this.logic, this.data, {super.key});
+  const BuildVideo(this.sc, this.logic, this.data, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,28 +24,25 @@ class BuildVideo extends StatelessWidget {
             alignment: AlignmentDirectional.topCenter,
             children: [
               BaseTopEmpty(
-                h: 30,
+                h: 50,
               ),
             ],
           )
-        : Stack(
-            alignment: AlignmentDirectional.topCenter,
-            children: [
-              buildList(data, context),
-            ],
-          );
+        : buildList(data, context, sc);
   }
 
-  Widget buildList(List<HostMedia> data, BuildContext context) {
+  Widget buildList(
+      List<HostMedia> data, BuildContext context, ScrollController sc) {
     // debugPrint("buildList ===>> ${data.length}");
     return GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
+        controller: sc,
+        // physics: const NeverScrollableScrollPhysics(),
+        // shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 5,
-          mainAxisSpacing: 5,
-          childAspectRatio: 180 / 250,
+          crossAxisCount: 3,
+          crossAxisSpacing: 9,
+          mainAxisSpacing: 9,
+          childAspectRatio: 110 / 160,
         ),
         itemCount: data.length,
         padding: const EdgeInsets.only(top: 0, bottom: 100, left: 0, right: 0),
@@ -111,22 +109,15 @@ class BuildVideo extends StatelessWidget {
                           image: CachedNetworkImageProvider(path),
                           fit: BoxFit.cover)),
                 ),
-              if (isVip && (!logic.state.userVip))
-                Center(
-                  child: Image.asset(
-                    Assets.imgVipLock,
-                    matchTextDirection: true,
-                    width: 55,
-                    height: 55,
-                  ),
-                )
-              else
-                Center(
+              if (!isPhoto)
+                PositionedDirectional(
+                  top: 5,
+                  end: 5,
                   child: Image.asset(
                     Assets.imgVideoPlay,
                     matchTextDirection: true,
-                    width: 55,
-                    height: 55,
+                    width: 24,
+                    height: 24,
                   ),
                 ),
               if (isVip)
@@ -134,8 +125,8 @@ class BuildVideo extends StatelessWidget {
                   top: 5,
                   start: 4,
                   child: Image.asset(
-                    Assets.imgIconVip,
-                    width: 32,
+                    Assets.iconNyakoVipIc,
+                    width: 40,
                     height: 16,
                   ),
                 ),

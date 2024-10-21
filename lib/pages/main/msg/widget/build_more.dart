@@ -14,12 +14,12 @@ class BuildMore extends StatelessWidget {
 
   Widget _moreAction(MsgListLogic logic) {
     return Container(
-      margin: const EdgeInsetsDirectional.only(start: 5),
+      margin: const EdgeInsetsDirectional.only(start: 6),
       child: InkWell(
         borderRadius: BorderRadius.circular(5),
         onTap: () => logic.showMore(),
         child: Container(
-          padding: const EdgeInsetsDirectional.all(5),
+          padding: const EdgeInsetsDirectional.all(0),
           child: Image.asset(
             Assets.iconMore,
             width: 24,

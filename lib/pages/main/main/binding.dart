@@ -9,5 +9,6 @@ class MainBinding implements Bindings {
     Get.put<HomeLogic>(HomeLogic());
     Get.put<MatchLogic>(MatchLogic());
     Get.put<MeLogic>(MeLogic());
+    Get.lazyPut<ChatRecordLogic>(() => ChatRecordLogic());
   }
 }

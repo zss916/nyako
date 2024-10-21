@@ -269,14 +269,9 @@ class AppColors {
   ///tab page
   static BoxDecoration tabPageBgDecoration = const BoxDecoration(
       color: Colors.white,
-      gradient: LinearGradient(
-          stops: [0, 0.2],
-          begin: AlignmentDirectional.topCenter,
-          end: AlignmentDirectional.bottomCenter,
-          colors: [Color(0xFFFFF0F5), Colors.white]),
       borderRadius: BorderRadiusDirectional.only(
-        topStart: Radius.circular(16),
-        topEnd: Radius.circular(16),
+        topStart: Radius.circular(24),
+        topEnd: Radius.circular(24),
       ));
 
   ///dialog 背景渐变

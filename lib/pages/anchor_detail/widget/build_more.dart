@@ -22,7 +22,7 @@ class BuildMore extends StatelessWidget {
       child: Container(
         padding: const EdgeInsetsDirectional.all(5),
         child: Image.asset(
-          Assets.imgBlack,
+          Assets.iconBlackIcon,
           matchTextDirection: true,
           width: 25,
           height: 25,

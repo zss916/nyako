@@ -12,11 +12,23 @@ class BuildMsgBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => logic.startMsg(anchorId),
-      child: Image.asset(
-        Assets.imgHotMsgIcon,
-        width: 44,
-        height: 44,
-        matchTextDirection: true,
+      child: Container(
+        width: 60,
+        height: 36,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadiusDirectional.circular(20),
+            gradient: const LinearGradient(colors: [
+              Color(0xFF81E0FF),
+              Color(0xFF4AC6FF),
+            ])),
+        child: UnconstrainedBox(
+          child: Image.asset(
+            Assets.iconToMsgIcon,
+            width: 24,
+            height: 24,
+            matchTextDirection: true,
+          ),
+        ),
       ),
     );
   }

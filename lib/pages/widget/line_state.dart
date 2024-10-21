@@ -11,6 +11,7 @@ class LineState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: AlignmentDirectional.center,
       children: [
         if (lineState == LineType.online.number)
           BounceWidget(
@@ -18,7 +19,7 @@ class LineState extends StatelessWidget {
               width: r ?? 12,
               height: r ?? 12,
               decoration: BoxDecoration(
-                  color: const Color(0xFF13D411),
+                  color: const Color(0xFF4CE263),
                   borderRadius: BorderRadiusDirectional.circular(20),
                   border: Border.all(color: Colors.transparent, width: 1)),
             ),
@@ -28,7 +29,7 @@ class LineState extends StatelessWidget {
             width: r ?? 12,
             height: r ?? 12,
             decoration: BoxDecoration(
-                color: const Color(0xFFF447FF),
+                color: const Color(0xFFFF3CF0),
                 borderRadius: BorderRadiusDirectional.circular(20),
                 border: Border.all(color: Colors.transparent, width: 1)),
           ),
@@ -37,7 +38,7 @@ class LineState extends StatelessWidget {
             width: r ?? 12,
             height: r ?? 12,
             decoration: BoxDecoration(
-                color: const Color(0xFF929292),
+                color: const Color(0xFFD5D6D7),
                 borderRadius: BorderRadiusDirectional.circular(20),
                 border: Border.all(color: Colors.transparent, width: 1)),
           ),

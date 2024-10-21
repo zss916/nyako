@@ -22,7 +22,7 @@ class BuildReport extends StatelessWidget {
         alignment: AlignmentDirectional.center,
         padding: const EdgeInsetsDirectional.all(0),
         child: Image.asset(
-          Assets.imgReportIcon,
+          Assets.iconReportIcon,
           matchTextDirection: true,
           width: 25,
           height: 25,

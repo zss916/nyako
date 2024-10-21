@@ -14,13 +14,13 @@ import 'package:oliapro/utils/app_some_extension.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ChatRecordBody extends StatelessWidget {
-  final ChatRecordLogic logic;
+  // final ChatRecordLogic logic;
 
-  const ChatRecordBody(this.logic, {super.key});
+  const ChatRecordBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    //return buildCell(CallRecordEntity(), ChatRecordLogic());
+    // return buildCell(CallRecordEntity(), ChatRecordLogic());
     return GetBuilder<ChatRecordLogic>(
       assignId: true,
       init: ChatRecordLogic(),
@@ -53,80 +53,70 @@ class ChatRecordBody extends StatelessWidget {
         onTap: () => logic.goAnchorDetail(item.peerUserId ?? 0),
         child: Container(
           width: double.maxFinite,
-          height: 142,
+          height: 96,
           decoration: BoxDecoration(
-              color: Colors.white10,
+              color: Colors.white,
               borderRadius: BorderRadiusDirectional.circular(16)),
           alignment: Alignment.center,
           padding: const EdgeInsetsDirectional.all(12),
           margin: const EdgeInsetsDirectional.only(start: 15, end: 15, top: 10),
-          child: Column(
+          child: Row(
             children: [
-              Row(
+              Stack(
                 children: [
                   BuildItemAvatar(
                     item.peerPortrait ?? '',
                     item.lineState(),
-                    r: 60,
+                    r: 72,
                   ),
-                  Expanded(
-                      child: Container(
-                    height: 48,
-                    alignment: AlignmentDirectional.centerStart,
-                    padding:
-                        const EdgeInsetsDirectional.only(start: 10, end: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              margin: const EdgeInsetsDirectional.only(end: 5),
-                              child: AutoSizeText(
-                                item.peerNickname?.convertName ?? "--",
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.start,
-                                maxFontSize: 18,
-                                minFontSize: 9,
-                                style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            LineState(item.lineState(), r: 12),
-                          ],
-                        ),
-                        AutoSizeText(
-                          dateFormat((item.createdAt ?? 0)),
-                          textAlign: TextAlign.start,
-                          maxLines: 1,
-                          maxFontSize: 12,
-                          minFontSize: 6,
-                          style:
-                              const TextStyle(color: Colors.grey, fontSize: 12),
-                        ),
-                      ],
-                    ),
-                  )),
-                  ChatRecordButton(logic.isChat(item), item, logic),
+                  PositionedDirectional(
+                      top: 6,
+                      start: 6,
+                      child: LineState(item.lineState(), r: 12)),
                 ],
               ),
-              Container(
-                color: Colors.white10,
-                height: 1,
-                width: double.maxFinite,
-                margin: const EdgeInsetsDirectional.only(
-                    top: 12, bottom: 0, start: 70),
-              ),
-              const Spacer(),
-              Container(
-                margin: const EdgeInsetsDirectional.only(start: 70),
-                child: CallTime(logic.lineState(item), logic.stateStr(item)),
-              ),
-              const Spacer(),
+              Expanded(
+                  child: Container(
+                alignment: AlignmentDirectional.centerStart,
+                padding: const EdgeInsetsDirectional.only(start: 10, end: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: double.maxFinite,
+                      margin: const EdgeInsetsDirectional.only(end: 5),
+                      child: AutoSizeText(
+                        item.peerNickname?.convertName ?? "--",
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.start,
+                        maxFontSize: 16,
+                        minFontSize: 9,
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    AutoSizeText(
+                      dateFormat((item.createdAt ?? 0)),
+                      textAlign: TextAlign.start,
+                      maxLines: 1,
+                      maxFontSize: 13,
+                      minFontSize: 6,
+                      style: const TextStyle(
+                          color: Color(0xFFBCB6C4), fontSize: 13),
+                    ),
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(start: 0),
+                      child:
+                          CallTime(logic.lineState(item), logic.stateStr(item)),
+                    ),
+                  ],
+                ),
+              )),
+              ChatRecordButton(logic.isChat(item), item, logic),
             ],
           ),
         ));

@@ -7,7 +7,7 @@ class AnchorDetailPage extends GetWidget<AnchorDetailLogic> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: AppColors.splashBg,
+      backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       body: AnchorDetailsBody(),
     );

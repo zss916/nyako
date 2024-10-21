@@ -41,13 +41,13 @@ class FollowList extends StatelessWidget {
       itemBuilder: (context, index) =>
           FollowItem(data: logic.followList[index], logic: logic, index: index),
       itemCount: logic.followList.length,
-      cacheExtent: 50,
+      cacheExtent: 118,
       shrinkWrap: true,
       //physics: const ClampingScrollPhysics(),
       addRepaintBoundaries: false,
       addAutomaticKeepAlives: false,
       separatorBuilder: (BuildContext context, int index) {
-        return const Divider(height: 20, color: Colors.transparent);
+        return const Divider(height: 12, color: Colors.transparent);
       },
     );
   }

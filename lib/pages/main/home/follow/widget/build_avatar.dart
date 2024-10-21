@@ -9,9 +9,9 @@ class BuildAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(14),
+      borderRadius: BorderRadius.circular(10),
       child: cachedImage(portrait,
-          fit: BoxFit.cover, type: 100, width: 48, height: 48),
+          fit: BoxFit.cover, type: 100, width: 72, height: 72),
     );
   }
 }

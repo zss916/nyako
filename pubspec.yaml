@@ -112,6 +112,7 @@ dependencies:
   launch_review: ^3.0.1
   qr_flutter: ^4.1.0
   gif_view: ^0.4.4
+  sliding_up_panel: ^2.0.0+1
   #sentry_flutter: ^8.3.0
   #vap_player: 0.0.6
   #win32: ^5.5.3

@@ -17,7 +17,7 @@ class BuildItemAvatar extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(bottom: 0),
           child:
-              BasePortrait(url, LineType.other.number, r: r ?? 42, radius: 50),
+              BasePortrait(url, LineType.other.number, r: r ?? 42, radius: 10),
         ),
       ],
     );

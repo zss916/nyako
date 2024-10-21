@@ -278,8 +278,8 @@ LocaleType get currentUerLanguageType {
 }
 
 const Gradient foregroundBoxDecoration = LinearGradient(
-  begin: Alignment.topCenter,
-  end: Alignment.bottomCenter,
+  begin: Alignment.bottomCenter,
+  end: Alignment.topCenter,
   colors: [
     Colors.transparent,
     Colors.transparent,
@@ -306,7 +306,6 @@ const Gradient foregroundBoxDecoration = LinearGradient(
     Colors.black38,
     Colors.black45,
     Colors.black54,
-    Colors.black87,
   ],
 );
 

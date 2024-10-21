@@ -14,15 +14,15 @@ class AgeAndSexWidget extends StatelessWidget {
       alignment: Alignment.center,
       margin: const EdgeInsetsDirectional.only(start: 0),
       decoration: const BoxDecoration(
-          borderRadius: BorderRadiusDirectional.all(Radius.circular(20)),
-          color: Color(0xFFFF2279)),
+          borderRadius: BorderRadiusDirectional.all(Radius.circular(5)),
+          color: Color(0x1AFF3881)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             margin: const EdgeInsetsDirectional.only(end: 1),
             child: Image.asset(
-              Assets.imgSmallWoman,
+              Assets.iconSmallWoman,
               width: 14,
               height: 14,
               matchTextDirection: true,
@@ -31,7 +31,10 @@ class AgeAndSexWidget extends StatelessWidget {
           Text(
             age,
             textAlign: TextAlign.center,
-            style: const TextStyle(color: Colors.white, fontSize: 13),
+            style: const TextStyle(
+                color: Color(0xFFFF3881),
+                fontSize: 13,
+                fontWeight: FontWeight.w500),
           )
         ],
       ),

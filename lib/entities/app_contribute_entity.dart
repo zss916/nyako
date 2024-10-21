@@ -19,6 +19,8 @@ class ContributeEntity {
 
   String get showPortrait => (portrait ?? "");
 
+  String get showUserName => "ID:${(username ?? "")}";
+
   ContributeEntity();
 
   factory ContributeEntity.fromJson(Map<String, dynamic> json) =>

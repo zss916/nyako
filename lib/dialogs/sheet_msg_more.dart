@@ -12,13 +12,7 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
             height: Get.width * 2 / 3,
             padding: const EdgeInsetsDirectional.only(top: 0),
             decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    begin: AlignmentDirectional.topCenter,
-                    end: AlignmentDirectional.bottomCenter,
-                    colors: [
-                      Color(0xFF201436),
-                      Color(0xFF0C0C32),
-                    ]),
+                color: Colors.white,
                 borderRadius: BorderRadiusDirectional.only(
                     topStart: Radius.circular(20),
                     topEnd: Radius.circular(20))),
@@ -43,7 +37,7 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                     child: Text(
                       Tr.app_dialog_clear_message_unread.tr,
                       style: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
@@ -65,7 +59,7 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                     child: Text(
                       Tr.app_dialog_clear_message_all_session.tr,
                       style: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold),
                     ),
@@ -73,8 +67,8 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                 ),
                 Container(
                   width: double.maxFinite,
-                  height: 8,
-                  color: const Color(0xDF6F8FC),
+                  height: 5,
+                  color: const Color(0xFFEEEEEE),
                 ),
                 GestureDetector(
                   behavior: HitTestBehavior.opaque,
@@ -90,7 +84,10 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                         const EdgeInsetsDirectional.only(top: 15, bottom: 15),
                     child: Text(
                       Tr.app_base_cancel.tr,
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                      style: const TextStyle(
+                          color: Color(0xFF9B989D),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),

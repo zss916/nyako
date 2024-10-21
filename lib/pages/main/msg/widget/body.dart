@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/language_key.dart';
+import 'package:oliapro/generated/assets.dart';
+import 'package:oliapro/pages/main/me/calllist/index.dart';
 import 'package:oliapro/pages/main/msg/index.dart';
 import 'package:oliapro/pages/main/msg/widget/build_more.dart';
+import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/widget/top_title.dart';
 
 import 'message.dart';
@@ -53,8 +56,10 @@ class _MsgListBodyState extends State<MsgListBody>
     return Column(
       children: [
         Container(
+          decoration: BoxDecoration(
+              color: tabIndex == 0 ? Colors.white : const Color(0xFFD8D8D8)),
           padding: const EdgeInsetsDirectional.only(
-              top: 50, start: 5, end: 10, bottom: 0),
+              top: 40, start: 5, end: 10, bottom: 0),
           child: Row(
             children: [
               Expanded(
@@ -63,6 +68,7 @@ class _MsgListBodyState extends State<MsgListBody>
                 splashBorderRadius: BorderRadius.circular(5),
                 isScrollable: true,
                 tabAlignment: TabAlignment.start,
+                indicatorWeight: 0,
                 indicator: const BoxDecoration(),
                 labelPadding:
                     const EdgeInsetsDirectional.only(start: 15, end: 15),
@@ -71,6 +77,7 @@ class _MsgListBodyState extends State<MsgListBody>
                   titleTab(tabIndex == 1, Tr.app_my_call_list.tr)
                 ],
               )),
+              toFollowList(),
               if (tabIndex == 0) BuildMore(widget.logic),
             ],
           ),
@@ -80,8 +87,11 @@ class _MsgListBodyState extends State<MsgListBody>
                 physics: const NeverScrollableScrollPhysics(),
                 controller: tabController,
                 children: [
-              MessageListView(context, widget.logic),
-              Container()
+              Container(
+                decoration: const BoxDecoration(color: Colors.white),
+                child: MessageListView(context, widget.logic),
+              ),
+              ChatRecordPage()
             ]))
       ],
     );
@@ -102,4 +112,17 @@ class _MsgListBodyState extends State<MsgListBody>
             ),
           );
   }
+
+  Widget toFollowList() => InkWell(
+        onTap: () => ARoutes.toFollow(),
+        child: Container(
+          margin: const EdgeInsetsDirectional.only(start: 5, end: 6),
+          child: Image.asset(
+            Assets.iconFollowList,
+            matchTextDirection: true,
+            width: 24,
+            height: 24,
+          ),
+        ),
+      );
 }

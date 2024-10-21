@@ -7,30 +7,43 @@ class ContributeListPage extends GetView<ContributeListLogic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(title: Tr.app_ranking.tr, isSetBg: false),
+      appBar: BaseAppBar(
+        title: Tr.app_contribution_list.tr,
+        isDark: false,
+      ),
       extendBodyBehindAppBar: true,
-      backgroundColor: AppColors.splashBg,
+      backgroundColor: Colors.white,
       body: Stack(
         alignment: AlignmentDirectional.topCenter,
         children: [
           PositionedDirectional(
-              top: 0, start: 0, end: 0, child: Image.asset(Assets.imgTabTopBg)),
+              top: 0,
+              start: 0,
+              end: 0,
+              child: Image.asset(
+                Assets.iconRankingBg,
+                matchTextDirection: true,
+              )),
           GetBuilder<ContributeListLogic>(
               init: ContributeListLogic(),
               builder: (logic) {
                 return Container(
                   margin: EdgeInsetsDirectional.only(
-                      start: 18.w, end: 18.w, top: 15 + 70, bottom: 5),
+                      start: 0.w, end: 0.w, top: 15 + 70, bottom: 5),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          avatarB(logic),
-                          avatarA(logic),
-                          avatarC(logic),
-                        ],
+                      Container(
+                        padding:
+                            EdgeInsetsDirectional.only(start: 25.w, end: 25.w),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            avatarB(logic),
+                            avatarA(logic),
+                            avatarC(logic),
+                          ],
+                        ),
                       ),
                       Expanded(
                           child: BuildContributions(logic, logic.contributions))
@@ -48,103 +61,99 @@ class ContributeListPage extends GetView<ContributeListLogic> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          width: 100.w,
-          height: 98,
+          width: 120.w,
+          height: 120,
           foregroundDecoration: const BoxDecoration(
               image: DecorationImage(
                   matchTextDirection: true,
                   fit: BoxFit.fill,
-                  image: ExactAssetImage(Assets.imgSortA))),
+                  image: ExactAssetImage(Assets.iconSortA))),
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [
               logic.sortAAvatar == null
                   ? Container(
+                      margin: const EdgeInsetsDirectional.only(start: 3),
                       clipBehavior: Clip.hardEdge,
+                      alignment: AlignmentDirectional.center,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadiusDirectional.circular(100)),
-                      width: 60,
-                      height: 60,
-                      child: UnconstrainedBox(
-                        child: Image.asset(
-                          Assets.imgSortAvatar,
-                          width: 60,
-                          height: 60,
-                          matchTextDirection: true,
-                        ),
+                      width: 85,
+                      height: 85,
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          Image.asset(
+                            Assets.iconSortAvatar,
+                            width: 60,
+                            height: 60,
+                            matchTextDirection: true,
+                          )
+                        ],
                       ),
                     )
                   : ClipRRect(
                       borderRadius: BorderRadiusDirectional.circular(100),
                       child: cachedImage(logic.sortAAvatar?.showPortrait ?? "",
-                          width: 80, height: 80),
+                          width: 70, height: 70),
                     )
             ],
           ),
         ),
-        Container(
-          width: 115.w,
-          height: 90,
-          margin: const EdgeInsetsDirectional.only(top: 12),
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
-          decoration: const BoxDecoration(
-              color: Colors.white12,
-              borderRadius: BorderRadiusDirectional.only(
-                  topStart: Radius.circular(12), topEnd: Radius.circular(12))),
-          child: Column(
-            children: [
-              if (logic.sortAAvatar != null)
-                Container(
-                  alignment: AlignmentDirectional.center,
-                  margin: const EdgeInsetsDirectional.only(top: 10),
-                  child: AutoSizeText(
-                    (logic.sortAAvatar?.showNickName ?? "--"),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    maxFontSize: 16,
-                    minFontSize: 16,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
-                ),
-              if (logic.sortAAvatar != null)
-                Container(
-                  margin: const EdgeInsetsDirectional.only(top: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+        (logic.sortAAvatar != null)
+            ? Container(
+                width: 115.w,
+                padding: const EdgeInsetsDirectional.only(
+                    start: 10, end: 10, bottom: 20),
+                decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadiusDirectional.only(
+                        topStart: Radius.circular(12),
+                        topEnd: Radius.circular(12))),
+                child: Column(
+                  children: [
+                    if (logic.sortAAvatar != null)
                       Container(
-                        margin: const EdgeInsetsDirectional.only(end: 2),
-                        child: Image.asset(
-                          Assets.imgSmallPickLove,
-                          width: 18,
-                          height: 18,
-                          matchTextDirection: true,
+                        alignment: AlignmentDirectional.center,
+                        margin: const EdgeInsetsDirectional.only(top: 10),
+                        child: AutoSizeText(
+                          (logic.sortAAvatar?.showNickName ?? "--"),
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          maxFontSize: 13,
+                          minFontSize: 13,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13),
                         ),
                       ),
-                      Flexible(
-                          child: AutoSizeText(
-                        "${logic.sortAAvatar?.amount ?? 0}",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        maxFontSize: 18,
-                        minFontSize: 8,
-                        style: TextStyle(
-                            color: const Color(0xFFFECE51),
-                            fontSize: 18,
-                            fontFamily: AppConstants.fontsBold,
-                            fontWeight: FontWeight.normal),
-                      )),
-                    ],
-                  ),
-                )
-            ],
-          ),
-        ),
+                    if (logic.sortAAvatar != null)
+                      Container(
+                        margin: const EdgeInsetsDirectional.only(
+                            top: 10, start: 4, end: 4),
+                        child: Flexible(
+                            child: AutoSizeText(
+                          "${logic.sortAAvatar?.amount ?? 0}",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          maxFontSize: 15,
+                          minFontSize: 8,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: AppConstants.fontsBold,
+                              fontWeight: FontWeight.normal),
+                        )),
+                      )
+                  ],
+                ),
+              )
+            : const SizedBox(
+                height: 80,
+              ),
       ],
     );
   }
@@ -155,12 +164,12 @@ class ContributeListPage extends GetView<ContributeListLogic> {
       children: [
         Container(
           width: 100.w,
-          height: 98,
+          height: 100,
           foregroundDecoration: const BoxDecoration(
               image: DecorationImage(
                   matchTextDirection: true,
                   fit: BoxFit.fill,
-                  image: ExactAssetImage(Assets.imgSortB))),
+                  image: ExactAssetImage(Assets.iconSortB))),
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [
@@ -170,11 +179,11 @@ class ContributeListPage extends GetView<ContributeListLogic> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadiusDirectional.circular(100)),
-                      width: 60,
-                      height: 60,
+                      width: 70,
+                      height: 70,
                       child: UnconstrainedBox(
                         child: Image.asset(
-                          Assets.imgSortAvatar,
+                          Assets.iconSortAvatar,
                           width: 60,
                           height: 60,
                           matchTextDirection: true,
@@ -184,74 +193,69 @@ class ContributeListPage extends GetView<ContributeListLogic> {
                   : ClipRRect(
                       borderRadius: BorderRadiusDirectional.circular(100),
                       child: cachedImage(logic.sortBAvatar?.showPortrait ?? "",
-                          width: 60, height: 60),
+                          width: 70, height: 70),
                     )
             ],
           ),
         ),
-        Container(
-          width: 102.w,
-          height: 80,
-          margin: const EdgeInsetsDirectional.only(top: 5),
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
-          decoration: const BoxDecoration(
-              color: Colors.white12,
-              borderRadius: BorderRadiusDirectional.only(
-                  topStart: Radius.circular(12), topEnd: Radius.circular(12))),
-          child: Column(
-            children: [
-              if (logic.sortBAvatar != null)
-                Container(
-                  alignment: AlignmentDirectional.center,
-                  margin: const EdgeInsetsDirectional.only(top: 10),
-                  child: AutoSizeText(
-                    logic.sortBAvatar?.showNickName ?? "--",
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    maxFontSize: 16,
-                    minFontSize: 16,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
-                ),
-              if (logic.sortBAvatar != null)
-                Container(
-                  width: double.maxFinite,
-                  margin: const EdgeInsetsDirectional.only(top: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+        (logic.sortBAvatar != null)
+            ? Container(
+                width: 102.w,
+                margin: const EdgeInsetsDirectional.only(top: 0),
+                padding: const EdgeInsetsDirectional.only(
+                    start: 10, end: 10, bottom: 20),
+                decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadiusDirectional.only(
+                        topStart: Radius.circular(12),
+                        topEnd: Radius.circular(12))),
+                child: Column(
+                  children: [
+                    if (logic.sortBAvatar != null)
                       Container(
-                        margin: const EdgeInsetsDirectional.only(end: 2),
-                        child: Image.asset(
-                          Assets.imgSmallPickLove,
-                          width: 18,
-                          height: 18,
-                          matchTextDirection: true,
+                        alignment: AlignmentDirectional.center,
+                        margin: const EdgeInsetsDirectional.only(top: 10),
+                        child: AutoSizeText(
+                          logic.sortBAvatar?.showNickName ?? "--",
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          maxFontSize: 13,
+                          minFontSize: 13,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13),
                         ),
                       ),
-                      Flexible(
-                          child: AutoSizeText(
-                        "${logic.sortBAvatar?.amount ?? 0}",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        maxFontSize: 16,
-                        minFontSize: 8,
-                        style: TextStyle(
-                            color: const Color(0xFF6FEAF4),
-                            fontSize: 16,
-                            fontFamily: AppConstants.fontsBold,
-                            fontWeight: FontWeight.normal),
-                      )),
-                    ],
-                  ),
-                )
-            ],
-          ),
-        ),
+                    if (logic.sortBAvatar != null)
+                      Container(
+                        width: double.maxFinite,
+                        alignment: AlignmentDirectional.center,
+                        padding: const EdgeInsetsDirectional.symmetric(
+                            horizontal: 5),
+                        margin: const EdgeInsetsDirectional.only(
+                            top: 10, start: 4, end: 4),
+                        child: Flexible(
+                            child: AutoSizeText(
+                          "${logic.sortBAvatar?.amount ?? 0}",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          maxFontSize: 15,
+                          minFontSize: 8,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontFamily: AppConstants.fontsBold,
+                              fontWeight: FontWeight.normal),
+                        )),
+                      )
+                  ],
+                ),
+              )
+            : const SizedBox(
+                height: 80,
+              ),
       ],
     );
   }
@@ -262,12 +266,12 @@ class ContributeListPage extends GetView<ContributeListLogic> {
       children: [
         Container(
           width: 100.w,
-          height: 98,
+          height: 100,
           foregroundDecoration: const BoxDecoration(
               image: DecorationImage(
                   matchTextDirection: true,
                   fit: BoxFit.fill,
-                  image: ExactAssetImage(Assets.imgSortC))),
+                  image: ExactAssetImage(Assets.iconSortC))),
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [
@@ -277,11 +281,11 @@ class ContributeListPage extends GetView<ContributeListLogic> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadiusDirectional.circular(100)),
-                      width: 60,
-                      height: 60,
+                      width: 70,
+                      height: 70,
                       child: UnconstrainedBox(
                         child: Image.asset(
-                          Assets.imgSortAvatar,
+                          Assets.iconSortAvatar,
                           width: 60,
                           height: 60,
                           matchTextDirection: true,
@@ -291,74 +295,68 @@ class ContributeListPage extends GetView<ContributeListLogic> {
                   : ClipRRect(
                       borderRadius: BorderRadiusDirectional.circular(100),
                       child: cachedImage(logic.sortCAvatar?.showPortrait ?? "",
-                          width: 60, height: 60),
+                          width: 70, height: 70),
                     )
             ],
           ),
         ),
-        Container(
-          width: 102.w,
-          height: 80,
-          margin: const EdgeInsetsDirectional.only(top: 0),
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 10),
-          decoration: const BoxDecoration(
-              color: Colors.white12,
-              borderRadius: BorderRadiusDirectional.only(
-                  topStart: Radius.circular(12), topEnd: Radius.circular(12))),
-          child: Column(
-            children: [
-              if (logic.sortCAvatar != null)
-                Container(
-                  alignment: AlignmentDirectional.center,
-                  margin: const EdgeInsetsDirectional.only(top: 10),
-                  child: AutoSizeText(
-                    logic.sortCAvatar?.showNickName ?? "--",
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    maxFontSize: 16,
-                    minFontSize: 16,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16),
-                  ),
-                ),
-              if (logic.sortCAvatar != null)
-                Container(
-                    // color: Colors.blueAccent,
-                    width: double.maxFinite,
-                    margin: const EdgeInsetsDirectional.only(top: 12),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          margin: const EdgeInsetsDirectional.only(end: 2),
-                          child: Image.asset(
-                            Assets.imgSmallPickLove,
-                            width: 18,
-                            height: 18,
-                            matchTextDirection: true,
-                          ),
+        (logic.sortCAvatar != null)
+            ? Container(
+                width: 102.w,
+                margin: const EdgeInsetsDirectional.only(top: 0),
+                padding: const EdgeInsetsDirectional.only(
+                    start: 10, end: 10, bottom: 20),
+                decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadiusDirectional.only(
+                        topStart: Radius.circular(12),
+                        topEnd: Radius.circular(12))),
+                child: Column(
+                  children: [
+                    if (logic.sortCAvatar != null)
+                      Container(
+                        alignment: AlignmentDirectional.center,
+                        margin: const EdgeInsetsDirectional.only(top: 10),
+                        child: AutoSizeText(
+                          logic.sortCAvatar?.showNickName ?? "--",
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          maxFontSize: 13,
+                          minFontSize: 13,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13),
                         ),
-                        Flexible(
+                      ),
+                    if (logic.sortCAvatar != null)
+                      Container(
+                        // color: Colors.blueAccent,
+                        width: double.maxFinite,
+                        alignment: AlignmentDirectional.center,
+                        margin: const EdgeInsetsDirectional.only(
+                            top: 10, start: 4, end: 4),
+                        child: Flexible(
                             child: AutoSizeText(
                           "${logic.sortCAvatar?.amount ?? 0}",
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
-                          maxFontSize: 16,
+                          maxFontSize: 15,
                           minFontSize: 8,
                           style: TextStyle(
-                              color: const Color(0xFFEE7F4E),
-                              fontSize: 16,
+                              color: Colors.white,
+                              fontSize: 15,
                               fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.normal),
                         )),
-                      ],
-                    ))
-            ],
-          ),
-        ),
+                      )
+                  ],
+                ),
+              )
+            : const SizedBox(
+                height: 80,
+              ),
       ],
     );
   }

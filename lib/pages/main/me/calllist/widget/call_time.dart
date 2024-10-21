@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/utils/app_extends.dart';
 
 class CallTime extends StatelessWidget {
@@ -24,12 +25,22 @@ class CallTime extends StatelessWidget {
         color: Colors.transparent,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
-      child: Text(
-        state,
-        style: const TextStyle(
-            color: Color(0xFF27EF83),
-            fontSize: 12,
-            fontWeight: FontWeight.bold),
+      child: Row(
+        children: [
+          Image.asset(
+            Assets.iconOnlineDisconnected,
+            matchTextDirection: true,
+            width: 20,
+            height: 20,
+          ),
+          Text(
+            state,
+            style: const TextStyle(
+                color: Color(0xFF9B989D),
+                fontSize: 15,
+                fontWeight: FontWeight.w400),
+          )
+        ],
       ),
     );
   }
@@ -58,10 +69,22 @@ class CallTime extends StatelessWidget {
         color: Colors.transparent,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
-      child: Text(
-        state,
-        style: const TextStyle(
-            color: Colors.grey, fontSize: 12, fontWeight: FontWeight.bold),
+      child: Row(
+        children: [
+          Image.asset(
+            Assets.iconDisconnected,
+            matchTextDirection: true,
+            width: 20,
+            height: 20,
+          ),
+          Text(
+            state,
+            style: const TextStyle(
+                color: Color(0xFFFF4864),
+                fontSize: 15,
+                fontWeight: FontWeight.w400),
+          )
+        ],
       ),
     );
   }

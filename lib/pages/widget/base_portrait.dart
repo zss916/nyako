@@ -18,7 +18,7 @@ class BasePortrait extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       padding: const EdgeInsetsDirectional.all(2),
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        color: Colors.black12,
         border: Border.all(color: getColor(lineState), width: 2), // border
         borderRadius: BorderRadius.circular((radius ?? 50)), // 圆角
       ),

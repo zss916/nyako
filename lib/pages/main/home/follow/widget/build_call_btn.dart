@@ -12,35 +12,54 @@ class BuildCallBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return item.isChat
-        ? GestureDetector(
-            onTap: () => logic.callUp(item),
-            child: Container(
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      begin: AlignmentDirectional.topStart,
-                      end: AlignmentDirectional.bottomEnd,
-                      stops: [
-                        0.2,
-                        1
-                      ],
-                      colors: [
-                        Color(0xFFAC53FB),
-                        Color(0xFF7934F0),
-                      ]),
-                  borderRadius: BorderRadiusDirectional.circular(60)),
-              child: Center(
-                child: RepaintBoundary(
-                  child: Image.asset(
-                    Assets.animaCall,
-                    width: 24,
-                    height: 24,
-                    matchTextDirection: true,
+        ? Row(
+            children: [
+              GestureDetector(
+                onTap: () => logic.startMsg(item.getUid),
+                child: Container(
+                  width: 36,
+                  height: 36,
+                  margin: const EdgeInsetsDirectional.only(end: 12),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadiusDirectional.circular(40),
+                      gradient: const LinearGradient(colors: [
+                        Color(0xFF81E0FF),
+                        Color(0xFF4AC6FF),
+                      ])),
+                  child: UnconstrainedBox(
+                    child: Image.asset(
+                      Assets.iconToMsgIcon,
+                      width: 24,
+                      height: 24,
+                      matchTextDirection: true,
+                    ),
                   ),
                 ),
               ),
-            ))
+              GestureDetector(
+                  onTap: () => logic.callUp(item),
+                  child: Container(
+                    width: 60,
+                    height: 36,
+                    decoration: BoxDecoration(
+                        gradient: const LinearGradient(colors: [
+                          Color(0xFF8A29F8),
+                          Color(0xFFFC0193),
+                        ]),
+                        borderRadius: BorderRadiusDirectional.circular(20)),
+                    child: Center(
+                      child: RepaintBoundary(
+                        child: Image.asset(
+                          Assets.iconToCallIcon,
+                          width: 24,
+                          height: 24,
+                          matchTextDirection: true,
+                        ),
+                      ),
+                    ),
+                  ))
+            ],
+          )
         : const SizedBox.shrink();
   }
 }

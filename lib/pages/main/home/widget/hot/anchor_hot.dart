@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
@@ -70,8 +69,8 @@ class AnchorHot extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 4,
         crossAxisSpacing: 10,
-        childAspectRatio: 173 / 280,
-        mainAxisExtent: 280,
+        childAspectRatio: 172 / 275,
+        mainAxisExtent: 275,
       ),
       delegate: SliverChildBuilderDelegate(
         childCount: logic.upDetailList.length,
@@ -91,153 +90,133 @@ class AnchorHot extends StatelessWidget {
       onTap: () => logic.pushAnchorDetail(item),
       child: Container(
         width: double.maxFinite,
-        constraints: const BoxConstraints(minHeight: 280),
+        constraints: const BoxConstraints(minHeight: 275),
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: Colors.transparent),
-        child: Column(
+            image: const DecorationImage(
+                fit: BoxFit.cover,
+                image: ExactAssetImage(Assets.iconAnchorDefault)),
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.transparent),
+        child: Stack(
+          alignment: AlignmentDirectional.center,
           children: [
             Container(
               width: double.maxFinite,
-              height: 250,
+              height: 275,
               clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(
                   color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(20),
-                  image: const DecorationImage(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: ExactAssetImage(Assets.imgAnchorDefaultIcon))),
+                      //image: ExtendedNetworkImageProvider(item.portrait ?? "")
+                      image: CachedNetworkImageProvider(
+                        item.portrait ?? "",
+                      ))),
               child: Container(
                 width: double.maxFinite,
-                height: double.maxFinite,
+                height: 275,
                 clipBehavior: Clip.hardEdge,
+                padding: const EdgeInsetsDirectional.only(
+                    start: 10, top: 10, bottom: 12, end: 10),
                 decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        //image: ExtendedNetworkImageProvider(item.portrait ?? "")
-                        image: CachedNetworkImageProvider(
-                          item.portrait ?? "",
-                        ))),
-                child: Container(
-                  width: double.maxFinite,
-                  height: 250,
-                  clipBehavior: Clip.hardEdge,
-                  padding: const EdgeInsetsDirectional.only(
-                      start: 10, top: 8, bottom: 10, end: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: foregroundBoxDecoration,
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      (!AppConstants.isFakeMode)
-                          ? Expanded(
-                              child: Container(
-                              //color: Colors.green,
-                              height: double.maxFinite,
-                              alignment: AlignmentDirectional.bottomStart,
-                              constraints: BoxConstraints(maxWidth: 110.w),
-                              margin:
-                                  const EdgeInsetsDirectional.only(bottom: 5),
-                              child: Row(
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: foregroundBoxDecoration,
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        LineState(
+                          item.lineState(),
+                          r: 10,
+                        ),
+                        Expanded(
+                            child: Container(
+                          margin: const EdgeInsetsDirectional.only(start: 2),
+                          child: AutoSizeText(
+                            item.showNickName,
+                            softWrap: true,
+                            minFontSize: 10,
+                            maxFontSize: 14,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        )),
+                      ],
+                    ),
+                    if (!AppConstants.isFakeMode)
+                      Container(
+                        margin: const EdgeInsetsDirectional.only(top: 2),
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsetsDirectional.only(end: 2),
+                              child: Image.asset(
+                                Assets.iconDiamond,
+                                width: 15,
+                                height: 15,
+                                matchTextDirection: true,
+                              ),
+                            ),
+                            Expanded(
+                                child: Text.rich(
+                              TextSpan(
+                                text: " ",
+                                style: TextStyle(
+                                  color: Colors.white60,
+                                  fontSize: 12,
+                                  fontFamily: AppConstants.fontsRegular,
+                                  fontWeight: FontWeight.normal,
+                                ),
                                 children: [
-                                  Container(
-                                    margin: const EdgeInsetsDirectional.only(
-                                        end: 2),
-                                    child: Image.asset(
-                                      Assets.imgDiamond,
-                                      width: 16,
-                                      height: 16,
-                                      matchTextDirection: true,
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Text.rich(
-                                    TextSpan(
-                                      text: "",
+                                  TextSpan(
+                                      text: "${item.charge ?? '--'}",
                                       style: TextStyle(
-                                        color: Colors.white60,
-                                        fontSize: 12,
-                                        fontFamily: AppConstants.fontsRegular,
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                      children: [
-                                        TextSpan(
-                                            text: "${item.charge ?? '--'}",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 14,
-                                              fontFamily:
-                                                  AppConstants.fontsBold,
-                                              fontWeight: FontWeight.bold,
-                                            )),
-                                        TextSpan(
-                                          text: Tr.app_video_time_unit.tr,
-                                          style: TextStyle(
-                                            color: Colors.white60,
-                                            fontSize: 12,
-                                            fontFamily:
-                                                AppConstants.fontsRegular,
-                                            fontWeight: FontWeight.normal,
-                                          ),
-                                        )
-                                      ],
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontFamily: AppConstants.fontsBold,
+                                        fontWeight: FontWeight.bold,
+                                      )),
+                                  TextSpan(
+                                    text: Tr.app_video_time_unit.tr,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontFamily: AppConstants.fontsRegular,
+                                      fontWeight: FontWeight.normal,
                                     ),
-                                  )),
+                                  )
                                 ],
                               ),
-                            ))
-                          : const Spacer(),
-                      GestureDetector(
-                        onTap: () {
-                          if (item.isChat) {
-                            logic.callUp(item);
-                          } else {
-                            logic.startMsg(item.getUid);
-                          }
-                        },
-                        child: Container(
-                          margin: const EdgeInsetsDirectional.only(
-                              start: 5, bottom: 0),
-                          child: HotChatButton(isCall: item.isChat),
+                            )),
+                          ],
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    const Spacer(),
+                    GestureDetector(
+                      onTap: () {
+                        if (item.isChat) {
+                          logic.callUp(item);
+                        } else {
+                          logic.startMsg(item.getUid);
+                        }
+                      },
+                      child: Container(
+                        margin: const EdgeInsetsDirectional.only(
+                            start: 0, bottom: 0),
+                        child: HotChatButton(isCall: item.isChat),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),
-            Container(
-              margin:
-                  const EdgeInsetsDirectional.only(top: 5, bottom: 0, start: 6),
-              child: Row(
-                children: [
-                  LineState(
-                    item.lineState(),
-                    r: 10,
-                  ),
-                  Expanded(
-                      child: Container(
-                    margin: const EdgeInsetsDirectional.only(start: 2),
-                    child: AutoSizeText(
-                      item.showNickName,
-                      softWrap: true,
-                      minFontSize: 10,
-                      maxFontSize: 14,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  )),
-                ],
-              ),
-            )
           ],
         ),
       ),

@@ -5,8 +5,6 @@ import 'package:get/get.dart';
 import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/home/follow/widget/follow.dart';
 import 'package:oliapro/pages/main/home/index.dart';
 import 'package:oliapro/pages/main/home/widget/build_select_country.dart';
 import 'package:oliapro/pages/main/home/widget/hot/build_gift.dart';
@@ -33,7 +31,7 @@ class _HomeBodyState extends State<HomeBody2>
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 2, vsync: this);
+    tabController = TabController(length: 1, vsync: this);
     tabController.addListener(() {
       if (tabController.index == tabController.animation?.value) {
         if (mounted) {
@@ -59,28 +57,18 @@ class _HomeBodyState extends State<HomeBody2>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: Get.width,
       height: Get.height,
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: AlignmentDirectional.topCenter,
-              end: AlignmentDirectional.bottomCenter,
-              colors: [
-            Color(0xFF3C2944),
-            Color(0xFF26232C),
-          ])),
       child: Stack(
         alignment: AlignmentDirectional.topCenter,
         children: [
-          PositionedDirectional(
-              top: 0, start: 0, end: 0, child: Image.asset(Assets.imgTopBgNew)),
           Positioned.fill(
               child: Column(
             children: [
               Container(
                 padding: const EdgeInsetsDirectional.only(
-                    top: 40, end: 15, start: 5),
+                    top: 10, end: 15, start: 5),
                 child: Row(
                   children: [
                     Expanded(
@@ -94,7 +82,7 @@ class _HomeBodyState extends State<HomeBody2>
                           const EdgeInsetsDirectional.only(start: 5, end: 15),
                       tabs: [
                         _homeTab(tabIndex == 0, Tr.app_home_tab_hot.tr),
-                        _homeTab(tabIndex == 1, Tr.app_home_tab_follow.tr)
+                        //_homeTab(tabIndex == 1, Tr.app_home_tab_follow.tr)
                       ],
                     )),
                     if (!AppConstants.isFakeMode && tabIndex == 0)
@@ -110,7 +98,7 @@ class _HomeBodyState extends State<HomeBody2>
                   AppKeepAlivePage(AnchorHot(
                     ctl: ctl,
                   )),
-                  const FollowList()
+                  // const FollowList()
                 ],
               )),
             ],

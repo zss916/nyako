@@ -28,17 +28,17 @@ class BuildTools extends StatelessWidget {
             margin: const EdgeInsetsDirectional.only(top: 10, end: 15),
             decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [
-                Color(0xFF7770FF),
-                Color(0xFF5138FF),
+                Color(0xFF81E0FF),
+                Color(0xFF4AC6FF),
               ]),
               borderRadius: BorderRadius.all(Radius.circular(30)),
             ),
             child: Center(
               child: Image.asset(
-                Assets.imgToMsgIcon,
+                Assets.iconToMsgIcon,
                 matchTextDirection: true,
-                height: 30,
-                width: 30,
+                height: 32,
+                width: 32,
               ),
             ),
           ),
@@ -54,20 +54,20 @@ class BuildTools extends StatelessWidget {
                 margin: const EdgeInsetsDirectional.only(top: 10),
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(
-                        begin: AlignmentDirectional.topCenter,
-                        end: AlignmentDirectional.bottomCenter,
+                        begin: AlignmentDirectional.centerStart,
+                        end: AlignmentDirectional.centerEnd,
                         colors: [
-                          Color(0xFFAC53FB),
-                          Color(0xFF7934F0),
+                          Color(0xFF8A29F8),
+                          Color(0xFFFC0193),
                         ]),
                     borderRadius: BorderRadius.all(Radius.circular(30))),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      Assets.imgToCallIcon,
-                      height: 30,
-                      width: 30,
+                      Assets.iconToCallIcon,
+                      height: 32,
+                      width: 32,
                       matchTextDirection: true,
                     ),
                     const SizedBox(
@@ -75,14 +75,14 @@ class BuildTools extends StatelessWidget {
                     ),
                     AutoSizeText(
                       Tr.app_grade_video_chat.tr,
-                      maxFontSize: 20,
+                      maxFontSize: 18,
                       minFontSize: 16,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),
@@ -94,12 +94,13 @@ class BuildTools extends StatelessWidget {
                     padding: const EdgeInsetsDirectional.symmetric(
                         horizontal: 4, vertical: 2),
                     decoration: const BoxDecoration(
-                        color: Color(0xFF1E1226),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFF822CFE), Color(0xFFD500FE)]),
                         borderRadius: BorderRadiusDirectional.only(
-                            topStart: Radius.circular(12),
-                            topEnd: Radius.circular(12),
-                            bottomStart: Radius.circular(12),
-                            bottomEnd: Radius.zero)),
+                            topStart: Radius.circular(7),
+                            topEnd: Radius.circular(7),
+                            bottomStart: Radius.circular(7),
+                            bottomEnd: Radius.circular(7))),
                     child: RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
@@ -110,7 +111,7 @@ class BuildTools extends StatelessWidget {
                             child: Container(
                               margin: const EdgeInsetsDirectional.only(end: 2),
                               child: Image.asset(
-                                Assets.imgDiamond,
+                                Assets.iconDiamond,
                                 width: 12,
                                 height: 12,
                               ),
@@ -147,8 +148,8 @@ class BuildTools extends StatelessWidget {
         margin: const EdgeInsetsDirectional.only(end: 15),
         decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
-            Color(0xFF7770FF),
-            Color(0xFF5138FF),
+            Color(0xFF81E0FF),
+            Color(0xFF4AC6FF),
           ]),
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
@@ -158,9 +159,9 @@ class BuildTools extends StatelessWidget {
             Container(
               margin: const EdgeInsetsDirectional.only(end: 5),
               child: Image.asset(
-                Assets.imgToMsgIcon,
-                height: 30,
-                width: 30,
+                Assets.iconToMsgIcon,
+                height: 32,
+                width: 32,
                 matchTextDirection: true,
               ),
             ),
@@ -168,8 +169,8 @@ class BuildTools extends StatelessWidget {
               Tr.app_base_message.tr,
               style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600),
             ),
           ],
         ),
