@@ -6,13 +6,14 @@ class HomePage extends GetView<HomeLogic> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         toolbarHeight: 0,
         leading: const SizedBox.shrink(),
         systemOverlayStyle: darkBarStyle,
       ),
       backgroundColor: Colors.white,
-      body: HomeBody2(),
+      body: HomeBody(),
     );
   }
 }

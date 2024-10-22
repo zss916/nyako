@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -26,12 +25,12 @@ class AnchorBtn extends StatelessWidget {
               InkWell(
                 onTap: () => ARoutes.toChatPage(data.getUid),
                 child: Container(
-                  width: 90,
-                  height: 50,
+                  width: 72,
+                  height: 52,
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(colors: [
-                      Color(0xFF7770FF),
-                      Color(0xFF5138FF),
+                      Color(0xFF81E0FF),
+                      Color(0xFF4AC6FF),
                     ]),
                     borderRadius: BorderRadiusDirectional.circular(45),
                   ),
@@ -39,9 +38,9 @@ class AnchorBtn extends StatelessWidget {
                     alignment: AlignmentDirectional.center,
                     children: [
                       Image.asset(
-                        Assets.imgToMsgIcon,
-                        width: 30,
-                        height: 30,
+                        Assets.iconToMsgIcon,
+                        width: 32,
+                        height: 32,
                         matchTextDirection: true,
                       )
                     ],
@@ -56,17 +55,20 @@ class AnchorBtn extends StatelessWidget {
                 onTap: () =>
                     ARoutes.toLocalCall(data.getUid, data.showPortrait),
                 child: Container(
-                  height: 50,
+                  height: 52,
                   width: double.maxFinite,
                   decoration: BoxDecoration(
-                    gradient: AppColors.btnGradient,
+                    gradient: const LinearGradient(colors: [
+                      Color(0xFF8A29F8),
+                      Color(0xFFFC0193),
+                    ]),
                     borderRadius: BorderRadiusDirectional.circular(45),
                   ),
                   child: Row(
                     children: [
                       const Spacer(),
                       Image.asset(
-                        Assets.imgToCallIcon,
+                        Assets.iconToCallIcon,
                         matchTextDirection: true,
                         width: 32,
                         height: 32,
@@ -91,13 +93,13 @@ class AnchorBtn extends StatelessWidget {
         : GestureDetector(
             onTap: () => ARoutes.toChatPage(data.getUid),
             child: Container(
-              height: 50,
+              height: 52,
               width: double.maxFinite,
               margin: const EdgeInsetsDirectional.symmetric(horizontal: 0),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(colors: [
-                  Color(0xFF7770FF),
-                  Color(0xFF5138FF),
+                  Color(0xFF81E0FF),
+                  Color(0xFF4AC6FF),
                 ]),
                 borderRadius: BorderRadiusDirectional.circular(45),
               ),
@@ -105,7 +107,7 @@ class AnchorBtn extends StatelessWidget {
                 children: [
                   const Spacer(),
                   Image.asset(
-                    Assets.imgToMsgIcon,
+                    Assets.iconToMsgIcon,
                     width: 32,
                     height: 32,
                     matchTextDirection: true,

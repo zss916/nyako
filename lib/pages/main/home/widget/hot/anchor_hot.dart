@@ -16,10 +16,19 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class AnchorHot extends StatelessWidget {
   final ScrollController ctl;
+  final HomeLogic logic;
 
-  const AnchorHot({super.key, required this.ctl});
+  const AnchorHot({super.key, required this.ctl, required this.logic});
   @override
   Widget build(BuildContext context) {
+    return SmartRefresher(
+      enablePullDown: true,
+      enablePullUp: true,
+      controller: logic.refreshCtrl,
+      onRefresh: () => logic.refreshData(),
+      onLoading: () => logic.loadMoreData(),
+      child: buildList(logic, ctl),
+    );
     return GetBuilder<HomeLogic>(
         assignId: true,
         init: HomeLogic(),
@@ -40,7 +49,7 @@ class AnchorHot extends StatelessWidget {
       slivers: [
         if (logic.banners.isNotEmpty)
           SliverPadding(
-              padding: const EdgeInsets.only(top: 5, bottom: 0),
+              padding: const EdgeInsets.only(top: 5, bottom: 10),
               sliver: banner(logic)),
         (logic.upDetailList.isEmpty && !logic.state)
             ? const SliverToBoxAdapter(
@@ -48,7 +57,7 @@ class AnchorHot extends StatelessWidget {
               )
             : SliverPadding(
                 padding: const EdgeInsetsDirectional.only(
-                    top: 10, start: 10, end: 10, bottom: 20),
+                    top: 5, start: 10, end: 10, bottom: 20),
                 sliver: recommendList(logic),
               ),
       ],
@@ -67,7 +76,7 @@ class AnchorHot extends StatelessWidget {
     return SliverGrid(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        mainAxisSpacing: 4,
+        mainAxisSpacing: 10,
         crossAxisSpacing: 10,
         childAspectRatio: 172 / 275,
         mainAxisExtent: 275,

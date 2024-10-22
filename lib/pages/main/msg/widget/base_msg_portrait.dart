@@ -17,7 +17,7 @@ class BaseMsgPortrait extends StatelessWidget {
       decoration: BoxDecoration(
         image: const DecorationImage(
             fit: BoxFit.cover,
-            image: ExactAssetImage(Assets.imgAnchorDefaultAvatar)),
+            image: ExactAssetImage(Assets.iconAnchorDefault)),
         borderRadius: BorderRadius.circular((60)), // 圆角
       ),
       child: ClipRRect(

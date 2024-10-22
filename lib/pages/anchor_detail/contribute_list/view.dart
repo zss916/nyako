@@ -29,7 +29,7 @@ class ContributeListPage extends GetView<ContributeListLogic> {
               builder: (logic) {
                 return Container(
                   margin: EdgeInsetsDirectional.only(
-                      start: 0.w, end: 0.w, top: 15 + 70, bottom: 5),
+                      start: 0.w, end: 0.w, top: 110, bottom: 5),
                   child: Column(
                     children: [
                       Container(

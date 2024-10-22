@@ -165,7 +165,7 @@ Widget cachedImage(String url,
 
   if (type == 100) {
     holderImage = Image.asset(
-      Assets.imgAnchorDefaultAvatar,
+      Assets.iconAnchorDefault,
       width: width,
       height: height,
       fit: fit,
@@ -178,7 +178,7 @@ Widget cachedImage(String url,
 
   return url.contains("images/default")
       ? Image.asset(
-          Assets.imgAppLogo,
+          Assets.iconAnchorDefault,
           fit: BoxFit.cover,
           width: width,
           height: height,

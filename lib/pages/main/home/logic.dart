@@ -4,6 +4,7 @@ class HomeLogic extends GetxController implements ILoadService {
   late int anchorPage = 1;
   late int followPage = 1;
   late List<HostDetail> followList = [];
+  late List<AreaData> areaList = [];
   late List<HostDetail> upDetailList = [];
   late List<BannerBean> banners = [];
   late String areaCode = (StorageService.to.getAreaCode()).toString();
@@ -89,6 +90,16 @@ class HomeLogic extends GetxController implements ILoadService {
     refreshFollowData();
   }
 
+  ///获取地区列表
+  /*void getAreaList() {
+    List<AreaData> data = StorageService.to.getAreaList();
+    if (data.isEmpty) {
+      AnchorAPI.loadAreas().then((data) {
+        StorageService.to.saveAreaList(data);
+      });
+    }
+  }*/
+
   @override
   void dispose() {
     blackEvent.cancel();
@@ -110,12 +121,12 @@ class HomeLogic extends GetxController implements ILoadService {
 
   @override
   void refreshData() {
-    _loadDta(anchorPage = 1, areaCode: areaCode);
+    loadDta(anchorPage = 1, areaCode: areaCode);
   }
 
   @override
   void loadMoreData() {
-    _loadDta(++anchorPage, areaCode: areaCode);
+    loadDta(++anchorPage, areaCode: areaCode);
   }
 
   @override
@@ -139,13 +150,15 @@ class HomeLogic extends GetxController implements ILoadService {
     isRefresh ? refreshCtrlF.refreshCompleted() : refreshCtrlF.loadComplete();
   }
 
-  _loadDta(int page, {String areaCode = "-1"}) {
+  loadDta(int page, {String areaCode = "-1", bool showLoading = false}) {
     Http.instance
-        .post<UpListData>(NetPath.upListApi + areaCode, data: {
-          "page": page,
-          "pageSize": 30,
-          "isShowResource": 1,
-        }, errCallback: (err) {
+        .post<UpListData>(NetPath.upListApi + areaCode,
+            showLoading: showLoading,
+            data: {
+              "page": page,
+              "pageSize": 30,
+              "isShowResource": 1,
+            }, errCallback: (err) {
           AppLoading.toast(err.message);
           refreshAndLoadCtl(page == 1);
         })
@@ -156,7 +169,7 @@ class HomeLogic extends GetxController implements ILoadService {
           StorageService.to.saveAreaCode(currentArea?.areaCode ?? -1);
           setAnchorData(page, value);
           saveHostSimpleInfo(value.anchorLists);
-          saveAreaList(value.getArea());
+          if (!showLoading) saveAreaList(value.getArea());
           refreshAndLoadCtl(page == 1);
         })
         .catchError((err) {
@@ -284,6 +297,12 @@ class HomeLogic extends GetxController implements ILoadService {
   ///缓存地区数据
   void saveAreaList(List<AreaData> data) {
     StorageService.to.saveAreaList(data);
+    areaList.clear();
+    for (int i = 0; i < data.length; i++) {
+      data[i].isSelect = (data[i].areaCode) == (currentArea?.areaCode);
+    }
+    areaList.addAll(data);
+    update();
   }
 
   void areaRefreshData(int code) {

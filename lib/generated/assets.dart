@@ -195,6 +195,7 @@ class Assets {
   static const String iconToolsChatCard = 'assets/icon/tools_chat_card.png';
   static const String iconUncheck = 'assets/icon/uncheck.png';
   static const String iconVideoPlay = 'assets/icon/video_play.png';
+  static const String iconVideoPlayB = 'assets/icon/video_play_b.png';
   static const String iconVip = 'assets/icon/vip.png';
   static const String iconVipBadge = 'assets/icon/vip_badge.png';
   static const String iconVipOpenBg = 'assets/icon/vip_open_bg.png';

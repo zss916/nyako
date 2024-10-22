@@ -94,45 +94,37 @@ class _AppMediaViewState extends State<AppMediaViewPage>
           height: Get.height,
           child: Scaffold(
             appBar: BaseAppBar(
-              leading: InkWell(
-                onTap: () => Get.back(),
-                child: UnconstrainedBox(
-                  child: Image.asset(
-                    Assets.imgCloseDialog,
-                    width: 34,
-                    height: 34,
-                    matchTextDirection: true,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              isDark: false,
               actions: [
                 _report(widget.uid ?? "", 0, widget.bean.type,
                     mid: widget.bean.mId),
               ],
             ),
             extendBodyBehindAppBar: true,
-            backgroundColor: Colors.transparent,
-            body: playing
-                ? GestureDetector(
-                    onTap: () {
-                      if (mounted) {
-                        setState(() {
-                          if (pause) {
-                            pause = false;
-                            _controller?.play();
-                          } else {
-                            pause = true;
-                            _controller?.pause();
+            backgroundColor: Colors.black,
+            body: Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                playing
+                    ? GestureDetector(
+                        onTap: () {
+                          if (mounted) {
+                            setState(() {
+                              if (pause) {
+                                pause = false;
+                                _controller?.play();
+                              } else {
+                                pause = true;
+                                _controller?.pause();
+                              }
+                            });
                           }
-                        });
-                      }
-                    },
-                    child: SizedBox.expand(
-                      child: Stack(
-                        alignment: Alignment.bottomCenter,
-                        children: <Widget>[
-                          /*if (_controller!.value.isInitialized)
+                        },
+                        child: SizedBox.expand(
+                          child: Stack(
+                            alignment: Alignment.bottomCenter,
+                            children: <Widget>[
+                              /*if (_controller!.value.isInitialized)
                             Center(
                               child: AspectRatio(
                                 aspectRatio: _controller!.value.aspectRatio,
@@ -140,77 +132,99 @@ class _AppMediaViewState extends State<AppMediaViewPage>
                               ),
                             ),*/
 
-                          Center(
-                            child: (_controller!.value.isInitialized)
-                                ? AspectRatio(
-                                    aspectRatio: _controller!.value.aspectRatio,
-                                    child: CachedVideoPlayerPlus(_controller!),
-                                  )
-                                : const SizedBox.shrink(),
-                          ),
-                          if (!isShowFrame)
-                            AppNetImage(
-                              widget.bean.cover ?? '',
-                              fit: BoxFit.cover,
-                              placeholderAsset: Assets.imgAnchorBigDefaultBg,
-                            ),
-                          if (pause)
-                            const Center(
-                              child: Icon(
-                                Icons.play_circle_outline_rounded,
-                                color: Colors.black,
-                                size: 100,
+                              Center(
+                                child: (_controller!.value.isInitialized)
+                                    ? AspectRatio(
+                                        aspectRatio:
+                                            _controller!.value.aspectRatio,
+                                        child:
+                                            CachedVideoPlayerPlus(_controller!),
+                                      )
+                                    : const SizedBox.shrink(),
                               ),
-                            ),
-                          VideoProgressIndicator(
-                            _controller!,
-                            allowScrubbing: true,
-                            colors: const VideoProgressColors(
-                                playedColor: Color(0xFF7934F0),
-                                bufferedColor: Color.fromRGBO(50, 50, 200, 0.2),
-                                backgroundColor:
-                                    Color.fromRGBO(200, 200, 200, 0.5)),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                : Hero(
-                    tag: widget.bean.heroId,
-                    child: SizedBox.expand(
-                      child: widget.bean.type == 0
-                          ? AppNetImage(
-                              widget.bean.path,
-                              fit: BoxFit.cover,
-                              placeholderAsset: Assets.imgAnchorBigDefaultBg,
-                            )
-                          : GestureDetector(
-                              onTap: playIt,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Positioned(
-                                    left: 0,
-                                    right: 0,
-                                    top: 0,
-                                    bottom: 0,
-                                    child: AppNetImage(
-                                      widget.bean.cover ?? '',
-                                      fit: BoxFit.cover,
-                                      placeholderAsset:
-                                          Assets.imgAnchorBigDefaultBg,
-                                    ),
+                              if (!isShowFrame)
+                                AppNetImage(
+                                  widget.bean.cover ?? '',
+                                  fit: BoxFit.cover,
+                                  placeholderAsset:
+                                      Assets.imgAnchorBigDefaultBg,
+                                ),
+                              if (pause)
+                                Center(
+                                  child: Image.asset(
+                                    Assets.iconVideoPlayB,
+                                    width: 72,
+                                    height: 72,
+                                    matchTextDirection: true,
                                   ),
-                                  const Icon(
-                                    Icons.play_circle_outline_rounded,
-                                    color: Color(0xFF7934F0),
-                                    size: 100,
-                                  )
-                                ],
+                                ),
+                              VideoProgressIndicator(
+                                _controller!,
+                                allowScrubbing: true,
+                                colors: const VideoProgressColors(
+                                    playedColor: Color(0xFFF70397),
+                                    bufferedColor:
+                                        Color.fromRGBO(50, 50, 200, 0.2),
+                                    backgroundColor:
+                                        Color.fromRGBO(200, 200, 200, 0.5)),
                               ),
-                            ),
-                    ),
-                  ),
+                            ],
+                          ),
+                        ),
+                      )
+                    : Hero(
+                        tag: widget.bean.heroId,
+                        child: SizedBox.expand(
+                          child: widget.bean.type == 0
+                              ? AppNetImage(
+                                  widget.bean.path,
+                                  fit: BoxFit.cover,
+                                  placeholderAsset:
+                                      Assets.imgAnchorBigDefaultBg,
+                                )
+                              : GestureDetector(
+                                  onTap: playIt,
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Positioned(
+                                        left: 0,
+                                        right: 0,
+                                        top: 0,
+                                        bottom: 0,
+                                        child: AppNetImage(
+                                          widget.bean.cover ?? '',
+                                          fit: BoxFit.cover,
+                                          placeholderAsset:
+                                              Assets.imgAnchorBigDefaultBg,
+                                        ),
+                                      ),
+                                      Image.asset(
+                                        Assets.iconVideoPlayB,
+                                        width: 72,
+                                        height: 72,
+                                        matchTextDirection: true,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                        ),
+                      ),
+                PositionedDirectional(
+                    top: 0,
+                    start: 0,
+                    end: 0,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: AlignmentDirectional.topCenter,
+                              end: AlignmentDirectional.bottomCenter,
+                              colors: [Colors.black38, Colors.transparent])),
+                      width: double.maxFinite,
+                      height: 100,
+                    ))
+              ],
+            ),
           ),
         ),
         if (widget.bean.data != null) btn(widget.bean.data!)
@@ -304,12 +318,12 @@ class _AppMediaViewState extends State<AppMediaViewPage>
         });
       },
       child: Container(
-        margin: const EdgeInsetsDirectional.only(end: 10),
+        margin: const EdgeInsetsDirectional.only(end: 12),
         child: Image.asset(
-          Assets.imgReportIcon,
+          Assets.iconReportIcon,
           matchTextDirection: true,
-          width: 34,
-          height: 34,
+          width: 25,
+          height: 25,
         ),
       ),
     );
@@ -328,20 +342,22 @@ class _AppMediaViewState extends State<AppMediaViewPage>
           ),
           if (data.isChat)
             PositionedDirectional(
-                end: 30,
+                end: 25,
                 bottom: 60,
                 child: Container(
                   padding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 3, vertical: 2),
                   decoration: BoxDecoration(
-                      color: const Color(0xFF260418),
-                      border:
-                          Border.all(width: 1, color: const Color(0xFFEF45A3)),
+                      gradient: const LinearGradient(colors: [
+                        Color(0xFF822CFE),
+                        Color(0xFFD500FE),
+                      ]),
+                      border: Border.all(width: 1, color: Colors.transparent),
                       borderRadius: const BorderRadiusDirectional.only(
-                          topStart: Radius.circular(37),
-                          bottomStart: Radius.circular(37),
-                          topEnd: Radius.circular(37),
-                          bottomEnd: Radius.circular(0))),
+                          topStart: Radius.circular(7),
+                          bottomStart: Radius.circular(7),
+                          topEnd: Radius.circular(7),
+                          bottomEnd: Radius.circular(7))),
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
@@ -353,7 +369,7 @@ class _AppMediaViewState extends State<AppMediaViewPage>
                           child: Container(
                             margin: const EdgeInsetsDirectional.only(bottom: 2),
                             child: Image.asset(
-                              Assets.imgDiamond,
+                              Assets.iconDiamond,
                               matchTextDirection: true,
                               width: 14,
                               height: 14,
@@ -361,10 +377,10 @@ class _AppMediaViewState extends State<AppMediaViewPage>
                           ),
                         ),
                         TextSpan(
-                          text: "${data.charge ?? 0}",
+                          text: " ${data.charge ?? 0}",
                           style: const TextStyle(
                               color: Colors.white,
-                              fontSize: 15,
+                              fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
                         TextSpan(

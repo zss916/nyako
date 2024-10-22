@@ -69,17 +69,25 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                 Container(
                   width: Get.width,
                   height: Get.width,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: CachedNetworkImageProvider(
-                              widget.logic.state.portrait))),
-                  foregroundDecoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: AlignmentDirectional.topCenter,
-                          end: AlignmentDirectional.bottomCenter,
-                          stops: [0, 0.3],
-                          colors: [Color(0x4D000000), Colors.transparent])),
+                          image: ExactAssetImage(Assets.iconAnchorDefault))),
+                  child: Container(
+                    width: Get.width,
+                    height: Get.width,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: CachedNetworkImageProvider(
+                                widget.logic.state.portrait))),
+                    foregroundDecoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: AlignmentDirectional.topCenter,
+                            end: AlignmentDirectional.bottomCenter,
+                            stops: [0, 0.3],
+                            colors: [Color(0x4D000000), Colors.transparent])),
+                  ),
                 )
               ],
             ),
@@ -555,7 +563,7 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                             })),
                     const SliverToBoxAdapter(
                       child: SizedBox(
-                        height: 50,
+                        height: 120,
                       ),
                     )
                   ],
@@ -592,7 +600,7 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                   decoration: BoxDecoration(
                     //color: const Color(0x805138FF),
                     image: const DecorationImage(
-                        image: ExactAssetImage(Assets.imgAnchorDefaultAvatar),
+                        image: ExactAssetImage(Assets.iconAnchorDefault),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -608,7 +616,7 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                   top: 5,
                   end: 5,
                   child: Image.asset(
-                    Assets.imgVideoPlay,
+                    Assets.iconVideoPlay,
                     matchTextDirection: true,
                     width: 24,
                     height: 24,
