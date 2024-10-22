@@ -21,7 +21,7 @@ class BuildChatReport extends StatelessWidget {
         child: Container(
           padding: const EdgeInsetsDirectional.all(5),
           child: Image.asset(
-            Assets.imgReportIcon,
+            Assets.iconReportIconB,
             matchTextDirection: true,
             width: 24,
             height: 24,

@@ -29,7 +29,7 @@ class ChatPortrait extends StatelessWidget {
             maxLines: 1,
             style: const TextStyle(
                 overflow: TextOverflow.ellipsis,
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 21,
                 fontWeight: FontWeight.bold),
           ),

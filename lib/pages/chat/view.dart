@@ -16,7 +16,7 @@ class ChatPage extends GetView<ChatLogic> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: AppColors.splashBg,
+      backgroundColor: Colors.white,
       body: Stack(
         alignment: AlignmentDirectional.topCenter,
         children: [
@@ -89,13 +89,9 @@ class ChatPage extends GetView<ChatLogic> {
   Widget chatBar() {
     return Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: AlignmentDirectional.topCenter,
-              end: AlignmentDirectional.bottomCenter,
-              colors: [
-            Color(0xFF381853),
-            Color(0xFF491E61),
-          ])),
+          borderRadius: BorderRadiusDirectional.only(
+              bottomStart: Radius.circular(24), bottomEnd: Radius.circular(24)),
+          color: Color(0xFFF5F4F6)),
       padding: const EdgeInsetsDirectional.only(
           top: 42, bottom: 15, start: 5, end: 10),
       child: Row(
@@ -111,7 +107,7 @@ class ChatPage extends GetView<ChatLogic> {
                 child: Container(
                   margin: const EdgeInsetsDirectional.all(10),
                   child: Image.asset(
-                    Assets.imgBaseBack,
+                    Assets.iconBack,
                     matchTextDirection: true,
                     width: 24,
                     height: 24,

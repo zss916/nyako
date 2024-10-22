@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/routes/app_pages.dart';
@@ -131,247 +130,220 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog2> {
   Widget body() => Center(
         child: RepaintBoundary(
           key: _globalKey,
-          child: Stack(
-            alignment: AlignmentDirectional.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (qrData != null)
-                Container(
-                  //color: Colors.blue,
-                  height: 510,
-                  margin: const EdgeInsetsDirectional.only(
-                      start: 26, end: 26, top: 60),
-                  width: double.maxFinite,
-                  child: Column(
-                    children: [
-                      const Spacer(),
-                      Container(
-                        width: double.maxFinite,
-                        height: 100,
-                        alignment: AlignmentDirectional.bottomCenter,
-                        padding: const EdgeInsetsDirectional.all(15),
-                        margin: const EdgeInsetsDirectional.only(top: 20),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            gradient: const LinearGradient(colors: [
-                              Color(0xFF381F66),
-                              Color(0xFF232258),
-                            ])),
-                        child: Row(
+              Container(
+                width: double.maxFinite,
+                margin: const EdgeInsetsDirectional.only(start: 30, end: 30),
+                padding: const EdgeInsetsDirectional.only(
+                    top: 20, start: 20, end: 20, bottom: 30),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadiusDirectional.circular(30)),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(
+                      Assets.iconNyakoTitle,
+                      width: 150,
+                      height: 50,
+                    ),
+                    Container(
+                      //height: 60,
+                      width: double.maxFinite,
+                      margin: const EdgeInsetsDirectional.only(top: 10),
+                      padding: const EdgeInsetsDirectional.all(12),
+                      decoration: BoxDecoration(
+                          color: const Color(0x149341FF),
+                          borderRadius: BorderRadiusDirectional.circular(12)),
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsetsDirectional.only(end: 10),
+                            child: Image.asset(
+                              Assets.iconNyakoAccount,
+                              matchTextDirection: true,
+                              width: 38,
+                              height: 38,
+                            ),
+                          ),
+                          Expanded(
+                              child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                Tr.app_login_account.tr,
+                                textAlign: TextAlign.start,
+                                maxLines: 1,
+                                style: const TextStyle(
+                                    color: Color(0xFF9B989D), fontSize: 13),
+                              ),
+                              Text(
+                                widget.account,
+                                maxLines: 1,
+                                textAlign: TextAlign.start,
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ))
+                        ],
+                      ),
+                    ),
+                    Container(
+                      //height: 60,
+                      width: double.maxFinite,
+                      margin: const EdgeInsetsDirectional.only(top: 12),
+                      padding: const EdgeInsetsDirectional.all(12),
+                      decoration: BoxDecoration(
+                          color: const Color(0x149341FF),
+                          borderRadius: BorderRadiusDirectional.circular(12)),
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsetsDirectional.only(end: 10),
+                            child: Image.asset(
+                              Assets.iconNyakoPassword,
+                              matchTextDirection: true,
+                              width: 38,
+                              height: 38,
+                            ),
+                          ),
+                          Expanded(
+                              child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                Tr.app_login_password.tr,
+                                textAlign: TextAlign.start,
+                                maxLines: 1,
+                                style: const TextStyle(
+                                    color: Color(0xFF9B989D), fontSize: 13),
+                              ),
+                              Text(
+                                widget.password,
+                                maxLines: 1,
+                                textAlign: TextAlign.start,
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ))
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin:
+                          const EdgeInsetsDirectional.symmetric(vertical: 20),
+                      child: const Divider(
+                        height: 1,
+                        color: Color(0xFFEEEEEE),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: 54,
+                          height: 54,
+                          margin: const EdgeInsetsDirectional.only(end: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: QrImageView(
+                            padding: const EdgeInsets.all(6),
+                            data: qrData ?? "",
+                            version: QrVersions.auto,
+                            size: 54,
+                          ),
+                        ),
+                        Expanded(
+                            child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Expanded(
-                                child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Container(
-                                  margin: const EdgeInsetsDirectional.only(
-                                      bottom: 7),
-                                  child: Image.asset(
-                                    Assets.imgMira,
-                                    width: 38,
-                                    height: 14,
-                                  ),
-                                ),
-                                AutoSizeText(
-                                  qrTip,
-                                  maxLines: 1,
-                                  maxFontSize: 14,
-                                  minFontSize: 11,
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: 14),
-                                )
-                              ],
-                            )),
+                            Image.asset(
+                              Assets.iconNyakoSmallIc,
+                              width: 50,
+                              height: 18,
+                            ),
                             Container(
-                              width: 42,
-                              height: 42,
-                              margin:
-                                  const EdgeInsetsDirectional.only(start: 3),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
+                              margin: const EdgeInsetsDirectional.only(top: 3),
+                              height: 36,
+                              width: double.maxFinite,
+                              child: AutoSizeText(
+                                qrTip,
+                                maxLines: 2,
+                                maxFontSize: 13,
+                                minFontSize: 10,
+                                softWrap: true,
+                                style: const TextStyle(
+                                    color: Color(0xFF9B989D),
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 13),
                               ),
-                              child: QrImageView(
-                                padding: const EdgeInsets.all(6),
-                                data: qrData ?? "",
-                                version: QrVersions.auto,
-                                size: 42,
+                            )
+                          ],
+                        ))
+                      ],
+                    ),
+                    GestureDetector(
+                      onTap: () => savePhoto(),
+                      child: Container(
+                        margin: const EdgeInsetsDirectional.only(top: 30),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF9341FF),
+                          borderRadius: BorderRadiusDirectional.circular(30),
+                        ),
+                        height: 52,
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: const EdgeInsetsDirectional.only(end: 3),
+                              child: Image.asset(
+                                Assets.iconDownloadIcon,
+                                height: 24,
+                                width: 24,
+                                matchTextDirection: true,
                               ),
+                            ),
+                            Text(
+                              Tr.app_save_image.tr,
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
                             )
                           ],
                         ),
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.back();
+                  widget.back?.call();
+                },
+                child: Container(
+                  margin: const EdgeInsetsDirectional.only(top: 20),
+                  child: Image.asset(
+                    Assets.iconCloseDialog,
+                    height: 42,
+                    width: 42,
                   ),
                 ),
-              Stack(
-                alignment: AlignmentDirectional.topCenter,
-                children: [
-                  Container(
-                    height: 380,
-                    padding: const EdgeInsets.only(
-                        left: 15, right: 15, top: 10, bottom: 10),
-                    margin: const EdgeInsetsDirectional.only(
-                        start: 26, end: 26, top: 60),
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                            begin: AlignmentDirectional.topCenter,
-                            end: AlignmentDirectional.bottomCenter,
-                            colors: [
-                              Color(0xFF201436),
-                              Color(0xFF0C0C32),
-                            ]),
-                        borderRadius: BorderRadiusDirectional.circular(30)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        AutoSizeText(
-                          Tr.appQRDialogTitle.tr,
-                          textAlign: TextAlign.center,
-                          maxLines: 3,
-                          maxFontSize: 15,
-                          minFontSize: 12,
-                          style: const TextStyle(
-                              fontSize: 15, color: Color(0xFFF447FF)),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          width: double.infinity,
-                          height: 60,
-                          alignment: AlignmentDirectional.centerStart,
-                          decoration: BoxDecoration(
-                            color: Colors.white12,
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          padding: const EdgeInsetsDirectional.only(
-                              start: 10, end: 10, top: 5, bottom: 5),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                Tr.app_login_account.tr,
-                                style: const TextStyle(
-                                    color: Colors.white54,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                widget.account,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          width: double.infinity,
-                          height: 60,
-                          alignment: AlignmentDirectional.centerStart,
-                          decoration: BoxDecoration(
-                            color: Colors.white12,
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          padding: const EdgeInsetsDirectional.only(
-                              start: 10, end: 10, top: 5, bottom: 5),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                Tr.app_login_password.tr,
-                                style: const TextStyle(
-                                    color: Colors.white54,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                widget.password,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => savePhoto(),
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 20),
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(30),
-                                gradient: AppColors.btnGradient),
-                            height: 57,
-                            alignment: Alignment.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  margin:
-                                      const EdgeInsetsDirectional.only(end: 3),
-                                  child: Image.asset(
-                                    Assets.imgDownloadIcon,
-                                    height: 20,
-                                    width: 20,
-                                    matchTextDirection: true,
-                                  ),
-                                ),
-                                Text(
-                                  Tr.app_save_image.tr,
-                                  style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Image.asset(
-                    Assets.imgAppLogo,
-                    width: 95,
-                    height: 95,
-                    matchTextDirection: false,
-                  ),
-                ],
-              ),
-              PositionedDirectional(
-                  top: 50,
-                  end: 40,
-                  child: GestureDetector(
-                    onTap: () {
-                      Get.back();
-                      widget.back?.call();
-                    },
-                    child: Image.asset(
-                      Assets.imgCloseDialog,
-                      height: 30,
-                      width: 30,
-                    ),
-                  )),
+              )
             ],
           ),
         ),

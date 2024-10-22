@@ -80,6 +80,7 @@ class Assets {
   static const String iconCallCard = 'assets/icon/call_card.png';
   static const String iconCheckIn = 'assets/icon/check_in.png';
   static const String iconChecked = 'assets/icon/checked.png';
+  static const String iconCloseDialog = 'assets/icon/close_dialog.png';
   static const String iconClosePage = 'assets/icon/close_page.png';
   static const String iconCodeCopy = 'assets/icon/code_copy.png';
   static const String iconCopyLink = 'assets/icon/copy_link.png';
@@ -97,6 +98,7 @@ class Assets {
   static const String iconDiamondM = 'assets/icon/diamond_m.png';
   static const String iconDisconnected = 'assets/icon/disconnected.png';
   static const String iconDisturb = 'assets/icon/disturb.png';
+  static const String iconDownloadIcon = 'assets/icon/download_icon.png';
   static const String iconDrawBg = 'assets/icon/draw_bg.png';
   static const String iconDrawResultBg = 'assets/icon/draw_result_bg.png';
   static const String iconEdit = 'assets/icon/edit.png';
@@ -125,6 +127,7 @@ class Assets {
   static const String iconMatchForeground = 'assets/icon/match_foreground.png';
   static const String iconMatchingBg = 'assets/icon/matching_bg.png';
   static const String iconMore = 'assets/icon/more.png';
+  static const String iconMoreB = 'assets/icon/more_b.png';
   static const String iconMsgDelete = 'assets/icon/msg_delete.png';
   static const String iconN1 = 'assets/icon/n_1.png';
   static const String iconN1N3 = 'assets/icon/n1_n3.png';
@@ -137,6 +140,10 @@ class Assets {
   static const String iconNextW = 'assets/icon/next_w.png';
   static const String iconNextY = 'assets/icon/next_y.png';
   static const String iconNyako = 'assets/icon/Nyako.png';
+  static const String iconNyakoAccount = 'assets/icon/nyako_account.png';
+  static const String iconNyakoPassword = 'assets/icon/nyako_password.png';
+  static const String iconNyakoSmallIc = 'assets/icon/Nyako_small_ic.png';
+  static const String iconNyakoTitle = 'assets/icon/Nyako_title.png';
   static const String iconNyakoVipIc = 'assets/icon/nyako_vip_ic.png';
   static const String iconOnlineDisconnected =
       'assets/icon/online_disconnected.png';
@@ -153,6 +160,7 @@ class Assets {
   static const String iconRemove = 'assets/icon/remove.png';
   static const String iconReport = 'assets/icon/report.png';
   static const String iconReportIcon = 'assets/icon/report_icon.png';
+  static const String iconReportIconB = 'assets/icon/report_icon_b.png';
   static const String iconRewardInfoBg = 'assets/icon/reward_info_bg.png';
   static const String iconScan = 'assets/icon/scan.png';
   static const String iconSearch = 'assets/icon/search.png';

@@ -43,7 +43,7 @@ class BuildChatMore extends StatelessWidget {
         child: Container(
           padding: const EdgeInsetsDirectional.all(5),
           child: Image.asset(
-            Assets.imgMore,
+            Assets.iconMoreB,
             matchTextDirection: true,
             width: 24,
             height: 24,
