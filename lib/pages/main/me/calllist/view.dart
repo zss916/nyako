@@ -6,11 +6,8 @@ class ChatRecordPage extends GetView<ChatRecordLogic> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      /*appBar: BaseAppBar(
-        title: Tr.app_my_call_list.tr,
-      ),*/
-      backgroundColor: const Color(0xFFD8D8D8),
+    return const Scaffold(
+      backgroundColor: Color(0xFFD8D8D8),
       body: ChatRecordBody(),
     );
   }

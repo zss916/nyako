@@ -10,8 +10,6 @@ import 'package:oliapro/utils/app_permission_handler.dart';
 import 'package:oliapro/utils/app_voice_player.dart';
 import 'package:oliapro/widget/app_keybord_logic.dart';
 import 'package:oliapro/widget/app_voice_bottom_widget_record.dart';
-import 'package:oliapro/widget/semantics/label.dart';
-import 'package:oliapro/widget/semantics/semantics_widget.dart';
 
 import '../../../common/app_constants.dart';
 import '../../../entities/app_gift_entity.dart';
@@ -73,77 +71,80 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
           ),
           child: Column(
             children: [
-              GestureDetector(
-                onTap: () {
-                  if (_focusNode.hasFocus) {
-                    _focusNode.unfocus();
-                  } else {
-                    _focusNode.requestFocus();
-                  }
-                },
-                child: Container(
+              if (!isSystemId)
+                Container(
+                  width: double.maxFinite,
                   margin: const EdgeInsetsDirectional.only(
-                      start: 15, end: 15, top: 3, bottom: 10),
-                  padding: const EdgeInsetsDirectional.only(start: 12, end: 12),
-                  decoration: const BoxDecoration(
-                      color: Color(0xFF2B1A36),
-                      borderRadius: BorderRadius.all(Radius.circular(14))),
-                  height: 54,
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      start: 16, end: 16, bottom: 5),
+                  child: Wrap(
+                    spacing: 8,
+                    runSpacing: 0,
                     children: [
-                      Expanded(
-                        child: Container(
-                          height: 54,
-                          alignment: Alignment.center,
-                          child: TextField(
-                            focusNode: _focusNode,
-                            controller: _controller.textEditingController,
-                            maxLines: 1,
-                            minLines: 1,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold),
-                            decoration: InputDecoration(
-                                hintText: Tr.app_message_send_input.tr,
-                                hintStyle: const TextStyle(
-                                    color: Colors.white30,
-                                    fontWeight: FontWeight.w400),
-                                hintMaxLines: 1,
-                                border: InputBorder.none),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsetsDirectional.only(start: 5),
-                        child: send(_controller),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              if (isSystemId)
-                const SizedBox(
-                  width: 10,
-                  height: 10,
-                )
-              else
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 0, horizontal: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      emjio(),
-                      voice(),
-                      call(),
                       pic(),
                       gift(),
+                      call(),
                     ],
                   ),
                 ),
+              Row(
+                children: [
+                  voice(),
+                  Expanded(
+                      child: GestureDetector(
+                    onTap: () {
+                      if (_focusNode.hasFocus) {
+                        _focusNode.unfocus();
+                      } else {
+                        _focusNode.requestFocus();
+                      }
+                    },
+                    child: Container(
+                      margin: const EdgeInsetsDirectional.only(
+                          start: 2, end: 2, top: 3, bottom: 10),
+                      padding:
+                          const EdgeInsetsDirectional.only(start: 12, end: 12),
+                      decoration: const BoxDecoration(
+                          color: Color(0xFFF4F5F6),
+                          borderRadius: BorderRadius.all(Radius.circular(16))),
+                      height: 48,
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 48,
+                              alignment: Alignment.center,
+                              child: TextField(
+                                focusNode: _focusNode,
+                                controller: _controller.textEditingController,
+                                maxLines: 1,
+                                minLines: 1,
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                                decoration: InputDecoration(
+                                    hintText: Tr.app_message_send_input.tr,
+                                    hintStyle: const TextStyle(
+                                        color: Color(0xFFBCB6C4),
+                                        fontWeight: FontWeight.w400),
+                                    hintMaxLines: 1,
+                                    border: InputBorder.none),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsetsDirectional.only(start: 5),
+                            child: send(_controller),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )),
+                  emjio(),
+                ],
+              ),
               Obx(() => _controller.isShowEmoji.value
                   ? showEmoji()
                   : const SizedBox.shrink()),
@@ -184,9 +185,9 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
   Widget send(ChatInputController logic) => AppClickWidget(
         onTap: () => logic.sendTextMsg(),
         child: Image.asset(
-          Assets.imgChatSend,
-          height: 44 + 10,
-          width: 36 + 10,
+          Assets.iconChatSend,
+          height: 26,
+          width: 26,
           matchTextDirection: true,
           // fit: BoxFit.contain,
         ),
@@ -195,7 +196,7 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
   ///礼物
   Widget gift() {
     return InkWell(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(30),
       onTap: () {
         AppAudioPlayer().stop();
         _focusNode.unfocus();
@@ -209,53 +210,47 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
           herId: _controller.userId,
         ));
       },
-      child: Stack(
-        alignment: AlignmentDirectional.bottomCenter,
-        children: [
-          Container(
-            width: 37,
-            height: 37,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadiusDirectional.circular(50),
-                gradient: const LinearGradient(
-                    begin: AlignmentDirectional.topStart,
-                    end: AlignmentDirectional.bottomEnd,
-                    colors: [
-                      Color(0xFFFF81CD),
-                      Color(0xFFB51A8F),
-                    ])),
-            alignment: AlignmentDirectional.center,
-            child: Image.asset(
-              Assets.imgMsgGift,
-              matchTextDirection: true,
-              height: 27,
-              width: 27,
+      child: Container(
+        padding: const EdgeInsetsDirectional.only(
+            start: 4, top: 4, bottom: 4, end: 8),
+        decoration: BoxDecoration(
+            border: Border.all(width: 1, color: const Color(0xFFE4E4E4)),
+            borderRadius: BorderRadiusDirectional.circular(30)),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 24,
+              height: 24,
+              margin: const EdgeInsetsDirectional.only(end: 4),
+              padding: const EdgeInsetsDirectional.all(2),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadiusDirectional.circular(50),
+                  color: const Color(0xFFFD7376)),
+              child: Image.asset(
+                Assets.iconInputGift,
+                matchTextDirection: true,
+                height: 18,
+                width: 18,
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsetsDirectional.symmetric(
-                horizontal: 6, vertical: 2),
-            decoration: BoxDecoration(
-                border: Border.all(width: 0.5, color: Color(0xFFC498FE)),
-                borderRadius: BorderRadiusDirectional.circular(20),
-                gradient: const LinearGradient(colors: [
-                  Color(0xFFAC53FB),
-                  Color(0xFF7934F0),
-                ])),
-            child: Text(
-              Tr.app_gift_send.tr,
-              style: const TextStyle(color: Colors.white, fontSize: 9),
-            ),
-          )
-        ],
+            Text(
+              Tr.app_message_type_gift.tr,
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500),
+            )
+          ],
+        ),
       ),
-    ).onLabel(label: SemanticsLabel.gift);
+    );
   }
 
   ///图片
   Widget pic() {
     return InkWell(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(30),
         onTap: () {
           AppAudioPlayer().stop();
           _focusNode.unfocus();
@@ -268,12 +263,40 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
           AppChooseImageUtil(type: 1, callBack: _controller.upLoadCallBack)
               .openChooseDialog();
         },
-        child: Image.asset(
-          Assets.imgMsgPic,
-          matchTextDirection: true,
-          height: 27,
-          width: 27,
-        )).onLabel(label: SemanticsLabel.picture);
+        child: Container(
+          padding: const EdgeInsetsDirectional.only(
+              start: 4, top: 4, bottom: 4, end: 8),
+          decoration: BoxDecoration(
+              border: Border.all(width: 1, color: const Color(0xFFE4E4E4)),
+              borderRadius: BorderRadiusDirectional.circular(30)),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 24,
+                height: 24,
+                margin: const EdgeInsetsDirectional.only(end: 4),
+                padding: const EdgeInsetsDirectional.all(2),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.circular(50),
+                    color: const Color(0xFFFEA673)),
+                child: Image.asset(
+                  Assets.iconInputPic,
+                  matchTextDirection: true,
+                  height: 18,
+                  width: 18,
+                ),
+              ),
+              Text(
+                Tr.app_message_type_photo.tr,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500),
+              )
+            ],
+          ),
+        ));
   }
 
   ///拨打通话
@@ -283,7 +306,7 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
     //debugPrint("call ===> ${isCall}");
     return isCall
         ? InkWell(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(30),
             onTap: () {
               AppAudioPlayer().stop();
               _focusNode.unfocus();
@@ -293,23 +316,33 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
                   _chatController.herId, _chatController.her?.portrait);
             },
             child: Container(
+              padding: const EdgeInsetsDirectional.only(
+                  start: 4, top: 4, bottom: 4, end: 8),
               decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [
-                    Color(0xFFAC53FB),
-                    Color(0xFF7934F0),
-                  ]),
+                  border: Border.all(width: 1, color: const Color(0xFFE4E4E4)),
                   borderRadius: BorderRadiusDirectional.circular(30)),
-              width: 58,
-              height: 40,
-              child: Center(
-                child: RepaintBoundary(
-                  child: Image.asset(
-                    Assets.animaCall,
-                    matchTextDirection: true,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
                     width: 24,
                     height: 24,
+                    margin: const EdgeInsetsDirectional.only(end: 4),
+                    child: Image.asset(
+                      Assets.iconInputCall,
+                      matchTextDirection: true,
+                      height: 24,
+                      width: 24,
+                    ),
                   ),
-                ),
+                  Text(
+                    Tr.app_grade_video_chat.tr,
+                    style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500),
+                  )
+                ],
               ),
             ))
         : const SizedBox.shrink();
@@ -317,56 +350,90 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
 
   ///表情
   Widget emjio() {
-    return InkWell(
-      borderRadius: BorderRadius.circular(5),
-      onTap: () {
-        AppAudioPlayer().stop();
-        _focusNode.unfocus();
-        if (!_chatController.canSendMsg()) {
-          _controller.askVip(anchorId: widget.userId);
-          return;
-        }
-        Future.delayed(const Duration(milliseconds: 100), () {
-          _controller.isShowEmoji.value = !_controller.isShowEmoji.value;
-          _controller.isShowRecord.value = false;
-        });
-      },
-      child: Image.asset(
-        Assets.imgEmoji,
-        matchTextDirection: true,
-        height: 27,
-        width: 27,
+    return Container(
+      margin: const EdgeInsetsDirectional.only(start: 0, end: 6),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(5),
+        onTap: () {
+          AppAudioPlayer().stop();
+          _focusNode.unfocus();
+          if (!_chatController.canSendMsg()) {
+            _controller.askVip(anchorId: widget.userId);
+            return;
+          }
+          Future.delayed(const Duration(milliseconds: 100), () {
+            _controller.isShowEmoji.value = !_controller.isShowEmoji.value;
+            _controller.isShowRecord.value = false;
+          });
+        },
+        child: Container(
+          padding: const EdgeInsetsDirectional.all(10),
+          child: Image.asset(
+            Assets.iconInputEmoji,
+            matchTextDirection: true,
+            height: 26,
+            width: 26,
+          ),
+        ),
       ),
-    ).onLabel(label: SemanticsLabel.emote);
+    );
   }
 
   ///语音
   Widget voice() {
-    return InkWell(
-      borderRadius: BorderRadius.circular(5),
-      onTap: () {
-        AppPermissionHandler.checkAudioPermission().then((value) {
-          if (value) {
-            AppAudioPlayer().stop();
-            _focusNode.unfocus();
-            _controller.isShowEmoji.value = false;
-            if (!_chatController.canSendMsg()) {
-              _controller.askVip(
-                anchorId: widget.userId,
-              );
-              return;
+    return Container(
+      margin: const EdgeInsetsDirectional.only(start: 6),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(5),
+        onTap: () {
+          AppPermissionHandler.checkAudioPermission().then((value) {
+            if (value) {
+              AppAudioPlayer().stop();
+              _focusNode.unfocus();
+              _controller.isShowEmoji.value = false;
+              if (!_chatController.canSendMsg()) {
+                _controller.askVip(
+                  anchorId: widget.userId,
+                );
+                return;
+              }
+              _controller.isShowRecord.value = !_controller.isShowRecord.value;
+              _controller.isShowEmoji.value = false;
             }
-            _controller.isShowRecord.value = !_controller.isShowRecord.value;
-            _controller.isShowEmoji.value = false;
-          }
-        });
-      },
-      child: Obx(() => Image.asset(
-            _controller.isShowRecord.value ? Assets.imgAudioW : Assets.imgAudio,
+          });
+        },
+        child: Obx(() => Container(
+              padding: const EdgeInsetsDirectional.only(
+                  start: 10, end: 10, top: 10, bottom: 10),
+              child: Image.asset(
+                Assets.iconInputAudio,
+                matchTextDirection: true,
+                width: 26,
+                height: 26,
+              ),
+            )),
+      ),
+    );
+  }
+
+  ///输入
+  Widget input() {
+    return Container(
+      margin: const EdgeInsetsDirectional.only(start: 6),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(5),
+        onTap: () {},
+        child: Container(
+          padding: const EdgeInsetsDirectional.only(
+              start: 10, end: 10, top: 10, bottom: 10),
+          child: Image.asset(
+            Assets.iconInputEdit,
             matchTextDirection: true,
-            width: 27,
-            height: 27,
-          )),
+            width: 26,
+            height: 26,
+          ),
+        ),
+      ),
     );
   }
 

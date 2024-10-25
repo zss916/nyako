@@ -16,7 +16,7 @@ class ChatMsgCall extends StatelessWidget {
   final bool? isOnline;
   const ChatMsgCall({super.key, required this.wrapper, this.isOnline = false});
 
-  final double r = 16;
+  final double r = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -42,33 +42,33 @@ class ChatMsgCall extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.only(
-                        topStart: Radius.zero,
+                        topStart: Radius.circular(r),
                         bottomEnd: Radius.circular(r),
                         topEnd: Radius.circular(r),
-                        bottomStart: Radius.circular(r)),
-                    color: Colors.white10),
+                        bottomStart: const Radius.circular(4)),
+                    color: const Color(0xFFFF7FEF)),
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.asset(
-                      Assets.imgMsgCall2,
+                      Assets.iconMsgCall,
                       matchTextDirection: true,
-                      height: 20,
-                      width: 20,
+                      height: 22,
+                      width: 22,
                       color: Colors.white,
                     ),
                     const SizedBox(
-                      width: 10,
+                      width: 4,
                       height: 10,
                     ),
                     Text(
                       content,
                       style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),
@@ -80,37 +80,34 @@ class ChatMsgCall extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.only(
                         topStart: Radius.circular(r),
-                        bottomEnd: Radius.circular(r),
-                        topEnd: Radius.zero,
+                        bottomEnd: const Radius.circular(4),
+                        topEnd: Radius.circular(r),
                         bottomStart: Radius.circular(r)),
-                    gradient: const LinearGradient(colors: [
-                      Color(0xFFB390F9),
-                      Color(0xFF8865CC),
-                    ])),
+                    color: const Color(0xFFF4F5F6)),
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                margin: const EdgeInsets.only(top: 5),
+                margin: const EdgeInsets.only(top: 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.asset(
                       matchTextDirection: true,
-                      Assets.imgMsgCall2,
+                      Assets.iconMsgCall,
                       // repeat: ImageRepeat.repeatY,
-                      height: 20,
-                      width: 20,
-                      color: Colors.white,
+                      height: 22,
+                      width: 22,
+                      color: Colors.black,
                     ),
                     const SizedBox(
-                      width: 10,
+                      width: 4,
                       height: 10,
                     ),
                     Text(
                       content,
                       style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),

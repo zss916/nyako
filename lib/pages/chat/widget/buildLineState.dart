@@ -18,10 +18,10 @@ class BuildLineState extends StatelessWidget {
   Widget build(BuildContext context) {
     return isShow
         ? Container(
-            margin: const EdgeInsetsDirectional.only(start: 5),
+            margin: const EdgeInsetsDirectional.only(start: 0),
             child: LineState(
               LineType.online.number,
-              r: 14,
+              r: 10,
             ),
           )
         : const SizedBox.shrink();

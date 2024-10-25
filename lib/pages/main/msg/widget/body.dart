@@ -53,11 +53,28 @@ class _MsgListBodyState extends State<MsgListBody>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
       children: [
+        SizedBox(
+            width: Get.width,
+            height: Get.height,
+            child: TabBarView(
+                physics: const NeverScrollableScrollPhysics(),
+                controller: tabController,
+                children: [
+                  Container(
+                    padding: const EdgeInsetsDirectional.only(top: 90),
+                    decoration: const BoxDecoration(color: Colors.white),
+                    child: MessageListView(context, widget.logic),
+                  ),
+                  Container(
+                    padding: const EdgeInsetsDirectional.only(top: 90),
+                    decoration: const BoxDecoration(color: Color(0xFFD8D8D8)),
+                    child: const ChatRecordPage(),
+                  )
+                ])),
         Container(
-          decoration: BoxDecoration(
-              color: tabIndex == 0 ? Colors.white : const Color(0xFFD8D8D8)),
           padding: const EdgeInsetsDirectional.only(
               top: 40, start: 5, end: 10, bottom: 0),
           child: Row(
@@ -67,6 +84,8 @@ class _MsgListBodyState extends State<MsgListBody>
                 controller: tabController,
                 splashBorderRadius: BorderRadius.circular(5),
                 isScrollable: true,
+                dividerHeight: 0,
+                dividerColor: Colors.transparent,
                 tabAlignment: TabAlignment.start,
                 indicatorWeight: 0,
                 indicator: const BoxDecoration(),
@@ -82,17 +101,6 @@ class _MsgListBodyState extends State<MsgListBody>
             ],
           ),
         ),
-        Expanded(
-            child: TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
-                controller: tabController,
-                children: [
-              Container(
-                decoration: const BoxDecoration(color: Colors.white),
-                child: MessageListView(context, widget.logic),
-              ),
-              ChatRecordPage()
-            ]))
       ],
     );
   }

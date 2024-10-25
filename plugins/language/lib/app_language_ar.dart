@@ -327,9 +327,9 @@ const language_ar = {
   "mira_login_check_policy": "الرجاء تأكد على سياسة الخصوصية و شروط الاستخدام ",
   "mira_login_account_stop": "الحساب محظور ",
   "mira_message_title": "الرسائل ",
-  "mira_message_type_photo": "[صورة] ",
-  "mira_message_type_audio": "[صوت] ",
-  "mira_message_type_gift": "[هدية] ",
+  "mira_message_type_photo": "صورة",
+  "mira_message_type_audio": "صوت",
+  "mira_message_type_gift": "هدية",
   "mira_message_type_video_chat": "[فيديو] ",
   "mira_message_recharge": "شحن",
   "mira_message_deduction_tip":

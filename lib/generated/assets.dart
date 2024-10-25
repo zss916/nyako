@@ -78,6 +78,7 @@ class Assets {
   static const String iconBlackIcon = 'assets/icon/black_icon.png';
   static const String iconBlacklist = 'assets/icon/blacklist.png';
   static const String iconCallCard = 'assets/icon/call_card.png';
+  static const String iconChatSend = 'assets/icon/chat_send.png';
   static const String iconCheckIn = 'assets/icon/check_in.png';
   static const String iconChecked = 'assets/icon/checked.png';
   static const String iconCloseDialog = 'assets/icon/close_dialog.png';
@@ -115,6 +116,12 @@ class Assets {
   static const String iconHotCall = 'assets/icon/hot_call.png';
   static const String iconHotMsg = 'assets/icon/hot_msg.png';
   static const String iconIdSmallIcon = 'assets/icon/id_small_icon.png';
+  static const String iconInputAudio = 'assets/icon/input_audio.png';
+  static const String iconInputCall = 'assets/icon/input_call.png';
+  static const String iconInputEdit = 'assets/icon/input_edit.png';
+  static const String iconInputEmoji = 'assets/icon/input_emoji.png';
+  static const String iconInputGift = 'assets/icon/input_gift.png';
+  static const String iconInputPic = 'assets/icon/input_pic.png';
   static const String iconInvite = 'assets/icon/invite.png';
   static const String iconInviteBg = 'assets/icon/invite_bg.png';
   static const String iconInviteBtn = 'assets/icon/invite_btn.png';
@@ -128,7 +135,11 @@ class Assets {
   static const String iconMatchingBg = 'assets/icon/matching_bg.png';
   static const String iconMore = 'assets/icon/more.png';
   static const String iconMoreB = 'assets/icon/more_b.png';
+  static const String iconMsgAudio = 'assets/icon/msg_audio.png';
+  static const String iconMsgCall = 'assets/icon/msg_call.png';
   static const String iconMsgDelete = 'assets/icon/msg_delete.png';
+  static const String iconMsgGift = 'assets/icon/msg_gift.png';
+  static const String iconMsgPic = 'assets/icon/msg_pic.png';
   static const String iconN1 = 'assets/icon/n_1.png';
   static const String iconN1N3 = 'assets/icon/n1_n3.png';
   static const String iconN2 = 'assets/icon/n_2.png';
@@ -201,6 +212,8 @@ class Assets {
   static const String iconToCallIcon = 'assets/icon/to_call_icon.png';
   static const String iconToMsgIcon = 'assets/icon/to_msg_icon.png';
   static const String iconToolsChatCard = 'assets/icon/tools_chat_card.png';
+  static const String iconTranslate = 'assets/icon/translate.png';
+  static const String iconTranslated = 'assets/icon/translated.png';
   static const String iconUncheck = 'assets/icon/uncheck.png';
   static const String iconVideoPlay = 'assets/icon/video_play.png';
   static const String iconVideoPlayB = 'assets/icon/video_play_b.png';
@@ -409,6 +422,8 @@ class Assets {
   static const String imgWhatApp = 'assets/img/what_app.png';
   static const String imgWomanSelect = 'assets/img/woman_select.webp';
   static const String imgWramDownBg = 'assets/img/wram_down_bg.png';
+  static const String jsonAnimaMsgAudio = 'assets/json/anima_msg_audio.json';
+  static const String jsonAnimaMsgAudioW = 'assets/json/anima_msg_audio_w.json';
   static const String jsonDiamondAddAnima =
       'assets/json/diamond_add_anima.json';
   static const String jsonDrag = 'assets/json/drag.json';

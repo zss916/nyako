@@ -33,6 +33,10 @@ class ChatPage extends GetView<ChatLogic> {
                             Positioned.fill(
                                 child: Column(
                               children: [
+                                const SizedBox(
+                                  width: double.maxFinite,
+                                  height: 12,
+                                ),
                                 if (!UserInfo.to.isUserVip &&
                                     UserInfo.to.isUseMsgCard)
                                   const ChatMsgCard(),
@@ -93,12 +97,12 @@ class ChatPage extends GetView<ChatLogic> {
               bottomStart: Radius.circular(24), bottomEnd: Radius.circular(24)),
           color: Color(0xFFF5F4F6)),
       padding: const EdgeInsetsDirectional.only(
-          top: 42, bottom: 15, start: 5, end: 10),
+          top: 35, bottom: 10, start: 5, end: 10),
       child: Row(
         children: [
           Container(
             //color: Colors.blue,
-            margin: const EdgeInsetsDirectional.only(end: 5),
+            margin: const EdgeInsetsDirectional.only(end: 0),
             child: Material(
               color: Colors.transparent,
               child: InkWell(
@@ -114,7 +118,7 @@ class ChatPage extends GetView<ChatLogic> {
                   ),
                 ),
               ),
-            ).onLabel(label: SemanticsLabel.back),
+            ),
           ),
           Expanded(
               child: GetBuilder<ChatLogic>(
@@ -124,7 +128,6 @@ class ChatPage extends GetView<ChatLogic> {
                   builder: (logic) {
                     return Row(
                       children: [
-                        const Spacer(),
                         ChatPortrait(logic),
                         const Spacer(),
                         if (!logic.isSystemId)

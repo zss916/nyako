@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:oliapro/database/entity/app_msg_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/mine/widget/avatar_state.dart';
-import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/services/user_info.dart';
 import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/app_voice_player.dart';
 
-import '../../../common/app_constants.dart';
-import '../../../database/entity/app_msg_entity.dart';
 import 'chat_msg_wrapper.dart';
 
 class LianChatMsgHer extends StatelessWidget {
@@ -25,23 +22,16 @@ class LianChatMsgHer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var time = DateTime.fromMillisecondsSinceEpoch(wrapper.date);
-    var str = DateFormat('MM.dd HH:mm').format(time);
+    var str = DateFormat('yyyy.MM.dd HH:mm').format(time);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (wrapper.showTime)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, top: 15),
-              child: Text(
-                str,
-                style: const TextStyle(color: Colors.grey, fontSize: 12),
-              ),
-            ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              (wrapper.herId == AppConstants.systemId ||
+              /* (wrapper.herId == AppConstants.systemId ||
                       wrapper.herId == AppConstants.serviceId)
                   ? Image.asset(
                       Assets.imgSystemIcon,
@@ -60,9 +50,9 @@ class LianChatMsgHer extends StatelessWidget {
                         child: cachedImage(wrapper.her?.portrait ?? "",
                             width: 40, height: 40, type: 100),
                       ),
-                    ),
+                    ),*/
               const SizedBox(
-                width: 10,
+                width: 0,
               ),
               Flexible(
                 fit: FlexFit.loose,
@@ -70,6 +60,15 @@ class LianChatMsgHer extends StatelessWidget {
               )
             ],
           ),
+          if (wrapper.showTime)
+            Container(
+              padding: const EdgeInsets.only(
+                  bottom: 10, top: 3, left: 12, right: 12),
+              child: Text(
+                str,
+                style: const TextStyle(color: Color(0xFFBCB6C4), fontSize: 13),
+              ),
+            ),
         ],
       ),
     );
@@ -85,19 +84,12 @@ class LianChatMsgMe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var time = DateTime.fromMillisecondsSinceEpoch(wrapper.date);
-    var str = DateFormat('MM.dd HH:mm').format(time);
+    var str = DateFormat('yyyy:MM.dd HH:mm').format(time);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          if (wrapper.showTime)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 15, top: 15),
-              child: Text(
-                str,
-                style: const TextStyle(color: Colors.grey, fontSize: 12),
-              ),
-            ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -130,12 +122,21 @@ class LianChatMsgMe extends StatelessWidget {
                 child: child,
               ),
               const SizedBox(
-                width: 10,
+                width: 0,
               ),
               // buildContent(state: AvatarStatus.sign.index)
-              buildContent(state: AvatarStatusHand.getType())
+              // buildContent(state: AvatarStatusHand.getType())
             ],
           ),
+          if (wrapper.showTime)
+            Container(
+              padding: const EdgeInsets.only(
+                  bottom: 10, top: 3, left: 12, right: 12),
+              child: Text(
+                str,
+                style: const TextStyle(color: Color(0xFFBCB6C4), fontSize: 13),
+              ),
+            ),
         ],
       ),
     );

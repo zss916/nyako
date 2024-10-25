@@ -17,7 +17,7 @@ class BuildMsgContent extends StatelessWidget {
   final ConversationEntity msg;
   const BuildMsgContent(this.msg, {super.key});
 
-  final double r = 20;
+  final double r = 21;
 
   @override
   Widget build(BuildContext context) {
@@ -37,29 +37,29 @@ class BuildMsgContent extends StatelessWidget {
             maxLines: 1,
             textAlign: TextAlign.start,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(color: Colors.grey, fontSize: 14));
+            style: const TextStyle(color: Color(0xFF9B989D), fontSize: 14));
       case 11:
         return Image.asset(
-          Assets.imgMsgGift,
+          Assets.iconMsgGift,
           height: r,
           width: r,
           matchTextDirection: true,
         );
       case 13:
       case 20:
-        return Image.asset(Assets.imgMsgPic,
+        return Image.asset(Assets.iconMsgPic,
             matchTextDirection: true, height: r, width: r);
       case 14:
       case 21:
-        return Image.asset(Assets.imgMsgAudio,
+        return Image.asset(Assets.iconMsgAudio,
             matchTextDirection: true, height: r, width: r);
       case 12:
-        return Image.asset(Assets.imgMsgCall,
+        return Image.asset(Assets.iconMsgCall,
             matchTextDirection: true, height: r, width: r);
     }
     return Text(msg.content,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: const TextStyle(color: Colors.grey, fontSize: 14));
+        style: const TextStyle(color: Color(0xFF9B989D), fontSize: 14));
   }
 }

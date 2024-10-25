@@ -3,12 +3,14 @@ import 'dart:convert';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/agora/rtm_msg_entity.dart';
 import 'package:oliapro/database/entity/app_her_entity.dart';
 import 'package:oliapro/database/entity/app_msg_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/chat/msgitem/chat_msg_widget.dart';
 import 'package:oliapro/pages/chat/msgitem/chat_msg_wrapper.dart';
+import 'package:oliapro/utils/app_format_util.dart';
 import 'package:oliapro/utils/app_voice_player.dart';
 
 class ChatMsgVoice extends StatefulWidget {
@@ -29,7 +31,7 @@ class _ChatMsgVoiceState extends State<ChatMsgVoice> {
   bool _loading = false;
   late StreamSubscription sub;
 
-  final double r = 16;
+  final double r = 20;
 
   @override
   void initState() {
@@ -104,31 +106,35 @@ class _ChatMsgVoiceState extends State<ChatMsgVoice> {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.only(
-                        topStart: Radius.zero,
+                        topStart: Radius.circular(r),
                         bottomEnd: Radius.circular(r),
                         topEnd: Radius.circular(r),
-                        bottomStart: Radius.circular(r)),
-                    color: Colors.white10),
+                        bottomStart: const Radius.circular(4)),
+                    color: const Color(0xFFFF7FEF)),
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     RepaintBoundary(
-                      child: Image.asset(
-                        _playing ? Assets.animaMsgVoice : Assets.imgMsgVoice,
-                        width: 20,
-                        height: 20,
-                        color: Colors.white,
-                        matchTextDirection: true,
-                      ),
+                      child: _playing
+                          ? Lottie.asset(Assets.jsonAnimaMsgAudioW,
+                              width: 22, height: 22, fit: BoxFit.cover)
+                          : Image.asset(
+                              Assets.iconMsgAudio,
+                              width: 22,
+                              height: 22,
+                              color: Colors.white,
+                              matchTextDirection: true,
+                            ),
                     ),
                     Text(
-                      '  ${msg.content}\'',
+                      " ${AppFormatUtil.getTimeStrFromSecond(int.parse(msg.content))}",
+                      //'  ${msg.content}\'',
                       style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500),
                     ),
                     if (_loading)
                       Container(
@@ -137,10 +143,10 @@ class _ChatMsgVoiceState extends State<ChatMsgVoice> {
                         height: 16,
                         child: const CircularProgressIndicator(
                           strokeWidth: 2.0,
-                          backgroundColor: Color(0x26FFFFFF),
+                          backgroundColor: Color(0x26FF7FEF),
                           // value: 0.2,
                           valueColor:
-                              AlwaysStoppedAnimation<Color>(Color(0xFFFFFFFF)),
+                              AlwaysStoppedAnimation<Color>(Color(0xFFFF7FEF)),
                         ),
                       )
                   ],
@@ -156,33 +162,34 @@ class _ChatMsgVoiceState extends State<ChatMsgVoice> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.only(
                         topStart: Radius.circular(r),
-                        bottomEnd: Radius.circular(r),
-                        topEnd: Radius.zero,
+                        bottomEnd: const Radius.circular(4),
+                        topEnd: Radius.circular(r),
                         bottomStart: Radius.circular(r)),
-                    gradient: const LinearGradient(colors: [
-                      Color(0xFFB390F9),
-                      Color(0xFF8865CC),
-                    ])),
+                    color: const Color(0xFFF4F5F6)),
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     RepaintBoundary(
-                      child: Image.asset(
-                        _playing ? Assets.animaMsgVoice : Assets.imgMsgVoice,
-                        width: 20,
-                        height: 20,
-                        color: Colors.white,
-                        matchTextDirection: true,
-                      ),
+                      child: _playing
+                          ? Lottie.asset(Assets.jsonAnimaMsgAudio,
+                              width: 22, height: 22, fit: BoxFit.cover)
+                          : Image.asset(
+                              Assets.iconMsgAudio,
+                              width: 22,
+                              height: 22,
+                              color: Colors.black,
+                              matchTextDirection: true,
+                            ),
                     ),
                     Text(
-                      '  ${msg.content}\'',
+                      " ${AppFormatUtil.getTimeStrFromSecond(int.parse(msg.content))}",
+                      //'  ${msg.content}\'',
                       style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
+                          color: Colors.black,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500),
                     ),
                     if (_loading)
                       Container(
@@ -191,10 +198,10 @@ class _ChatMsgVoiceState extends State<ChatMsgVoice> {
                         height: 16,
                         child: const CircularProgressIndicator(
                           strokeWidth: 2.0,
-                          backgroundColor: Color(0x26FFFFFF),
+                          backgroundColor: Color(0x26FF7FEF),
                           // value: 0.2,
                           valueColor:
-                              AlwaysStoppedAnimation<Color>(Color(0xFFFFFFFF)),
+                              AlwaysStoppedAnimation<Color>(Color(0xFFFF7FEF)),
                         ),
                       )
                   ],

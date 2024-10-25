@@ -415,9 +415,9 @@ const language_vi = {
   "mira_message_send_input": "Vui lòng nhập",
   "mira_message_session_text": "Đi và xem",
   "mira_message_title": "Tin nhắn",
-  "mira_message_type_audio": "[tin thoại]",
-  "mira_message_type_gift": "[quà tặng]",
-  "mira_message_type_photo": "[ảnh]",
+  "mira_message_type_audio": "tin thoại",
+  "mira_message_type_gift": "quà tặng",
+  "mira_message_type_photo": "ảnh",
   "mira_message_type_video_chat": "[video]",
   "mira_message_video_chat_state_canceled": "Đã hủy",
   "mira_message_video_chat_state_canceled_peer":

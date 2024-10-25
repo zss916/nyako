@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/chat/msgitem/build_switch.dart';
+import 'package:oliapro/pages/chat/msgitem/build_switch2.dart';
 import 'package:oliapro/services/storage_service.dart';
 
 import 'chat_msg_widget.dart';
@@ -21,7 +21,7 @@ class ChatMsgText extends StatefulWidget {
 }
 
 class _ChatMsgTextState extends State<ChatMsgText> {
-  double r = 12;
+  double r = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -31,91 +31,93 @@ class _ChatMsgTextState extends State<ChatMsgText> {
         ? LianChatMsgHer(
             wrapper: widget.wrapper,
             isOnline: widget.isOnline,
-            child: Column(
-              children: [
-                Container(
-                  margin: const EdgeInsetsDirectional.only(end: 50),
-                  child: Stack(
-                    alignment: AlignmentDirectional.centerEnd,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadiusDirectional.only(
-                                topStart: Radius.zero,
-                                topEnd: Radius.circular(r),
-                                bottomStart: Radius.circular(r),
-                                bottomEnd: Radius.circular(r)),
-                            color: Colors.white10),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 15),
-                        margin: const EdgeInsetsDirectional.only(end: 15),
-                        child: Text(
+            child: Container(
+              margin: const EdgeInsetsDirectional.only(end: 30),
+              child: Stack(
+                alignment: AlignmentDirectional.centerStart,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadiusDirectional.only(
+                            topStart: Radius.circular(r),
+                            topEnd: Radius.circular(r),
+                            bottomStart: const Radius.circular(4),
+                            bottomEnd: Radius.circular(r)),
+                        color: const Color(0xFFFF7FEF)),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 12),
+                    margin: const EdgeInsetsDirectional.only(end: 35),
+                    child: Column(
+                      children: [
+                        Text(
                           msg.content,
                           style: const TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.normal),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500),
                         ),
-                      ),
-                      if (widget.hasTranslateFunction == true)
-                        PositionedDirectional(
-                            child: BuildTranslateIcon(
-                                content: msg.content,
-                                isTranslated: (msg.translateContent != null),
-                                fun: (tranContent) {
-                                  if (mounted) {
-                                    setState(() {
-                                      msg.translateContent = tranContent;
-                                      StorageService.to.objectBoxMsg
-                                          .insertOrUpdateMsg(msg);
-                                    });
-                                  }
-                                }))
-                    ],
-                  ),
-                ),
-                if (widget.hasTranslateFunction! &&
-                    msg.translateContent != null &&
-                    msg.translateContent!.isNotEmpty)
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white10),
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 15),
-                    margin: const EdgeInsetsDirectional.only(end: 50, top: 2),
-                    child: Text(
-                      msg.translateContent ?? "",
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.normal),
+                        if (widget.hasTranslateFunction! &&
+                            msg.translateContent != null &&
+                            msg.translateContent!.isNotEmpty)
+                          Container(
+                            margin: const EdgeInsetsDirectional.symmetric(
+                                vertical: 10),
+                            child: const Divider(
+                              height: 1,
+                              color: Color(0x33FFFFFF),
+                            ),
+                          ),
+                        if (widget.hasTranslateFunction! &&
+                            msg.translateContent != null &&
+                            msg.translateContent!.isNotEmpty)
+                          Text(
+                            msg.translateContent ?? "",
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500),
+                          )
+                      ],
                     ),
                   ),
-              ],
+                  if (widget.hasTranslateFunction == true)
+                    PositionedDirectional(
+                        end: 0,
+                        child: BuildSelectIcon(
+                            content: msg.content,
+                            isTranslated: (msg.translateContent != null),
+                            fun: (tranContent) {
+                              if (mounted) {
+                                setState(() {
+                                  msg.translateContent = tranContent;
+                                  StorageService.to.objectBoxMsg
+                                      .insertOrUpdateMsg(msg);
+                                });
+                              }
+                            }))
+                ],
+              ),
             ),
           )
         : LianChatMsgMe(
             wrapper: widget.wrapper,
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.only(
-                      topEnd: Radius.zero,
-                      topStart: Radius.circular(r),
-                      bottomEnd: Radius.circular(r),
-                      bottomStart: Radius.circular(r)),
-                  gradient: const LinearGradient(colors: [
-                    Color(0xFFB390F9),
-                    Color(0xFF8865CC),
-                  ])),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-              margin: const EdgeInsets.only(top: 5),
+                color: const Color(0xFFF4F5F6),
+                borderRadius: BorderRadiusDirectional.only(
+                    topEnd: Radius.circular(r),
+                    topStart: Radius.circular(r),
+                    bottomEnd: const Radius.circular(4),
+                    bottomStart: Radius.circular(r)),
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              margin: const EdgeInsets.only(top: 0),
               child: Text(
                 msg.content,
                 style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal),
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
               ),
             ),
           );

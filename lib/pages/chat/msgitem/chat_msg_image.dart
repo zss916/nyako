@@ -13,7 +13,7 @@ class ChatMsgImage extends StatelessWidget {
   final ChatMsgWrapper wrapper;
   final bool? isOnline;
 
-  final double r = 12;
+  final double r = 20;
 
   const ChatMsgImage({super.key, required this.wrapper, this.isOnline = false});
 
@@ -39,11 +39,15 @@ class ChatMsgImage extends StatelessWidget {
             wrapper: wrapper,
             isOnline: isOnline,
             child: Container(
-              height: 185,
-              width: 248,
+              height: 211,
+              width: 150,
               alignment: AlignmentDirectional.centerStart,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadiusDirectional.only(
+                    topEnd: Radius.circular(r),
+                    topStart: Radius.circular(r),
+                    bottomEnd: Radius.circular(r),
+                    bottomStart: const Radius.circular(4)),
               ),
               child: LimitedBox(
                 child: GestureDetector(
@@ -53,7 +57,7 @@ class ChatMsgImage extends StatelessWidget {
                     },
                     child: AppNetImage2(
                       url ?? '',
-                      radius: 16,
+                      radius: 0,
                     )),
               ),
             ),
@@ -61,17 +65,21 @@ class ChatMsgImage extends StatelessWidget {
         : LianChatMsgMe(
             wrapper: wrapper,
             child: Container(
-              height: 185,
-              width: 248,
+              height: 211,
+              width: 150,
               clipBehavior: Clip.hardEdge,
               alignment: AlignmentDirectional.centerEnd,
               decoration: BoxDecoration(
                 color: Colors.transparent,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadiusDirectional.only(
+                    topEnd: Radius.circular(r),
+                    topStart: Radius.circular(r),
+                    bottomEnd: const Radius.circular(4),
+                    bottomStart: Radius.circular(r)),
               ),
               child: LimitedBox(
-                maxHeight: 185,
-                maxWidth: 248,
+                maxHeight: 211,
+                maxWidth: 150,
                 child: url != null
                     ? GestureDetector(
                         onTap: () {
@@ -79,7 +87,7 @@ class ChatMsgImage extends StatelessWidget {
                         },
                         child: AppNetImage2(
                           url,
-                          radius: 20,
+                          radius: 0,
                           fit: BoxFit.fill,
                         ))
                     : GestureDetector(
@@ -88,9 +96,15 @@ class ChatMsgImage extends StatelessWidget {
                               initIndex: 0, uid: "0", type: 0, isFile: true);
                         },
                         child: Container(
+                          height: 211,
+                          width: 150,
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadiusDirectional.only(
+                                topEnd: Radius.circular(r),
+                                topStart: Radius.circular(r),
+                                bottomEnd: const Radius.circular(4),
+                                bottomStart: Radius.circular(r)),
                           ),
                           child: Image.file(
                               File(

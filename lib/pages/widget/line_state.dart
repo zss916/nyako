@@ -21,7 +21,7 @@ class LineState extends StatelessWidget {
               decoration: BoxDecoration(
                   color: const Color(0xFF4CE263),
                   borderRadius: BorderRadiusDirectional.circular(20),
-                  border: Border.all(color: Colors.transparent, width: 1)),
+                  border: Border.all(color: Colors.white, width: 1)),
             ),
           ),
         if (lineState == LineType.busy.number)
@@ -31,7 +31,7 @@ class LineState extends StatelessWidget {
             decoration: BoxDecoration(
                 color: const Color(0xFFFF3CF0),
                 borderRadius: BorderRadiusDirectional.circular(20),
-                border: Border.all(color: Colors.transparent, width: 1)),
+                border: Border.all(color: Colors.white, width: 1)),
           ),
         if (lineState == LineType.offline.number)
           Container(
@@ -40,7 +40,7 @@ class LineState extends StatelessWidget {
             decoration: BoxDecoration(
                 color: const Color(0xFFD5D6D7),
                 borderRadius: BorderRadiusDirectional.circular(20),
-                border: Border.all(color: Colors.transparent, width: 1)),
+                border: Border.all(color: Colors.white, width: 1)),
           ),
       ],
     );

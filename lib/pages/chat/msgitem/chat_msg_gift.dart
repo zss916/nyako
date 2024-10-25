@@ -9,7 +9,7 @@ import 'package:oliapro/widget/app_net_image.dart';
 class ChatMsgGift extends StatelessWidget {
   final ChatMsgWrapper wrapper;
   final bool? isOnline;
-  final double r = 12;
+  final double r = 20;
 
   const ChatMsgGift({super.key, required this.wrapper, this.isOnline = false});
 
@@ -29,11 +29,15 @@ class ChatMsgGift extends StatelessWidget {
             isOnline: isOnline,
             child: Container(
               alignment: Alignment.center,
-              width: 86,
-              height: 86,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.transparent),
+              width: 120,
+              height: 120,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadiusDirectional.only(
+                      topStart: Radius.circular(20),
+                      topEnd: Radius.circular(20),
+                      bottomEnd: Radius.circular(20),
+                      bottomStart: Radius.circular(4)),
+                  color: Color(0xFFFF7FEF)),
               margin: const EdgeInsets.only(top: 0),
               child: Column(
                 children: [
@@ -51,11 +55,11 @@ class ChatMsgGift extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 0),
                     decoration: BoxDecoration(
                         color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(0)),
                     child: AppNetImage(
                       url ?? '',
-                      width: 86,
-                      height: 86,
+                      width: 100,
+                      height: 100,
                     ),
                   )
                 ],
@@ -66,11 +70,15 @@ class ChatMsgGift extends StatelessWidget {
             wrapper: wrapper,
             child: Container(
               alignment: Alignment.center,
-              width: 86,
-              height: 86,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.transparent),
+              width: 120,
+              height: 120,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadiusDirectional.only(
+                      topStart: Radius.circular(20),
+                      topEnd: Radius.circular(20),
+                      bottomEnd: Radius.circular(4),
+                      bottomStart: Radius.circular(20)),
+                  color: Color(0xFF4C1F87)),
               margin: const EdgeInsets.only(top: 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,11 +98,11 @@ class ChatMsgGift extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 0),
                     decoration: BoxDecoration(
                         color: Colors.transparent,
-                        borderRadius: BorderRadius.circular(20)),
+                        borderRadius: BorderRadius.circular(0)),
                     child: AppNetImage(
                       url ?? '',
-                      width: 86,
-                      height: 86,
+                      width: 100,
+                      height: 100,
                     ),
                   ),
                 ],
