@@ -9,18 +9,17 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
       BottomArrowWidget(
         child: Container(
             width: Get.width,
-            height: Get.width * 2 / 3,
+            height: 240,
             padding: const EdgeInsetsDirectional.only(top: 0),
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadiusDirectional.only(
-                    topStart: Radius.circular(20),
-                    topEnd: Radius.circular(20))),
+                    topStart: Radius.circular(24),
+                    topEnd: Radius.circular(24))),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const Spacer(),
                 GestureDetector(
                   behavior: HitTestBehavior.opaque,
                   onTap: () {

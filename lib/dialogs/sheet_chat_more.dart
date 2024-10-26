@@ -55,7 +55,7 @@ void showChatMore(
                           style: const TextStyle(
                               color: Colors.black,
                               fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                         )
                       ],
                     ),
@@ -89,9 +89,9 @@ void showChatMore(
                         Text(
                           Tr.app_setting_black_list.tr,
                           style: const TextStyle(
-                              color: Colors.black,
+                              color: Color(0xFFFF4864),
                               fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                         )
                       ],
                     ),
@@ -127,7 +127,7 @@ void showChatMore(
                           style: const TextStyle(
                               color: Colors.black,
                               fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                         )
                       ],
                     ),
@@ -165,7 +165,7 @@ void showChatMore(
                           style: const TextStyle(
                               color: Colors.black,
                               fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                         )
                       ],
                     ),
@@ -193,7 +193,10 @@ void showChatMore(
                     borderRadius: BorderRadiusDirectional.all(Radius.circular(20))),*/
                     child: Text(
                       Tr.app_base_cancel.tr,
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
+                      style: const TextStyle(
+                          color: Color(0xFF9B989D),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
