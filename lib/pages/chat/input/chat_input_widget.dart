@@ -152,9 +152,9 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
                   emjio(),
                 ],
               ),
-              /*Obx(() => _controller.isShowEmoji.value
+              Obx(() => _controller.isShowEmoji.value
                   ? showEmoji()
-                  : const SizedBox.shrink()),*/
+                  : const SizedBox.shrink()),
             ],
           ),
         ),
@@ -476,11 +476,11 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
             verticalSpacing: 0,
             horizontalSpacing: 0,
             initCategory: Category.RECENT,
-            bgColor: const Color(0xFF1E1226),
-            indicatorColor: const Color(0xFF8239FF),
-            iconColor: const Color(0x808239FF),
-            iconColorSelected: const Color(0xFF8239FF),
-            backspaceColor: const Color(0xFF8239FF),
+            bgColor: Colors.white,
+            indicatorColor: Colors.black,
+            iconColor: Colors.black.withOpacity(0.5),
+            iconColorSelected: Colors.black,
+            backspaceColor: const Color(0xFFFC0193),
             skinToneDialogBgColor: Colors.white,
             skinToneIndicatorColor: Colors.grey,
             enableSkinTones: true,

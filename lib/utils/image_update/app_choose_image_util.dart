@@ -35,8 +35,8 @@ class AppChooseImageUtil {
             decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadiusDirectional.only(
-                    topStart: Radius.circular(10),
-                    topEnd: Radius.circular(10))),
+                    topStart: Radius.circular(20),
+                    topEnd: Radius.circular(20))),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               mainAxisSize: MainAxisSize.min,

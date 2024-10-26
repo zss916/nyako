@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_card_entity.dart';
@@ -43,19 +41,11 @@ class _AppGiftListViewState extends State<AppGiftListView> {
   late List<CardBean> giftData = [];
   late int selectedIndex = 0;
   int tabIndex = 0;
-  //late final AppCallback<SocketBalance> _balanceListener;
 
   @override
   void initState() {
     super.initState();
     AivLogic.openGiftDialog = true;
-    /*_balanceListener = (balance) {
-      */ /*setState(() {
-        UserInfo.to.myDetail?.userBalance?.remainDiamonds = balance.diamonds;
-      });*/ /*
-    };*/
-    // debugPrint(" gift add");
-    //AppSocketManager.to.addBalanceListener(_balanceListener);
     getGift();
   }
 
@@ -67,8 +57,6 @@ class _AppGiftListViewState extends State<AppGiftListView> {
 
   @override
   void deactivate() {
-    //debugPrint(" gift deactivate");
-    // AppSocketManager.to.removeBalanceListener(_balanceListener);
     super.deactivate();
   }
 
@@ -87,149 +75,107 @@ class _AppGiftListViewState extends State<AppGiftListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: AppColors.gradientDialogsBg,
-        borderRadius: const BorderRadiusDirectional.only(
-          topStart: Radius.circular(30),
-          topEnd: Radius.circular(30),
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            begin: AlignmentDirectional.topCenter,
+            end: AlignmentDirectional.bottomCenter,
+            colors: [
+              Color(0xFFDDCCFF),
+              Color(0xFFEEE6FF),
+            ]),
+        borderRadius: BorderRadiusDirectional.only(
+          topStart: Radius.circular(24),
+          topEnd: Radius.circular(24),
         ),
       ),
       padding: const EdgeInsets.symmetric(
         horizontal: 14,
       ),
-      child: Stack(
-        alignment: AlignmentDirectional.topCenter,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          PositionedDirectional(
-              top: 0,
-              start: 0,
-              end: 0,
-              child: Image.asset(Assets.imgDialogTopBg)),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 0, top: 15),
-                child: GestureDetector(
-                  onTap: () {
-                    Get.back();
-                    ChargeDialogManager.showChargeDialog(
-                        ChargePath.gift_send_no_money,
-                        upid: widget.herId,
-                        showFreeDiamondPage: widget.showFreeDiamondPage!);
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Container(
-                            margin: const EdgeInsetsDirectional.only(
-                                end: 3, start: 3),
-                            child: Image.asset(
-                              Assets.imgDiamond,
-                              matchTextDirection: true,
-                              height: 20,
-                              width: 20,
-                            ),
-                          ),
-                          /*AutoSizeText(
-                        Tr.app_base_balance.trArgs([
-                          (UserInfo.to.myDetail?.userBalance?.remainDiamonds ??
-                                  0)
-                              .toString()
-                        ]),
-                        maxLines: 1,
-                        minFontSize: 10,
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),*/
-
-                          const BuildBalance()
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            Tr.app_recharge.tr,
-                            style: TextStyle(
-                                color: const Color(0xFFF447FF),
-                                fontSize: 14,
-                                fontFamily: AppConstants.fontsBold,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Image.asset(
-                            Assets.imgArrowEnd,
-                            width: 16,
-                            height: 16,
-                            matchTextDirection: true,
-                          )
-                        ],
-                      )
-
-                      /*GestureDetector(
-                  onTap: () {
-                    // debugPrint("tabIndex ==> $tabIndex, selectedIndex ===> $selectedIndex");
-                    GiftEntity? gift = getSelectGift(tabIndex, selectedIndex);
-                    if (gift != null) {
-                      if (gift.vipVisible == 1 &&
-                          UserInfo.to.myDetail!.isVip == 0) {
-                        // 不是VIP  显示购买VIP弹窗
-                        toVipDialog(
-                            path: ChargePath.recharge_send_vip_gift, index: 4);
-                      } else {
-                        Get.back();
-                        widget.choose.call(gift);
-                      }
-                    }
-                  },
-                  child: Container(
-                    height: 30,
+          Container(
+            padding: const EdgeInsets.only(bottom: 0, top: 16),
+            child: GestureDetector(
+              onTap: () {
+                Get.back();
+                ChargeDialogManager.showChargeDialog(
+                    ChargePath.gift_send_no_money,
+                    upid: widget.herId,
+                    showFreeDiamondPage: widget.showFreeDiamondPage!);
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: const EdgeInsetsDirectional.only(start: 2),
+                    padding: const EdgeInsetsDirectional.symmetric(
+                        horizontal: 8, vertical: 5),
                     decoration: BoxDecoration(
-                        gradient: AppColors.btnGradient,
-                        borderRadius: BorderRadiusDirectional.circular(50)),
-                    alignment: AlignmentDirectional.center,
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 2, horizontal: 14),
-                    child: AutoSizeText(
-                      Tr.app_gift_send.tr,
-                      maxFontSize: 20,
-                      minFontSize: 6,
-                      maxLines: 1,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 20),
+                        color: const Color(0x80FFFFFF),
+                        borderRadius: BorderRadiusDirectional.circular(10)),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          margin: const EdgeInsetsDirectional.only(
+                            end: 4,
+                          ),
+                          child: Image.asset(
+                            Assets.iconDiamond,
+                            matchTextDirection: true,
+                            height: 18,
+                            width: 18,
+                          ),
+                        ),
+                        const BuildBalance()
+                      ],
                     ),
                   ),
-                ),*/
-                    ],
-                  ),
-                ),
+                  Container(
+                    margin: const EdgeInsetsDirectional.only(end: 2),
+                    padding: const EdgeInsetsDirectional.symmetric(
+                        horizontal: 8, vertical: 5),
+                    decoration: BoxDecoration(
+                        color: const Color(0x80FFFFFF),
+                        borderRadius: BorderRadiusDirectional.circular(10)),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          Tr.app_recharge.tr,
+                          style: const TextStyle(
+                              color: Color(0xFF9341FF),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Image.asset(
+                          Assets.iconNextPurple,
+                          width: 18,
+                          height: 18,
+                          matchTextDirection: true,
+                        )
+                      ],
+                    ),
+                  )
+                ],
               ),
-              _buildTabItem(),
-              Container(
-                color: Colors.transparent,
-                child: Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: [
-                    if (tabIndex == 0)
-                      (list.isEmpty) ? loading() : commonGift(),
-                    if (tabIndex == 1)
-                      (vipList.isEmpty) ? loading() : vipGift(),
-                    if (tabIndex == 2)
-                      (giftData.isEmpty) ? loading() : propGift(),
-                  ],
-                ),
-              ),
-            ],
-          )
+            ),
+          ),
+          _buildTabItem(),
+          Container(
+            color: Colors.transparent,
+            child: Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                if (tabIndex == 0) (list.isEmpty) ? loading() : commonGift(),
+                if (tabIndex == 1) (vipList.isEmpty) ? loading() : vipGift(),
+                if (tabIndex == 2) (giftData.isEmpty) ? loading() : propGift(),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -304,8 +250,8 @@ class _AppGiftListViewState extends State<AppGiftListView> {
       child: Text(
         text,
         style: TextStyle(
-          fontWeight: isSelect ? FontWeight.bold : FontWeight.normal,
-          color: isSelect ? Colors.white : Colors.white54,
+          fontWeight: FontWeight.w500,
+          color: isSelect ? const Color(0xFF642A4B) : const Color(0x99642A4B),
           fontSize: 14,
         ),
       ),

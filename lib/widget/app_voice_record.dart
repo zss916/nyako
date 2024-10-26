@@ -7,6 +7,7 @@ import 'package:flutter_sound/flutter_sound.dart';
 import 'package:flutter_sound_platform_interface/flutter_sound_recorder_platform_interface.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/widget/long_press_gesture_detector.dart';
@@ -116,12 +117,12 @@ class _AppVoiceRecordState extends State<AppVoiceRecord> {
             color: Colors.transparent,
             child: Center(
               child: Container(
-                width: 225,
-                height: 180,
+                width: 255,
+                height: 214,
                 decoration: BoxDecoration(
-                    color: const Color(0xFF090909).withOpacity(0.8),
-                    borderRadius: BorderRadius.circular(30)),
-                margin: const EdgeInsetsDirectional.only(bottom: 100),
+                    color: const Color(0xFF000000).withOpacity(0.75),
+                    borderRadius: BorderRadius.circular(25)),
+                margin: const EdgeInsetsDirectional.only(bottom: 50),
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 child: Column(
@@ -132,7 +133,7 @@ class _AppVoiceRecordState extends State<AppVoiceRecord> {
                       text,
                       style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 14,
+                          fontSize: 16,
                           fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(
@@ -146,24 +147,23 @@ class _AppVoiceRecordState extends State<AppVoiceRecord> {
                               matchTextDirection: true,
                               fit: BoxFit.fill,
                               image: AssetImage(isUp == true
-                                  ? Assets.imgVoiceRecordStopBg
-                                  : Assets.imgVoiceRecordingBg))),
+                                  ? Assets.iconVoiceRecordStopBg
+                                  : Assets.iconVoiceRecordingBg))),
                       alignment: AlignmentDirectional.center,
                       margin: const EdgeInsets.only(bottom: 5),
                       padding: const EdgeInsetsDirectional.only(bottom: 7),
                       child: isUp == true
                           ? Image.asset(
-                              Assets.imgVoiceStop,
-                              width: 32,
-                              height: 32,
+                              Assets.iconVoiceStop,
+                              width: 30,
+                              height: 30,
                               matchTextDirection: true,
                             )
                           : RepaintBoundary(
-                              child: Image.asset(
-                                Assets.animaVoiceRecording,
+                              child: Lottie.asset(
+                                Assets.iconAnimaVoiceRecording,
                                 width: 43,
                                 height: 18,
-                                matchTextDirection: true,
                               ),
                             ),
                     ),
@@ -174,8 +174,8 @@ class _AppVoiceRecordState extends State<AppVoiceRecord> {
                       textShow,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                        color: Color(0xFFC8C8C8),
-                        fontSize: 12,
+                        color: Colors.white,
+                        fontSize: 14,
                       ),
                     )
                   ],

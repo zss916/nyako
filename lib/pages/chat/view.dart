@@ -128,7 +128,15 @@ class ChatPage extends GetView<ChatLogic> {
                   builder: (logic) {
                     return Row(
                       children: [
-                        ChatPortrait(logic),
+                        Material(
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(5),
+                            onTap: () {
+                              ARoutes.toAnchorDetail(logic.herId);
+                            },
+                            child: ChatPortrait(logic),
+                          ),
+                        ),
                         const Spacer(),
                         if (!logic.isSystemId)
                           BuildChatReport(

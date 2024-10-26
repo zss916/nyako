@@ -72,6 +72,8 @@ class Assets {
   static const String iconAddInviteFriend = 'assets/icon/add_invite_friend.png';
   static const String iconAlbum = 'assets/icon/album.png';
   static const String iconAnchorDefault = 'assets/icon/anchor_default.png';
+  static const String iconAnimaVoiceRecording =
+      'assets/icon/anima_voice_recording.json';
   static const String iconBack = 'assets/icon/back.png';
   static const String iconBigDiamond = 'assets/icon/big_diamond.png';
   static const String iconBindCodeBg = 'assets/icon/bind_code_bg.png';
@@ -222,6 +224,11 @@ class Assets {
   static const String iconVipOpenBg = 'assets/icon/vip_open_bg.png';
   static const String iconVipPageBg = 'assets/icon/vip_page_bg.png';
   static const String iconVipS = 'assets/icon/vip_s.png';
+  static const String iconVoiceRecordStopBg =
+      'assets/icon/voice_record_stop_bg.png';
+  static const String iconVoiceRecordingBg =
+      'assets/icon/voice_recording_bg.png';
+  static const String iconVoiceStop = 'assets/icon/voice_stop.png';
   static const String iconWarmS = 'assets/icon/warm_s.png';
   static const String iconWarming = 'assets/icon/warming.png';
   static const String iconWeekSort = 'assets/icon/week_sort.png';

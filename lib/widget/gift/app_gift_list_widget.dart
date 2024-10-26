@@ -3,16 +3,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
+import 'package:oliapro/entities/app_gift_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/semantics/semantics_widget.dart';
-
-import '../../entities/app_gift_entity.dart';
-import '../app_net_image.dart';
+import 'package:oliapro/widget/app_net_image.dart';
 
 class AppGiftListWidget extends StatefulWidget {
   final List<GiftEntity> giftList;
@@ -50,7 +48,7 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
     }
     return pageCount == 0
         ? const SizedBox(
-            height: 260,
+            height: 285,
           )
         : Stack(
             alignment: Alignment.bottomCenter,
@@ -59,7 +57,7 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                 itemCount: pageCount,
                 options: CarouselOptions(
                     aspectRatio: 19 / 11,
-                    height: 260,
+                    height: 285,
                     viewportFraction: 1,
                     enableInfiniteScroll: false,
                     onPageChanged:
@@ -79,14 +77,8 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                     itemBuilder: (context, index) {
                       var ind = indexOut * pageSize + index;
                       var gift = widget.giftList[ind];
-                      //AppLog.debug('CarouselSlider ind=$ind');
                       return GestureDetector(
                         onTap: () {
-                          /* setState(() {
-                            selectedIndex = ind;
-                            widget.callBack(ind);
-                          });*/
-
                           if (ind == selectedIndex) {
                             if (gift.vipVisible == 1 &&
                                 UserInfo.to.myDetail!.isVip == 0) {
@@ -108,16 +100,22 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                         },
                         child: Container(
                           decoration: selectedIndex == ind
-                              ? BoxDecoration(
-                                  color: const Color(0x0fffffff),
-                                  borderRadius:
-                                      const BorderRadiusDirectional.all(
-                                          Radius.circular(10)),
-                                  border: Border.all(
-                                      color: const Color(0xFFF447FF), width: 1),
+                              ? const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadiusDirectional.all(
+                                      Radius.circular(10)),
+                                  border: GradientBoxBorder(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.centerLeft,
+                                          end: Alignment.centerRight,
+                                          colors: [
+                                            Color(0xFF8A29F8),
+                                            Color(0xFFFC0193),
+                                          ]),
+                                      width: 1),
                                 )
                               : const BoxDecoration(
-                                  color: Color(0x0fffffff),
+                                  color: Colors.white,
                                   borderRadius: BorderRadiusDirectional.all(
                                       Radius.circular(10)),
                                 ),
@@ -127,10 +125,12 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    height: 46,
-                                    width: 46,
+                                    height: 50,
+                                    width: 50,
+                                    margin: const EdgeInsetsDirectional.only(
+                                        top: 6),
                                     decoration: BoxDecoration(
-                                        color: Colors.white.withOpacity(0),
+                                        color: Colors.transparent,
                                         borderRadius:
                                             BorderRadius.circular(30)),
                                     child: AspectRatio(
@@ -140,7 +140,8 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                                               BorderRadius.circular(30),
                                           child: AppNetImage(
                                             gift.icon ?? '',
-                                            placeholderAsset: Assets.imgAppLogo,
+                                            placeholderAsset:
+                                                Assets.iconSmallLogo,
                                             isCircle: true,
                                           ),
                                         )),
@@ -159,7 +160,7 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                                         overflow: TextOverflow.ellipsis,
                                         style: const TextStyle(
                                             fontWeight: FontWeight.w500,
-                                            color: Colors.white,
+                                            color: Color(0xFF642A4B),
                                             fontSize: 12),
                                       ),
                                     ),
@@ -173,21 +174,19 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                                         children: [
                                           Text(
                                             gift.diamonds.toString(),
-                                            style: TextStyle(
-                                                color: Colors.white54,
-                                                fontFamily:
-                                                    AppConstants.fontsBold,
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 14),
+                                            style: const TextStyle(
+                                                color: Color(0x99642A4B),
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 12),
                                           ),
                                           const SizedBox(
                                             width: 2,
                                           ),
                                           Image.asset(
-                                            Assets.imgDiamond,
+                                            Assets.iconDiamond,
                                             matchTextDirection: true,
-                                            height: 12,
-                                            width: 12,
+                                            height: 14,
+                                            width: 14,
                                           ),
                                         ],
                                       )),
@@ -200,37 +199,37 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
                                     top: 4,
                                     start: 4,
                                     child: Image.asset(
-                                      Assets.imgIconVip,
-                                      height: 16,
-                                      width: 32,
+                                      Assets.iconNyakoVipIc,
+                                      height: 15,
+                                      width: 40,
                                     ))
                             ],
                           ),
                         ),
-                      ).onItemLabel(index: index);
+                      );
                     },
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
                       mainAxisSpacing: 8,
                       crossAxisSpacing: 8,
-                      childAspectRatio: 9 / 12,
+                      childAspectRatio: 80 / 110,
                     ),
                   );
                 },
               ),
               Container(
-                margin: const EdgeInsetsDirectional.only(bottom: 2),
+                margin: const EdgeInsetsDirectional.only(bottom: 8),
                 child: DotsIndicator(
                   dotsCount: pageCount,
                   position: currentPageIndex,
                   decorator: DotsDecorator(
-                    size: const Size.square(6.0),
-                    activeSize: const Size(6.0, 6.0),
+                    size: const Size.square(4.0),
+                    activeSize: const Size(8.0, 4.0),
                     activeShape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(3.0)),
-                    activeColor: Colors.white,
-                    color: Colors.white.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(4.0)),
+                    activeColor: const Color(0xFF9341FF),
+                    color: const Color(0xFF9341FF).withOpacity(0.5),
                   ),
                 ),
               ),
@@ -247,8 +246,8 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
             height: 28,
             decoration: const BoxDecoration(
                 gradient: LinearGradient(colors: [
-                  Color(0xFFF447FF),
-                  Color(0xFFF447FF),
+                  Color(0xFF8A29F8),
+                  Color(0xFFFC0193),
                 ]),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(4),
@@ -261,7 +260,7 @@ class _AppGiftListWidgetState extends State<AppGiftListWidget> {
               style: const TextStyle(
                   color: Colors.white,
                   fontSize: 14,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.w500),
             ),
           )
         : const SizedBox.shrink();

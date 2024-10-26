@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
 import 'package:oliapro/routes/app_pages.dart';
@@ -18,7 +17,7 @@ void showChatMore(
             width: Get.width,
             margin: const EdgeInsetsDirectional.only(top: 0),
             decoration: const BoxDecoration(
-                color: AppColors.splashBg,
+                color: Colors.white,
                 borderRadius: BorderRadiusDirectional.only(
                     topEnd: Radius.circular(20),
                     topStart: Radius.circular(20))),
@@ -54,7 +53,7 @@ void showChatMore(
                         Text(
                           Tr.app_report_title.tr,
                           style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         )
@@ -90,7 +89,7 @@ void showChatMore(
                         Text(
                           Tr.app_setting_black_list.tr,
                           style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         )
@@ -126,7 +125,7 @@ void showChatMore(
                         Text(
                           Tr.app_dialog_clear_message_record.tr,
                           style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         )
@@ -164,7 +163,7 @@ void showChatMore(
                               ? Tr.app_create_follow.tr
                               : Tr.app_create_cancel_follow.tr,
                           style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         )
@@ -173,7 +172,7 @@ void showChatMore(
                   ),
                 ),
                 Container(
-                  color: Colors.white10,
+                  color: const Color(0xFFEEEEEE),
                   width: double.maxFinite,
                   height: 5,
                 ),
@@ -194,7 +193,7 @@ void showChatMore(
                     borderRadius: BorderRadiusDirectional.all(Radius.circular(20))),*/
                     child: Text(
                       Tr.app_base_cancel.tr,
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                      style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
                 ),
