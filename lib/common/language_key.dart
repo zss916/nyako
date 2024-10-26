@@ -1,5 +1,5 @@
 class Tr {
-  static const appName = "mira";
+  static const appName = "nyako";
 
   static const appNextPayDialogTitle = "${appName}_next_pay_dialog_title";
   static const appNextPayTitleTip2 = "${appName}_next_pay_title_tip2";

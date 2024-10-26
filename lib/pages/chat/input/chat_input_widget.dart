@@ -1,21 +1,22 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/sheet_gift_list.dart';
+import 'package:oliapro/entities/app_gift_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/chat/index.dart';
 import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/utils/app_permission_handler.dart';
 import 'package:oliapro/utils/app_voice_player.dart';
+import 'package:oliapro/utils/image_update/app_choose_image_util.dart';
+import 'package:oliapro/widget/app_click_widget.dart';
 import 'package:oliapro/widget/app_keybord_logic.dart';
 import 'package:oliapro/widget/app_voice_bottom_widget_record.dart';
+import 'package:oliapro/widget/app_voice_record.dart';
+import 'package:oliapro/widget/gift/app_gift_list_view.dart';
 
-import '../../../common/app_constants.dart';
-import '../../../entities/app_gift_entity.dart';
-import '../../../utils/image_update/app_choose_image_util.dart';
-import '../../../widget/app_click_widget.dart';
-import '../../../widget/gift/app_gift_list_view.dart';
 import 'chat_input_controller.dart';
 
 /// 聊天页面的下面的输入框
@@ -42,6 +43,8 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
   bool get isSystemId => _chatController.herId == AppConstants.serviceId;
   late Function() listener;
 
+  bool isInputEdit = true;
+
   @override
   void initState() {
     super.initState();
@@ -63,11 +66,9 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.only(bottom: 10, top: 10),
+          padding: const EdgeInsets.only(bottom: 15, top: 10),
           decoration: const BoxDecoration(
             color: Colors.transparent,
-            borderRadius: BorderRadiusDirectional.only(
-                topStart: Radius.circular(30), topEnd: Radius.circular(30)),
           ),
           child: Column(
             children: [
@@ -75,7 +76,7 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
                 Container(
                   width: double.maxFinite,
                   margin: const EdgeInsetsDirectional.only(
-                      start: 16, end: 16, bottom: 5),
+                      start: 16, end: 16, bottom: 10),
                   child: Wrap(
                     spacing: 8,
                     runSpacing: 0,
@@ -88,72 +89,78 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
                 ),
               Row(
                 children: [
-                  voice(),
-                  Expanded(
-                      child: GestureDetector(
-                    onTap: () {
-                      if (_focusNode.hasFocus) {
-                        _focusNode.unfocus();
-                      } else {
-                        _focusNode.requestFocus();
-                      }
-                    },
-                    child: Container(
-                      margin: const EdgeInsetsDirectional.only(
-                          start: 2, end: 2, top: 3, bottom: 10),
-                      padding:
-                          const EdgeInsetsDirectional.only(start: 12, end: 12),
-                      decoration: const BoxDecoration(
-                          color: Color(0xFFF4F5F6),
-                          borderRadius: BorderRadius.all(Radius.circular(16))),
-                      height: 48,
-                      width: double.infinity,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Container(
-                              height: 48,
-                              alignment: Alignment.center,
-                              child: TextField(
-                                focusNode: _focusNode,
-                                controller: _controller.textEditingController,
-                                maxLines: 1,
-                                minLines: 1,
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold),
-                                decoration: InputDecoration(
-                                    hintText: Tr.app_message_send_input.tr,
-                                    hintStyle: const TextStyle(
-                                        color: Color(0xFFBCB6C4),
-                                        fontWeight: FontWeight.w400),
-                                    hintMaxLines: 1,
-                                    border: InputBorder.none),
-                              ),
+                  isInputEdit ? voice() : input(),
+                  isInputEdit
+                      ? Expanded(
+                          child: GestureDetector(
+                          onTap: () {
+                            if (_focusNode.hasFocus) {
+                              _focusNode.unfocus();
+                            } else {
+                              _focusNode.requestFocus();
+                            }
+                          },
+                          child: Container(
+                            margin: const EdgeInsetsDirectional.only(
+                                start: 2, end: 2, top: 3, bottom: 10),
+                            padding: const EdgeInsetsDirectional.only(
+                                start: 12, end: 12),
+                            decoration: const BoxDecoration(
+                                color: Color(0xFFF4F5F6),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(16))),
+                            height: 48,
+                            width: double.infinity,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    height: 48,
+                                    alignment: Alignment.center,
+                                    child: TextField(
+                                      focusNode: _focusNode,
+                                      controller:
+                                          _controller.textEditingController,
+                                      maxLines: 1,
+                                      minLines: 1,
+                                      style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                      decoration: InputDecoration(
+                                          hintText:
+                                              Tr.app_message_send_input.tr,
+                                          hintStyle: const TextStyle(
+                                              color: Color(0xFFBCB6C4),
+                                              fontWeight: FontWeight.w400),
+                                          hintMaxLines: 1,
+                                          border: InputBorder.none),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsetsDirectional.only(
+                                      start: 5),
+                                  child: send(_controller),
+                                ),
+                              ],
                             ),
                           ),
-                          Container(
-                            margin: const EdgeInsetsDirectional.only(start: 5),
-                            child: send(_controller),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )),
+                        ))
+                      : Expanded(child: pressToSpeak()),
                   emjio(),
                 ],
               ),
-              Obx(() => _controller.isShowEmoji.value
+              /*Obx(() => _controller.isShowEmoji.value
                   ? showEmoji()
-                  : const SizedBox.shrink()),
+                  : const SizedBox.shrink()),*/
             ],
           ),
         ),
-        Obx(() => _controller.isShowRecord.value
+        /*Obx(() => _controller.isShowRecord.value
             ? showAudio()
-            : const SizedBox.shrink()),
+            : const SizedBox.shrink()),*/
       ],
     );
   }
@@ -399,19 +406,22 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
               }
               _controller.isShowRecord.value = !_controller.isShowRecord.value;
               _controller.isShowEmoji.value = false;
+              setState(() {
+                isInputEdit = false;
+              });
             }
           });
         },
-        child: Obx(() => Container(
-              padding: const EdgeInsetsDirectional.only(
-                  start: 10, end: 10, top: 10, bottom: 10),
-              child: Image.asset(
-                Assets.iconInputAudio,
-                matchTextDirection: true,
-                width: 26,
-                height: 26,
-              ),
-            )),
+        child: Container(
+          padding: const EdgeInsetsDirectional.only(
+              start: 10, end: 10, top: 10, bottom: 10),
+          child: Image.asset(
+            Assets.iconInputAudio,
+            matchTextDirection: true,
+            width: 26,
+            height: 26,
+          ),
+        ),
       ),
     );
   }
@@ -422,7 +432,11 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
       margin: const EdgeInsetsDirectional.only(start: 6),
       child: InkWell(
         borderRadius: BorderRadius.circular(5),
-        onTap: () {},
+        onTap: () {
+          setState(() {
+            isInputEdit = true;
+          });
+        },
         child: Container(
           padding: const EdgeInsetsDirectional.only(
               start: 10, end: 10, top: 10, bottom: 10),
@@ -481,6 +495,16 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
   ///显示voice
   Widget showAudio() {
     return AppVoiceBottomWidgetRecord(
+      uploadCallBack: _controller.voiceRecord,
+      onClose: () {
+        _controller.isShowRecord.value = false;
+      },
+    );
+  }
+
+  ///按下说话
+  Widget pressToSpeak() {
+    return AppVoiceRecord(
       uploadCallBack: _controller.voiceRecord,
       onClose: () {
         _controller.isShowRecord.value = false;
