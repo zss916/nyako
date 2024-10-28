@@ -50,7 +50,11 @@ class _BuildShowVipOnlineState extends State<BuildShowVipOnline> {
 
   @override
   Widget build(BuildContext context) {
-    //return VipUpOnline();
+    /*return SizedBox(
+      width: Get.width,
+      height: Get.height,
+      child: VipUpOnline(),
+    );*/
     return (isShowVip) ? const VipUpOnline() : const SizedBox.shrink();
   }
 

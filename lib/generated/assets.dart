@@ -12,6 +12,8 @@ class Assets {
   static const String animaMsgVoice = 'assets/anima/msg_voice.webp';
   static const String animaMyDiamondShop = 'assets/anima/my_diamond_shop.webp';
   static const String animaNotify = 'assets/anima/notify.webp';
+  static const String animaNyakoVipAnimaBg =
+      'assets/anima/nyako_vip_anima_bg.webp';
   static const String animaPickUp = 'assets/anima/pick_up.webp';
   static const String animaVipAnimaBg = 'assets/anima/vip_anima_bg.webp';
   static const String animaVipMineWebpBg2 =
@@ -446,6 +448,7 @@ class Assets {
   static const String imgWramDownBg = 'assets/img/wram_down_bg.png';
   static const String jsonAnimaAvatarBg = 'assets/json/anima_avatar_bg.json';
   static const String jsonAnimaConnecting = 'assets/json/anima_connecting.json';
+  static const String jsonAnimaDrag = 'assets/json/anima_drag.json';
   static const String jsonAnimaGift = 'assets/json/anima_gift.json';
   static const String jsonAnimaHomeRecharge =
       'assets/json/anima_home_recharge.json';
@@ -456,7 +459,6 @@ class Assets {
       'assets/json/anima_voice_recording.json';
   static const String jsonDiamondAddAnima =
       'assets/json/diamond_add_anima.json';
-  static const String jsonAnimaDrag = 'assets/json/anima_drag.json';
   static const String lotteryLotteryAddCard =
       'assets/lottery/lottery_add_card.png';
   static const String lotteryLotteryCallCard =

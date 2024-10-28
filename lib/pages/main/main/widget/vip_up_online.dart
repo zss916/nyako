@@ -15,23 +15,25 @@ class VipUpOnline extends StatelessWidget {
             width: Get.width,
             height: Get.height,
             alignment: AlignmentDirectional.topCenter,
-            /*decoration: const BoxDecoration(
-              color: Colors.black54,
-            ),*/
             child: Container(
-              width: 332,
-              height: 86,
-              margin: const EdgeInsetsDirectional.only(top: 50),
-              alignment: AlignmentDirectional.bottomCenter,
+              width: Get.width,
+              height: 160,
+              margin: const EdgeInsetsDirectional.only(top: 100),
+              padding:
+                  const EdgeInsetsDirectional.only(top: 15, start: 10, end: 10),
+              alignment: AlignmentDirectional.center,
               decoration: const BoxDecoration(
+                  //color: Colors.red,
                   image: DecorationImage(
                       matchTextDirection: true,
-                      image: AssetImage(Assets.animaVipAnimaBg))),
-              child: Container(
-                width: 332,
-                padding: const EdgeInsetsDirectional.only(
-                    bottom: 12, start: 10, end: 10),
-                child: const VipContent(),
+                      fit: BoxFit.fitWidth,
+                      image: AssetImage(Assets.animaNyakoVipAnimaBg))),
+              child: Text(
+                Tr.app_vip_up_online.tr,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17),
               ),
             ),
           )
