@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -52,18 +53,21 @@ class _BuildGiftState extends State<BuildGift> with DragInterface {
             child: Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
-                RepaintBoundary(
-                  child: Image.asset(
-                    Assets.animaHomeRecharge,
-                    width: 80,
-                    height: 80,
-                    matchTextDirection: true,
+                Container(
+                  margin: const EdgeInsetsDirectional.only(bottom: 15),
+                  child: RepaintBoundary(
+                    child: Lottie.asset(
+                      Assets.jsonAnimaHomeRecharge,
+                      width: 80,
+                      height: 80,
+                    ),
                   ),
                 ),
                 Container(
                   margin: const EdgeInsetsDirectional.only(bottom: 4),
                   decoration: BoxDecoration(
-                      color: const Color(0xFFFFE756),
+                      gradient: const LinearGradient(
+                          colors: [Color(0xFFFF741A), Color(0xFFFF17D6)]),
                       border: Border.all(width: 1, color: Colors.white),
                       borderRadius: BorderRadiusDirectional.circular(30)),
                   padding: const EdgeInsetsDirectional.symmetric(
@@ -73,7 +77,7 @@ class _BuildGiftState extends State<BuildGift> with DragInterface {
                     style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF8239FF)),
+                        color: Colors.white),
                   ),
                 )
               ],

@@ -12,17 +12,17 @@ class BaseLocalPortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: r ?? 106,
-      height: r ?? 106,
+      width: r ?? 100,
+      height: r ?? 100,
       clipBehavior: Clip.hardEdge,
       padding: const EdgeInsetsDirectional.all(0),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.white, width: 1),
+          border: Border.all(color: Colors.white, width: 2),
           borderRadius: BorderRadius.circular(100),
           image: const DecorationImage(
               fit: BoxFit.cover,
               matchTextDirection: true,
-              image: ExactAssetImage(Assets.imgAnchorDefaultAvatar))),
+              image: ExactAssetImage(Assets.iconAnchorDefault))),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(100),
         child: cachedImage(portrait, fit: BoxFit.cover),

@@ -9,18 +9,12 @@ class HotChatButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isCall
-        ? Container(
-            width: 48,
-            height: 48,
-            child: Center(
-              child: RepaintBoundary(
-                child: Image.asset(
-                  Assets.iconHotCall,
-                  width: 48,
-                  height: 48,
-                  matchTextDirection: true,
-                ),
-              ),
+        ? RepaintBoundary(
+            child: Image.asset(
+              Assets.iconHotCall,
+              width: 48,
+              height: 48,
+              matchTextDirection: true,
             ),
           )
         : Image.asset(

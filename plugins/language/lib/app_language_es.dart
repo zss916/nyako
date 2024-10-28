@@ -635,7 +635,7 @@ const language_es = {
   "nyako_base_avatar": "Avatar",
   "nyako_base_take_picture": "Tomar foto",
   "nyako_not_enough_money": "Saldo insuficiente",
-  "nyako_call_free": "Tienes una llamada gratis",
+  "nyako_call_free": "Gratis",
   "nyako_call_cast": "Consumo de llamada",
   "nyako_not_exceed": "No puedes introducir  más que %s carácteres",
   "nyako_not_entered": "No hay ningún contenido",

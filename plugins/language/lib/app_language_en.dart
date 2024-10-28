@@ -647,7 +647,7 @@ const language_en = {
   "nyako_base_avatar": "Avatar",
   "nyako_base_take_picture": "Take photos",
   "nyako_not_enough_money": "Insuffcient balance",
-  "nyako_call_free": "free",
+  "nyako_call_free": "Free",
   "nyako_call_cast": "Call consumption",
   "nyako_not_exceed": "Cannot exceed %s figures",
   "nyako_not_entered": "You haven't entered anything yet",

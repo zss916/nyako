@@ -39,7 +39,7 @@ class ReportDialog extends StatefulWidget {
 class _ReportBodyState extends State<ReportDialog> with RouteAware {
   FocusNode? _focusNode;
   late TextEditingController textEditCtrl = TextEditingController();
-  int selectIndex = 0;
+  int selectIndex = -1;
 
   final reportList = [
     Tr.app_report_text_1.tr,
@@ -96,20 +96,36 @@ class _ReportBodyState extends State<ReportDialog> with RouteAware {
   Widget build(BuildContext context) {
     return Container(
       width: Get.width,
-      padding: const EdgeInsetsDirectional.only(top: 15, bottom: 10),
+      padding: const EdgeInsetsDirectional.only(top: 20, bottom: 10),
       decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: AlignmentDirectional.topCenter,
-              end: AlignmentDirectional.bottomCenter,
-              colors: [
-                Color(0xFF201436),
-                Color(0xFF0C0C32),
-              ]),
+          color: Colors.white,
           borderRadius: BorderRadiusDirectional.only(
-              topStart: Radius.circular(10), topEnd: Radius.circular(10))),
+              topStart: Radius.circular(24), topEnd: Radius.circular(24))),
       child: SingleChildScrollView(
         child: Column(
-          children: [list(), submit()],
+          children: [
+            Text(
+              Tr.app_report_title.tr,
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
+            Container(
+              padding: const EdgeInsetsDirectional.symmetric(
+                  horizontal: 20, vertical: 5),
+              child: Text(
+                Tr.app_report_description.tr,
+                textAlign: TextAlign.start,
+                style: const TextStyle(
+                    color: Color(0xFF999999),
+                    fontSize: 13,
+                    fontWeight: FontWeight.normal),
+              ),
+            ),
+            list(),
+            // submit()
+          ],
         ),
       ),
     );
@@ -146,10 +162,14 @@ class _ReportBodyState extends State<ReportDialog> with RouteAware {
                     maxFontSize: 16,
                     minFontSize: 8,
                     maxLines: 1,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                        color: index == selectIndex
+                            ? Colors.black
+                            : const Color(0xFF666666),
+                        fontWeight: index == selectIndex
+                            ? FontWeight.w600
+                            : FontWeight.w500),
                   )),
                   buildSelect(index)
                 ],
@@ -165,6 +185,8 @@ class _ReportBodyState extends State<ReportDialog> with RouteAware {
     setState(() {
       selectIndex = index;
     });
+
+    report(widget.uid, widget.channelId, close: widget.close);
   }
 
   Widget submit() {
@@ -191,15 +213,14 @@ class _ReportBodyState extends State<ReportDialog> with RouteAware {
   Image buildSelect(int index) {
     return index == selectIndex
         ? Image.asset(
-            Assets.imgChecked,
+            Assets.iconSelected,
             width: 25,
             height: 25,
           )
         : Image.asset(
-            Assets.imgUncheck,
+            Assets.iconUnselect,
             width: 25,
             height: 25,
-            color: Colors.grey,
           );
   }
 

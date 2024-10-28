@@ -12,16 +12,16 @@ class BaseRemotePortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: r ?? 106,
-      height: r ?? 106,
+      width: r ?? 100,
+      height: r ?? 100,
       clipBehavior: Clip.hardEdge,
       padding: const EdgeInsetsDirectional.all(0),
       decoration: BoxDecoration(
         image: const DecorationImage(
             fit: BoxFit.cover,
-            image: ExactAssetImage(Assets.imgAnchorDefaultAvatar)),
+            image: ExactAssetImage(Assets.iconAnchorDefault)),
         color: Colors.transparent,
-        border: Border.all(color: Colors.white, width: 1), // border
+        border: Border.all(color: Colors.white, width: 2), // border
         borderRadius: BorderRadius.circular((100)), // 圆角
       ),
       child: ClipRRect(

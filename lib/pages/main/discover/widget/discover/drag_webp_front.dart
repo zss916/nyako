@@ -61,7 +61,7 @@ class _DragWebpState extends State<DragWebpFront> {
               width: double.infinity,
               child: Center(
                 child: Lottie.asset(
-                  Assets.jsonDrag,
+                  Assets.jsonAnimaDrag,
                   height: 190,
                   width: 170,
                 ),

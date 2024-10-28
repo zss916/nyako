@@ -10,10 +10,11 @@ class BuildPortrait extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //AvatarStatusHand.getType()
     return InkWell(
       borderRadius: BorderRadius.circular(100),
       onTap: () => logic.toEdit(),
-      child: buildContent(state: AvatarStatusHand.getType()),
+      child: buildContent(state: 0),
     );
   }
 

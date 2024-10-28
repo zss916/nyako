@@ -20,50 +20,51 @@ class BuildCallSound extends StatelessWidget {
         : GestureDetector(
             onTap: () => logic.clickCharge(),
             child: Container(
+              width: double.maxFinite,
               margin: const EdgeInsetsDirectional.symmetric(horizontal: 0),
               padding: const EdgeInsetsDirectional.symmetric(
-                  horizontal: 7, vertical: 5),
+                  horizontal: 10, vertical: 10),
               decoration: const BoxDecoration(
-                  color: Colors.black45,
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
+                  gradient: LinearGradient(
+                      colors: [Color(0xFFFF1A84), Color(0xFFFFAE17)]),
+                  borderRadius: BorderRadius.all(Radius.circular(12))),
               child: Row(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: MainAxisSize.max,
                 children: [
                   Image.asset(
-                    Assets.imgSoundClose,
+                    Assets.iconSoundClose,
                     matchTextDirection: true,
-                    height: 22,
-                    width: 22,
+                    height: 24,
+                    width: 24,
                   ),
-                  Container(
+                  Expanded(
+                      child: Container(
                     margin:
                         const EdgeInsetsDirectional.symmetric(horizontal: 5),
                     child: Text(
                       title,
-                      style: const TextStyle(color: Colors.white, fontSize: 12),
+                      textAlign: TextAlign.start,
+                      style: const TextStyle(color: Colors.white, fontSize: 13),
                       softWrap: true,
                     ),
-                  ),
+                  )),
                   Container(
                     alignment: AlignmentDirectional.center,
-                    height: 24,
+                    height: 30,
                     padding: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 3, vertical: 2),
+                        horizontal: 10, vertical: 2),
                     decoration: BoxDecoration(
-                        gradient: const LinearGradient(colors: [
-                          Color(0xFFAC53FB),
-                          Color(0xFF7934F0),
-                        ]),
+                        color: Colors.white,
                         borderRadius: BorderRadiusDirectional.circular(30)),
                     child: AutoSizeText(
                       recharge,
                       maxLines: 1,
-                      maxFontSize: 12,
+                      maxFontSize: 13,
                       minFontSize: 6,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
+                          color: Color(0xFFFF33A7),
+                          fontSize: 13,
                           fontWeight: FontWeight.bold),
                     ),
                   )

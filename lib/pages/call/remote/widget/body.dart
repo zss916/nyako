@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/local/widget/build_call_price.dart';
 import 'package:oliapro/pages/call/remote/index.dart';
 import 'package:oliapro/pages/call/remote/widget/base_remote_portrait.dart';
+import 'package:oliapro/pages/call/remote/widget/build_avatar_bg.dart';
 import 'package:oliapro/pages/call/remote/widget/build_backgrand.dart';
 import 'package:oliapro/pages/call/remote/widget/build_free_tip.dart';
 import 'package:oliapro/pages/call/remote/widget/build_free_tip2.dart';
-import 'package:oliapro/pages/call/remote/widget/build_tip.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
 
 class Body extends StatelessWidget {
   final RemoteLogic logic;
@@ -30,10 +28,11 @@ class Body extends StatelessWidget {
             Container(
               margin: const EdgeInsetsDirectional.only(top: 85),
               child: Stack(
-                alignment: AlignmentDirectional.bottomCenter,
+                alignment: AlignmentDirectional.center,
                 children: [
+                  const BuildAvatarBg(),
                   Container(
-                    margin: const EdgeInsetsDirectional.only(bottom: 15),
+                    margin: const EdgeInsetsDirectional.only(bottom: 0),
                     child: BaseRemotePortrait(
                         logic.portrait, logic.detail.lineState()),
                   ),
@@ -52,52 +51,74 @@ class Body extends StatelessWidget {
               ),
             ),
             //AgeAndSex(logic.detail.showBirthday),
-            Container(
+            /*Container(
               margin: const EdgeInsetsDirectional.only(top: 10),
               child: BuildCallPrice(price: logic.detail.charge),
-            ),
+            ),*/
             const Spacer(),
-            if (logic.freeTip == 2) const BuildTip(),
+            //  if (logic.freeTip == 2) const BuildTip(),
             Container(
               margin: const EdgeInsetsDirectional.only(bottom: 60),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   GestureDetector(
                     behavior: HitTestBehavior.opaque,
                     onTap: () => logic.hangUp(),
-                    child: Image.asset(
-                      Assets.imgHangUp,
-                      matchTextDirection: true,
-                      height: 75,
-                      width: 75,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            if (logic.freeTip == 1)
+                              const SizedBox(
+                                height: 35,
+                              ),
+                            if (logic.freeTip == 2)
+                              const SizedBox(
+                                height: 44,
+                              ),
+                          ],
+                        ),
+                        Image.asset(
+                          Assets.iconHangUp,
+                          matchTextDirection: true,
+                          height: 84,
+                          width: 84,
+                        )
+                      ],
                     ),
                   ),
                   GestureDetector(
                       behavior: HitTestBehavior.opaque,
                       onTap: () => logic.toPickUp(),
-                      child: RepaintBoundary(
-                        child: Image.asset(
-                          Assets.animaPickUp,
-                          matchTextDirection: true,
-                          height: 75 + 25,
-                          width: 75 + 25,
-                        ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Stack(
+                            alignment: AlignmentDirectional.center,
+                            children: [
+                              if (logic.freeTip == 1) const BuildFreeTip(),
+                              if (logic.freeTip == 2) const BuildFreeTip2(),
+                            ],
+                          ),
+                          RepaintBoundary(
+                            child: Lottie.asset(
+                              Assets.jsonAnimaPickUp,
+                              width: 84,
+                              height: 84,
+                            ),
+                          )
+                        ],
                       )),
                 ],
               ),
             ),
           ],
         )),
-        if (logic.freeTip == 1 && Get.locale?.languageCode != "hi")
-          PositionedDirectional(
-              bottom: Get.isTr ? 140 : 130,
-              end: Get.isTr ? 25 : 65,
-              child: const BuildFreeTip()),
-        if (logic.freeTip == 1 && Get.locale?.languageCode == "hi")
-          const PositionedDirectional(
-              bottom: 130, end: 85, child: BuildFreeTip2()),
       ],
     );
   }

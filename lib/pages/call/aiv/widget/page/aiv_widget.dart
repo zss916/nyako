@@ -8,8 +8,7 @@ import 'package:oliapro/pages/call/aiv/widget/build_time_count.dart';
 import 'package:oliapro/pages/call/aiv/widget/chat_backgrand.dart';
 import 'package:oliapro/pages/call/call/widget/call_footer_tool.dart';
 import 'package:oliapro/pages/call/call/widget/call_header_tool.dart';
-
-import '../../../../../widget/app_video_player.dart';
+import 'package:oliapro/widget/app_video_player.dart';
 
 class AivWidget extends StatelessWidget {
   final AivLogic logic;
@@ -69,27 +68,30 @@ class AivWidget extends StatelessWidget {
                           onPanUpdate: logic.onPanUpdate,
                           onTap: logic.switchBig,
                           child: Container(
-                            width: 118,
-                            height: 178,
+                            width: 105,
+                            height: 155,
                             clipBehavior: Clip.hardEdge,
                             padding: const EdgeInsetsDirectional.only(
-                                top: 5, bottom: 5),
+                                top: 0, bottom: 0),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    width: 1,
+                                    color: logic.showVip
+                                        ? Colors.transparent
+                                        : Colors.white),
+                                borderRadius: BorderRadius.circular(12)),
                             foregroundDecoration: logic.showVip
                                 ? const BoxDecoration(
                                     image: DecorationImage(
                                         matchTextDirection: true,
                                         fit: BoxFit.fill,
-                                        image: ExactAssetImage(
-                                            Assets.imgVipAvatarFornt)))
+                                        image: AssetImage(
+                                            Assets.iconCallVipFrame)))
                                 : const BoxDecoration(),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 1.4, color: Colors.transparent),
-                                borderRadius: BorderRadius.circular(8)),
                             child: !logic.switchView
                                 ? AivCamera(logic)
                                 : ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(12),
                                     child: AppVideoPlayer(
                                       controller: logic.videoController,
                                     ),
@@ -106,8 +108,8 @@ class AivWidget extends StatelessWidget {
   }
 
   ///AIV 充值解锁
-  PositionedDirectional _callSound(AivLogic logic) =>
-      PositionedDirectional(top: 130, start: 15, child: BuildCallSound(logic));
+  PositionedDirectional _callSound(AivLogic logic) => PositionedDirectional(
+      top: 130, start: 15, end: 15, child: BuildCallSound(logic));
 
   ///时间计时
   PositionedDirectional _timeCount(AivLogic logic) => PositionedDirectional(

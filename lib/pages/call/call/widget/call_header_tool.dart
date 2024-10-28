@@ -65,7 +65,7 @@ class _CallHeaderToolState extends State<CallHeaderTool> {
                     widget.callBack(CallToolEvent.toolEventSwitchCamera);
                   },
                   child: Image.asset(
-                    Assets.imgCallCamera,
+                    Assets.iconCallCamera,
                     matchTextDirection: true,
                     width: 30,
                     height: 30,
@@ -79,13 +79,13 @@ class _CallHeaderToolState extends State<CallHeaderTool> {
                 },
                 child: widget.abandVolume
                     ? Image.asset(
-                        Assets.imgCallVoice,
+                        Assets.iconCallVoice,
                         width: 30,
                         height: 30,
                         matchTextDirection: true,
                       )
                     : Image.asset(
-                        Assets.imgCallVoiceNo,
+                        Assets.iconCallVoiceNo,
                         width: 30,
                         height: 30,
                         matchTextDirection: true,
@@ -108,7 +108,7 @@ class _CallHeaderToolState extends State<CallHeaderTool> {
                       });*/
                 },
                 child: Image.asset(
-                  Assets.imgCallReport,
+                  Assets.iconCallReport,
                   matchTextDirection: true,
                   height: 30,
                   width: 30,
@@ -129,7 +129,7 @@ class _CallHeaderToolState extends State<CallHeaderTool> {
                     },
                   );
                 },
-                child: Image.asset(Assets.imgCallClose,
+                child: Image.asset(Assets.iconCallClose,
                     matchTextDirection: true, height: 30, width: 30)),
             const SizedBox(
               width: 10,

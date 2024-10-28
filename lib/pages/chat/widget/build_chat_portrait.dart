@@ -19,19 +19,29 @@ class ChatPortrait extends StatelessWidget {
         Stack(
           alignment: AlignmentDirectional.center,
           children: [
-            Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(40), color: Colors.white),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(40),
-                child: cachedImage(logic.herDetail?.showPortrait ?? "",
-                    width: 40, height: 40),
+            if (!logic.isSystemId)
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(40),
+                    color: Colors.white),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(40),
+                  child: cachedImage(logic.herDetail?.showPortrait ?? "",
+                      width: 40, height: 40),
+                ),
+              )
+            else
+              Image.asset(
+                Assets.iconSystem,
+                width: 40,
+                height: 40,
+                matchTextDirection: true,
               ),
-            ),
-            PositionedDirectional(
-                bottom: 0, end: 0, child: BuildLineState(logic)),
+            if (!logic.isSystemId)
+              PositionedDirectional(
+                  bottom: 0, end: 0, child: BuildLineState(logic)),
           ],
         ),
         const SizedBox(
@@ -56,7 +66,7 @@ class ChatPortrait extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            if (logic.herId != AppConstants.systemId ||
+            if (logic.herId != AppConstants.systemId &&
                 logic.herId != AppConstants.serviceId)
               Text.rich(
                 TextSpan(

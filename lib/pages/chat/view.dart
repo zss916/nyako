@@ -129,6 +129,7 @@ class ChatPage extends GetView<ChatLogic> {
                     return Row(
                       children: [
                         Material(
+                          color: Colors.transparent,
                           child: InkWell(
                             borderRadius: BorderRadius.circular(5),
                             onTap: () {

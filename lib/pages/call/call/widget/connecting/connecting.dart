@@ -34,50 +34,56 @@ class Connecting extends StatelessWidget {
                     // mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        width: 240,
-                        height: 120,
+                        width: double.maxFinite,
                         margin: const EdgeInsetsDirectional.only(
                             top: 60, bottom: 30),
-                        child: Stack(
-                          alignment: AlignmentDirectional.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            PositionedDirectional(
-                                start: 0,
-                                child: Container(
-                                  width: 120,
-                                  height: 120,
-                                  margin: const EdgeInsetsDirectional.all(0),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(100),
-                                      border: Border.all(
-                                          width: 1, color: Colors.white)),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(100),
-                                    child: cachedImage(
-                                        logic.detail?.portrait ?? "",
-                                        type: 100),
-                                  ),
-                                )),
-                            PositionedDirectional(
-                                end: 0,
-                                child: Container(
-                                  width: 120,
-                                  height: 120,
-                                  margin: const EdgeInsetsDirectional.all(0),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(100),
-                                      border: Border.all(
-                                          width: 1, color: Colors.white)),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(100),
-                                    child: cachedImage(
-                                        UserInfo.to.myDetail?.portrait ?? ""),
-                                  ),
-                                )),
+                            Container(
+                              width: 68,
+                              height: 68,
+                              padding: const EdgeInsetsDirectional.all(6),
+                              margin: const EdgeInsetsDirectional.all(0),
+                              decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Color(0x33FF3881), blurRadius: 6)
+                                  ],
+                                  borderRadius: BorderRadius.circular(100),
+                                  border: Border.all(
+                                      width: 1.5,
+                                      color: const Color(0xFFFF3881))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(100),
+                                child: cachedImage(logic.detail?.portrait ?? "",
+                                    type: 100),
+                              ),
+                            ),
+                            const ConnectingWebp(),
+                            Container(
+                              width: 68,
+                              height: 68,
+                              padding: const EdgeInsetsDirectional.all(6),
+                              margin: const EdgeInsetsDirectional.all(0),
+                              decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Color(0x334E70FF), blurRadius: 6)
+                                  ],
+                                  borderRadius: BorderRadius.circular(100),
+                                  border: Border.all(
+                                      width: 1.5,
+                                      color: const Color(0xFF4E70FF))),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(100),
+                                child: cachedImage(
+                                    UserInfo.to.myDetail?.portrait ?? ""),
+                              ),
+                            ),
                           ],
                         ),
                       ),
-                      const ConnectingWebp(),
                       const Spacer(),
                       Container(
                         alignment: AlignmentDirectional.center,
@@ -100,9 +106,9 @@ class Connecting extends StatelessWidget {
                           padding: const EdgeInsetsDirectional.only(
                               top: 10, bottom: 10, start: 30, end: 30),
                           child: Image.asset(
-                            Assets.imgHangUp,
-                            width: 75,
-                            height: 75,
+                            Assets.iconHangUp,
+                            width: 84,
+                            height: 84,
                             matchTextDirection: true,
                           ),
                         ),

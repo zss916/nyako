@@ -38,7 +38,7 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                       style: const TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
@@ -60,7 +60,7 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                       style: const TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),

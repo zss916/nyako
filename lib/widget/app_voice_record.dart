@@ -161,7 +161,7 @@ class _AppVoiceRecordState extends State<AppVoiceRecord> {
                             )
                           : RepaintBoundary(
                               child: Lottie.asset(
-                                Assets.iconAnimaVoiceRecording,
+                                Assets.jsonAnimaVoiceRecording,
                                 width: 43,
                                 height: 18,
                               ),

@@ -15,7 +15,7 @@ class ChatBackgrand extends StatelessWidget {
       decoration: (path == "--" || path == "")
           ? const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(Assets.imgAnchorBigDefaultBg),
+                  image: AssetImage(Assets.iconAnchorDefault),
                   fit: BoxFit.cover))
           : BoxDecoration(
               image: DecorationImage(
@@ -27,7 +27,7 @@ class ChatBackgrand extends StatelessWidget {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
-            color: Colors.grey.withOpacity(0.1),
+            color: Colors.black.withOpacity(0.1),
           ),
         ),
       ),

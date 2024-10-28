@@ -59,7 +59,7 @@ class _DragWebpState extends State<DragWebp> {
                 child: Align(
                   alignment: AlignmentDirectional.bottomCenter,
                   child: Lottie.asset(
-                    Assets.jsonDrag,
+                    Assets.jsonAnimaDrag,
                     height: 100,
                     width: 100,
                   ),

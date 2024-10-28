@@ -609,7 +609,7 @@ const language_ar = {
   "nyako_base_avatar": "صورة رمزية",
   "nyako_base_take_picture": "التقط صورة",
   "nyako_not_enough_money": "رصيدك غير كافي",
-  "nyako_call_free": "لديك مكالمة مجانية",
+  "nyako_call_free": "مجانيه",
   "nyako_call_cast": "استهلاك المكالمات",
   "nyako_not_exceed": "يجب ألا يتجاوز %s حرفًا",
   "nyako_not_entered": "لم تدخل أي شيء",

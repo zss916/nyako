@@ -80,7 +80,7 @@ class UserWidget extends StatelessWidget {
                         Text(
                           "ID:${(detail!.username ?? "--")}",
                           style: TextStyle(
-                              color: const Color(0xFFB4B4C0),
+                              color: const Color(0xB3FFFFFF),
                               fontFamily: AppConstants.fontsRegular,
                               fontSize: 10),
                         )
@@ -111,12 +111,39 @@ class UserWidget extends StatelessWidget {
                             }
                           },
                           child: detail!.followed == 1
-                              ? const SizedBox.shrink()
-                              : Image.asset(
-                                  Assets.imgFollow2,
-                                  matchTextDirection: true,
-                                  height: 35,
-                                  width: 35,
+                              ? Container(
+                                  width: 28,
+                                  height: 28,
+                                  alignment: AlignmentDirectional.center,
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xFFF5F4F6),
+                                      borderRadius:
+                                          BorderRadiusDirectional.circular(30)),
+                                  child: UnconstrainedBox(
+                                    child: Image.asset(
+                                      Assets.iconFollowed,
+                                      matchTextDirection: true,
+                                      height: 20,
+                                      width: 20,
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  width: 28,
+                                  height: 28,
+                                  alignment: AlignmentDirectional.center,
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xFF9341FF),
+                                      borderRadius:
+                                          BorderRadiusDirectional.circular(30)),
+                                  child: UnconstrainedBox(
+                                    child: Image.asset(
+                                      Assets.iconFollow,
+                                      matchTextDirection: true,
+                                      height: 20,
+                                      width: 20,
+                                    ),
+                                  ),
                                 ),
                         );
                       })
@@ -146,7 +173,7 @@ class UserPortraitWidget extends StatelessWidget {
           image: const DecorationImage(
               fit: BoxFit.cover,
               matchTextDirection: true,
-              image: ExactAssetImage(Assets.imgAnchorDefaultAvatar)),
+              image: ExactAssetImage(Assets.iconAnchorDefault)),
           borderRadius: BorderRadius.circular(40),
           border: Border.all(width: 1, color: Colors.transparent)),
       child: ClipRRect(

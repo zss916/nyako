@@ -63,6 +63,11 @@ class CardList extends StatelessWidget {
                   childCount: logic.propData.length,
                 ),
               ),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 40,
+              ),
+            )
           ],
         ));
   }

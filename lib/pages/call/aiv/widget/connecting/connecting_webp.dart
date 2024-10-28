@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/generated/assets.dart';
 
 class ConnectingWebp extends StatelessWidget {
@@ -11,10 +12,10 @@ class ConnectingWebp extends StatelessWidget {
 
   Widget connectWebp() {
     return RepaintBoundary(
-      child: Image.asset(
-        Assets.animaCallConnecting,
-        width: 180,
-        height: 28,
+      child: Lottie.asset(
+        Assets.jsonAnimaConnecting,
+        width: 100,
+        height: 60,
       ),
     );
   }

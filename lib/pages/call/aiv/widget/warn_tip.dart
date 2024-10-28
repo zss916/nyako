@@ -23,7 +23,7 @@ class WarnTip extends StatelessWidget {
                 width: double.maxFinite,
                 decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(16)),
                 padding: const EdgeInsetsDirectional.only(
                     start: 10, end: 10, bottom: 10, top: 10),
                 alignment: AlignmentDirectional.center,
@@ -32,7 +32,7 @@ class WarnTip extends StatelessWidget {
                 child: AutoSizeText(
                   Tr.app_video_warning.tr,
                   style:
-                      const TextStyle(color: Color(0xFFFFF885), fontSize: 11),
+                      const TextStyle(color: Color(0xFFFFF599), fontSize: 11),
                   maxFontSize: 11,
                   minFontSize: 4,
                 ),

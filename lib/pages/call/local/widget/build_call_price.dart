@@ -17,12 +17,11 @@ class BuildCallPrice extends StatelessWidget {
               const Spacer(),
               Container(
                 alignment: Alignment.center,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.white.withOpacity(0.1),
-                ),
+                    borderRadius: BorderRadius.circular(8),
+                    gradient: const LinearGradient(
+                        colors: [Color(0xFF822CFE), Color(0xFFD500FE)])),
                 margin: const EdgeInsets.only(top: 3),
                 child: RichText(
                   textAlign: TextAlign.center,
@@ -33,17 +32,17 @@ class BuildCallPrice extends StatelessWidget {
                       WidgetSpan(
                         alignment: PlaceholderAlignment.middle,
                         child: Image.asset(
-                          Assets.imgDiamond,
+                          Assets.iconDiamond,
                           matchTextDirection: true,
-                          width: 13,
-                          height: 13,
+                          width: 15,
+                          height: 15,
                         ),
                       ),
                       TextSpan(
                         text: " ${price ?? 0}",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 16,
+                            fontSize: 14,
                             fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),

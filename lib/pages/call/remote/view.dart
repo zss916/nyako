@@ -9,6 +9,12 @@ class RemotePage extends GetView<RemoteLogic> {
     return PopScope(
       canPop: false,
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          toolbarHeight: 0,
+          leading: const SizedBox.shrink(),
+          systemOverlayStyle: lightBarStyle,
+        ),
         backgroundColor: Colors.black,
         extendBodyBehindAppBar: true,
         body: GetBuilder<RemoteLogic>(

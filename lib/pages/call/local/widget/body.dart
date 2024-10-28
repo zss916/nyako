@@ -55,8 +55,8 @@ class Body extends StatelessWidget {
             Obx(() => Text(
                   logic.waitingStr.value,
                   style: const TextStyle(
-                      color: Colors.green,
-                      fontSize: 14,
+                      color: Colors.white,
+                      fontSize: 15,
                       fontWeight: FontWeight.normal),
                 )),
             const Spacer(),
@@ -66,11 +66,10 @@ class Body extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsetsDirectional.only(top: 45, bottom: 60),
                 child: Image.asset(
-                  Assets.imgHangUp,
-                  height: 75,
-                  width: 75,
+                  Assets.iconHangUp,
+                  height: 84,
+                  width: 84,
                   matchTextDirection: true,
-                  fit: BoxFit.fill,
                 ),
               ),
             ),

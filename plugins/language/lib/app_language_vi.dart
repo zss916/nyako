@@ -185,7 +185,7 @@ const language_vi = {
   "nyako_call_cast": "Chi tiêu cuộc gọi",
   "nyako_call_disconnected": "Chưa kết nối được",
   "nyako_call_ended": "cuộc gọi kết thúc",
-  "nyako_call_free": "Bạn có một cuộc gọi miễn phí",
+  "nyako_call_free": "Miễn phí",
   "nyako_call_hang_up_tip": "Chắc chắn huỷ cuộc gọi?",
   "nyako_call_no_diamond": "Không đủ số dư,hãy nạp tiền ngay bây giờ",
   "nyako_can_not_bind": "Chưa ràng buộc",

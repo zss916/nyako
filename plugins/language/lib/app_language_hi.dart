@@ -640,7 +640,7 @@ const language_hi = {
   "nyako_base_take_picture": "फ़ोटो खींचना",
   "nyako_not_enough_money": "अपर्याप्त बैलेंस",
   "nyako_invoke_err": "ऑपरेशन विफल, कृपया पुन: प्रयास करें।",
-  "nyako_call_free": "आपके पास एक निःशुल्क कॉल है",
+  "nyako_call_free": "फ्री",
   "nyako_call_cast": "कॉल खपत",
   "nyako_not_exceed": "%s वर्णों से अधिक नहीं हो सकता",
   "nyako_not_entered": "आपने अभी तक कुछ भी दर्ज नहीं किया है",

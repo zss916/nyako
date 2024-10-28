@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:oliapro/common/app_common_type.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
+import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/widget/base_button.dart';
 import 'package:oliapro/routes/app_pages.dart';
 import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_extends.dart';
 
 void showBlackDialog({HostDetail? host, AppCallback<int>? callback}) {
   Get.dialog(
@@ -35,38 +35,33 @@ class AppDialogConfirmBlack extends StatelessWidget {
       children: [
         Container(
           width: double.maxFinite,
-          height: 450,
+          height: 390,
           margin:
-              const EdgeInsetsDirectional.only(start: 25, end: 25, bottom: 20),
+              const EdgeInsetsDirectional.only(start: 30, end: 30, bottom: 0),
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [
               Container(
                 width: double.maxFinite,
                 height: double.maxFinite,
-                margin: const EdgeInsetsDirectional.only(top: 50),
+                margin: const EdgeInsetsDirectional.only(top: 0),
                 padding: const EdgeInsetsDirectional.only(
                     bottom: 20, start: 20, end: 20, top: 20),
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        begin: AlignmentDirectional.topCenter,
-                        end: AlignmentDirectional.bottomCenter,
-                        colors: [
-                          Color(0xFF201436),
-                          Color(0xFF0C0C32),
-                        ]),
+                    color: Colors.white,
                     borderRadius: BorderRadiusDirectional.circular(30)),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: 95,
-                      height: 95,
-                      padding: const EdgeInsetsDirectional.all(10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadiusDirectional.circular(100),
-                        child: cachedImage(detail?.portrait ?? '',
-                            width: 90, height: 90),
+                      width: 60,
+                      height: 60,
+                      margin: const EdgeInsetsDirectional.all(10),
+                      child: Image.asset(
+                        Assets.iconWarming,
+                        width: 60,
+                        height: 60,
+                        matchTextDirection: true,
                       ),
                     ),
                     const SizedBox(
@@ -76,8 +71,8 @@ class AppDialogConfirmBlack extends StatelessWidget {
                       title,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
+                          color: Colors.black,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
@@ -90,8 +85,8 @@ class AppDialogConfirmBlack extends StatelessWidget {
                         str,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                            color: Color(0xFFC3A0FF),
-                            fontSize: 14,
+                            color: Color(0xFF9B989D),
+                            fontSize: 15,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -106,37 +101,30 @@ class AppDialogConfirmBlack extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    GestureDetector(
-                      behavior: HitTestBehavior.opaque,
-                      onTap: () {
-                        Get.back();
-                        callback.call(1);
-                      },
-                      child: Container(
-                        padding: const EdgeInsetsDirectional.all(10),
-                        child: Text(
-                          Tr.app_base_confirm.tr,
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
+                    Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(30),
+                        onTap: () {
+                          Get.back();
+                          callback.call(1);
+                        },
+                        child: Container(
+                          padding: const EdgeInsetsDirectional.symmetric(
+                              horizontal: 30, vertical: 10),
+                          child: Text(
+                            Tr.app_base_confirm.tr,
+                            style: const TextStyle(
+                                color: Color(0xFF9B989D),
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-              /*PositionedDirectional(
-                  top: 60,
-                  end: 10,
-                  child: GestureDetector(
-                    onTap: () => Get.back(),
-                    child: Image.asset(
-                      Assets.imageCancel,
-                      width: 30,
-                      height: 30,
-                    ),
-                  )),*/
             ],
           ),
         )

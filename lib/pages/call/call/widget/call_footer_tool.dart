@@ -76,7 +76,7 @@ class _CallFooterToolState extends State<CallFooterTool> {
                                     widget.giftIconUrl ?? "",
                                     width: 40,
                                     height: 40,
-                                    placeholderAsset: Assets.imgAppLogo,
+                                    placeholderAsset: Assets.iconSmallLogo,
                                   ),
                                 ),
                               ),
@@ -104,7 +104,7 @@ class _CallFooterToolState extends State<CallFooterTool> {
                                     widget.giftIconUrl ?? "",
                                     width: 40,
                                     height: 40,
-                                    placeholderAsset: Assets.imgAppLogo,
+                                    placeholderAsset: Assets.iconSmallLogo,
                                   ),
                                 ),
                               ),
@@ -131,7 +131,7 @@ class _CallFooterToolState extends State<CallFooterTool> {
                         decoration: const BoxDecoration(
                             color: Colors.black45, shape: BoxShape.circle),
                         child: Image.asset(
-                          Assets.imgBigDiamond,
+                          Assets.iconDiamond,
                           matchTextDirection: true,
                           width: 35,
                           height: 35,
@@ -197,7 +197,7 @@ class _CallFooterToolState extends State<CallFooterTool> {
                   },
                   child: RepaintBoundary(
                     child: Image.asset(
-                      Assets.animaGift,
+                      Assets.jsonAnimaGift,
                       matchTextDirection: true,
                       width: 55,
                       height: 55,

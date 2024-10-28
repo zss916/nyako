@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:oliapro/dialogs/dialog_confirm_black.dart';
 import 'package:oliapro/dialogs/sheet_chat_more.dart';
+import 'package:oliapro/dialogs/sheet_report.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/chat/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/services/storage_service.dart';
 import 'package:oliapro/utils/app_event_bus.dart';
 import 'package:oliapro/utils/app_voice_player.dart';
@@ -21,10 +21,15 @@ class BuildChatMore extends StatelessWidget {
         onTap: () {
           AppAudioPlayer().stop();
           showChatMore(
-              report: () => ARoutes.toReport(
-                    uid: logic.herDetail?.getUid,
-                    type: ReportEnum.chat.index.toString(),
-                  ),
+              report: () =>
+                  showReportSheet(logic.herDetail?.getUid ?? "", close: () {
+                    StorageService.to
+                        .updateBlackList(logic.herDetail?.getUid ?? "", true);
+                    AppEventBus.eventBus
+                        .fire(BlackEvent(uid: logic.herDetail?.getUid ?? ""));
+                    AppEventBus.eventBus
+                        .fire(ReportEvent(ReportEnum.chat.index));
+                  }),
               black: () {
                 if (logic.herDetail == null) return;
                 showBlackDialog(

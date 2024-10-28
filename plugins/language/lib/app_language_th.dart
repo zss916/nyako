@@ -617,7 +617,7 @@ const language_th = {
   "nyako_base_avatar": "รูปประจำตัว",
   "nyako_base_take_picture": "ถ่ายภาพ",
   "nyako_not_enough_money": "ยอดเงินไม่เพียงพอ",
-  "nyako_call_free": "คุณมีการโทรฟรี",
+  "nyako_call_free": "ฟรี",
   "nyako_call_cast": "ปริมาณการใช้โทร",
   "nyako_not_exceed": "ต้องไม่เกิน %s ตัวอักษร",
   "nyako_not_entered": "คุณยังไม่ได้ป้อนอะไรเลย",

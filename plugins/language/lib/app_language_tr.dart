@@ -628,7 +628,7 @@ const language_tr = {
   "nyako_base_avatar": "Avatar",
   "nyako_base_take_picture": "Fotoğraf çek",
   "nyako_not_enough_money": "Yetersiz bakiye",
-  "nyako_call_free": "Ücretsiz aramanız var",
+  "nyako_call_free": "ücretsiz",
   "nyako_call_cast": "Çağrı tüketimi",
   "nyako_not_exceed": "%s karakteri geçmemelidir",
   "nyako_not_entered": "Hiçbir şey girmedin",

@@ -186,22 +186,25 @@ class CallWidget extends GetView<CallLogic> {
                             onPanUpdate: controller.onPanUpdate,
                             onTap: controller.switchBig,
                             child: Container(
-                              width: 118,
-                              height: 178,
+                              width: 105,
+                              height: 155,
                               clipBehavior: Clip.hardEdge,
                               padding: const EdgeInsetsDirectional.only(
-                                  top: 5, bottom: 5),
+                                  top: 0, bottom: 0),
                               foregroundDecoration: isShow
                                   ? const BoxDecoration(
                                       image: DecorationImage(
                                           matchTextDirection: true,
                                           fit: BoxFit.fill,
                                           image: ExactAssetImage(
-                                              Assets.imgVipAvatarFornt)))
+                                              Assets.iconCallVipFrame)))
                                   : const BoxDecoration(),
                               decoration: BoxDecoration(
                                   border: Border.all(
-                                      width: 1.4, color: Colors.transparent),
+                                      width: 1,
+                                      color: isShow
+                                          ? Colors.transparent
+                                          : Colors.white),
                                   borderRadius: BorderRadius.circular(8)),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8),

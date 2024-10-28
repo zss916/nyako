@@ -29,17 +29,6 @@ class AnchorHot extends StatelessWidget {
       onLoading: () => logic.loadMoreData(),
       child: buildList(logic, ctl),
     );
-    return GetBuilder<HomeLogic>(
-        assignId: true,
-        init: HomeLogic(),
-        builder: (logic) => SmartRefresher(
-              enablePullDown: true,
-              enablePullUp: true,
-              controller: logic.refreshCtrl,
-              onRefresh: () => logic.refreshData(),
-              onLoading: () => logic.loadMoreData(),
-              child: buildList(logic, ctl),
-            ));
   }
 
   Widget buildList(HomeLogic logic, ScrollController ctl) {
