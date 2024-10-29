@@ -7,7 +7,7 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
   late String content;
   late String token;
   late RTMMsgBeginCall rtmMsgCall;
-  late RTMMsgGift askGift;
+  // late RTMMsgGift askGift;
 
   // 0拨打，1被叫，2aib拨打(aib是被叫页面，实际是要去拨打)
   late int callType;
@@ -34,7 +34,7 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
 
   // 显示在语音模式
   var audioMode = false.obs;
-  var abandVolume = true.obs;
+  var deviceVolume = true.obs;
 
   // 显示两分钟倒计时 1.60s倒计时 2.120s倒计时
   var showCount2Min = 0.obs;
@@ -66,7 +66,7 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
   int callCardDurationSecond = 0;
 
   // 充值中，这个时候不要因为电话的挂断而关闭
-  bool chargeing = false;
+  bool charge_ing = false;
 
   // 本次电话结束
   bool thisCallFinish = false;
@@ -130,26 +130,6 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
       _connectionBanned(connection);
     };
 
-    /* userJoined = (int remoteUid, int elapsed) {
-      _userJoined(remoteUid, elapsed);
-    };
-
-    userOffline = (int uid, UserOfflineReason reason) {
-      _userOffline(uid, reason);
-    };
-
-    connectionLost = () {
-      _connectionLost();
-    };
-
-    remoteVideoStats = (RemoteVideoStats stats) {
-      _remoteVideoStats(stats);
-    };
-
-    connectionBanned = () {
-      _connectionBanned();
-    };*/
-
     showWarn = true;
     update();
     Future.delayed(const Duration(seconds: 5), () {
@@ -174,7 +154,6 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
       Rtm.instance.sendInvitation(herId, channelId!,
           content: AppUserInfo.UserInfo.to.getAppUserInfo());
     }
-    //debugPrint("channelId===>>> ${channelId}");
     _getToken();
 
     /// event bus 监听
@@ -209,8 +188,8 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
     });
     subGift = StorageService.to.eventBus.on<RTMMsgGift>().listen((event) {
       if (Get.currentRoute.contains(AppPages.call)) {
-        askGift = event;
-        getGiftDetail(askGift.giftId ?? "");
+        //askGift = event;
+        getGiftDetail(event.giftId ?? "");
       }
     });
     // 余额变动socket消息
@@ -303,8 +282,8 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
   }
 
   void switchVoice() {
-    abandVolume.value = !abandVolume.value;
-    setVolume(volume: abandVolume.value ? 100 : 0);
+    deviceVolume.value = !deviceVolume.value;
+    setVolume(volume: deviceVolume.value ? 100 : 0);
   }
 
   // 打电话的计时器
@@ -319,11 +298,6 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
     }
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       callTime.value += 1;
-      if (callTime.value == 3) {
-        // 延时设置一次常亮
-        // WakelockPlus.enable();
-      }
-
       // 通话20s 如果没关注 弹窗关注弹窗
       if (callTime.value == 20 &&
           followed.value != 1 &&
@@ -426,10 +400,10 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
 
   // 点击了充值
   void clickCharge() {
-    chargeing = true;
+    charge_ing = true;
     ChargeDialogManager.showChargeDialog(ChargePath.chating_click_recharge,
         upid: herId, closeCallBack: () {
-      chargeing = false;
+      charge_ing = false;
     }, showFreeDiamondPage: false);
   }
 
@@ -442,7 +416,7 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
       askGiftsList.add(value);
       update(["askGift"]);
       //callDialogToolType.value = CallDialogToolType.askGift;
-      update();
+      //update();
       // TestRtmUtils.showRtmGift(msg: "索要礼物请求接口 end");
     });
   }
@@ -497,7 +471,7 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
     thisCallFinish = true;
     leaveChannel();
     _timer?.cancel();
-    if (chargeing) {
+    if (charge_ing) {
       // 充值中，先不关页面
       return;
     }
@@ -513,10 +487,6 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
     }
     alreadyGotoEnd = true;
     Get.back(closeOverlays: true);
-    //_closePageDialog();
-    /*if (AppPages.history.last.contains(AppPages.call)) {
-      Get.removeName(AppPages.call);
-    }*/
     ARoutes.toSettlement(
       herId: herId,
       channelId: channelId ?? '',
@@ -532,22 +502,9 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
     );
   }
 
-  /// 关闭当前页面弹窗
-  /*void _closePageDialog() {
-    if (AppPages.history.contains(AppPages.call) ||
-        AppPages.history.contains(AppPages.main)) {
-      Get.until(
-        (route) {
-          return route.settings.name == AppPages.call ||
-              route.settings.name == AppPages.main;
-        },
-      );
-    }
-  }*/
-
   // 充值弹窗导致的返回页面，要关闭页面
   void didPopNext() {
-    chargeing = false;
+    charge_ing = false;
     if (thisCallFinish) {
       // 这里要加个延时，不然会崩溃。报的错是重复调用pop等方法
       Future.delayed(
@@ -599,14 +556,6 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
         callStatus: CallStatus.MY_HANG_UP,
         dateInsert: DateTime.now().millisecondsSinceEpoch,
         duration: '00:00');
-
-    /*if (AppPages.history.contains(AppPages.call)) {
-      Get.until(
-        (route) {
-          return route.settings.name == AppPages.call;
-        },
-      );
-    }*/
     Get.back(closeOverlays: true);
     if (AppPages.history.last.contains(AppPages.call)) {
       Get.removeName(AppPages.call);
@@ -645,10 +594,6 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
 
   void _closeMe() {
     /// 关闭弹窗
-    //_closePageDialog();
-    /*if (AppPages.history.last.contains(AppPages.call)) {
-      Get.removeName(AppPages.call);
-    }*/
     Get.back(closeOverlays: true);
   }
 
@@ -709,63 +654,4 @@ class CallLogic extends GetxController with Rtc, CancelableMixin {
   void _connectionBanned(RtcConnection connection) {
     _endCall(EndType2.hostBan);
   }
-
-/*  /// 对方进入
-  void _userJoined(int uid, int elapsed) {
-    // debugPrint("rtc _userJoined ===>  $uid");
-    // 这个判断是为了监控端可能进入
-    if (uid.toString() != herId) return;
-    if (hadBeginCall) return;
-    hadBeginCall = true;
-    _timerLink?.cancel();
-    _timerLink = null;
-    _refreshCall();
-    _beginTimer(rtmMsgCall);
-    connecting = false;
-    update();
-    AppPages.closeDialog();
-  }
-
-  /// 对方挂断
-  void _userOffline(int uid, UserOfflineReason reason) {
-    // debugPrint("rtc _userOffline ==> $uid, ${reason.name}");
-    // 这个判断是为了监控端可能进入
-    if (uid.toString() != herId) return;
-    Get.dialog(AppDialogConfirm(
-      title: Tr.app_video_hang_up_tip.tr,
-      onlyConfirm: true,
-      callback: (int callback) {},
-    )).then((value) {
-      //debugPrint("RouteObserver _userOffline");
-      _endCall(reason == UserOfflineReason.Quit
-          ? EndType2.otherHang
-          : EndType2.otherOff);
-    });
-  }
-
-  /// 对方视频状态
-  void _remoteVideoStats(RemoteVideoStats stats) {
-    // 这个判断是为了监控端可能进入
-    if (stats.uid.toString() != herId) return;
-    if ((stats.decoderOutputFrameRate ?? 0) <= 0) {
-      audioMode.value = true;
-      update();
-    } else {
-      audioMode.value = false;
-      update();
-    }
-  }
-
-  /// 连接中断
-  void _connectionLost() {
-    AppLoading.toast(Tr.app_net_error_tip.tr);
-    //debugPrint("RouteObserver _connectionLost");
-    _endCall(EndType2.netErr);
-  }
-
-  void _connectionBanned() {
-    AppLoading.toast(Tr.app_net_error_tip.tr);
-    // debugPrint("RouteObserver _connectionBanned");
-    _endCall(EndType2.hostBan);
-  }*/
 }

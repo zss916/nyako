@@ -126,6 +126,7 @@ class Assets {
   static const String iconFollowedIc = 'assets/icon/followed_ic.png';
   static const String iconFreeBg = 'assets/icon/free_bg.png';
   static const String iconFreeBg2 = 'assets/icon/free_bg2.png';
+  static const String iconGiftIc = 'assets/icon/gift_ic.png';
   static const String iconGooglePayIcon = 'assets/icon/google_pay_icon.webp';
   static const String iconGou = 'assets/icon/gou.png';
   static const String iconHangUp = 'assets/icon/hang_up.png';
@@ -145,6 +146,7 @@ class Assets {
   static const String iconKingVip = 'assets/icon/king_vip.png';
   static const String iconLoginBg = 'assets/icon/login_bg.png';
   static const String iconLoginLogo = 'assets/icon/login_logo.png';
+  static const String iconLove = 'assets/icon/love.png';
   static const String iconMale = 'assets/icon/male.png';
   static const String iconMaleS = 'assets/icon/male_s.png';
   static const String iconMatchForeground = 'assets/icon/match_foreground.png';

@@ -9,6 +9,7 @@ import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/call/call/index.dart';
 import 'package:oliapro/pages/call/call/widget/build_time_count.dart';
+import 'package:oliapro/pages/call/call/widget/call_follow_tip.dart';
 import 'package:oliapro/pages/call/call/widget/call_footer_tool.dart';
 import 'package:oliapro/pages/call/call/widget/call_header_tool.dart';
 import 'package:oliapro/pages/call/call/widget/page/build_ask_gift.dart';
@@ -16,7 +17,6 @@ import 'package:oliapro/services/user_info.dart';
 import 'package:sprintf/sprintf.dart';
 
 import '../../../../../widget/app_net_image.dart';
-import '../call_follow_tip.dart';
 
 class CallWidget extends GetView<CallLogic> {
   const CallWidget({super.key});
@@ -237,6 +237,7 @@ class CallWidget extends GetView<CallLogic> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Obx(() => CallFollowTip(
+                  logic: controller,
                   type: controller.callDialogToolType.value,
                   netImage: controller.callDialogToolType.value ==
                           CallDialogToolType.follow
@@ -270,24 +271,24 @@ class CallWidget extends GetView<CallLogic> {
                         CallDialogToolType.none;
                   },
                 )),
-            GetBuilder<CallLogic>(
-                id: "askGift",
-                init: CallLogic(),
-                builder: (logic) {
-                  return Container(
-                    height: 100,
-                    margin: const EdgeInsetsDirectional.only(top: 20),
-                    child: ListView.builder(
-                        padding: EdgeInsetsDirectional.zero,
-                        itemCount: logic.askGiftsList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return BuildAskGift(
-                              data: logic.askGiftsList[index],
-                              logic: logic,
-                              i: 10);
-                        }),
-                  );
-                })
+            Expanded(
+                child: GetBuilder<CallLogic>(
+                    id: "askGift",
+                    init: CallLogic(),
+                    builder: (logic) {
+                      return Container(
+                        margin: const EdgeInsetsDirectional.only(top: 40),
+                        child: ListView.builder(
+                            padding: EdgeInsetsDirectional.zero,
+                            itemCount: logic.askGiftsList.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return BuildAskGift(
+                                  data: logic.askGiftsList[index],
+                                  logic: logic,
+                                  i: 10);
+                            }),
+                      );
+                    }))
           ],
         )
       ],

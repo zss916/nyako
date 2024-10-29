@@ -94,99 +94,91 @@ class _MainPageState extends State<MainPage>
     return contentBody();
   }
 
-  Widget contentBody() => Stack(
-        alignment: AlignmentDirectional.topCenter,
-        children: [
-          Positioned.fill(
-            child: BuildPopScope(
-              child: Scaffold(
-                backgroundColor: Colors.white,
-                extendBody: true,
-                body: PageView(
-                  pageSnapping: false,
-                  scrollBehavior: null,
-                  physics: const NeverScrollableScrollPhysics(),
-                  controller: pageController,
-                  children: const [
-                    HomePage(),
-                    DiscoverPage(),
-                    MsgListPage(),
-                    MatchPage(),
-                    //AppKeepAlivePage(),
-                    MePage()
-                  ],
-                ),
+  Widget contentBody() => BuildPopScope(
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          extendBody: true,
+          body: PageView(
+            pageSnapping: false,
+            scrollBehavior: null,
+            physics: const NeverScrollableScrollPhysics(),
+            controller: pageController,
+            children: const [
+              HomePage(),
+              DiscoverPage(),
+              MsgListPage(),
+              MatchPage(),
+              //AppKeepAlivePage(),
+              MePage(),
+            ],
+          ),
 
-                ///elevation 不为0 就会有一层黑色透明的
-                bottomNavigationBar: CustomNavigationBar(
-                  currentIndex: select,
-                  elevation: 0,
-                  strokeColor: Colors.transparent,
-                  scaleFactor: 0.1,
-                  iconSize: 35,
-                  items: [
-                    CustomNavigationBarItem(
-                      icon: Image.asset(
-                        Assets.iconTabHome,
-                        matchTextDirection: true,
-                      ),
-                      selectedIcon: Image.asset(
-                        Assets.iconTabHomeS,
-                        matchTextDirection: true,
-                      ),
-                    ),
-                    CustomNavigationBarItem(
-                        icon: Image.asset(
-                          Assets.iconTabDiscover,
-                          matchTextDirection: true,
-                        ),
-                        selectedIcon: Image.asset(
-                          Assets.iconTabDiscoverS,
-                          matchTextDirection: true,
-                        )),
-                    CustomNavigationBarItem(
-                      icon: Image.asset(
-                        Assets.iconTabMsg,
-                        matchTextDirection: true,
-                      ),
-                      selectedIcon: Image.asset(
-                        Assets.iconTabMsgS,
-                        matchTextDirection: true,
-                      ),
-                      showBadge: showMsg,
-                      badgeCount: showMsgNum,
-                    ),
-                    CustomNavigationBarItem(
-                        icon: Image.asset(
-                          Assets.iconTabMatch,
-                          matchTextDirection: true,
-                        ),
-                        selectedIcon: Image.asset(
-                          Assets.iconTabMatchS,
-                          matchTextDirection: true,
-                        )),
-                    CustomNavigationBarItem(
-                        icon: Image.asset(
-                          Assets.iconTabProfile,
-                          matchTextDirection: true,
-                        ),
-                        selectedIcon: Image.asset(
-                          Assets.iconTabProfileS,
-                          matchTextDirection: true,
-                        )),
-                  ],
-                  onTap: (i) {
-                    setState(() {
-                      select = i;
-                      handleNavBarTap(i);
-                    });
-                  },
+          ///elevation 不为0 就会有一层黑色透明的
+          bottomNavigationBar: CustomNavigationBar(
+            currentIndex: select,
+            elevation: 0,
+            strokeColor: Colors.transparent,
+            scaleFactor: 0.1,
+            iconSize: 35,
+            items: [
+              CustomNavigationBarItem(
+                icon: Image.asset(
+                  Assets.iconTabHome,
+                  matchTextDirection: true,
+                ),
+                selectedIcon: Image.asset(
+                  Assets.iconTabHomeS,
+                  matchTextDirection: true,
                 ),
               ),
-            ),
+              CustomNavigationBarItem(
+                  icon: Image.asset(
+                    Assets.iconTabDiscover,
+                    matchTextDirection: true,
+                  ),
+                  selectedIcon: Image.asset(
+                    Assets.iconTabDiscoverS,
+                    matchTextDirection: true,
+                  )),
+              CustomNavigationBarItem(
+                icon: Image.asset(
+                  Assets.iconTabMsg,
+                  matchTextDirection: true,
+                ),
+                selectedIcon: Image.asset(
+                  Assets.iconTabMsgS,
+                  matchTextDirection: true,
+                ),
+                showBadge: showMsg,
+                badgeCount: showMsgNum,
+              ),
+              CustomNavigationBarItem(
+                  icon: Image.asset(
+                    Assets.iconTabMatch,
+                    matchTextDirection: true,
+                  ),
+                  selectedIcon: Image.asset(
+                    Assets.iconTabMatchS,
+                    matchTextDirection: true,
+                  )),
+              CustomNavigationBarItem(
+                  icon: Image.asset(
+                    Assets.iconTabProfile,
+                    matchTextDirection: true,
+                  ),
+                  selectedIcon: Image.asset(
+                    Assets.iconTabProfileS,
+                    matchTextDirection: true,
+                  )),
+            ],
+            onTap: (i) {
+              setState(() {
+                select = i;
+                handleNavBarTap(i);
+              });
+            },
           ),
-          // const BuildShowVipOnline(),
-        ],
+        ),
       );
 
   // tab栏动画

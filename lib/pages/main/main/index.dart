@@ -13,7 +13,6 @@ import 'package:oliapro/dialogs/dialog_new_user.dart';
 import 'package:oliapro/dialogs/reward_dialog/pdd_util.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/pages/call/remote/widget/build_free_tip2.dart';
 import 'package:oliapro/pages/charge/billing.dart';
 import 'package:oliapro/pages/main/discover/index.dart';
 import 'package:oliapro/pages/main/home/index.dart';

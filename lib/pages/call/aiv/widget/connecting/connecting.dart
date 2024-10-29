@@ -106,9 +106,9 @@ class Connecting extends StatelessWidget {
                           padding: const EdgeInsetsDirectional.only(
                               top: 10, bottom: 10, start: 30, end: 30),
                           child: Image.asset(
-                            Assets.imgHangUp,
-                            width: 75,
-                            height: 75,
+                            Assets.iconHangUp,
+                            width: 84,
+                            height: 84,
                             matchTextDirection: true,
                           ),
                         ),

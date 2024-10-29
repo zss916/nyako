@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/call/aiv/index.dart';
@@ -52,7 +53,7 @@ class _CallFooterToolState extends State<CallFooterTool> {
             children: [
               if (widget.controller != null)
                 Obx(() => widget.controller!.audioMode.value
-                    ? const SizedBox.shrink()
+                    ? const Expanded(child: SizedBox.shrink())
                     : widget.smallWindowItem),
               if (widget.controller != null)
                 GetBuilder<CallLogic>(
@@ -82,6 +83,7 @@ class _CallFooterToolState extends State<CallFooterTool> {
                               ),
                             );
                     }),
+              if (widget.logic != null) const Spacer(),
               if (widget.logic != null)
                 GetBuilder<AivLogic>(
                     init: AivLogic(),
@@ -196,9 +198,8 @@ class _CallFooterToolState extends State<CallFooterTool> {
                     widget.callBack(CallToolEvent.toolEventGift);
                   },
                   child: RepaintBoundary(
-                    child: Image.asset(
+                    child: Lottie.asset(
                       Assets.jsonAnimaGift,
-                      matchTextDirection: true,
                       width: 55,
                       height: 55,
                     ),

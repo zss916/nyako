@@ -20,7 +20,7 @@ class AivLogic extends GetxController {
   String get showPortrait => detail?.portrait ?? "--";
 
   var connecting = true;
-  RxBool abandVolume = false.obs;
+  RxBool deviceVolume = false.obs;
 
   // 通话计时器
   Timer? _timer;
@@ -174,7 +174,7 @@ class AivLogic extends GetxController {
     ScreenProtector.preventScreenshotOff();
     WakelockPlus.disable();
     BgmControl.callInBgmStart();
-    abandVolume.close();
+    deviceVolume.close();
     giftToQuickSend.close();
     contributeList.close();
     super.onClose();

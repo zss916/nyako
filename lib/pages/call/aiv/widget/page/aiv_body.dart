@@ -49,7 +49,7 @@ class AivBody extends StatelessWidget {
       detail: logic.detail,
       followed: logic.followed.value,
       audioMode: false,
-      abandVolume: logic.abandVolume.value,
+      abandVolume: logic.deviceVolume.value,
       callBack: (CallToolEvent event) {
         switch (event) {
           case CallToolEvent.toolEventFollow:

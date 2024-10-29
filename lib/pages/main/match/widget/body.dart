@@ -130,7 +130,7 @@ class GameBody extends StatelessWidget {
             child: Image.asset(
               Assets.iconMatchForeground,
               matchTextDirection: true,
-            ))
+            )),
       ],
     );
   }

@@ -2,6 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/generated/assets.dart';
+import 'package:oliapro/pages/call/call/index.dart';
+import 'package:oliapro/pages/call/call/widget/page/build_call_tip.dart';
 import 'package:oliapro/utils/app_extends.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -23,6 +25,7 @@ class CallFollowTip extends StatelessWidget {
   final String? netImage;
   final int? count2MinLeft;
   final GiftEntity? gift;
+  final CallLogic? logic;
 
   const CallFollowTip(
       {Key? key,
@@ -30,7 +33,8 @@ class CallFollowTip extends StatelessWidget {
       required this.callBack,
       this.netImage,
       this.count2MinLeft,
-      this.gift})
+      this.gift,
+      this.logic})
       : super(key: key);
 
   @override
@@ -38,9 +42,22 @@ class CallFollowTip extends StatelessWidget {
     // if (type == CallDialogToolType.askGift)
     // TestRtmUtils.showRtmGift(msg: "弹出索要礼物 ${type}");
 
+    return buildContent(type.index);
+
     return type == CallDialogToolType.none
         ? const SizedBox.shrink()
         : commonTip(type == CallDialogToolType.countDown);
+  }
+
+  Widget buildContent(int state) {
+    return switch (state) {
+      _ when state == CallDialogToolType.gift.index => buildSendGift(),
+      _ when state == CallDialogToolType.follow.index => buildFollowTip(),
+      _ when state == CallDialogToolType.countDown.index =>
+        const SizedBox.shrink(),
+      _ when state == CallDialogToolType.none.index => const SizedBox.shrink(),
+      _ => const SizedBox.shrink(),
+    };
   }
 
   Widget _buildLeftItem() {
@@ -215,9 +232,6 @@ class CallFollowTip extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 10),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
             decoration: BoxDecoration(
-              /*color: isCountDown
-                  ? Colors.black.withOpacity(0.7)
-                  : Colors.black.withOpacity(0.7),*/
               gradient: const LinearGradient(
                   colors: [Color(0xFF8940FF), Color(0xFFD34BFD)]),
               borderRadius: BorderRadiusDirectional.circular(20),
@@ -285,4 +299,90 @@ class CallFollowTip extends StatelessWidget {
       ),
     );
   }
+
+  Widget buildFollowTip() => Container(
+        margin: const EdgeInsetsDirectional.only(top: 60),
+        child: BuildCallTip(
+          portrait: logic?.detail?.showPortrait ?? "",
+          nickName: logic?.detail?.showNickName ?? "--",
+          id: "ID:${logic?.detail?.showId ?? "--"}",
+          title: Text(
+            Tr.app_video_to_follow_tip.tr,
+            style: const TextStyle(
+                fontSize: 14,
+                color: Color(0xFF642A4B),
+                fontWeight: FontWeight.w500),
+          ),
+          submit: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: const EdgeInsetsDirectional.only(end: 6),
+                child: Image.asset(
+                  Assets.iconFollow,
+                  width: 20,
+                  height: 20,
+                  matchTextDirection: true,
+                ),
+              ),
+              Text(
+                Tr.app_details_follow.tr,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
+              )
+            ],
+          ),
+          onCancel: () {
+            callBack(false);
+          },
+          onSubmit: () {
+            callBack(true);
+          },
+        ),
+      );
+
+  Widget buildSendGift() => Container(
+        margin: const EdgeInsetsDirectional.only(top: 60),
+        child: BuildCallTip(
+          portrait: logic?.detail?.showPortrait ?? "",
+          nickName: logic?.detail?.showNickName ?? "--",
+          id: "ID:${logic?.detail?.showId ?? "--"}",
+          title: Text(
+            Tr.app_video_to_gift_tip.tr,
+            style: const TextStyle(
+                fontSize: 14,
+                color: Color(0xFF642A4B),
+                fontWeight: FontWeight.w500),
+          ),
+          submit: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: const EdgeInsetsDirectional.only(end: 6),
+                child: Image.asset(
+                  Assets.iconGiftIc,
+                  width: 20,
+                  height: 20,
+                  matchTextDirection: true,
+                ),
+              ),
+              Text(
+                Tr.app_gift_send.tr,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
+              )
+            ],
+          ),
+          onCancel: () {
+            callBack(false);
+          },
+          onSubmit: () {
+            callBack(true);
+          },
+        ),
+      );
 }

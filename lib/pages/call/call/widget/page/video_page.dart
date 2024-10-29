@@ -72,7 +72,7 @@ class VideoPage extends StatelessWidget {
               detail: logic.detail,
               followed: logic.followed.value,
               audioMode: logic.audioMode.value,
-              abandVolume: logic.abandVolume.value,
+              abandVolume: logic.deviceVolume.value,
               callBack: (CallToolEvent event) {
                 switch (event) {
                   case CallToolEvent.toolEventFollow:

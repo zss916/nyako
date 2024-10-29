@@ -1,13 +1,11 @@
 import 'dart:async';
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/call/call/index.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:oliapro/pages/call/call/widget/page/build_call_tip.dart';
 
 class BuildAskGift extends StatefulWidget {
   final GiftEntity? data;
@@ -55,90 +53,36 @@ class _BuildAskGiftState extends State<BuildAskGift> {
   Widget build(BuildContext context) {
     return widget.data == null
         ? const SizedBox.shrink()
-        : Stack(
-            children: [
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      colors: [Color(0xFF8940FF), Color(0xFFD34BFD)]),
-                  borderRadius: BorderRadiusDirectional.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 40,
-                      height: 40,
-                      padding: const EdgeInsetsDirectional.all(2),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          border:
-                              Border.all(width: 1, color: Colors.transparent)),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: cachedImage(widget.data?.icon ?? ""),
-                      ),
-                    ),
-                    Expanded(
-                        child: Text(
-                      Tr.app_claim_gift_tip
-                          .trArgs([(widget.data?.name ?? "--")]),
-                      maxLines: 2,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    )),
-                    GestureDetector(
-                      onTap: () {
-                        if (widget.data != null) {
-                          widget.logic.sendGift(widget.data!, onEnd: () {
-                            widget.logic.askGiftsList.clear();
-                            widget.logic.update(["askGift"]);
-                          });
-                        }
-                      },
-                      child: Container(
-                        height: 36,
-                        // width: 94,
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadiusDirectional.circular(50),
-                        ),
-                        child: AutoSizeText(
-                          Tr.app_gift_send.tr,
-                          maxFontSize: 12,
-                          minFontSize: 6,
-                          maxLines: 1,
-                          style: const TextStyle(
-                              color: Color(0xFF8239FF),
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              PositionedDirectional(
-                  top: 0,
-                  start: 10,
-                  child: GestureDetector(
-                    onTap: () {
-                      widget.logic.askGiftsList.clear();
-                      widget.logic.update(["askGift"]);
-                    },
-                    child: Image.asset(
-                      Assets.imgCloseHg,
-                      height: 24,
-                      width: 24,
-                    ),
-                  )),
-            ],
+        : BuildCallTip(
+            portrait: widget.logic.detail?.showPortrait ?? "",
+            nickName: widget.logic.detail?.showNickName ?? "--",
+            id: "ID:${widget.logic.detail?.showId ?? "--"}",
+            title: Text(
+              Tr.app_claim_gift_tip.trArgs([(widget.data?.name ?? "")]),
+              style: const TextStyle(
+                  fontSize: 14,
+                  color: Color(0xFF642A4B),
+                  fontWeight: FontWeight.w500),
+            ),
+            submit: Text(
+              Tr.app_gift_send.tr,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500),
+            ),
+            onCancel: () {
+              widget.logic.askGiftsList.clear();
+              widget.logic.update(["askGift"]);
+            },
+            onSubmit: () {
+              if (widget.data != null) {
+                widget.logic.sendGift(widget.data!, onEnd: () {
+                  widget.logic.askGiftsList.clear();
+                  widget.logic.update(["askGift"]);
+                });
+              }
+            },
           );
   }
 }

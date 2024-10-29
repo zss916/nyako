@@ -168,14 +168,14 @@ class UserPortraitWidget extends StatelessWidget {
     return Container(
       width: 35,
       height: 35,
-      padding: const EdgeInsetsDirectional.all(3),
+      padding: const EdgeInsetsDirectional.all(0),
       decoration: BoxDecoration(
           image: const DecorationImage(
               fit: BoxFit.cover,
               matchTextDirection: true,
               image: ExactAssetImage(Assets.iconAnchorDefault)),
           borderRadius: BorderRadius.circular(40),
-          border: Border.all(width: 1, color: Colors.transparent)),
+          border: Border.all(width: 0, color: Colors.transparent)),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(40),
         child: cachedImage(detail.showPortrait),

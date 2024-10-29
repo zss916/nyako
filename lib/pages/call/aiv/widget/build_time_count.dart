@@ -56,11 +56,22 @@ class BuildTimeCount extends StatelessWidget {
         : Stack(
             alignment: AlignmentDirectional.bottomCenter,
             children: [
-              Image.asset(
-                Assets.iconCallIc,
-                width: 32,
-                height: 32,
-                matchTextDirection: true,
+              Container(
+                margin: const EdgeInsetsDirectional.only(end: 30),
+                alignment: AlignmentDirectional.center,
+                decoration: BoxDecoration(
+                    color: const Color(0x4D000000),
+                    borderRadius: BorderRadiusDirectional.circular(40)),
+                width: 36,
+                height: 36,
+                child: UnconstrainedBox(
+                  child: Image.asset(
+                    Assets.iconCallIc,
+                    width: 32,
+                    height: 32,
+                    matchTextDirection: true,
+                  ),
+                ),
               ),
               PositionedDirectional(
                   start: 17,

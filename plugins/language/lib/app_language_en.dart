@@ -282,8 +282,8 @@ const language_en = {
   "nyako_login_account_stop": "Account blocked",
   "nyako_grade_gift_content":
       "For gift sending, 1 diamond brings you 2 experience points (based on value)",
-  "nyako_video_send_gift": "send",
-  "nyako_gift_send": "send",
+  "nyako_video_send_gift": "Send",
+  "nyako_gift_send": "Send",
   "nyako_search_id_error_hint": "User does not exist",
   "nyako_create_video_cut": "video clips",
   "nyako_audio_consumer": "Audio consumption",

@@ -37,6 +37,7 @@ class EndPage extends StatelessWidget {
                 extendBodyBehindAppBar: false,
                 appBar: BaseAppBar(
                   isSetBg: false,
+                  isDark: false,
                   titleWidget: Text(
                     Tr.app_call_ended.tr,
                     style: const TextStyle(
@@ -106,7 +107,7 @@ class EndPage extends StatelessWidget {
                               clipBehavior: Clip.hardEdge,
                               padding: const EdgeInsetsDirectional.all(0),
                               margin:
-                                  const EdgeInsetsDirectional.only(bottom: 0),
+                                  const EdgeInsetsDirectional.only(bottom: 12),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
                                   border: Border.all(
@@ -179,7 +180,7 @@ class EndPage extends StatelessWidget {
                             width: double.infinity,
                             height: 84,
                             margin: const EdgeInsetsDirectional.only(
-                                start: 0, end: 0, top: 20, bottom: 5),
+                                start: 20, end: 20, top: 20, bottom: 12),
                             decoration: const BoxDecoration(
                                 color: Color(0x14FFFFFF),
                                 borderRadius:
@@ -265,10 +266,10 @@ class EndPage extends StatelessWidget {
                             children: [
                               Expanded(
                                   child: Container(
-                                height: 68,
+                                height: 84,
                                 alignment: Alignment.center,
                                 margin:
-                                    const EdgeInsetsDirectional.only(start: 15),
+                                    const EdgeInsetsDirectional.only(start: 20),
                                 decoration: const BoxDecoration(
                                     color: Color(0x14FFFFFF),
                                     borderRadius:
@@ -319,9 +320,9 @@ class EndPage extends StatelessWidget {
                               ),
                               Expanded(
                                   child: Container(
-                                height: 68,
+                                height: 84,
                                 margin:
-                                    const EdgeInsetsDirectional.only(end: 15),
+                                    const EdgeInsetsDirectional.only(end: 20),
                                 decoration: const BoxDecoration(
                                     color: Color(0x14FFFFFF),
                                     borderRadius:
@@ -370,7 +371,7 @@ class EndPage extends StatelessWidget {
                           ),
                           Container(
                             margin: const EdgeInsets.only(
-                                top: 10, bottom: 0, left: 20, right: 20),
+                                top: 12, bottom: 15, left: 20, right: 20),
                             child: BuildChatButton(logic),
                           ),
                           Row(
@@ -395,7 +396,7 @@ class EndPage extends StatelessWidget {
                                   physics: const NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,
                                   padding: const EdgeInsetsDirectional.only(
-                                      top: 10, start: 10, end: 10),
+                                      top: 0, start: 10, end: 10, bottom: 20),
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,

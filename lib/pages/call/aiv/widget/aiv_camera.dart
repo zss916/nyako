@@ -14,7 +14,7 @@ class AivCamera extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12)),
         child: (logic.hadCameraInit && logic.cameraController != null)
             ? Center(
                 child: Transform.scale(
