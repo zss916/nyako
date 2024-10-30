@@ -1,4 +1,5 @@
 const language_vi = {
+  'nyako_you_are_lucky': 'Bạn thật may mắn',
   'nyako_bind_google_to_get': 'Liên kết Google để nhận %s',
   "nyako_to_recharge": "Tiếp tục nạp tiền",
   "nyako_use": "Sử dụng",

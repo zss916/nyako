@@ -170,6 +170,7 @@ class Assets {
   static const String iconN1N3 = 'assets/icon/n1_n3.png';
   static const String iconN2 = 'assets/icon/n_2.png';
   static const String iconN3 = 'assets/icon/n_3.png';
+  static const String iconNewUserTitleIc = 'assets/icon/new_user_title_ic.png';
   static const String iconNext = 'assets/icon/next.png';
   static const String iconNextB = 'assets/icon/next_b.png';
   static const String iconNextP = 'assets/icon/next_p.png';

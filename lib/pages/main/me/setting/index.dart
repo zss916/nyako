@@ -2,9 +2,10 @@ library setting_page;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_common_dialog.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/dialog_confirm.dart';
-import 'package:oliapro/dialogs/dialog_warm_tip.dart';
+import 'package:oliapro/dialogs/dialog_new_user.dart';
 import 'package:oliapro/dialogs/sheet_search.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/http/api/index.dart';

@@ -1,5 +1,6 @@
 // 土耳其
 const language_tr = {
+  'nyako_you_are_lucky': 'Şanslısın',
   'nyako_bind_google_to_get': '%s almak için Google hesabı alabilirsiniz.',
   "nyako_to_recharge": "satın almaya devam et",
   "nyako_use": "Kullanım",

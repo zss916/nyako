@@ -465,6 +465,7 @@ class Tr {
       "${appName}_message_video_chat_state_user_offline_peer";
   static const app_alert_tips = '${appName}_alert_tips';
   static const app_renew = '${appName}_renew';
+  static const app_you_are_lucky = '${appName}_you_are_lucky';
   static const app_message_title = "${appName}_message_title";
   static const app_dynamic_title = "${appName}_dynamic_title";
   static const app_base_message = "${appName}_base_message";

@@ -1,5 +1,6 @@
 // 印度
 const language_hi = {
+  'nyako_you_are_lucky': 'तुम बहुत लकी हो',
   'nyako_bind_google_to_get': '%s प्राप्त करने के लिए Google को बाइंड करें',
   "nyako_to_recharge": "टॉप-अप करना जारी रखें",
   "nyako_use": "उपयोग",
