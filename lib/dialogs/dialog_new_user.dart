@@ -170,9 +170,10 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
             ),
             Container(
               width: 305,
-              height: 214,
+              //height: 214,
               margin: const EdgeInsetsDirectional.only(top: 110),
-              padding: const EdgeInsetsDirectional.all(12),
+              //padding: const EdgeInsetsDirectional.all(12),
+              padding: const EdgeInsetsDirectional.only(top: 12),
               decoration: BoxDecoration(
                   gradient: const LinearGradient(
                       begin: AlignmentDirectional.topCenter,
@@ -183,18 +184,24 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                       ]),
                   borderRadius: BorderRadiusDirectional.circular(24)),
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     width: double.maxFinite,
-                    height: 100,
-                    decoration: const BoxDecoration(color: Color(0xFFFD5400)),
+                    decoration: const BoxDecoration(
+                        //color: Colors.black,
+                        image: DecorationImage(
+                            matchTextDirection: true,
+                            image:
+                                ExactAssetImage(Assets.iconUserCardTicketBg))),
                     padding: const EdgeInsetsDirectional.only(
                         start: 12, top: 12, bottom: 12, end: 12),
                     child: Row(
                       children: [
                         Container(
-                          margin: const EdgeInsetsDirectional.only(end: 30),
+                          margin: const EdgeInsetsDirectional.only(
+                              end: 10, start: 25, bottom: 5),
                           child: Image.asset(
                             Assets.iconCallCard,
                             matchTextDirection: true,
@@ -203,29 +210,36 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                           ),
                         ),
                         Expanded(
-                            child: Column(
-                          children: [
-                            AutoSizeText(
-                              Tr.app_vido_tx.tr,
-                              maxLines: 1,
-                              maxFontSize: 18,
-                              minFontSize: 16,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            AutoSizeText(
-                              "x${widget.cardNum}",
-                              maxFontSize: 35,
-                              minFontSize: 32,
-                              maxLines: 1,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
+                            child: Container(
+                          margin: const EdgeInsetsDirectional.only(
+                              bottom: 5, end: 20),
+                          //color: Colors.black,
+                          child: Column(
+                            children: [
+                              AutoSizeText(
+                                Tr.app_vido_tx.tr,
+                                maxLines: 1,
+                                textAlign: TextAlign.center,
+                                maxFontSize: 18,
+                                minFontSize: 16,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                              AutoSizeText(
+                                "x${widget.cardNum}",
+                                maxFontSize: 35,
+                                minFontSize: 30,
+                                maxLines: 1,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                         ))
                       ],
                     ),
@@ -237,7 +251,7 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                       height: 52,
                       alignment: AlignmentDirectional.center,
                       margin: const EdgeInsetsDirectional.only(
-                          start: 13, end: 13, bottom: 15, top: 20),
+                          start: 23, end: 23, bottom: 15, top: 10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.white, width: 2),
                           gradient: const LinearGradient(

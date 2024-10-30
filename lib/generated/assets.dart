@@ -252,6 +252,8 @@ class Assets {
   static const String iconTriangle = 'assets/icon/triangle.png';
   static const String iconUncheck = 'assets/icon/uncheck.png';
   static const String iconUnselect = 'assets/icon/unselect.png';
+  static const String iconUserCardTicketBg =
+      'assets/icon/user_card_ticket_bg.png';
   static const String iconVideoPlay = 'assets/icon/video_play.png';
   static const String iconVideoPlayB = 'assets/icon/video_play_b.png';
   static const String iconVip = 'assets/icon/vip.png';
