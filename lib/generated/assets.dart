@@ -140,6 +140,8 @@ class Assets {
   static const String iconGou = 'assets/icon/gou.png';
   static const String iconHangBg = 'assets/icon/hang_bg.png';
   static const String iconHangUp = 'assets/icon/hang_up.png';
+  static const String iconHomeRechargeTipBg =
+      'assets/icon/home_recharge_tip_bg.png';
   static const String iconHotCall = 'assets/icon/hot_call.png';
   static const String iconHotMsg = 'assets/icon/hot_msg.png';
   static const String iconIdSmallIcon = 'assets/icon/id_small_icon.png';
@@ -194,6 +196,7 @@ class Assets {
   static const String iconPsdIc = 'assets/icon/psd_ic.png';
   static const String iconPsdS = 'assets/icon/psd_s.png';
   static const String iconPsdV = 'assets/icon/psd_v.png';
+  static const String iconQuestionHelp = 'assets/icon/question_help.png';
   static const String iconRankingBg = 'assets/icon/ranking_bg.png';
   static const String iconRechargeGift = 'assets/icon/recharge_gift.png';
   static const String iconRechargeSuccessIcon =
@@ -470,6 +473,8 @@ class Assets {
   static const String jsonAnimaGift = 'assets/json/anima_gift.json';
   static const String jsonAnimaHomeRecharge =
       'assets/json/anima_home_recharge.json';
+  static const String jsonAnimaHomeRechargeTop =
+      'assets/json/anima_home_recharge_top.json';
   static const String jsonAnimaMsgAudio = 'assets/json/anima_msg_audio.json';
   static const String jsonAnimaMsgAudioW = 'assets/json/anima_msg_audio_w.json';
   static const String jsonAnimaNewUserBenefit =

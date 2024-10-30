@@ -4,23 +4,23 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/app_constants.dart';
+import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
 import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
+import 'package:oliapro/entities/app_charge_quick_entity.dart';
 import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/gen_a/A.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/match/util/bgm_control.dart';
 import 'package:oliapro/pages/widget/circular_progress.dart';
 import 'package:oliapro/services/event_bus_bean.dart';
 import 'package:oliapro/services/storage_service.dart';
 import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
 import 'package:oliapro/widget/scale_transform.dart';
 import 'package:oliapro/widget/semantics/semantics_widget.dart';
+import 'package:widget_marquee/widget_marquee.dart';
 
-import '../../common/language_key.dart';
-import '../../entities/app_charge_quick_entity.dart';
 import 'charge_dialog_manager.dart';
 import 'charge_quick_controller.dart';
 
@@ -101,78 +101,87 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
   }
 
   Widget newContent(ChargeQuickController logic, {String? createPath}) {
-    return Column(
+    return Stack(
+      alignment: AlignmentDirectional.center,
       children: [
-        const Spacer(),
         Stack(
           alignment: AlignmentDirectional.topCenter,
           children: [
             Container(
-              alignment: AlignmentDirectional.topCenter,
-              width: double.maxFinite,
-              margin: EdgeInsetsDirectional.only(
-                  start: 30.h, end: 30.h, bottom: 0.h),
-              child: Image.asset(
-                Assets.imgDialogHomeRechargeTopBg,
-                matchTextDirection: true,
-                width: 315,
-                height: 130,
-              ),
+              margin: const EdgeInsetsDirectional.only(top: 15),
+              child: Lottie.asset(Assets.jsonAnimaHomeRechargeTop,
+                  width: 315, height: 85),
             ),
             Container(
-              width: double.maxFinite,
-              color: Colors.transparent,
-              margin: EdgeInsetsDirectional.only(
-                  start: 30.h, end: 30.h, top: 125.h),
-              child: Container(
-                padding: const EdgeInsetsDirectional.only(
-                    start: 13, end: 12, bottom: 10, top: 10),
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        matchTextDirection: true,
-                        centerSlice: Rect.fromLTRB(30, 20, 310, 280),
-                        image: ExactAssetImage(Assets.imgDialogHomeRechargeBg),
-                        fit: BoxFit.fill)),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    vipHelp(path: createPath ?? ""),
-                    showVipProduct(logic, createPath: createPath),
-                    showCommonProduct(logic, createPath: createPath),
-                    bottomWidget(),
+              width: 315,
+              padding: const EdgeInsetsDirectional.only(
+                  top: 7, bottom: 7, start: 5, end: 5),
+              margin: const EdgeInsetsDirectional.only(
+                  start: 30, end: 30, top: 100),
+              decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(color: Color(0xFFC22D29), offset: Offset(0, 10))
                   ],
-                ),
+                  gradient: const LinearGradient(
+                      begin: AlignmentDirectional.topEnd,
+                      end: AlignmentDirectional.bottomStart,
+                      colors: [Color(0xFFFFBEBF), Color(0xFFFFF0F0)]),
+                  border: Border.all(width: 2, color: const Color(0xFFF1E9EC)),
+                  borderRadius: BorderRadiusDirectional.circular(24)),
+              //constraints: BoxConstraints(minHeight: 254, maxHeight: 395),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  vipHelp(path: createPath ?? ""),
+                  showVipProduct(logic, createPath: createPath),
+                  showCommonProduct(logic, createPath: createPath),
+                  //bottomWidget(),
+                ],
               ),
             ),
-            Container(
-              margin: EdgeInsetsDirectional.only(end: 26.w),
-              child: cancel(),
-            )
+            PositionedDirectional(
+                top: 95,
+                end: 30,
+                child: Container(
+                  height: 36,
+                  width: 180,
+                  alignment: AlignmentDirectional.bottomCenter,
+                  padding: const EdgeInsetsDirectional.only(
+                      start: 5, end: 5, bottom: 13),
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          matchTextDirection: true,
+                          centerSlice: Rect.fromLTRB(10, 2, 100, 32),
+                          image:
+                              ExactAssetImage(Assets.iconHomeRechargeTipBg))),
+                  child: Marquee(
+                    delay: const Duration(seconds: 1),
+                    pause: const Duration(seconds: 0),
+                    child: Text(
+                      Tr.appEveryDayReward.tr,
+                      textAlign: TextAlign.start,
+                      maxLines: 1,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12),
+                    ),
+                  ),
+                )),
+            PositionedDirectional(
+                top: 0,
+                end: 30,
+                child: GestureDetector(
+                  onTap: () => Get.back(),
+                  child: Image.asset(
+                    Assets.iconCloseDialog,
+                    width: 42,
+                    height: 42,
+                  ),
+                ))
           ],
-        ),
-        const Spacer(),
+        )
       ],
-    );
-  }
-
-  ///取消
-  Widget cancel() {
-    return Align(
-      alignment: AlignmentDirectional.bottomEnd,
-      child: GestureDetector(
-        onTap: () {
-          if (widget.isBot != true) {
-            Get.back();
-          }
-          widget.closeBtnCallBack?.call();
-        },
-        child: Image.asset(
-          Assets.imgCloseDialog,
-          matchTextDirection: true,
-          width: 35,
-          height: 35,
-        ),
-      ),
     );
   }
 
@@ -194,19 +203,19 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                 Container(
                   margin: const EdgeInsetsDirectional.only(end: 3),
                   child: Image.asset(
-                    Assets.imgQuestionHelp,
+                    Assets.iconQuestionHelp,
                     matchTextDirection: true,
-                    height: 16,
-                    width: 16,
+                    height: 22,
+                    width: 22,
                   ),
                 ),
                 Text(
                   Tr.app_benefit.trArgs(["VIP"]),
                   style: const TextStyle(
                       color: Color(0xFF7F422B),
-                      fontSize: 12,
+                      fontSize: 15,
                       decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w500),
                 )
               ],
             ),
@@ -256,12 +265,13 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
             padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
-                color: const Color(0xFF2A221B),
-                borderRadius: BorderRadiusDirectional.circular(12)),
+                gradient: const LinearGradient(
+                    colors: [Color(0xFF5B2810), Color(0xFF521930)]),
+                borderRadius: BorderRadiusDirectional.circular(16)),
             child: Row(
               children: [
                 Image.asset(
-                  Assets.imgKing,
+                  Assets.iconKingBig,
                   matchTextDirection: true,
                   width: 42,
                   height: 42,
@@ -273,20 +283,92 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Row(
                         children: [
-                          AutoSizeText(
-                            Tr.app_str_day
-                                .trArgs([(item.vipDays ?? 0).toString()]),
+                          const Text(
+                            "VIP",
                             textAlign: TextAlign.start,
-                            maxFontSize: 14,
-                            minFontSize: 6,
                             maxLines: 1,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                                fontSize: 18),
+                          ),
+                          Container(
+                            padding: const EdgeInsetsDirectional.only(start: 2),
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadiusDirectional.circular(20),
+                                color: const Color(0x1FFFE986)),
+                            margin: const EdgeInsetsDirectional.only(
+                                top: 0, start: 4),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                if (item.showValue != 0)
+                                  Container(
+                                    padding: const EdgeInsetsDirectional.only(
+                                        end: 5, top: 2, bottom: 2),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "${Tr.appSend.tr}${item.showValue}",
+                                          style: TextStyle(
+                                              color: const Color(0xFFFFE986),
+                                              fontSize: 14,
+                                              fontFamily:
+                                                  AppConstants.fontsRegular,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                        Container(
+                                          margin:
+                                              const EdgeInsetsDirectional.only(
+                                                  start: 2),
+                                          child: Image.asset(
+                                            Assets.iconDiamond,
+                                            matchTextDirection: true,
+                                            height: 14,
+                                            width: 14,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                if (showAdd)
+                                  Container(
+                                    //color: Colors.black12,
+                                    padding:
+                                        const EdgeInsetsDirectional.symmetric(
+                                            horizontal: 4, vertical: 2),
+                                    margin: const EdgeInsetsDirectional.only(
+                                        start: 3),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "+${item.diamondCard?.increaseDiamonds ?? 0}",
+                                          style: TextStyle(
+                                              color: const Color(0xFFF84D22),
+                                              fontFamily:
+                                                  AppConstants.fontsBold,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Container(
+                                          margin:
+                                              const EdgeInsetsDirectional.only(
+                                                  start: 1),
+                                          child: Image.asset(
+                                            Assets.imgDiamond,
+                                            matchTextDirection: true,
+                                            height: 14,
+                                            width: 14,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                              ],
+                            ),
                           ),
                           if (showAdd)
                             Container(
@@ -295,95 +377,41 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                               padding: const EdgeInsetsDirectional.symmetric(
                                   horizontal: 5, vertical: 2),
                               decoration: BoxDecoration(
-                                  color: const Color(0x1FFF711E),
+                                  color: const Color(0x1FFFE986),
                                   borderRadius:
-                                      BorderRadiusDirectional.circular(4)),
+                                      BorderRadiusDirectional.circular(5)),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Image.asset(
-                                    Assets.imgAddCardIcon,
+                                    Assets.iconAddCardSmall,
                                     matchTextDirection: true,
                                     width: 16,
-                                    height: 17,
+                                    height: 21,
                                   ),
                                   Text(
                                     "+${item.diamondCard?.propDuration ?? 0}%",
                                     style: TextStyle(
-                                        color: const Color(0xFFFF711E),
+                                        color: const Color(0xFFFF5112),
                                         fontFamily: AppConstants.fontsRegular,
-                                        fontSize: 12),
+                                        fontSize: 14),
                                   )
                                 ],
                               ),
                             )
                         ],
                       ),
-                      Container(
-                        margin: const EdgeInsetsDirectional.only(top: 4),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (item.showValue != 0)
-                              Container(
-                                padding: const EdgeInsetsDirectional.only(
-                                    end: 5, top: 2, bottom: 2),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "${Tr.appSend.tr}${item.showValue}",
-                                      style: TextStyle(
-                                          color: const Color(0xFFFFF890),
-                                          fontSize: 12,
-                                          fontFamily: AppConstants.fontsRegular,
-                                          fontWeight: FontWeight.normal),
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsetsDirectional.only(
-                                          start: 2),
-                                      child: Image.asset(
-                                        Assets.imgDiamond,
-                                        matchTextDirection: true,
-                                        height: 14,
-                                        width: 14,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            if (showAdd)
-                              Container(
-                                //color: Colors.black12,
-                                padding: const EdgeInsetsDirectional.symmetric(
-                                    horizontal: 4, vertical: 2),
-                                margin:
-                                    const EdgeInsetsDirectional.only(start: 3),
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      "+${item.diamondCard?.increaseDiamonds ?? 0}",
-                                      style: TextStyle(
-                                          color: const Color(0xFFF84D22),
-                                          fontFamily: AppConstants.fontsBold,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsetsDirectional.only(
-                                          start: 1),
-                                      child: Image.asset(
-                                        Assets.imgDiamond,
-                                        matchTextDirection: true,
-                                        height: 14,
-                                        width: 14,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                          ],
-                        ),
-                      )
+                      AutoSizeText(
+                        "${item.vipDays ?? 0} ${Tr.appDays.tr}",
+                        textAlign: TextAlign.start,
+                        maxFontSize: 14,
+                        minFontSize: 6,
+                        maxLines: 1,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14),
+                      ),
                     ],
                   ),
                 )),
@@ -394,8 +422,8 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                   constraints: const BoxConstraints(minWidth: 60),
                   decoration: BoxDecoration(
                       gradient: const LinearGradient(colors: [
-                        Color(0xFFFF9801),
-                        Color(0xFFFF4E2D),
+                        Color(0xFFFDFFDB),
+                        Color(0xFFFFF427),
                       ]),
                       borderRadius: BorderRadiusDirectional.circular(20)),
                   child: AutoSizeText(
@@ -404,7 +432,7 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                     minFontSize: 7,
                     maxFontSize: 14,
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 14,
                         fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.normal),
@@ -482,7 +510,7 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
       {bool showDiscount = true,
       String? createPath,
       AreaData? area,
-      String icon = Assets.imgBigDiamond}) {
+      String icon = Assets.iconDiamond}) {
     ///是否显示加成卡
     //item.dis
     bool showAdd = (item.diamondCard != null &&
@@ -503,8 +531,8 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
             padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: 12, vertical: 8),
             decoration: BoxDecoration(
-                color: const Color(0xFFFFF9E8),
-                borderRadius: BorderRadiusDirectional.circular(12)),
+                color: Colors.white,
+                borderRadius: BorderRadiusDirectional.circular(16)),
             child: Row(
               children: [
                 Image.asset(
@@ -546,17 +574,18 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                               child: Row(
                                 children: [
                                   Image.asset(
-                                    Assets.imgHomeDiamondAdd,
+                                    Assets.iconAddCardSmall,
                                     matchTextDirection: true,
-                                    width: 22,
-                                    height: 15,
+                                    width: 16,
+                                    height: 21,
                                   ),
                                   Text(
-                                    " +${item.diamondCard?.propDuration ?? 0}%",
+                                    "+${item.diamondCard?.propDuration ?? 0}%",
                                     style: TextStyle(
-                                        color: const Color(0xFFFD8E4E),
+                                        color: const Color(0xFFFF5112),
                                         fontFamily: AppConstants.fontsRegular,
-                                        fontSize: 12),
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 14),
                                   )
                                 ],
                               ),
@@ -579,16 +608,16 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                                     Text(
                                       "${Tr.appSend.tr}${item.bonus ?? 0}",
                                       style: TextStyle(
-                                          color: const Color(0xFF8239FF),
-                                          fontSize: 12,
+                                          color: const Color(0xFF9341FF),
+                                          fontSize: 14,
                                           fontFamily: AppConstants.fontsRegular,
-                                          fontWeight: FontWeight.normal),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                     Container(
                                       margin: const EdgeInsetsDirectional.only(
                                           start: 1),
                                       child: Image.asset(
-                                        Assets.imgDiamond,
+                                        Assets.iconDiamond,
                                         matchTextDirection: true,
                                         height: 15,
                                         width: 15,
@@ -612,16 +641,16 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                                     Text(
                                       "+${item.diamondCard?.increaseDiamonds ?? 0}",
                                       style: TextStyle(
-                                          color: const Color(0xFFF84D22),
-                                          fontSize: 12,
+                                          color: const Color(0xFFFF5112),
+                                          fontSize: 14,
                                           fontFamily: AppConstants.fontsRegular,
-                                          fontWeight: FontWeight.normal),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                     Container(
                                       margin: const EdgeInsetsDirectional.only(
                                           start: 1),
                                       child: Image.asset(
-                                        Assets.imgDiamond,
+                                        Assets.iconDiamond,
                                         matchTextDirection: true,
                                         height: 15,
                                         width: 15,
@@ -643,7 +672,7 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                   constraints: const BoxConstraints(minWidth: 60, maxWidth: 85),
                   decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                          colors: [Color(0xFFAC53FB), Color(0xFF7934F0)]),
+                          colors: [Color(0xFF9341FF), Color(0xFF9341FF)]),
                       borderRadius: BorderRadiusDirectional.circular(30)),
                   child: AutoSizeText(
                     item.showPrice,
@@ -669,11 +698,12 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                       start: 7, end: 7, top: 3, bottom: 3),
                   decoration: const BoxDecoration(
                       gradient: LinearGradient(colors: [
-                        Color(0xFFFF902A),
-                        Color(0xFFFF3D27),
+                        Color(0xFFFF1A45),
+                        Color(0xFFFF17D6),
                       ]),
                       borderRadius: BorderRadiusDirectional.only(
                           topStart: Radius.circular(10),
+                          topEnd: Radius.circular(10),
                           bottomEnd: Radius.circular(10))),
                   child: Text(
                     Tr.app_off.trArgs([(item.discount ?? 0).toString()]),
@@ -745,50 +775,4 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
       ],
     );
   }
-
-  Widget old(ChargeQuickController logic, {String? createPath}) => Stack(
-        alignment: AlignmentDirectional.center,
-        children: [
-          Container(
-            width: double.maxFinite,
-            margin: const EdgeInsetsDirectional.only(
-                start: 30, end: 30, bottom: 0, top: 0),
-            decoration: BoxDecoration(
-                //color: Colors.blue,
-                image: DecorationImage(
-              matchTextDirection: true,
-              image: (Get.isEn || Get.isTh)
-                  ? AssetImage(A.assets_image_rechage_quick_bg)
-                  : const AssetImage(Assets.imgHomeRechargeDialogBg),
-              //image: AssetImage(Assets.imgHomeRechargeDialogBg),
-              // image: AssetImage(A.assets_image_rechage_quick_bg),
-              //image: AssetImage(Assets.imgHomeR2),
-              //315X400
-              centerSlice: const Rect.fromLTRB(30, 250, 310, 350),
-            )),
-            child: Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                Container(
-                  padding: const EdgeInsetsDirectional.only(
-                      start: 13, end: 12, bottom: 5, top: 5),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const SizedBox(
-                        height: 75 + 35,
-                      ),
-                      vipHelp(path: createPath ?? ""),
-                      showVipProduct(logic, createPath: createPath),
-                      showCommonProduct(logic, createPath: createPath),
-                      bottomWidget(),
-                    ],
-                  ),
-                ),
-                PositionedDirectional(top: 0, end: 0, child: cancel())
-              ],
-            ),
-          ),
-        ],
-      );
 }
