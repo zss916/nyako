@@ -61,7 +61,7 @@ class SetLogic extends GetxController {
       case "delete_account":
         ARoutes.toDeleteAccount();
 
-        /* AppCommonDialog.dialog(AppNewUserCardsTip(2),
+        /*AppCommonDialog.dialog(AppNewUserCardsTip(2),
             barrierColor: Colors.black.withOpacity(0.8),
             routeSettings: const RouteSettings(name: AppPages.newUserDialog));*/
         break;

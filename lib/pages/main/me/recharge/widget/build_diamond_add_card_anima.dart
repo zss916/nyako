@@ -1,9 +1,6 @@
-import 'dart:math';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 
@@ -44,29 +41,63 @@ class _BuildDiamondAddCardAnimaState extends State<BuildDiamondAddCardAnima> {
               alignment: AlignmentDirectional.center,
               children: [
                 RepaintBoundary(
-                  child: Lottie.asset(Assets.jsonDiamondAddAnima,
-                      fit: BoxFit.fitWidth),
+                  child: Image.asset(
+                    Assets.animaNyakoDiamondAddBg,
+                    width: Get.width,
+                  ),
                 ),
                 RepaintBoundary(
-                  child: Transform.rotate(
-                    angle: -3 * pi / 180,
-                    child: Container(
-                      alignment: AlignmentDirectional.center,
-                      padding:
-                          const EdgeInsetsDirectional.symmetric(horizontal: 5),
-                      width: double.maxFinite,
-                      child: AutoSizeText(
-                        Tr.appHasDiamondCard.trArgs(["${widget.num}"]),
-                        textAlign: TextAlign.center,
-                        maxLines: 1,
-                        maxFontSize: 20,
-                        minFontSize: 12,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                  child: Container(
+                    alignment: AlignmentDirectional.center,
+                    padding:
+                        const EdgeInsetsDirectional.symmetric(horizontal: 20),
+                    width: double.maxFinite,
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsetsDirectional.only(end: 15),
+                          child: Stack(
+                            alignment: AlignmentDirectional.center,
+                            children: [
+                              Image.asset(
+                                Assets.iconDiamondAddCard,
+                                width: 90,
+                                height: 80,
+                                matchTextDirection: true,
+                              ),
+                              PositionedDirectional(
+                                  top: 2,
+                                  start: 3,
+                                  child: SizedBox(
+                                    width: 50,
+                                    child: AutoSizeText(
+                                      "+${widget.num}%",
+                                      maxLines: 1,
+                                      maxFontSize: 24,
+                                      minFontSize: 18,
+                                      style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ))
+                            ],
+                          ),
                         ),
-                      ),
+                        Expanded(
+                            child: AutoSizeText(
+                          Tr.appHasDiamondCard.trArgs(["${widget.num}"]),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          maxFontSize: 22,
+                          minFontSize: 18,
+                          style: const TextStyle(
+                            fontSize: 22,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ))
+                      ],
                     ),
                   ),
                 )

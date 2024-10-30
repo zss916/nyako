@@ -12,6 +12,8 @@ class Assets {
   static const String animaMsgVoice = 'assets/anima/msg_voice.webp';
   static const String animaMyDiamondShop = 'assets/anima/my_diamond_shop.webp';
   static const String animaNotify = 'assets/anima/notify.webp';
+  static const String animaNyakoDiamondAddBg =
+      'assets/anima/nyako_diamond_add_bg.webp';
   static const String animaNyakoHang = 'assets/anima/nyako_hang.webp';
   static const String animaNyakoVipAnimaBg =
       'assets/anima/nyako_vip_anima_bg.webp';
@@ -114,6 +116,7 @@ class Assets {
   static const String iconDiamond5 = 'assets/icon/diamond5.png';
   static const String iconDiamond6 = 'assets/icon/diamond6.png';
   static const String iconDiamond7 = 'assets/icon/diamond7.png';
+  static const String iconDiamondAddCard = 'assets/icon/diamond_add_card.png';
   static const String iconDiamondF = 'assets/icon/diamond_f.png';
   static const String iconDiamondM = 'assets/icon/diamond_m.png';
   static const String iconDisconnected = 'assets/icon/disconnected.png';
@@ -460,6 +463,8 @@ class Assets {
   static const String imgWomanSelect = 'assets/img/woman_select.webp';
   static const String imgWramDownBg = 'assets/img/wram_down_bg.png';
   static const String jsonAnimaAvatarBg = 'assets/json/anima_avatar_bg.json';
+  static const String jsonAnimaBindGoogle =
+      'assets/json/anima_bind_google.json';
   static const String jsonAnimaConnecting = 'assets/json/anima_connecting.json';
   static const String jsonAnimaDrag = 'assets/json/anima_drag.json';
   static const String jsonAnimaGift = 'assets/json/anima_gift.json';
@@ -467,11 +472,11 @@ class Assets {
       'assets/json/anima_home_recharge.json';
   static const String jsonAnimaMsgAudio = 'assets/json/anima_msg_audio.json';
   static const String jsonAnimaMsgAudioW = 'assets/json/anima_msg_audio_w.json';
+  static const String jsonAnimaNewUserBenefit =
+      'assets/json/anima_new_user_benefit.json';
   static const String jsonAnimaPickUp = 'assets/json/anima_pick_up.json';
   static const String jsonAnimaVoiceRecording =
       'assets/json/anima_voice_recording.json';
-  static const String jsonDiamondAddAnima =
-      'assets/json/diamond_add_anima.json';
   static const String lotteryLotteryAddCard =
       'assets/lottery/lottery_add_card.png';
   static const String lotteryLotteryCallCard =

@@ -72,7 +72,7 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                 },
               ),
             ),
-            buildDiamondAddAnima()
+            buildDiamondAddAnima(),
           ],
         ),
       ),

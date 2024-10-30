@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/app_common_dialog.dart';
 import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
@@ -154,12 +155,17 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                     ],
                   ),
                 ),
-                Image.asset(
+                Lottie.asset(
+                  Assets.jsonAnimaNewUserBenefit,
+                  width: 113,
+                  height: 110,
+                ),
+                /*Image.asset(
                   Assets.iconNewUserTitleIc,
                   matchTextDirection: true,
                   width: 113,
                   height: 110,
-                )
+                )*/
               ],
             ),
             Container(

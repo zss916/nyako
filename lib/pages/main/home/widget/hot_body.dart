@@ -175,6 +175,7 @@ class _HomeBodyState extends State<HomeBody>
                     );
                   })),
           if (!AppConstants.isFakeMode && tabIndex == 0) const BuildGift(),
+          // Lottie.asset(Assets.jsonAnimaBindGoogle)
         ],
       ),
     );
