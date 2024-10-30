@@ -1,4 +1,5 @@
 const language_es = {
+  'nyako_bind_google_to_get': 'Vincula a Google para obtener %s',
   "nyako_to_recharge": "Continuar recargando",
   "nyako_use": "Usar",
   "nyako_copy": "Copiar",

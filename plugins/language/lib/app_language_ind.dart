@@ -1,4 +1,5 @@
 const language_ind = {
+  'nyako_bind_google_to_get': 'Ikat Google untuk mendapatkan %s',
   "nyako_to_recharge": "Lanjutkan untuk mengisi ulang",
   "nyako_use": "Menggunakan",
   "nyako_copy": "Salin",

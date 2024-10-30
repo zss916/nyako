@@ -12,6 +12,7 @@ class Assets {
   static const String animaMsgVoice = 'assets/anima/msg_voice.webp';
   static const String animaMyDiamondShop = 'assets/anima/my_diamond_shop.webp';
   static const String animaNotify = 'assets/anima/notify.webp';
+  static const String animaNyakoHang = 'assets/anima/nyako_hang.webp';
   static const String animaNyakoVipAnimaBg =
       'assets/anima/nyako_vip_anima_bg.webp';
   static const String animaPickUp = 'assets/anima/pick_up.webp';
@@ -75,8 +76,13 @@ class Assets {
   static const String iconAlbum = 'assets/icon/album.png';
   static const String iconAnchorDefault = 'assets/icon/anchor_default.png';
   static const String iconBack = 'assets/icon/back.png';
+  static const String iconBeauty = 'assets/icon/beauty.png';
   static const String iconBigDiamond = 'assets/icon/big_diamond.png';
   static const String iconBindCodeBg = 'assets/icon/bind_code_bg.png';
+  static const String iconBindGoogleBtn = 'assets/icon/bind_google_btn.png';
+  static const String iconBindGoogleTitleIc =
+      'assets/icon/bind_google_title_ic.png';
+  static const String iconBindGoogleTop = 'assets/icon/bind_google_top.png';
   static const String iconBlackIcon = 'assets/icon/black_icon.png';
   static const String iconBlacklist = 'assets/icon/blacklist.png';
   static const String iconCallCamera = 'assets/icon/call_camera.png';
@@ -129,6 +135,7 @@ class Assets {
   static const String iconGiftIc = 'assets/icon/gift_ic.png';
   static const String iconGooglePayIcon = 'assets/icon/google_pay_icon.webp';
   static const String iconGou = 'assets/icon/gou.png';
+  static const String iconHangBg = 'assets/icon/hang_bg.png';
   static const String iconHangUp = 'assets/icon/hang_up.png';
   static const String iconHotCall = 'assets/icon/hot_call.png';
   static const String iconHotMsg = 'assets/icon/hot_msg.png';
@@ -139,6 +146,7 @@ class Assets {
   static const String iconInputEmoji = 'assets/icon/input_emoji.png';
   static const String iconInputGift = 'assets/icon/input_gift.png';
   static const String iconInputPic = 'assets/icon/input_pic.png';
+  static const String iconInverted = 'assets/icon/inverted.png';
   static const String iconInvite = 'assets/icon/invite.png';
   static const String iconInviteBg = 'assets/icon/invite_bg.png';
   static const String iconInviteBtn = 'assets/icon/invite_btn.png';
@@ -234,6 +242,7 @@ class Assets {
   static const String iconToolsChatCard = 'assets/icon/tools_chat_card.png';
   static const String iconTranslate = 'assets/icon/translate.png';
   static const String iconTranslated = 'assets/icon/translated.png';
+  static const String iconTriangle = 'assets/icon/triangle.png';
   static const String iconUncheck = 'assets/icon/uncheck.png';
   static const String iconUnselect = 'assets/icon/unselect.png';
   static const String iconVideoPlay = 'assets/icon/video_play.png';
@@ -249,6 +258,7 @@ class Assets {
       'assets/icon/voice_recording_bg.png';
   static const String iconVoiceStop = 'assets/icon/voice_stop.png';
   static const String iconWarmS = 'assets/icon/warm_s.png';
+  static const String iconWarmStop = 'assets/icon/warm_stop.png';
   static const String iconWarming = 'assets/icon/warming.png';
   static const String iconWeekSort = 'assets/icon/week_sort.png';
   static const String iconWhatApp = 'assets/icon/what_app.png';

@@ -196,6 +196,7 @@ class Tr {
   static const refreshFailedText = "refreshFailedText";
   static const refreshingText = "refreshingText";
 
+  static const app_bind_google_to_get = "${appName}_bind_google_to_get";
   static const app_start = "${appName}_start";
   static const app_sorry = "${appName}_sorry";
   static const app_empty_ball = "${appName}_empty_ball";

@@ -1,4 +1,5 @@
 const language_vi = {
+  'nyako_bind_google_to_get': 'Liên kết Google để nhận %s',
   "nyako_to_recharge": "Tiếp tục nạp tiền",
   "nyako_use": "Sử dụng",
   "nyako_copy": "Sao chép",

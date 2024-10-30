@@ -98,6 +98,7 @@ class MeLogic extends GetxController {
         break;
       case 6:
         ARoutes.toSetting();
+        //toBindGoogle();
         break;
       case 7:
         BindGoogle.show();

@@ -1981,6 +1981,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.14.0"
+  widget_marquee:
+    dependency: "direct main"
+    description:
+      name: widget_marquee
+      sha256: "7a16d17a15adff1d0191535ffa6cf03d2b5373bbca333c7006788a712ee3f3a8"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.8"
   win32:
     dependency: transitive
     description:

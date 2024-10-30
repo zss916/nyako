@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/app_common_type.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/call/aiv/index.dart';
@@ -47,131 +46,105 @@ class AppDialogConfirmHang extends StatelessWidget {
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
-          Stack(
-            alignment: AlignmentDirectional.bottomCenter,
+          Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                width: 305,
-                height: 345,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadiusDirectional.circular(30),
-                    gradient: const LinearGradient(
-                        begin: AlignmentDirectional.topCenter,
-                        end: AlignmentDirectional.bottomCenter,
-                        colors: [
-                          Color(0xFF201436),
-                          Color(0xFF0C0C32),
-                        ])),
-              ),
-              Image.asset(
-                Assets.imgHangUpBg,
-                width: 293,
-                height: 470,
-                matchTextDirection: true,
-              ),
-              PositionedDirectional(
-                  start: 0,
-                  end: 0,
-                  bottom: 10,
-                  child: Container(
-                    clipBehavior: Clip.hardEdge,
+              Stack(
+                alignment: AlignmentDirectional.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsetsDirectional.only(
+                        start: 20, top: 20, bottom: 20, end: 100),
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            matchTextDirection: true,
+                            image: ExactAssetImage(Assets.iconHangBg))),
+                    margin: const EdgeInsetsDirectional.only(
+                        start: 25, end: 25, top: 25),
                     width: double.maxFinite,
-                    padding: const EdgeInsetsDirectional.all(20),
-                    margin:
-                        const EdgeInsetsDirectional.only(start: 30, end: 30),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadiusDirectional.circular(15),
-                      color: Colors.transparent,
+                    height: 102,
+                    child: AutoSizeText(
+                      Tr.app_confirm_hang_up_tip.tr,
+                      maxLines: 2,
+                      maxFontSize: 18,
+                      minFontSize: 14,
+                      style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
                     ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          width: 265,
-                          height: 110,
-                          padding: const EdgeInsetsDirectional.only(
-                              top: 15, bottom: 15, start: 10, end: 10),
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  matchTextDirection: true,
-                                  fit: BoxFit.fill,
-                                  image: ExactAssetImage(
-                                      Assets.imgHangUpContentBg))),
-                          margin: const EdgeInsetsDirectional.only(
-                              top: 5, bottom: 30),
-                          child: Container(
-                            //color: Colors.black26,
-                            width: 200,
-                            height: 100,
-                            alignment: AlignmentDirectional.center,
-                            child: Text(
-                              title,
-                              softWrap: true,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.normal),
-                            ),
-                          ),
+                  ),
+                  PositionedDirectional(
+                      top: 0,
+                      end: 35,
+                      child: Image.asset(
+                        Assets.animaNyakoHang,
+                        width: 110,
+                        height: 110,
+                        matchTextDirection: true,
+                      ))
+                ],
+              ),
+              Container(
+                margin: const EdgeInsetsDirectional.only(top: 36),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Get.back();
+                        callback.call(1);
+                      },
+                      child: Container(
+                        width: 125,
+                        height: 52,
+                        padding: const EdgeInsetsDirectional.symmetric(
+                            vertical: 5, horizontal: 5),
+                        alignment: AlignmentDirectional.center,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadiusDirectional.circular(30)),
+                        child: Text(
+                          Tr.app_base_confirm.tr,
+                          style: const TextStyle(
+                              color: Color(0xFF9341FF),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500),
                         ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Get.back();
-                            callback.call(0);
-                          },
-                          child: Container(
-                            alignment: Alignment.center,
-                            margin: const EdgeInsets.symmetric(horizontal: 30),
-                            height: 57,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(30),
-                                gradient: AppColors.btnGradient),
-                            child: Text(
-                              Tr.app_base_cancel.tr,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Get.back();
-                            callback.call(1);
-                          },
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 30),
-                            decoration: const BoxDecoration(
-                                color: Colors.transparent,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(30))),
-                            alignment: Alignment.center,
-                            height: 46,
-                            width: double.infinity,
-                            child: AutoSizeText(
-                              Tr.app_confirm_hang_up.tr,
-                              maxLines: 1,
-                              maxFontSize: 16,
-                              minFontSize: 8,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  )),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.back();
+                        callback.call(0);
+                      },
+                      child: Container(
+                        width: 125,
+                        height: 52,
+                        padding: const EdgeInsetsDirectional.symmetric(
+                            vertical: 5, horizontal: 5),
+                        alignment: AlignmentDirectional.center,
+                        decoration: BoxDecoration(
+                            /*boxShadow: const [
+                              BoxShadow(color: Color(0xA69341FF), blurRadius: 5)
+                            ],*/
+                            color: const Color(0xFF9341FF),
+                            borderRadius: BorderRadiusDirectional.circular(30)),
+                        child: Text(
+                          Tr.app_base_cancel.tr,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ],
