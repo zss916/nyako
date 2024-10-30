@@ -47,7 +47,7 @@ class _LimitTimeState extends State<LimitTime> {
     return Text(
       formatDuration(Duration(seconds: countdown)),
       style: const TextStyle(
-          color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold),
+          color: Color(0xFFFF4444), fontSize: 13, fontWeight: FontWeight.bold),
     );
   }
 }

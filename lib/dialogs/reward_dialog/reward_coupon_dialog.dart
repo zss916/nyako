@@ -58,10 +58,10 @@ class RewardCouponDialog extends StatelessWidget {
             Stack(
               alignment: AlignmentDirectional.topCenter,
               children: [
-                Image.asset(
+                /*Image.asset(
                   Assets.rewardRewardDialogBg,
                   matchTextDirection: true,
-                ),
+                ),*/
                 TopBg(
                   url: data.drawImageIcon ?? "",
                   cachePath: data.cacheDrawImageIcon,

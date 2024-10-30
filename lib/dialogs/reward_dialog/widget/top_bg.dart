@@ -17,11 +17,11 @@ class TopBg extends StatelessWidget {
               cachePath ?? "",
             ),
             width: 315,
-            height: 130,
+            height: 146,
           )
         : CachedNetworkImage(
             width: 315,
-            height: 130,
+            height: 146,
             matchTextDirection: true,
             placeholder: (
               BuildContext context,
@@ -29,7 +29,7 @@ class TopBg extends StatelessWidget {
             ) =>
                 const SizedBox(
                   width: 315,
-                  height: 130,
+                  height: 146,
                 ),
             errorWidget: (
               BuildContext context,
@@ -37,9 +37,9 @@ class TopBg extends StatelessWidget {
               dynamic error,
             ) =>
                 Image.asset(
-                  Assets.rewardBg1,
+                  Assets.rewardBg3,
                   width: 315,
-                  height: 130,
+                  height: 146,
                   matchTextDirection: true,
                 ),
             imageUrl: url);

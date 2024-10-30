@@ -5,7 +5,6 @@ import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
-import 'package:oliapro/dialogs/reward_dialog/widget/build_scale_transition.dart';
 import 'package:oliapro/dialogs/reward_dialog/widget/limit_time.dart';
 import 'package:oliapro/dialogs/reward_dialog/widget/top_bg.dart';
 import 'package:oliapro/entities/app_charge_quick_entity.dart';
@@ -47,20 +46,12 @@ class RewardDiamondDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return badWidget();
-  }
-
-  Widget badWidget() {
-    return Column(
+    return Stack(
+      alignment: AlignmentDirectional.center,
       children: [
-        const Spacer(),
         Stack(
           alignment: AlignmentDirectional.topCenter,
           children: [
-            Image.asset(
-              Assets.rewardRewardDialogBg,
-              matchTextDirection: true,
-            ),
             TopBg(
               url: data.drawImageIcon ?? "",
               cachePath: data.cacheDrawImageIcon,
@@ -68,19 +59,24 @@ class RewardDiamondDialog extends StatelessWidget {
             Container(
               width: double.maxFinite,
               margin: const EdgeInsetsDirectional.only(
-                  start: 25, end: 25, top: 120),
+                  start: 30, end: 30, top: 115),
               decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(color: Color(0xFFFF33A7), offset: Offset(0, 10))
+                  ],
+                  border: Border.all(width: 2, color: Colors.white),
                   gradient: const LinearGradient(
                       begin: AlignmentDirectional.topCenter,
                       end: AlignmentDirectional.bottomCenter,
-                      colors: [Color(0xFFF1A0F4), Colors.white]),
-                  borderRadius: BorderRadiusDirectional.circular(30),
+                      colors: [Color(0xFFFFCDF4), Color(0xFFFFF5FD)]),
+                  borderRadius: BorderRadiusDirectional.circular(24),
                   color: Colors.white),
               child: Container(
-                constraints: const BoxConstraints(minHeight: 330),
+                constraints: const BoxConstraints(minHeight: 360),
                 padding: const EdgeInsetsDirectional.only(top: 0),
                 width: double.maxFinite,
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
@@ -93,26 +89,27 @@ class RewardDiamondDialog extends StatelessWidget {
                         style: const TextStyle(
                             color: Color(0xFF5C0B4C),
                             fontWeight: FontWeight.w900,
-                            fontSize: 20),
+                            fontSize: 22),
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsetsDirectional.only(top: 20),
+                      margin: const EdgeInsetsDirectional.only(top: 16),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
                             margin: const EdgeInsetsDirectional.only(end: 5),
                             child: Image.asset(
-                              Assets.imgDiamond,
-                              width: 40,
-                              height: 40,
+                              Assets.iconDiamond,
+                              width: 36,
+                              height: 36,
+                              matchTextDirection: true,
                             ),
                           ),
                           Text(
                             "${data.showValue}",
                             style: TextStyle(
-                                color: Colors.black,
+                                color: const Color(0xFF9341FF),
                                 fontSize: 28,
                                 fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
@@ -121,22 +118,26 @@ class RewardDiamondDialog extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        width: double.maxFinite,
+                        width: 140,
+                        height: 43,
+                        alignment: AlignmentDirectional.bottomCenter,
                         decoration: const BoxDecoration(
-                            gradient: LinearGradient(colors: [
-                          Colors.transparent,
-                          Color(0x33FF13CC),
-                          Colors.transparent,
-                        ])),
-                        padding:
-                            const EdgeInsetsDirectional.only(top: 3, bottom: 3),
+                            image: DecorationImage(
+                                matchTextDirection: true,
+                                image: ExactAssetImage(
+                                    Assets.rewardDiamondRewardIconBg))),
+                        padding: const EdgeInsetsDirectional.only(
+                            start: 3, end: 3, bottom: 15),
                         margin: const EdgeInsetsDirectional.only(
-                            top: 10, start: 30, end: 30),
-                        child: Text(
+                            top: 15, start: 20, end: 20),
+                        child: AutoSizeText(
                           diamondTip,
+                          maxLines: 1,
+                          maxFontSize: 14,
+                          minFontSize: 12,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: const Color(0xFF5C0B4C),
+                              color: Colors.white,
                               fontSize: 14,
                               fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.normal),
@@ -146,78 +147,73 @@ class RewardDiamondDialog extends StatelessWidget {
                       child: Text(
                         data.showDialogPrice,
                         style: TextStyle(
-                            color: const Color(0xFFFF13CC),
+                            color: const Color(0xFFFF4864),
                             fontWeight: FontWeight.bold,
                             fontFamily: AppConstants.fontsBold,
-                            fontSize: 24),
+                            fontSize: 20),
                       ),
                     ),
                     Container(
                       margin: const EdgeInsetsDirectional.only(top: 10),
-                      child: BuildScaleTransition(
-                        child: Stack(
-                          alignment: AlignmentDirectional.topStart,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                toQuickPayChannel(data,
-                                    createPath: ChargePath.rechargeForPdd,
-                                    area: data.area);
-                              },
+                      child: Stack(
+                        alignment: AlignmentDirectional.topStart,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              toQuickPayChannel(data,
+                                  createPath: ChargePath.rechargeForPdd,
+                                  area: data.area);
+                            },
+                            child: Container(
+                              margin: const EdgeInsetsDirectional.only(
+                                  bottom: 5, top: 15),
+                              width: 275,
+                              height: 65,
+                              alignment: AlignmentDirectional.center,
+                              decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: ExactAssetImage(
+                                          Assets.rewardRewardBtn))),
                               child: Container(
+                                // width: double.maxFinite,
+                                padding: EdgeInsetsDirectional.symmetric(
+                                    horizontal: Get.isPt ? 10 : 5,
+                                    vertical: Get.isPt ? 12 : 6),
                                 margin: const EdgeInsetsDirectional.only(
-                                    bottom: 5, top: 5),
-                                width: 285,
-                                height: 84,
-                                alignment: AlignmentDirectional.center,
-                                decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: ExactAssetImage(
-                                            Assets.rewardRewardBtn))),
-                                child: Container(
-                                  // width: double.maxFinite,
-                                  padding: EdgeInsetsDirectional.symmetric(
-                                      horizontal: Get.isPt ? 10 : 5,
-                                      vertical: Get.isPt ? 12 : 6),
-                                  margin: const EdgeInsetsDirectional.only(
-                                      bottom: 18, start: 5, end: 5),
-                                  child: AutoSizeText(
-                                    btn,
-                                    maxLines: Get.isPt ? 2 : 1,
-                                    maxFontSize: 17,
-                                    minFontSize: 12,
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.normal),
-                                  ),
+                                    bottom: 18, start: 5, end: 5),
+                                child: AutoSizeText(
+                                  btn,
+                                  maxLines: Get.isPt ? 2 : 1,
+                                  maxFontSize: 17,
+                                  minFontSize: 12,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.normal),
                                 ),
                               ),
                             ),
-                            PositionedDirectional(
-                                start: 15,
-                                child: Container(
-                                  padding:
-                                      const EdgeInsetsDirectional.symmetric(
-                                          horizontal: 8, vertical: 3),
-                                  decoration: BoxDecoration(
-                                      border: Border.all(
-                                          width: 0.5, color: Colors.white),
-                                      color: const Color(0xFFFF4337),
-                                      borderRadius:
-                                          const BorderRadiusDirectional.only(
-                                        topStart: Radius.circular(30),
-                                        bottomStart: Radius.zero,
-                                        topEnd: Radius.circular(30),
-                                        bottomEnd: Radius.circular(30),
-                                      )),
-                                  child: LimitTime(
-                                      duration: data.discountDuration),
-                                ))
-                          ],
-                        ),
+                          ),
+                          PositionedDirectional(
+                              top: 0,
+                              start: 5,
+                              child: Container(
+                                padding: const EdgeInsetsDirectional.symmetric(
+                                    horizontal: 8, vertical: 3),
+                                decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadiusDirectional.only(
+                                      topStart: Radius.circular(10),
+                                      bottomStart: Radius.zero,
+                                      topEnd: Radius.zero,
+                                      bottomEnd: Radius.circular(10),
+                                    )),
+                                child:
+                                    LimitTime(duration: data.discountDuration),
+                              ))
+                        ],
                       ),
                     ),
                   ],
@@ -225,19 +221,18 @@ class RewardDiamondDialog extends StatelessWidget {
               ),
             ),
             PositionedDirectional(
-                top: 115,
-                end: 15,
+                top: 0,
+                end: 20,
                 child: GestureDetector(
                   onTap: () => Get.back(),
                   child: Image.asset(
-                    Assets.imgCloseDialog,
-                    width: 30,
-                    height: 30,
+                    Assets.iconCloseDialog,
+                    width: 42,
+                    height: 42,
                   ),
                 ))
           ],
-        ),
-        const Spacer(),
+        )
       ],
     );
   }

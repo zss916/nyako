@@ -59,11 +59,7 @@ class SetLogic extends GetxController {
         ARoutes.toChangePsd();
         break;
       case "delete_account":
-        // ARoutes.toDeleteAccount();
-
-        AppCommonDialog.dialog(AppNewUserCardsTip(2),
-            barrierColor: Colors.black.withOpacity(0.8),
-            routeSettings: const RouteSettings(name: AppPages.newUserDialog));
+        ARoutes.toDeleteAccount();
         break;
     }
   }
@@ -81,9 +77,14 @@ class SetLogic extends GetxController {
   void logout() {
     // showRewardDiamondDialog();
     //showRewardCouponDialog();
-    //showRewardTimeDialog();
+    // showRewardTimeDialog();
     //showTransferAppDialog();
     // ChangePasswordDialog2.show("dddd", "ddd", () {});
-    showLogoutDialog();
+    // showLogoutDialog();
+
+    Get.dialog(RewardDiamondDialog(data: PayQuickCommodite()),
+        barrierDismissible: false,
+        routeSettings: const RouteSettings(name: AppPages.rewardDiamondDialog),
+        barrierColor: Colors.black.withOpacity(0.8));
   }
 }

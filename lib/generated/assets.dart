@@ -506,12 +506,12 @@ class Assets {
   static const String matchMatchRightTitle =
       'assets/match/match_right_title.png';
   static const String matchMatchVap = 'assets/match/match_vap.mp4';
-  static const String rewardBg1 = 'assets/reward/bg1.webp';
+  static const String rewardBg3 = 'assets/reward/bg3.png';
+  static const String rewardDiamondRewardIconBg =
+      'assets/reward/diamond_reward_icon_bg.png';
   static const String rewardQuickDownPrice =
-      'assets/reward/quick_down_price.webp';
-  static const String rewardRewardBtn = 'assets/reward/reward_btn.webp';
-  static const String rewardRewardDialogBg =
-      'assets/reward/reward_dialog_bg.png';
+      'assets/reward/quick_down_price.png';
+  static const String rewardRewardBtn = 'assets/reward/reward_btn.png';
   static const String ringAppRing = 'assets/ring/app_ring.MP3';
   static const String ringChargeSuccess = 'assets/ring/charge_success.mp3';
   static const String ringMatchBg = 'assets/ring/match_bg.MP3';
