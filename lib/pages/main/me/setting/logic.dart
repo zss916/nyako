@@ -80,11 +80,6 @@ class SetLogic extends GetxController {
     // showRewardTimeDialog();
     //showTransferAppDialog();
     // ChangePasswordDialog2.show("dddd", "ddd", () {});
-    // showLogoutDialog();
-
-    Get.dialog(RewardDiamondDialog(data: PayQuickCommodite()),
-        barrierDismissible: false,
-        routeSettings: const RouteSettings(name: AppPages.rewardDiamondDialog),
-        barrierColor: Colors.black.withOpacity(0.8));
+    showLogoutDialog();
   }
 }

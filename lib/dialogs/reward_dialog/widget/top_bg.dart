@@ -2,12 +2,16 @@ import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
 
 class TopBg extends StatelessWidget {
   final String url;
   final String? cachePath;
-  const TopBg({super.key, required this.url, this.cachePath});
+  final String defaultIcon;
+  const TopBg(
+      {super.key,
+      required this.url,
+      this.cachePath,
+      required this.defaultIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +21,11 @@ class TopBg extends StatelessWidget {
               cachePath ?? "",
             ),
             width: 315,
-            height: 146,
+            height: 140,
           )
         : CachedNetworkImage(
             width: 315,
-            height: 146,
+            height: 140,
             matchTextDirection: true,
             placeholder: (
               BuildContext context,
@@ -29,7 +33,7 @@ class TopBg extends StatelessWidget {
             ) =>
                 const SizedBox(
                   width: 315,
-                  height: 146,
+                  height: 140,
                 ),
             errorWidget: (
               BuildContext context,
@@ -37,9 +41,9 @@ class TopBg extends StatelessWidget {
               dynamic error,
             ) =>
                 Image.asset(
-                  Assets.rewardBg3,
+                  defaultIcon,
                   width: 315,
-                  height: 146,
+                  height: 140,
                   matchTextDirection: true,
                 ),
             imageUrl: url);

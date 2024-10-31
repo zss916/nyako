@@ -48,9 +48,18 @@ class RewardTimeDialog extends StatelessWidget {
         Stack(
           alignment: AlignmentDirectional.topCenter,
           children: [
+            PositionedDirectional(
+                top: 35,
+                child: Image.asset(
+                  Assets.rewardDialogBg,
+                  width: Get.width,
+                  height: Get.width,
+                  matchTextDirection: true,
+                )),
             TopBg(
               url: data.drawImageIcon ?? "",
               cachePath: data.cacheDrawImageIcon,
+              defaultIcon: Assets.rewardBg3,
             ),
             Container(
               width: double.maxFinite,

@@ -5,7 +5,6 @@ import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
-import 'package:oliapro/dialogs/reward_dialog/widget/build_scale_transition.dart';
 import 'package:oliapro/dialogs/reward_dialog/widget/top_bg.dart';
 import 'package:oliapro/entities/app_charge_quick_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -45,293 +44,324 @@ class RewardCouponDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return bad();
-  }
-
-  Widget bad() {
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
-        Column(
+        Stack(
+          alignment: AlignmentDirectional.topCenter,
           children: [
-            const Spacer(),
-            Stack(
-              alignment: AlignmentDirectional.topCenter,
-              children: [
-                /*Image.asset(
-                  Assets.rewardRewardDialogBg,
+            PositionedDirectional(
+                top: 35,
+                child: Image.asset(
+                  Assets.rewardDialogBg,
+                  width: Get.width,
+                  height: Get.width,
                   matchTextDirection: true,
-                ),*/
-                TopBg(
-                  url: data.drawImageIcon ?? "",
-                  cachePath: data.cacheDrawImageIcon,
-                ),
-                Container(
-                  width: double.maxFinite,
-                  margin: const EdgeInsetsDirectional.only(
-                      start: 25, end: 25, top: 120),
-                  decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                          begin: AlignmentDirectional.topCenter,
-                          end: AlignmentDirectional.bottomCenter,
-                          colors: [Color(0xFFF1A0F4), Colors.white]),
-                      borderRadius: BorderRadiusDirectional.circular(30),
-                      color: Colors.white),
-                  child: Container(
-                    constraints: const BoxConstraints(minHeight: 330),
-                    padding: const EdgeInsetsDirectional.only(top: 0),
-                    width: double.maxFinite,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Container(
-                          margin: const EdgeInsetsDirectional.only(
-                              start: 20, end: 20, bottom: 0, top: 20),
-                          child: Text(
-                            topTitle,
-                            style: const TextStyle(
-                                color: Color(0xFF5C0B4C),
-                                fontWeight: FontWeight.w900,
-                                fontSize: 20),
-                          ),
-                        ),
-                        Container(
-                          alignment: AlignmentDirectional.center,
-                          margin: const EdgeInsetsDirectional.only(
-                              start: 17, end: 17, bottom: 20, top: 0),
-                          child: Text.rich(
-                              textAlign: TextAlign.center,
-                              TextSpan(
-                                  text: t1,
+                )),
+            TopBg(
+              url: data.drawImageIcon ?? "",
+              cachePath: data.cacheDrawImageIcon,
+              defaultIcon: Assets.rewardBg1,
+            ),
+            Container(
+              width: double.maxFinite,
+              margin: const EdgeInsetsDirectional.only(
+                  start: 30, end: 30, top: 115),
+              decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(color: Color(0xFFFF33A7), offset: Offset(0, 10))
+                  ],
+                  border: Border.all(width: 2, color: Colors.white),
+                  gradient: const LinearGradient(
+                      begin: AlignmentDirectional.topCenter,
+                      end: AlignmentDirectional.bottomCenter,
+                      colors: [Color(0xFFFFCDF4), Color(0xFFFFF5FD)]),
+                  borderRadius: BorderRadiusDirectional.circular(24),
+                  color: Colors.white),
+              child: Container(
+                constraints: const BoxConstraints(minHeight: 340),
+                padding: const EdgeInsetsDirectional.only(top: 0),
+                width: double.maxFinite,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(
+                          start: 20, end: 20, bottom: 0, top: 20),
+                      child: Text(
+                        topTitle,
+                        style: const TextStyle(
+                            color: Color(0xFF5F0538),
+                            fontWeight: FontWeight.w900,
+                            fontSize: 22),
+                      ),
+                    ),
+                    Container(
+                      alignment: AlignmentDirectional.center,
+                      margin: const EdgeInsetsDirectional.only(
+                          start: 25, end: 25, bottom: 20, top: 0),
+                      child: Text.rich(
+                          textAlign: TextAlign.center,
+                          TextSpan(
+                              text: t1,
+                              style: const TextStyle(
+                                  color: Color(0xFF5F0538),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                              children: [
+                                TextSpan(
+                                    text: " ${data.discount ?? 0}% ",
+                                    style: TextStyle(
+                                        color: const Color(0xFFFF33A7),
+                                        fontSize: 17,
+                                        fontFamily: AppConstants.fontsBold,
+                                        fontWeight: FontWeight.bold),
+                                    children: []),
+                                TextSpan(
+                                  text: t2,
                                   style: const TextStyle(
-                                      color: Color(0xFF5C0B4C),
+                                      color: Color(0xFF5F0538),
                                       fontSize: 16,
-                                      fontWeight: FontWeight.w400),
-                                  children: [
-                                    TextSpan(
-                                        text: " ${data.discount ?? 0}% ",
-                                        style: TextStyle(
-                                            color: const Color(0xFFFF2121),
-                                            fontSize: 30,
-                                            fontFamily: AppConstants.fontsBold,
-                                            fontWeight: FontWeight.w900),
-                                        children: []),
-                                    TextSpan(
-                                      text: t2,
-                                      style: const TextStyle(
-                                          color: Color(0xFF5C0B4C),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w400),
-                                    )
-                                  ])),
-                        ),
-                        Stack(
-                          alignment: AlignmentDirectional.topCenter,
-                          children: [
-                            Container(
-                              width: double.maxFinite,
-                              height: 64,
-                              margin: const EdgeInsetsDirectional.symmetric(
-                                  horizontal: 45),
-                              child: Container(
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ])),
+                    ),
+                    Container(
+                      margin:
+                          const EdgeInsetsDirectional.symmetric(horizontal: 10),
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsetsDirectional.all(5),
+                                margin:
+                                    const EdgeInsetsDirectional.only(end: 10),
                                 decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Color(0xFFFCCAFF),
-                                          offset: Offset(8, 8),
-                                          blurRadius: 10,
-                                          spreadRadius: 1),
-                                      BoxShadow(
-                                          color: Color(0xFFFCCAFF),
-                                          offset: Offset(-8, -8),
-                                          blurRadius: 10,
-                                          spreadRadius: 1)
-                                    ],
+                                    color: Colors.white,
                                     borderRadius:
-                                        BorderRadiusDirectional.circular(12),
-                                    color: Colors.white),
-                                foregroundDecoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadiusDirectional.circular(12),
-                                    color: const Color(0x66FBEEFC)),
-                                child: Row(
+                                        BorderRadiusDirectional.circular(10)),
+                                width: 106,
+                                height: 94,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Container(
-                                      padding:
-                                          const EdgeInsetsDirectional.all(10),
-                                      margin: const EdgeInsetsDirectional.only(
-                                          end: 0),
-                                      child: Image.asset(
-                                        Assets.imgDiamond,
-                                        width: 48,
-                                        height: 48,
-                                      ),
-                                    ),
-                                    Expanded(
-                                        child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
+                                        Container(
+                                          margin:
+                                              const EdgeInsetsDirectional.only(
+                                                  end: 3),
+                                          child: Image.asset(
+                                            Assets.iconDiamond,
+                                            width: 20,
+                                            height: 20,
+                                            matchTextDirection: true,
+                                          ),
+                                        ),
                                         Text(
                                           "${data.showValue}",
                                           style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 18,
+                                              fontSize: 15,
                                               fontFamily:
                                                   AppConstants.fontsBold,
                                               fontWeight: FontWeight.bold),
                                         ),
-                                        Text(
-                                          data.showOldPrice,
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.combine([
-                                                TextDecoration
-                                                    .lineThrough, // 删除线
-                                              ]),
-                                              color: Colors.black,
-                                              fontFamily:
-                                                  AppConstants.fontsBold,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
-                                        ),
                                       ],
-                                    ))
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsetsDirectional.only(
+                                          top: 10),
+                                      child: Text(
+                                        data.showOldPrice,
+                                        maxLines: 1,
+                                        style: TextStyle(
+                                            decoration: TextDecoration.combine([
+                                              TextDecoration.lineThrough, // 删除线
+                                            ]),
+                                            decorationThickness: 2,
+                                            decorationColor:
+                                                const Color(0x80FF4864),
+                                            color: const Color(0x80FF4864),
+                                            fontFamily: AppConstants.fontsBold,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
-                            ),
-                            Container(
-                              width: double.maxFinite,
-                              height: 64,
-                              margin: const EdgeInsetsDirectional.only(
-                                  start: 25, end: 25, top: 60),
-                              decoration: BoxDecoration(
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Color(0xFFFCCAFF),
-                                        offset: Offset(8, 8),
-                                        blurRadius: 10,
-                                        spreadRadius: 1),
-                                    BoxShadow(
-                                        color: Color(0xFFFCCAFF),
-                                        offset: Offset(-8, -8),
-                                        blurRadius: 10,
-                                        spreadRadius: 1)
-                                  ],
-                                  borderRadius:
-                                      BorderRadiusDirectional.circular(12),
-                                  color: const Color(0xFFFFF9E8)),
-                              child: Row(
+                              Expanded(
+                                  child: Stack(
+                                alignment: AlignmentDirectional.topEnd,
                                 children: [
                                   Container(
-                                    padding:
-                                        const EdgeInsetsDirectional.all(10),
                                     margin: const EdgeInsetsDirectional.only(
-                                        end: 0),
-                                    child: Image.asset(
-                                      Assets.imgDiamond,
-                                      width: 48,
-                                      height: 48,
+                                        start: 5),
+                                    decoration: BoxDecoration(
+                                        border: Border.all(
+                                            width: 2,
+                                            color: const Color(0xFFFF33A7)),
+                                        gradient: const LinearGradient(
+                                            begin: AlignmentDirectional
+                                                .bottomStart,
+                                            end: AlignmentDirectional.topEnd,
+                                            colors: [
+                                              Color(0xFFFFB34F),
+                                              Color(0xFFFFE87F),
+                                            ]),
+                                        borderRadius:
+                                            BorderRadiusDirectional.circular(
+                                                10)),
+                                    width: double.maxFinite,
+                                    padding: const EdgeInsetsDirectional.all(5),
+                                    height: 94,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Container(
+                                              margin:
+                                                  const EdgeInsetsDirectional
+                                                      .only(end: 3),
+                                              child: Image.asset(
+                                                Assets.iconDiamond,
+                                                width: 20,
+                                                height: 20,
+                                                matchTextDirection: true,
+                                              ),
+                                            ),
+                                            Text(
+                                              "${data.showValue}",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 15,
+                                                  fontFamily:
+                                                      AppConstants.fontsBold,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ],
+                                        ),
+                                        Container(
+                                          margin:
+                                              const EdgeInsetsDirectional.only(
+                                                  top: 10),
+                                          child: Text(
+                                            data.showDialogPrice,
+                                            maxLines: 1,
+                                            style: TextStyle(
+                                                color: const Color(0xFFFF4864),
+                                                fontFamily:
+                                                    AppConstants.fontsBold,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  Expanded(
-                                      child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "${data.showValue}",
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 18,
-                                            fontFamily: AppConstants.fontsBold,
-                                            fontWeight: FontWeight.bold),
+                                  if (data.discount != null)
+                                    Container(
+                                      padding:
+                                          const EdgeInsetsDirectional.symmetric(
+                                              horizontal: 9, vertical: 2),
+                                      decoration: const BoxDecoration(
+                                          borderRadius:
+                                              BorderRadiusDirectional.only(
+                                                  topStart: Radius.circular(6),
+                                                  bottomStart:
+                                                      Radius.circular(6),
+                                                  topEnd: Radius.circular(6),
+                                                  bottomEnd: Radius.zero),
+                                          gradient: LinearGradient(colors: [
+                                            Color(0xFFFF1A45),
+                                            Color(0xFFFF17D6)
+                                          ])),
+                                      child: Text(
+                                        Tr.app_off
+                                            .trArgs(["${data.discount ?? 0}"]),
+                                        style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500),
                                       ),
-                                      Text(
-                                        data.showDialogPrice,
-                                        style: TextStyle(
-                                            color: const Color(0xFFFF13CC),
-                                            fontSize: 14,
-                                            fontFamily: AppConstants.fontsBold,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ],
-                                  ))
+                                    )
                                 ],
-                              ),
-                            ),
-                            PositionedDirectional(
-                                top: 28,
-                                end: 35,
-                                child: Image.asset(
-                                  Assets.imgDownPrice,
-                                  width: 70,
-                                  height: 70,
-                                  matchTextDirection: true,
-                                ))
-                          ],
-                        ),
-                        Container(
-                          margin: const EdgeInsetsDirectional.only(top: 10),
-                          child: GestureDetector(
-                            onTap: () {
-                              toQuickPayChannel(data,
-                                  createPath: ChargePath.rechargeForPdd,
-                                  area: data.area);
-                            },
-                            child: BuildScaleTransition(
-                              child: Container(
-                                margin: const EdgeInsetsDirectional.only(
-                                    bottom: 5, top: 5),
-                                width: 285,
-                                height: 84,
-                                alignment: AlignmentDirectional.center,
-                                decoration: const BoxDecoration(
-                                    image: DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: ExactAssetImage(
-                                            Assets.rewardRewardBtn))),
-                                child: Container(
-                                  margin: const EdgeInsetsDirectional.only(
-                                      bottom: 18),
-                                  child: AutoSizeText(
-                                    btn,
-                                    maxLines: 1,
-                                    maxFontSize: 17,
-                                    minFontSize: 12,
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.normal),
-                                  ),
-                                ),
-                              ),
+                              ))
+                            ],
+                          ),
+                          PositionedDirectional(
+                              start: 85,
+                              child: Image.asset(
+                                Assets.rewardDownIcon,
+                                width: 64,
+                                height: 64,
+                                matchTextDirection: true,
+                              ))
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(top: 10),
+                      child: GestureDetector(
+                        onTap: () {
+                          toQuickPayChannel(data,
+                              createPath: ChargePath.rechargeForPdd,
+                              area: data.area);
+                        },
+                        child: Container(
+                          margin: const EdgeInsetsDirectional.only(
+                              bottom: 5, top: 20),
+                          width: 275,
+                          height: 65,
+                          alignment: AlignmentDirectional.center,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image:
+                                      ExactAssetImage(Assets.rewardRewardBtn))),
+                          child: Container(
+                            margin:
+                                const EdgeInsetsDirectional.only(bottom: 18),
+                            child: AutoSizeText(
+                              btn,
+                              maxLines: 1,
+                              maxFontSize: 16,
+                              minFontSize: 12,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-                PositionedDirectional(
-                    top: 115,
-                    end: 15,
-                    child: GestureDetector(
-                      onTap: () => Get.back(),
-                      child: Image.asset(
-                        Assets.imgCloseDialog,
-                        width: 30,
-                        height: 30,
                       ),
-                    ))
-              ],
+                    ),
+                  ],
+                ),
+              ),
             ),
-            const Spacer(),
+            PositionedDirectional(
+                top: 0,
+                end: 25,
+                child: GestureDetector(
+                  onTap: () => Get.back(),
+                  child: Image.asset(
+                    Assets.iconCloseDialog,
+                    width: 42,
+                    height: 42,
+                  ),
+                ))
           ],
         )
       ],
