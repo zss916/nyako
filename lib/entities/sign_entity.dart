@@ -164,10 +164,10 @@ class SignBean {
     String path = icon ?? '';
     switch (type) {
       case 1:
-        path = Assets.imgDiamond;
+        path = Assets.iconDiamond;
         break;
       case 3:
-        path = Assets.signRewardCallCard;
+        path = Assets.signNyakoCallCard;
         break;
       case 5:
         path = Assets.lotteryLotteryEmpty;
@@ -176,16 +176,16 @@ class SignBean {
         path = Assets.signNyakoGift;
         break;
       case 7:
-        path = Assets.signRewardChatCard;
+        path = Assets.signNyakoChatCard;
         break;
       case 8:
-        path = Assets.signRewardTrun;
+        path = Assets.signNyakoTrun;
         break;
       case 9:
-        path = Assets.signRewardDiamondAddCard;
+        path = Assets.signNyakoDiamondAddCard;
         break;
       case 10:
-        path = Assets.signRewardFrame;
+        path = Assets.signNyakoFrame;
         break;
       default:
         path = icon ?? '';

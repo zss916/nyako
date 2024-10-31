@@ -53,7 +53,7 @@ class AppDialogConfirm extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 30),
         padding: const EdgeInsetsDirectional.only(top: 15, bottom: 15),
         decoration: BoxDecoration(
-          color: AppColors.dialogBg,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -63,7 +63,7 @@ class AppDialogConfirm extends StatelessWidget {
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                 child: Image.asset(
-                  Assets.imgAppLogo,
+                  Assets.iconSmallLogo,
                   matchTextDirection: true,
                   height: 50,
                   width: 50,
@@ -77,7 +77,7 @@ class AppDialogConfirm extends StatelessWidget {
               child: Text(
                 title,
                 style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
@@ -101,7 +101,7 @@ class AppDialogConfirm extends StatelessWidget {
                         String url,
                       ) =>
                           Image.asset(
-                            Assets.imgAppLogo,
+                            Assets.iconSmallLogo,
                             matchTextDirection: true,
                             height: 65,
                             width: 65,
@@ -118,7 +118,7 @@ class AppDialogConfirm extends StatelessWidget {
                   minFontSize: 7,
                   maxLines: 4,
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 14,
                   ),
                   textAlign: TextAlign.center,

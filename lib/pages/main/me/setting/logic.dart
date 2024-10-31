@@ -75,6 +75,8 @@ class SetLogic extends GetxController {
   }
 
   void logout() {
+    // showFreeDiamondTip();
+    // showSignReward(SignBean());
     // showRewardDiamondDialog();
     //showRewardCouponDialog();
     // showRewardTimeDialog();

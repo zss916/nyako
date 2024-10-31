@@ -33,13 +33,7 @@ class AppDialogCompliance extends StatelessWidget {
                 padding: const EdgeInsetsDirectional.only(
                     bottom: 20, start: 20, end: 20, top: 20),
                 decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                        begin: AlignmentDirectional.topCenter,
-                        end: AlignmentDirectional.bottomCenter,
-                        colors: [
-                          Color(0xFF201436),
-                          Color(0xFF0C0C32),
-                        ]),
+                    color: Colors.white,
                     borderRadius: BorderRadiusDirectional.circular(16)),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -48,7 +42,7 @@ class AppDialogCompliance extends StatelessWidget {
                       Tr.app_alert_tips.tr,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
@@ -63,7 +57,7 @@ class AppDialogCompliance extends StatelessWidget {
                         maxFontSize: 14,
                         minFontSize: 11,
                         style: const TextStyle(
-                            color: Color(0xFFC3A0FF),
+                            color: Colors.black,
                             fontSize: 14,
                             fontWeight: FontWeight.normal),
                       ),

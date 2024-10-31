@@ -14,6 +14,8 @@ class Assets {
   static const String animaNotify = 'assets/anima/notify.webp';
   static const String animaNyakoDiamondAddBg =
       'assets/anima/nyako_diamond_add_bg.webp';
+  static const String animaNyakoFreeDiamond =
+      'assets/anima/nyako_free_diamond.webp';
   static const String animaNyakoHang = 'assets/anima/nyako_hang.webp';
   static const String animaNyakoVipAnimaBg =
       'assets/anima/nyako_vip_anima_bg.webp';
@@ -135,6 +137,7 @@ class Assets {
   static const String iconFollowedIc = 'assets/icon/followed_ic.png';
   static const String iconFreeBg = 'assets/icon/free_bg.png';
   static const String iconFreeBg2 = 'assets/icon/free_bg2.png';
+  static const String iconFreeDiamondBtn = 'assets/icon/free_diamond_btn.png';
   static const String iconGiftIc = 'assets/icon/gift_ic.png';
   static const String iconGooglePayIcon = 'assets/icon/google_pay_icon.webp';
   static const String iconGou = 'assets/icon/gou.png';
@@ -532,15 +535,6 @@ class Assets {
   static const String signNyakoSignV = 'assets/sign/nyako_sign_v.png';
   static const String signNyakoSignX = 'assets/sign/nyako_sign_x.png';
   static const String signNyakoSignedBtn = 'assets/sign/nyako_signed_btn.png';
+  static const String signNyakoSucceeful = 'assets/sign/nyako_succeeful.png';
   static const String signNyakoTrun = 'assets/sign/nyako_trun.png';
-  static const String signRewardCallCard = 'assets/sign/reward_call_card.webp';
-  static const String signRewardChatCard = 'assets/sign/reward_chat_card.webp';
-  static const String signRewardDiamondAddCard =
-      'assets/sign/reward_diamond_add_card.webp';
-  static const String signRewardFrame = 'assets/sign/reward_frame.webp';
-  static const String signRewardTrun = 'assets/sign/reward_trun.webp';
-  static const String signSignBgBg = 'assets/sign/sign_bg_bg.webp';
-  static const String signSignRewardBg = 'assets/sign/sign_reward_bg.png';
-  static const String signSignedBtn = 'assets/sign/signed_btn.webp';
-  static const String signTrun = 'assets/sign/trun.png';
 }

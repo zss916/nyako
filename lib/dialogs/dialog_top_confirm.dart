@@ -45,7 +45,7 @@ class AppDialogTopConfirm extends StatelessWidget {
                   ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                     child: Image.asset(
-                      Assets.imgAppLogo,
+                      Assets.iconSmallLogo,
                       matchTextDirection: true,
                       height: 60,
                       width: 60,

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/app_common_dialog.dart';
@@ -50,21 +52,16 @@ class _AppFreeDiamondTipDialogState extends State<AppFreeDiamondTipDialog>
           Stack(
             alignment: Alignment.center,
             children: [
-              /* RotationTransition(
-                turns: _rotationController,
-                child: Image.asset(
-                  Assets.imgBigDiamond,
-                  matchTextDirection: true,
-                  height: 255,
-                  width: 255,
-                  fit: BoxFit.fill,
+              RepaintBoundary(
+                child: Transform.rotate(
+                  angle: 3 * pi / 180,
+                  child: Image.asset(
+                    Assets.animaNyakoFreeDiamond,
+                    matchTextDirection: true,
+                    height: 375,
+                    width: 367,
+                  ),
                 ),
-              ),*/
-              Image.asset(
-                Assets.imgFreeDiamondIcon,
-                matchTextDirection: true,
-                height: 355,
-                width: 298,
               ),
               PositionedDirectional(
                 bottom: 10,
@@ -80,21 +77,22 @@ class _AppFreeDiamondTipDialogState extends State<AppFreeDiamondTipDialog>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        height: 54,
+                        width: 315,
+                        height: 80,
                         alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(horizontal: 40),
+                        padding: const EdgeInsetsDirectional.only(
+                            start: 10, end: 10, bottom: 10),
                         decoration: const BoxDecoration(
-                            gradient: LinearGradient(colors: [
-                              Color(0xFFFBB653),
-                              Color(0xFFF0345C),
-                            ]),
-                            borderRadius: BorderRadiusDirectional.all(
-                                Radius.circular(30))),
+                            image: DecorationImage(
+                                fit: BoxFit.fill,
+                                matchTextDirection: true,
+                                image: ExactAssetImage(
+                                    Assets.iconFreeDiamondBtn))),
                         child: Text(Tr.app_receive_gift.tr,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
-                                fontWeight: FontWeight.bold)),
+                                fontWeight: FontWeight.w500)),
                       )
                     ],
                   ),
@@ -103,14 +101,14 @@ class _AppFreeDiamondTipDialogState extends State<AppFreeDiamondTipDialog>
             ],
           ),
           const SizedBox(
-            height: 30,
+            height: 10,
           ),
           GestureDetector(
             onTap: () => Get.back(),
             child: Image.asset(
-              Assets.imgCloseDialog,
-              height: 36,
-              width: 36,
+              Assets.iconCloseDialog,
+              height: 42,
+              width: 42,
             ),
           )
         ],
