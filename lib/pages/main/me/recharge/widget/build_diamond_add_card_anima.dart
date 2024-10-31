@@ -34,7 +34,7 @@ class _BuildDiamondAddCardAnimaState extends State<BuildDiamondAddCardAnima> {
   Widget build(BuildContext context) {
     return isShowDiamondAddAnima
         ? Container(
-            width: Get.width,
+            width: double.maxFinite,
             height: Get.height,
             color: Colors.black54,
             child: Stack(
@@ -43,7 +43,10 @@ class _BuildDiamondAddCardAnimaState extends State<BuildDiamondAddCardAnima> {
                 RepaintBoundary(
                   child: Image.asset(
                     Assets.animaNyakoDiamondAddBg,
-                    width: Get.width,
+                    width: double.maxFinite,
+                    height: 130,
+                    fit: BoxFit.fill,
+                    matchTextDirection: true,
                   ),
                 ),
                 RepaintBoundary(
@@ -100,7 +103,7 @@ class _BuildDiamondAddCardAnimaState extends State<BuildDiamondAddCardAnima> {
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           )
