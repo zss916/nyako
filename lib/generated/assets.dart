@@ -271,7 +271,6 @@ class Assets {
   static const String iconWarming = 'assets/icon/warming.png';
   static const String iconWeekSort = 'assets/icon/week_sort.png';
   static const String iconWhatApp = 'assets/icon/what_app.png';
-  static const String imageRechageQuickBg = 'assets/image/rechage_quick_bg.png';
   static const String imgAddCard = 'assets/img/add_card.webp';
   static const String imgAddCard2 = 'assets/img/add_card2.webp';
   static const String imgAddCardIcon = 'assets/img/add_card_icon.png';
@@ -520,13 +519,20 @@ class Assets {
   static const String ringChargeSuccess = 'assets/ring/charge_success.mp3';
   static const String ringMatchBg = 'assets/ring/match_bg.MP3';
   static const String ringMatchOk = 'assets/ring/match_ok.MP3';
-  static const String signCallCard = 'assets/sign/call_card.png';
-  static const String signChatCard = 'assets/sign/chat_card.png';
-  static const String signDiamondAddCard = 'assets/sign/diamond_add_card.png';
-  static const String signFrame = 'assets/sign/frame.png';
-  static const String signGift = 'assets/sign/gift.png';
-  static const String signOpenVipBtn = 'assets/sign/open_vip_btn.webp';
-  static const String signQuickSignBtn = 'assets/sign/quick_sign_btn.webp';
+  static const String signNyakoBroadcast = 'assets/sign/nyako_broadcast.png';
+  static const String signNyakoCallCard = 'assets/sign/nyako_call_card.png';
+  static const String signNyakoChatCard = 'assets/sign/nyako_chat_card.png';
+  static const String signNyakoDiamondAddCard =
+      'assets/sign/nyako_diamond_add_card.png';
+  static const String signNyakoFrame = 'assets/sign/nyako_frame.png';
+  static const String signNyakoGift = 'assets/sign/nyako_gift.png';
+  static const String signNyakoQuickSignBtn =
+      'assets/sign/nyako_quick_sign_btn.png';
+  static const String signNyakoSignTop = 'assets/sign/nyako_sign_top.png';
+  static const String signNyakoSignV = 'assets/sign/nyako_sign_v.png';
+  static const String signNyakoSignX = 'assets/sign/nyako_sign_x.png';
+  static const String signNyakoSignedBtn = 'assets/sign/nyako_signed_btn.png';
+  static const String signNyakoTrun = 'assets/sign/nyako_trun.png';
   static const String signRewardCallCard = 'assets/sign/reward_call_card.webp';
   static const String signRewardChatCard = 'assets/sign/reward_chat_card.webp';
   static const String signRewardDiamondAddCard =
@@ -535,9 +541,6 @@ class Assets {
   static const String signRewardTrun = 'assets/sign/reward_trun.webp';
   static const String signSignBgBg = 'assets/sign/sign_bg_bg.webp';
   static const String signSignRewardBg = 'assets/sign/sign_reward_bg.png';
-  static const String signSignTitleBg = 'assets/sign/sign_title_bg.webp';
-  static const String signSignV = 'assets/sign/sign_v.png';
-  static const String signSignX = 'assets/sign/sign_x.png';
   static const String signSignedBtn = 'assets/sign/signed_btn.webp';
   static const String signTrun = 'assets/sign/trun.png';
 }

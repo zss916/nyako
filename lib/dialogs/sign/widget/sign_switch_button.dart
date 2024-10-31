@@ -12,21 +12,21 @@ class SignSwitchButton extends StatelessWidget {
       {super.key, required this.isShow, required this.child});
 
   final TextStyle baseTextStyle = const TextStyle(
-      color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
+      color: Color(0xFF773913), fontSize: 16, fontWeight: FontWeight.bold);
 
   @override
   Widget build(BuildContext context) {
     return isShow
         ? Container(
-            width: 217,
-            height: 80,
+            width: 265,
+            height: 60,
             alignment: Alignment.center,
             margin: const EdgeInsetsDirectional.only(start: 0, end: 0),
             padding: const EdgeInsets.all(0),
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     matchTextDirection: true,
-                    image: ExactAssetImage(Assets.signSignedBtn))),
+                    image: ExactAssetImage(Assets.signNyakoSignedBtn))),
             child: Container(
               width: double.maxFinite,
               height: double.maxFinite,

@@ -172,7 +172,6 @@ flutter:
     - assets/anima/
     - assets/reward/
     - assets/frame/
-    - assets/image/
     - assets/sign/
 
   fonts:

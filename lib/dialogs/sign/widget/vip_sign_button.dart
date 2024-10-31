@@ -22,22 +22,22 @@ class VipSignButton extends StatelessWidget {
         sheetToVip(path: ChargePath.recharge_vip_dialog_user_center, index: 6);
       },
       child: Container(
-        width: 217,
-        height: 80,
+        width: 265,
+        height: 60,
         alignment: Alignment.center,
         margin: const EdgeInsetsDirectional.only(start: 0, end: 0),
         padding: const EdgeInsets.all(0),
         decoration: const BoxDecoration(
             image: DecorationImage(
                 matchTextDirection: true,
-                image: ExactAssetImage(Assets.signOpenVipBtn))),
+                image: ExactAssetImage(Assets.signNyakoQuickSignBtn))),
         child: Container(
           width: double.maxFinite,
           height: double.maxFinite,
           //color: Colors.white60,
           alignment: Alignment.center,
           padding: const EdgeInsetsDirectional.only(
-              top: 2, start: 2, end: 2, bottom: 25),
+              top: 4, start: 2, end: 2, bottom: 0),
           child: AutoSizeText(
             title,
             maxFontSize: 16,

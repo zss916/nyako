@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/sign_entity.dart';
@@ -47,7 +46,7 @@ class SignDayWidget extends StatelessWidget {
       children: [
         Container(
           margin:
-              const EdgeInsetsDirectional.only(start: 8, end: 8, bottom: 10),
+              const EdgeInsetsDirectional.only(start: 11, end: 11, bottom: 10),
           child: Row(
             children: [
               dayWidget(
@@ -78,7 +77,7 @@ class SignDayWidget extends StatelessWidget {
         ),
         Container(
           margin:
-              const EdgeInsetsDirectional.only(start: 8, end: 8, bottom: 10),
+              const EdgeInsetsDirectional.only(start: 11, end: 11, bottom: 10),
           child: Row(
             children: [
               dayWidget(
@@ -115,18 +114,22 @@ class SignDayWidget extends StatelessWidget {
       height: 98,
       margin: const EdgeInsetsDirectional.only(bottom: 0),
       decoration: BoxDecoration(
-          // color: const Color(0xFFF5F5F5),
-          gradient: (isSigned || !isFuture)
-              ? const LinearGradient(
-                  begin: AlignmentDirectional.topCenter,
-                  end: AlignmentDirectional.bottomCenter,
-                  stops: [0.2, 1],
-                  colors: [Color(0xFFFFFFFF), Color(0xFFEEEEEE)])
-              : const LinearGradient(
-                  begin: AlignmentDirectional.topCenter,
-                  end: AlignmentDirectional.bottomCenter,
-                  colors: [Color(0xFFFFFFFF), Color(0xFFFFC69F)]),
-          border: (isReady && !isOpenVip)
+          gradient: (index == 6)
+              ? const LinearGradient(colors: [
+                  Color(0xFFFFFFBA),
+                  Color(0xFFFFE393),
+                ])
+              : LinearGradient(
+                  colors: (isReady && !isOpenVip)
+                      ? [
+                          const Color(0xFFFFFFFF),
+                          const Color(0xFFFFFFFF),
+                        ]
+                      : [const Color(0x26FFFFFF), const Color(0x26FFFFFF)]),
+          /*color: (isSigned || !isFuture)
+              ? const Color(0xFFFFFFFF)
+              : const Color(0x26FFFFFF),*/
+          /*border: (isReady && !isOpenVip)
               ? const GradientBoxBorder(
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -134,49 +137,82 @@ class SignDayWidget extends StatelessWidget {
                       colors: [Color(0xFFFF773C), Color(0xFFFF0013)]),
                   width: 2,
                 )
-              : null,
-          borderRadius: BorderRadiusDirectional.circular(14)),
+              : null,*/
+          borderRadius: BorderRadiusDirectional.circular(6)),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           if (index == 6) const Spacer(),
-          Container(
-            margin: EdgeInsetsDirectional.only(top: index == 6 ? 0 : 2),
-            child: Image.asset(
-              data[index].showDailyIcon(),
-              width: index == 6 ? 80 : 40,
-              height: 40,
-              matchTextDirection: true,
-            ),
-          ),
-          (index == 6)
-              ? const Spacer()
-              : Expanded(
-                  child: Container(
-                  alignment: AlignmentDirectional.center,
-                  margin: const EdgeInsetsDirectional.only(
-                      start: 2, end: 2, top: 1, bottom: 2),
+          (index != 6)
+              ? Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      margin:
+                          EdgeInsetsDirectional.only(top: index == 6 ? 0 : 10),
+                      child: Image.asset(
+                        data[index].showDailyIcon(),
+                        width: index == 6 ? 44 : 22,
+                        height: index == 6 ? 44 : 22,
+                        matchTextDirection: true,
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(top: 3),
+                      child: Text(
+                        data[index].showSignName(),
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: (isReady && !isOpenVip)
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                            color: (isReady && !isOpenVip)
+                                ? const Color(0xFFFF33A7)
+                                : ((isSigned || !isFuture)
+                                    ? Colors.white
+                                    : const Color(0xFFFFF395))),
+                      ),
+                    ),
+                  ],
+                )
+              : Container(
+                  margin: const EdgeInsetsDirectional.symmetric(horizontal: 10),
                   width: double.maxFinite,
-                  // color: Colors.blue,
-                  child: AutoSizeText(
-                    data[index].showName(),
-                    maxLines: 2,
-                    maxFontSize: 10,
-                    minFontSize: 8,
-                    textAlign: TextAlign.center,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        fontSize: 10,
-                        color: isSigned
-                            ? const Color(0xFF959393)
-                            : const Color(0xFFAA4C2D)),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsetsDirectional.only(end: 10),
+                        child: Image.asset(
+                          data[index].showDailyIcon(),
+                          width: 44,
+                          height: 44,
+                          matchTextDirection: true,
+                        ),
+                      ),
+                      Expanded(
+                          child: Text(
+                        data[index].showSignName(),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFF9341FF),
+                            fontWeight: FontWeight.w500),
+                      )),
+                    ],
                   ),
-                )),
+                ),
+          const Spacer(),
           Container(
             width: double.maxFinite,
             alignment: AlignmentDirectional.center,
             decoration: BoxDecoration(
-                color: Colors.white,
-                gradient: (isSigned || !isFuture)
+                //(isReady && !isOpenVip)
+                color: (index == 6)
+                    ? const Color(0xFFFFB138)
+                    : ((isReady && !isOpenVip)
+                        ? const Color(0xFFFF33A7)
+                        : const Color(0x1AFFFFFF)),
+                /*gradient: (isSigned || !isFuture)
                     ? null
                     : LinearGradient(
                         colors: (isReady && !isOpenVip)
@@ -187,33 +223,30 @@ class SignDayWidget extends StatelessWidget {
                             : [
                                 const Color(0x80FF9444),
                                 const Color(0x80FF4166),
-                              ]),
-                borderRadius: BorderRadiusDirectional.vertical(
-                    bottom:
-                        Radius.circular((isReady && !isOpenVip) ? 12 : 14))),
+                              ]),*/
+                borderRadius: const BorderRadiusDirectional.vertical(
+                    bottom: Radius.circular(6))),
             padding: const EdgeInsetsDirectional.only(
                 top: 5, start: 2, end: 2, bottom: 5),
             child: (isSigned || !isFuture)
                 ? Image.asset(
-                    (isSigned) ? Assets.signSignV : Assets.signSignX,
-                    width: 18,
-                    height: 18,
+                    (isSigned) ? Assets.signNyakoSignV : Assets.signNyakoSignX,
+                    width: 16,
+                    height: 16,
                     matchTextDirection: true,
                   )
                 : AutoSizeText(
-                    data[index].showSignName(),
+                    arr[index],
                     maxFontSize: 12,
                     minFontSize: 5,
                     maxLines: 1,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                        color: (isReady && !isOpenVip)
-                            ? Colors.white
-                            : const Color(0xFFB34B24),
-                        fontSize: 14,
-                        fontFamily: index == 6 ? null : AppConstants.fontsBold,
-                        fontWeight: FontWeight.bold),
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontFamily: AppConstants.fontsBold,
+                        fontWeight: FontWeight.w500),
                   ),
           ),
         ],

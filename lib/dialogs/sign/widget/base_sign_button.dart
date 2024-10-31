@@ -19,9 +19,6 @@ class BaseSignButton extends StatelessWidget {
   const BaseSignButton(this.data,
       {super.key, required this.isToSign, required this.onSignBack});
 
-  final TextStyle baseTextStyle = const TextStyle(
-      color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -32,29 +29,34 @@ class BaseSignButton extends StatelessWidget {
         }
       },
       child: Container(
-        width: 217,
-        height: 80,
+        width: 265,
+        height: 60,
         alignment: Alignment.center,
         decoration: BoxDecoration(
             image: DecorationImage(
                 matchTextDirection: true,
                 image: ExactAssetImage((isToSign == true)
-                    ? Assets.signQuickSignBtn
-                    : Assets.signSignedBtn))),
+                    ? Assets.signNyakoQuickSignBtn
+                    : Assets.signNyakoSignedBtn))),
         child: Container(
           width: double.maxFinite,
           height: double.maxFinite,
           //color: Colors.white60,
           alignment: Alignment.center,
           padding: const EdgeInsetsDirectional.only(
-              top: 2, start: 2, end: 2, bottom: 25),
+              top: 4, start: 2, end: 2, bottom: 0),
           child: AutoSizeText(
             (isToSign == true) ? Tr.appSignNow.tr : Tr.app_sign_end.tr,
             maxFontSize: 16,
             minFontSize: 8,
             maxLines: 1,
             textAlign: TextAlign.center,
-            style: baseTextStyle,
+            style: TextStyle(
+                color: (isToSign == true)
+                    ? const Color(0xFF773913)
+                    : const Color(0xFF666666),
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),

@@ -8,7 +8,9 @@ import 'package:oliapro/dialogs/sign/widget/sign_switch_button.dart';
 import 'package:oliapro/dialogs/sign/widget/vip_sign_button.dart';
 import 'package:oliapro/dialogs/sign/widget/vip_sign_day_widget.dart';
 import 'package:oliapro/entities/sign_entity.dart';
+import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/services/user_info.dart';
+import 'package:widget_marquee/widget_marquee.dart';
 
 class SignContainer extends StatefulWidget {
   final SignData data;
@@ -35,90 +37,102 @@ class _SignContainerState extends State<SignContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: AlignmentDirectional.topCenter,
-                  end: AlignmentDirectional.bottomCenter,
-                  colors: [
-                    Color(0xFFFFD9A4),
-                    Color(0xFFFF643E),
-                    Color(0xFFFF0E40),
-                  ]),
-              borderRadius:
-                  BorderRadiusDirectional.vertical(top: Radius.circular(16))),
-          alignment: AlignmentDirectional.topCenter,
-          padding: const EdgeInsetsDirectional.only(top: 25),
-          constraints: const BoxConstraints(minHeight: 52),
-          width: double.maxFinite,
-          child: (!isOpenVip) ? vipTip : const SizedBox.shrink(),
-        ),
-        Expanded(
-            child: Container(
-          padding: const EdgeInsetsDirectional.only(top: 10),
-          width: double.maxFinite,
-          decoration: const BoxDecoration(
-              color: Color(0xFFFFEADF),
-              borderRadius: BorderRadiusDirectional.vertical(
-                  bottom: Radius.circular(16))),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+    return Container(
+      padding: const EdgeInsetsDirectional.only(top: 10),
+      width: double.maxFinite,
+      decoration: const BoxDecoration(
+          color: Colors.transparent,
+          borderRadius:
+              BorderRadiusDirectional.vertical(bottom: Radius.circular(16))),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            margin: const EdgeInsetsDirectional.symmetric(horizontal: 12),
+            child: commonAndVipTitle(),
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          Stack(
+            alignment: AlignmentDirectional.center,
             children: [
-              Container(
-                margin: const EdgeInsetsDirectional.symmetric(horizontal: 10),
-                child: commonAndVipTitle(),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              Stack(
-                alignment: AlignmentDirectional.center,
-                children: [
-                  showCommonSign
-                      ? SignDayWidget(
-                          data: widget.data.signInDaily ?? [],
-                          signDay: widget.data.getSignNum(isVip: isOpenVip),
-                        )
-                      : VipSignDayWidget(
-                          data: widget.data.signInDailyVip ?? [],
-                          signDay: widget.data.getSignNum(isVip: isOpenVip),
-                        ),
-                ],
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              isOpenVip
-                  ? SignSwitchButton(
-                      isShow: showCommonSign,
-                      child: BaseSignButton(
-                        widget.data.getVipSignData(isVip: isOpenVip),
-                        isToSign: widget.data.isToSign(isVip: isOpenVip),
-                        onSignBack: (data) {},
-                      ),
+              showCommonSign
+                  ? SignDayWidget(
+                      data: widget.data.signInDaily ?? [],
+                      signDay: widget.data.getSignNum(isVip: isOpenVip),
                     )
-                  : commonAndVipButton(),
-              /*Expanded(
-                  child: Container(
-                height: double.maxFinite,
-                width: double.maxFinite,
-                color: Colors.black,
-              ))*/
+                  : VipSignDayWidget(
+                      data: widget.data.signInDailyVip ?? [],
+                      signDay: widget.data.getSignNum(isVip: isOpenVip),
+                    ),
             ],
           ),
-        )),
-      ],
+          const SizedBox(
+            height: 10,
+          ),
+          // if (isOpenVip)
+          Container(
+            width: double.maxFinite,
+            padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: 12, vertical: 7),
+            decoration: const BoxDecoration(color: Color(0x1AFFFFFF)),
+            child: Row(
+              children: [
+                Container(
+                  margin: const EdgeInsetsDirectional.only(end: 3),
+                  child: Image.asset(
+                    Assets.signNyakoBroadcast,
+                    width: 20,
+                    height: 20,
+                    matchTextDirection: true,
+                  ),
+                ),
+                Expanded(
+                    child: Marquee(
+                  delay: const Duration(seconds: 1),
+                  pause: const Duration(seconds: 0),
+                  child: Container(
+                    margin: const EdgeInsetsDirectional.only(start: 3),
+                    child: Text(
+                      Tr.app_vip_sign_extra.tr,
+                      textAlign: TextAlign.start,
+                      maxLines: 1,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ),
+                ))
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          isOpenVip
+              ? SignSwitchButton(
+                  isShow: showCommonSign,
+                  child: BaseSignButton(
+                    widget.data.getVipSignData(isVip: isOpenVip),
+                    isToSign: widget.data.isToSign(isVip: isOpenVip),
+                    onSignBack: (data) {},
+                  ),
+                )
+              : commonAndVipButton(),
+        ],
+      ),
     );
   }
 
   Widget commonAndVipTitle() {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(40)),
+          color: const Color(0x33FFFFFF),
+          borderRadius: BorderRadius.circular(12)),
       width: double.maxFinite,
-      height: 40,
+      height: 44,
       padding: const EdgeInsetsDirectional.all(2),
       child: Row(
         children: [
@@ -132,27 +146,17 @@ class _SignContainerState extends State<SignContainer> {
               }
             },
             child: Container(
-              height: 36,
+              height: 44,
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 2),
               width: double.maxFinite,
               alignment: AlignmentDirectional.center,
               decoration: showCommonSign
                   ? BoxDecoration(
-                      gradient: const LinearGradient(
-                          begin: AlignmentDirectional.topCenter,
-                          end: AlignmentDirectional.bottomCenter,
-                          stops: [
-                            0.1,
-                            1
-                          ],
-                          colors: [
-                            Color(0xFFFF9848),
-                            Color(0xFFFF1818),
-                          ]),
-                      borderRadius: BorderRadiusDirectional.circular(30))
+                      color: Colors.white,
+                      borderRadius: BorderRadiusDirectional.circular(10))
                   : const BoxDecoration(),
               child: AutoSizeText(
-                Tr.appSign.tr,
+                Tr.appSignNow.tr,
                 textAlign: TextAlign.center,
                 maxFontSize: 14,
                 minFontSize: 12,
@@ -160,7 +164,7 @@ class _SignContainerState extends State<SignContainer> {
                 style: TextStyle(
                     fontSize: 14,
                     color:
-                        showCommonSign ? Colors.white : const Color(0xFFE35D5D),
+                        showCommonSign ? const Color(0xFF9341FF) : Colors.white,
                     fontWeight: FontWeight.w500),
               ),
             ),
@@ -176,25 +180,15 @@ class _SignContainerState extends State<SignContainer> {
               }
             },
             child: Container(
-              height: 36,
+              height: 44,
               width: double.maxFinite,
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 2),
               alignment: AlignmentDirectional.center,
               decoration: showCommonSign
                   ? const BoxDecoration()
                   : BoxDecoration(
-                      gradient: const LinearGradient(
-                          begin: AlignmentDirectional.topCenter,
-                          end: AlignmentDirectional.bottomCenter,
-                          stops: [
-                            0.1,
-                            1
-                          ],
-                          colors: [
-                            Color(0xFFFF9848),
-                            Color(0xFFFF1818),
-                          ]),
-                      borderRadius: BorderRadiusDirectional.circular(30)),
+                      color: Colors.white,
+                      borderRadius: BorderRadiusDirectional.circular(10)),
               child: AutoSizeText(
                 Tr.appVipSignTitle.tr,
                 maxFontSize: 14,
@@ -204,7 +198,7 @@ class _SignContainerState extends State<SignContainer> {
                 style: TextStyle(
                     fontSize: 14,
                     color:
-                        showCommonSign ? const Color(0xFFE35D5D) : Colors.white,
+                        showCommonSign ? Colors.white : const Color(0xFF9341FF),
                     fontWeight: FontWeight.w500),
               ),
             ),
@@ -255,40 +249,4 @@ class _SignContainerState extends State<SignContainer> {
               color: Colors.white, fontSize: 12, fontWeight: FontWeight.normal),
         ),
       );
-
-  /* Widget commonAndVipTitle() {
-    return showCommonSign
-        ? Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                  flex: 166,
-                  child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        showCommonSign = false;
-                      });
-                    },
-                    child: const VipSignTitle(),
-                  )),
-              Expanded(flex: 133, child: SignTitle(isVip: !showCommonSign)),
-            ],
-          )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(flex: 133, child: SignTitle(isVip: !showCommonSign)),
-              Expanded(
-                  flex: 166,
-                  child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        showCommonSign = true;
-                      });
-                    },
-                    child: const CommonSignTitle(),
-                  )),
-            ],
-          );
-  }*/
 }

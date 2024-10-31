@@ -1,9 +1,6 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/sign/widget/sign_container.dart';
 import 'package:oliapro/entities/sign_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -48,86 +45,52 @@ class _DialogSignState extends State<DialogSign> {
   Widget body() => Stack(
         alignment: AlignmentDirectional.center,
         children: [
-          PositionedDirectional(
-              start: -25,
-              end: -25,
-              top: 0,
-              bottom: 0,
-              child: Image.asset(
-                Assets.signSignBgBg,
-                //fit: BoxFit.fitWidth,
-              )),
-          Column(
+          Stack(
+            alignment: AlignmentDirectional.topCenter,
             children: [
-              const Spacer(),
-              Stack(
-                alignment: AlignmentDirectional.topCenter,
-                children: [
-                  Container(
-                    width: 328,
-                    height: 520 + 16,
-                    decoration: const BoxDecoration(color: Colors.transparent),
+              Image.asset(
+                Assets.signNyakoSignTop,
+                width: 315,
+                height: 52,
+                matchTextDirection: true,
+              ),
+              Container(
+                width: double.maxFinite,
+                height: 420,
+                decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(color: Color(0xFFF1E9EC), offset: Offset(0, 6))
+                    ],
+                    gradient: const LinearGradient(
+                        stops: [0.7, 1],
+                        begin: AlignmentDirectional.topCenter,
+                        end: AlignmentDirectional.bottomCenter,
+                        colors: [Color(0xFF4E3CFF), Color(0xFF9852FF)]),
+                    border:
+                        Border.all(width: 2, color: const Color(0xFFF1E9EC)),
+                    borderRadius: BorderRadiusDirectional.circular(20)),
+                margin: const EdgeInsetsDirectional.only(
+                    start: 30, end: 30, bottom: 0, top: 52),
+                child: SignContainer(
+                  data: widget.data,
+                ),
+              ),
+              PositionedDirectional(
+                  top: 0,
+                  end: 25,
+                  child: GestureDetector(
+                    onTap: () => Get.back(),
                     child: Container(
-                      width: double.maxFinite,
-                      height: double.maxFinite,
-                      decoration: BoxDecoration(
-                          border: const GradientBoxBorder(
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [Color(0xFFFF5979), Color(0xFFFDADC1)]),
-                            width: 4,
-                          ),
-                          borderRadius: BorderRadiusDirectional.circular(20)),
-                      margin: const EdgeInsetsDirectional.only(
-                          start: 5, end: 5, bottom: 5, top: 90),
-                      child: SignContainer(
-                        data: widget.data,
+                      margin: const EdgeInsetsDirectional.only(top: 0),
+                      child: Image.asset(
+                        Assets.iconCloseDialog,
+                        width: 42,
+                        height: 42,
                       ),
                     ),
-                  ),
-                  Container(
-                    width: 325,
-                    height: 120,
-                    padding: const EdgeInsetsDirectional.only(
-                        start: 50, end: 50, top: 44),
-                    alignment: AlignmentDirectional.center,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            matchTextDirection: true,
-                            image: ExactAssetImage(Assets.signSignTitleBg))),
-                    child: AutoSizeText(
-                      Tr.app_setting_day_sign.tr,
-                      textAlign: TextAlign.center,
-                      maxLines: 1,
-                      maxFontSize: 18,
-                      minFontSize: 12,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                          fontSize: 18,
-                          color: Color(0xFF6F3507),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  PositionedDirectional(
-                      top: 10,
-                      end: 10,
-                      child: GestureDetector(
-                        onTap: () => Get.back(),
-                        child: Container(
-                          margin: const EdgeInsetsDirectional.only(top: 20),
-                          child: Image.asset(
-                            Assets.imgCloseDialog,
-                            width: 34,
-                            height: 34,
-                          ),
-                        ),
-                      )),
-                ],
-              ),
-              const Spacer()
+                  )),
             ],
-          ),
+          )
         ],
       );
 }
