@@ -1,5 +1,6 @@
 // 泰语
 const language_th = {
+  "nyako_delicate_avatar_frame": "กรอบอวตาร",
   "nyako_match_failed_content": "คุณไม่พบสาวๆ โปรดลองอีกครั้ง",
   "nyako_OK": "ตกลง",
   'nyako_you_are_lucky': 'โชคดีนะคุณ',

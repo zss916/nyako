@@ -1,4 +1,5 @@
 const language_es = {
+  "nyako_delicate_avatar_frame": "Marco exquisito",
   "nyako_match_failed_content":
       "No encontraste a la chica, inténtalo de nuevo.",
   "nyako_OK": "OK",

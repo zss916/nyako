@@ -12,6 +12,8 @@ class Tr {
   static const appPayOrder = "${appName}_pay_order";
   static const appSign = "${appName}_sign";
   static const appCopy = "${appName}_copy";
+  static const appDelicateAvatarFrame = "${appName}_delicate_avatar_frame";
+
   static const appMatchFailedContent = "${appName}_match_failed_content";
   static const appToRecharge = "${appName}_to_recharge";
   static const appExtraSend = "${appName}_extra_send";

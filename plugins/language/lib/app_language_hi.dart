@@ -1,5 +1,6 @@
 // 印度
 const language_hi = {
+  "nyako_delicate_avatar_frame": "नाजुक अवतार फ्रेम",
   "nyako_match_failed_content":
       "माफ करें आपको लड़की नहीं मिली, कृपया पुनः प्रयास करें",
   "nyako_OK": "ठीक है",

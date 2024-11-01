@@ -473,15 +473,15 @@ class CardList extends StatelessWidget {
           slivers: [
             if (logic.signData.isNotEmpty)
               SliverPadding(
-                padding: const EdgeInsetsDirectional.symmetric(horizontal: 14),
+                padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
                 sliver: SliverGrid(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 12,
-                      mainAxisExtent: 216,
-                      childAspectRatio: 165 / 216,
+                      crossAxisSpacing: 17,
+                      mainAxisSpacing: 17,
+                      mainAxisExtent: 230,
+                      childAspectRatio: 163 / 230,
                     ),
                     delegate: SliverChildBuilderDelegate(
                         childCount: logic.signData.length,

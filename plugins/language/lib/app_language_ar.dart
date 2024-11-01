@@ -1,4 +1,5 @@
 const language_ar = {
+  "nyako_delicate_avatar_frame": "إطارة متميز",
   "nyako_match_failed_content": "لا عثور عن بنت مناسبة , يرجى اتصال لاحقا ",
   "nyako_OK": "حسناً",
   'nyako_you_are_lucky': ' إنك محظوظ ',

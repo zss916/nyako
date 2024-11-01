@@ -1,5 +1,6 @@
 // 土耳其
 const language_tr = {
+  "nyako_delicate_avatar_frame": "Zarif başlık çerçevesi",
   "nyako_match_failed_content": "Hiçbir kızla eşleşmedin, lütfen tekrar dene",
   "nyako_OK": "Tamam",
   'nyako_you_are_lucky': 'Şanslısın',

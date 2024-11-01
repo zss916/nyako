@@ -1,4 +1,5 @@
 const language_en = {
+  "nyako_delicate_avatar_frame": "delicate avatar frame",
   "nyako_match_failed_content": "You did not find the girl, please try again",
   "nyako_OK": "OK",
   'nyako_you_are_lucky': 'You\'re so lucky',

@@ -1,4 +1,5 @@
 const language_ind = {
+  "nyako_delicate_avatar_frame": "Bingkai yang indah",
   "nyako_match_failed_content":
       "Anda tidak menemukan gadis itu, silakan coba lagi",
   "nyako_OK": "OK",
