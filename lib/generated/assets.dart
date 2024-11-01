@@ -250,6 +250,7 @@ class Assets {
   static const String iconToCallIcon = 'assets/icon/to_call_icon.png';
   static const String iconToMsgIcon = 'assets/icon/to_msg_icon.png';
   static const String iconToolsChatCard = 'assets/icon/tools_chat_card.png';
+  static const String iconTransferIcon = 'assets/icon/transfer_icon.png';
   static const String iconTranslate = 'assets/icon/translate.png';
   static const String iconTranslated = 'assets/icon/translated.png';
   static const String iconTriangle = 'assets/icon/triangle.png';

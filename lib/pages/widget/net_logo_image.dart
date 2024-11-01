@@ -8,8 +8,8 @@ class NetLogoImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-        height: 64,
-        width: 64,
+        height: 90,
+        width: 90,
         fit: BoxFit.cover,
         matchTextDirection: true,
         placeholder: (
@@ -17,11 +17,11 @@ class NetLogoImage extends StatelessWidget {
           String url,
         ) =>
             Container(
-              height: 64,
-              width: 64,
+              height: 90,
+              width: 90,
               decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.circular(15),
-                color: const Color(0xFF7934F0),
+                color: const Color(0xFF9341FF),
               ),
             ),
         errorWidget: (
@@ -30,11 +30,11 @@ class NetLogoImage extends StatelessWidget {
           dynamic error,
         ) =>
             Container(
-              height: 64,
-              width: 64,
+              height: 90,
+              width: 90,
               decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.circular(15),
-                color: const Color(0xFF7934F0),
+                color: const Color(0xFF9341FF),
               ),
             ),
         imageUrl: path);
