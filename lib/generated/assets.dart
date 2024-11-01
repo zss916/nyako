@@ -479,6 +479,7 @@ class Assets {
       'assets/json/anima_home_recharge.json';
   static const String jsonAnimaHomeRechargeTop =
       'assets/json/anima_home_recharge_top.json';
+  static const String jsonAnimaLoveFail = 'assets/json/anima_love_fail.json';
   static const String jsonAnimaMsgAudio = 'assets/json/anima_msg_audio.json';
   static const String jsonAnimaMsgAudioW = 'assets/json/anima_msg_audio_w.json';
   static const String jsonAnimaNewUserBenefit =

@@ -12,7 +12,7 @@ class BuildBackgrand extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: ExactAssetImage(Assets.imgAnchorBigDefaultBg),
+          image: ExactAssetImage(Assets.iconAnchorDefault),
           fit: BoxFit.cover,
         ),
       ),
@@ -31,7 +31,7 @@ class BuildBackgrand extends StatelessWidget {
             //背景滤镜
             filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
             child: Container(
-              color: Colors.black.withOpacity(0.7),
+              color: const Color(0xD9000000),
             ),
           ),
         ),

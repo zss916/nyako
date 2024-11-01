@@ -1,4 +1,5 @@
 const language_ar = {
+  "nyako_OK": "حسناً",
   'nyako_you_are_lucky': ' إنك محظوظ ',
   'nyako_bind_google_to_get': 'رابط جوجل سيحصل على %s',
   "nyako_to_recharge": "استمر في إعادة الشحن",

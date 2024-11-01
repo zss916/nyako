@@ -1,4 +1,5 @@
 const language_es = {
+  "nyako_OK": "OK",
   'nyako_you_are_lucky': 'Eres afortunado',
   'nyako_bind_google_to_get': 'Vincula a Google para obtener %s',
   "nyako_to_recharge": "Continuar recargando",

@@ -120,6 +120,7 @@ class Tr {
   static const app_quick_recharge_tip = "${appName}_quick_recharge_tip";
   static const app_benefit = "${appName}_benefit";
   static const appCgGain = "${appName}_cg_gain";
+  static const appOK = "${appName}_OK";
   static const app_congratulations_get = "${appName}_congratulations_get";
   static const app_quick_buy = "${appName}_quick_buy";
   static const app_buy_vip = "${appName}_buy_vip";

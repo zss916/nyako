@@ -82,6 +82,7 @@ class SetLogic extends GetxController {
     // showRewardTimeDialog();
     //showTransferAppDialog();
     // ChangePasswordDialog2.show("dddd", "ddd", () {});
+    //ARoutes.toConnectFailed(anchorPortrait: "");
     showLogoutDialog();
   }
 }
