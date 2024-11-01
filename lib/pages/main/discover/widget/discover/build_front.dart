@@ -92,10 +92,63 @@ class BuildFront extends StatelessWidget {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Text(
+                      /*Text(
                         "ID:${data.getUid}",
                         style: const TextStyle(
                             color: Color(0x99FFFFFF), fontSize: 15),
+                      )*/
+                      Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsetsDirectional.only(end: 8),
+                            padding: const EdgeInsetsDirectional.symmetric(
+                                horizontal: 4, vertical: 3),
+                            decoration: BoxDecoration(
+                                color: const Color(0x1AFF3881),
+                                borderRadius:
+                                    BorderRadiusDirectional.circular(5)),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  Assets.iconSmallWoman,
+                                  width: 14,
+                                  height: 14,
+                                  matchTextDirection: true,
+                                ),
+                                Text(
+                                  data.showBirthday,
+                                  style: const TextStyle(
+                                      fontSize: 13, color: Color(0xFFFF3881)),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsetsDirectional.symmetric(
+                                horizontal: 4, vertical: 3),
+                            decoration: BoxDecoration(
+                                color: const Color(0x1A3BC2FF),
+                                borderRadius:
+                                    BorderRadiusDirectional.circular(5)),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Image.asset(
+                                  Assets.iconIdSmallIcon,
+                                  width: 14,
+                                  height: 14,
+                                  matchTextDirection: true,
+                                ),
+                                Text(
+                                  data.getUid,
+                                  style: const TextStyle(
+                                      color: Color(0xFF3BC2FF), fontSize: 13),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       )
                     ]),
                 const Spacer(),

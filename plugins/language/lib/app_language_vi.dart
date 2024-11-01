@@ -1,4 +1,5 @@
 const language_vi = {
+  "nyako_match_failed_content": "Bạn chưa tìm thấy cô gái, vui lòng thử lại",
   "nyako_OK": "Được rồi",
   'nyako_you_are_lucky': 'Bạn thật may mắn',
   'nyako_bind_google_to_get': 'Liên kết Google để nhận %s',

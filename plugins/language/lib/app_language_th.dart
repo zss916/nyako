@@ -1,5 +1,6 @@
 // 泰语
 const language_th = {
+  "nyako_match_failed_content": "คุณไม่พบสาวๆ โปรดลองอีกครั้ง",
   "nyako_OK": "ตกลง",
   'nyako_you_are_lucky': 'โชคดีนะคุณ',
   'nyako_bind_google_to_get': 'ผูก Google เพื่อรับ %s',

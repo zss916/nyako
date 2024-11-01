@@ -1,5 +1,7 @@
 // 印度
 const language_hi = {
+  "nyako_match_failed_content":
+      "माफ करें आपको लड़की नहीं मिली, कृपया पुनः प्रयास करें",
   "nyako_OK": "ठीक है",
   'nyako_you_are_lucky': 'तुम बहुत लकी हो',
   'nyako_bind_google_to_get': '%s प्राप्त करने के लिए Google को बाइंड करें',

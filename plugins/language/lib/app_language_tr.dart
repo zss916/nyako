@@ -1,5 +1,6 @@
 // 土耳其
 const language_tr = {
+  "nyako_match_failed_content": "Hiçbir kızla eşleşmedin, lütfen tekrar dene",
   "nyako_OK": "Tamam",
   'nyako_you_are_lucky': 'Şanslısın',
   'nyako_bind_google_to_get': '%s almak için Google hesabı alabilirsiniz.',

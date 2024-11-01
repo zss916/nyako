@@ -17,6 +17,8 @@ class Assets {
   static const String animaNyakoFreeDiamond =
       'assets/anima/nyako_free_diamond.webp';
   static const String animaNyakoHang = 'assets/anima/nyako_hang.webp';
+  static const String animaNyakoMatchFailTop =
+      'assets/anima/nyako_match_fail_top.webp';
   static const String animaNyakoVipAnimaBg =
       'assets/anima/nyako_vip_anima_bg.webp';
   static const String animaPickUp = 'assets/anima/pick_up.webp';
@@ -105,6 +107,8 @@ class Assets {
   static const String iconCheckIn = 'assets/icon/check_in.png';
   static const String iconChecked = 'assets/icon/checked.png';
   static const String iconCloseDialog = 'assets/icon/close_dialog.png';
+  static const String iconCloseMatchDialog =
+      'assets/icon/close_match_dialog.png';
   static const String iconClosePage = 'assets/icon/close_page.png';
   static const String iconCloseSettlement = 'assets/icon/close_settlement.png';
   static const String iconCodeCopy = 'assets/icon/code_copy.png';
@@ -167,6 +171,8 @@ class Assets {
   static const String iconMale = 'assets/icon/male.png';
   static const String iconMaleS = 'assets/icon/male_s.png';
   static const String iconMatchForeground = 'assets/icon/match_foreground.png';
+  static const String iconMatchLoveBg = 'assets/icon/match_love_bg.png';
+  static const String iconMatchReport = 'assets/icon/match_report.png';
   static const String iconMatchingBg = 'assets/icon/matching_bg.png';
   static const String iconMore = 'assets/icon/more.png';
   static const String iconMoreB = 'assets/icon/more_b.png';

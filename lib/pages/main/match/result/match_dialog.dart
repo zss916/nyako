@@ -17,6 +17,7 @@ void showMatch(HostMatchLimitEntityAnchor anchor,
               logic: logic,
             ),
       barrierDismissible: false,
-      barrierColor: const Color(0xB3000000),
+      barrierColor:
+          (anchor.userId == null) ? Colors.black38 : const Color(0xFF8E29F4),
       routeSettings: const RouteSettings(name: "match result dialog"));
 }

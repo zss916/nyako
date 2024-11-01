@@ -1,4 +1,6 @@
 const language_pt = {
+  "nyako_match_failed_content":
+      "Você não encontrou a menina, por favor tente novamente",
   "nyako_OK": "OK",
   'nyako_you_are_lucky': 'você é tão sortudo',
   'nyako_bind_google_to_get': 'Vincule o Google para obter %s',

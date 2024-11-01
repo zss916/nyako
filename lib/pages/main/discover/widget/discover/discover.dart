@@ -49,24 +49,11 @@ class _DiscoverState extends State<PageViewCtrl> {
   void initState() {
     super.initState();
     pageCtrl = PageController(initialPage: 0);
-    /* listener = () {
-      //debugPrint("page===>>> ${pageCtrl.page?.floor()},${widget.logic.dataList.length}");
-      if (widget.logic.dataList.isNotEmpty) {
-        if ((pageCtrl.page?.toInt() ?? 0) ==
-            (widget.logic.dataList.length - 1)) {
-          debugPrint(
-              "page===>>> ${pageCtrl.page?.floor()},${widget.logic.dataList.length - 1}");
-          // widget.logic.loadMoreDiscoverData();
-        }
-      }
-    };
-    pageCtrl.addListener(listener);*/
   }
 
   @override
   void dispose() {
     pageCtrl.dispose();
-    // pageCtrl.removeListener(listener);
     super.dispose();
   }
 

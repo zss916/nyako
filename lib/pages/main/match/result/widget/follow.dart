@@ -49,17 +49,33 @@ class _FollowState extends State<Follow> {
           }
         },
         child: widget.anchor.followed == 1
-            ? Image.asset(
-                Assets.imgFollowed,
-                width: 28,
-                height: 20,
-                matchTextDirection: true,
+            ? Container(
+                width: 60,
+                height: 36,
+                alignment: AlignmentDirectional.center,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.circular(13),
+                    color: const Color(0xFFF5F4F6)),
+                child: Image.asset(
+                  Assets.iconFollowed,
+                  width: 24,
+                  height: 24,
+                  matchTextDirection: true,
+                ),
               )
-            : Image.asset(
-                Assets.imgFollow,
-                width: 28,
-                height: 20,
-                matchTextDirection: true,
+            : Container(
+                width: 60,
+                height: 36,
+                alignment: AlignmentDirectional.center,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadiusDirectional.circular(13),
+                    color: const Color(0xFF9341FF)),
+                child: Image.asset(
+                  Assets.iconFollow,
+                  width: 24,
+                  height: 24,
+                  matchTextDirection: true,
+                ),
               ),
       );
     });
