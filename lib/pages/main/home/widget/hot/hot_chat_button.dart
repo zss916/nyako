@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/generated/assets.dart';
 
 class HotChatButton extends StatelessWidget {
@@ -10,12 +11,7 @@ class HotChatButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return isCall
         ? RepaintBoundary(
-            child: Image.asset(
-              Assets.iconHotCall,
-              width: 48,
-              height: 48,
-              matchTextDirection: true,
-            ),
+            child: Lottie.asset(Assets.jsonAnimaCallBtn, width: 48, height: 48),
           )
         : Image.asset(
             Assets.iconHotMsg,

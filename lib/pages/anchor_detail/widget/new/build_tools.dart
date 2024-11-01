@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -50,40 +51,51 @@ class BuildTools extends StatelessWidget {
             alignment: AlignmentDirectional.center,
             children: [
               Container(
-                height: 58,
                 margin: const EdgeInsetsDirectional.only(top: 10),
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: AlignmentDirectional.centerStart,
-                        end: AlignmentDirectional.centerEnd,
-                        colors: [
-                          Color(0xFF8A29F8),
-                          Color(0xFFFC0193),
-                        ]),
-                    borderRadius: BorderRadius.all(Radius.circular(30))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
                   children: [
-                    Image.asset(
-                      Assets.iconToCallIcon,
-                      height: 32,
-                      width: 32,
-                      matchTextDirection: true,
+                    Container(
+                      height: 58,
+                      width: double.maxFinite,
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: AlignmentDirectional.centerStart,
+                              end: AlignmentDirectional.centerEnd,
+                              colors: [
+                                Color(0xFF8A29F8),
+                                Color(0xFFFC0193),
+                              ]),
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          /*Image.asset(
+                            Assets.iconToCallIcon,
+                            height: 32,
+                            width: 32,
+                            matchTextDirection: true,
+                          ),*/
+                          Lottie.asset(Assets.jsonAnimaCall,
+                              width: 32, height: 32),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          AutoSizeText(
+                            Tr.app_grade_video_chat.tr,
+                            maxFontSize: 18,
+                            minFontSize: 16,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
                     ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    AutoSizeText(
-                      Tr.app_grade_video_chat.tr,
-                      maxFontSize: 18,
-                      minFontSize: 16,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600),
-                    ),
+                    Lottie.asset(Assets.jsonAnimaFlash),
                   ],
                 ),
               ),

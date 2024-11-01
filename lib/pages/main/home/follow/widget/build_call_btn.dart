@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/home/index.dart';
@@ -49,11 +50,10 @@ class BuildCallBtn extends StatelessWidget {
                         borderRadius: BorderRadiusDirectional.circular(20)),
                     child: Center(
                       child: RepaintBoundary(
-                        child: Image.asset(
-                          Assets.iconToCallIcon,
+                        child: Lottie.asset(
+                          Assets.jsonAnimaCall,
                           width: 24,
                           height: 24,
-                          matchTextDirection: true,
                         ),
                       ),
                     ),

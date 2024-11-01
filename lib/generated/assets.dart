@@ -89,6 +89,7 @@ class Assets {
   static const String iconBindGoogleTop = 'assets/icon/bind_google_top.png';
   static const String iconBlackIcon = 'assets/icon/black_icon.png';
   static const String iconBlacklist = 'assets/icon/blacklist.png';
+  static const String iconCallBtnBg = 'assets/icon/call_btn_bg.png';
   static const String iconCallCamera = 'assets/icon/call_camera.png';
   static const String iconCallCard = 'assets/icon/call_card.png';
   static const String iconCallClose = 'assets/icon/call_close.png';
@@ -473,8 +474,11 @@ class Assets {
   static const String jsonAnimaAvatarBg = 'assets/json/anima_avatar_bg.json';
   static const String jsonAnimaBindGoogle =
       'assets/json/anima_bind_google.json';
+  static const String jsonAnimaCall = 'assets/json/anima_call.json';
+  static const String jsonAnimaCallBtn = 'assets/json/anima_call_btn.json';
   static const String jsonAnimaConnecting = 'assets/json/anima_connecting.json';
   static const String jsonAnimaDrag = 'assets/json/anima_drag.json';
+  static const String jsonAnimaFlash = 'assets/json/anima_flash.json';
   static const String jsonAnimaGift = 'assets/json/anima_gift.json';
   static const String jsonAnimaHomeRecharge =
       'assets/json/anima_home_recharge.json';

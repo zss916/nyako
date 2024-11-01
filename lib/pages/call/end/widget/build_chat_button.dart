@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/call/end/index.dart';
@@ -51,38 +52,46 @@ class BuildChatButton extends StatelessWidget {
               ),
               Expanded(
                   child: Container(
-                height: 52,
                 margin: const EdgeInsetsDirectional.only(top: 20),
-                width: double.maxFinite,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [
-                    Color(0xFF8A29F8),
-                    Color(0xFFFC0193),
-                  ]),
-                  borderRadius: BorderRadiusDirectional.circular(45),
-                ),
-                child: Row(
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
                   children: [
-                    const Spacer(),
-                    RepaintBoundary(
-                      child: Image.asset(
-                        Assets.iconCallIc,
-                        width: 30,
-                        height: 30,
-                        matchTextDirection: true,
-                      ),
-                    ),
                     Container(
-                      margin: const EdgeInsetsDirectional.only(start: 5),
-                      child: Text(
-                        Tr.app_grade_video_chat.tr,
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                      height: 52,
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(colors: [
+                          Color(0xFF8A29F8),
+                          Color(0xFFFC0193),
+                        ]),
+                        borderRadius: BorderRadiusDirectional.circular(45),
+                      ),
+                      child: Row(
+                        children: [
+                          const Spacer(),
+                          RepaintBoundary(
+                            child: Image.asset(
+                              Assets.iconCallIc,
+                              width: 30,
+                              height: 30,
+                              matchTextDirection: true,
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsetsDirectional.only(start: 5),
+                            child: Text(
+                              Tr.app_grade_video_chat.tr,
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          const Spacer(),
+                        ],
                       ),
                     ),
-                    const Spacer(),
+                    Lottie.asset(Assets.jsonAnimaFlash),
                   ],
                 ),
               ))
