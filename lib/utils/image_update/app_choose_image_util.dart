@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/database/entity/app_msg_entity.dart';
 import 'package:oliapro/http/index.dart';
@@ -45,70 +46,84 @@ class AppChooseImageUtil {
                 const SizedBox(
                   height: 10,
                 ),
-                GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () async {
-                    Get.back();
-                    goChooseImage(true);
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    padding:
-                        const EdgeInsetsDirectional.symmetric(vertical: 10),
-                    margin: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 20, vertical: 5),
-                    child: Text(
-                      Tr.app_base_take_picture.tr,
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(10),
+                    onTap: () async {
+                      Get.back();
+                      goChooseImage(true);
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding:
+                          const EdgeInsetsDirectional.symmetric(vertical: 10),
+                      margin: const EdgeInsetsDirectional.symmetric(
+                          horizontal: 20, vertical: 5),
+                      child: Text(
+                        Tr.app_base_take_picture.tr,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontFamily: AppConstants.fontsRegular,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ),
-                GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () async {
-                    Get.back();
-                    goChooseImage(false);
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    padding:
-                        const EdgeInsetsDirectional.symmetric(vertical: 10),
-                    margin: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 20, vertical: 5),
-                    child: Text(
-                      Tr.app_details_album.tr,
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(10),
+                    onTap: () async {
+                      Get.back();
+                      goChooseImage(false);
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding:
+                          const EdgeInsetsDirectional.symmetric(vertical: 10),
+                      margin: const EdgeInsetsDirectional.symmetric(
+                          horizontal: 20, vertical: 5),
+                      child: Text(
+                        Tr.app_details_album.tr,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontFamily: AppConstants.fontsRegular,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ),
                 const Spacer(),
-                GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    padding:
-                        const EdgeInsetsDirectional.symmetric(vertical: 10),
-                    margin: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 20, vertical: 10),
-                    decoration: const BoxDecoration(
-                        color: Colors.white30,
-                        borderRadius:
-                            BorderRadiusDirectional.all(Radius.circular(20))),
-                    child: Text(
-                      Tr.app_base_cancel.tr,
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(10),
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding:
+                          const EdgeInsetsDirectional.symmetric(vertical: 10),
+                      margin: const EdgeInsetsDirectional.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: const BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius:
+                              BorderRadiusDirectional.all(Radius.circular(20))),
+                      child: Text(
+                        Tr.app_base_cancel.tr,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: AppConstants.fontsRegular,
+                            fontSize: 16),
+                      ),
                     ),
                   ),
                 ),

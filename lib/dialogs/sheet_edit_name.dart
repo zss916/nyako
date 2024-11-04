@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/pages/main/me/info/index.dart';
 import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
@@ -88,8 +89,11 @@ class _EditNickNamePageState extends State<EditNickNamePage> {
           ),
           Text(
             Tr.app_details_edit_name.tr,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 18, color: Colors.black),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: AppConstants.fontsBold,
+                fontSize: 16,
+                color: Colors.black),
           ),
           Container(
             alignment: Alignment.center,
@@ -104,9 +108,10 @@ class _EditNickNamePageState extends State<EditNickNamePage> {
                 Expanded(
                   child: TextField(
                     cursorColor: const Color(0xFFAC53FB),
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 16,
                         color: Colors.black,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                     controller: _textEditingController,
                     focusNode: _focusNode,
@@ -121,8 +126,10 @@ class _EditNickNamePageState extends State<EditNickNamePage> {
                             borderSide: BorderSide(color: Color(0xFF9341FF))),
                         enabledBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(color: Color(0xFFEEEEEE))),
-                        hintStyle:
-                            const TextStyle(fontSize: 16, color: Colors.grey)),
+                        hintStyle: TextStyle(
+                            fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
+                            color: Colors.grey)),
                   ),
                 ),
                 /* IconButton(
