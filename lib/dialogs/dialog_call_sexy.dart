@@ -84,7 +84,7 @@ class _AppCallSexyDialogState extends State<AppCallSexyDialog> {
                         padding: const EdgeInsetsDirectional.only(end: 5),
                         child: Obx(
                           () => Image.asset(
-                            noMore ? Assets.imgChecked : Assets.imgUncheck,
+                            noMore ? Assets.iconChecked : Assets.iconUncheck,
                             fit: BoxFit.fill,
                             height: 20,
                             width: 20,

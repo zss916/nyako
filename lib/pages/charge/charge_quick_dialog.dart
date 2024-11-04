@@ -358,7 +358,7 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                                               const EdgeInsetsDirectional.only(
                                                   start: 1),
                                           child: Image.asset(
-                                            Assets.imgDiamond,
+                                            Assets.iconDiamond,
                                             matchTextDirection: true,
                                             height: 14,
                                             width: 14,
@@ -501,7 +501,7 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                   showDiscount: false,
                   createPath: createPath,
                   area: area,
-                  icon: item.diamondIcon ?? Assets.imgBigDiamond)
+                  icon: item.diamondIcon ?? Assets.iconDiamond)
               .onDiamondItemLabel(index: index);
         });
   }

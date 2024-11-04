@@ -13,7 +13,7 @@ class HomePage extends GetView<HomeLogic> {
         systemOverlayStyle: darkBarStyle,
       ),
       backgroundColor: Colors.white,
-      body: HomeBody(),
+      body: const HomeBody(),
     );
   }
 }

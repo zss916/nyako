@@ -461,7 +461,7 @@ class _PayChannelState extends State<PayChannel> {
                       margin:
                           const EdgeInsetsDirectional.symmetric(horizontal: 5),
                       child: Image.asset(
-                        widget.commodite.diamondIcon ?? Assets.imgBigDiamond,
+                        widget.commodite.diamondIcon ?? Assets.iconDiamond,
                         width: 42,
                         height: 42,
                         matchTextDirection: true,

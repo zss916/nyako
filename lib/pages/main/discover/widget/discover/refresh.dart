@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/discover/index.dart';
 import 'package:oliapro/utils/app_extends.dart';
 import 'package:oliapro/widget/app_click_widget.dart';
@@ -57,7 +56,7 @@ class _FreshState extends State<Refresh> with TickerProviderStateMixin {
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
-          RotationTransition(
+          /*RotationTransition(
             turns: _manualAnimation,
             child: Image.asset(
               Assets.imgDiscoverRefresh,
@@ -65,7 +64,7 @@ class _FreshState extends State<Refresh> with TickerProviderStateMixin {
               width: 25,
               height: 25,
             ),
-          ),
+          ),*/
         ],
       ),
     );

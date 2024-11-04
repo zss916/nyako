@@ -205,7 +205,7 @@ class YuliaFollowTip extends StatelessWidget {
                 width: 36,
                 height: 36,
                 child: Image.asset(
-                  Assets.imgCloseDialog,
+                  Assets.iconCloseDialog,
                   fit: BoxFit.fill,
                 ),
               ),
@@ -295,7 +295,7 @@ class AppSendGiftTip extends StatelessWidget {
                 width: 30,
                 height: 30,
                 child: Image.asset(
-                  Assets.imgCloseDialog,
+                  Assets.iconCloseDialog,
                   fit: BoxFit.fill,
                 ),
               ),

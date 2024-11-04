@@ -32,7 +32,7 @@ class AppFreeDiamondDialog extends StatelessWidget {
           Container(
             margin: const EdgeInsetsDirectional.only(bottom: 5),
             child: Image.asset(
-              Assets.imgVipBenefitDiamond,
+              Assets.iconDiamond,
               matchTextDirection: true,
               height: 160,
               width: 160,
@@ -51,7 +51,7 @@ class AppFreeDiamondDialog extends StatelessWidget {
               Container(
                 margin: const EdgeInsetsDirectional.only(start: 5),
                 child: Image.asset(
-                  Assets.imgDiamond,
+                  Assets.iconDiamond,
                   width: 23,
                   height: 23,
                   matchTextDirection: true,

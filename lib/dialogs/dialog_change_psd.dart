@@ -135,7 +135,7 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
                       image: DecorationImage(
                           fit: BoxFit.fill,
                           matchTextDirection: true,
-                          image: ExactAssetImage(Assets.imgAppLogo))),
+                          image: ExactAssetImage(Assets.iconSmallLogo))),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     mainAxisSize: MainAxisSize.min,
@@ -272,7 +272,7 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog> {
                         widget.back?.call();
                       },
                       child: Image.asset(
-                        Assets.imgCloseDialog,
+                        Assets.iconCloseDialog,
                         height: 30,
                         width: 30,
                       ),

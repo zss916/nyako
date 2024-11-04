@@ -35,7 +35,7 @@ class PriceUnit extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsetsDirectional.only(bottom: 0),
                 child: Image.asset(
-                  Assets.imgDiamond,
+                  Assets.iconDiamond,
                   matchTextDirection: true,
                   width: 14,
                   height: 14,

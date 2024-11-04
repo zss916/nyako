@@ -19,6 +19,9 @@ class LineState extends StatelessWidget {
               width: r ?? 12,
               height: r ?? 12,
               decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(color: Color(0xFF4CE263), blurRadius: 6)
+                  ],
                   color: const Color(0xFF4CE263),
                   borderRadius: BorderRadiusDirectional.circular(20),
                   border: Border.all(color: Colors.white, width: 1)),
@@ -29,6 +32,9 @@ class LineState extends StatelessWidget {
             width: r ?? 12,
             height: r ?? 12,
             decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(color: Color(0xFFFF3CF0), blurRadius: 6)
+                ],
                 color: const Color(0xFFFF3CF0),
                 borderRadius: BorderRadiusDirectional.circular(20),
                 border: Border.all(color: Colors.white, width: 1)),
@@ -38,6 +44,9 @@ class LineState extends StatelessWidget {
             width: r ?? 12,
             height: r ?? 12,
             decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(color: Color(0xFFD5D6D7), blurRadius: 6)
+                ],
                 color: const Color(0xFFD5D6D7),
                 borderRadius: BorderRadiusDirectional.circular(20),
                 border: Border.all(color: Colors.white, width: 1)),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/pages/anchor_detail/contribute_list/index.dart';
 import 'package:oliapro/pages/anchor_detail/index.dart';
-import 'package:oliapro/pages/anchor_detail/moment_detail/index.dart';
-import 'package:oliapro/pages/anchor_detail/more_moment_list/index.dart';
 import 'package:oliapro/pages/anchor_detail/widget/media/index.dart';
 import 'package:oliapro/pages/call/aiv/index.dart';
 import 'package:oliapro/pages/call/call/index.dart';
@@ -28,7 +26,6 @@ import 'package:oliapro/pages/main/me/delete_account/index.dart';
 import 'package:oliapro/pages/main/me/info/index.dart';
 import 'package:oliapro/pages/main/me/invite_code/index.dart';
 import 'package:oliapro/pages/main/me/lottery/index.dart';
-import 'package:oliapro/pages/main/me/moment_list/index.dart';
 import 'package:oliapro/pages/main/me/orderlist/order_detail/binding.dart';
 import 'package:oliapro/pages/main/me/orderlist/order_detail/view.dart';
 import 'package:oliapro/pages/main/me/orderlist/tab/order_tab.dart';
@@ -37,7 +34,6 @@ import 'package:oliapro/pages/main/me/recharge/index.dart';
 import 'package:oliapro/pages/main/me/reward_details/index.dart';
 import 'package:oliapro/pages/main/me/share/index.dart';
 import 'package:oliapro/pages/main/me/to_vip/index.dart';
-import 'package:oliapro/pages/main/public/index.dart';
 import 'package:oliapro/pages/report/index.dart';
 import 'package:oliapro/pages/some/web_page.dart';
 import 'package:oliapro/services/user_info.dart';
@@ -130,17 +126,17 @@ class AppPages {
       binding: MediasBinding(),
     ),
 
-    GetPage(
+    /*GetPage(
       name: momentDetail,
       page: () => const MomentDetailPage(),
       binding: MomentDetailBinding(),
-    ),
+    ),*/
 
-    GetPage(
+    /*GetPage(
       name: moreMoment,
       page: () => const MoreDynamicPage(),
       binding: MoreDynamicBinding(),
-    ),
+    ),*/
 
     GetPage(
       name: follow,
@@ -219,11 +215,11 @@ class AppPages {
       binding: PropBinding(),
     ),
 
-    GetPage(
+    /*GetPage(
       name: myMoment,
       page: () => const DynamicPage(),
       binding: DynamicBinding(),
-    ),
+    ),*/
 
     GetPage(
       name: callList,
@@ -243,11 +239,11 @@ class AppPages {
       binding: InviteCodeBinding(),
     ),
 
-    GetPage(
+    /*GetPage(
       name: public,
       page: () => const PublicPage(),
       binding: PublicBinding(),
-    ),
+    ),*/
 
     GetPage(
       name: anchorDetails,

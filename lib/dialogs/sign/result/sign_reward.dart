@@ -185,7 +185,7 @@ class SignReward extends StatelessWidget {
                       fontWeight: FontWeight.w500),
                 ),
                 Image.asset(
-                  Assets.imgDiamond,
+                  Assets.iconDiamond,
                   width: 17,
                   height: 17,
                   matchTextDirection: true,

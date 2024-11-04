@@ -23,7 +23,7 @@ class AgeAndSex extends StatelessWidget {
             //color: Colors.blue,
             margin: const EdgeInsetsDirectional.only(end: 2, top: 1),
             child: Image.asset(
-              Assets.imgSmallWoman,
+              Assets.iconSmallWoman,
               matchTextDirection: true,
               width: 11,
               height: 15,

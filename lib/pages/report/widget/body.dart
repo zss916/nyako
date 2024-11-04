@@ -242,13 +242,13 @@ class _ReportBodyState extends State<ReportBody> with RouteAware {
   Image buildSelect(int index) {
     return index == widget.logic.selectIndex.value
         ? Image.asset(
-            Assets.imgChecked,
+            Assets.iconChecked,
             width: 16,
             height: 16,
             matchTextDirection: true,
           )
         : Image.asset(
-            Assets.imgUncheck,
+            Assets.iconUncheck,
             width: 16,
             height: 16,
             color: const Color(0xFFBAAEB7),

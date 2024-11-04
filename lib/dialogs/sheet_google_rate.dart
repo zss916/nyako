@@ -103,7 +103,7 @@ class _AppGoogleRateState extends State<AppGoogleRate> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset(
-                                Assets.imgAppLogo,
+                                Assets.iconSmallLogo,
                                 matchTextDirection: true,
                                 width: 60,
                                 height: 60,
@@ -171,7 +171,7 @@ class _AppGoogleRateState extends State<AppGoogleRate> {
                         Row(
                           children: [
                             Image.asset(
-                              Assets.imgAppLogo,
+                              Assets.iconSmallLogo,
                               matchTextDirection: true,
                               width: 60,
                               height: 60,

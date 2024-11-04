@@ -41,7 +41,7 @@ class Info extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Image.asset(
-                          Assets.imgSmallWoman,
+                          Assets.iconSmallWoman,
                           width: 10,
                           height: 10,
                         ),

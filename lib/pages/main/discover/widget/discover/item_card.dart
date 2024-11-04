@@ -23,7 +23,7 @@ class ItemCard extends StatelessWidget {
         image: const DecorationImage(
             fit: BoxFit.cover,
             matchTextDirection: true,
-            image: ExactAssetImage(Assets.imgAnchorBigDefaultBg)),
+            image: ExactAssetImage(Assets.iconAnchorDefault)),
         borderRadius: BorderRadius.circular(20),
         boxShadow: const [
           /*BoxShadow(

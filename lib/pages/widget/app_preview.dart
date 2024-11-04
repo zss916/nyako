@@ -106,7 +106,7 @@ class _DisplayGestureState extends State<DisplayGesture> {
           onTap: () => Get.back(),
           child: UnconstrainedBox(
             child: Image.asset(
-              Assets.imgBaseBack,
+              Assets.iconBack,
               width: 30,
               height: 30,
               matchTextDirection: true,
@@ -179,7 +179,7 @@ class _DisplayGestureState extends State<DisplayGesture> {
       child: Container(
         margin: const EdgeInsets.only(right: 10),
         child: Image.asset(
-          Assets.imgReportIcon,
+          Assets.iconReportIcon,
           matchTextDirection: true,
           //color: Colors.white,
           width: 30,

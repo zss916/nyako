@@ -139,7 +139,7 @@ class LotteryLogic extends GetxController {
       ui.FrameInfo fi = await codec.getNextFrame();
       return fi.image;
     } catch (e) {
-      return getAssetImage(Assets.imgAppLogo, width: 30, height: 30);
+      return getAssetImage(Assets.iconSmallLogo, width: 30, height: 30);
     }
   }
 }

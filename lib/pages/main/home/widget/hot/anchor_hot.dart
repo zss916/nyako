@@ -128,7 +128,7 @@ class AnchorHot extends StatelessWidget {
                       children: [
                         LineState(
                           item.lineState(),
-                          r: 10,
+                          r: 11,
                         ),
                         Expanded(
                             child: Container(

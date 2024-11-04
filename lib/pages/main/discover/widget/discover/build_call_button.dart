@@ -54,7 +54,7 @@ class BuildCallButton extends StatelessWidget {
               ARoutes.toChatPage(anchor.getUid);
             },
             child: Image.asset(
-              Assets.imgMsgIcon,
+              Assets.iconToMsgIcon,
               matchTextDirection: true,
               width: 54,
               height: 54,

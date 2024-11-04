@@ -23,7 +23,7 @@ class MediasPage extends GetView<MediasLogic> {
           alignment: AlignmentDirectional.center,
           children: [
             Image.asset(
-              Assets.imgCloseDialog,
+              Assets.iconCloseDialog,
               width: 34,
               height: 34,
             )
@@ -37,7 +37,7 @@ class MediasPage extends GetView<MediasLogic> {
         child: Container(
           margin: const EdgeInsetsDirectional.only(end: 10),
           child: Image.asset(
-            Assets.imgReportIcon,
+            Assets.iconReportIcon,
             matchTextDirection: true,
             width: 34,
             height: 34,

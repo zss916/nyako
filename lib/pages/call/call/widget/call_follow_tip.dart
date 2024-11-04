@@ -1,15 +1,12 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/call/call/index.dart';
 import 'package:oliapro/pages/call/call/widget/page/build_call_tip.dart';
-import 'package:oliapro/utils/app_extends.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../../../common/language_key.dart';
 import '../../../../entities/app_gift_entity.dart';
-import '../../../../services/user_info.dart';
 
 enum CallDialogToolType {
   none,
@@ -44,9 +41,9 @@ class CallFollowTip extends StatelessWidget {
 
     return buildContent(type.index);
 
-    return type == CallDialogToolType.none
+    /*return type == CallDialogToolType.none
         ? const SizedBox.shrink()
-        : commonTip(type == CallDialogToolType.countDown);
+        : commonTip(type == CallDialogToolType.countDown);*/
   }
 
   Widget buildContent(int state) {
@@ -60,7 +57,7 @@ class CallFollowTip extends StatelessWidget {
     };
   }
 
-  Widget _buildLeftItem() {
+  /* Widget _buildLeftItem() {
     return type == CallDialogToolType.countDown
         ? indicator((count2MinLeft ?? 0) / 20)
         : type == CallDialogToolType.gift
@@ -258,7 +255,7 @@ class CallFollowTip extends StatelessWidget {
         ],
       ),
     );
-  }
+  }*/
 
   Widget indicator(double percent) {
     return Container(

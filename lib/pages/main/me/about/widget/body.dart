@@ -25,7 +25,7 @@ class AboutBody extends StatelessWidget {
               borderRadius:
                   const BorderRadiusDirectional.all(Radius.circular(0)),
               child: Image.asset(
-                Assets.imgAppLogo,
+                Assets.iconSmallLogo,
                 width: 105,
                 height: 105,
                 matchTextDirection: true,

@@ -37,11 +37,11 @@ class ChatPage extends GetView<ChatLogic> {
                                   width: double.maxFinite,
                                   height: 12,
                                 ),
-                                if (!UserInfo.to.isUserVip &&
+                                /* if (!UserInfo.to.isUserVip &&
                                     UserInfo.to.isUseMsgCard)
-                                  const ChatMsgCard(),
-                                if (logic.isShowRechargeTip)
-                                  BuildRechargeTip(logic),
+                                  const ChatMsgCard(),*/
+                                /*if (logic.isShowRechargeTip)
+                                  BuildRechargeTip(logic),*/
                                 Expanded(
                                   child: buildContent(logic),
                                 ),

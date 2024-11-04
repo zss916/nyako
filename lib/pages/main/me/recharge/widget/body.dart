@@ -97,7 +97,7 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
     );
   }
 
-  Widget buildAddCardTip() {
+  /* Widget buildAddCardTip() {
     return GetBuilder<RechargeLogic>(
         id: "addRechargeCard",
         init: RechargeLogic(),
@@ -146,7 +146,7 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                   ),
                 );
         });
-  }
+  }*/
 
   Widget buildContent() {
     return GetBuilder<RechargeLogic>(

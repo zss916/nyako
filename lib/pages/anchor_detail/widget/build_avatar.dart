@@ -14,7 +14,7 @@ class BuildAvatar extends StatelessWidget {
           borderRadius: BorderRadiusDirectional.circular(30),
           image: const DecorationImage(
               fit: BoxFit.cover,
-              image: ExactAssetImage(Assets.imgAnchorDefaultAvatar)),
+              image: ExactAssetImage(Assets.iconAnchorDefault)),
           border: Border.all(width: 0, color: Colors.transparent)),
       margin: const EdgeInsetsDirectional.only(start: 37),
       child: ClipRRect(

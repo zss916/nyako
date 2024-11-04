@@ -150,7 +150,7 @@ class _WebPageState extends State<WebPage> {
                 child: Container(
                   margin: const EdgeInsetsDirectional.only(end: 15),
                   child: Image.asset(
-                    Assets.imgCallClose,
+                    Assets.iconCallClose,
                     width: 34,
                     height: 34,
                   ),

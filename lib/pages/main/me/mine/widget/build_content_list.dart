@@ -14,14 +14,14 @@ class BuildContentList extends StatelessWidget {
   BuildContentList(this.logic, {super.key});
 
   final listData = [
-    {'title': Tr.app_prop_package.tr, 'image': Assets.imgAppLogo},
-    {'title': Tr.app_my_moments.tr, 'image': Assets.imgAppLogo},
-    {'title': Tr.app_my_call_list.tr, 'image': Assets.imgAppLogo},
+    {'title': Tr.app_prop_package.tr, 'image': Assets.iconSmallLogo},
+    {'title': Tr.app_my_moments.tr, 'image': Assets.iconSmallLogo},
+    {'title': Tr.app_my_call_list.tr, 'image': Assets.iconSmallLogo},
     {'title': Tr.app_mine_customer_service.tr, 'image': Assets.iconService},
     {'title': Tr.app_my_binding_code.tr, 'image': Assets.iconInvite},
     {'title': Tr.app_receive_gift.tr, 'image': Assets.iconDiamondF},
     {'title': Tr.app_mine_setting.tr, 'image': Assets.iconSetting},
-    {'title': Tr.app_bind_google.tr, 'image': Assets.imgAppLogo},
+    {'title': Tr.app_bind_google.tr, 'image': Assets.iconSmallLogo},
     {'title': Tr.app_setting_search.tr, 'image': Assets.iconSearch},
     {'title': Tr.app_setting_day_sign.tr, 'image': Assets.iconCheckIn}
   ];

@@ -17,7 +17,7 @@ extension CostomString on String {
 extension StringConvert on String? {
   String get convertName => (this != null) ? convertNickName(this) : "--";
 
-  String get placeHolder => (this != null) ? "$this" : Assets.imgAppLogo;
+  String get placeHolder => (this != null) ? "$this" : Assets.iconSmallLogo;
 }
 
 String convertNickName(String? nickName) {

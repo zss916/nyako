@@ -9,7 +9,7 @@ class Black extends StatelessWidget {
     return Container(
       margin: const EdgeInsetsDirectional.only(start: 5, end: 5),
       child: Image.asset(
-        Assets.imgCloseDialog,
+        Assets.iconCloseDialog,
         matchTextDirection: true,
         width: 36,
         height: 36,

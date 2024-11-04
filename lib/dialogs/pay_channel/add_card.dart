@@ -153,7 +153,7 @@ class BuildAddCard extends StatelessWidget {
   }
 }
 
-Widget addCard(DiamondCardBean? diamondCard) {
+/*Widget addCard(DiamondCardBean? diamondCard) {
   return Container(
     width: double.maxFinite,
     height: 64,
@@ -277,4 +277,4 @@ Widget addCard(DiamondCardBean? diamondCard) {
       ],
     ),
   );
-}
+}*/

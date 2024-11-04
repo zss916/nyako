@@ -157,7 +157,7 @@ class DrawData {
                 path ?? Assets.lotteryLotteryCallCard, path != null)
             .then((value) => image = value);
       default:
-        return await loadImage(img ?? Assets.imgAppLogo, img != null)
+        return await loadImage(img ?? Assets.iconSmallLogo, img != null)
             .then((value) => image = value);
     }
   }

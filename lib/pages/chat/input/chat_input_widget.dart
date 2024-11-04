@@ -13,7 +13,6 @@ import 'package:oliapro/utils/app_voice_player.dart';
 import 'package:oliapro/utils/image_update/app_choose_image_util.dart';
 import 'package:oliapro/widget/app_click_widget.dart';
 import 'package:oliapro/widget/app_keybord_logic.dart';
-import 'package:oliapro/widget/app_voice_bottom_widget_record.dart';
 import 'package:oliapro/widget/app_voice_record.dart';
 import 'package:oliapro/widget/gift/app_gift_list_view.dart';
 
@@ -493,7 +492,7 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
   }
 
   ///显示voice
-  Widget showAudio() {
+  /* Widget showAudio() {
     return AppVoiceBottomWidgetRecord(
       uploadCallBack: _controller.voiceRecord,
       onClose: () {
@@ -501,7 +500,7 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
       },
     );
   }
-
+*/
   ///按下说话
   Widget pressToSpeak() {
     return AppVoiceRecord(

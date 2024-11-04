@@ -41,7 +41,7 @@ class RenewVipDialog extends StatelessWidget {
                   matchTextDirection: true,
                   fit: BoxFit.fill,
                   image: ExactAssetImage(
-                    Assets.imgAppLogo,
+                    Assets.iconSmallLogo,
                   ))),
           child: Stack(
             alignment: AlignmentDirectional.topCenter,
@@ -56,7 +56,7 @@ class RenewVipDialog extends StatelessWidget {
                         image: DecorationImage(
                             fit: BoxFit.fill,
                             matchTextDirection: true,
-                            image: ExactAssetImage(Assets.imgAppLogo))),
+                            image: ExactAssetImage(Assets.iconSmallLogo))),
                     child: Column(
                       children: [
                         AutoSizeText(
@@ -88,7 +88,7 @@ class RenewVipDialog extends StatelessWidget {
                                   margin: const EdgeInsetsDirectional.only(
                                       start: 3),
                                   child: Image.asset(
-                                    Assets.imgDiamond,
+                                    Assets.iconDiamond,
                                     width: 14,
                                     height: 14,
                                     matchTextDirection: true,
@@ -174,7 +174,7 @@ class RenewVipDialog extends StatelessWidget {
                   child: InkWell(
                     onTap: () => Get.back(),
                     child: Image.asset(
-                      Assets.imgCloseDialog,
+                      Assets.iconCloseDialog,
                       width: 25,
                       height: 25,
                     ),
@@ -193,7 +193,7 @@ class RenewVipDialog extends StatelessWidget {
                           image: DecorationImage(
                               fit: BoxFit.fill,
                               matchTextDirection: true,
-                              image: ExactAssetImage(Assets.imgAppLogo))),
+                              image: ExactAssetImage(Assets.iconSmallLogo))),
                       child: AutoSizeText(
                         Get.locale?.languageCode == "tr"
                             ? "%${data.showDiscount}\nİndirim"

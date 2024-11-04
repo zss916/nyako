@@ -316,7 +316,7 @@ class AppPermissionHandler {
                 child: GestureDetector(
                   onTap: () => Get.back(),
                   child: Image.asset(
-                    Assets.imgCloseDialog,
+                    Assets.iconCloseDialog,
                     height: 30,
                     width: 30,
                   ),

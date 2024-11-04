@@ -25,7 +25,7 @@ class BuildNextPayActivity extends StatelessWidget {
             Container(
               margin: const EdgeInsetsDirectional.only(end: 10, start: 5),
               child: Image.asset(
-                Assets.imgDiamond8,
+                Assets.iconDiamond,
                 width: 85,
                 height: 85,
                 matchTextDirection: true,

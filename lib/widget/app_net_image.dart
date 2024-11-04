@@ -60,7 +60,7 @@ class AppNetImage extends CachedNetworkImage {
                             (placeholderAsset != null &&
                                     placeholderAsset.isNotEmpty)
                                 ? placeholderAsset
-                                : Assets.imgAppLogo,
+                                : Assets.iconSmallLogo,
                             fit: BoxFit.fill,
                           ),
                         )
@@ -73,7 +73,7 @@ class AppNetImage extends CachedNetworkImage {
                             (placeholderAsset != null &&
                                     placeholderAsset.isNotEmpty)
                                 ? placeholderAsset
-                                : Assets.imgAppLogo,
+                                : Assets.iconSmallLogo,
                             fit: BoxFit.fill,
                           ),
                         );
@@ -88,7 +88,7 @@ class AppNetImage extends CachedNetworkImage {
                     child: Image.asset(
                       (placeholderAsset != null && placeholderAsset.isNotEmpty)
                           ? placeholderAsset
-                          : Assets.imgAppLogo,
+                          : Assets.iconSmallLogo,
                       fit: BoxFit.fill,
                     ),
                   );

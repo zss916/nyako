@@ -146,8 +146,7 @@ class _AppMediaViewState extends State<AppMediaViewPage>
                                 AppNetImage(
                                   widget.bean.cover ?? '',
                                   fit: BoxFit.cover,
-                                  placeholderAsset:
-                                      Assets.imgAnchorBigDefaultBg,
+                                  placeholderAsset: Assets.iconAnchorDefault,
                                 ),
                               if (pause)
                                 Center(
@@ -179,8 +178,7 @@ class _AppMediaViewState extends State<AppMediaViewPage>
                               ? AppNetImage(
                                   widget.bean.path,
                                   fit: BoxFit.cover,
-                                  placeholderAsset:
-                                      Assets.imgAnchorBigDefaultBg,
+                                  placeholderAsset: Assets.iconAnchorDefault,
                                 )
                               : GestureDetector(
                                   onTap: playIt,
@@ -196,7 +194,7 @@ class _AppMediaViewState extends State<AppMediaViewPage>
                                           widget.bean.cover ?? '',
                                           fit: BoxFit.cover,
                                           placeholderAsset:
-                                              Assets.imgAnchorBigDefaultBg,
+                                              Assets.iconAnchorDefault,
                                         ),
                                       ),
                                       Image.asset(

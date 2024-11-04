@@ -149,8 +149,8 @@ class Backgarnd extends StatelessWidget {
                             color: Colors.white12,
                             image: const DecorationImage(
                                 fit: BoxFit.cover,
-                                image: ExactAssetImage(
-                                    Assets.imgAnchorDefaultAvatar))),
+                                image:
+                                    ExactAssetImage(Assets.iconAnchorDefault))),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(50),
                           child: cachedImage(data.showPortrait),
