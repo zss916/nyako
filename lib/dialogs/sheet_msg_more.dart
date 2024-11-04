@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
 import 'package:oliapro/routes/app_pages.dart';
@@ -35,8 +36,9 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                         const EdgeInsetsDirectional.only(top: 15, bottom: 15),
                     child: Text(
                       Tr.app_dialog_clear_message_unread.tr,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.black,
+                          fontFamily: AppConstants.fontsRegular,
                           fontSize: 16,
                           fontWeight: FontWeight.w500),
                     ),
@@ -57,9 +59,10 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                         const EdgeInsetsDirectional.only(top: 15, bottom: 15),
                     child: Text(
                       Tr.app_dialog_clear_message_all_session.tr,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                   ),
@@ -83,9 +86,10 @@ void showMsgMoreSheet(Function allRead, Function allClear) {
                         const EdgeInsetsDirectional.only(top: 15, bottom: 15),
                     child: Text(
                       Tr.app_base_cancel.tr,
-                      style: const TextStyle(
-                          color: Color(0xFF9B989D),
+                      style: TextStyle(
+                          color: const Color(0xFF9B989D),
                           fontSize: 16,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                   ),
