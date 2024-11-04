@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/mine/index.dart';
@@ -30,9 +31,10 @@ class BuildOpenVip extends StatelessWidget {
           children: [
             Text(
               appVip,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
+                  fontFamily: AppConstants.fontsBold,
                   fontSize: 18),
             ),
             Container(
@@ -43,9 +45,10 @@ class BuildOpenVip extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50)),
               child: Text(
                 openVip,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               ),
             )

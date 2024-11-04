@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/mine/index.dart';
@@ -32,9 +33,10 @@ class BuildTrouble extends StatelessWidget {
               ),
               Text(
                 Tr.app_setting_trouble.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: AppConstants.fontsRegular,
+                    fontWeight: FontWeight.w500,
                     fontSize: 14),
               ),
               const Spacer(),
@@ -57,7 +59,10 @@ class BuildTrouble extends StatelessWidget {
                 borderRadius: BorderRadiusDirectional.circular(12)),
             child: Text(
               Tr.appDisturbTip.tr,
-              style: const TextStyle(fontSize: 13, color: Color(0xFF9B989D)),
+              style: TextStyle(
+                  fontSize: 13,
+                  fontFamily: AppConstants.fontsRegular,
+                  color: const Color(0xFF9B989D)),
             ),
           )
         ],

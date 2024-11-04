@@ -38,7 +38,7 @@ class BuildContentList extends StatelessWidget {
               start: 20, end: 20, bottom: 10, top: 5),
           child: contentList(),
         ),
-        if (AppConstants.isFakeMode == false) BuildTrouble()
+        if (AppConstants.isFakeMode == false) const BuildTrouble()
       ],
     );
   }
@@ -132,9 +132,10 @@ class BuildContentList extends StatelessWidget {
                           maxFontSize: 15,
                           maxLines: 1,
                           softWrap: true,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 15,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         ),
                       )
@@ -148,9 +149,10 @@ class BuildContentList extends StatelessWidget {
                           minFontSize: index == 4 ? 7 : 15,
                           maxFontSize: 15,
                           maxLines: 1,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 15,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         ),
                       ),
@@ -170,8 +172,10 @@ class BuildContentList extends StatelessWidget {
                         margin: const EdgeInsetsDirectional.only(end: 4),
                         child: Text(
                           "x${logic.state.propCount}",
-                          style: const TextStyle(
-                              color: Color(0xFFFF4864), fontSize: 12),
+                          style: TextStyle(
+                              color: const Color(0xFFFF4864),
+                              fontFamily: AppConstants.fontsRegular,
+                              fontSize: 12),
                         ),
                       )
                     : const SizedBox.shrink(),
@@ -198,6 +202,7 @@ class BuildContentList extends StatelessWidget {
         minFontSize: 6,
         maxLines: 1,
         style: TextStyle(
+            fontFamily: AppConstants.fontsRegular,
             color: inviterCode == null
                 ? const Color(0xFFFF4864)
                 : const Color(0xFFBAAEB7),

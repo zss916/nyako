@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
@@ -76,9 +77,10 @@ class GameBody extends StatelessWidget {
                                     : Text(
                                         Tr.appTimesLeft
                                             .trArgs(["${(10 - logic.count)}"]),
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 18,
+                                            fontFamily: AppConstants.fontsBold,
                                             fontWeight: FontWeight.bold),
                                       );
                               }),
@@ -89,7 +91,9 @@ class GameBody extends StatelessWidget {
                                 "获取更多次数",
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                    color: Color(0xFFDCC2FF), fontSize: 13),
+                                    fontFamily: AppConstants.fontsRegular,
+                                    color: const Color(0xFFDCC2FF),
+                                    fontSize: 13),
                               )),
                               Container(
                                 margin:
@@ -113,9 +117,10 @@ class GameBody extends StatelessWidget {
                     child: Obx(() => Text(
                           Tr.appPeopleOnline
                               .trArgs(["${logic.currentOnline.value}"]),
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
                               fontSize: 24,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         )),
                   ),
@@ -138,9 +143,10 @@ class GameBody extends StatelessWidget {
                             borderRadius: BorderRadiusDirectional.circular(50)),
                         child: Text(
                           Tr.app_match_start.tr,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         ),
                       ),

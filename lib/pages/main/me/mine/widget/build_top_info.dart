@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/mine/index.dart';
@@ -72,18 +74,21 @@ class BuildTopInfo extends StatelessWidget {
                                         logic.state.followedNum,
                                         maxLines: 1,
                                         textAlign: TextAlign.center,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             fontSize: 18,
-                                            color: Color(0xFF642A4B),
+                                            fontFamily: AppConstants.fontsBold,
+                                            color: const Color(0xFF642A4B),
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         Tr.app_details_following.tr,
                                         maxLines: 1,
                                         textAlign: TextAlign.center,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             fontSize: 13,
-                                            color: Color(0xFF9B989D),
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
+                                            color: const Color(0xFF9B989D),
                                             fontWeight: FontWeight.w400),
                                       )
                                     ],
@@ -115,18 +120,21 @@ class BuildTopInfo extends StatelessWidget {
                                         "${logic.state.totalPropCount}",
                                         maxLines: 1,
                                         textAlign: TextAlign.center,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             fontSize: 18,
-                                            color: Color(0xFF642A4B),
+                                            fontFamily: AppConstants.fontsBold,
+                                            color: const Color(0xFF642A4B),
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         Tr.app_prop_package.tr,
                                         maxLines: 1,
                                         textAlign: TextAlign.center,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             fontSize: 13,
-                                            color: Color(0xFF9B989D),
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
+                                            color: const Color(0xFF9B989D),
                                             fontWeight: FontWeight.w400),
                                       ),
                                     ],
@@ -158,18 +166,21 @@ class BuildTopInfo extends StatelessWidget {
                                         "${logic.state.propCount}",
                                         maxLines: 1,
                                         textAlign: TextAlign.center,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             fontSize: 18,
-                                            color: Color(0xFF642A4B),
+                                            fontFamily: AppConstants.fontsBold,
+                                            color: const Color(0xFF642A4B),
                                             fontWeight: FontWeight.bold),
                                       ),
                                       Text(
                                         Tr.app_lottery.tr,
                                         maxLines: 1,
                                         textAlign: TextAlign.center,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             fontSize: 13,
-                                            color: Color(0xFF9B989D),
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
+                                            color: const Color(0xFF9B989D),
                                             fontWeight: FontWeight.w400),
                                       ),
                                     ],
@@ -203,8 +214,10 @@ class BuildTopInfo extends StatelessWidget {
                                     const EdgeInsetsDirectional.only(end: 10),
                                 child: Text(
                                   diamondShop,
-                                  style: const TextStyle(
-                                      fontSize: 14, color: Colors.white),
+                                  style: TextStyle(
+                                      fontFamily: AppConstants.fontsRegular,
+                                      fontSize: 14,
+                                      color: Colors.white),
                                 ),
                               ),
                               Expanded(
@@ -221,9 +234,10 @@ class BuildTopInfo extends StatelessWidget {
                                         maxLines: 1,
                                         maxFontSize: 18,
                                         minFontSize: 12,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18,
+                                            fontFamily: AppConstants.fontsBold,
                                             color: Colors.white),
                                       ),
                                     ),
@@ -276,6 +290,25 @@ class BuildTopInfo extends StatelessWidget {
                     width: 24,
                     height: 24,
                     matchTextDirection: true,
+                  ),
+                ),
+              ),
+            )),
+        PositionedDirectional(
+            top: 35,
+            start: 5,
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                // highlightColor: Colors.black38,
+                borderRadius: BorderRadius.circular(50),
+                onTap: () => logic.toBindGoogle(),
+                child: Container(
+                  padding: const EdgeInsetsDirectional.all(10),
+                  child: Lottie.asset(
+                    Assets.jsonAnimaBindGoogle,
+                    width: 32,
+                    height: 32,
                   ),
                 ),
               ),

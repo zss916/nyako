@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/generated/assets.dart';
 
 class BaseAppBar extends AppBar {
@@ -25,11 +26,12 @@ class BaseAppBar extends AppBar {
               AutoSizeText(
                 title ?? '',
                 maxLines: 1,
-                maxFontSize: 20,
+                maxFontSize: 21,
                 minFontSize: 14,
                 style: TextStyle(
                     color: isDark ? Colors.black : Colors.white,
-                    fontSize: 20,
+                    fontSize: 21,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold),
               ),
           leading: leading ??
