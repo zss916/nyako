@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_draw_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -77,8 +78,8 @@ class _LotteryBodyState extends State<LotteryBody>
                 alignment: Alignment.topCenter,
                 child: Container(
                     //constraints: const BoxConstraints(maxWidth: 280),
-                    margin:
-                        const EdgeInsetsDirectional.only(top: 90, bottom: 45),
+                    margin: const EdgeInsetsDirectional.only(
+                        top: 90, bottom: 45, start: 20, end: 20),
                     alignment: Alignment.center,
                     child: GradientTitle(
                         title: Tr.app_lottery_title
@@ -123,12 +124,14 @@ class _LotteryBodyState extends State<LotteryBody>
                                           maxLines: 1,
                                           maxFontSize: 18,
                                           minFontSize: 8,
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 18,
+                                              fontFamily:
+                                                  AppConstants.fontsBold,
                                               fontWeight: FontWeight.bold),
                                         ))
-                                    : const AutoSizeText(
+                                    : AutoSizeText(
                                         "...",
                                         maxLines: 1,
                                         maxFontSize: 18,
@@ -136,6 +139,7 @@ class _LotteryBodyState extends State<LotteryBody>
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 18,
+                                            fontFamily: AppConstants.fontsBold,
                                             fontWeight: FontWeight.bold),
                                       ),
                               ),
@@ -267,15 +271,16 @@ class _LotteryBodyState extends State<LotteryBody>
             padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: 15, vertical: 12),
             margin: const EdgeInsetsDirectional.only(
-                bottom: 40, start: 20, end: 20, top: 30),
+                bottom: 40, start: 15, end: 15, top: 30),
             child: Text(
               Tr.app_lottery_hint.tr,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Color(0x80FFFFFF),
+              style: TextStyle(
+                color: const Color(0x80FFFFFF),
                 fontSize: 14,
+                fontFamily: AppConstants.fontsRegular,
                 decoration: TextDecoration.underline,
-                decorationColor: Color(0x80FFFFFF),
+                decorationColor: const Color(0x80FFFFFF),
                 //decorationStyle: TextDecorationStyle.solid,
                 decorationThickness: 1,
               ),

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
 
 class GradientTitle extends StatelessWidget {
   final String title;
@@ -20,7 +21,10 @@ class GradientTitle extends StatelessWidget {
         textAlign: TextAlign.center,
         maxFontSize: 24,
         minFontSize: 7,
-        style: const TextStyle(color: Colors.white, fontSize: 24),
+        style: TextStyle(
+            color: Colors.white,
+            fontFamily: AppConstants.fontsRegular,
+            fontSize: 24),
       ),
     );
   }

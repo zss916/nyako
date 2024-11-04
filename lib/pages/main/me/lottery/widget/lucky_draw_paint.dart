@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
 
 /// 等比例圆盘
 class LuckyDrawPaint extends CustomPainter {
@@ -64,6 +65,7 @@ class LuckyDrawPaint extends CustomPainter {
         textAlign: TextAlign.center,
         fontWeight: FontWeight.w500,
         fontStyle: FontStyle.normal,
+        fontFamily: AppConstants.fontsRegular,
         fontSize: 10,
       ));
       pb.pushStyle(ui.TextStyle(color: Colors.transparent));

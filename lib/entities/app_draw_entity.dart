@@ -128,7 +128,7 @@ class DrawData {
       case 3:
         return Get.isTr ? "+%$value" : "+$value%";
       case 5:
-        return "$name";
+        return "x$value";
       default:
         return "$value";
     }
