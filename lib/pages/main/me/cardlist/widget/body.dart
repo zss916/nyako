@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/pages/main/me/blacklist/utils/state.dart';
 import 'package:oliapro/pages/main/me/cardlist/index.dart';
@@ -43,13 +44,15 @@ class CardListBody extends StatelessWidget {
                   Tab(text: Tr.app_my_gift.tr),
                   Tab(text: Tr.appSignHeader.tr),
                 ],
-                labelStyle: const TextStyle(
+                labelStyle: TextStyle(
                     fontSize: 18,
                     color: Colors.black,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.w500),
-                unselectedLabelStyle: const TextStyle(
+                unselectedLabelStyle: TextStyle(
                     fontSize: 18,
-                    color: Color(0xFFB9BBCB),
+                    color: const Color(0xFFB9BBCB),
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
                 indicatorMinWidth: 20,
               ),
