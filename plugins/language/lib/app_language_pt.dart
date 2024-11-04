@@ -1,4 +1,6 @@
 const language_pt = {
+  'nyako_people_online': '%s pessoas online',
+  'nyako_times_left': '%s vezes restantes',
   "nyako_delicate_avatar_frame": "Moldura requintada",
   "nyako_match_failed_content":
       "Você não encontrou a menina, por favor tente novamente",

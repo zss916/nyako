@@ -55,7 +55,10 @@ class MatchFail extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () => Get.back(),
+                        onTap: () {
+                          Get.back(closeOverlays: true);
+                          //Get.removeName(AppPages.matching);
+                        },
                         child: Container(
                           height: 54,
                           width: double.maxFinite,

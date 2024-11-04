@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
+import 'package:get/get.dart';
+import 'package:oliapro/common/charge_path.dart';
+import 'package:oliapro/common/language_key.dart';
+import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/match/index.dart';
 import 'package:oliapro/pages/main/match/widget/bubbles/bubbles.dart';
-import 'package:oliapro/routes/a_routes.dart';
 
 class GameBody extends StatelessWidget {
   final MatchLogic logic;
@@ -39,7 +42,7 @@ class GameBody extends StatelessWidget {
                   child: FloatingBubbles.alwaysRepeating(
                     noOfBubbles: 10,
                     colorsOfBubbles: [
-                      Colors.green.withAlpha(30),
+                      Colors.green.withAlpha(100),
                       Colors.red,
                     ],
                     sizeFactor: 0.16,
@@ -52,70 +55,94 @@ class GameBody extends StatelessWidget {
                   )),
               Column(
                 children: [
-                  Container(
-                    width: double.maxFinite,
-                    margin: const EdgeInsetsDirectional.all(10),
-                    padding: const EdgeInsetsDirectional.symmetric(
-                        horizontal: 15, vertical: 12),
-                    decoration: BoxDecoration(
-                        color: const Color(0xFF25203A),
-                        borderRadius: BorderRadiusDirectional.circular(20)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "剩余10次",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                                child: Text(
-                              "获取更多次数",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  color: Color(0xFFDCC2FF), fontSize: 13),
-                            )),
-                            Container(
-                              margin:
-                                  const EdgeInsetsDirectional.only(start: 10),
-                              child: Image.asset(
-                                Assets.iconNextP,
-                                matchTextDirection: true,
-                                width: 18,
-                                height: 18,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
+                  GestureDetector(
+                    onTap: () {
+                      sheetToVip(
+                          path: ChargePath.recharge_vip_dialog_match, index: 0);
+                    },
+                    child: Container(
+                      width: double.maxFinite,
+                      margin: const EdgeInsetsDirectional.all(10),
+                      padding: const EdgeInsetsDirectional.symmetric(
+                          horizontal: 15, vertical: 12),
+                      decoration: BoxDecoration(
+                          color: const Color(0xFF25203A),
+                          borderRadius: BorderRadiusDirectional.circular(20)),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          GetBuilder<MatchLogic>(
+                              id: "count",
+                              init: MatchLogic(),
+                              builder: (logic) {
+                                return logic.isUserVip
+                                    ? const SizedBox.shrink()
+                                    : Text(
+                                        Tr.appTimesLeft
+                                            .trArgs(["${(10 - logic.count)}"]),
+                                        style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      );
+                              }),
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: Text(
+                                "获取更多次数",
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                    color: Color(0xFFDCC2FF), fontSize: 13),
+                              )),
+                              Container(
+                                margin:
+                                    const EdgeInsetsDirectional.only(start: 10),
+                                child: Image.asset(
+                                  Assets.iconNextP,
+                                  matchTextDirection: true,
+                                  width: 18,
+                                  height: 18,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 60,
+                  Container(
+                    margin: const EdgeInsetsDirectional.only(
+                        start: 30, end: 30, bottom: 20, top: 40),
+                    child: Obx(() => Text(
+                          Tr.appPeopleOnline
+                              .trArgs(["${logic.currentOnline.value}"]),
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
+                        )),
                   ),
                   UnconstrainedBox(
                     child: InkWell(
                       onTap: () {
-                        /*showMatch(HostMatchLimitEntityAnchor()
-                          ..userId = 1234567891
-                          ..nickName = "dsfdsfdsfdsfds");*/
-                        ARoutes.toMatching();
+                        logic.toMatch(logic);
                       },
                       //onTap: () => ARoutes.toMatching(),
                       child: Container(
+                        constraints:
+                            const BoxConstraints(minWidth: 145, minHeight: 46),
                         alignment: AlignmentDirectional.center,
+                        margin: const EdgeInsetsDirectional.symmetric(
+                            horizontal: 30),
                         padding: const EdgeInsetsDirectional.symmetric(
                             horizontal: 40, vertical: 12),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadiusDirectional.circular(50)),
                         child: Text(
-                          "开始匹配",
-                          style: TextStyle(
+                          Tr.app_match_start.tr,
+                          style: const TextStyle(
                               color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),

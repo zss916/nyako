@@ -13,6 +13,7 @@ import 'package:oliapro/pages/main/match/index.dart';
 import 'package:oliapro/pages/main/match/result/widget/app_net_video.dart';
 import 'package:oliapro/pages/main/match/result/widget/follow.dart';
 import 'package:oliapro/pages/main/match/util/bgm_control.dart';
+import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/utils/app_event_bus.dart';
 import 'package:oliapro/utils/music/match_music_manager.dart';
 import 'package:oliapro/utils/screen_protector.dart';
@@ -114,7 +115,7 @@ class _BuildBodyState extends State<MatchSuccess> {
                           child: Container(
                             decoration: BoxDecoration(
                                 borderRadius: const BorderRadiusDirectional.all(
-                                    Radius.circular(0)),
+                                    Radius.circular(20)),
                                 image: DecorationImage(
                                     image: NetworkImage(
                                         widget.anchor.showPortrait),
@@ -254,7 +255,7 @@ class _BuildBodyState extends State<MatchSuccess> {
                             top: 12,
                             end: 12,
                             child: GestureDetector(
-                              onTap: () => Get.back(),
+                              onTap: () => Get.back(closeOverlays: true),
                               child: Image.asset(
                                 Assets.iconCloseMatchDialog,
                                 width: 36,
@@ -270,28 +271,39 @@ class _BuildBodyState extends State<MatchSuccess> {
                     width: 311,
                     child: Row(
                       children: [
-                        Container(
-                          width: 72,
-                          height: 52,
-                          margin: const EdgeInsetsDirectional.only(
-                              end: 12, top: 10),
-                          alignment: AlignmentDirectional.center,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadiusDirectional.circular(30),
-                              gradient: const LinearGradient(colors: [
-                                Color(0xFF81E0FF),
-                                Color(0xFF4AC6FF),
-                              ])),
-                          child: Image.asset(
-                            Assets.iconToMsgIcon,
-                            matchTextDirection: true,
-                            width: 32,
-                            height: 32,
+                        GestureDetector(
+                          onTap: () {
+                            Get.back(closeOverlays: true);
+                            ARoutes.toChatPage(widget.anchor.getUid);
+                          },
+                          child: Container(
+                            width: 72,
+                            height: 52,
+                            margin: const EdgeInsetsDirectional.only(
+                                end: 12, top: 10),
+                            alignment: AlignmentDirectional.center,
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadiusDirectional.circular(30),
+                                gradient: const LinearGradient(colors: [
+                                  Color(0xFF81E0FF),
+                                  Color(0xFF4AC6FF),
+                                ])),
+                            child: Image.asset(
+                              Assets.iconToMsgIcon,
+                              matchTextDirection: true,
+                              width: 32,
+                              height: 32,
+                            ),
                           ),
                         ),
                         Expanded(
                             child: GestureDetector(
+                          onTap: () {
+                            Get.back(closeOverlays: true);
+                            ARoutes.toLocalCall(widget.anchor.getUid,
+                                widget.anchor.showPortrait);
+                          },
                           child: Stack(
                             alignment: AlignmentDirectional.center,
                             children: [

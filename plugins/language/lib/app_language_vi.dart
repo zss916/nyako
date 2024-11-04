@@ -1,4 +1,6 @@
 const language_vi = {
+  'nyako_people_online': '%s người đang trực tuyến',
+  'nyako_times_left': '%s lần còn lại',
   "nyako_delicate_avatar_frame": "Khung ảnh tinh xảo",
   "nyako_match_failed_content": "Bạn chưa tìm thấy cô gái, vui lòng thử lại",
   "nyako_OK": "Được rồi",

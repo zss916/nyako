@@ -10,8 +10,12 @@ class MatchLogic extends GetxController with BgmControl {
   late int count = 10;
   late HostMatchLimitEntityAnchor host = HostMatchLimitEntityAnchor();
   late final StreamSubscription<String> sub;
+
+  var currentOnline = 0.obs;
+
   @override
   void onInit() {
+    currentOnline.value = Random().nextInt(2000) + 1500;
     super.onInit();
     sub = StorageService.to.eventBus.on<String>().listen((event) {
       if (event == vipRefresh) {
@@ -23,6 +27,26 @@ class MatchLogic extends GetxController with BgmControl {
         getMatchCount();
       }
     });
+    timeHandle();
+  }
+
+  void timeHandle() {
+    bool add = Random().nextBool(); //   加还是减
+    int value = Random().nextInt(40) + 20; // 变化幅度  20 - 60
+    if (add) {
+      if (value + currentOnline.value > 5000) {
+        add = false;
+      }
+    } else {
+      if (currentOnline.value - value < 800) {
+        add = true;
+      }
+    }
+    if (add) {
+      currentOnline.value = currentOnline.value + value;
+    } else {
+      currentOnline.value = currentOnline.value - value;
+    }
   }
 
   @override
@@ -57,7 +81,7 @@ class MatchLogic extends GetxController with BgmControl {
   }
 
   getMatchCount() async {
-    final data = await MatchAPI.matchCount();
+    final data = await MatchAPI.matchCount(showLoading: true);
     int matchNum = data;
     count = (matchNum < 10) ? matchNum : 10;
     isLimit = (matchNum >= 10);
@@ -90,5 +114,14 @@ class MatchLogic extends GetxController with BgmControl {
         .catchError((err) {
           AppLoading.toast(err.message);
         });
+  }
+
+  toMatch(MatchLogic logic) {
+    if ((!logic.isLimit) || logic.isUserVip) {
+      getMatchCount();
+      ARoutes.toMatching();
+    } else {
+      sheetToVip(path: ChargePath.recharge_vip_dialog_match, index: 2);
+    }
   }
 }

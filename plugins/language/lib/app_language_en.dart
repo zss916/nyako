@@ -1,4 +1,6 @@
 const language_en = {
+  'nyako_people_online': '%s people online',
+  'nyako_times_left': '%s times left',
   "nyako_delicate_avatar_frame": "delicate avatar frame",
   "nyako_match_failed_content": "You did not find the girl, please try again",
   "nyako_OK": "OK",

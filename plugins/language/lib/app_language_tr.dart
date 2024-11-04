@@ -1,5 +1,7 @@
 // 土耳其
 const language_tr = {
+  'nyako_people_online': '%s kişi çevrimiçi',
+  'nyako_times_left': '%s kez kaldı',
   "nyako_delicate_avatar_frame": "Zarif başlık çerçevesi",
   "nyako_match_failed_content": "Hiçbir kızla eşleşmedin, lütfen tekrar dene",
   "nyako_OK": "Tamam",

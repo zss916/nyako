@@ -1,4 +1,6 @@
 const language_es = {
+  'nyako_people_online': '%s personas en línea',
+  'nyako_times_left': '%s veces restantes',
   "nyako_delicate_avatar_frame": "Marco exquisito",
   "nyako_match_failed_content":
       "No encontraste a la chica, inténtalo de nuevo.",

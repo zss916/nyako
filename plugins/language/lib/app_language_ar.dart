@@ -1,4 +1,6 @@
 const language_ar = {
+  'nyako_people_online': '%s أشخاص متصلين',
+  'nyako_times_left': '%s مرات متبقية',
   "nyako_delicate_avatar_frame": "إطارة متميز",
   "nyako_match_failed_content": "لا عثور عن بنت مناسبة , يرجى اتصال لاحقا ",
   "nyako_OK": "حسناً",

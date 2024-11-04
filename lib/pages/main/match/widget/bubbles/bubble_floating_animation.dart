@@ -166,7 +166,10 @@ class BubbleModel extends CustomPainter {
       if (shape == BubbleShape.circle)
         canvas.drawCircle(
           position,
-          size.width * sizeFactor * particle.size,
+          size.width *
+              sizeFactor *
+              particle.size *
+              (1.5 - animation.get<double>(_OffsetProps.y)),
           paint,
         );
       else if (shape == BubbleShape.square)

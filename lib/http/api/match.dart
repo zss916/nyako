@@ -10,10 +10,10 @@ abstract class MatchAPI {
   }
 
   ///匹配次数
-  static Future<int> matchCount() async {
+  static Future<int> matchCount({bool showLoading = false}) async {
     final data = await Http.instance.post<HostMatchLimitEntity>(
-      "${NetPath.matchOneAnchorLimit}/1",
-    );
+        "${NetPath.matchOneAnchorLimit}/1",
+        showLoading: showLoading);
     return (data.matchCount ?? 0);
   }
 }

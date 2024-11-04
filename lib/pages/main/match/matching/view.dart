@@ -66,6 +66,54 @@ class MatchingPage extends GetView<MatchingLogic> {
                 ],
               ),
             ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Spacer(),
+                Container(
+                  margin: const EdgeInsetsDirectional.only(
+                      start: 20, end: 20, top: 10),
+                  child: Text(
+                    "正在为你寻找有缘人",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsetsDirectional.only(
+                      bottom: 30, start: 20, end: 20, top: 15),
+                  child: Text(
+                    "请你心等待..",
+                    style: TextStyle(
+                        color: Color(0xFF9B989D),
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => Get.back(),
+                  child: Container(
+                    width: 207,
+                    height: 56,
+                    alignment: AlignmentDirectional.center,
+                    margin: const EdgeInsetsDirectional.only(
+                        bottom: 80, start: 20, end: 20),
+                    decoration: BoxDecoration(
+                        color: const Color(0x1A9341FF),
+                        borderRadius: BorderRadiusDirectional.circular(30)),
+                    child: Text(
+                      Tr.app_base_cancel.tr,
+                      style: const TextStyle(
+                          color: Color(0xFF9341FF),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

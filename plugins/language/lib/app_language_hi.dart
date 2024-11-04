@@ -1,5 +1,7 @@
 // 印度
 const language_hi = {
+  'nyako_people_online': '%s लोग ऑनलाइन हैं',
+  'nyako_times_left': '%s बारी बाकी',
   "nyako_delicate_avatar_frame": "नाजुक अवतार फ्रेम",
   "nyako_match_failed_content":
       "माफ करें आपको लड़की नहीं मिली, कृपया पुनः प्रयास करें",

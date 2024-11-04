@@ -1,5 +1,7 @@
 // 泰语
 const language_th = {
+  'nyako_people_online': 'มีผู้ใช้งานออนไลน์ %s คน',
+  'nyako_times_left': 'เหลืออีก %s ครั้ง',
   "nyako_delicate_avatar_frame": "กรอบอวตาร",
   "nyako_match_failed_content": "คุณไม่พบสาวๆ โปรดลองอีกครั้ง",
   "nyako_OK": "ตกลง",
