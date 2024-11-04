@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/info/index.dart';
@@ -114,21 +115,25 @@ class EditBody extends StatelessWidget {
               margin: const EdgeInsetsDirectional.only(end: 10),
               child: Text(
                 data['title']!,
-                style: const TextStyle(
-                    fontSize: 16,
+                style: TextStyle(
+                    fontSize: 15,
                     color: Colors.black,
-                    fontWeight: FontWeight.bold),
+                    fontFamily: AppConstants.fontsRegular,
+                    fontWeight: FontWeight.normal),
               ),
             ),
             Expanded(
                 child: AutoSizeText(
               Tr.appChange.tr,
               maxLines: 1,
-              maxFontSize: 14,
+              maxFontSize: 15,
               minFontSize: 10,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.end,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(
+                  fontSize: 15,
+                  fontFamily: AppConstants.fontsRegular,
+                  color: Colors.grey),
             )),
             Image.asset(
               Assets.iconNext,
@@ -162,10 +167,11 @@ class EditBody extends StatelessWidget {
               margin: const EdgeInsetsDirectional.only(end: 10),
               child: Text(
                 data['title']!,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 16,
                     color: Colors.black,
-                    fontWeight: FontWeight.bold),
+                    fontFamily: AppConstants.fontsRegular,
+                    fontWeight: FontWeight.normal),
               ),
             ),
             Expanded(
@@ -180,7 +186,10 @@ class EditBody extends StatelessWidget {
               minFontSize: 10,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.end,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: AppConstants.fontsRegular,
+                  color: Colors.grey),
             )),
             Image.asset(
               Assets.iconNext,
@@ -217,10 +226,11 @@ class EditBody extends StatelessWidget {
                     margin: const EdgeInsetsDirectional.only(end: 10),
                     child: Text(
                       data['title']!,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 16,
                           color: Colors.black,
-                          fontWeight: FontWeight.bold),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.normal),
                     ),
                   ),
                   const Spacer(),
@@ -247,7 +257,10 @@ class EditBody extends StatelessWidget {
                   minFontSize: 7,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.start,
-                  style: const TextStyle(fontSize: 14, color: Colors.grey),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontFamily: AppConstants.fontsRegular,
+                      color: Colors.grey),
                 ),
               ),
           ],
@@ -276,10 +289,11 @@ class EditBody extends StatelessWidget {
               margin: const EdgeInsetsDirectional.only(end: 10),
               child: Text(
                 data['title']!,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 16,
                     color: Colors.black,
-                    fontWeight: FontWeight.bold),
+                    fontFamily: AppConstants.fontsRegular,
+                    fontWeight: FontWeight.normal),
               ),
             ),
             const Spacer(),
@@ -294,7 +308,10 @@ class EditBody extends StatelessWidget {
               minFontSize: 10,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.end,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: AppConstants.fontsRegular,
+                  color: Colors.grey),
             ),
             Image.asset(
               Assets.iconNext,
