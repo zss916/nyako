@@ -158,11 +158,11 @@ class _BuildBodyState extends State<MatchSuccess> {
                                         widget.anchor.showNickName,
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
-                                        maxFontSize: 30,
+                                        maxFontSize: 28,
                                         minFontSize: 15,
                                         style: const TextStyle(
                                             color: Colors.white,
-                                            fontSize: 30,
+                                            fontSize: 28,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),

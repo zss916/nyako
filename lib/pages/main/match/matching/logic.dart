@@ -1,18 +1,26 @@
 part of matching_page;
 
 class MatchingLogic extends GetxController {
+  late Debouncer debouncer;
+
   @override
   void onInit() {
     super.onInit();
-
-    Future.delayed(const Duration(seconds: 3), () {
-      toShowDialog();
-      //showMatch(HostMatchLimitEntityAnchor());
-    });
+    HostMatchLimitEntityAnchor anchor =
+        Get.arguments as HostMatchLimitEntityAnchor;
+    debouncer = Debouncer(delay: const Duration(seconds: 3));
+    debouncer.call(() => showMatch(anchor));
   }
 
-  Future<void> toShowDialog() async {
-    final data = await MatchAPI.matchOneLimit();
-    showMatch(data.anchor ?? HostMatchLimitEntityAnchor());
+  @override
+  void onReady() {
+    super.onReady();
+    safeFind<MatchLogic>()?.getMatchCount();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    debouncer.cancel();
   }
 }

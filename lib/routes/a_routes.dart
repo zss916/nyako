@@ -3,6 +3,7 @@ import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/dialogs/sheet_transfer_app.dart';
 import 'package:oliapro/entities/app_aiv_entity.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
+import 'package:oliapro/entities/app_host_match_limit_entity.dart';
 import 'package:oliapro/entities/app_moment_entity.dart';
 import 'package:oliapro/entities/app_order_entity.dart';
 import 'package:oliapro/pages/call/aiv/widget/aiv_video_controller.dart';
@@ -220,7 +221,8 @@ class ARoutes {
     Get.toNamed(AppPages.callOut, arguments: map);
   }
 
-  static toMatching() => Get.toNamed(AppPages.matching);
+  static toMatching({HostMatchLimitEntityAnchor? anchor}) =>
+      Get.toNamed(AppPages.matching, arguments: anchor);
 
   ///订单详情
   static toOrderDetail(OrderData data) =>

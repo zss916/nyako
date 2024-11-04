@@ -118,8 +118,17 @@ class MatchLogic extends GetxController with BgmControl {
 
   toMatch(MatchLogic logic) {
     if ((!logic.isLimit) || logic.isUserVip) {
-      getMatchCount();
-      ARoutes.toMatching();
+      if (!AppConstants.isMatching) {
+        AppConstants.isMatching = true;
+        MatchAPI.matchOneLimit().then((data) {
+          ARoutes.toMatching(
+              anchor: data.anchor ?? HostMatchLimitEntityAnchor());
+        }).whenComplete(() {
+          AppConstants.isMatching = false;
+        });
+      } else {
+        //AppLoading.toast("Waiting ....");
+      }
     } else {
       sheetToVip(path: ChargePath.recharge_vip_dialog_match, index: 2);
     }

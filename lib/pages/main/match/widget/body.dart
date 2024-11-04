@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
@@ -14,9 +12,7 @@ class GameBody extends StatelessWidget {
 
   GameBody(this.logic, {super.key});
 
-  SwiperController swiperCtrl = SwiperController();
-
-  bool get isSmall => ScreenUtil().screenHeight < 600;
+  // bool get isSmall => ScreenUtil().screenHeight < 600;
 
   @override
   Widget build(BuildContext context) {
@@ -113,7 +109,7 @@ class GameBody extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsetsDirectional.only(
-                        start: 30, end: 30, bottom: 20, top: 40),
+                        start: 20, end: 20, bottom: 20, top: 40),
                     child: Obx(() => Text(
                           Tr.appPeopleOnline
                               .trArgs(["${logic.currentOnline.value}"]),
