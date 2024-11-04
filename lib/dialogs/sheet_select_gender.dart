@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/info/index.dart';
@@ -33,9 +34,10 @@ void showSelectGenderSheet() {
                 children: [
                   Text(
                     Tr.app_details_sex.tr,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                   ),
                   Container(
@@ -43,9 +45,10 @@ void showSelectGenderSheet() {
                         horizontal: 15, vertical: 10),
                     child: Text(Tr.app_mine_edit_sex.tr,
                         softWrap: true,
-                        style: const TextStyle(
-                            color: Color(0xFF9B989D),
+                        style: TextStyle(
+                            color: const Color(0xFF9B989D),
                             fontSize: 14,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.normal)),
                   ),
                   const RadioWidget()

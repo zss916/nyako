@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/pages/main/me/info/index.dart';
 import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
@@ -89,8 +90,11 @@ class _EditIntroPageState extends State<EditIntroPage> {
           ),
           Text(
             Tr.app_details_signature.tr,
-            style: const TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: AppConstants.fontsBold,
+                fontSize: 16,
+                color: Colors.black),
           ),
           Container(
             alignment: Alignment.center,
@@ -107,9 +111,10 @@ class _EditIntroPageState extends State<EditIntroPage> {
                     cursorColor: const Color(0xFF7934F0),
                     minLines: 6,
                     maxLines: 8,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 16,
                         color: Colors.black,
+                        fontFamily: AppConstants.fontsRegular,
                         fontWeight: FontWeight.w500),
                     controller: _textEditingController,
                     focusNode: _focusNode,
@@ -119,8 +124,9 @@ class _EditIntroPageState extends State<EditIntroPage> {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: Tr.app_not_exceed.trArgs(["200"]),
-                      hintStyle: const TextStyle(
+                      hintStyle: TextStyle(
                         fontSize: 16,
+                        fontFamily: AppConstants.fontsRegular,
                         color: Colors.grey,
                       ),
                     ),
