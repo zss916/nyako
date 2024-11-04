@@ -1,5 +1,5 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
 
 class TopTitle extends StatelessWidget {
   final String title;
@@ -12,13 +12,14 @@ class TopTitle extends StatelessWidget {
         Container(
           alignment: AlignmentDirectional.bottomCenter,
           padding: const EdgeInsets.only(top: 0, bottom: 3, left: 0, right: 0),
-          child: AutoSizeText(
+          child: Text(
             title,
             maxLines: 1,
-            maxFontSize: 24,
-            minFontSize: 12,
-            style: const TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
+            style: TextStyle(
+                fontSize: 21,
+                fontFamily: AppConstants.fontsBold,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
           ),
         ),
       ],

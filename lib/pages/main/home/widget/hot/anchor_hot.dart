@@ -137,12 +137,13 @@ class AnchorHot extends StatelessWidget {
                             item.showNickName,
                             softWrap: true,
                             minFontSize: 10,
-                            maxFontSize: 14,
+                            maxFontSize: 16,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 16,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
                           ),
                         )),

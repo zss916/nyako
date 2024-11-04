@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -74,8 +75,9 @@ class _BuildGiftState extends State<BuildGift> with DragInterface {
                       horizontal: 12, vertical: 4),
                   child: Text(
                     Tr.app_recharge.tr,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 12,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),

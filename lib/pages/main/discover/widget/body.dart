@@ -6,6 +6,6 @@ class DiscoverBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Discover();
+    return const Discover();
   }
 }

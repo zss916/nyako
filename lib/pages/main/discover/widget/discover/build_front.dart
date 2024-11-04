@@ -1,12 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
+import 'package:oliapro/dialogs/sheet_report.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/discover/widget/discover/follow.dart';
 import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/services/storage_service.dart';
 import 'package:oliapro/utils/app_event_bus.dart';
-import 'package:oliapro/utils/app_extends.dart';
 
 class BuildFront extends StatelessWidget {
   final HostDetail data;
@@ -20,7 +21,7 @@ class BuildFront extends StatelessWidget {
       children: [
         Row(
           children: [
-            Container(
+            /*Container(
               width: 30,
               height: 30,
               clipBehavior: Clip.hardEdge,
@@ -34,23 +35,33 @@ class BuildFront extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50),
                 child: cachedNetImage(data.showPortrait),
               ),
-            ),
+            ),*/
             const Spacer(),
             GestureDetector(
               onTap: () {
-                StorageService.to.eventBus.fire('pauseDiscover');
-                ARoutes.toReport(
+                /*ARoutes.toReport(
                     uid: data.getUid,
                     type: ReportEnum.discover.index.toString(),
-                    mid: index);
+                    mid: index);*/
+                StorageService.to.eventBus.fire('pauseDiscover');
+                showReportSheet(data.getUid, close: () {
+                  StorageService.to.updateBlackList(data.getUid, true);
+                  AppEventBus.eventBus.fire(BlackEvent(uid: data.getUid));
+                  StorageService.to.updateMediaReportList(index);
+                  AppEventBus.eventBus.fire(ReportEvent(
+                      ReportEnum.discover.index,
+                      discoverIndex: index));
+                });
+
+                // showReportSheet(anchorId);
               },
               child: Container(
                 // color: Colors.red,
                 margin: const EdgeInsetsDirectional.only(top: 12, end: 12),
                 child: Image.asset(
-                  Assets.iconReport,
-                  width: 24,
-                  height: 24,
+                  Assets.iconCallReport,
+                  width: 36,
+                  height: 36,
                   matchTextDirection: true,
                 ),
               ),
@@ -66,7 +77,7 @@ class BuildFront extends StatelessWidget {
           },
           child: Container(
             decoration: const BoxDecoration(
-                color: Colors.black,
+                color: Color(0xB3000000),
                 borderRadius: BorderRadiusDirectional.only(
                     topEnd: Radius.circular(24),
                     topStart: Radius.circular(24))),
@@ -86,9 +97,10 @@ class BuildFront extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           maxFontSize: 30,
                           minFontSize: 15,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
                               fontSize: 30,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -118,8 +130,10 @@ class BuildFront extends StatelessWidget {
                                 ),
                                 Text(
                                   data.showBirthday,
-                                  style: const TextStyle(
-                                      fontSize: 13, color: Color(0xFFFF3881)),
+                                  style: TextStyle(
+                                      fontSize: 13,
+                                      fontFamily: AppConstants.fontsRegular,
+                                      color: const Color(0xFFFF3881)),
                                 )
                               ],
                             ),
@@ -142,8 +156,10 @@ class BuildFront extends StatelessWidget {
                                 ),
                                 Text(
                                   data.getUid,
-                                  style: const TextStyle(
-                                      color: Color(0xFF3BC2FF), fontSize: 13),
+                                  style: TextStyle(
+                                      color: const Color(0xFF3BC2FF),
+                                      fontFamily: AppConstants.fontsRegular,
+                                      fontSize: 13),
                                 )
                               ],
                             ),

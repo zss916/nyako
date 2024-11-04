@@ -150,6 +150,8 @@ class _HomeBodyState extends State<HomeBody>
                                                     ? Colors.white
                                                     : Colors.black)
                                                 : const Color(0x802D2A30),
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
                                             fontSize: 13),
                                       ),
                                     ),

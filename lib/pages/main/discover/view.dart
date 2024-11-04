@@ -13,7 +13,7 @@ class DiscoverPage extends GetView<MomentLogic> {
         systemOverlayStyle: lightBarStyle,
       ),
       backgroundColor: Colors.black,
-      body: DiscoverBody(),
+      body: const DiscoverBody(),
     ));
   }
 }

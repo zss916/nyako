@@ -13,13 +13,13 @@ class VipBanner extends StatelessWidget {
   VipBanner({super.key, this.index});
 
   final List<String> icons = [
-    Assets.benefitBenefitDiamond,
-    Assets.benefitBenefitMsg,
-    Assets.benefitBenefitMatch,
-    Assets.benefitBenefitLocation,
-    Assets.benefitBenefitAlbum,
-    Assets.benefitBenefitGift,
-    Assets.benefitBenefitVip,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
   ];
 
   final List<String> content = [

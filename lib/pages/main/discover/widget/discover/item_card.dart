@@ -25,19 +25,11 @@ class ItemCard extends StatelessWidget {
             matchTextDirection: true,
             image: ExactAssetImage(Assets.iconAnchorDefault)),
         borderRadius: BorderRadius.circular(20),
-        boxShadow: const [
-          /*BoxShadow(
-            offset: Offset(0, 17),
-            blurRadius: 23.0,
-            spreadRadius: -13.0,
-            color: Color(0x1A982AFF),
-          )*/
-        ],
       ),
       child: Container(
         decoration: (isShow)
             ? BoxDecoration(
-                borderRadius: BorderRadius.circular(0),
+                borderRadius: BorderRadius.circular(20),
                 border: Border.all(width: 0, color: Colors.transparent),
                 image: DecorationImage(
                     image: CachedNetworkImageProvider(
@@ -46,7 +38,7 @@ class ItemCard extends StatelessWidget {
                     fit: BoxFit.cover),
               )
             : BoxDecoration(
-                borderRadius: BorderRadius.circular(0),
+                borderRadius: BorderRadius.circular(20),
                 color: Colors.transparent,
               ),
         child: Stack(

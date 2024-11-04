@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/database/entity/app_conversation_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -136,8 +137,9 @@ class MessageListView extends StatelessWidget {
                         maxFontSize: 16,
                         minFontSize: 16,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
@@ -151,8 +153,10 @@ class MessageListView extends StatelessWidget {
                   children: [
                     Text(
                       entity.showTime,
-                      style: const TextStyle(
-                          color: Color(0xFFBCB6C4), fontSize: 12),
+                      style: TextStyle(
+                          color: const Color(0xFFBCB6C4),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontSize: 12),
                     ),
                     // BuildMsgUnRead(entity.unReadQuality),
                   ],
@@ -264,8 +268,9 @@ class MessageListView extends StatelessWidget {
                               maxFontSize: 16,
                               minFontSize: 16,
                               overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontSize: 16,
+                                  fontFamily: AppConstants.fontsBold,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
                             ),

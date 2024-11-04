@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/database/entity/app_conversation_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 
@@ -37,7 +38,10 @@ class BuildMsgContent extends StatelessWidget {
             maxLines: 1,
             textAlign: TextAlign.start,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(color: Color(0xFF9B989D), fontSize: 14));
+            style: TextStyle(
+                fontFamily: AppConstants.fontsRegular,
+                color: const Color(0xFF9B989D),
+                fontSize: 14));
       case 11:
         return Image.asset(
           Assets.iconMsgGift,
@@ -60,6 +64,9 @@ class BuildMsgContent extends StatelessWidget {
     return Text(msg.content,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: const TextStyle(color: Color(0xFF9B989D), fontSize: 14));
+        style: TextStyle(
+            fontFamily: AppConstants.fontsRegular,
+            color: const Color(0xFF9B989D),
+            fontSize: 14));
   }
 }

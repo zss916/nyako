@@ -7,13 +7,13 @@ class BenefitList extends StatelessWidget {
   BenefitList({super.key});
 
   final List<String> icons = [
-    Assets.benefitBenefitDiamond,
-    Assets.benefitBenefitMsg,
-    Assets.benefitBenefitMatch,
-    Assets.benefitBenefitLocation,
-    Assets.benefitBenefitAlbum,
-    Assets.benefitBenefitGift,
-    Assets.benefitBenefitVip,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
+    Assets.iconSmallLogo,
   ];
 
   final List<String> content = [
@@ -46,7 +46,7 @@ class BenefitList extends StatelessWidget {
                 Container(
                   margin: const EdgeInsetsDirectional.only(end: 5),
                   child: Image.asset(
-                    Assets.benefitStarTitleIcon,
+                    Assets.iconSmallLogo,
                     width: 21,
                     height: 21,
                     matchTextDirection: true,
@@ -62,7 +62,7 @@ class BenefitList extends StatelessWidget {
                 Container(
                   margin: const EdgeInsetsDirectional.only(start: 2),
                   child: Image.asset(
-                    Assets.benefitStarTitleIcon,
+                    Assets.iconSmallLogo,
                     width: 21,
                     height: 21,
                     matchTextDirection: true,

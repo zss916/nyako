@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/calllist/index.dart';
@@ -115,7 +116,10 @@ class _MsgListBodyState extends State<MsgListBody>
               alignment: AlignmentDirectional.bottomCenter,
               child: Text(
                 title,
-                style: const TextStyle(color: Color(0xFFB9BBCB), fontSize: 20),
+                style: TextStyle(
+                    fontFamily: AppConstants.fontsBold,
+                    color: const Color(0xFFB9BBCB),
+                    fontSize: 20),
               ),
             ),
           );

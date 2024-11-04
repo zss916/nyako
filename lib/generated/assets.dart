@@ -26,22 +26,6 @@ class Assets {
   static const String animaVipMineWebpBg2 =
       'assets/anima/vip_mine_webp_bg2.webp';
   static const String animaVoiceRecording = 'assets/anima/voice_recording.webp';
-  static const String benefitBenefitAlbum = 'assets/benefit/benefit_album.png';
-  static const String benefitBenefitDiamond =
-      'assets/benefit/benefit_diamond.png';
-  static const String benefitBenefitGift = 'assets/benefit/benefit_gift.png';
-  static const String benefitBenefitLocation =
-      'assets/benefit/benefit_location.png';
-  static const String benefitBenefitMatch = 'assets/benefit/benefit_match.png';
-  static const String benefitBenefitMsg = 'assets/benefit/benefit_msg.png';
-  static const String benefitBenefitVip = 'assets/benefit/benefit_vip.png';
-  static const String benefitKing = 'assets/benefit/king.png';
-  static const String benefitReceiveVipBg =
-      'assets/benefit/receive_vip_bg.webp';
-  static const String benefitStarTitleIcon =
-      'assets/benefit/star_title_icon.png';
-  static const String benefitToVipBg = 'assets/benefit/to_vip_bg.webp';
-  static const String benefitVipToKing = 'assets/benefit/vip_to_king.png';
   static const String finalCountryLock = 'assets/final/country_lock.png';
   static const String finalGoogleLogo = 'assets/final/google_logo.webp';
   static const String finalGooglePlay = 'assets/final/google_play.png';
@@ -316,15 +300,6 @@ class Assets {
   static const String lotteryLotteryKing = 'assets/lottery/lottery_king.png';
   static const String lotteryLotteryPointer =
       'assets/lottery/lottery_pointer.png';
-  static const String matchMatchBg = 'assets/match/match_bg.png';
-  static const String matchMatchCardBg = 'assets/match/match_card_bg.webp';
-  static const String matchMatchLeftTitle = 'assets/match/match_left_title.png';
-  static const String matchMatchLine = 'assets/match/match_line.webp';
-  static const String matchMatchLoveTitle =
-      'assets/match/match_love_title.webp';
-  static const String matchMatchRightTitle =
-      'assets/match/match_right_title.png';
-  static const String matchMatchVap = 'assets/match/match_vap.mp4';
   static const String rewardBg1 = 'assets/reward/bg1.png';
   static const String rewardBg2 = 'assets/reward/bg2.png';
   static const String rewardBg3 = 'assets/reward/bg3.png';
