@@ -17,8 +17,6 @@ class AppGlobal {
     await Get.putAsync<StorageService>(() => StorageService().init());
     await Get.putAsync<AppInfoService>(() => AppInfoService().init());
     await Get.putAsync<UserInfo>(() => UserInfo().init());
-    //await Get.putAsync<AppTimeService>(() => AppTimeService().init());
-    //await Get.putAsync<AppPointService>(() => AppPointService().init());
   }
 
   static Future<void> setSystemUi() async {
@@ -29,11 +27,13 @@ class AppGlobal {
       SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarBrightness: Brightness.dark,
-        // 状态栏图标和文字=>(亮色light,暗色dark)
+
+        /// 状态栏图标和文字=>(亮色light,暗色dark)
         statusBarIconBrightness: Brightness.dark,
         systemNavigationBarDividerColor: Colors.transparent,
         systemNavigationBarColor: Colors.transparent,
-        // 状态栏图标亮色
+
+        /// 状态栏图标亮色
         systemNavigationBarIconBrightness: Brightness.dark,
       );
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);

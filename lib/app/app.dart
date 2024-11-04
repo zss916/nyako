@@ -10,7 +10,6 @@ import 'package:oliapro/widget/app_init_builder.dart';
 import 'package:oliapro/widget/refresh_confige/footer.dart';
 import 'package:oliapro/widget/refresh_confige/header.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-//import 'package:sentry_flutter/sentry_flutter.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -42,7 +41,6 @@ class App extends StatelessWidget {
       navigatorObservers: [
         AppPages.observer,
         routeHistoryObserver,
-        //SentryNavigatorObserver()
       ],
       builder: (context, child) =>
           MediaQuery.withNoTextScaling(child: AppInitBuilder(child)),
