@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/app_common_type.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -70,9 +71,10 @@ class AppDialogConfirmBlack extends StatelessWidget {
                     Text(
                       title,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
@@ -84,10 +86,11 @@ class AppDialogConfirmBlack extends StatelessWidget {
                       child: Text(
                         str,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            color: Color(0xFF9B989D),
+                        style: TextStyle(
+                            color: const Color(0xFF9B989D),
                             fontSize: 15,
-                            fontWeight: FontWeight.bold),
+                            fontFamily: AppConstants.fontsRegular,
+                            fontWeight: FontWeight.normal),
                       ),
                     ),
                     const SizedBox(
@@ -114,9 +117,10 @@ class AppDialogConfirmBlack extends StatelessWidget {
                               horizontal: 30, vertical: 10),
                           child: Text(
                             Tr.app_base_confirm.tr,
-                            style: const TextStyle(
-                                color: Color(0xFF9B989D),
+                            style: TextStyle(
+                                color: const Color(0xFF9B989D),
                                 fontSize: 16,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),

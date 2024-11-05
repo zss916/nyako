@@ -12,14 +12,15 @@ import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/anchor_detail/index.dart';
 import 'package:oliapro/pages/anchor_detail/widget/build_more.dart';
 import 'package:oliapro/pages/anchor_detail/widget/build_report.dart';
+import 'package:oliapro/pages/anchor_detail/widget/build_tags.dart';
 import 'package:oliapro/pages/anchor_detail/widget/build_vip_image.dart';
-import 'package:oliapro/pages/anchor_detail/widget/follow_btn2.dart';
+import 'package:oliapro/pages/anchor_detail/widget/follow_btn.dart';
+import 'package:oliapro/pages/anchor_detail/widget/new/build_contribute.dart';
 import 'package:oliapro/pages/anchor_detail/widget/new/build_tools.dart';
 import 'package:oliapro/pages/widget/age_and_sex_widget.dart';
 import 'package:oliapro/pages/widget/app_preview.dart';
 import 'package:oliapro/pages/widget/base_top_empty.dart';
 import 'package:oliapro/pages/widget/line_state.dart';
-import 'package:oliapro/routes/a_routes.dart';
 import 'package:oliapro/utils/app_event_bus.dart';
 import 'package:oliapro/utils/app_loading.dart';
 import 'package:oliapro/widget/base_app_bar.dart';
@@ -125,8 +126,10 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                                       start: 3),
                                   child: AutoSizeText(
                                     widget.logic.state.host.stateStr,
-                                    style: const TextStyle(
-                                        color: Colors.white, fontSize: 13),
+                                    style: TextStyle(
+                                        fontFamily: AppConstants.fontsRegular,
+                                        color: Colors.white,
+                                        fontSize: 13),
                                   ),
                                 )
                               ],
@@ -139,9 +142,10 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                           //color: Colors.cyanAccent,
                           child: Text(
                             widget.logic.state.nickname,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -185,9 +189,11 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                                       Text(
                                         widget.logic.state.host.showId,
                                         maxLines: 1,
-                                        style: const TextStyle(
-                                            color: Color(0xFF3BC2FF),
+                                        style: TextStyle(
+                                            color: const Color(0xFF3BC2FF),
                                             fontSize: 13,
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
                                             fontWeight: FontWeight.w500),
                                       )
                                     ],
@@ -201,7 +207,7 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                     )),
                     GestureDetector(
                       onTap: () => widget.logic.follow(),
-                      child: FollowBtn2(
+                      child: FollowBtn(
                           isFollowed: widget.logic.state.host.isFollowed),
                     )
                   ],
@@ -217,249 +223,21 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                         width: double.maxFinite,
                         child: Text(
                           widget.logic.state.host.showIntro,
-                          style: const TextStyle(
-                              color: Color(0xFF9B989D), fontSize: 15),
+                          style: TextStyle(
+                              color: const Color(0xFF9B989D),
+                              fontFamily: AppConstants.fontsRegular,
+                              fontSize: 15),
                         ),
                       ),
                     ),
                     SliverToBoxAdapter(
-                      child: GestureDetector(
-                        onTap: () {
-                          ARoutes.toContributeList(
-                              anchorId: widget.logic.state.anchorId.toString(),
-                              host: widget.logic.state.host);
-                        },
-                        child: Stack(
-                          alignment: AlignmentDirectional.topStart,
-                          children: [
-                            Container(
-                              height: 60,
-                              width: double.maxFinite,
-                              margin: const EdgeInsetsDirectional.only(top: 3),
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadiusDirectional.circular(12),
-                                  gradient: const LinearGradient(colors: [
-                                    Color(0xFFFFE0D4),
-                                    Color(0xFFFFF4C0)
-                                  ])),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsetsDirectional.only(
-                                        bottom: 17, start: 47),
-                                    child: Image.asset(Assets.iconN1N3,
-                                        width: 144, height: 43),
-                                  ),
-                                  const Spacer(),
-                                  // if (widget.logic.state.contributions.isNotEmpty)
-                                  Stack(
-                                    alignment: AlignmentDirectional.centerStart,
-                                    children: [
-                                      (widget.logic.state.contributions
-                                                  .length >=
-                                              3)
-                                          ? Container(
-                                              width: 30,
-                                              height: 30,
-                                              margin:
-                                                  const EdgeInsetsDirectional
-                                                      .only(start: 48),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      width: 1,
-                                                      color:
-                                                          Colors.transparent),
-                                                  borderRadius:
-                                                      BorderRadiusDirectional
-                                                          .circular(30),
-                                                  image: DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: CachedNetworkImageProvider(
-                                                          widget
-                                                              .logic
-                                                              .state
-                                                              .contributions[2]
-                                                              .showPortrait))),
-                                              foregroundDecoration:
-                                                  const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          matchTextDirection:
-                                                              true,
-                                                          image: ExactAssetImage(
-                                                              Assets.iconN3))),
-                                            )
-                                          : Container(
-                                              width: 30,
-                                              height: 30,
-                                              margin:
-                                                  const EdgeInsetsDirectional
-                                                      .only(start: 48),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      width: 1,
-                                                      color:
-                                                          Colors.transparent),
-                                                  borderRadius:
-                                                      BorderRadiusDirectional
-                                                          .circular(30),
-                                                  image: const DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: ExactAssetImage(
-                                                          Assets
-                                                              .iconSortAvatar))),
-                                              foregroundDecoration:
-                                                  const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          matchTextDirection:
-                                                              true,
-                                                          image: ExactAssetImage(
-                                                              Assets.iconN1))),
-                                            ),
-                                      (widget.logic.state.contributions
-                                                  .length >=
-                                              2)
-                                          ? Container(
-                                              width: 30,
-                                              height: 30,
-                                              margin:
-                                                  const EdgeInsetsDirectional
-                                                      .only(start: 24),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      width: 1,
-                                                      color:
-                                                          Colors.transparent),
-                                                  borderRadius:
-                                                      BorderRadiusDirectional
-                                                          .circular(30),
-                                                  image: DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: CachedNetworkImageProvider(
-                                                          widget
-                                                              .logic
-                                                              .state
-                                                              .contributions[1]
-                                                              .showPortrait))),
-                                              foregroundDecoration:
-                                                  const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          matchTextDirection:
-                                                              true,
-                                                          image: ExactAssetImage(
-                                                              Assets.iconN2))),
-                                            )
-                                          : Container(
-                                              width: 30,
-                                              height: 30,
-                                              margin:
-                                                  const EdgeInsetsDirectional
-                                                      .only(start: 24),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      width: 1,
-                                                      color:
-                                                          Colors.transparent),
-                                                  borderRadius:
-                                                      BorderRadiusDirectional
-                                                          .circular(30),
-                                                  image: const DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: ExactAssetImage(
-                                                          Assets
-                                                              .iconSortAvatar))),
-                                              foregroundDecoration:
-                                                  const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          matchTextDirection:
-                                                              true,
-                                                          image: ExactAssetImage(
-                                                              Assets.iconN1))),
-                                            ),
-                                      (widget.logic.state.contributions
-                                                  .length >=
-                                              1)
-                                          ? Container(
-                                              width: 30,
-                                              height: 30,
-                                              margin:
-                                                  const EdgeInsetsDirectional
-                                                      .only(start: 0),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      width: 1,
-                                                      color:
-                                                          Colors.transparent),
-                                                  borderRadius:
-                                                      BorderRadiusDirectional
-                                                          .circular(30),
-                                                  image: DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: CachedNetworkImageProvider(
-                                                          widget
-                                                              .logic
-                                                              .state
-                                                              .contributions[0]
-                                                              .showPortrait))),
-                                              foregroundDecoration:
-                                                  const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          matchTextDirection:
-                                                              true,
-                                                          image: ExactAssetImage(
-                                                              Assets.iconN1))),
-                                            )
-                                          : Container(
-                                              width: 30,
-                                              height: 30,
-                                              margin:
-                                                  const EdgeInsetsDirectional
-                                                      .only(start: 0),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      width: 1,
-                                                      color:
-                                                          Colors.transparent),
-                                                  borderRadius:
-                                                      BorderRadiusDirectional
-                                                          .circular(30),
-                                                  image: const DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: ExactAssetImage(
-                                                          Assets
-                                                              .iconSortAvatar))),
-                                              foregroundDecoration:
-                                                  const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          matchTextDirection:
-                                                              true,
-                                                          image: ExactAssetImage(
-                                                              Assets.iconN1))),
-                                            ),
-                                    ],
-                                  ),
-                                  Container(
-                                    margin: const EdgeInsetsDirectional.only(
-                                        end: 12),
-                                    child: Image.asset(
-                                      Assets.iconNextY,
-                                      matchTextDirection: true,
-                                      width: 20,
-                                      height: 20,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Image.asset(
-                              Assets.iconWeekSort,
-                              width: 83,
-                              height: 84,
-                              matchTextDirection: true,
-                            )
-                          ],
-                        ),
-                      ),
+                      child: BuildTags(widget.logic.state.host.hostTags),
+                    ),
+                    SliverToBoxAdapter(
+                      child: BuildContribute(
+                          contributions: widget.logic.state.contributions,
+                          anchorId: widget.logic.state.anchorId.toString(),
+                          host: widget.logic.state.host),
                     ),
                     SliverAppBar(
                       pinned: true,
@@ -487,9 +265,10 @@ class _AnchorBodyState extends State<AnchorBody> with TickerProviderStateMixin {
                             ),
                             Text(
                               Tr.app_details_album.tr,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 18,
+                                  fontFamily: AppConstants.fontsBold,
                                   fontWeight: FontWeight.bold),
                             )
                           ],

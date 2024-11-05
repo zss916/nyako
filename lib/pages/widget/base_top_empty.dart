@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 
@@ -26,7 +27,10 @@ class BaseTopEmpty extends StatelessWidget {
         ),
         Text(
           Tr.app_no_more.tr,
-          style: const TextStyle(color: Color(0xFF736F77), fontSize: 14),
+          style: TextStyle(
+              color: const Color(0xFF736F77),
+              fontFamily: AppConstants.fontsRegular,
+              fontSize: 14),
         ),
       ],
     );

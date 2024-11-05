@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/generated/assets.dart';
 
 class AgeAndSexWidget extends StatelessWidget {
@@ -31,9 +32,10 @@ class AgeAndSexWidget extends StatelessWidget {
           Text(
             age,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                color: Color(0xFFFF3881),
+            style: TextStyle(
+                color: const Color(0xFFFF3881),
                 fontSize: 13,
+                fontFamily: AppConstants.fontsRegular,
                 fontWeight: FontWeight.w500),
           )
         ],

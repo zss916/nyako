@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
 
 class BuildTags extends StatelessWidget {
   final List<String> tags;
@@ -10,7 +11,7 @@ class BuildTags extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       margin: EdgeInsetsDirectional.only(
-          bottom: tags.isEmpty ? 0 : 10, start: 15, end: 15),
+          bottom: tags.isEmpty ? 0 : 10, start: 0, end: 0),
       child: Wrap(
         spacing: 8,
         runSpacing: 8,
@@ -28,11 +29,13 @@ class BuildTags extends StatelessWidget {
       padding:
           const EdgeInsetsDirectional.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-          color: getColor(tags.indexOf(tag)).withOpacity(0.5),
+          color: getColor(tags.indexOf(tag)),
           borderRadius: BorderRadiusDirectional.circular(18)),
       child: Text(
         tag,
-        style: const TextStyle(color: Colors.white, fontSize: 12),
+        style:  TextStyle(color: Colors.white,
+            fontFamily: AppConstants.fontsRegular,
+            fontSize: 12),
       ),
     );
   }

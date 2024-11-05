@@ -8,7 +8,7 @@ import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/anchor_detail/index.dart';
-import 'package:oliapro/pages/anchor_detail/widget/follow_btn2.dart';
+import 'package:oliapro/pages/anchor_detail/widget/follow_btn.dart';
 import 'package:oliapro/pages/widget/age_and_sex_widget.dart';
 import 'package:oliapro/pages/widget/line_state.dart';
 import 'package:oliapro/utils/app_extends.dart';
@@ -162,7 +162,7 @@ class Backgarnd extends StatelessWidget {
                             bottom: 10,
                             child: GestureDetector(
                               onTap: () => logic.follow(),
-                              child: FollowBtn2(isFollowed: data.isFollowed),
+                              child: FollowBtn(isFollowed: data.isFollowed),
                             ))
                     ],
                   )

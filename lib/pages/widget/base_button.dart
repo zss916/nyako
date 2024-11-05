@@ -1,14 +1,17 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_colors.dart';
+import 'package:oliapro/common/app_constants.dart';
 
 class BaseButton extends StatelessWidget {
   final String title;
 
-  const BaseButton(this.title, {super.key});
+  BaseButton(this.title, {super.key});
 
-  final TextStyle baseTextStyle = const TextStyle(
-      color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
+  final TextStyle baseTextStyle = TextStyle(
+      fontFamily: AppConstants.fontsBold,
+      color: Colors.white,
+      fontSize: 16,
+      fontWeight: FontWeight.bold);
 
   @override
   Widget build(BuildContext context) {

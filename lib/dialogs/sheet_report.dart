@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/app_colors.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/http/api/index.dart';
@@ -106,9 +107,10 @@ class _ReportBodyState extends State<ReportDialog> with RouteAware {
           children: [
             Text(
               Tr.app_report_title.tr,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.w500),
             ),
             Container(
@@ -117,9 +119,10 @@ class _ReportBodyState extends State<ReportDialog> with RouteAware {
               child: Text(
                 Tr.app_report_description.tr,
                 textAlign: TextAlign.start,
-                style: const TextStyle(
-                    color: Color(0xFF999999),
+                style: TextStyle(
+                    color: const Color(0xFF999999),
                     fontSize: 13,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.normal),
               ),
             ),
@@ -164,6 +167,9 @@ class _ReportBodyState extends State<ReportDialog> with RouteAware {
                     maxLines: 1,
                     style: TextStyle(
                         fontSize: 16,
+                        fontFamily: index == selectIndex
+                            ? AppConstants.fontsBold
+                            : AppConstants.fontsRegular,
                         color: index == selectIndex
                             ? Colors.black
                             : const Color(0xFF666666),

@@ -24,8 +24,8 @@ class BuildTools extends StatelessWidget {
         GestureDetector(
           onTap: () => logic.toChat(),
           child: Container(
-            height: 58,
-            width: 90,
+            height: 52,
+            width: 72,
             margin: const EdgeInsetsDirectional.only(top: 10, end: 15),
             decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -56,7 +56,7 @@ class BuildTools extends StatelessWidget {
                   alignment: AlignmentDirectional.center,
                   children: [
                     Container(
-                      height: 58,
+                      height: 52,
                       width: double.maxFinite,
                       decoration: const BoxDecoration(
                           gradient: LinearGradient(
@@ -87,9 +87,10 @@ class BuildTools extends StatelessWidget {
                             minFontSize: 16,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.w600),
                           ),
                         ],
@@ -138,8 +139,10 @@ class BuildTools extends StatelessWidget {
                           ),
                           TextSpan(
                             text: Tr.app_video_time_unit.tr,
-                            style: const TextStyle(
-                                color: Colors.white60, fontSize: 11),
+                            style: TextStyle(
+                                color: Colors.white60,
+                                fontFamily: AppConstants.fontsRegular,
+                                fontSize: 11),
                           )
                         ],
                       ),
@@ -156,7 +159,7 @@ class BuildTools extends StatelessWidget {
     return GestureDetector(
       onTap: () => logic.toChat(),
       child: Container(
-        height: 58,
+        height: 52,
         margin: const EdgeInsetsDirectional.only(end: 15),
         decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
@@ -179,9 +182,10 @@ class BuildTools extends StatelessWidget {
             ),
             Text(
               Tr.app_base_message.tr,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
+                  fontFamily: AppConstants.fontsRegular,
                   fontWeight: FontWeight.w600),
             ),
           ],
