@@ -2,15 +2,6 @@
 class Assets {
   Assets._();
 
-  static const String animaCall = 'assets/anima/call.webp';
-  static const String animaCallConnecting = 'assets/anima/call_connecting.webp';
-  static const String animaFreeDiamondIcon =
-      'assets/anima/free_diamond_icon.webp';
-  static const String animaGift = 'assets/anima/gift.webp';
-  static const String animaHomeRecharge = 'assets/anima/home_recharge.webp';
-  static const String animaIconToOpenVip = 'assets/anima/icon_to_open_vip.webp';
-  static const String animaMsgVoice = 'assets/anima/msg_voice.webp';
-  static const String animaMyDiamondShop = 'assets/anima/my_diamond_shop.webp';
   static const String animaNotify = 'assets/anima/notify.webp';
   static const String animaNyakoDiamondAddBg =
       'assets/anima/nyako_diamond_add_bg.webp';
@@ -21,11 +12,6 @@ class Assets {
       'assets/anima/nyako_match_fail_top.webp';
   static const String animaNyakoVipAnimaBg =
       'assets/anima/nyako_vip_anima_bg.webp';
-  static const String animaPickUp = 'assets/anima/pick_up.webp';
-  static const String animaVipAnimaBg = 'assets/anima/vip_anima_bg.webp';
-  static const String animaVipMineWebpBg2 =
-      'assets/anima/vip_mine_webp_bg2.webp';
-  static const String animaVoiceRecording = 'assets/anima/voice_recording.webp';
   static const String finalCountryLock = 'assets/final/country_lock.png';
   static const String finalGoogleLogo = 'assets/final/google_logo.webp';
   static const String finalGooglePlay = 'assets/final/google_play.png';
@@ -287,7 +273,7 @@ class Assets {
   static const String jsonAnimaPickUp = 'assets/json/anima_pick_up.json';
   static const String jsonAnimaVoiceRecording =
       'assets/json/anima_voice_recording.json';
-  static const String launcherAndroidLogo = 'assets/launcher/logo.png';
+  static const String launcherLogo = 'assets/launcher/logo.png';
   static const String launcherLogoB = 'assets/launcher/logo_b.png';
   static const String launcherLogoF = 'assets/launcher/logo_f.png';
   static const String lotteryLotteryAddCard =
