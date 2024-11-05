@@ -287,6 +287,9 @@ class Assets {
   static const String jsonAnimaPickUp = 'assets/json/anima_pick_up.json';
   static const String jsonAnimaVoiceRecording =
       'assets/json/anima_voice_recording.json';
+  static const String launcherAndroidLogo = 'assets/launcher/logo.png';
+  static const String launcherLogoB = 'assets/launcher/logo_b.png';
+  static const String launcherLogoF = 'assets/launcher/logo_f.png';
   static const String lotteryLotteryAddCard =
       'assets/lottery/lottery_add_card.png';
   static const String lotteryLotteryCallCard =
