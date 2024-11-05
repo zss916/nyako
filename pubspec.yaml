@@ -154,7 +154,7 @@ dev_dependencies:
   objectbox_generator: 4.0.1
   build_runner: any
   pretty_dio_logger: 1.4.0
-  flutter_launcher_icons: 0.14.1
+  #flutter_launcher_icons: 0.14.1
 
 
 flutter:
@@ -181,11 +181,11 @@ flutter:
       fonts:
         - asset: fonts/NotoSans-Bold.ttf
 
-# Terminal => flutter pub run flutter_launcher_icons
-flutter_launcher_icons:
-  android: "ic_launcher"
-  image_path: "assets/launcher/logo.png"
-  min_sdk_android: 21
-  adaptive_icon_background: "assets/launcher/logo_b.png"
-  adaptive_icon_foreground: "assets/launcher/logo_f.png"
-  adaptive_icon_monochrome: "assets/launcher/logo_f.png"
+#Terminal => flutter pub run flutter_launcher_icons
+#flutter_launcher_icons:
+  #android: "ic_launcher"
+  #image_path: "assets/launcher/logo.png"
+  #min_sdk_android: 21
+  #adaptive_icon_background: "assets/launcher/logo_b.png"
+  #adaptive_icon_foreground: "assets/launcher/logo_f.png"
+  #adaptive_icon_monochrome: "assets/launcher/logo_f.png"
