@@ -12,7 +12,7 @@ class MediasPage extends GetView<MediasLogic> {
         leading: toBack,
         actions: [toReport],
       ),
-      body: Body(),
+      body: const Body(),
     );
   }
 

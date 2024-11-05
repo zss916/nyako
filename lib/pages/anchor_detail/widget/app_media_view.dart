@@ -1,6 +1,7 @@
 import 'package:cached_video_player_plus/cached_video_player_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/sheet_report.dart';
 import 'package:oliapro/entities/app_host_entity.dart';
@@ -376,15 +377,18 @@ class _AppMediaViewState extends State<AppMediaViewPage>
                         ),
                         TextSpan(
                           text: " ${data.charge ?? 0}",
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         ),
                         TextSpan(
                           text: Tr.app_video_time_unit.tr,
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 12),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: AppConstants.fontsRegular,
+                              fontSize: 12),
                         )
                       ],
                     ),
