@@ -8,8 +8,10 @@ import 'package:oliapro/database/entity/app_conversation_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/msg/index.dart';
 import 'package:oliapro/pages/main/msg/widget/build_avatars.dart';
+import 'package:oliapro/pages/main/msg/widget/build_compliance.dart';
 import 'package:oliapro/pages/main/msg/widget/build_msg_content.dart';
 import 'package:oliapro/pages/main/msg/widget/build_msg_unread.dart';
+import 'package:oliapro/services/user_info.dart';
 import 'package:oliapro/utils/app_some_extension.dart';
 import 'package:oliapro/utils/app_voice_player.dart';
 
@@ -22,31 +24,13 @@ class MessageListView extends StatelessWidget {
   Widget build(BuildContext context) {
     //  debugPrint("count: ${UserInfo.to.getLoginCount()}");
     return CustomScrollView(slivers: [
-      /*if (UserInfo.to.isShowCompliance)
+      if (UserInfo.to.isShowCompliance)
         SliverToBoxAdapter(
           child: GetBuilder<MsgListLogic>(
               id: "compliance",
               init: MsgListLogic(),
               builder: (logic) => BuildCompliance(logic: logic)),
-        ),*/
-      /*if (!AppConstants.isFakeMode)
-        SliverToBoxAdapter(
-          child: Container(
-            height: 100,
-            width: double.maxFinite,
-            margin:
-                const EdgeInsetsDirectional.only(start: 12, end: 12, top: 10),
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    matchTextDirection: true,
-                    image: ExactAssetImage(Assets.imgNextPayBg))),
-            child: GetBuilder<MsgListLogic>(
-                init: MsgListLogic(),
-                builder: (logic) => BuildNextPayActivity(
-                      logic: logic,
-                    )),
-          ),
-        ),*/
+        ),
       SliverToBoxAdapter(
         child: buildAiHelp(logic),
       ),

@@ -1,8 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/pages/widget/base_button4.dart';
+import 'package:oliapro/pages/widget/base_button.dart';
 import 'package:oliapro/routes/app_pages.dart';
 
 void showComplianceDialog() {
@@ -41,8 +42,9 @@ class AppDialogCompliance extends StatelessWidget {
                     Text(
                       Tr.app_alert_tips.tr,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.black,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
@@ -54,18 +56,19 @@ class AppDialogCompliance extends StatelessWidget {
                         Tr.appCompliance.tr,
                         textAlign: TextAlign.center,
                         softWrap: true,
-                        maxFontSize: 14,
+                        maxFontSize: 15,
                         minFontSize: 11,
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
+                        style: TextStyle(
+                            color: const Color(0xFF9B989D),
+                            fontSize: 15,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.normal),
                       ),
                     )),
                     InkWell(
                       //behavior: HitTestBehavior.opaque,
                       onTap: () => Get.back(),
-                      child: BaseButton4(Tr.app_base_confirm.tr),
+                      child: BaseButton(Tr.app_base_confirm.tr),
                     ),
                     const SizedBox(
                       height: 10,

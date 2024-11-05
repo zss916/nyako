@@ -103,6 +103,7 @@ class Assets {
   static const String iconDrawResultBg = 'assets/icon/draw_result_bg.png';
   static const String iconEdit = 'assets/icon/edit.png';
   static const String iconEmpty = 'assets/icon/empty.png';
+  static const String iconExpandIc = 'assets/icon/expand_ic.png';
   static const String iconFemale = 'assets/icon/female.png';
   static const String iconFemaleS = 'assets/icon/female_s.png';
   static const String iconFollow = 'assets/icon/follow.png';
