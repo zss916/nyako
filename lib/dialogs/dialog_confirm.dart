@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oliapro/common/app_colors.dart';
 import 'package:oliapro/common/app_common_type.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/routes/app_pages.dart';
 import 'package:oliapro/services/user_info.dart';
@@ -51,7 +52,7 @@ class AppDialogConfirm extends StatelessWidget {
         width: Get.width,
         height: h ?? Get.height / 2,
         margin: const EdgeInsets.symmetric(horizontal: 30),
-        padding: const EdgeInsetsDirectional.only(top: 15, bottom: 15),
+        padding: const EdgeInsetsDirectional.only(top: 15, bottom: 20),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -76,9 +77,10 @@ class AppDialogConfirm extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
               child: Text(
                 title,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
@@ -117,10 +119,10 @@ class AppDialogConfirm extends StatelessWidget {
                   maxFontSize: 14,
                   minFontSize: 7,
                   maxLines: 4,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                  ),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: AppConstants.fontsRegular),
                   textAlign: TextAlign.center,
                 ),
               )
@@ -150,9 +152,10 @@ class AppDialogConfirm extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Text(
                       Tr.app_base_confirm.tr,
-                      style: const TextStyle(
-                          color: Color(0xFFAC53FB),
+                      style: TextStyle(
+                          color: const Color(0xFFAC53FB),
                           fontSize: 16,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -172,9 +175,10 @@ class AppDialogConfirm extends StatelessWidget {
                               const BorderRadius.all(Radius.circular(30))),
                       child: Text(
                         Tr.app_base_cancel.tr,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
