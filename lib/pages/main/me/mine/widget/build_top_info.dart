@@ -10,6 +10,7 @@ import 'package:oliapro/pages/main/me/mine/widget/build_identity.dart';
 import 'package:oliapro/pages/main/me/mine/widget/build_name.dart';
 import 'package:oliapro/pages/main/me/mine/widget/build_open_vip.dart';
 import 'package:oliapro/pages/main/me/mine/widget/build_portrait.dart';
+import 'package:oliapro/routes/a_routes.dart';
 
 class BuildTopInfo extends StatelessWidget {
   final MeLogic logic;
@@ -60,7 +61,7 @@ class BuildTopInfo extends StatelessWidget {
                               color: Colors.transparent,
                               child: InkWell(
                                 borderRadius: BorderRadius.circular(5),
-                                onTap: () {},
+                                onTap: () => ARoutes.toFollow(),
                                 child: Container(
                                   width: double.maxFinite,
                                   padding:

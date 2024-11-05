@@ -29,10 +29,10 @@ class _AvatarItemState extends State<AvatarItem> {
           top: 20, start: 10, end: 10, bottom: 10),
       decoration: BoxDecoration(
         color:
-            widget.item.isUsed == true ? const Color(0xFFF4F5F6) : Colors.white,
+            widget.item.isUsed == true ? Colors.white : const Color(0xFFF4F5F6),
         border: widget.item.isUsed == true
-            ? null
-            : Border.all(width: 2, color: const Color(0xFF9341FF)),
+            ? Border.all(width: 2, color: const Color(0xFF9341FF))
+            : null,
         borderRadius: BorderRadiusDirectional.circular(16),
       ),
       child: Column(
@@ -83,7 +83,7 @@ class _AvatarItemState extends State<AvatarItem> {
             ),
           ),
           Opacity(
-              opacity: widget.item.isUsed == true ? 0.5 : 1,
+              opacity: widget.item.isUsed == true ? 1 : 0.5,
               child: InkWell(
                 onTap: () {
                   setState(() {
@@ -107,8 +107,8 @@ class _AvatarItemState extends State<AvatarItem> {
                       top: 0, start: 12, end: 12, bottom: 5),
                   decoration: BoxDecoration(
                       color: (widget.item.isUsed == true)
-                          ? const Color(0xFFE8E8E8)
-                          : const Color(0x1A9341FF),
+                          ? const Color(0x269341FF)
+                          : const Color(0xFFE8E8E8),
                       borderRadius: BorderRadiusDirectional.circular(40)),
                   child: Text(
                     widget.item.isUsed == true
@@ -116,8 +116,8 @@ class _AvatarItemState extends State<AvatarItem> {
                         : Tr.appSignHeaderPut.tr,
                     style: TextStyle(
                         color: (widget.item.isUsed == true)
-                            ? const Color(0xFF9B989D)
-                            : const Color(0xFF9341FF),
+                            ? const Color(0xFF9341FF)
+                            : const Color(0xFF9B989D),
                         fontSize: 12,
                         fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
