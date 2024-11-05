@@ -161,9 +161,10 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                       Tr.appEveryDayReward.tr,
                       textAlign: TextAlign.start,
                       maxLines: 1,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.normal,
                           fontSize: 12),
                     ),
                   ),
@@ -211,9 +212,10 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                 ),
                 Text(
                   Tr.app_benefit.trArgs(["VIP"]),
-                  style: const TextStyle(
-                      color: Color(0xFF7F422B),
+                  style: TextStyle(
+                      color: const Color(0xFF7F422B),
                       fontSize: 15,
+                      fontFamily: AppConstants.fontsRegular,
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.w500),
                 )
@@ -285,12 +287,13 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                     children: [
                       Row(
                         children: [
-                          const Text(
+                          Text(
                             "VIP",
                             textAlign: TextAlign.start,
                             maxLines: 1,
                             style: TextStyle(
                                 color: Colors.white,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18),
                           ),
@@ -404,13 +407,14 @@ class _ChargeQuickDialogState extends State<ChargeQuickDialog> {
                       AutoSizeText(
                         "${item.vipDays ?? 0} ${Tr.appDays.tr}",
                         textAlign: TextAlign.start,
-                        maxFontSize: 14,
+                        maxFontSize: 13,
                         minFontSize: 6,
                         maxLines: 1,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold,
-                            fontSize: 14),
+                            fontSize: 13),
                       ),
                     ],
                   ),
