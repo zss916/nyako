@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/entities/app_call_record_entity.dart';
 import 'package:oliapro/pages/main/me/calllist/index.dart';
 import 'package:oliapro/pages/main/me/calllist/widget/call_time.dart';
@@ -93,9 +94,10 @@ class ChatRecordBody extends StatelessWidget {
                         textAlign: TextAlign.start,
                         maxFontSize: 16,
                         minFontSize: 9,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -105,8 +107,10 @@ class ChatRecordBody extends StatelessWidget {
                       maxLines: 1,
                       maxFontSize: 13,
                       minFontSize: 6,
-                      style: const TextStyle(
-                          color: Color(0xFFBCB6C4), fontSize: 13),
+                      style: TextStyle(
+                          fontFamily: AppConstants.fontsRegular,
+                          color: const Color(0xFFBCB6C4),
+                          fontSize: 13),
                     ),
                     Container(
                       margin: const EdgeInsetsDirectional.only(start: 0),

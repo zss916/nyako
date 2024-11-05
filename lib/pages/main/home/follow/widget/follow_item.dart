@@ -63,9 +63,10 @@ class FollowItem extends StatelessWidget {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.start,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -87,7 +88,7 @@ class FollowItem extends StatelessWidget {
                                     const EdgeInsetsDirectional.only(end: 2),
                                 child: LineState(
                                   data.lineState(),
-                                  r: 6,
+                                  r: 7,
                                 ),
                               ),
                               LineStateText(data.lineState())

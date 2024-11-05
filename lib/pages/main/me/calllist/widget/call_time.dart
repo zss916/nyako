@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/utils/app_extends.dart';
 
@@ -35,9 +36,10 @@ class CallTime extends StatelessWidget {
           ),
           Text(
             state,
-            style: const TextStyle(
-                color: Color(0xFF9B989D),
+            style: TextStyle(
+                color: const Color(0xFF9B989D),
                 fontSize: 15,
+                fontFamily: AppConstants.fontsRegular,
                 fontWeight: FontWeight.w400),
           )
         ],
@@ -79,9 +81,10 @@ class CallTime extends StatelessWidget {
           ),
           Text(
             state,
-            style: const TextStyle(
-                color: Color(0xFFFF4864),
+            style: TextStyle(
+                color: const Color(0xFFFF4864),
                 fontSize: 15,
+                fontFamily: AppConstants.fontsRegular,
                 fontWeight: FontWeight.w400),
           )
         ],
