@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_card_entity.dart';
+import 'package:oliapro/entities/app_gift_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/call/aiv/index.dart';
 import 'package:oliapro/pages/charge/charge_dialog_manager.dart';
@@ -10,7 +12,6 @@ import 'package:oliapro/widget/gift/app_gift_data_helper.dart';
 import 'package:oliapro/widget/gift/prop_gift_list_widget.dart';
 import 'package:oliapro/widget/gift/widget/build_balance.dart';
 
-import '../../entities/app_gift_entity.dart';
 import 'app_gift_list_widget.dart';
 
 typedef GiftChoose = Function(GiftEntity entity);
@@ -146,9 +147,10 @@ class _AppGiftListViewState extends State<AppGiftListView> {
                       children: [
                         Text(
                           Tr.app_recharge.tr,
-                          style: const TextStyle(
-                              color: Color(0xFF9341FF),
+                          style: TextStyle(
+                              color: const Color(0xFF9341FF),
                               fontSize: 15,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         ),
                         Image.asset(
@@ -250,6 +252,7 @@ class _AppGiftListViewState extends State<AppGiftListView> {
       child: Text(
         text,
         style: TextStyle(
+          fontFamily: AppConstants.fontsBold,
           fontWeight: FontWeight.w500,
           color: isSelect ? const Color(0xFF642A4B) : const Color(0x99642A4B),
           fontSize: 14,
