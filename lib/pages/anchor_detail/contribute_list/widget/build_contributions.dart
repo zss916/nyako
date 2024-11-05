@@ -41,16 +41,20 @@ class BuildContributions extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Text(
+                        Text(
                           "NO.",
-                          style:
-                              TextStyle(color: Color(0xFFBCB6C4), fontSize: 13),
+                          style: TextStyle(
+                              color: const Color(0xFFBCB6C4),
+                              fontFamily: AppConstants.fontsBold,
+                              fontSize: 13),
                         ),
                         const Spacer(),
                         Text(
                           Tr.app_contribution.tr,
-                          style: const TextStyle(
-                              color: Color(0xFFBCB6C4), fontSize: 13),
+                          style: TextStyle(
+                              color: const Color(0xFFBCB6C4),
+                              fontFamily: AppConstants.fontsBold,
+                              fontSize: 13),
                         ),
                       ],
                     ),
@@ -83,10 +87,12 @@ class BuildContributions extends StatelessWidget {
               width: double.maxFinite,
               child: Row(
                 children: [
-                  const Text(
+                  Text(
                     "-",
                     style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                        color: Colors.black,
+                        fontFamily: AppConstants.fontsBold,
+                        fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
                     width: 24,
@@ -106,26 +112,31 @@ class BuildContributions extends StatelessWidget {
                       Text(
                         UserInfo.to.nickName,
                         textAlign: TextAlign.start,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.w500,
                             fontSize: 15),
                       ),
                       Text(
                         "ID:${UserInfo.to.username}",
                         textAlign: TextAlign.start,
-                        style: const TextStyle(
-                            color: Color(0xFF9B989D), fontSize: 13),
+                        style: TextStyle(
+                            color: const Color(0xFF9B989D),
+                            fontFamily: AppConstants.fontsRegular,
+                            fontSize: 13),
                       )
                     ],
                   )),
                   Container(
                     margin:
                         const EdgeInsetsDirectional.symmetric(horizontal: 10),
-                    child: const Text(
+                    child: Text(
                       "-",
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                          color: Colors.black,
+                          fontFamily: AppConstants.fontsBold,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
@@ -175,16 +186,18 @@ class BuildContributions extends StatelessWidget {
                   maxFontSize: 15,
                   minFontSize: 15,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
                       fontSize: 15,
-                      // fontFamily: AppConstants.fontsRegular,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.w500),
                 ),
                 Text(
                   data.showUserName,
-                  style:
-                      const TextStyle(fontSize: 13, color: Color(0xFF9B989D)),
+                  style: TextStyle(
+                      fontSize: 13,
+                      fontFamily: AppConstants.fontsRegular,
+                      color: const Color(0xFF9B989D)),
                 )
               ],
             ),

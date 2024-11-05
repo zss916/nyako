@@ -124,8 +124,9 @@ class ContributeListPage extends GetView<ContributeListLogic> {
                           maxFontSize: 13,
                           minFontSize: 13,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.normal,
                               fontSize: 13),
                         ),
@@ -222,8 +223,9 @@ class ContributeListPage extends GetView<ContributeListLogic> {
                           maxFontSize: 13,
                           minFontSize: 13,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.normal,
                               fontSize: 13),
                         ),
@@ -324,8 +326,9 @@ class ContributeListPage extends GetView<ContributeListLogic> {
                           maxFontSize: 13,
                           minFontSize: 13,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.normal,
                               fontSize: 13),
                         ),
