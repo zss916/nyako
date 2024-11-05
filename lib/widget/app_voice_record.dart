@@ -8,6 +8,7 @@ import 'package:flutter_sound_platform_interface/flutter_sound_recorder_platform
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/widget/long_press_gesture_detector.dart';
@@ -131,9 +132,10 @@ class _AppVoiceRecordState extends State<AppVoiceRecord> {
                   children: <Widget>[
                     Text(
                       text,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(
@@ -173,8 +175,9 @@ class _AppVoiceRecordState extends State<AppVoiceRecord> {
                     Text(
                       textShow,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
+                        fontFamily: AppConstants.fontsRegular,
                         fontSize: 14,
                       ),
                     )

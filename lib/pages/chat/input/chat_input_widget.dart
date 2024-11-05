@@ -123,15 +123,19 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
                                           _controller.textEditingController,
                                       maxLines: 1,
                                       minLines: 1,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 15,
-                                          fontWeight: FontWeight.bold),
+                                          fontFamily: AppConstants.fontsRegular,
+                                          fontWeight: FontWeight.normal),
                                       decoration: InputDecoration(
                                           hintText:
                                               Tr.app_message_send_input.tr,
-                                          hintStyle: const TextStyle(
-                                              color: Color(0xFFBCB6C4),
+                                          hintStyle: TextStyle(
+                                              fontSize: 15,
+                                              fontFamily:
+                                                  AppConstants.fontsRegular,
+                                              color: const Color(0xFFBCB6C4),
                                               fontWeight: FontWeight.w400),
                                           hintMaxLines: 1,
                                           border: InputBorder.none),
@@ -242,9 +246,10 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
             ),
             Text(
               Tr.app_message_type_gift.tr,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
                   fontSize: 13,
+                  fontFamily: AppConstants.fontsRegular,
                   fontWeight: FontWeight.w500),
             )
           ],
@@ -295,9 +300,10 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
               ),
               Text(
                 Tr.app_message_type_photo.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 13,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               )
             ],
@@ -343,9 +349,10 @@ class _ChatInputWidgetState extends State<ChatInputWidget>
                   ),
                   Text(
                     Tr.app_grade_video_chat.tr,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.black,
                         fontSize: 13,
+                        fontFamily: AppConstants.fontsRegular,
                         fontWeight: FontWeight.w500),
                   )
                 ],
