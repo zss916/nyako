@@ -13,7 +13,7 @@ class LoginBtn extends StatelessWidget {
             BoxShadow(
               color: Color(0x669341FF),
               blurRadius: 15.0,
-              offset: Offset(0.0, 5.0),
+              offset: Offset(0.0, 6.0),
             ),
           ],
           borderRadius: BorderRadiusDirectional.circular(24),

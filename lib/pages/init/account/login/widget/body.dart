@@ -88,9 +88,10 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                   child: Text(
                     Tr.app_login_username.tr,
                     maxLines: 1,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.black,
                         fontSize: 24,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -102,10 +103,11 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                   child: Text(
                     Tr.app_login_top_title.trArgs([AppConstants.appName]),
                     maxLines: 1,
-                    style: const TextStyle(
-                        color: Color(0xFF7D6E87),
+                    style: TextStyle(
+                        color: const Color(0xFF7D6E87),
                         fontSize: 13,
-                        fontWeight: FontWeight.bold),
+                        fontFamily: AppConstants.fontsRegular,
+                        fontWeight: FontWeight.normal),
                   ),
                 ),
                 Container(
@@ -117,7 +119,7 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                       color: Colors.white,
                       borderRadius: BorderRadiusDirectional.circular(16)),
                   margin: const EdgeInsetsDirectional.only(
-                      top: 5, bottom: 10, start: 40, end: 40),
+                      top: 60, bottom: 10, start: 40, end: 40),
                   child: Row(
                     children: [
                       Container(
@@ -142,15 +144,17 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                           child: TextField(
                         controller: _editNameCtrl,
                         cursorColor: const Color(0xFF982AFF),
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.normal),
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: Tr.app_details_edit_name.tr,
-                          hintStyle: const TextStyle(
+                          hintStyle: TextStyle(
                               fontSize: 15,
+                              fontFamily: AppConstants.fontsRegular,
                               color: Colors.grey,
                               fontWeight: FontWeight.normal),
                         ),
@@ -194,16 +198,18 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                         //maxLength: 15,
                         obscureText: _obscureText,
                         cursorColor: const Color(0xFF982AFF),
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.normal),
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: Tr.app_promapp_password.tr,
-                            hintStyle: const TextStyle(
+                            hintStyle: TextStyle(
                                 fontSize: 15,
-                                color: Color(0xFFBCB6C4),
+                                fontFamily: AppConstants.fontsRegular,
+                                color: const Color(0xFFBCB6C4),
                                 fontWeight: FontWeight.normal),
                             suffix: InkWell(
                               borderRadius: BorderRadius.circular(30),
@@ -235,9 +241,10 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                     child: Center(
                       child: Text(
                         Tr.app_account_login.tr,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -254,31 +261,30 @@ class _AccountLoginBodyState extends State<AccountLoginBody> with RouteAware {
                     }
                   },
                 ),
-
-                /* Container(
-            width: Get.width,
-            margin:
-                const EdgeInsetsDirectional.only(top: 15, start: 15, end: 15),
-            alignment: AlignmentDirectional.center,
-            child: GestureDetector(
-                onTap: () {
-                  if (UserInfo.to.getCheck()) {
-                    safeFind<LoginLogic>()?.visitorLogin();
-                  } else {
-                    showAgreeDialog(() {
-                      safeFind<LoginLogic>()?.visitorLogin();
-                    });
-                  }
-                },
-                child: Text(
-                  Tr.app_login_register.tr,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                      decoration: TextDecoration.underline),
-                )),
-          ),*/
+                /*Container(
+                  width: Get.width,
+                  margin: const EdgeInsetsDirectional.only(
+                      top: 15, start: 15, end: 15),
+                  alignment: AlignmentDirectional.center,
+                  child: GestureDetector(
+                      onTap: () {
+                        if (UserInfo.to.getCheck()) {
+                          safeFind<LoginLogic>()?.visitorLogin();
+                        } else {
+                          showAgreeDialog(() {
+                            safeFind<LoginLogic>()?.visitorLogin();
+                          });
+                        }
+                      },
+                      child: Text(
+                        Tr.app_login_register.tr,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            decoration: TextDecoration.underline),
+                      )),
+                ),*/
                 Container(
                   margin:
                       EdgeInsetsDirectional.only(top: h, start: 15, end: 15),

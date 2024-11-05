@@ -63,9 +63,10 @@ class AccountCachePage extends GetView<AccountCacheLogic> {
                   child: Text(
                     Tr.app_login_username.tr,
                     maxLines: 1,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.black,
                         fontSize: 24,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -77,10 +78,11 @@ class AccountCachePage extends GetView<AccountCacheLogic> {
                   child: Text(
                     Tr.app_login_top_title.trArgs([AppConstants.appName]),
                     maxLines: 1,
-                    style: const TextStyle(
-                        color: Color(0xFF7D6E87),
+                    style: TextStyle(
+                        color: const Color(0xFF7D6E87),
                         fontSize: 13,
-                        fontWeight: FontWeight.bold),
+                        fontFamily: AppConstants.fontsRegular,
+                        fontWeight: FontWeight.normal),
                   ),
                 ),
                 Container(
@@ -103,9 +105,10 @@ class AccountCachePage extends GetView<AccountCacheLogic> {
                     maxLines: 1,
                     maxFontSize: 16,
                     minFontSize: 10,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.black,
                         fontSize: 16,
+                        fontFamily: AppConstants.fontsBold,
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold),
                   ),
@@ -115,10 +118,11 @@ class AccountCachePage extends GetView<AccountCacheLogic> {
                     child: Center(
                       child: Text(
                         Tr.app_account_login.tr,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
-                            fontWeight: FontWeight.bold),
+                            fontFamily: AppConstants.fontsRegular,
+                            fontWeight: FontWeight.normal),
                       ),
                     ),
                   ),
@@ -144,10 +148,11 @@ class AccountCachePage extends GetView<AccountCacheLogic> {
                       child: Text(
                         Tr.appUseOtherAccount.tr,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: TextStyle(
+                            fontFamily: AppConstants.fontsRegular,
                             decoration: TextDecoration.underline,
-                            decorationColor: Color(0xFF9341FF),
-                            color: Color(0xFF9341FF),
+                            decorationColor: const Color(0xFF9341FF),
+                            color: const Color(0xFF9341FF),
                             fontSize: 18),
                       ),
                     ),
