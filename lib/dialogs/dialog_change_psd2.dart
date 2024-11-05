@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/routes/app_pages.dart';
@@ -177,16 +178,19 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog2> {
                                 Tr.app_login_account.tr,
                                 textAlign: TextAlign.start,
                                 maxLines: 1,
-                                style: const TextStyle(
-                                    color: Color(0xFF9B989D), fontSize: 13),
+                                style: TextStyle(
+                                    color: const Color(0xFF9B989D),
+                                    fontFamily: AppConstants.fontsRegular,
+                                    fontSize: 13),
                               ),
                               Text(
                                 widget.account,
                                 maxLines: 1,
                                 textAlign: TextAlign.start,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 15,
+                                    fontFamily: AppConstants.fontsRegular,
                                     fontWeight: FontWeight.bold),
                               )
                             ],
@@ -222,16 +226,19 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog2> {
                                 Tr.app_login_password.tr,
                                 textAlign: TextAlign.start,
                                 maxLines: 1,
-                                style: const TextStyle(
-                                    color: Color(0xFF9B989D), fontSize: 13),
+                                style: TextStyle(
+                                    color: const Color(0xFF9B989D),
+                                    fontFamily: AppConstants.fontsRegular,
+                                    fontSize: 13),
                               ),
                               Text(
                                 widget.password,
                                 maxLines: 1,
                                 textAlign: TextAlign.start,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 15,
+                                    fontFamily: AppConstants.fontsRegular,
                                     fontWeight: FontWeight.bold),
                               )
                             ],
@@ -284,8 +291,9 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog2> {
                                 maxFontSize: 13,
                                 minFontSize: 10,
                                 softWrap: true,
-                                style: const TextStyle(
-                                    color: Color(0xFF9B989D),
+                                style: TextStyle(
+                                    color: const Color(0xFF9B989D),
+                                    fontFamily: AppConstants.fontsRegular,
                                     fontWeight: FontWeight.normal,
                                     fontSize: 13),
                               ),
@@ -318,9 +326,10 @@ class _ChangePasswordDialogState extends State<ChangePasswordDialog2> {
                             ),
                             Text(
                               Tr.app_save_image.tr,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
+                                  fontFamily: AppConstants.fontsBold,
                                   fontWeight: FontWeight.bold),
                             )
                           ],
