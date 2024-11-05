@@ -49,7 +49,7 @@ const language_en = {
   "nyako_exclusive_discount": "Exclusive discount price for vip",
   "nyako_order_sign_reward": "check-in reward",
   "nyako_day": "Days",
-  "nyako_effect": "taking effect",
+  "nyako_effect": "Taking effect",
   "nyako_overdue_days": "expire within %s days",
   "nyako_sign_header_used": "weared",
   "nyako_sign_header_put": "wear",

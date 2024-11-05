@@ -5,6 +5,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:oliapro/agora/rtm_msg_entity.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/database/entity/app_her_entity.dart';
 import 'package:oliapro/database/entity/app_msg_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -131,9 +132,10 @@ class _ChatMsgVoiceState extends State<ChatMsgVoice> {
                     Text(
                       " ${AppFormatUtil.getTimeStrFromSecond(int.parse(msg.content))}",
                       //'  ${msg.content}\'',
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                     if (_loading)
@@ -186,9 +188,10 @@ class _ChatMsgVoiceState extends State<ChatMsgVoice> {
                     Text(
                       " ${AppFormatUtil.getTimeStrFromSecond(int.parse(msg.content))}",
                       //'  ${msg.content}\'',
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                     if (_loading)

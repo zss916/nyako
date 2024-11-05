@@ -59,10 +59,11 @@ class ChatPortrait extends StatelessWidget {
                         ? AppConstants.appName
                         : logic.herDetail?.nickname ?? '--',
                 maxLines: 1,
-                style: const TextStyle(
+                style: TextStyle(
                     overflow: TextOverflow.ellipsis,
                     color: Colors.black,
                     fontSize: 16,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold),
               ),
             ),

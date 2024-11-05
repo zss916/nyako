@@ -73,6 +73,7 @@ class Assets {
   static const String iconCallVoiceNo = 'assets/icon/call_voice_no.png';
   static const String iconCardFreeBg = 'assets/icon/card_free_bg.png';
   static const String iconCardFreeBg2 = 'assets/icon/card_free_bg2.png';
+  static const String iconChatCard = 'assets/icon/chat_card.png';
   static const String iconChatSend = 'assets/icon/chat_send.png';
   static const String iconCheckIn = 'assets/icon/check_in.png';
   static const String iconChecked = 'assets/icon/checked.png';

@@ -37,11 +37,9 @@ class ChatPage extends GetView<ChatLogic> {
                                   width: double.maxFinite,
                                   height: 12,
                                 ),
-                                /* if (!UserInfo.to.isUserVip &&
+                                if (!UserInfo.to.isUserVip &&
                                     UserInfo.to.isUseMsgCard)
-                                  const ChatMsgCard(),*/
-                                /*if (logic.isShowRechargeTip)
-                                  BuildRechargeTip(logic),*/
+                                  const ChatMsgCard(),
                                 Expanded(
                                   child: buildContent(logic),
                                 ),
@@ -97,7 +95,7 @@ class ChatPage extends GetView<ChatLogic> {
               bottomStart: Radius.circular(24), bottomEnd: Radius.circular(24)),
           color: Color(0xFFF5F4F6)),
       padding: const EdgeInsetsDirectional.only(
-          top: 35, bottom: 10, start: 5, end: 10),
+          top: 45, bottom: 10, start: 5, end: 10),
       child: Row(
         children: [
           Container(

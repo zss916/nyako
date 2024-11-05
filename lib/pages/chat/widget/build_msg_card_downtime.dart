@@ -21,12 +21,12 @@ class _BuildGiftState extends State<BuildMsgCardDownTime> {
     return AutoSizeText(
       countdown <= 0 ? "--" : second2HMS(countdown ~/ 1000),
       maxLines: 1,
-      maxFontSize: 17,
+      maxFontSize: 16,
       minFontSize: 10,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-          color: const Color(0xFFA0EDFF),
-          fontSize: 17,
+          color: const Color(0xFF9341FF),
+          fontSize: 16,
           fontFamily: AppConstants.fontsRegular,
           fontWeight: FontWeight.normal),
     );

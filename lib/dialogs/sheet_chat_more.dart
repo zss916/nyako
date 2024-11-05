@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
 import 'package:oliapro/routes/app_pages.dart';
@@ -52,9 +53,10 @@ void showChatMore(
                     child: Image.asset(A.assets_img_report),),*/
                         Text(
                           Tr.app_report_title.tr,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         )
                       ],
@@ -88,9 +90,10 @@ void showChatMore(
                     child: Image.asset(A.assets_img_black),),*/
                         Text(
                           Tr.app_setting_black_list.tr,
-                          style: const TextStyle(
-                              color: Color(0xFFFF4864),
+                          style: TextStyle(
+                              color: const Color(0xFFFF4864),
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         )
                       ],
@@ -124,9 +127,10 @@ void showChatMore(
                     child: Image.asset(A.assets_img_report),),*/
                         Text(
                           Tr.app_dialog_clear_message_record.tr,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         )
                       ],
@@ -162,9 +166,10 @@ void showChatMore(
                           isToFollow == true
                               ? Tr.app_create_follow.tr
                               : Tr.app_create_cancel_follow.tr,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         )
                       ],
@@ -193,9 +198,10 @@ void showChatMore(
                     borderRadius: BorderRadiusDirectional.all(Radius.circular(20))),*/
                     child: Text(
                       Tr.app_base_cancel.tr,
-                      style: const TextStyle(
-                          color: Color(0xFF9B989D),
+                      style: TextStyle(
+                          color: const Color(0xFF9B989D),
                           fontSize: 16,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                   ),

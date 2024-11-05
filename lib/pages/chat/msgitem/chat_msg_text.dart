@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/chat/msgitem/build_switch2.dart';
+import 'package:oliapro/common/app_constants.dart';
+import 'package:oliapro/pages/chat/msgitem/build_switch.dart';
 import 'package:oliapro/services/storage_service.dart';
 
 import 'chat_msg_widget.dart';
@@ -51,9 +52,10 @@ class _ChatMsgTextState extends State<ChatMsgText> {
                       children: [
                         Text(
                           msg.content,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
                               fontSize: 15,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         ),
                         if (widget.hasTranslateFunction! &&
@@ -72,9 +74,10 @@ class _ChatMsgTextState extends State<ChatMsgText> {
                             msg.translateContent!.isNotEmpty)
                           Text(
                             msg.translateContent ?? "",
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
+                                fontFamily: AppConstants.fontsRegular,
                                 fontWeight: FontWeight.w500),
                           )
                       ],
@@ -114,9 +117,10 @@ class _ChatMsgTextState extends State<ChatMsgText> {
               margin: const EdgeInsets.only(top: 0),
               child: Text(
                 msg.content,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 15,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               ),
             ),

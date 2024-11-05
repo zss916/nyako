@@ -65,9 +65,10 @@ class ChatMsgCall extends StatelessWidget {
                     ),
                     Text(
                       content,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           fontSize: 15,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                   ],
@@ -104,9 +105,10 @@ class ChatMsgCall extends StatelessWidget {
                     ),
                     Text(
                       content,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.black,
                           fontSize: 15,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     ),
                   ],

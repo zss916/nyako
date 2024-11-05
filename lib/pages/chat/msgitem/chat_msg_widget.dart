@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/database/entity/app_msg_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/mine/widget/avatar_state.dart';
@@ -66,7 +67,10 @@ class LianChatMsgHer extends StatelessWidget {
                   bottom: 10, top: 3, left: 12, right: 12),
               child: Text(
                 str,
-                style: const TextStyle(color: Color(0xFFBCB6C4), fontSize: 13),
+                style: TextStyle(
+                    fontFamily: AppConstants.fontsRegular,
+                    color: const Color(0xFFBCB6C4),
+                    fontSize: 13),
               ),
             ),
         ],
@@ -134,7 +138,10 @@ class LianChatMsgMe extends StatelessWidget {
                   bottom: 10, top: 3, left: 12, right: 12),
               child: Text(
                 str,
-                style: const TextStyle(color: Color(0xFFBCB6C4), fontSize: 13),
+                style: TextStyle(
+                    color: const Color(0xFFBCB6C4),
+                    fontFamily: AppConstants.fontsRegular,
+                    fontSize: 13),
               ),
             ),
         ],
