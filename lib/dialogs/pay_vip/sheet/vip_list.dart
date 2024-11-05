@@ -107,15 +107,17 @@ class _VipListState extends State<VipList> {
           children: [
             Text(
               (item.vipDays ?? 0).toString(),
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold,
                   fontSize: 20),
             ),
             Text(
               " ${Tr.appDays.tr}",
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold,
                   fontSize: 15),
             ),
@@ -134,9 +136,10 @@ class _VipListState extends State<VipList> {
                   children: [
                     Text(
                       "${Tr.appSend.tr}${item.showValue}",
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.normal,
                           fontSize: 14),
                     ),
                     Container(
@@ -175,8 +178,8 @@ class _VipListState extends State<VipList> {
                       BoxShadow(
                           color: Color(0x4DFF33A7),
                           offset: Offset(2, 2),
-                          blurRadius: 18,
-                          spreadRadius: 4)
+                          blurRadius: 8,
+                          spreadRadius: 2)
                     ],
                     gradient: const LinearGradient(
                         colors: [Color(0xFFFF741A), Color(0xFFFF17D6)]),
@@ -189,9 +192,10 @@ class _VipListState extends State<VipList> {
                   maxFontSize: 14,
                   minFontSize: 7,
                   maxLines: 1,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.w500),
                 ),
               ),

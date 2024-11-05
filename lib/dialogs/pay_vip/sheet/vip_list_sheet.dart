@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/charge_path.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/pay_vip/sheet/vip_list.dart';
@@ -63,7 +64,10 @@ class VipListSheet extends StatelessWidget {
                     Expanded(
                         child: Text(
                       Tr.app_vip_tip1.tr,
-                      style: const TextStyle(color: Colors.white, fontSize: 13),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: AppConstants.fontsRegular,
+                          fontSize: 13),
                     ))
                   ],
                 ),
@@ -88,9 +92,10 @@ class VipListSheet extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                       Container(
