@@ -17,7 +17,7 @@ class CardListBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -41,7 +41,7 @@ class CardListBody extends StatelessWidget {
                 labelColor: Colors.black,
                 tabs: [
                   Tab(text: Tr.app_mine_my_prop.tr),
-                  Tab(text: Tr.app_my_gift.tr),
+                  // Tab(text: Tr.app_my_gift.tr),
                   Tab(text: Tr.appSignHeader.tr),
                 ],
                 labelStyle: TextStyle(
@@ -76,7 +76,7 @@ class CardListBody extends StatelessWidget {
       _ when state == Status.DATA.index => TabBarView(
           children: [
             CardList(TabType.prop.index, logic),
-            CardList(TabType.reward.index, logic),
+            // CardList(TabType.reward.index, logic),
             CardList(TabType.avatar.index, logic),
           ],
         ),

@@ -48,24 +48,30 @@ class SignReward extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Wrap(
-                    alignment: WrapAlignment.center,
-                    children: [
-                      Text(
-                        Tr.appCgGain.trArgs([data.showName()]),
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15),
-                      ),
-                      Text(
-                        Tr.appSignRewardTip.trArgs([Tr.app_prop_package.tr]),
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15),
-                      ),
-                    ],
+                  Container(
+                    margin:
+                        const EdgeInsetsDirectional.symmetric(horizontal: 20),
+                    child: RichText(
+                      text: TextSpan(
+                          text: Tr.appCgGain.trArgs([data.showName()]),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15),
+                          children: [
+                            TextSpan(
+                              text: Tr.appSignRewardTip
+                                  .trArgs([Tr.app_prop_package.tr]),
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: AppConstants.fontsRegular,
+                                  fontSize: 15),
+                            )
+                          ]),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   const SizedBox(
                     height: 15,
@@ -116,9 +122,10 @@ class SignReward extends StatelessWidget {
                         data.type == 8
                             ? Tr.app_lottery.tr
                             : Tr.app_base_confirm.tr,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.w500),
                       ),
                     ),

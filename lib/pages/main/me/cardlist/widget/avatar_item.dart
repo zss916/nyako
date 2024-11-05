@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/entities/app_sign_card_entity.dart';
 import 'package:oliapro/generated/assets.dart';
@@ -56,9 +57,10 @@ class _AvatarItemState extends State<AvatarItem> {
               (widget.item.isVipFrame) ? "VIP" : Tr.appDelicateAvatarFrame.tr,
               maxLines: 1,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
                   fontSize: 15,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.w500),
             ),
           ),
@@ -73,8 +75,9 @@ class _AvatarItemState extends State<AvatarItem> {
               maxLines: 1,
               maxFontSize: 13,
               minFontSize: 6,
-              style: const TextStyle(
-                color: Color(0xFF9B989D),
+              style: TextStyle(
+                color: const Color(0xFF9B989D),
+                fontFamily: AppConstants.fontsRegular,
                 fontSize: 13,
               ),
             ),
@@ -116,6 +119,7 @@ class _AvatarItemState extends State<AvatarItem> {
                             ? const Color(0xFF9B989D)
                             : const Color(0xFF9341FF),
                         fontSize: 12,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                   ),
                 ),

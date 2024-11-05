@@ -45,7 +45,6 @@ class BuildTopInfo extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      //logic.toEdit()
                       BuildPortrait(logic),
                       const BuildName(),
                       BuildIdentity(logic),
