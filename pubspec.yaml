@@ -52,6 +52,7 @@ dependencies:
   event_bus: 2.0.0
   #6.3.0/5.3.1
   agora_rtc_engine: 6.3.2
+  #1.5.9
   agora_rtm: 1.5.9
   #2.4.0
   web_socket_channel: 3.0.1

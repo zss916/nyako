@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/dialogs/login_agree_dialog.dart';
 import 'package:oliapro/pages/init/login/index.dart';
@@ -27,8 +28,11 @@ class BuildAccountLogin extends StatelessWidget {
             borderRadius: BorderRadiusDirectional.all(Radius.circular(24))),
         child: Text(
           Tr.app_login_username.tr,
-          style: const TextStyle(
-              color: Colors.white, fontSize: 18, fontWeight: FontWeight.normal),
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontFamily: AppConstants.fontsRegular,
+              fontWeight: FontWeight.normal),
         ),
       ),
       onTap: () {

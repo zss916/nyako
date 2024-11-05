@@ -57,6 +57,7 @@ class _LoginCheckState extends State<LoginCheck> {
                     const TextSpan(text: ' '),
                     TextSpan(
                         style: TextStyle(
+                            fontFamily: AppConstants.fontsRegular,
                             decorationColor: const Color(0xFF9341FF),
                             color: widget.color ?? const Color(0xFF9341FF),
                             decoration: TextDecoration.underline),
@@ -70,6 +71,7 @@ class _LoginCheckState extends State<LoginCheck> {
                     const TextSpan(text: ' '),
                     TextSpan(
                         style: TextStyle(
+                            fontFamily: AppConstants.fontsRegular,
                             decorationColor: const Color(0xFF9341FF),
                             color: widget.color ?? const Color(0xFF9341FF),
                             decoration: TextDecoration.underline),
@@ -82,6 +84,7 @@ class _LoginCheckState extends State<LoginCheck> {
                   style: TextStyle(
                       color: widget.color ?? const Color(0xFF5B5A5B),
                       fontSize: 12,
+                      fontFamily: AppConstants.fontsRegular,
                       height: 1.4),
                 )
               ]),

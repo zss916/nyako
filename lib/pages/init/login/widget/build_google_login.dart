@@ -45,9 +45,10 @@ class BuildGoogleLogin extends StatelessWidget {
               margin: const EdgeInsetsDirectional.symmetric(horizontal: 5),
               child: Text(
                 Tr.app_login_google.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.normal),
               ),
             ),

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/init/login/index.dart';
@@ -73,8 +74,10 @@ class LoginBody extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 maxFontSize: 12,
                                 minFontSize: 8,
-                                style: const TextStyle(
-                                    color: Color(0xFF07435E), fontSize: 12),
+                                style: TextStyle(
+                                    color: const Color(0xFF07435E),
+                                    fontFamily: AppConstants.fontsRegular,
+                                    fontSize: 12),
                               ),
                             ))
                     ],
@@ -107,8 +110,10 @@ class LoginBody extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 maxFontSize: 12,
                                 minFontSize: 8,
-                                style: const TextStyle(
-                                    color: Color(0xFF07435E), fontSize: 12),
+                                style: TextStyle(
+                                    color: const Color(0xFF07435E),
+                                    fontFamily: AppConstants.fontsRegular,
+                                    fontSize: 12),
                               ),
                             ))
                     ],
