@@ -13,6 +13,8 @@ class GameBody extends StatelessWidget {
 
   GameBody(this.logic, {super.key});
 
+  final String getMoreTip = "获取更多次数";
+
   // bool get isSmall => ScreenUtil().screenHeight < 600;
 
   @override
@@ -88,7 +90,7 @@ class GameBody extends StatelessWidget {
                             children: [
                               Expanded(
                                   child: Text(
-                                "获取更多次数",
+                                getMoreTip,
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                     fontFamily: AppConstants.fontsRegular,

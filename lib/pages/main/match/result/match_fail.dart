@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 
@@ -53,9 +54,10 @@ class MatchFail extends StatelessWidget {
                                   top: 10, bottom: 15),
                               child: Text(
                                 Tr.app_match_failed.tr,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 18,
+                                    fontFamily: AppConstants.fontsBold,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -65,9 +67,10 @@ class MatchFail extends StatelessWidget {
                               child: Text(
                                 Tr.appMatchFailedContent.tr,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    color: Color(0xFF9B989D),
+                                style: TextStyle(
+                                    color: const Color(0xFF9B989D),
                                     fontSize: 15,
+                                    fontFamily: AppConstants.fontsRegular,
                                     fontWeight: FontWeight.w500),
                               ),
                             ),
@@ -88,9 +91,10 @@ class MatchFail extends StatelessWidget {
                                     color: const Color(0xFF9341FF)),
                                 child: Text(
                                   Tr.app_restart_match.tr,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 16,
+                                      fontFamily: AppConstants.fontsRegular,
                                       fontWeight: FontWeight.w700),
                                 ),
                               ),
@@ -102,9 +106,10 @@ class MatchFail extends StatelessWidget {
                                 onPressed: () => Get.back(closeOverlays: true),
                                 child: Text(
                                   Tr.app_base_cancel.tr,
-                                  style: const TextStyle(
-                                      color: Color(0xFF9B989D),
+                                  style: TextStyle(
+                                      color: const Color(0xFF9B989D),
                                       fontSize: 16,
+                                      fontFamily: AppConstants.fontsRegular,
                                       fontWeight: FontWeight.w500),
                                 ))
                           ],

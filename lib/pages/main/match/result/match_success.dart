@@ -134,7 +134,7 @@ class _BuildBodyState extends State<MatchSuccess> {
                         ),
                         Container(
                           width: double.maxFinite,
-                          height: 85,
+                          height: 86,
                           alignment: AlignmentDirectional.center,
                           decoration: BoxDecoration(
                               color: Colors.black,
@@ -160,9 +160,10 @@ class _BuildBodyState extends State<MatchSuccess> {
                                         overflow: TextOverflow.ellipsis,
                                         maxFontSize: 28,
                                         minFontSize: 15,
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 28,
+                                            fontFamily: AppConstants.fontsBold,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
@@ -191,9 +192,12 @@ class _BuildBodyState extends State<MatchSuccess> {
                                               ),
                                               Text(
                                                 widget.anchor.showBirthday,
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                     fontSize: 13,
-                                                    color: Color(0xFFFF3881)),
+                                                    fontFamily: AppConstants
+                                                        .fontsRegular,
+                                                    color: const Color(
+                                                        0xFFFF3881)),
                                               )
                                             ],
                                           ),
@@ -218,8 +222,11 @@ class _BuildBodyState extends State<MatchSuccess> {
                                               ),
                                               Text(
                                                 widget.anchor.getUid,
-                                                style: const TextStyle(
-                                                    color: Color(0xFF3BC2FF),
+                                                style: TextStyle(
+                                                    fontFamily: AppConstants
+                                                        .fontsRegular,
+                                                    color:
+                                                        const Color(0xFF3BC2FF),
                                                     fontSize: 13),
                                               )
                                             ],
@@ -343,9 +350,11 @@ class _BuildBodyState extends State<MatchSuccess> {
                                             minFontSize: 16,
                                             maxLines: 1,
                                             overflow: TextOverflow.ellipsis,
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 18,
+                                                fontFamily:
+                                                    AppConstants.fontsRegular,
                                                 fontWeight: FontWeight.w600),
                                           ),
                                         ],
@@ -403,8 +412,10 @@ class _BuildBodyState extends State<MatchSuccess> {
                                           ),
                                           TextSpan(
                                             text: Tr.app_video_time_unit.tr,
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                                 color: Colors.white60,
+                                                fontFamily:
+                                                    AppConstants.fontsRegular,
                                                 fontSize: 11),
                                           )
                                         ],

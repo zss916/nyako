@@ -3,6 +3,10 @@ part of matching_page;
 class MatchingPage extends GetView<MatchingLogic> {
   const MatchingPage({super.key});
 
+  final String findMorePeople = "正在为你寻找有缘人";
+
+  final String wait = "请你心等待..";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,9 +78,10 @@ class MatchingPage extends GetView<MatchingLogic> {
                   margin: const EdgeInsetsDirectional.only(
                       start: 20, end: 20, top: 10),
                   child: Text(
-                    "正在为你寻找有缘人",
+                    findMorePeople,
                     style: TextStyle(
                         color: Colors.black,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold,
                         fontSize: 18),
                   ),
@@ -85,10 +90,11 @@ class MatchingPage extends GetView<MatchingLogic> {
                   margin: const EdgeInsetsDirectional.only(
                       bottom: 30, start: 20, end: 20, top: 15),
                   child: Text(
-                    "请你心等待..",
+                    wait,
                     style: TextStyle(
-                        color: Color(0xFF9B989D),
+                        color: const Color(0xFF9B989D),
                         fontWeight: FontWeight.w500,
+                        fontFamily: AppConstants.fontsRegular,
                         fontSize: 14),
                   ),
                 ),
@@ -105,10 +111,11 @@ class MatchingPage extends GetView<MatchingLogic> {
                         borderRadius: BorderRadiusDirectional.circular(30)),
                     child: Text(
                       Tr.app_base_cancel.tr,
-                      style: const TextStyle(
-                          color: Color(0xFF9341FF),
+                      style: TextStyle(
+                          color: const Color(0xFF9341FF),
                           fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                 )
