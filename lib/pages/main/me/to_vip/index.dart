@@ -2,9 +2,9 @@ library vip_page;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nyako/common/language_key.dart';
 import 'package:nyako/entities/app_charge_quick_entity.dart';
 import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/generated/assets.dart';
 import 'package:nyako/http/api/index.dart';
 import 'package:nyako/http/index.dart';
 import 'package:nyako/pages/main/me/to_vip/widget/body.dart';

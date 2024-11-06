@@ -107,15 +107,17 @@ class _VipListState extends State<VipList> {
           children: [
             Text(
               (item.vipDays ?? 0).toString(),
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold,
                   fontSize: 20),
             ),
             Text(
               " ${Tr.appDays.tr}",
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold,
                   fontSize: 15),
             ),
@@ -134,9 +136,10 @@ class _VipListState extends State<VipList> {
                   children: [
                     Text(
                       "${Tr.appSend.tr}${item.showValue}",
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.normal,
                           fontSize: 14),
                     ),
                     Container(
@@ -189,9 +192,10 @@ class _VipListState extends State<VipList> {
                   maxFontSize: 14,
                   minFontSize: 7,
                   maxLines: 1,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -206,27 +210,6 @@ class _VipListState extends State<VipList> {
     for (int i = 0; i < data.length; i++) {
       data[i].isSelect = (i == index);
     }
-  }
-
-  Widget btn(String path, List<PayQuickCommodite> data) {
-    return GestureDetector(
-      onTap: () {
-        PayQuickCommodite item = data.firstWhere((e) => (e.isSelect == true));
-        toQVipPayChannel(item, createPath: path);
-      },
-      child: Container(
-        height: 56,
-        margin: const EdgeInsets.only(top: 5, left: 14, right: 14, bottom: 15),
-        alignment: Alignment.center,
-        width: double.maxFinite,
-        decoration: const BoxDecoration(),
-        child: Text(
-          Tr.app_quick_buy.tr,
-          style: const TextStyle(
-              color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
   }
 
   ///续费
@@ -260,9 +243,10 @@ class _VipListState extends State<VipList> {
                     children: [
                       Text(
                         Tr.app_str_day.trArgs([(data.vipDays ?? 0).toString()]),
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                       if (data.showValue != 0)
@@ -282,9 +266,10 @@ class _VipListState extends State<VipList> {
                             children: [
                               Text(
                                 "+${data.showValue}",
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                    fontFamily: AppConstants.fontsRegular,
+                                    fontWeight: FontWeight.normal,
                                     fontSize: 14),
                               ),
                               Container(
@@ -332,9 +317,10 @@ class _VipListState extends State<VipList> {
                       maxFontSize: 14,
                       minFontSize: 7,
                       maxLines: 1,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.w500),
                     ),
                   ),
@@ -355,13 +341,36 @@ class _VipListState extends State<VipList> {
                     colors: [Color(0xFFFF1A45), Color(0xFFFF6E17)])),
             child: Text(
               Tr.app_off.trArgs([(data.discount ?? 0).toString()]),
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
-                  fontWeight: FontWeight.w500),
+                  fontFamily: AppConstants.fontsBold,
+                  fontWeight: FontWeight.normal),
             ),
           )
         ],
+      ),
+    );
+  }
+
+  @Deprecated("old")
+  Widget btn(String path, List<PayQuickCommodite> data) {
+    return GestureDetector(
+      onTap: () {
+        PayQuickCommodite item = data.firstWhere((e) => (e.isSelect == true));
+        toQVipPayChannel(item, createPath: path);
+      },
+      child: Container(
+        height: 56,
+        margin: const EdgeInsets.only(top: 5, left: 14, right: 14, bottom: 15),
+        alignment: Alignment.center,
+        width: double.maxFinite,
+        decoration: const BoxDecoration(),
+        child: Text(
+          Tr.app_quick_buy.tr,
+          style: const TextStyle(
+              color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

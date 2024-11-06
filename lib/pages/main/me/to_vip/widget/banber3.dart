@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 
@@ -35,9 +36,10 @@ class Banner3 extends StatelessWidget {
             Expanded(
               child: Text(
                 "${Tr.app_benefit.trArgs(["7: "])}${content[6]}",
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                    fontFamily: AppConstants.fontsRegular,
+                    fontWeight: FontWeight.w600,
                     color: Colors.black),
               ),
             )

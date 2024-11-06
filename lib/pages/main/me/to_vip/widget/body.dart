@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/charge_path.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/dialogs/pay_vip/sheet/vip_banner.dart';
@@ -39,8 +40,9 @@ class ToVipBody extends StatelessWidget {
                 child: Text(
                   Tr.app_vip_tip1.tr,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.bold,
                       fontSize: 24),
                 ),

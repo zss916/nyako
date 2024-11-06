@@ -124,6 +124,7 @@ class Assets {
       'assets/icon/home_recharge_tip_bg.png';
   static const String iconHotCall = 'assets/icon/hot_call.png';
   static const String iconHotMsg = 'assets/icon/hot_msg.png';
+  static const String iconIcBack = 'assets/icon/ic_back.png';
   static const String iconIdSmallIcon = 'assets/icon/id_small_icon.png';
   static const String iconInputAudio = 'assets/icon/input_audio.png';
   static const String iconInputCall = 'assets/icon/input_call.png';

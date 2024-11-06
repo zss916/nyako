@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 
@@ -35,9 +36,10 @@ class Banner1 extends StatelessWidget {
             Expanded(
               child: Text(
                 "${Tr.app_benefit.trArgs(["1: "])}${Tr.app_vip_sign_extra.tr}",
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                    fontFamily: AppConstants.fontsRegular,
+                    fontWeight: FontWeight.w600,
                     color: Colors.black),
               ),
             )
@@ -60,9 +62,10 @@ class Banner1 extends StatelessWidget {
             Expanded(
               child: Text(
                 "${Tr.app_benefit.trArgs(["2: "])}${Tr.app_benefit_1.tr}",
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: AppConstants.fontsRegular,
                     color: Colors.black),
               ),
             )
@@ -85,9 +88,10 @@ class Banner1 extends StatelessWidget {
             Expanded(
               child: Text(
                 "${Tr.app_benefit.trArgs(["3: "])}${Tr.app_benefit_2.tr}",
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 15,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: AppConstants.fontsRegular,
                     color: Colors.black),
               ),
             )

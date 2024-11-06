@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 import 'package:get/get.dart';
 import 'package:nyako/common/language_key.dart';
-import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/main/me/to_vip/widget/banber1.dart';
 import 'package:nyako/pages/main/me/to_vip/widget/banber2.dart';
 import 'package:nyako/pages/main/me/to_vip/widget/banber3.dart';
@@ -12,7 +11,7 @@ class VipBanner extends StatelessWidget {
 
   VipBanner({super.key, this.index});
 
-  final List<String> icons = [
+  /*final List<String> icons = [
     Assets.iconSmallLogo,
     Assets.iconSmallLogo,
     Assets.iconSmallLogo,
@@ -20,10 +19,10 @@ class VipBanner extends StatelessWidget {
     Assets.iconSmallLogo,
     Assets.iconSmallLogo,
     Assets.iconSmallLogo,
-  ];
+  ];*/
 
   final List<String> content = [
-    Tr.app_benefit.trArgs([]),
+    Tr.app_benefit.trArgs([""]),
     Tr.app_vip_sign_extra.tr,
     Tr.app_benefit_1.tr,
     Tr.app_benefit_2.tr,
