@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/pages/call/call/index.dart';
 
@@ -31,8 +32,10 @@ class WarnTip extends StatelessWidget {
                     start: 10, end: 10, top: 10),
                 child: AutoSizeText(
                   Tr.app_video_warning.tr,
-                  style:
-                      const TextStyle(color: Color(0xFFFFF599), fontSize: 11),
+                  style: TextStyle(
+                      fontFamily: AppConstants.fontsRegular,
+                      color: const Color(0xFFFFF599),
+                      fontSize: 11),
                   maxFontSize: 11,
                   minFontSize: 4,
                 ),

@@ -66,8 +66,9 @@ class UserWidget extends StatelessWidget {
                           ),
                           child: Text(
                             (detail!.nickname ?? "").replaceNumByStar(),
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14),
                             maxLines: 1,

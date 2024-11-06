@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
 import 'package:nyako/dialogs/dialog_confirm_hang.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/aiv/index.dart';
@@ -88,13 +90,14 @@ class Connecting extends StatelessWidget {
                       Container(
                         alignment: AlignmentDirectional.center,
                         margin: const EdgeInsetsDirectional.only(top: 0),
-                        child: const Text(
-                          "",
+                        child: Text(
+                          Tr.appConnectingWait.tr,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.white54,
                               fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.normal),
                         ),
                       ),
                       const Spacer(),

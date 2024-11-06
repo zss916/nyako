@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/utils/app_extends.dart';
@@ -75,17 +76,20 @@ class BuildCallTip extends StatelessWidget {
                           nickName,
                           maxLines: 1,
                           textAlign: TextAlign.start,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           id,
                           maxLines: 1,
                           textAlign: TextAlign.start,
-                          style: const TextStyle(
-                              color: Color(0x99642A4B), fontSize: 13),
+                          style: TextStyle(
+                              fontFamily: AppConstants.fontsRegular,
+                              color: const Color(0x99642A4B),
+                              fontSize: 13),
                         ),
                       ],
                     ),
@@ -139,9 +143,10 @@ class BuildCallTip extends StatelessWidget {
                     borderRadius: BorderRadiusDirectional.circular(30)),
                 child: Text(
                   Tr.app_base_cancel.tr,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Color(0xFF9341FF),
                       fontSize: 15,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.w500),
                 ),
               ),

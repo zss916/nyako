@@ -1,5 +1,6 @@
 // 土耳其
 const language_tr = {
+  "nyako_connecting_wait": "Bağlanıyor, lütfen bekleyin",
   "nyako_save_account_content":
       "Lütfen hesap şifresini kaydedin, aksi takdirde şifreyi hesaba giriş yapmak için kullanamazsınız.",
   "nyako_your_not_set_psk": "Bir şifre belirlemediniz",

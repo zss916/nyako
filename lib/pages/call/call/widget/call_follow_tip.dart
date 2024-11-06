@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/call/index.dart';
 import 'package:nyako/pages/call/call/widget/page/build_call_tip.dart';
@@ -288,9 +289,10 @@ class CallFollowTip extends StatelessWidget {
         progressColor: const Color(0xFFFE2C55),
         center: Text(
           "$count2MinLeft",
-          style: const TextStyle(
-              color: Color(0xFFFE2C55),
+          style: TextStyle(
+              color: const Color(0xFFFE2C55),
               fontSize: 24,
+              fontFamily: AppConstants.fontsBold,
               fontWeight: FontWeight.bold),
         ),
       ),
@@ -305,9 +307,10 @@ class CallFollowTip extends StatelessWidget {
           id: "ID:${logic?.detail?.showId ?? "--"}",
           title: Text(
             Tr.app_video_to_follow_tip.tr,
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 14,
-                color: Color(0xFF642A4B),
+                fontFamily: AppConstants.fontsRegular,
+                color: const Color(0xFF642A4B),
                 fontWeight: FontWeight.w500),
           ),
           submit: Row(
@@ -324,9 +327,10 @@ class CallFollowTip extends StatelessWidget {
               ),
               Text(
                 Tr.app_details_follow.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 15,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               )
             ],
@@ -348,9 +352,10 @@ class CallFollowTip extends StatelessWidget {
           id: "ID:${logic?.detail?.showId ?? "--"}",
           title: Text(
             Tr.app_video_to_gift_tip.tr,
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 14,
-                color: Color(0xFF642A4B),
+                fontFamily: AppConstants.fontsRegular,
+                color: const Color(0xFF642A4B),
                 fontWeight: FontWeight.w500),
           ),
           submit: Row(
@@ -367,9 +372,10 @@ class CallFollowTip extends StatelessWidget {
               ),
               Text(
                 Tr.app_gift_send.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 15,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               )
             ],

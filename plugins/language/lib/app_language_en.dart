@@ -1,4 +1,5 @@
 const language_en = {
+  "nyako_connecting_wait": "Connecting, please wait",
   "nyako_save_account_content":
       "Save the account password, so as not to be unable to log in through the account password due to forgetting",
   "nyako_your_not_set_psk": "You have not set a password",

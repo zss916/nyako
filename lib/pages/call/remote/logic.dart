@@ -433,23 +433,6 @@ class RemoteLogic extends GetxController {
   void _closeMe() {
     if (stoping) return;
     stoping = true;
-    /* _closePageDialog();
-    if (AppPages.history.last.contains(AppPages.callCome)) {
-      Get.back();
-    }*/
     Get.back(closeOverlays: true);
   }
-
-  /// 关闭当前页面弹窗
-  /*void _closePageDialog() {
-    if (AppPages.history.contains(AppPages.callCome) ||
-        AppPages.history.contains(AppPages.main)) {
-      Get.until(
-        (route) {
-          return route.settings.name == AppPages.callCome ||
-              route.settings.name == AppPages.main;
-        },
-      );
-    }
-  }*/
 }

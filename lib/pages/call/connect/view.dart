@@ -86,9 +86,10 @@ class ConnectFailedPage extends GetView<FailLogic> {
                       child: Text(
                         Tr.app_video_chat_net_error.tr,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.normal),
                       ),
                     ),
@@ -108,9 +109,10 @@ class ConnectFailedPage extends GetView<FailLogic> {
                         margin: const EdgeInsetsDirectional.only(bottom: 40),
                         child: Text(
                           Tr.appOK.tr,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsRegular,
                               fontWeight: FontWeight.w500),
                         ),
                       ),

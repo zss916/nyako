@@ -99,13 +99,6 @@ class _CallHeaderToolState extends State<CallHeaderTool> {
                   showReportSheet(widget.detail!.userId!, close: () {
                     widget.callBack(CallToolEvent.toolEventClose);
                   });
-
-                  ///
-                  /*showHostOptionSheet(
-                      herId: widget.detail!.userId!,
-                      close: () {
-                        widget.callBack(CallToolEvent.toolEventClose);
-                      });*/
                 },
                 child: Image.asset(
                   Assets.iconCallReport,

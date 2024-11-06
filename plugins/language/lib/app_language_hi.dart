@@ -1,5 +1,6 @@
 // 印度
 const language_hi = {
+  "nyako_connecting_wait": "कनेक्ट हो रहा है, कृपया प्रतीक्षा करें",
   "nyako_save_account_content":
       " खाता पासवर्ड सहेजें, ताकि पासवर्ड लॉगिन खाता का सामान्य उपयोग न भूलें",
   "nyako_your_not_set_psk": " आपने अभी तक अपना पासवर्ड सेट नहीं किया है.",

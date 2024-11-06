@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/entities/app_gift_entity.dart';
 import 'package:nyako/pages/call/call/index.dart';
@@ -59,16 +60,18 @@ class _BuildAskGiftState extends State<BuildAskGift> {
             id: "ID:${widget.logic.detail?.showId ?? "--"}",
             title: Text(
               Tr.app_claim_gift_tip.trArgs([(widget.data?.name ?? "")]),
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 14,
-                  color: Color(0xFF642A4B),
+                  fontFamily: AppConstants.fontsRegular,
+                  color: const Color(0xFF642A4B),
                   fontWeight: FontWeight.w500),
             ),
             submit: Text(
               Tr.app_gift_send.tr,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 15,
+                  fontFamily: AppConstants.fontsRegular,
                   fontWeight: FontWeight.w500),
             ),
             onCancel: () {

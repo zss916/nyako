@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/end/index.dart';
@@ -81,9 +82,10 @@ class BuildChatButton extends StatelessWidget {
                             margin: const EdgeInsetsDirectional.only(start: 5),
                             child: Text(
                               Tr.app_grade_video_chat.tr,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
+                                  fontFamily: AppConstants.fontsBold,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
@@ -135,15 +137,18 @@ class BuildChatButton extends StatelessWidget {
                       ),
                       TextSpan(
                         text: "${logic.detail?.charge ?? 0}",
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                       TextSpan(
                         text: Tr.app_video_time_unit.tr,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 12),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: AppConstants.fontsRegular,
+                            fontSize: 12),
                       )
                     ],
                   ),

@@ -240,14 +240,6 @@ class LocalLogic extends GetxController {
 
   void pickUp() {
     /// 关闭弹窗
-    /*if (Get.isOverlaysOpen) {
-      if (Get.isSnackbarOpen) {
-        Get.closeAllSnackbars();
-      }
-      navigator?.popUntil((route) {
-        return (!Get.isDialogOpen! && !Get.isBottomSheetOpen!);
-      });
-    }*/
     Get.back(closeOverlays: true);
     Map<String, dynamic> map = {};
     map['herId'] = herId;
@@ -258,14 +250,6 @@ class LocalLogic extends GetxController {
 
   void _closeMe() {
     /// 关闭弹窗
-    /*if (Get.isOverlaysOpen) {
-      if (Get.isSnackbarOpen) {
-        Get.closeAllSnackbars();
-      }
-      navigator?.popUntil((route) {
-        return (!Get.isDialogOpen! && !Get.isBottomSheetOpen!);
-      });
-    }*/
     Get.back(closeOverlays: true);
   }
 }

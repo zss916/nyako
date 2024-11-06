@@ -1,4 +1,5 @@
 const language_ind = {
+  "nyako_connecting_wait": "Sedang menyambung",
   "nyako_save_account_content":
       "Simpan kata sand, untuk menghindari tidak dapat menggunakan kata sandi untuk masuk ke akun jika lupa",
   "nyako_your_not_set_psk": "Anda belum menetapkan kata sandi",

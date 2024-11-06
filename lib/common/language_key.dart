@@ -11,6 +11,7 @@ class Tr {
   static const appLastLogin = "${appName}_last_login";
   static const appPayOrder = "${appName}_pay_order";
   static const appSign = "${appName}_sign";
+  static const appConnectingWait = "${appName}_connecting_wait";
   static const appCopy = "${appName}_copy";
   static const appYourPsk = "${appName}_your_psk";
   static const appYourNotSetPsk = "${appName}_your_not_set_psk";

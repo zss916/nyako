@@ -1,4 +1,5 @@
 const language_ar = {
+  "nyako_connecting_wait": "جاري التوصيل،الرجاء الانتظار ",
   "nyako_save_account_content":
       " يرجى احفظ كلمة المرور لحسابك حتي  لا يمكنك  ان تسجيل  الدخول لانك نسيتها",
   "nyako_your_not_set_psk": "لم قم باعدادات كلمة المرور",

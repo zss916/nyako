@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/aiv/index.dart';
@@ -44,7 +45,10 @@ class BuildCallSound extends StatelessWidget {
                     child: Text(
                       title,
                       textAlign: TextAlign.start,
-                      style: const TextStyle(color: Colors.white, fontSize: 13),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: AppConstants.fontsRegular,
+                          fontSize: 13),
                       softWrap: true,
                     ),
                   )),
@@ -62,10 +66,11 @@ class BuildCallSound extends StatelessWidget {
                       maxFontSize: 13,
                       minFontSize: 6,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
-                          color: Color(0xFFFF33A7),
+                      style: TextStyle(
+                          color: const Color(0xFFFF33A7),
                           fontSize: 13,
-                          fontWeight: FontWeight.bold),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.w600),
                     ),
                   )
                 ],

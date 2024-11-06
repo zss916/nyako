@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/aiv/index.dart';
 
@@ -68,9 +69,10 @@ class AppDialogConfirmHang extends StatelessWidget {
                       maxLines: 2,
                       maxFontSize: 18,
                       minFontSize: 14,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 18,
                           color: Colors.black,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -106,10 +108,11 @@ class AppDialogConfirmHang extends StatelessWidget {
                             borderRadius: BorderRadiusDirectional.circular(30)),
                         child: Text(
                           Tr.app_base_confirm.tr,
-                          style: const TextStyle(
-                              color: Color(0xFF9341FF),
+                          style: TextStyle(
+                              color: const Color(0xFF9341FF),
                               fontSize: 15,
-                              fontWeight: FontWeight.w500),
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
@@ -135,10 +138,11 @@ class AppDialogConfirmHang extends StatelessWidget {
                             borderRadius: BorderRadiusDirectional.circular(30)),
                         child: Text(
                           Tr.app_base_cancel.tr,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
-                              fontWeight: FontWeight.w500),
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),

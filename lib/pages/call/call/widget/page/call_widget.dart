@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:nyako/agora/rtc/index.dart';
 //import 'package:nyako/agora/rtc5.2.0/index.dart';
 import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/call/index.dart';
@@ -115,8 +116,10 @@ class CallWidget extends GetView<CallLogic> {
                                                           .abs() %
                                                       60
                                                 ]),
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                     fontSize: 13,
+                                                    fontFamily: AppConstants
+                                                        .fontsRegular,
                                                     color: Colors.white),
                                               ),
                                             ],

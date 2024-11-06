@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nyako/common/app_colors.dart';
 import 'package:nyako/common/app_common_type.dart';
 import 'package:nyako/routes/app_pages.dart';
 import 'package:nyako/widget/app_click_widget.dart';
@@ -31,12 +30,11 @@ class AppDialogRtmConfirm extends StatelessWidget {
     return Center(
       child: Container(
         width: Get.width,
-        height: 140,
+        height: 160,
         margin: const EdgeInsets.symmetric(horizontal: 30),
         padding: const EdgeInsetsDirectional.only(top: 15, bottom: 15),
         decoration: BoxDecoration(
           color: Colors.white,
-          gradient: AppColors.dialogsGradient,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -69,10 +67,9 @@ class AppDialogRtmConfirm extends StatelessWidget {
                   },
                   child: Container(
                     height: 54,
-                    decoration: BoxDecoration(
-                        gradient: AppColors.btnGradient,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(30))),
+                    decoration: const BoxDecoration(
+                        color: Color(0xFF9341FF),
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
                     alignment: Alignment.center,
                     margin: const EdgeInsets.symmetric(horizontal: 30),
                     padding: const EdgeInsets.symmetric(vertical: 10),

@@ -40,9 +40,10 @@ class EndPage extends StatelessWidget {
                   isDark: false,
                   titleWidget: Text(
                     Tr.app_call_ended.tr,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                   ),
                   leading: UnconstrainedBox(
@@ -125,9 +126,10 @@ class EndPage extends StatelessWidget {
                             children: [
                               Text(
                                 logic.detail?.showNickName ?? "--",
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,
+                                    fontFamily: AppConstants.fontsBold,
                                     fontWeight: FontWeight.bold),
                               ),
                               GestureDetector(
@@ -256,6 +258,7 @@ class EndPage extends StatelessWidget {
                                     Tr.app_video_chat_duration.tr,
                                     style: TextStyle(
                                         color: Colors.white.withOpacity(0.5),
+                                        fontFamily: AppConstants.fontsRegular,
                                         fontSize: 12),
                                   ),
                                 ],
@@ -308,6 +311,7 @@ class EndPage extends StatelessWidget {
                                     Text(
                                       Tr.app_call_cast.tr,
                                       style: TextStyle(
+                                          fontFamily: AppConstants.fontsRegular,
                                           color: Colors.white.withOpacity(0.6),
                                           fontSize: 12),
                                     ),
@@ -361,6 +365,7 @@ class EndPage extends StatelessWidget {
                                     Text(
                                       Tr.app_present_consumption.tr,
                                       style: TextStyle(
+                                          fontFamily: AppConstants.fontsRegular,
                                           color: Colors.white.withOpacity(0.6),
                                           fontSize: 12),
                                     ),
@@ -382,9 +387,10 @@ class EndPage extends StatelessWidget {
                                     horizontal: 10, vertical: 10),
                                 child: Text(
                                   Tr.app_home_recommend.tr,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
+                                      fontFamily: AppConstants.fontsBold,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -483,9 +489,10 @@ class EndPage extends StatelessWidget {
                             maxFontSize: 14,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
                           ),
                         )),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:sprintf/sprintf.dart';
@@ -41,13 +42,17 @@ class BuildTimeCount extends StatelessWidget {
                 ),
                 Text(
                   Tr.app_time_prop_hint.tr,
-                  style: const TextStyle(color: Colors.white, fontSize: 13),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: AppConstants.fontsRegular,
+                      fontSize: 13),
                 ),
                 Text(
                   "${seconds}s",
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.w500),
                 ),
               ],

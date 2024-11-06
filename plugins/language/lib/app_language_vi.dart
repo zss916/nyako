@@ -1,4 +1,5 @@
 const language_vi = {
+  "nyako_connecting_wait": "Đang kết nối, vui lòng chờ",
   "nyako_save_account_content":
       "Lưu lại mật khẩu tài khoản để tránh trường hợp quên mật khẩu đăng nhập vào tài khoản không được",
   "nyako_your_not_set_psk": "Bạn chưa đặt mật khẩu",
