@@ -44,7 +44,7 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
 
   @override
   Widget build(BuildContext context) {
-    // return buildConsumptionItem(BalanceListData());
+    //return buildConsumptionItem(BalanceListData());
     return GetBuilder<RewardDetailsLogic>(
       assignId: true,
       builder: (logic) {
@@ -136,8 +136,9 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                 maxFontSize: 14,
                 minFontSize: 6,
                 style: TextStyle(
-                    color: isSelect ? Colors.black : Colors.black,
+                    color: isSelect ? Colors.black : Colors.grey,
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: isSelect ? FontWeight.bold : FontWeight.w500),
               ),
             ),
@@ -173,7 +174,10 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                       minFontSize: 6,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: AppConstants.fontsBold,
+                          fontSize: 16),
                     ),
                   ),
                   const SizedBox(
@@ -186,8 +190,10 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                                 data.createdAt!),
                             [yyyy, '.', mm, '.', dd, '-', HH, ':', nn])
                         : "--",
-                    style:
-                        const TextStyle(color: Color(0xFFBCB6C4), fontSize: 12),
+                    style: TextStyle(
+                        color: const Color(0xFFBCB6C4),
+                        fontFamily: AppConstants.fontsRegular,
+                        fontSize: 12),
                   ),
                 ],
               )),
@@ -202,8 +208,8 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                           style: TextStyle(
                               color: const Color(0xFF9341FF),
                               fontSize: 14,
-                              fontFamily: AppConstants.fontsBold,
-                              fontWeight: FontWeight.w500),
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.w600),
                         ),
                         Container(
                           margin: const EdgeInsetsDirectional.only(start: 2),
@@ -221,8 +227,10 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
                       child: Text(
                         Tr.app_base_balance
                             .trArgs(["${data.afterChange ?? '--'}"]),
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 12),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: AppConstants.fontsRegular,
+                            fontSize: 12),
                       ),
                     ),
                   ],
@@ -231,33 +239,28 @@ class _RewardDetailsBodyState extends State<RewardDetailsBody> {
             ],
           ),
           if (data.inviteeRepeat == 1)
-            Row(
-              children: [
-                Expanded(
-                    child: Container(
-                  margin: const EdgeInsets.only(top: 4),
-                  child: Text(
-                    Tr.app_re_registration_no_reward.tr,
-                    style:
-                        const TextStyle(color: Color(0xFFFFF890), fontSize: 12),
-                  ),
-                ))
-              ],
+            Container(
+              margin: const EdgeInsets.only(top: 4),
+              child: Text(
+                Tr.app_re_registration_no_reward.tr,
+                style: TextStyle(
+                  color: const Color(0xFFFF2A48),
+                  fontSize: 12,
+                  fontFamily: AppConstants.fontsRegular,
+                ),
+              ),
             ),
-          if (data.inviteeRepeat == 2)
-            Row(
-              children: [
-                Expanded(
-                    child: Container(
-                  margin: const EdgeInsets.only(top: 4),
-                  child: Text(
-                    Tr.app_unbind_google_reward.tr,
-                    style:
-                        const TextStyle(color: Color(0xFFFF2A48), fontSize: 12),
-                  ),
-                ))
-              ],
-            )
+          /*if (data.inviteeRepeat == 2)
+          Container(
+            margin: const EdgeInsets.only(top: 4),
+            child: Text(
+              Tr.app_unbind_google_reward.tr,
+              style: TextStyle(
+                  color: const Color(0xFFFF2A48),
+                  fontFamily: AppConstants.fontsRegular,
+                  fontSize: 12),
+            ),
+          )*/
         ],
       ),
     );

@@ -159,10 +159,11 @@ class _ShareBodyState extends State<ShareBody> {
                                     const EdgeInsetsDirectional.only(top: 10),
                                 child: Text(
                                   Tr.app_rewards.tr,
-                                  style: const TextStyle(
-                                      color: Color(0xFF9B989D),
+                                  style: TextStyle(
+                                      color: const Color(0xFF9B989D),
+                                      fontFamily: AppConstants.fontsRegular,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 12),
+                                      fontSize: 13),
                                 ),
                               )
                             ],
@@ -207,10 +208,11 @@ class _ShareBodyState extends State<ShareBody> {
                                     const EdgeInsetsDirectional.only(top: 10),
                                 child: Text(
                                   Tr.app_invite_num.tr,
-                                  style: const TextStyle(
-                                      color: Color(0xFF9B989D),
+                                  style: TextStyle(
+                                      color: const Color(0xFF9B989D),
+                                      fontFamily: AppConstants.fontsRegular,
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 12),
+                                      fontSize: 13),
                                 ),
                               )
                             ],
@@ -238,8 +240,10 @@ class _ShareBodyState extends State<ShareBody> {
                   maxFontSize: 12,
                   minFontSize: 8,
                   maxLines: 3,
-                  style:
-                      const TextStyle(color: Color(0xFF935B0A), fontSize: 12),
+                  style: TextStyle(
+                      fontFamily: AppConstants.fontsRegular,
+                      color: const Color(0xFF935B0A),
+                      fontSize: 12),
                 ),
               ),
             ],
@@ -284,9 +288,10 @@ class _ShareBodyState extends State<ShareBody> {
             alignment: AlignmentDirectional.center,
             child: Text(
               Tr.app_reward_tip.tr,
-              style: const TextStyle(
-                  color: Colors.black,
+              style: TextStyle(
+                  color: const Color(0xFF6A4B39),
                   fontSize: 18,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -295,7 +300,10 @@ class _ShareBodyState extends State<ShareBody> {
             margin: const EdgeInsets.only(top: 0, left: 15, right: 15),
             child: Text(
               Tr.app_reward_content1.trArgs([inviteAward]),
-              style: const TextStyle(color: Color(0xFFA78068), fontSize: 14),
+              style: TextStyle(
+                  fontFamily: AppConstants.fontsRegular,
+                  color: const Color(0xFFA78068),
+                  fontSize: 14),
             ),
           ),
           Container(
@@ -303,7 +311,10 @@ class _ShareBodyState extends State<ShareBody> {
             margin: const EdgeInsets.only(top: 15, left: 15, right: 15),
             child: Text(
               Tr.app_reward_content2.trArgs([rechargeAward]),
-              style: const TextStyle(color: Color(0xFFA78068), fontSize: 14),
+              style: TextStyle(
+                  color: const Color(0xFFA78068),
+                  fontFamily: AppConstants.fontsRegular,
+                  fontSize: 14),
             ),
           ),
           if (AppConstants.isFakeMode == false)
@@ -312,7 +323,10 @@ class _ShareBodyState extends State<ShareBody> {
               margin: const EdgeInsets.only(top: 15, left: 15, right: 15),
               child: Text(
                 Tr.app_reward_content3.trArgs([inviteeCardCount]),
-                style: const TextStyle(color: Color(0xFFA78068), fontSize: 14),
+                style: TextStyle(
+                    fontFamily: AppConstants.fontsRegular,
+                    color: const Color(0xFFA78068),
+                    fontSize: 14),
               ),
             )
         ],
@@ -362,8 +376,11 @@ class _ShareBodyState extends State<ShareBody> {
           maxFontSize: 16,
           minFontSize: 8,
           maxLines: 1,
-          style: const TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white,
+              fontFamily: AppConstants.fontsBold,
+              fontSize: 16,
+              fontWeight: FontWeight.bold),
         ),
       ),
     );
@@ -378,9 +395,10 @@ class _ShareBodyState extends State<ShareBody> {
         children: [
           Text(
             Tr.app_my_invite_code.trArgs([":"]),
-            style: const TextStyle(
-                color: Color(0xFF6A4B39),
+            style: TextStyle(
+                color: const Color(0xFF6A4B39),
                 fontSize: 13,
+                fontFamily: AppConstants.fontsRegular,
                 fontWeight: FontWeight.w400),
           ),
           const SizedBox(
@@ -390,7 +408,7 @@ class _ShareBodyState extends State<ShareBody> {
               style: TextStyle(
                   color: const Color(0xFFFF4864),
                   fontSize: 16,
-                  fontFamily: AppConstants.fontsRegular,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold)),
           const Spacer(),
           const VerticalDivider(
@@ -408,10 +426,11 @@ class _ShareBodyState extends State<ShareBody> {
                 horizontal: 5, vertical: 5),
             child: Text(
               copy,
-              style: const TextStyle(
-                  color: Color(0xFF9341FF),
+              style: TextStyle(
+                  color: const Color(0xFF9341FF),
                   fontSize: 15,
-                  fontWeight: FontWeight.w500),
+                  fontFamily: AppConstants.fontsBold,
+                  fontWeight: FontWeight.bold),
             ),
           )
         ],
