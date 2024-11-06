@@ -130,20 +130,22 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                             maxLines: 1,
                             maxFontSize: 24,
                             minFontSize: 16,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 24,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xFF482C26)),
+                                color: const Color(0xFF482C26)),
                           ),
                           AutoSizeText(
                             Tr.app_dialog_new_user_title.tr,
                             maxLines: 2,
                             maxFontSize: 15,
                             minFontSize: 13,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 15,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold,
-                                color: Color(0xFF821800)),
+                                color: const Color(0xFF821800)),
                           ),
                         ],
                       )),
@@ -222,10 +224,11 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                                 textAlign: TextAlign.center,
                                 maxFontSize: 18,
                                 minFontSize: 16,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
-                                    fontWeight: FontWeight.w400),
+                                    fontFamily: AppConstants.fontsBold,
+                                    fontWeight: FontWeight.bold),
                               ),
                               AutoSizeText(
                                 "x${widget.cardNum}",
@@ -233,9 +236,10 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                                 minFontSize: 30,
                                 maxLines: 1,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 35,
+                                    fontFamily: AppConstants.fontsBold,
                                     fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -261,9 +265,10 @@ class _AppNewUserCardsTipState extends State<AppNewUserCardsTip> {
                           borderRadius: BorderRadiusDirectional.circular(26)),
                       child: Text(
                         Tr.app_base_confirm.tr,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.w500),
                       ),
                     ),

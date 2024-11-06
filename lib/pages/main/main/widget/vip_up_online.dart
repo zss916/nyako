@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/services/user_info.dart';
@@ -30,8 +31,9 @@ class VipUpOnline extends StatelessWidget {
                       image: AssetImage(Assets.animaNyakoVipAnimaBg))),
               child: Text(
                 Tr.app_vip_up_online.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold,
                     fontSize: 17),
               ),

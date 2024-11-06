@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nyako/common/app_common_dialog.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/init/login/interface/other_login_utils.dart';
@@ -59,9 +60,10 @@ class _BindGoogleState extends State<BindGoogle> {
                         maxFontSize: 20,
                         minFontSize: 15,
                         maxLines: 1,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 20,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -72,8 +74,11 @@ class _BindGoogleState extends State<BindGoogle> {
                         Tr.app_remember_tip.tr,
                         textAlign: TextAlign.center,
                         softWrap: true,
-                        style: const TextStyle(
-                            color: Color(0xFF6A4B39), fontSize: 14),
+                        style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            color: const Color(0xFF6A4B39),
+                            fontFamily: AppConstants.fontsRegular,
+                            fontSize: 14),
                       ),
                     ),
                     Stack(
@@ -98,9 +103,10 @@ class _BindGoogleState extends State<BindGoogle> {
                                         Assets.iconBindGoogleBtn))),
                             child: Text(
                               Tr.app_bind_google.tr,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w500,
+                                  fontFamily: AppConstants.fontsRegular,
+                                  fontWeight: FontWeight.normal,
                                   fontSize: 18),
                             ),
                           ),
@@ -132,18 +138,22 @@ class _BindGoogleState extends State<BindGoogle> {
                                         height: 21,
                                         matchTextDirection: true,
                                       ),
-                                      const Text(
+                                      Text(
                                         "x1",
                                         style: TextStyle(
-                                            color: Color(0xFF6A4B39),
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
+                                            color: const Color(0xFF6A4B39),
                                             fontSize: 13),
                                       ),
                                       Text(
                                         //es/hi/tr/ind
                                         // language_es[Tr.app_bind_google_to_get] ?? "",
                                         Tr.app_bind_google_to_get.trArgs([""]),
-                                        style: const TextStyle(
-                                            color: Color(0xFF6A4B39),
+                                        style: TextStyle(
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
+                                            color: const Color(0xFF6A4B39),
                                             fontSize: 13),
                                       ),
                                     ],
@@ -155,8 +165,10 @@ class _BindGoogleState extends State<BindGoogle> {
                                         //es/hi/tr/ind
                                         // language_es[Tr.app_bind_google_to_get] ?? "",
                                         Tr.app_bind_google_to_get.trArgs([""]),
-                                        style: const TextStyle(
-                                            color: Color(0xFF6A4B39),
+                                        style: TextStyle(
+                                            color: const Color(0xFF6A4B39),
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
                                             fontSize: 13),
                                       ),
                                       Image.asset(

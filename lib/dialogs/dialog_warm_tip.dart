@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/routes/app_pages.dart';
@@ -97,9 +98,10 @@ class _AppFirstTipState extends State<AppWarmTip> {
                             child: Text(
                           Tr.app_dialog_warning_text_2.tr,
                           softWrap: true,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFF572727),
+                          style: TextStyle(
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF572727),
                               fontSize: 14),
                         )),
                       ],
@@ -131,9 +133,10 @@ class _AppFirstTipState extends State<AppWarmTip> {
                           maxFontSize: 14,
                           minFontSize: 12,
                           softWrap: true,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFF572727),
+                          style: TextStyle(
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xFF572727),
                               fontSize: 14),
                         )),
                       ],
@@ -143,8 +146,10 @@ class _AppFirstTipState extends State<AppWarmTip> {
                     margin: const EdgeInsetsDirectional.only(top: 10),
                     child: Text(
                       Tr.app_dialog_warning_text_4.tr,
-                      style: const TextStyle(
-                          color: Color(0xFF9B989D), fontSize: 14),
+                      style: TextStyle(
+                          color: const Color(0xFF9B989D),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontSize: 14),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -163,10 +168,11 @@ class _AppFirstTipState extends State<AppWarmTip> {
                                   ExactAssetImage(Assets.iconBindGoogleBtn))),
                       child: Text(
                         Tr.app_base_confirm.tr,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
-                            fontWeight: FontWeight.w500),
+                            fontFamily: AppConstants.fontsBold,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   )
@@ -223,8 +229,12 @@ class _AppFirstTipState extends State<AppWarmTip> {
                     Tr.app_dialog_warning_text_1.tr,
                     maxFontSize: 13,
                     minFontSize: 13,
-                    style:
-                        const TextStyle(color: Color(0xFF632E2E), fontSize: 13),
+
+                    style: TextStyle(
+                        fontFamily: AppConstants.fontsRegular,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFF632E2E),
+                        fontSize: 13),
                   ),
                 ),
                 PositionedDirectional(
