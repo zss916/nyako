@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nyako/common/app_common_dialog.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/routes/a_routes.dart';
@@ -89,10 +90,11 @@ class _AppFreeDiamondTipDialogState extends State<AppFreeDiamondTipDialog>
                                 image: ExactAssetImage(
                                     Assets.iconFreeDiamondBtn))),
                         child: Text(Tr.app_receive_gift.tr,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
-                                fontWeight: FontWeight.w500)),
+                                fontFamily: AppConstants.fontsRegular,
+                                fontWeight: FontWeight.w600)),
                       )
                     ],
                   ),

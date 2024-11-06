@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 
 class LimitTime extends StatefulWidget {
   final int? duration;
@@ -46,8 +47,11 @@ class _LimitTimeState extends State<LimitTime> {
   Widget build(BuildContext context) {
     return Text(
       formatDuration(Duration(seconds: countdown)),
-      style: const TextStyle(
-          color: Color(0xFFFF4444), fontSize: 13, fontWeight: FontWeight.bold),
+      style: TextStyle(
+          color: const Color(0xFFFF4444),
+          fontSize: 13,
+          fontFamily: AppConstants.fontsRegular,
+          fontWeight: FontWeight.w600),
     );
   }
 }

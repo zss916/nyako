@@ -91,13 +91,14 @@ class RewardDiamondDialog extends StatelessWidget {
                     Container(
                       alignment: AlignmentDirectional.center,
                       margin:
-                          const EdgeInsetsDirectional.symmetric(horizontal: 30),
+                          const EdgeInsetsDirectional.symmetric(horizontal: 25),
                       child: Text(
                         topTitle,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            color: Color(0xFF5C0B4C),
-                            fontWeight: FontWeight.w900,
+                        style: TextStyle(
+                            color: const Color(0xFF5C0B4C),
+                            fontWeight: FontWeight.bold,
+                            fontFamily: AppConstants.fontsBold,
                             fontSize: 22),
                       ),
                     ),
@@ -163,7 +164,8 @@ class RewardDiamondDialog extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsetsDirectional.only(top: 10),
+                      margin:
+                          const EdgeInsetsDirectional.only(top: 10, bottom: 10),
                       child: Stack(
                         alignment: AlignmentDirectional.topStart,
                         children: [
@@ -197,9 +199,10 @@ class RewardDiamondDialog extends StatelessWidget {
                                   maxFontSize: 17,
                                   minFontSize: 12,
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 17,
+                                      fontFamily: AppConstants.fontsRegular,
                                       fontWeight: FontWeight.normal),
                                 ),
                               ),

@@ -91,9 +91,10 @@ class RewardCouponDialog extends StatelessWidget {
                           start: 20, end: 20, bottom: 0, top: 20),
                       child: Text(
                         topTitle,
-                        style: const TextStyle(
-                            color: Color(0xFF5F0538),
-                            fontWeight: FontWeight.w900,
+                        style: TextStyle(
+                            color: const Color(0xFF5F0538),
+                            fontFamily: AppConstants.fontsBold,
+                            fontWeight: FontWeight.bold,
                             fontSize: 22),
                       ),
                     ),
@@ -105,9 +106,10 @@ class RewardCouponDialog extends StatelessWidget {
                           textAlign: TextAlign.center,
                           TextSpan(
                               text: t1,
-                              style: const TextStyle(
-                                  color: Color(0xFF5F0538),
+                              style: TextStyle(
+                                  color: const Color(0xFF5F0538),
                                   fontSize: 16,
+                                  fontFamily: AppConstants.fontsRegular,
                                   fontWeight: FontWeight.w500),
                               children: [
                                 TextSpan(
@@ -120,9 +122,10 @@ class RewardCouponDialog extends StatelessWidget {
                                     children: []),
                                 TextSpan(
                                   text: t2,
-                                  style: const TextStyle(
-                                      color: Color(0xFF5F0538),
+                                  style: TextStyle(
+                                      color: const Color(0xFF5F0538),
                                       fontSize: 16,
+                                      fontFamily: AppConstants.fontsRegular,
                                       fontWeight: FontWeight.w500),
                                 )
                               ])),
@@ -289,9 +292,11 @@ class RewardCouponDialog extends StatelessWidget {
                                       child: Text(
                                         Tr.app_off
                                             .trArgs(["${data.discount ?? 0}"]),
-                                        style: const TextStyle(
+                                        style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 11,
+                                            fontFamily:
+                                                AppConstants.fontsRegular,
                                             fontWeight: FontWeight.w500),
                                       ),
                                     )
@@ -338,9 +343,10 @@ class RewardCouponDialog extends StatelessWidget {
                               maxFontSize: 16,
                               minFontSize: 12,
                               textAlign: TextAlign.center,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
+                                  fontFamily: AppConstants.fontsRegular,
                                   fontWeight: FontWeight.w500),
                             ),
                           ),

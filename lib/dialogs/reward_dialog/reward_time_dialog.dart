@@ -90,10 +90,11 @@ class RewardTimeDialog extends StatelessWidget {
                       child: Text(
                         title,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 22,
-                            fontWeight: FontWeight.w900,
-                            color: Color(0xFF5F0538)),
+                            fontFamily: AppConstants.fontsBold,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF5F0538)),
                       ),
                     ),
                     Row(
@@ -125,7 +126,7 @@ class RewardTimeDialog extends StatelessWidget {
                         tip,
                         style: TextStyle(
                             color: const Color(0xFFFF4864),
-                            fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.w600,
                             fontFamily: AppConstants.fontsRegular,
                             fontSize: 14),
                       ),
@@ -176,9 +177,10 @@ class RewardTimeDialog extends StatelessWidget {
                             maxFontSize: 16,
                             minFontSize: 12,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
+                                fontFamily: AppConstants.fontsRegular,
                                 fontWeight: FontWeight.normal),
                           ),
                         ),
