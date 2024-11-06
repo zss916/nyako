@@ -176,10 +176,11 @@ class VipSignDayWidget extends StatelessWidget {
                               child: Text(
                             data[index].showSignName(),
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF9341FF),
-                                fontWeight: FontWeight.w500),
+                                fontFamily: AppConstants.fontsRegular,
+                                color: const Color(0xFF9341FF),
+                                fontWeight: FontWeight.w600),
                           )),
                         ],
                       ),
@@ -203,6 +204,9 @@ class VipSignDayWidget extends StatelessWidget {
                               data[index].showSignName(),
                               style: TextStyle(
                                   fontSize: 12,
+                                  fontFamily: (isReady && !isOpenVip)
+                                      ? AppConstants.fontsBold
+                                      : AppConstants.fontsRegular,
                                   fontWeight: (isReady && !isOpenVip)
                                       ? FontWeight.bold
                                       : FontWeight.normal,
@@ -226,6 +230,7 @@ class VipSignDayWidget extends StatelessWidget {
                                   color: (isReady && !isOpenVip)
                                       ? const Color(0xFF9341FF)
                                       : Colors.white,
+                                  fontFamily: AppConstants.fontsRegular,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13),
                             ),
@@ -289,8 +294,8 @@ class VipSignDayWidget extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 12,
-                            fontFamily: AppConstants.fontsBold,
-                            fontWeight: FontWeight.w500),
+                            fontFamily: AppConstants.fontsRegular,
+                            fontWeight: FontWeight.w600),
                       ),
               ),
             ],

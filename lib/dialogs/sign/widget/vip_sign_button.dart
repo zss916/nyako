@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/charge_path.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/dialogs/pay_vip/sheet_pay_vip.dart';
@@ -11,8 +12,11 @@ class VipSignButton extends StatelessWidget {
 
   VipSignButton({super.key});
 
-  final TextStyle baseTextStyle = const TextStyle(
-      color: Color(0xFF9C4704), fontSize: 16, fontWeight: FontWeight.bold);
+  final TextStyle baseTextStyle = TextStyle(
+      color: const Color(0xFF9C4704),
+      fontFamily: AppConstants.fontsBold,
+      fontSize: 16,
+      fontWeight: FontWeight.bold);
 
   @override
   Widget build(BuildContext context) {

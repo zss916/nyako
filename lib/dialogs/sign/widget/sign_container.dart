@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/dialogs/sign/widget/base_sign_button.dart';
 import 'package:nyako/dialogs/sign/widget/sign_day_widget.dart';
@@ -68,12 +69,10 @@ class _SignContainerState extends State<SignContainer> {
                     ),
             ],
           ),
-          const SizedBox(
-            height: 10,
-          ),
           // if (isOpenVip)
           Container(
             width: double.maxFinite,
+            margin: const EdgeInsetsDirectional.symmetric(vertical: 10),
             padding: const EdgeInsetsDirectional.symmetric(
                 horizontal: 12, vertical: 7),
             decoration: const BoxDecoration(color: Color(0x1AFFFFFF)),
@@ -98,18 +97,16 @@ class _SignContainerState extends State<SignContainer> {
                       Tr.app_vip_sign_extra.tr,
                       textAlign: TextAlign.start,
                       maxLines: 1,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
-                          fontSize: 12,
+                          fontSize: 13,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.normal),
                     ),
                   ),
                 ))
               ],
             ),
-          ),
-          const SizedBox(
-            height: 10,
           ),
           isOpenVip
               ? SignSwitchButton(
@@ -158,14 +155,15 @@ class _SignContainerState extends State<SignContainer> {
               child: AutoSizeText(
                 Tr.appSignNow.tr,
                 textAlign: TextAlign.center,
-                maxFontSize: 14,
+                maxFontSize: 15,
                 minFontSize: 12,
                 maxLines: 1,
                 style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 15,
+                    fontFamily: AppConstants.fontsBold,
                     color:
                         showCommonSign ? const Color(0xFF9341FF) : Colors.white,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.bold),
               ),
             ),
           )),
@@ -191,15 +189,16 @@ class _SignContainerState extends State<SignContainer> {
                       borderRadius: BorderRadiusDirectional.circular(10)),
               child: AutoSizeText(
                 Tr.appVipSignTitle.tr,
-                maxFontSize: 14,
+                maxFontSize: 15,
                 minFontSize: 12,
                 maxLines: 1,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 14,
+                    fontFamily: AppConstants.fontsBold,
+                    fontSize: 15,
                     color:
                         showCommonSign ? Colors.white : const Color(0xFF9341FF),
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ))
@@ -218,35 +217,5 @@ class _SignContainerState extends State<SignContainer> {
         : VipSignButton();
   }
 
-  Widget get vipTitle => Container(
-        padding:
-            const EdgeInsetsDirectional.symmetric(horizontal: 10, vertical: 0),
-        alignment: AlignmentDirectional.center,
-        child: AutoSizeText(
-          Tr.appVipSignTitle.tr,
-          textAlign: TextAlign.center,
-          maxFontSize: 14,
-          minFontSize: 10,
-          maxLines: 1,
-          style: const TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14),
-        ),
-      );
-
   //Usuários VIP podem receber recompensas adicionais todos os dias
-
-  Widget get vipTip => Container(
-        margin: const EdgeInsetsDirectional.only(start: 8, end: 8, bottom: 5),
-        alignment: AlignmentDirectional.center,
-        child: AutoSizeText(
-          Tr.app_vip_sign_extra.tr,
-          textAlign: TextAlign.center,
-          maxLines: 2,
-          maxFontSize: 12,
-          minFontSize: 10,
-          overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-              color: Colors.white, fontSize: 12, fontWeight: FontWeight.normal),
-        ),
-      );
 }

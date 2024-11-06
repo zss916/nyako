@@ -63,7 +63,7 @@ const language_en = {
   "nyako_sign_header_diamond": "diamond avatar frame",
   "nyako_sign_header_gold": "gold avatar frame",
   "nyako_sign_draw": "large turnable %s time",
-  "nyako_sign_reward": "mysterious gift",
+  "nyako_sign_reward": "Mysterious gift",
   "nyako_sign_msg_card": "chat card %s days",
   "nyako_trouble_tip":
       "It will automatically turn off after 24 hours of being turned on.",
