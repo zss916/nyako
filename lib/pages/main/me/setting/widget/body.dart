@@ -105,10 +105,11 @@ class SetBody extends StatelessWidget {
               ),
               Text(
                 data['title']!,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 16,
                     color: Colors.black,
-                    fontWeight: FontWeight.w500),
+                    fontFamily: AppConstants.fontsRegular,
+                    fontWeight: FontWeight.w600),
               ),
               const Spacer(),
               !hasTrouble

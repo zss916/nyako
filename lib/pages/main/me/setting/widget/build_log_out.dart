@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/pages/main/me/setting/index.dart';
 import 'package:nyako/widget/animated_button.dart';
@@ -23,10 +24,11 @@ class BuildLogout extends StatelessWidget {
         ),
         child: Center(
           child: Text(Tr.app_setting_logout.tr,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 16,
-                  color: Color(0xFFFF4864),
-                  fontWeight: FontWeight.w500)),
+                  fontFamily: AppConstants.fontsBold,
+                  color: const Color(0xFFFF4864),
+                  fontWeight: FontWeight.bold)),
         ),
       ),
       onCall: () => logic.logout(),

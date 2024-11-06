@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/entities/app_host_entity.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/main/me/blacklist/index.dart';
@@ -78,8 +79,9 @@ class BlackBody extends StatelessWidget {
                       maxFontSize: 18,
                       minFontSize: 8,
                       softWrap: true,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 18,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold,
                           color: Colors.black),
                     ),
@@ -92,9 +94,10 @@ class BlackBody extends StatelessWidget {
                         textAlign: TextAlign.start,
                         minFontSize: 6,
                         softWrap: true,
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.w500),
                       ),
                     )

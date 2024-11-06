@@ -228,7 +228,7 @@ const language_en = {
   'nyako_contribution_btn': 'Send gifts to be on the list',
   'nyako_to_open': 'Activate now',
   'nyako_public_moment_tip': 'What to share...',
-  'nyako_double_confirm': 'let me think again',
+  'nyako_double_confirm': 'Let me think again',
   'nyako_black_content':
       'After blocking, he will not be able to send you any messages. If you want to cancel the block, please go to the blacklist to operate.',
   'nyako_claim_refuse': 'Deny',
