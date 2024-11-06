@@ -41,8 +41,11 @@ class AnchorHot extends StatelessWidget {
               padding: const EdgeInsets.only(top: 5, bottom: 10),
               sliver: banner(logic)),
         (logic.upDetailList.isEmpty && !logic.state)
-            ? const SliverToBoxAdapter(
-                child: BaseEmpty(),
+            ? SliverToBoxAdapter(
+                child: Container(
+                  margin: const EdgeInsetsDirectional.only(top: 140),
+                  child: const BaseEmpty(),
+                ),
               )
             : SliverPadding(
                 padding: const EdgeInsetsDirectional.only(
