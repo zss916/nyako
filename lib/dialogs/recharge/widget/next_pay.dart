@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/http/api/index.dart';
@@ -57,9 +58,10 @@ class _NextPayState extends State<NextPay> {
                   Expanded(
                       child: Text(
                     activityTitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                   )),
                   Container(
@@ -100,8 +102,9 @@ class _NextPayState extends State<NextPay> {
                     child: Text(
                       Tr.appNextPayDialogTitle.tr,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.black,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
@@ -110,7 +113,9 @@ class _NextPayState extends State<NextPay> {
                       child: SingleChildScrollView(
                     child: Text(
                       activityContent,
-                      style: const TextStyle(color: Colors.black),
+                      style: TextStyle(
+                          fontFamily: AppConstants.fontsRegular,
+                          color: Colors.black),
                     ),
                   )),
                   InkWell(
@@ -126,8 +131,10 @@ class _NextPayState extends State<NextPay> {
                           top: 10, start: 30, end: 30),
                       child: Text(
                         Tr.app_base_confirm.tr,
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: AppConstants.fontsBold,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   )

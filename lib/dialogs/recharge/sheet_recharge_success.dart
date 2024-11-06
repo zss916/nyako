@@ -79,9 +79,10 @@ class SheetRechargeSuccess extends StatelessWidget {
                         children: [
                           Text(
                             diamonds,
-                            style: const TextStyle(
-                                color: Color(0xFF9341FF),
-                                fontSize: 28,
+                            style: TextStyle(
+                                color: const Color(0xFF9341FF),
+                                fontSize: 32,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
                           ),
                           Image.asset(
@@ -100,9 +101,10 @@ class SheetRechargeSuccess extends StatelessWidget {
                           Tr.app_recharge_successful.tr,
                           softWrap: true,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 18,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -115,18 +117,23 @@ class SheetRechargeSuccess extends StatelessWidget {
                             minFontSize: 10,
                             TextSpan(
                               text: content1,
-                              style: const TextStyle(
-                                  color: Color(0xFF9B989D), fontSize: 15),
+                              style: TextStyle(
+                                  color: const Color(0xFF9B989D),
+                                  fontFamily: AppConstants.fontsRegular,
+                                  fontSize: 15),
                               children: [
                                 TextSpan(
                                     text: " $drawCount ",
-                                    style: const TextStyle(
-                                        color: Color(0xFF9B989D),
+                                    style: TextStyle(
+                                        fontFamily: AppConstants.fontsRegular,
+                                        color: const Color(0xFF9B989D),
                                         fontSize: 15)),
                                 TextSpan(
                                     text: content2,
-                                    style: const TextStyle(
-                                        color: Color(0xFF9B989D), fontSize: 15))
+                                    style: TextStyle(
+                                        color: const Color(0xFF9B989D),
+                                        fontFamily: AppConstants.fontsRegular,
+                                        fontSize: 15))
                               ],
                             ),
                           )),
@@ -152,9 +159,10 @@ class SheetRechargeSuccess extends StatelessWidget {
                                   BorderRadiusDirectional.circular(50)),
                           child: Text(
                             Tr.appToRecharge.tr,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -172,9 +180,10 @@ class SheetRechargeSuccess extends StatelessWidget {
                                 horizontal: 15, vertical: 10),
                             child: Text(
                               Tr.app_to_lucky_draw.tr,
-                              style: const TextStyle(
-                                  color: Color(0xFF9341FF),
+                              style: TextStyle(
+                                  color: const Color(0xFF9341FF),
                                   fontWeight: FontWeight.bold,
+                                  fontFamily: AppConstants.fontsBold,
                                   fontSize: 16),
                             ),
                           ),
