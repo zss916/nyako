@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/main/me/about/index.dart';
 import 'package:nyako/services/app_info_service.dart';
@@ -45,7 +46,10 @@ class AboutBody extends StatelessWidget {
             margin: const EdgeInsets.only(top: 5, bottom: 20),
             child: Text(
               AppInfoService.to.version,
-              style: const TextStyle(fontSize: 14, color: Colors.grey),
+              style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: AppConstants.fontsRegular,
+                  color: Colors.grey),
             ),
           ),
           Container(
@@ -92,10 +96,11 @@ class AboutBody extends StatelessWidget {
           children: [
             Text(
               data['title']!,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 16,
                   color: Colors.black,
-                  fontWeight: FontWeight.w500),
+                  fontFamily: AppConstants.fontsRegular,
+                  fontWeight: FontWeight.w600),
             ),
             Image.asset(
               Assets.iconNext,

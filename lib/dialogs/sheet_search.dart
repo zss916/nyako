@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/http/api/index.dart';
 import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
@@ -83,9 +84,10 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
             Text(
               Tr.app_setting_search.tr,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
+                fontFamily: AppConstants.fontsBold,
                 color: Colors.black,
               ),
             ),
@@ -115,7 +117,11 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
                     child: TextField(
                       keyboardType: TextInputType.number,
                       cursorColor: const Color(0xFFAC53FB),
-                      style: const TextStyle(fontSize: 16, color: Colors.black),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: AppConstants.fontsRegular,
+                          color: Colors.black),
                       controller: __textEditingCtrl,
                       focusNode: _focusNode,
                       inputFormatters: [
@@ -139,8 +145,10 @@ class _SearchConfirmWdgState extends State<SearchConfirmWdg> {
                         contentPadding:
                             const EdgeInsetsDirectional.only(bottom: 0),
                         hintText: Tr.app_logout_tip_ph.tr,
-                        hintStyle: const TextStyle(
+                        hintStyle: TextStyle(
                           fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          fontFamily: AppConstants.fontsRegular,
                           color: Colors.grey,
                         ),
                       ),

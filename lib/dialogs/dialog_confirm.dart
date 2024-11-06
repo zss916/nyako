@@ -2,7 +2,6 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nyako/common/app_colors.dart';
 import 'package:nyako/common/app_common_type.dart';
 import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/generated/assets.dart';
@@ -169,10 +168,9 @@ class AppDialogConfirm extends StatelessWidget {
                       margin: const EdgeInsetsDirectional.only(
                           top: 10, start: 30, end: 30),
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
-                          gradient: AppColors.btnGradient,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(30))),
+                      decoration: const BoxDecoration(
+                          color: Color(0xFF9341FF),
+                          borderRadius: BorderRadius.all(Radius.circular(30))),
                       child: Text(
                         Tr.app_base_cancel.tr,
                         style: TextStyle(
