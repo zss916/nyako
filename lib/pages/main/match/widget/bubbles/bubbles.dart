@@ -1,7 +1,11 @@
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui' as ui;
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/main/match/widget/bubbles/bubble_floating_animation.dart';
 import 'package:sa4_migration_kit/stateless_animation/loop_animation.dart';
 import 'package:sa4_migration_kit/stateless_animation/play_animation.dart';
@@ -124,17 +128,26 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
   /// initialises a empty list of bubbles.
   final List<BubbleFloatingAnimation> bubbles = [];
 
+  List<ui.Image?> bubbleImages = [];
+
+  @override
+  void dispose() {
+    super.dispose();
+    for (var element in bubbleImages) {
+      element?.dispose();
+    }
+  }
+
   @override
   void initState() {
     final _random = new Random();
     for (int i = 0; i < widget.noOfBubbles; i++) {
       bubbles.add(
-        BubbleFloatingAnimation(
-          random,
-          color: widget
-              .colorsOfBubbles[_random.nextInt(widget.colorsOfBubbles.length)],
-          speed: widget.speed,
-        ),
+        BubbleFloatingAnimation(random,
+            color: widget.colorsOfBubbles[
+                _random.nextInt(widget.colorsOfBubbles.length)],
+            speed: widget.speed,
+            index: i),
       );
     }
     if (widget.duration != null && widget.duration != 0)
@@ -146,6 +159,77 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
         }
       });
     super.initState();
+    getImage();
+  }
+
+  void getImage() async {
+    bubbleImages = [
+      await getAssetImage(
+        Assets.finalMc1,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc2,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc3,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc4,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc5,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc6,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc7,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc8,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc9,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc10,
+        width: 40,
+        height: 40,
+      ),
+      await getAssetImage(
+        Assets.finalMc11,
+        width: 40,
+        height: 40,
+      ),
+    ];
+  }
+
+  //返回ui.Image
+  Future<ui.Image> getAssetImage(String asset, {width, height}) async {
+    ByteData data = await rootBundle.load(asset);
+    if (data == null) throw 'Unable to read data';
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width, targetHeight: height);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return fi.image;
   }
 
   /// Function to paint the bubbles to the screen.
@@ -174,6 +258,7 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
                   paintingStyle: widget.paintingStyle,
                   strokeWidth: widget.strokeWidth,
                   shape: widget.shape,
+                  bubbleImages: bubbleImages,
                 ),
               );
             },
@@ -194,6 +279,7 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
                     paintingStyle: widget.paintingStyle,
                     strokeWidth: widget.strokeWidth,
                     shape: widget.shape,
+                    bubbleImages: bubbleImages,
                   ),
                 );
               else

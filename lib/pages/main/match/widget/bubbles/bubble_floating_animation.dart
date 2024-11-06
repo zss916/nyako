@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:nyako/pages/main/match/widget/bubbles/bubbles.dart';
@@ -29,8 +30,10 @@ class BubbleFloatingAnimation {
   /// Speed of the bubble
   final BubbleSpeed speed;
 
+  final int index;
+
   BubbleFloatingAnimation(this.random,
-      {required this.color, required this.speed}) {
+      {required this.color, required this.speed, required this.index}) {
     _restart();
     _shuffle();
   }
@@ -137,6 +140,8 @@ class BubbleModel extends CustomPainter {
   /// Shape of the Bubble.
   final BubbleShape shape;
 
+  List<ui.Image?> bubbleImages;
+
   /// This Class paints the bubble in the screen.
   ///
   /// All Fields are Required.
@@ -147,7 +152,16 @@ class BubbleModel extends CustomPainter {
     required this.paintingStyle,
     required this.strokeWidth,
     required this.shape,
+    required this.bubbleImages,
   });
+
+  ui.Image? getImage(int style) {
+    if (bubbleImages.isEmpty || style > bubbleImages.length) {
+      return null;
+    } else {
+      return bubbleImages[style];
+    }
+  }
 
   /// Painting the bubbles in the screen.
   @override
@@ -163,15 +177,40 @@ class BubbleModel extends CustomPainter {
         animation.get<double>(_OffsetProps.x) * size.width,
         animation.get<double>(_OffsetProps.y) * size.height,
       );
+      // debugPrint("position====>>>> blur: ${size.height - position.dy}  dy:${position.dy} , h:${size.height}");
       if (shape == BubbleShape.circle)
-        canvas.drawCircle(
+
+      // drawImageRect 和drawImageNine
+      //第二个参数与第三个参数：
+      // Rect src - 原图的区域，一般传图片的宽高
+      // Rect dst - 显示的区域， 用来显示图片在屏幕的位置和宽高 ,如果原图区域宽高比与显示区域不一致，原图会被拉伸或压缩
+
+      if (getImage(particle.index) != null) {
+        canvas.drawImageRect(
+          getImage(particle.index)!,
+          Rect.fromLTWH(
+            0,
+            0,
+            40,
+            40,
+          ),
+          Rect.fromCenter(
+            center: position,
+            width: 40,
+            height: 40,
+          ),
+          Paint()..maskFilter = MaskFilter.blur(BlurStyle.inner, 0),
+        );
+      }
+
+      /*canvas.drawCircle(
           position,
           size.width *
               sizeFactor *
               particle.size *
               (1.5 - animation.get<double>(_OffsetProps.y)),
           paint,
-        );
+        );*/
       else if (shape == BubbleShape.square)
         canvas.drawRect(
             Rect.fromCircle(
