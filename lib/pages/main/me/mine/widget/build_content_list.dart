@@ -136,7 +136,7 @@ class BuildContentList extends StatelessWidget {
                               color: Colors.black,
                               fontSize: 15,
                               fontFamily: AppConstants.fontsRegular,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w600),
                         ),
                       )
                     : Container(
@@ -153,7 +153,7 @@ class BuildContentList extends StatelessWidget {
                               color: Colors.black,
                               fontSize: 15,
                               fontFamily: AppConstants.fontsRegular,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
               ],

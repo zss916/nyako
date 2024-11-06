@@ -36,7 +36,7 @@ class BuildTrouble extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.black,
                     fontFamily: AppConstants.fontsRegular,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                     fontSize: 14),
               ),
               const Spacer(),

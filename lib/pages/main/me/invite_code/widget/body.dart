@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/main/me/invite_code/index.dart';
@@ -43,8 +44,9 @@ class InviteCodeBody extends StatelessWidget {
                 //language_vi[Tr.app_my_binding_code] ?? "",
                 //language_ar[Tr.app_my_binding_code] ?? "",
                 textAlign: TextAlign.start,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold,
                     fontSize: 36),
               ),
@@ -67,7 +69,8 @@ class InviteCodeBody extends StatelessWidget {
                                   ? Colors.black
                                   : const Color(0xFF3BC2FF),
                               fontSize: 14,
-                              fontWeight: FontWeight.w500),
+                              fontFamily: AppConstants.fontsRegular,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                       buildInvite(logic),
@@ -94,6 +97,7 @@ class InviteCodeBody extends StatelessWidget {
         controller: logic.controller,
         style: TextStyle(
           fontSize: 16,
+          fontFamily: AppConstants.fontsRegular,
           fontWeight: FontWeight.normal,
           color: logic.state == 0 ? Colors.black : Colors.black,
         ),
@@ -101,9 +105,10 @@ class InviteCodeBody extends StatelessWidget {
           //filled: true,
           isCollapsed: true,
           //fillColor: const Color(0xFFF4F5F6),
-          hintStyle: const TextStyle(
+          hintStyle: TextStyle(
             color: Colors.grey,
             fontSize: 12,
+            fontFamily: AppConstants.fontsRegular,
           ),
           contentPadding: const EdgeInsets.all(15.0),
           border: InputBorder.none,
@@ -143,7 +148,7 @@ class InviteCodeBody extends StatelessWidget {
       child: FittedBox(
         child: Container(
           height: 42,
-          constraints: const BoxConstraints(minWidth: 80),
+          constraints: const BoxConstraints(minWidth: 98),
           margin: const EdgeInsetsDirectional.only(start: 5, end: 5, top: 30),
           alignment: Alignment.center,
           decoration: BoxDecoration(
@@ -154,8 +159,11 @@ class InviteCodeBody extends StatelessWidget {
             maxFontSize: 16,
             minFontSize: 6,
             maxLines: 2,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.white,
+                fontFamily: AppConstants.fontsBold,
+                fontSize: 14,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ),
