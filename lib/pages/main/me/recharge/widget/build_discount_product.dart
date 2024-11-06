@@ -57,8 +57,10 @@ class BuildDiscountProduct extends StatelessWidget {
                         children: [
                           Text(
                             '${Tr.appSend.tr}${data.showBonus}',
-                            style: const TextStyle(
-                                color: Color(0xFFFFE986), fontSize: 14),
+                            style: TextStyle(
+                                color: const Color(0xFFFFE986),
+                                fontFamily: AppConstants.fontsRegular,
+                                fontSize: 14),
                           ),
                           Container(
                             margin: const EdgeInsetsDirectional.only(start: 3),
@@ -82,9 +84,10 @@ class BuildDiscountProduct extends StatelessWidget {
                       borderRadius: BorderRadiusDirectional.circular(30)),
                   child: Text(
                     data.showPrice,
-                    style: const TextStyle(
-                        color: Color(0xFF9341FF),
+                    style: TextStyle(
+                        color: const Color(0xFF9341FF),
                         fontSize: 15,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
                   ),
                 )
@@ -110,8 +113,9 @@ class BuildDiscountProduct extends StatelessWidget {
                       ])),
                   child: Text(
                     Tr.app_off.trArgs(["${data.discount}"]),
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.white,
+                        fontFamily: AppConstants.fontsRegular,
                         fontWeight: FontWeight.w400,
                         fontSize: 11),
                   ),

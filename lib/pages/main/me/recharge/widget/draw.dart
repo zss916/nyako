@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/entities/app_draw_user_entity.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/utils/app_extends.dart';
@@ -116,8 +117,10 @@ class _RechargeDrawAnimationState extends State<RechargeDrawAnimation>
                       maxFontSize: 12,
                       minFontSize: 6,
                       maxLines: 2,
-                      style: const TextStyle(
-                          color: Color(0xFFFFFA6D), fontSize: 12))),
+                      style: TextStyle(
+                          color: const Color(0xFFFFFA6D),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontSize: 12))),
             ],
           ),
         ),

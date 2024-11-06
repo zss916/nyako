@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 
@@ -78,9 +79,10 @@ class _BuildDiamondAddCardAnimaState extends State<BuildDiamondAddCardAnima> {
                                       maxLines: 1,
                                       maxFontSize: 24,
                                       minFontSize: 18,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                           color: Colors.white,
                                           fontSize: 24,
+                                          fontFamily: AppConstants.fontsBold,
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ))
@@ -94,9 +96,10 @@ class _BuildDiamondAddCardAnimaState extends State<BuildDiamondAddCardAnima> {
                           maxLines: 2,
                           maxFontSize: 22,
                           minFontSize: 18,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 22,
                             color: Colors.white,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold,
                           ),
                         ))

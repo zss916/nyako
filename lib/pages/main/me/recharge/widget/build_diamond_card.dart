@@ -31,8 +31,9 @@ class BuildDiamondCard extends StatelessWidget {
                 margin: const EdgeInsetsDirectional.only(end: 10),
                 child: Text(
                   Tr.app_base_balance.trArgs([""]).replaceAll(":", ""),
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 15,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
                 ),

@@ -89,64 +89,14 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
       child: Text(
         Tr.app_lucky_draw_tip.tr,
         textAlign: TextAlign.start,
-        style: const TextStyle(
-            color: Color(0xFF9B989D),
+        style: TextStyle(
+            color: const Color(0xFF9B989D),
             fontSize: 13,
-            fontWeight: FontWeight.w400),
+            fontFamily: AppConstants.fontsRegular,
+            fontWeight: FontWeight.w500),
       ),
     );
   }
-
-  /* Widget buildAddCardTip() {
-    return GetBuilder<RechargeLogic>(
-        id: "addRechargeCard",
-        init: RechargeLogic(),
-        builder: (logic) {
-          return logic.propDuration == 0
-              ? const SizedBox(
-                  height: 20,
-                )
-              : Container(
-                  width: double.maxFinite,
-                  decoration: BoxDecoration(
-                      color: const Color(0x1FFFF890),
-                      borderRadius: BorderRadiusDirectional.circular(10)),
-                  margin: const EdgeInsetsDirectional.only(
-                      start: 15, end: 15, top: 15, bottom: 12),
-                  alignment: AlignmentDirectional.bottomCenter,
-                  padding: const EdgeInsetsDirectional.only(
-                      top: 8, start: 10, end: 10, bottom: 8),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        Assets.imgSmallAddCard,
-                        width: 30,
-                        height: 20,
-                        matchTextDirection: true,
-                        fit: BoxFit.cover,
-                      ),
-                      Expanded(
-                          child: Container(
-                        margin:
-                            const EdgeInsetsDirectional.only(start: 4, end: 4),
-                        child: Text(
-                          Tr.app_add_card_tip
-                              .trArgs(["${logic.propDuration}%"]),
-                          maxLines: 5,
-                          textAlign: TextAlign.start,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400),
-                        ),
-                      ))
-                    ],
-                  ),
-                );
-        });
-  }*/
 
   Widget buildContent() {
     return GetBuilder<RechargeLogic>(
@@ -247,16 +197,21 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                           children: [
                             Text(
                               '${Tr.appSend.tr}${data.showBonus}',
-                              style: const TextStyle(
-                                  color: Color(0xFF9341FF),
+                              style: TextStyle(
+                                  color: const Color(0xFF9341FF),
+                                  fontFamily: AppConstants.fontsRegular,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13),
                             ),
-                            Image.asset(
-                              Assets.iconDiamond,
-                              width: 14,
-                              height: 14,
-                              matchTextDirection: true,
+                            Container(
+                              margin:
+                                  const EdgeInsetsDirectional.only(start: 1),
+                              child: Image.asset(
+                                Assets.iconDiamond,
+                                width: 14,
+                                height: 14,
+                                matchTextDirection: true,
+                              ),
                             )
                           ],
                         ),
@@ -272,9 +227,10 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                             children: [
                               Text(
                                 "+${data.diamondCard?.increaseDiamonds ?? 0}",
-                                style: const TextStyle(
-                                    color: Color(0xFFFF5112),
+                                style: TextStyle(
+                                    color: const Color(0xFFFF5112),
                                     fontSize: 13,
+                                    fontFamily: AppConstants.fontsRegular,
                                     fontWeight: FontWeight.normal),
                               ),
                               Container(
@@ -296,7 +252,7 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
               )),
               Container(
                 alignment: AlignmentDirectional.center,
-                height: 30,
+                height: 38,
                 padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
                     color: const Color(0xFF9341FF),
@@ -306,9 +262,10 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                   maxFontSize: 15,
                   minFontSize: 8,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.w500),
                 ),
               )
@@ -320,9 +277,10 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
               top: 0,
               start: 0,
               child: Container(
+                height: 16,
                 margin: const EdgeInsetsDirectional.only(start: 0),
                 padding: const EdgeInsetsDirectional.only(
-                    start: 6, end: 6, top: 2, bottom: 2),
+                    start: 6, end: 6, top: 0, bottom: 0),
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(colors: [
                       Color(0xFFFF8929),
@@ -339,9 +297,10 @@ class _RechargeBodyState extends State<RechargeBody> with RouteAware {
                   children: [
                     Text(
                       " +${data.diamondCard?.propDuration ?? 0}%",
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           fontSize: 11,
+                          fontFamily: AppConstants.fontsRegular,
                           fontWeight: FontWeight.w500),
                     )
                   ],

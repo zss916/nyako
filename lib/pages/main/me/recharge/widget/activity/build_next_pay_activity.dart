@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
+import 'package:oliapro/common/app_constants.dart';
 import 'package:oliapro/common/language_key.dart';
 import 'package:oliapro/generated/assets.dart';
 import 'package:oliapro/pages/main/me/recharge/index.dart';
@@ -26,7 +26,7 @@ class BuildNextPayActivity extends StatelessWidget {
                   padding: const EdgeInsetsDirectional.symmetric(
                       horizontal: 20, vertical: 20),
                   decoration: BoxDecoration(
-                      color: AppColors.dialogBg,
+                      color: Colors.white,
                       borderRadius: BorderRadiusDirectional.circular(30)),
                   child: Column(
                     children: [
@@ -37,7 +37,7 @@ class BuildNextPayActivity extends StatelessWidget {
                           Tr.appNextPayDialogTitle.tr,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 17),
                         ),
@@ -46,7 +46,10 @@ class BuildNextPayActivity extends StatelessWidget {
                           child: SingleChildScrollView(
                         child: Text(
                           logic.activityContent,
-                          style: const TextStyle(color: Colors.white),
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontFamily: AppConstants.fontsRegular,
+                          ),
                         ),
                       )),
                       InkWell(
@@ -56,15 +59,16 @@ class BuildNextPayActivity extends StatelessWidget {
                           alignment: AlignmentDirectional.center,
                           width: double.maxFinite,
                           decoration: BoxDecoration(
-                              color: const Color(0xFFAC53FB),
+                              color: const Color(0xFF9341FF),
                               borderRadius:
                                   BorderRadiusDirectional.circular(25)),
                           margin: const EdgeInsetsDirectional.only(
                               top: 10, start: 30, end: 30),
                           child: Text(
                             Tr.app_base_confirm.tr,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.white,
+                                fontFamily: AppConstants.fontsBold,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -91,9 +95,10 @@ class BuildNextPayActivity extends StatelessWidget {
             Expanded(
                 child: Text(
               logic.activityTitle,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold),
             )),
             Container(
