@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
@@ -40,12 +41,13 @@ void sheetToInvite(String url) {
                     const SizedBox(
                       height: 12,
                     ),
-                    const Text(
+                    Text(
                       "WhatsApp",
                       style: TextStyle(
-                          color: Color(0xFF999999),
+                          color: const Color(0xFF999999),
                           fontSize: 12,
-                          fontWeight: FontWeight.bold),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.w600),
                     )
                   ],
                 ),
@@ -70,10 +72,11 @@ void sheetToInvite(String url) {
                     ),
                     Text(
                       Tr.app_copy_link.tr,
-                      style: const TextStyle(
-                          color: Color(0xFF999999),
+                      style: TextStyle(
+                          color: const Color(0xFF999999),
                           fontSize: 12,
-                          fontWeight: FontWeight.bold),
+                          fontFamily: AppConstants.fontsRegular,
+                          fontWeight: FontWeight.w600),
                     )
                   ],
                 ),
