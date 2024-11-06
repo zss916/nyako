@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_leval_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_leval_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 LevalBean $LevalBeanFromJson(Map<String, dynamic> json) {
   final LevalBean levalBean = LevalBean();

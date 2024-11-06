@@ -2,12 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_balance_list_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/reward_details/index.dart';
-import 'package:oliapro/pages/widget/base_top_empty.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_balance_list_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/reward_details/index.dart';
+import 'package:nyako/pages/widget/base_top_empty.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class RewardDetailsBody extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
-import 'package:oliapro/pages/main/home/index.dart';
+import 'package:nyako/pages/main/home/index.dart';
 
 class BuildBanner extends StatelessWidget {
   final HomeLogic logic;

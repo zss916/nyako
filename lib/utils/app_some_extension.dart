@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/services/storage_service.dart';
 
 extension CostomString on String {
   String toUpperCasForFirst() {

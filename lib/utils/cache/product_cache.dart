@@ -1,7 +1,7 @@
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/services/storage_service.dart';
 
 class ProductCache {
   static final icons = [

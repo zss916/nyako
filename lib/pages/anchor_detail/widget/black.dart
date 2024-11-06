@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/generated/assets.dart';
 
 class Black extends StatelessWidget {
   const Black({super.key});

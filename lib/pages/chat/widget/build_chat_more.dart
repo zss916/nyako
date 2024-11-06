@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/dialogs/dialog_confirm_black.dart';
-import 'package:oliapro/dialogs/sheet_chat_more.dart';
-import 'package:oliapro/dialogs/sheet_report.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/chat/index.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_event_bus.dart';
-import 'package:oliapro/utils/app_voice_player.dart';
+import 'package:nyako/dialogs/dialog_confirm_black.dart';
+import 'package:nyako/dialogs/sheet_chat_more.dart';
+import 'package:nyako/dialogs/sheet_report.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/chat/index.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_event_bus.dart';
+import 'package:nyako/utils/app_voice_player.dart';
 
 class BuildChatMore extends StatelessWidget {
   final ChatLogic logic;

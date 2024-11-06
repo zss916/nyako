@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:oliapro/generated/json/app_invite_info_entity.g.dart';
-import 'package:oliapro/generated/json/base/json_field.dart';
+import 'package:nyako/generated/json/app_invite_info_entity.g.dart';
+import 'package:nyako/generated/json/base/json_field.dart';
 
 @JsonSerializable()
 class InviteInfoEntity {

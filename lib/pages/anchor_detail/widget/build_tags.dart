@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
+import 'package:nyako/common/app_constants.dart';
 
 class BuildTags extends StatelessWidget {
   final List<String> tags;
@@ -33,7 +33,8 @@ class BuildTags extends StatelessWidget {
           borderRadius: BorderRadiusDirectional.circular(18)),
       child: Text(
         tag,
-        style:  TextStyle(color: Colors.white,
+        style: TextStyle(
+            color: Colors.white,
             fontFamily: AppConstants.fontsRegular,
             fontSize: 12),
       ),

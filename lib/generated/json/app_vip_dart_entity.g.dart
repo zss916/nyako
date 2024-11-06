@@ -1,19 +1,18 @@
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
-import 'package:oliapro/entities/app_vip_dart_entity.dart';
+import 'package:nyako/entities/app_vip_dart_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 VipDartEntity $VipDartEntityFromJson(Map<String, dynamic> json) {
   final VipDartEntity vipDartEntity = VipDartEntity();
-  final VipDartDiamondCard? diamondCard = jsonConvert.convert<
-      VipDartDiamondCard>(json['diamondCard']);
+  final VipDartDiamondCard? diamondCard =
+      jsonConvert.convert<VipDartDiamondCard>(json['diamondCard']);
   if (diamondCard != null) {
     vipDartEntity.diamondCard = diamondCard;
   }
-  final List<VipDartChannelPays>? channelPays = (json['channelPays'] as List<
-      dynamic>?)
-      ?.map(
-          (e) =>
-      jsonConvert.convert<VipDartChannelPays>(e) as VipDartChannelPays)
-      .toList();
+  final List<VipDartChannelPays>? channelPays =
+      (json['channelPays'] as List<dynamic>?)
+          ?.map((e) =>
+              jsonConvert.convert<VipDartChannelPays>(e) as VipDartChannelPays)
+          .toList();
   if (channelPays != null) {
     vipDartEntity.channelPays = channelPays;
   }
@@ -69,13 +68,13 @@ VipDartEntity $VipDartEntityFromJson(Map<String, dynamic> json) {
   if (discount != null) {
     vipDartEntity.discount = discount;
   }
-  final int? discountFrequency = jsonConvert.convert<int>(
-      json['discountFrequency']);
+  final int? discountFrequency =
+      jsonConvert.convert<int>(json['discountFrequency']);
   if (discountFrequency != null) {
     vipDartEntity.discountFrequency = discountFrequency;
   }
-  final int? discountDuration = jsonConvert.convert<int>(
-      json['discountDuration']);
+  final int? discountDuration =
+      jsonConvert.convert<int>(json['discountDuration']);
   if (discountDuration != null) {
     vipDartEntity.discountDuration = discountDuration;
   }
@@ -196,8 +195,8 @@ extension VipDartEntityExtension on VipDartEntity {
 
 VipDartDiamondCard $VipDartDiamondCardFromJson(Map<String, dynamic> json) {
   final VipDartDiamondCard vipDartDiamondCard = VipDartDiamondCard();
-  final int? increaseDiamonds = jsonConvert.convert<int>(
-      json['increaseDiamonds']);
+  final int? increaseDiamonds =
+      jsonConvert.convert<int>(json['increaseDiamonds']);
   if (increaseDiamonds != null) {
     vipDartDiamondCard.increaseDiamonds = increaseDiamonds;
   }
@@ -255,8 +254,8 @@ VipDartChannelPays $VipDartChannelPaysFromJson(Map<String, dynamic> json) {
   if (storeCode != null) {
     vipDartChannelPays.storeCode = storeCode;
   }
-  final String? nationalFlagPath = jsonConvert.convert<String>(
-      json['nationalFlagPath']);
+  final String? nationalFlagPath =
+      jsonConvert.convert<String>(json['nationalFlagPath']);
   if (nationalFlagPath != null) {
     vipDartChannelPays.nationalFlagPath = nationalFlagPath;
   }
@@ -292,8 +291,8 @@ VipDartChannelPays $VipDartChannelPaysFromJson(Map<String, dynamic> json) {
   if (isExpand != null) {
     vipDartChannelPays.isExpand = isExpand;
   }
-  final int? discountDisplay = jsonConvert.convert<int>(
-      json['discountDisplay']);
+  final int? discountDisplay =
+      jsonConvert.convert<int>(json['discountDisplay']);
   if (discountDisplay != null) {
     vipDartChannelPays.discountDisplay = discountDisplay;
   }

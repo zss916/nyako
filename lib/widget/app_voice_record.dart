@@ -8,10 +8,10 @@ import 'package:flutter_sound_platform_interface/flutter_sound_recorder_platform
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/widget/long_press_gesture_detector.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/widget/long_press_gesture_detector.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 

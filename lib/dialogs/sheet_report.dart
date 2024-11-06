@@ -1,15 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_loading.dart';
 
 void showReportSheet(String anchorId, {VoidCallback? close}) {
   Get.bottomSheet(

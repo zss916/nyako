@@ -1,4 +1,4 @@
-import 'package:oliapro/utils/mylib/billing/google_billing.dart';
+import 'package:nyako/utils/mylib/billing/google_billing.dart';
 
 class AppGoogleBilling {
   static fixNoEndPurchase() {

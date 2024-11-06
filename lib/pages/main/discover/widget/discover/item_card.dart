@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/discover/widget/discover/better_net_video.dart';
-import 'package:oliapro/pages/main/discover/widget/discover/build_front.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/discover/widget/discover/better_net_video.dart';
+import 'package:nyako/pages/main/discover/widget/discover/build_front.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class ItemCard extends StatelessWidget {
   final HostDetail data;

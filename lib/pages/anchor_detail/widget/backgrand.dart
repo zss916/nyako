@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/anchor_detail/index.dart';
-import 'package:oliapro/pages/anchor_detail/widget/follow_btn.dart';
-import 'package:oliapro/pages/widget/age_and_sex_widget.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/anchor_detail/index.dart';
+import 'package:nyako/pages/anchor_detail/widget/follow_btn.dart';
+import 'package:nyako/pages/widget/age_and_sex_widget.dart';
+import 'package:nyako/pages/widget/line_state.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/utils/app_loading.dart';
 
 class Backgarnd extends StatelessWidget {
   final HostDetail data;

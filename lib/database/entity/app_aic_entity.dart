@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:oliapro/agora/rtm_msg_entity.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
 import 'package:objectbox/objectbox.dart';
 
 @Entity()

@@ -1,5 +1,5 @@
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
-import 'package:oliapro/socket/socket_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
+import 'package:nyako/socket/socket_entity.dart';
 
 SocketEntity $SocketEntityFromJson(Map<String, dynamic> json) {
   final SocketEntity socketEntity = SocketEntity();

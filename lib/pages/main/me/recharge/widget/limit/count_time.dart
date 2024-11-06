@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/services/app_time_service.dart';
+import 'package:nyako/services/app_time_service.dart';
 
 class CountTime extends StatefulWidget {
   final int duration;

@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/http/interceptor/net_interceptor.dart';
-import 'package:oliapro/http/util/encrypt_utils.dart';
-import 'package:oliapro/http/util/zip_utils.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/http/interceptor/net_interceptor.dart';
+import 'package:nyako/http/util/encrypt_utils.dart';
+import 'package:nyako/http/util/zip_utils.dart';
 
 class QueryData {
   ///请求数据处理

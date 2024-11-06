@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/generated/assets.dart';
 
 class ShareTitleImage extends StatelessWidget {
   const ShareTitleImage({Key? key}) : super(key: key);

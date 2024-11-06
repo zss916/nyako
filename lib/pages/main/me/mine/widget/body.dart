@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/main/me/mine/index.dart';
-import 'package:oliapro/pages/main/me/mine/widget/build_content_list.dart';
-import 'package:oliapro/pages/main/me/mine/widget/build_top_info.dart';
+import 'package:nyako/pages/main/me/mine/index.dart';
+import 'package:nyako/pages/main/me/mine/widget/build_content_list.dart';
+import 'package:nyako/pages/main/me/mine/widget/build_top_info.dart';
 
 class MeBody extends StatelessWidget {
   final MeLogic logic;

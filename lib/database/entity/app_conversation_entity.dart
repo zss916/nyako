@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 import 'package:objectbox/objectbox.dart';
 
 @Entity()

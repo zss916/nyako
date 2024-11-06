@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/utils/log/log_control.dart';
+import 'package:nyako/utils/log/log_control.dart';
 
 HistoryRouteObserver routeHistoryObserver = HistoryRouteObserver();
 

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/utils/app_loading.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../../../common/language_key.dart';

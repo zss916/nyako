@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 import 'package:video_player/video_player.dart';
 
 class AppNetVideo extends StatefulWidget {

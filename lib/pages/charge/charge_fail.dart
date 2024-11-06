@@ -2,11 +2,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/sheet_service.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/charge/billing.dart';
-import 'package:oliapro/routes/app_pages.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/sheet_service.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/charge/billing.dart';
+import 'package:nyako/routes/app_pages.dart';
 
 void showChargeFailDialog({String? state}) {
   Get.dialog(

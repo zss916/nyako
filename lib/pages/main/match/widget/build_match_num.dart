@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/pages/main/match/index.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/pages/main/match/index.dart';
 
 class BuildMatchNum extends StatelessWidget {
   const BuildMatchNum({super.key});

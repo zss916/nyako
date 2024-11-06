@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/pages/main/me/blacklist/utils/state.dart';
-import 'package:oliapro/pages/main/me/cardlist/index.dart';
-import 'package:oliapro/pages/main/me/cardlist/widget/card_list.dart';
-import 'package:oliapro/pages/widget/base_empty.dart';
-import 'package:oliapro/pages/widget/circular_progress.dart';
-import 'package:oliapro/widget/tab/custom_tabbar.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/pages/main/me/blacklist/utils/state.dart';
+import 'package:nyako/pages/main/me/cardlist/index.dart';
+import 'package:nyako/pages/main/me/cardlist/widget/card_list.dart';
+import 'package:nyako/pages/widget/base_empty.dart';
+import 'package:nyako/pages/widget/circular_progress.dart';
+import 'package:nyako/widget/tab/custom_tabbar.dart';
 
 enum TabType { prop, reward, avatar }
 

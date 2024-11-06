@@ -1,6 +1,6 @@
 import 'package:agora_rtm/agora_rtm.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/agora/rtm/rtm_callback.dart';
+import 'package:nyako/agora/rtm/rtm_callback.dart';
 
 class Rtm with RtmCallback {
   Rtm._internal();

@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_balance_list_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_balance_list_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 BalanceListEntity $BalanceListEntityFromJson(Map<String, dynamic> json) {
   final BalanceListEntity balanceListEntity = BalanceListEntity();

@@ -2,14 +2,14 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/match/util/bgm_control.dart';
-import 'package:oliapro/utils/point/point_utils.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/pay_channel/sheet_pay_channel.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/match/util/bgm_control.dart';
+import 'package:nyako/utils/point/point_utils.dart';
 
 class VipList extends StatefulWidget {
   PayQuickCommodite? discountVip;

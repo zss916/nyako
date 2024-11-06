@@ -1,4 +1,4 @@
-import 'package:oliapro/generated/json/socket_entity.g.dart';
+import 'package:nyako/generated/json/socket_entity.g.dart';
 
 import '../generated/json/base/json_field.dart';
 

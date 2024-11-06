@@ -1,6 +1,6 @@
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
 
 class AppCheckDND {
   static checkDND() async {

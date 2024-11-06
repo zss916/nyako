@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/login_agree_dialog.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/init/login/index.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/login_agree_dialog.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/init/login/index.dart';
+import 'package:nyako/services/user_info.dart';
 
 class BuildGoogleLogin extends StatelessWidget {
   final LoginLogic logic;

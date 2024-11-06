@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/generated/assets.dart';
 
 /// 网络加载图片
 class AppNetImage extends CachedNetworkImage {

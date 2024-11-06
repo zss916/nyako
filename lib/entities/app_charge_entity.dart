@@ -1,4 +1,4 @@
-import 'package:oliapro/utils/app_format_util.dart';
+import 'package:nyako/utils/app_format_util.dart';
 
 import '../generated/json/app_charge_entity.g.dart';
 import '../generated/json/base/json_field.dart';

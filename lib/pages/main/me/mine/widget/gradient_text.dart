@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
+import 'package:nyako/common/app_constants.dart';
 
 class GradientText extends StatelessWidget {
   final String title;
@@ -19,7 +19,7 @@ class GradientText extends StatelessWidget {
       blendMode: BlendMode.srcATop,
       child: Text(
         title,
-        style:TextStyle(
+        style: TextStyle(
           fontFamily: AppConstants.fontsRegular,
           fontWeight: FontWeight.w500,
           fontSize: 15,

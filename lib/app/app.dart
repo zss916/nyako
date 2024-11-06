@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_translations.dart';
-import 'package:oliapro/pages/widget/app_ring_ctrl.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/routes/observer/history_router_observer.dart';
-import 'package:oliapro/widget/app_init_builder.dart';
-import 'package:oliapro/widget/refresh_confige/footer.dart';
-import 'package:oliapro/widget/refresh_confige/header.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_translations.dart';
+import 'package:nyako/pages/widget/app_ring_ctrl.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/routes/observer/history_router_observer.dart';
+import 'package:nyako/widget/app_init_builder.dart';
+import 'package:nyako/widget/refresh_confige/footer.dart';
+import 'package:nyako/widget/refresh_confige/header.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class App extends StatelessWidget {

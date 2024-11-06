@@ -1,5 +1,5 @@
-import 'package:oliapro/generated/json/base/json_field.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/generated/json/base/json_field.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 import '../generated/json/app_link_content_entity.g.dart';
 

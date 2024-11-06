@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
+import 'package:nyako/pages/widget/line_state.dart';
 
 class StateWidget extends StatelessWidget {
   final int lineState;

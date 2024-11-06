@@ -1,6 +1,6 @@
-import 'package:oliapro/objectbox.g.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/point/point_entity.dart';
+import 'package:nyako/objectbox.g.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/point/point_entity.dart';
 
 class PointDB {
   PointDB._internal();

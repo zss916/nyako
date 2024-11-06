@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/generated/assets.dart';
 
 class BuildBackgrand extends StatelessWidget {
   final String portrait;

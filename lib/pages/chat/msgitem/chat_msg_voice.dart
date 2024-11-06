@@ -4,15 +4,15 @@ import 'dart:convert';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/database/entity/app_her_entity.dart';
-import 'package:oliapro/database/entity/app_msg_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/chat/msgitem/chat_msg_widget.dart';
-import 'package:oliapro/pages/chat/msgitem/chat_msg_wrapper.dart';
-import 'package:oliapro/utils/app_format_util.dart';
-import 'package:oliapro/utils/app_voice_player.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/database/entity/app_her_entity.dart';
+import 'package:nyako/database/entity/app_msg_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/chat/msgitem/chat_msg_widget.dart';
+import 'package:nyako/pages/chat/msgitem/chat_msg_wrapper.dart';
+import 'package:nyako/utils/app_format_util.dart';
+import 'package:nyako/utils/app_voice_player.dart';
 
 class ChatMsgVoice extends StatefulWidget {
   final ChatMsgWrapper wrapper;

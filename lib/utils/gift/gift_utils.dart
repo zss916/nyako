@@ -1,13 +1,13 @@
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/agora/rtm_msg_sender.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/database/entity/app_msg_entity.dart';
-import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/pages/charge/charge_dialog_manager.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/agora/rtm_msg_sender.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/database/entity/app_msg_entity.dart';
+import 'package:nyako/dialogs/pay_vip/sheet_pay_vip.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/pages/charge/charge_dialog_manager.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
 
 class GiftUtils {
   ///显示余额不足dialog

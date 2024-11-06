@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_card_entity.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/entities/app_card_entity.dart';
+import 'package:nyako/services/user_info.dart';
 
 import '../generated/json/app_gift_entity.g.dart';
 import '../generated/json/base/json_field.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class BaseLocalPortrait extends StatelessWidget {
   final String portrait;

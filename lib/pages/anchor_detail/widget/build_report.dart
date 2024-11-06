@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/dialogs/sheet_report.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_event_bus.dart';
+import 'package:nyako/dialogs/sheet_report.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_event_bus.dart';
 
 class BuildReport extends StatelessWidget {
   final String? img;

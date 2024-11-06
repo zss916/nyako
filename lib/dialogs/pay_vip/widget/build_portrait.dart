@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class BuildPortrait extends StatelessWidget {
   final String? portrait;

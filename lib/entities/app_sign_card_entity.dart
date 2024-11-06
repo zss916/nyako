@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/json/app_sign_card_entity.g.dart';
-import 'package:oliapro/pages/main/me/mine/widget/avatar_state.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/json/app_sign_card_entity.g.dart';
+import 'package:nyako/pages/main/me/mine/widget/avatar_state.dart';
 
 import '../generated/json/base/json_field.dart';
 

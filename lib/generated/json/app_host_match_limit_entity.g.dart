@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_host_match_limit_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_host_match_limit_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 HostMatchLimitEntity $HostMatchLimitEntityFromJson(Map<String, dynamic> json) {
   final HostMatchLimitEntity hostMatchLimitEntity = HostMatchLimitEntity();

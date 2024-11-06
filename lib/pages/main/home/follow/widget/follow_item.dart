@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/home/follow/widget/build_avatar.dart';
-import 'package:oliapro/pages/main/home/follow/widget/build_call_btn.dart';
-import 'package:oliapro/pages/main/home/follow/widget/build_msg_btn.dart';
-import 'package:oliapro/pages/main/home/index.dart';
-import 'package:oliapro/pages/main/home/widget/hot/line_state_text.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/home/follow/widget/build_avatar.dart';
+import 'package:nyako/pages/main/home/follow/widget/build_call_btn.dart';
+import 'package:nyako/pages/main/home/follow/widget/build_msg_btn.dart';
+import 'package:nyako/pages/main/home/index.dart';
+import 'package:nyako/pages/main/home/widget/hot/line_state_text.dart';
+import 'package:nyako/pages/widget/line_state.dart';
 
 class FollowItem extends StatelessWidget {
   final HostDetail data;

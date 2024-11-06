@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/entities/app_moment_entity.dart';
-import 'package:oliapro/pages/anchor_detail/index.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/entities/app_moment_entity.dart';
+import 'package:nyako/pages/anchor_detail/index.dart';
+import 'package:nyako/pages/widget/line_state.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class BuildItemAvatar extends StatelessWidget {
   final AnchorDetailLogic logic;

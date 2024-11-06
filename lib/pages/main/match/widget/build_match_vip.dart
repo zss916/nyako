@@ -2,10 +2,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
-import 'package:oliapro/pages/main/match/index.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/pay_vip/sheet_pay_vip.dart';
+import 'package:nyako/pages/main/match/index.dart';
 
 class BuildMatchVip extends StatelessWidget {
   const BuildMatchVip({super.key});

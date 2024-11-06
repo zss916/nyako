@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
 
 class WarnTip extends StatelessWidget {
   final AivLogic logic;

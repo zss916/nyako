@@ -1,12 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/utils/point/point_utils.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/pay_channel/sheet_pay_channel.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/utils/point/point_utils.dart';
 
 class RenewVipDialog extends StatelessWidget {
   static show() {

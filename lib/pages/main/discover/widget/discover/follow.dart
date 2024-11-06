@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/dialog_confirm.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/utils/app_event_bus.dart';
-import 'package:oliapro/utils/app_loading.dart';
-import 'package:oliapro/widget/app_click_widget.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/dialog_confirm.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/utils/app_event_bus.dart';
+import 'package:nyako/utils/app_loading.dart';
+import 'package:nyako/widget/app_click_widget.dart';
 
 class Follow extends StatefulWidget {
   final HostDetail anchor;

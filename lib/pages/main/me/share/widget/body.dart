@@ -2,16 +2,16 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/sheet_app_invite.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/share/index.dart';
-import 'package:oliapro/pages/main/me/share/widget/ActionWidget.dart';
-import 'package:oliapro/pages/main/me/share/widget/share_title_image.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/widget/animated_button.dart';
-import 'package:oliapro/widget/base_app_bar.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/sheet_app_invite.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/share/index.dart';
+import 'package:nyako/pages/main/me/share/widget/ActionWidget.dart';
+import 'package:nyako/pages/main/me/share/widget/share_title_image.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/widget/animated_button.dart';
+import 'package:nyako/widget/base_app_bar.dart';
 
 class ShareBody extends StatefulWidget {
   const ShareBody({super.key});

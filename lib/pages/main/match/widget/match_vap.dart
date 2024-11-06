@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/widget/gift/app_vap_player.dart';
+import 'package:nyako/widget/gift/app_vap_player.dart';
 
 class MatchVap extends StatefulWidget {
   // final MatchLogic logic;

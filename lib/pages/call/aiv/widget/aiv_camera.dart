@@ -1,9 +1,9 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/app_net_image.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/widget/app_net_image.dart';
 
 class AivCamera extends StatelessWidget {
   final AivLogic logic;

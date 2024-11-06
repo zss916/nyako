@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/dialogs/sign/widget/sign_container.dart';
-import 'package:oliapro/entities/sign_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/widget/scale_transform.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/dialogs/sign/widget/sign_container.dart';
+import 'package:nyako/entities/sign_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/widget/scale_transform.dart';
 
 void toSignDialog() {
   if (!AppConstants.isFakeMode) {

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/http/util/special_path_utils.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/http/util/special_path_utils.dart';
 
 /// 请求拦截path相关的处理
 class PathInterceptor extends Interceptor {

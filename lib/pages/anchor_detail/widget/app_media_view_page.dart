@@ -1,8 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/pages/anchor_detail/widget/app_media_view.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/pages/anchor_detail/widget/app_media_view.dart';
 
 class AppFullScreenSliderPage extends StatefulWidget {
   int position;

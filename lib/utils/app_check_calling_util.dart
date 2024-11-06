@@ -1,7 +1,7 @@
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/pages/charge/charge_dialog_manager.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/pages/charge/charge_dialog_manager.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/services/user_info.dart';
 
 import '../routes/app_pages.dart';
 

@@ -1,6 +1,6 @@
 import 'package:mypackage/app_login_util.dart';
 import 'package:mypackage/app_third_util.dart';
-import 'package:oliapro/common/app_constants.dart';
+import 'package:nyako/common/app_constants.dart';
 
 typedef GoogleCallBack = void Function(
     {required bool success,

@@ -1,10 +1,10 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/game/game_dialog_manager.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/game/game_dialog_manager.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 ///选择
 showSelectAreaSheet(List<AreaData> data, Function(AreaData?) func,

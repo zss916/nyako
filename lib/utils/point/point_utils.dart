@@ -1,6 +1,6 @@
-import 'package:oliapro/utils/point/point_db.dart';
-import 'package:oliapro/utils/point/point_entity.dart';
-import 'package:oliapro/utils/point/point_type.dart';
+import 'package:nyako/utils/point/point_db.dart';
+import 'package:nyako/utils/point/point_entity.dart';
+import 'package:nyako/utils/point/point_type.dart';
 
 class PointUtils {
   PointUtils._internal();

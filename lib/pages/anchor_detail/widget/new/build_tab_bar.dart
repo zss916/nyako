@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/pages/anchor_detail/widget/tab_bar_delegate.dart';
-import 'package:oliapro/widget/tab/kugou_tabbar.dart';
-import 'package:oliapro/widget/tab/rrect_indicator.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/pages/anchor_detail/widget/tab_bar_delegate.dart';
+import 'package:nyako/widget/tab/kugou_tabbar.dart';
+import 'package:nyako/widget/tab/rrect_indicator.dart';
 
 class BuildTabBar extends StatelessWidget {
   final TabController tabCtrl;

@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:launch_review/launch_review.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
-import 'package:oliapro/generated/json/base/json_field.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/services/app_info_service.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/dialogs/pay_vip/sheet_pay_vip.dart';
+import 'package:nyako/generated/json/base/json_field.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/services/app_info_service.dart';
+import 'package:nyako/services/user_info.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 

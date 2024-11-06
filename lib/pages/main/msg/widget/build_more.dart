@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/msg/index.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/msg/index.dart';
 
 class BuildMore extends StatelessWidget {
   final MsgListLogic logic;

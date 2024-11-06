@@ -1,14 +1,14 @@
 // import 'package:auto_size_text/auto_size_text.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
-// import 'package:oliapro/common/language_key.dart';
-// import 'package:oliapro/generated/assets.dart';
-// import 'package:oliapro/pages/main/me/mine/index.dart';
-// import 'package:oliapro/utils/app_extends.dart';
-// import 'package:oliapro/utils/app_some_extension.dart';
-// import 'package:oliapro/widget/app_click_widget2.dart';
-// import 'package:oliapro/widget/semantics/label.dart';
-// import 'package:oliapro/widget/semantics/semantics_widget.dart';
+// import 'package:nyako/common/language_key.dart';
+// import 'package:nyako/generated/assets.dart';
+// import 'package:nyako/pages/main/me/mine/index.dart';
+// import 'package:nyako/utils/app_extends.dart';
+// import 'package:nyako/utils/app_some_extension.dart';
+// import 'package:nyako/widget/app_click_widget2.dart';
+// import 'package:nyako/widget/semantics/label.dart';
+// import 'package:nyako/widget/semantics/semantics_widget.dart';
 //
 // class BuildFreeDiamond extends StatefulWidget {
 //   final MeLogic logic;

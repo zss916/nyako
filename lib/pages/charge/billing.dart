@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/database/entity/app_order_entity.dart';
-import 'package:oliapro/entities/app_charge_entity.dart';
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/game/game_dialog_manager.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_loading.dart';
-import 'package:oliapro/utils/mylib/billing/app_google_billing.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/database/entity/app_order_entity.dart';
+import 'package:nyako/entities/app_charge_entity.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/game/game_dialog_manager.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_loading.dart';
+import 'package:nyako/utils/mylib/billing/app_google_billing.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Billing {

@@ -1,14 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/blacklist/index.dart';
-import 'package:oliapro/pages/main/me/blacklist/utils/state.dart';
-import 'package:oliapro/pages/widget/base_empty.dart';
-import 'package:oliapro/pages/widget/build_item_avatar.dart';
-import 'package:oliapro/pages/widget/circular_progress.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/blacklist/index.dart';
+import 'package:nyako/pages/main/me/blacklist/utils/state.dart';
+import 'package:nyako/pages/widget/base_empty.dart';
+import 'package:nyako/pages/widget/build_item_avatar.dart';
+import 'package:nyako/pages/widget/circular_progress.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class BlackBody extends StatelessWidget {
   final BlackLogic logic;

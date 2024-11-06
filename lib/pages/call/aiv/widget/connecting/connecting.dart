@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/dialogs/dialog_confirm_hang.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
-import 'package:oliapro/pages/call/aiv/widget/connecting/connecting_webp.dart';
-import 'package:oliapro/pages/call/remote/widget/build_backgrand.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/dialogs/dialog_confirm_hang.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
+import 'package:nyako/pages/call/aiv/widget/connecting/connecting_webp.dart';
+import 'package:nyako/pages/call/remote/widget/build_backgrand.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class Connecting extends StatelessWidget {
   final AivLogic logic;

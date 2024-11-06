@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/entities/app_contribute_entity.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/a_routes.dart';
+import 'package:nyako/entities/app_contribute_entity.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/a_routes.dart';
 
 class BuildContribute extends StatelessWidget {
   final List<ContributeEntity> contributions;

@@ -1,9 +1,9 @@
 // import 'package:flutter/material.dart';
-// import 'package:oliapro/common/app_constants.dart';
-// import 'package:oliapro/entities/app_host_entity.dart';
-// import 'package:oliapro/generated/assets.dart';
-// import 'package:oliapro/routes/a_routes.dart';
-// import 'package:oliapro/services/storage_service.dart';
+// import 'package:nyako/common/app_constants.dart';
+// import 'package:nyako/entities/app_host_entity.dart';
+// import 'package:nyako/generated/assets.dart';
+// import 'package:nyako/routes/a_routes.dart';
+// import 'package:nyako/services/storage_service.dart';
 //
 // class BuildCallButton extends StatelessWidget {
 //   final HostDetail anchor;

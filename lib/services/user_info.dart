@@ -2,15 +2,15 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/agora/rtm/rtm.dart';
-import 'package:oliapro/entities/app_info_entity.dart';
-import 'package:oliapro/entities/app_sign_card_entity.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/app_info_service.dart';
-import 'package:oliapro/services/event_bus_bean.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/socket/app_socket_manager.dart';
+import 'package:nyako/agora/rtm/rtm.dart';
+import 'package:nyako/entities/app_info_entity.dart';
+import 'package:nyako/entities/app_sign_card_entity.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/app_info_service.dart';
+import 'package:nyako/services/event_bus_bean.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/socket/app_socket_manager.dart';
 
 import '../entities/app_config_entity.dart';
 import '../entities/app_leval_entity.dart';

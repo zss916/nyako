@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:oliapro/http/config/code_status.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/http/config/code_status.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/services/user_info.dart';
 
 /// data拦截相关的处理
 class HandDataInterceptor extends Interceptor {

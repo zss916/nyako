@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/generated/assets.dart';
 
 class RotationWidget extends StatefulWidget {
   const RotationWidget({Key? key}) : super(key: key);

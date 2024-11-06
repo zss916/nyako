@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/database/entity/app_conversation_entity.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/database/entity/app_conversation_entity.dart';
+import 'package:nyako/generated/assets.dart';
 
 // type text = 10
 // type gift = 11

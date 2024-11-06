@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:oliapro/database/entity/app_order_entity.dart';
-import 'package:oliapro/entities/app_config_entity.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/adjust/app_adjust.dart';
+import 'package:nyako/database/entity/app_order_entity.dart';
+import 'package:nyako/entities/app_config_entity.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/adjust/app_adjust.dart';
 
 class AppPayEventTrack {
   factory AppPayEventTrack() => _getInstance();

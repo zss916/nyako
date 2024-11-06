@@ -2,21 +2,21 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/dialog_bind_google.dart';
-import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
-import 'package:oliapro/dialogs/pay_select_area/sheet_select_area.dart';
-import 'package:oliapro/dialogs/pay_vip/sheet/vip_list_sheet.dart';
-import 'package:oliapro/dialogs/recharge/sheet_recharge_success.dart';
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/charge/charge_fail.dart';
-import 'package:oliapro/pages/charge/charge_quick_dialog.dart';
-import 'package:oliapro/pages/some/web_dialog.dart';
-import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
-import 'package:oliapro/routes/a_routes.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/dialog_bind_google.dart';
+import 'package:nyako/dialogs/pay_channel/sheet_pay_channel.dart';
+import 'package:nyako/dialogs/pay_select_area/sheet_select_area.dart';
+import 'package:nyako/dialogs/pay_vip/sheet/vip_list_sheet.dart';
+import 'package:nyako/dialogs/recharge/sheet_recharge_success.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/charge/charge_fail.dart';
+import 'package:nyako/pages/charge/charge_quick_dialog.dart';
+import 'package:nyako/pages/some/web_dialog.dart';
+import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
+import 'package:nyako/routes/a_routes.dart';
 
 class GameDialogManager {
   ///充值成功

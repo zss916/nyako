@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:get/get.dart';
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/call/remote/index.dart';
-import 'package:oliapro/utils/app_check_calling_util.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/call/remote/index.dart';
+import 'package:nyako/utils/app_check_calling_util.dart';
 
 import '../../common/app_constants.dart';
 import '../../database/entity/app_her_entity.dart';

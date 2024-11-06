@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/widget/semantics/label.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/widget/semantics/label.dart';
 
 extension WidgetExt on Widget {
   ///普通控件添加标签

@@ -1,14 +1,14 @@
 import 'package:agora_rtm/agora_rtm.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/agora/rtm/rtm.dart';
-import 'package:oliapro/agora/rtm_msg_handler.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/call/remote/index.dart';
-import 'package:oliapro/services/event_bus_bean.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_check_calling_util.dart';
+import 'package:nyako/pages/call/remote/index.dart';
+import 'package:nyako/services/event_bus_bean.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_check_calling_util.dart';
+import 'package:nyako/agora/rtm/rtm.dart';
+import 'package:nyako/agora/rtm_msg_handler.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/http/index.dart';
 
 mixin class RtmCallback {
   String get appId => UserInfo.to.config?.agoraAppId ?? "";

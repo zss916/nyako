@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:oliapro/http/config/response_data.dart';
-import 'package:oliapro/http/util/special_path_utils.dart';
+import 'package:nyako/http/config/response_data.dart';
+import 'package:nyako/http/util/special_path_utils.dart';
 
 /// data拦截相关的处理
 class DataInterceptor extends Interceptor {

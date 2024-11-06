@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/services/storage_service.dart';
 
 class DragWebpFront extends StatefulWidget {
   final Widget child;

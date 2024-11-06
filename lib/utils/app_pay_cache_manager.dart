@@ -1,8 +1,8 @@
-import 'package:oliapro/database/entity/app_order_entity.dart';
-import 'package:oliapro/entities/app_order_check_entity.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_pay_event_track.dart';
+import 'package:nyako/database/entity/app_order_entity.dart';
+import 'package:nyako/entities/app_order_check_entity.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_pay_event_track.dart';
 
 class AppPayCacheManager {
   // 检查缓存的订单，支付成功的上报后台和三方平台

@@ -1,17 +1,17 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_card_entity.dart';
-import 'package:oliapro/entities/app_sign_card_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/blacklist/utils/state.dart';
-import 'package:oliapro/pages/main/me/cardlist/index.dart';
-import 'package:oliapro/pages/main/me/cardlist/widget/avatar_item.dart';
-import 'package:oliapro/pages/main/me/cardlist/widget/body.dart';
-import 'package:oliapro/pages/widget/base_empty.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_card_entity.dart';
+import 'package:nyako/entities/app_sign_card_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/blacklist/utils/state.dart';
+import 'package:nyako/pages/main/me/cardlist/index.dart';
+import 'package:nyako/pages/main/me/cardlist/widget/avatar_item.dart';
+import 'package:nyako/pages/main/me/cardlist/widget/body.dart';
+import 'package:nyako/pages/widget/base_empty.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class CardList extends StatelessWidget {
   final int type;

@@ -4,14 +4,14 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/app_net_image.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/pay_vip/sheet_pay_vip.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/widget/app_net_image.dart';
 
 class AppGiftListWidget extends StatefulWidget {
   final List<GiftEntity> giftList;

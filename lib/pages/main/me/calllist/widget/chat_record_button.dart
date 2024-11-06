@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/entities/app_call_record_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/calllist/index.dart';
+import 'package:nyako/entities/app_call_record_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/calllist/index.dart';
 
 class ChatRecordButton extends StatelessWidget {
   final bool isVideoChat;

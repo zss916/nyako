@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/utils/translate/app_translate_util.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/utils/translate/app_translate_util.dart';
 
 class BuildSelectIcon extends StatefulWidget {
   final bool? isTranslated;

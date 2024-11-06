@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_common_type.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/socket/app_socket_manager.dart';
-import 'package:oliapro/socket/socket_entity.dart';
+import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/socket/app_socket_manager.dart';
+import 'package:nyako/socket/socket_entity.dart';
 
 class BuildBalance extends StatefulWidget {
   const BuildBalance({super.key});

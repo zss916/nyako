@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/point/point_db.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/point/point_db.dart';
 
 class AppPointService extends GetxService {
   static AppPointService get to => Get.find();

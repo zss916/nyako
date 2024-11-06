@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/about/index.dart';
-import 'package:oliapro/services/app_info_service.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/about/index.dart';
+import 'package:nyako/services/app_info_service.dart';
 
 class AboutBody extends StatelessWidget {
   final AboutLogic logic;

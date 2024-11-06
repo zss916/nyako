@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/services/user_info.dart';
 
 class BuildMsgCardDownTime extends StatefulWidget {
   const BuildMsgCardDownTime({super.key});

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
-import 'package:oliapro/pages/call/aiv/widget/aiv_camera.dart';
-import 'package:oliapro/pages/call/aiv/widget/build_call_sound.dart';
-import 'package:oliapro/pages/call/aiv/widget/build_time_count.dart';
-import 'package:oliapro/pages/call/aiv/widget/chat_backgrand.dart';
-import 'package:oliapro/pages/call/call/widget/call_footer_tool.dart';
-import 'package:oliapro/pages/call/call/widget/call_header_tool.dart';
-import 'package:oliapro/widget/app_video_player.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
+import 'package:nyako/pages/call/aiv/widget/aiv_camera.dart';
+import 'package:nyako/pages/call/aiv/widget/build_call_sound.dart';
+import 'package:nyako/pages/call/aiv/widget/build_time_count.dart';
+import 'package:nyako/pages/call/aiv/widget/chat_backgrand.dart';
+import 'package:nyako/pages/call/call/widget/call_footer_tool.dart';
+import 'package:nyako/pages/call/call/widget/call_header_tool.dart';
+import 'package:nyako/widget/app_video_player.dart';
 
 class AivWidget extends StatelessWidget {
   final AivLogic logic;

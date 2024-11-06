@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/sign_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/sign_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 SignData $SignDataFromJson(Map<String, dynamic> json) {
   final SignData signData = SignData();

@@ -1,4 +1,4 @@
-import 'package:oliapro/utils/app_log.dart';
+import 'package:nyako/utils/app_log.dart';
 
 class LogControl {
   ///路由路径监测

@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/mine/index.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/mine/index.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 
 class BuildName extends StatelessWidget {
   const BuildName({super.key});

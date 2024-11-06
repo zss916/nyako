@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_sound/flutter_sound.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/main/index.dart';
-import 'package:oliapro/pages/main/match/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/music/match_music_manager.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/main/index.dart';
+import 'package:nyako/pages/main/match/index.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/utils/music/match_music_manager.dart';
 
 mixin class BgmControl {
   late bool isBgm = true;

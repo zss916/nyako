@@ -1,7 +1,7 @@
 import 'package:android_id/android_id.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class AppInfoService extends GetxService {

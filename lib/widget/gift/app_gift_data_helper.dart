@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:oliapro/http/index.dart';
+import 'package:nyako/http/index.dart';
 
 import '../../common/app_constants.dart';
 import '../../entities/app_gift_entity.dart';

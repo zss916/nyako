@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/home/index.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/home/index.dart';
 
 class BuildMsgBtn extends StatelessWidget {
   final HomeLogic logic;

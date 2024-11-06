@@ -1,4 +1,4 @@
-import 'package:oliapro/generated/json/rtm_msg_entity.g.dart';
+import 'package:nyako/generated/json/rtm_msg_entity.g.dart';
 
 import '../generated/json/base/json_field.dart';
 

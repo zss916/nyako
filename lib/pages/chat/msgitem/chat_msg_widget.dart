@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/database/entity/app_msg_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/mine/widget/avatar_state.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/database/entity/app_msg_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/mine/widget/avatar_state.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 import 'chat_msg_wrapper.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/routes/app_pages.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/routes/app_pages.dart';
 
 void showGoogleRate() {
   if (!Get.currentRoute.startsWith(AppPages.googleRateSheet)) {

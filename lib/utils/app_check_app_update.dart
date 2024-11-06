@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:launch_review/launch_review.dart';
-import 'package:oliapro/dialogs/dialog_update_app.dart';
-import 'package:oliapro/entities/app_config_entity.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/dialogs/dialog_update_app.dart';
+import 'package:nyako/entities/app_config_entity.dart';
+import 'package:nyako/services/user_info.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 

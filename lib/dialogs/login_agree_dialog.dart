@@ -1,14 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/pages/init/account/login/index.dart';
-import 'package:oliapro/pages/init/login/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/widget/animated_button.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/pages/init/account/login/index.dart';
+import 'package:nyako/pages/init/login/index.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/widget/animated_button.dart';
 
 import '../common/app_constants.dart';
 import '../common/language_key.dart';

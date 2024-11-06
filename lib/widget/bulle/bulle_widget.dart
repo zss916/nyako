@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/widget/bulle/bulle.dart';
+import 'package:nyako/widget/bulle/bulle.dart';
 
 /// 气泡组件
 /// 爱今天灵眸（ijtkj.cn）,一款可根据天气改变系统显示模式的软件，期待各位有钱的码友支持

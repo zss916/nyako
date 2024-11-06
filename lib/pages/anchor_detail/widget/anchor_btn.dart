@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/widget/semantics/label.dart';
-import 'package:oliapro/widget/semantics/semantics_widget.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/widget/semantics/label.dart';
+import 'package:nyako/widget/semantics/semantics_widget.dart';
 
 class AnchorBtn extends StatelessWidget {
   final HostDetail data;

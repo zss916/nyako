@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notification_permissions/notification_permissions.dart'
     hide PermissionStatus;
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/generated/assets.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../common/language_key.dart';

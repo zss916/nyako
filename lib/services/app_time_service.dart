@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
+import 'package:nyako/common/app_constants.dart';
 
 class AppTimeService extends GetxService {
   static AppTimeService get to => Get.find();

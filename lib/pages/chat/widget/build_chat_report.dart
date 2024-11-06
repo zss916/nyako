@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/dialogs/sheet_report.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_event_bus.dart';
+import 'package:nyako/dialogs/sheet_report.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_event_bus.dart';
 
 class BuildChatReport extends StatelessWidget {
   final String? img;
@@ -20,15 +19,12 @@ class BuildChatReport extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         borderRadius: BorderRadius.circular(30),
-        onTap: () => showReportSheet(
-            anchorId,
-            close: (){
-              StorageService.to.updateBlackList(anchorId, true);
-              AppEventBus.eventBus.fire(BlackEvent(uid: anchorId));
-              AppEventBus.eventBus
-                  .fire(ReportEvent(ReportEnum.chat.index));
+        onTap: () => showReportSheet(anchorId, close: () {
+          StorageService.to.updateBlackList(anchorId, true);
+          AppEventBus.eventBus.fire(BlackEvent(uid: anchorId));
+          AppEventBus.eventBus.fire(ReportEvent(ReportEnum.chat.index));
         }),
-       // onTap: () => ARoutes.toReport(uid: anchorId, type: type),
+        // onTap: () => ARoutes.toReport(uid: anchorId, type: type),
         child: Container(
           padding: const EdgeInsetsDirectional.all(5),
           child: Image.asset(

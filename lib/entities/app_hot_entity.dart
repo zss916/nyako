@@ -1,11 +1,11 @@
-import 'package:oliapro/entities/app_host_entity.dart';
+import 'package:nyako/entities/app_host_entity.dart';
 
 import '../generated/json/app_hot_entity.g.dart';
 import '../generated/json/base/json_field.dart';
 
 /// 发现了一个问题这里导包了YuliaHostDetail
 /// 如果写成 import 'app_host_entity.dart';生成的.g.dart文件也这样导包产生错误
-/// 改用 import 'package:oliapro/entities/app_host_entity.dart';
+/// 改用 import 'package:nyako/entities/app_host_entity.dart';
 /// 才没有问题，说明这个插件需要全路径
 @JsonSerializable()
 class UpListData {

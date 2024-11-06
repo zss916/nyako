@@ -4,10 +4,10 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_card_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/widget/app_net_image.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_card_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/widget/app_net_image.dart';
 
 class PropGiftListWidget extends StatefulWidget {
   final List<CardBean> giftList;

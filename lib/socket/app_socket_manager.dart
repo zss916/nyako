@@ -2,15 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/common/app_common_type.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/dialogs/reward_dialog/pdd_util.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/charge/charge_success.dart';
-import 'package:oliapro/utils/app_event_bus.dart';
-import 'package:oliapro/utils/cache/login_cache.dart';
-import 'package:oliapro/widget/gift/app_gift_data_helper.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/dialogs/reward_dialog/pdd_util.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/charge/charge_success.dart';
+import 'package:nyako/utils/app_event_bus.dart';
+import 'package:nyako/utils/cache/login_cache.dart';
+import 'package:nyako/widget/gift/app_gift_data_helper.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/status.dart' as status;
 

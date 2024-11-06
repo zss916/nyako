@@ -1,16 +1,16 @@
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/dialogs/sheet_transfer_app.dart';
-import 'package:oliapro/entities/app_aiv_entity.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/entities/app_host_match_limit_entity.dart';
-import 'package:oliapro/entities/app_moment_entity.dart';
-import 'package:oliapro/entities/app_order_entity.dart';
-import 'package:oliapro/pages/call/aiv/widget/aiv_video_controller.dart';
-import 'package:oliapro/pages/some/web_page.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/routes/observer/route_extend.dart';
-import 'package:oliapro/utils/app_permission_handler.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/dialogs/sheet_transfer_app.dart';
+import 'package:nyako/entities/app_aiv_entity.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/entities/app_host_match_limit_entity.dart';
+import 'package:nyako/entities/app_moment_entity.dart';
+import 'package:nyako/entities/app_order_entity.dart';
+import 'package:nyako/pages/call/aiv/widget/aiv_video_controller.dart';
+import 'package:nyako/pages/some/web_page.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/routes/observer/route_extend.dart';
+import 'package:nyako/utils/app_permission_handler.dart';
 
 class ARoutes {
   static bool get isRechargeDialog =>

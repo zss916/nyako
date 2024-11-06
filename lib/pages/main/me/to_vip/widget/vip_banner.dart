@@ -1,11 +1,11 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_swiper_null_safety_flutter3/flutter_swiper_null_safety_flutter3.dart';
 // import 'package:get/get.dart';
-// import 'package:oliapro/common/language_key.dart';
-// import 'package:oliapro/generated/assets.dart';
-// import 'package:oliapro/pages/main/me/to_vip/widget/banber1.dart';
-// import 'package:oliapro/pages/main/me/to_vip/widget/banber2.dart';
-// import 'package:oliapro/pages/main/me/to_vip/widget/banber3.dart';
+// import 'package:nyako/common/language_key.dart';
+// import 'package:nyako/generated/assets.dart';
+// import 'package:nyako/pages/main/me/to_vip/widget/banber1.dart';
+// import 'package:nyako/pages/main/me/to_vip/widget/banber2.dart';
+// import 'package:nyako/pages/main/me/to_vip/widget/banber3.dart';
 //
 // class VipBanner extends StatelessWidget {
 //   final int? index;

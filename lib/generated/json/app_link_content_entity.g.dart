@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_link_content_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_link_content_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 LinkContent $LinkContentFromJson(Map<String, dynamic> json) {
   final LinkContent linkContent = LinkContent();

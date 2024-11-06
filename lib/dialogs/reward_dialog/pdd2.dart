@@ -2,15 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/dialogs/reward_dialog/reward_coupon_dialog.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/pages/call/remote/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_check_calling_util.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/dialogs/reward_dialog/reward_coupon_dialog.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/pages/call/remote/index.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_check_calling_util.dart';
 
 import 'reward_diamond_dialog.dart';
 import 'reward_time_dialog.dart';

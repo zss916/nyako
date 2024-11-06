@@ -1,4 +1,4 @@
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/services/user_info.dart';
 
 enum AvatarStatus {
   common,

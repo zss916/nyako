@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/dialog_delete_account.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/widget/base_button.dart';
-import 'package:oliapro/widget/animated_button.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/dialog_delete_account.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/widget/base_button.dart';
+import 'package:nyako/widget/animated_button.dart';
 
 class DeleteAccountBody extends StatelessWidget {
   const DeleteAccountBody({super.key});

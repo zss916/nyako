@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vap2/vap_view.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/utils/app_queue_util.dart';
-import 'package:oliapro/widget/app_cache_manager.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/utils/app_queue_util.dart';
+import 'package:nyako/widget/app_cache_manager.dart';
 
 import 'app_gift_animate.dart';
 

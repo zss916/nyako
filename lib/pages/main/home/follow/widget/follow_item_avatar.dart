@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/pages/widget/line_state.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class FollowItemAvatar extends StatelessWidget {
   final String url;

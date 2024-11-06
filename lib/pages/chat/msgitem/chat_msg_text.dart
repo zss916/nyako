@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/pages/chat/msgitem/build_switch.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/pages/chat/msgitem/build_switch.dart';
+import 'package:nyako/services/storage_service.dart';
 
 import 'chat_msg_widget.dart';
 import 'chat_msg_wrapper.dart';

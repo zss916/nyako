@@ -2,12 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/anchor_detail/index.dart';
-import 'package:oliapro/pages/anchor_detail/widget/build_tags.dart';
-import 'package:oliapro/pages/anchor_detail/widget/state_widget.dart';
-import 'package:oliapro/pages/widget/age_and_sex.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/pages/anchor_detail/index.dart';
+import 'package:nyako/pages/anchor_detail/widget/build_tags.dart';
+import 'package:nyako/pages/anchor_detail/widget/state_widget.dart';
+import 'package:nyako/pages/widget/age_and_sex.dart';
+import 'package:nyako/pages/widget/line_state.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class HeaderWidget extends StatelessWidget {
   final AnchorDetailLogic logic;

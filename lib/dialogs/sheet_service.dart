@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/app_info_service.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/aihelp/ai_help.dart';
-import 'package:oliapro/utils/aihelp/ai_help_type.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/app_info_service.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/aihelp/ai_help.dart';
+import 'package:nyako/utils/aihelp/ai_help_type.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 

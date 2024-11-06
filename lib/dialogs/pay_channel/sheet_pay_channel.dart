@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/pay_channel/add_card.dart';
-import 'package:oliapro/dialogs/pay_channel/build_content.dart';
-import 'package:oliapro/dialogs/pay_channel/widget/build_google_pay.dart';
-import 'package:oliapro/dialogs/reward_dialog/pdd_util.dart';
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/game/game_dialog_manager.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/charge/billing.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/pay_channel/add_card.dart';
+import 'package:nyako/dialogs/pay_channel/build_content.dart';
+import 'package:nyako/dialogs/pay_channel/widget/build_google_pay.dart';
+import 'package:nyako/dialogs/reward_dialog/pdd_util.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/game/game_dialog_manager.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/charge/billing.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/user_info.dart';
 
 ///快捷支付(Google/三方)
 toQuickPayChannel(PayQuickCommodite data,

@@ -1,12 +1,12 @@
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
-import 'package:oliapro/entities/app_order_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_order_entity.dart';
 import 'package:date_format/date_format.dart';
 
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:oliapro/common/language_key.dart';
+import 'package:nyako/common/language_key.dart';
 
 
 OrderBean $OrderBeanFromJson(Map<String, dynamic> json) {

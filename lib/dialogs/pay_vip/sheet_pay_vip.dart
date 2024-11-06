@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/dialogs/pay_vip/sheet/vip_list_sheet.dart';
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/game/game_dialog_manager.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/dialogs/pay_vip/sheet/vip_list_sheet.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/game/game_dialog_manager.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/utils/app_loading.dart';
 
 ///开通vip
 void sheetToVip(

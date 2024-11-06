@@ -1,5 +1,5 @@
 import 'package:get/get_utils/src/platform/platform.dart';
-import 'package:oliapro/utils/environment.dart';
+import 'package:nyako/utils/environment.dart';
 
 class AppConstants {
   // flutter dart 混淆

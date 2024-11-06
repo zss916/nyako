@@ -1,6 +1,6 @@
-import 'package:oliapro/dialogs/reward_dialog/pdd2.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/http/index.dart';
+import 'package:nyako/dialogs/reward_dialog/pdd2.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/http/index.dart';
 
 class PddUtil {
   PddUtil._internal();

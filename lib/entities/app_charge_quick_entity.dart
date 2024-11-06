@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/generated/json/base/json_field.dart';
-import 'package:oliapro/utils/app_format_util.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/generated/json/base/json_field.dart';
+import 'package:nyako/utils/app_format_util.dart';
 
 import '../common/language_key.dart';
 import '../generated/json/app_charge_quick_entity.g.dart';

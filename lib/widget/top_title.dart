@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
+import 'package:nyako/common/app_constants.dart';
 
 class TopTitle extends StatelessWidget {
   final String title;

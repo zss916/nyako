@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/generated/assets.dart';
 
 class BaseAppBar extends AppBar {
   BaseAppBar(

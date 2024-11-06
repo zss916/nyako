@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_common_type.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/widget/app_click_widget.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/widget/app_click_widget.dart';
 
 import '../common/language_key.dart';
 

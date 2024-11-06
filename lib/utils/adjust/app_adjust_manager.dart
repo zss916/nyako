@@ -8,10 +8,10 @@ import 'package:adjust_sdk/adjust_event_failure.dart';
 import 'package:adjust_sdk/adjust_event_success.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/mylib/app_other_plugin_manage.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/mylib/app_other_plugin_manage.dart';
 
 class AppAdjustManager {
   static AdjustAttribution? attributionChangedData; // adjust的归因数据

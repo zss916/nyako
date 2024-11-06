@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/dialogs/pay_channel/widget/pay_button.dart';
-import 'package:oliapro/dialogs/reward_dialog/pdd_util.dart';
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/pages/charge/billing.dart';
+import 'package:nyako/dialogs/pay_channel/widget/pay_button.dart';
+import 'package:nyako/dialogs/reward_dialog/pdd_util.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/pages/charge/billing.dart';
 
 class BuildContent extends StatelessWidget {
   final List<PayQuickChannel> data;

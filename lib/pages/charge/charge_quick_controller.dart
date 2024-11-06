@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:oliapro/dialogs/pay_channel/sheet_pay_channel.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/charge/billing.dart';
-import 'package:oliapro/services/event_bus_bean.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_loading.dart';
-import 'package:oliapro/utils/cache/product_cache.dart';
+import 'package:nyako/dialogs/pay_channel/sheet_pay_channel.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/charge/billing.dart';
+import 'package:nyako/services/event_bus_bean.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_loading.dart';
+import 'package:nyako/utils/cache/product_cache.dart';
 
 import '../../entities/app_charge_quick_entity.dart';
 import '../../entities/app_info_entity.dart';

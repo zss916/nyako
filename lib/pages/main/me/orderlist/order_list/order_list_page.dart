@@ -1,15 +1,15 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_order_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/orderlist/order_list/order_list_logic.dart';
-import 'package:oliapro/pages/widget/base_top_empty.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/app_format_util.dart';
-import 'package:oliapro/widget/tab/rrect_indicator.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_order_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/orderlist/order_list/order_list_logic.dart';
+import 'package:nyako/pages/widget/base_top_empty.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/utils/app_format_util.dart';
+import 'package:nyako/widget/tab/rrect_indicator.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class OrderListPage extends GetView<OrderListLogic> {

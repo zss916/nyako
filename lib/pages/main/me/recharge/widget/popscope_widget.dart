@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/pages/charge/charge_dialog_manager.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/pages/charge/charge_dialog_manager.dart';
 
 class PopScopeWidget extends StatelessWidget {
   final Widget child;

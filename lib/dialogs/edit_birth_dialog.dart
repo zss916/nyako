@@ -1,6 +1,6 @@
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 void showEditBirth(int showBirthday, Function(int) fun) {
   DateTime? birth;

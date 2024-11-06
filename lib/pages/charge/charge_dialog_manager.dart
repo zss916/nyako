@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_common_dialog.dart';
-import 'package:oliapro/dialogs/dialog_free_diamond_tip.dart';
-import 'package:oliapro/dialogs/reward_dialog/pdd_util.dart';
-import 'package:oliapro/entities/app_charge_entity.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/common/app_common_dialog.dart';
+import 'package:nyako/dialogs/dialog_free_diamond_tip.dart';
+import 'package:nyako/dialogs/reward_dialog/pdd_util.dart';
+import 'package:nyako/entities/app_charge_entity.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/storage_service.dart';
 
 import '../../entities/app_charge_quick_entity.dart';
 import '../../generated/json/base/json_convert_content.dart';

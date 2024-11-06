@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/dialogs/dialog_confirm.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/dialogs/dialog_confirm.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 
 import '../common/language_key.dart';
 import '../entities/app_host_entity.dart';

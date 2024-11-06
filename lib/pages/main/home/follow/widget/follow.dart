@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/main/home/follow/widget/follow_item.dart';
-import 'package:oliapro/pages/main/home/index.dart';
-import 'package:oliapro/pages/main/me/blacklist/utils/state.dart';
-import 'package:oliapro/pages/widget/base_empty.dart';
-import 'package:oliapro/pages/widget/circular_progress.dart';
+import 'package:nyako/pages/main/home/follow/widget/follow_item.dart';
+import 'package:nyako/pages/main/home/index.dart';
+import 'package:nyako/pages/main/me/blacklist/utils/state.dart';
+import 'package:nyako/pages/widget/base_empty.dart';
+import 'package:nyako/pages/widget/circular_progress.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class FollowList extends StatelessWidget {

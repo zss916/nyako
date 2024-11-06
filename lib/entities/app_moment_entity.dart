@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/app_format_util.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/utils/app_format_util.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 
 import '../generated/json/app_moment_entity.g.dart';
 import '../generated/json/base/json_field.dart';

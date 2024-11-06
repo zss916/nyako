@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/translate/translate_http_util.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/translate/translate_http_util.dart';
 
 class AppTranslateUtil {
   Future<List<String>> translate(

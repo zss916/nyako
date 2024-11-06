@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
-import 'package:oliapro/pages/call/call/index.dart';
-import 'package:oliapro/widget/app_net_image.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
+import 'package:nyako/pages/call/call/index.dart';
+import 'package:nyako/widget/app_net_image.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import 'call_header_tool.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/pages/chat/index.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/pages/chat/index.dart';
+import 'package:nyako/pages/widget/line_state.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class BuildLineState extends StatelessWidget {
   final ChatLogic logic;

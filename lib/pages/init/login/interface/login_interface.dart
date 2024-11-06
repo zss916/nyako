@@ -1,4 +1,4 @@
-import 'package:oliapro/utils/mylib/app_other_plugin_manage.dart';
+import 'package:nyako/utils/mylib/app_other_plugin_manage.dart';
 
 abstract class LoginInterface {
   ///Google登录

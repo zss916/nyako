@@ -1,4 +1,4 @@
-import 'package:oliapro/http/config/base/page_entity.dart';
+import 'package:nyako/http/config/base/page_entity.dart';
 
 class BaseResponse<T> {
   int? code;

@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/entities/app_draw_user_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/entities/app_draw_user_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class RechargeDrawAnimation extends StatefulWidget {
   final DrawUserEntity data;

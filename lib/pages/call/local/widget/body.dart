@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/local/index.dart';
-import 'package:oliapro/pages/call/local/widget/base_local_portrait.dart';
-import 'package:oliapro/pages/call/local/widget/build_call_price.dart';
-import 'package:oliapro/pages/call/remote/widget/build_backgrand.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/local/index.dart';
+import 'package:nyako/pages/call/local/widget/base_local_portrait.dart';
+import 'package:nyako/pages/call/local/widget/build_call_price.dart';
+import 'package:nyako/pages/call/remote/widget/build_backgrand.dart';
 
 class Body extends StatelessWidget {
   final LocalLogic logic;

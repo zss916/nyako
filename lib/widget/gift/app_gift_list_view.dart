@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_card_entity.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
-import 'package:oliapro/pages/charge/charge_dialog_manager.dart';
-import 'package:oliapro/widget/gift/app_gift_data_helper.dart';
-import 'package:oliapro/widget/gift/prop_gift_list_widget.dart';
-import 'package:oliapro/widget/gift/widget/build_balance.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_card_entity.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
+import 'package:nyako/pages/charge/charge_dialog_manager.dart';
+import 'package:nyako/widget/gift/app_gift_data_helper.dart';
+import 'package:nyako/widget/gift/prop_gift_list_widget.dart';
+import 'package:nyako/widget/gift/widget/build_balance.dart';
 
 import 'app_gift_list_widget.dart';
 

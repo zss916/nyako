@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/call/index.dart';
-import 'package:oliapro/pages/call/call/widget/page/build_call_tip.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/call/index.dart';
+import 'package:nyako/pages/call/call/widget/page/build_call_tip.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../../../common/language_key.dart';

@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/pages/call/call/index.dart';
-import 'package:oliapro/pages/call/call/widget/page/build_call_tip.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/pages/call/call/index.dart';
+import 'package:nyako/pages/call/call/widget/page/build_call_tip.dart';
 
 class BuildAskGift extends StatefulWidget {
   final GiftEntity? data;

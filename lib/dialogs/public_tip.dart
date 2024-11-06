@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/language_key.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/language_key.dart';
 
 void showPublicTipDialog() {
   Get.dialog(const PublicTipDialog());

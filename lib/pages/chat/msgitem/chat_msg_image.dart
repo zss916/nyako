@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/pages/widget/app_preview.dart';
-import 'package:oliapro/widget/app_net_image2.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/pages/widget/app_preview.dart';
+import 'package:nyako/widget/app_net_image2.dart';
 
 import 'chat_msg_widget.dart';
 import 'chat_msg_wrapper.dart';

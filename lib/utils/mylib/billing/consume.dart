@@ -1,5 +1,5 @@
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/services/storage_service.dart';
 
 class ConsumeUtil {
   static void updateOrderPayTime(String orderId) {

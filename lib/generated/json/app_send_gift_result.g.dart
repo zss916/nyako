@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_send_gift_result.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_send_gift_result.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 SendGiftResult $SendGiftResultFromJson(Map<String, dynamic> json) {
   final SendGiftResult sendGiftResult = SendGiftResult();

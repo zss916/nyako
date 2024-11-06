@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/end/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/end/index.dart';
+import 'package:nyako/routes/a_routes.dart';
 
 class BuildChatButton extends StatelessWidget {
   final EndLogic logic;

@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:agora_rtm/agora_rtm.dart';
-import 'package:oliapro/agora/rtm/rtm.dart';
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/database/entity/app_msg_entity.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/agora/rtm/rtm.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/database/entity/app_msg_entity.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/services/user_info.dart';
 
 class RtmMsgSender {
   // meHangup, // 1001 视频谁申请谁发消息 自己挂断自己的视频申请

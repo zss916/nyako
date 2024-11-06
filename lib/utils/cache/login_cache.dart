@@ -1,5 +1,5 @@
-import 'package:oliapro/database/entity/app_login_entity.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/database/entity/app_login_entity.dart';
+import 'package:nyako/services/storage_service.dart';
 
 class LoginCache {
   static save(

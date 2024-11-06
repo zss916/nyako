@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio/src/response.dart' as dio_response;
-import 'package:oliapro/http/adapter/httpClientAdapter.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/http/adapter/httpClientAdapter.dart';
+import 'package:nyako/utils/app_loading.dart';
 
 const String nidValue =
     "511=dgzX6mucCfQlVGBI3uCc9PGAO2-WFw712QqFreXeJwguxX-LpmqXJ68KUx_bQp8BFzdKobobfhYAUIIcvSDMKmTTleXJxgwTbFchghGhGH5KGwDGxAtKEEf3r8VK_sKlmlce-DtC1RuH5lY2iv5Nc77oWeWxwCdeXktCnMM6hnlBqU6Vgrs3j_L-GLEIBUML-enls1PKIMiy3wEOehdVl8jzX-6pM0jA8pf6MVXFGoF59AM198jHQUpWbdrE1nR35y2WxKokEW5yy07EWUnxs4K7da3pUBIWBiZvGQhkdvcuLaPoSCdlz-y_Llht4Ps5xpnHL1S7QaY";

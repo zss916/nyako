@@ -1,5 +1,5 @@
-import 'package:oliapro/database/entity/app_login_entity.dart';
-import 'package:oliapro/objectbox.g.dart';
+import 'package:nyako/database/entity/app_login_entity.dart';
+import 'package:nyako/objectbox.g.dart';
 
 /// Provides access to the ObjectBox Store throughout the app.
 ///

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_common_type.dart';
-import 'package:oliapro/generated/assets.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/generated/assets.dart';
 
 import '../common/language_key.dart';
 

@@ -1,4 +1,4 @@
-import 'package:oliapro/http/index.dart';
+import 'package:nyako/http/index.dart';
 
 class PathUtils {
   /// 是否是特殊接口

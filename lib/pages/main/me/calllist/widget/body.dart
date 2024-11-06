@@ -1,17 +1,17 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/entities/app_call_record_entity.dart';
-import 'package:oliapro/pages/main/me/calllist/index.dart';
-import 'package:oliapro/pages/main/me/calllist/widget/call_time.dart';
-import 'package:oliapro/pages/main/me/calllist/widget/chat_record_button.dart';
-import 'package:oliapro/pages/main/me/calllist/widget/header.dart';
-import 'package:oliapro/pages/widget/base_empty.dart';
-import 'package:oliapro/pages/widget/build_item_avatar.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/entities/app_call_record_entity.dart';
+import 'package:nyako/pages/main/me/calllist/index.dart';
+import 'package:nyako/pages/main/me/calllist/widget/call_time.dart';
+import 'package:nyako/pages/main/me/calllist/widget/chat_record_button.dart';
+import 'package:nyako/pages/main/me/calllist/widget/header.dart';
+import 'package:nyako/pages/widget/base_empty.dart';
+import 'package:nyako/pages/widget/build_item_avatar.dart';
+import 'package:nyako/pages/widget/line_state.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class ChatRecordBody extends StatelessWidget {

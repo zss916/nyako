@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/widget/common_button.dart';
-import 'package:oliapro/routes/a_routes.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/widget/common_button.dart';
+import 'package:nyako/routes/a_routes.dart';
 
 class BuildGooglePay extends StatelessWidget {
   final String price;

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_draw_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/widget/base_button2.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/event_bus_bean.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_draw_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/widget/base_button2.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/event_bus_bean.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 void toDrawDialog(DrawData data) {
   Get.dialog(DrawDialog(data),

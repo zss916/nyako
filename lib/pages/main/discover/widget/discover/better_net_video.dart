@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:better_player/better_player.dart';
 //import 'package:better_player_plus/better_player_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_check_calling_util.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_check_calling_util.dart';
 import 'package:screen_protector/screen_protector.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 

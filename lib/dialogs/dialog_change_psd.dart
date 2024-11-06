@@ -7,13 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_common_dialog.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_common_dialog.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_loading.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class ChangePasswordDialog extends StatefulWidget {

@@ -2,14 +2,14 @@ library account_login_page;
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/agora/rtm/rtm.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/pages/init/account/login/widget/body.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/routes/route_name.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/cache/login_cache.dart';
+import 'package:nyako/agora/rtm/rtm.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/pages/init/account/login/widget/body.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/routes/route_name.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/cache/login_cache.dart';
 
 import '../../../../common/app_constants.dart';
 import '../../../../common/language_key.dart';

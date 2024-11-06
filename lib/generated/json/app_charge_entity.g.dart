@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_charge_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_charge_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 PayChannelBean $PayChannelBeanFromJson(Map<String, dynamic> json) {
   final PayChannelBean payChannelBean = PayChannelBean();

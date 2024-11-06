@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/login_agree_dialog.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/init/account/login/index.dart';
-import 'package:oliapro/pages/init/account/login/widget/login_btn.dart';
-import 'package:oliapro/pages/init/login/widget/login_check.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/login_agree_dialog.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/init/account/login/index.dart';
+import 'package:nyako/pages/init/account/login/widget/login_btn.dart';
+import 'package:nyako/pages/init/login/widget/login_check.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/user_info.dart';
 
 class AccountLoginBody extends StatefulWidget {
   final AccountLoginLogic logic;

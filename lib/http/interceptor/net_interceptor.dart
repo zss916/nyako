@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' hide Response;
-import 'package:oliapro/http/util/time_diff.dart';
-import 'package:oliapro/http/util/zip_utils.dart';
-import 'package:oliapro/services/app_info_service.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/http/util/time_diff.dart';
+import 'package:nyako/http/util/zip_utils.dart';
+import 'package:nyako/services/app_info_service.dart';
+import 'package:nyako/services/user_info.dart';
 
 /// 请求拦截相关的处理
 class NetInterceptor extends Interceptor {

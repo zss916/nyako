@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/dialogs/dialog_confirm_hang.dart';
-import 'package:oliapro/dialogs/sheet_report.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/widget/app_click_widget.dart';
-import 'package:oliapro/widget/app_user_widget.dart';
+import 'package:nyako/dialogs/dialog_confirm_hang.dart';
+import 'package:nyako/dialogs/sheet_report.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/widget/app_click_widget.dart';
+import 'package:nyako/widget/app_user_widget.dart';
 
 enum CallToolEvent {
   toolEventFollow,

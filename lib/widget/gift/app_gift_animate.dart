@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class GiftPusher {
   // 在礼物横幅队列中增加

@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/anchor_detail/widget/app_media_view_page.dart';
-import 'package:oliapro/pages/widget/interactiveviewer_gallery/interactiveviewer_gallery.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/anchor_detail/widget/app_media_view_page.dart';
+import 'package:nyako/pages/widget/interactiveviewer_gallery/interactiveviewer_gallery.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/utils/app_extends.dart';
 import 'package:video_player/video_player.dart';
 
 ///图片（普通无举报）

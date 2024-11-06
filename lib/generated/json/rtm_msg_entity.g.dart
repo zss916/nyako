@@ -1,5 +1,5 @@
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 RTMText $RTMTextFromJson(Map<String, dynamic> json) {
   final RTMText rTMText = RTMText();

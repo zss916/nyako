@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
 import 'package:video_player/video_player.dart';
 
 ///只能用在虚拟视频通话

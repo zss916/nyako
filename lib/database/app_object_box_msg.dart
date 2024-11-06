@@ -1,9 +1,9 @@
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/database/entity/app_msg_entity.dart';
-import 'package:oliapro/objectbox.g.dart';
-import 'package:oliapro/services/event_bus_bean.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/database/entity/app_msg_entity.dart';
+import 'package:nyako/objectbox.g.dart';
+import 'package:nyako/services/event_bus_bean.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
 
 import '../common/app_constants.dart';
 import 'entity/app_conversation_entity.dart';

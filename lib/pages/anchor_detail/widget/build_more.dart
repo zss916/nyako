@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/dialogs/dialog_confirm_black.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/anchor_detail/index.dart';
+import 'package:nyako/dialogs/dialog_confirm_black.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/anchor_detail/index.dart';
 
 class BuildMore extends StatelessWidget {
   final AnchorDetailLogic logic;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/msg/widget/base_msg_portrait.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/msg/widget/base_msg_portrait.dart';
 
 class BuildAvatars extends StatelessWidget {
   final bool isSystem;

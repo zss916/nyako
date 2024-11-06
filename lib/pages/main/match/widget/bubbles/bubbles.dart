@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/main/match/widget/bubbles/bubble_floating_animation.dart';
+import 'package:nyako/pages/main/match/widget/bubbles/bubble_floating_animation.dart';
 import 'package:sa4_migration_kit/stateless_animation/loop_animation.dart';
 import 'package:sa4_migration_kit/stateless_animation/play_animation.dart';
 

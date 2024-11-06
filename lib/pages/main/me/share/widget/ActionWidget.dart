@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/a_routes.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/a_routes.dart';
 
 class ActionWidget extends StatelessWidget {
   const ActionWidget({super.key});

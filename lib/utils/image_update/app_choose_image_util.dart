@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/database/entity/app_msg_entity.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
-import 'package:oliapro/utils/image_update/image_utils.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/database/entity/app_msg_entity.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
+import 'package:nyako/utils/image_update/image_utils.dart';
 
 import '../app_loading.dart';
 import '../app_upload_isolate.dart';

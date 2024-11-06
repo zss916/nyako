@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:oliapro/generated/json/base/json_field.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/generated/json/base/json_field.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 import '../generated/json/app_call_record_entity.g.dart';
 

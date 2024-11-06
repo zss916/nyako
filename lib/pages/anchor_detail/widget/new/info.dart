@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/anchor_detail/index.dart';
-import 'package:oliapro/pages/anchor_detail/widget/state_widget.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/anchor_detail/index.dart';
+import 'package:nyako/pages/anchor_detail/widget/state_widget.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class Info extends StatelessWidget {
   HostDetail data;

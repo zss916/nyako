@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class StateWidget extends StatelessWidget {
   final int lineState;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/dialogs/dialog_confirm_hang.dart';
-import 'package:oliapro/pages/call/call/index.dart';
-import 'package:oliapro/pages/call/call/widget/call_header_tool.dart';
-import 'package:oliapro/pages/call/call/widget/page/call_widget.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/widget/gift/app_vap_player.dart';
+import 'package:nyako/dialogs/dialog_confirm_hang.dart';
+import 'package:nyako/pages/call/call/index.dart';
+import 'package:nyako/pages/call/call/widget/call_header_tool.dart';
+import 'package:nyako/pages/call/call/widget/page/call_widget.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/widget/gift/app_vap_player.dart';
 
 class VideoPage extends StatelessWidget {
   final CallLogic logic;

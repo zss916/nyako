@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:oliapro/dialogs/sheet_google_rate.dart';
-import 'package:oliapro/pages/charge/charge_dialog_manager.dart';
-import 'package:oliapro/services/app_info_service.dart';
-import 'package:oliapro/utils/mylib/app_other_plugin_manage.dart';
+import 'package:nyako/dialogs/sheet_google_rate.dart';
+import 'package:nyako/pages/charge/charge_dialog_manager.dart';
+import 'package:nyako/services/app_info_service.dart';
+import 'package:nyako/utils/mylib/app_other_plugin_manage.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AppRate {

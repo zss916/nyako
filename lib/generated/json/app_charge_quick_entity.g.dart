@@ -1,6 +1,6 @@
-import 'package:oliapro/entities/app_charge_quick_entity.dart';
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_charge_quick_entity.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 PayQuickData $PayQuickDataFromJson(Map<String, dynamic> json) {
   final PayQuickData payQuickData = PayQuickData();

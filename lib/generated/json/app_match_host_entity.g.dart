@@ -1,6 +1,6 @@
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/entities/app_match_host_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/entities/app_match_host_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 MatchHost $MatchHostFromJson(Map<String, dynamic> json) {
   final MatchHost matchHost = MatchHost();

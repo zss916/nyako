@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/remote/index.dart';
-import 'package:oliapro/pages/call/remote/widget/base_remote_portrait.dart';
-import 'package:oliapro/pages/call/remote/widget/build_avatar_bg.dart';
-import 'package:oliapro/pages/call/remote/widget/build_backgrand.dart';
-import 'package:oliapro/pages/call/remote/widget/build_free_tip.dart';
-import 'package:oliapro/pages/call/remote/widget/build_free_tip2.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/remote/index.dart';
+import 'package:nyako/pages/call/remote/widget/base_remote_portrait.dart';
+import 'package:nyako/pages/call/remote/widget/build_avatar_bg.dart';
+import 'package:nyako/pages/call/remote/widget/build_backgrand.dart';
+import 'package:nyako/pages/call/remote/widget/build_free_tip.dart';
+import 'package:nyako/pages/call/remote/widget/build_free_tip2.dart';
 
 class Body extends StatelessWidget {
   final RemoteLogic logic;

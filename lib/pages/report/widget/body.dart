@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/report/index.dart';
-import 'package:oliapro/widget/animated_button.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/report/index.dart';
+import 'package:nyako/widget/animated_button.dart';
 
 class ReportBody extends StatefulWidget {
   final ReportLogic logic;

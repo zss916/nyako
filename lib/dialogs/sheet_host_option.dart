@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/dialogs/sheet_report.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
-import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/dialogs/sheet_report.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
+import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_loading.dart';
 
 import '../common/app_colors.dart';
 import '../common/language_key.dart';

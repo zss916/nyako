@@ -4,18 +4,18 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:oliapro/common/app_common_dialog.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/dialog_renew_vip.dart';
-import 'package:oliapro/dialogs/sign/dialog_sign.dart';
-import 'package:oliapro/entities/app_info_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_check_calling_util.dart';
+import 'package:nyako/common/app_common_dialog.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/dialog_renew_vip.dart';
+import 'package:nyako/dialogs/sign/dialog_sign.dart';
+import 'package:nyako/entities/app_info_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_check_calling_util.dart';
 
 //新用户福利(体验卡)
 class AppNewUserCardsTip extends StatefulWidget {

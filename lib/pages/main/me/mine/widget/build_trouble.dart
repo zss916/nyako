@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/mine/index.dart';
-import 'package:oliapro/pages/main/me/mine/widget/build_switch.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/mine/index.dart';
+import 'package:nyako/pages/main/me/mine/widget/build_switch.dart';
 
 class BuildTrouble extends StatelessWidget {
   const BuildTrouble({super.key});

@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_draw_user_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_draw_user_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 DrawUserEntity $DrawUserEntityFromJson(Map<String, dynamic> json) {
   final DrawUserEntity drawUserEntity = DrawUserEntity();

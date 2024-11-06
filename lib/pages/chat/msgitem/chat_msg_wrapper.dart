@@ -1,4 +1,4 @@
-import 'package:oliapro/database/entity/app_her_entity.dart';
+import 'package:nyako/database/entity/app_her_entity.dart';
 
 import '../../../database/entity/app_msg_entity.dart';
 

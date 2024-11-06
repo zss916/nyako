@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/main/match/widget/bubbles/bubbles.dart';
+import 'package:nyako/pages/main/match/widget/bubbles/bubbles.dart';
 import 'package:sa4_migration_kit/sa4_migration_kit.dart';
 
 enum _OffsetProps { x, y }

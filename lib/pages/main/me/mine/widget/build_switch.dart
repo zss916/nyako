@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/widget/app_click_widget.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/widget/app_click_widget.dart';
 
 class BuildSwitch extends StatefulWidget {
   late bool isSwitch;

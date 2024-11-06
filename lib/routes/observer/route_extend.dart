@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/routes/observer/history_router_observer.dart';
+import 'package:nyako/routes/observer/history_router_observer.dart';
 
 extension GetExtension on GetInterface {
   ///路由历史

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/widget/bounce_widget.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/pages/widget/bounce_widget.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class LineState extends StatelessWidget {
   final int lineState;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/widget/base_portrait.dart';
-import 'package:oliapro/pages/widget/line_state.dart';
+import 'package:nyako/pages/widget/base_portrait.dart';
+import 'package:nyako/pages/widget/line_state.dart';
 
 class BuildAvatar extends StatelessWidget {
   String url;

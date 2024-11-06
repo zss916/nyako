@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:oliapro/http/index.dart';
+import 'package:nyako/http/index.dart';
 
 class AppSimpleS3Upload extends StatefulWidget {
   const AppSimpleS3Upload({super.key});

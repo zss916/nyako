@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/main/main/widget/vip_up_online.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/routes/observer/route_extend.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/pages/main/main/widget/vip_up_online.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/routes/observer/route_extend.dart';
+import 'package:nyako/services/user_info.dart';
 
 void showVipOnlineDialog({Function? onNext}) {
   if (UserInfo.to.isUserVip) {

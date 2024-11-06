@@ -1,5 +1,5 @@
 import 'package:get/get_utils/src/platform/platform.dart';
-import 'package:oliapro/utils/adjust/app_adjust_manager.dart';
+import 'package:nyako/utils/adjust/app_adjust_manager.dart';
 
 class AppAdjust {
   AppAdjust._internal();

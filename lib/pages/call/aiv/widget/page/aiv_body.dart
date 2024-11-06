@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
-import 'package:oliapro/pages/call/aiv/widget/page/aiv_widget.dart';
-import 'package:oliapro/pages/call/call/widget/call_header_tool.dart';
-import 'package:oliapro/widget/gift/app_vap_player.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
+import 'package:nyako/pages/call/aiv/widget/page/aiv_widget.dart';
+import 'package:nyako/pages/call/call/widget/call_header_tool.dart';
+import 'package:nyako/widget/gift/app_vap_player.dart';
 
 class AivBody extends StatelessWidget {
   final AivLogic logic;

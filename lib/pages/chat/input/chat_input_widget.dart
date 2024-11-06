@@ -1,20 +1,20 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/sheet_gift_list.dart';
-import 'package:oliapro/entities/app_gift_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/chat/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/utils/app_permission_handler.dart';
-import 'package:oliapro/utils/app_voice_player.dart';
-import 'package:oliapro/utils/image_update/app_choose_image_util.dart';
-import 'package:oliapro/widget/app_click_widget.dart';
-import 'package:oliapro/widget/app_keybord_logic.dart';
-import 'package:oliapro/widget/app_voice_record.dart';
-import 'package:oliapro/widget/gift/app_gift_list_view.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/sheet_gift_list.dart';
+import 'package:nyako/entities/app_gift_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/chat/index.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/utils/app_permission_handler.dart';
+import 'package:nyako/utils/app_voice_player.dart';
+import 'package:nyako/utils/image_update/app_choose_image_util.dart';
+import 'package:nyako/widget/app_click_widget.dart';
+import 'package:nyako/widget/app_keybord_logic.dart';
+import 'package:nyako/widget/app_voice_record.dart';
+import 'package:nyako/widget/gift/app_gift_list_view.dart';
 
 import 'chat_input_controller.dart';
 

@@ -1,6 +1,6 @@
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/utils/app_voice_player.dart';
-import 'package:oliapro/utils/music/app_ring_manager.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/utils/app_voice_player.dart';
+import 'package:nyako/utils/music/app_ring_manager.dart';
 import 'package:flutter/material.dart';
 
 class AppRingCtrl extends StatefulWidget {

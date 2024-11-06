@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/main/main/index.dart';
-import 'package:oliapro/pages/main/match/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/utils/app_extends.dart';
+import 'package:nyako/pages/main/main/index.dart';
+import 'package:nyako/pages/main/match/index.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/utils/app_extends.dart';
 
 class MusicBgm extends StatefulWidget {
   final MatchLogic logic;

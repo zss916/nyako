@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/anchor_detail/index.dart';
-import 'package:oliapro/pages/anchor_detail/widget/new/anchor_body.dart';
-import 'package:oliapro/pages/main/match/util/bgm_control.dart';
+import 'package:nyako/pages/anchor_detail/index.dart';
+import 'package:nyako/pages/anchor_detail/widget/new/anchor_body.dart';
+import 'package:nyako/pages/main/match/util/bgm_control.dart';
 
 class AnchorDetailsBody extends StatelessWidget {
   const AnchorDetailsBody({super.key});

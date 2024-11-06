@@ -5,11 +5,11 @@ import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/entities/app_translate_entity.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/services/app_info_service.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/entities/app_translate_entity.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/services/app_info_service.dart';
+import 'package:nyako/services/storage_service.dart';
 
 class AppLanguageNetHelper {
   // 获取已经下载的翻译的版本

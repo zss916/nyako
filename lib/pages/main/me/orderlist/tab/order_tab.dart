@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/routes/route_name.dart';
-import 'package:oliapro/widget/base_app_bar.dart';
-import 'package:oliapro/widget/tab/kugou_tabbar.dart';
-import 'package:oliapro/widget/tab/rrect_indicator.dart';
-
-import '../../../../../routes/app_pages.dart';
-import '../cost_list/cost_list_page.dart';
-import '../order_list/order_list_page.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/pages/main/me/orderlist/cost_list/cost_list_page.dart';
+import 'package:nyako/pages/main/me/orderlist/order_list/order_list_page.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/routes/route_name.dart';
+import 'package:nyako/widget/base_app_bar.dart';
+import 'package:nyako/widget/tab/kugou_tabbar.dart';
+import 'package:nyako/widget/tab/rrect_indicator.dart';
 
 @RouteName(AppPages.orderTab)
 class OrderTab extends StatefulWidget {
@@ -76,12 +76,16 @@ class _OrderTabState extends State<OrderTab>
         controller: controller,
         labelColor: const Color(0xFF9341FF),
         unselectedLabelColor: Colors.black,
-        labelStyle: const TextStyle(
+        labelStyle: TextStyle(
             fontSize: 21,
-            color: Color(0xFF9341FF),
+            color: const Color(0xFF9341FF),
+            fontFamily: AppConstants.fontsBold,
             fontWeight: FontWeight.bold),
-        unselectedLabelStyle: const TextStyle(
-            fontSize: 21, color: Colors.black, fontWeight: FontWeight.bold),
+        unselectedLabelStyle: TextStyle(
+            fontSize: 21,
+            color: Colors.black,
+            fontFamily: AppConstants.fontsBold,
+            fontWeight: FontWeight.bold),
         indicator: const RRecTabIndicator(
             radius: 2,
             insets: EdgeInsets.only(bottom: 5),

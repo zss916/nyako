@@ -2,13 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_common_type.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/widget/app_click_widget.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/widget/app_click_widget.dart';
 
 import '../common/language_key.dart';
 

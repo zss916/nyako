@@ -1,17 +1,17 @@
 import 'dart:math';
 
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/database/entity/app_login_entity.dart';
-import 'package:oliapro/entities/app_login_entity.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/init/login/interface/login_interface.dart';
-import 'package:oliapro/services/event_bus_bean.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_loading.dart';
-import 'package:oliapro/utils/cache/login_cache.dart';
-import 'package:oliapro/utils/mylib/app_other_plugin_manage.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/database/entity/app_login_entity.dart';
+import 'package:nyako/entities/app_login_entity.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/init/login/interface/login_interface.dart';
+import 'package:nyako/services/event_bus_bean.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_loading.dart';
+import 'package:nyako/utils/cache/login_cache.dart';
+import 'package:nyako/utils/mylib/app_other_plugin_manage.dart';
 
 mixin class OtherLoginUtils implements LoginInterface {
   bool loginIng = false;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/me/recharge/index.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/me/recharge/index.dart';
 
 class BuildAction extends StatelessWidget {
   final RechargeLogic logic;

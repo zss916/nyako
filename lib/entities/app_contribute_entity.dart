@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:oliapro/generated/json/app_contribute_entity.g.dart';
-import 'package:oliapro/generated/json/base/json_field.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/generated/json/app_contribute_entity.g.dart';
+import 'package:nyako/generated/json/base/json_field.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 
 @JsonSerializable()
 class ContributeEntity {

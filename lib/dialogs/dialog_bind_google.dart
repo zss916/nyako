@@ -1,13 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_common_dialog.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/init/login/interface/other_login_utils.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_some_extension.dart';
+import 'package:nyako/common/app_common_dialog.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/init/login/interface/other_login_utils.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_some_extension.dart';
 import 'package:widget_marquee/widget_marquee.dart';
 
 class BindGoogle extends StatefulWidget {

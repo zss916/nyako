@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/http/api/index.dart';
-import 'package:oliapro/pages/widget/bottom_arrow_widget.dart';
-import 'package:oliapro/pages/widget/short_base_button.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/routes/app_pages.dart';
-import 'package:oliapro/utils/app_loading.dart';
-import 'package:oliapro/widget/animated_button.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/http/api/index.dart';
+import 'package:nyako/pages/widget/bottom_arrow_widget.dart';
+import 'package:nyako/pages/widget/short_base_button.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/routes/app_pages.dart';
+import 'package:nyako/utils/app_loading.dart';
+import 'package:nyako/widget/animated_button.dart';
 
 void showSearchConfirm() {
   Get.bottomSheet(const SearchConfirmWdg(),

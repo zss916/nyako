@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_card_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_card_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 CardBean $CardBeanFromJson(Map<String, dynamic> json) {
   final CardBean cardBean = CardBean();

@@ -1,4 +1,4 @@
-// import 'package:oliapro/common/app_common_type.dart';
+// import 'package:nyako/common/app_common_type.dart';
 //
 // class AppLoginData {
 //   bool success = false;

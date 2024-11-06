@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_sign_card_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_sign_card_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 AppLiveSignCard $AppLiveSignCardFromJson(Map<String, dynamic> json) {
   final AppLiveSignCard appLiveSignCard = AppLiveSignCard();

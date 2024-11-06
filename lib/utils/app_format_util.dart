@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:oliapro/common/language_key.dart';
+import 'package:nyako/common/language_key.dart';
 
 class AppFormatUtil {
   static String getVerboseDateTimeRepresentation(DateTime dateTime,

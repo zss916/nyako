@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oliapro/pages/main/discover/index.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/widget/app_click_widget.dart';
+import 'package:nyako/pages/main/discover/index.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/widget/app_click_widget.dart';
 
 class Refresh extends StatefulWidget {
   const Refresh({Key? key}) : super(key: key);

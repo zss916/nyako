@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/common/charge_path.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/dialogs/pay_vip/sheet_pay_vip.dart';
-import 'package:oliapro/entities/app_hot_entity.dart';
-import 'package:oliapro/pages/main/home/index.dart';
-import 'package:oliapro/pages/main/home/widget/hot/build_gift.dart';
-import 'package:oliapro/pages/main/main/widget/keep_alive_page.dart';
-import 'package:oliapro/utils/app_event_bus.dart';
-import 'package:oliapro/utils/app_extends.dart';
-import 'package:oliapro/widget/top_title.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/common/charge_path.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/dialogs/pay_vip/sheet_pay_vip.dart';
+import 'package:nyako/entities/app_hot_entity.dart';
+import 'package:nyako/pages/main/home/index.dart';
+import 'package:nyako/pages/main/home/widget/hot/build_gift.dart';
+import 'package:nyako/pages/main/main/widget/keep_alive_page.dart';
+import 'package:nyako/utils/app_event_bus.dart';
+import 'package:nyako/utils/app_extends.dart';
+import 'package:nyako/widget/top_title.dart';
 
 import 'hot/anchor_hot.dart';
 

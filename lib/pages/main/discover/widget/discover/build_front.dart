@@ -1,13 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:oliapro/common/app_constants.dart';
-import 'package:oliapro/dialogs/sheet_report.dart';
-import 'package:oliapro/entities/app_host_entity.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/main/discover/widget/discover/follow.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/utils/app_event_bus.dart';
+import 'package:nyako/common/app_constants.dart';
+import 'package:nyako/dialogs/sheet_report.dart';
+import 'package:nyako/entities/app_host_entity.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/main/discover/widget/discover/follow.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/utils/app_event_bus.dart';
 
 class BuildFront extends StatelessWidget {
   final HostDetail data;

@@ -1,5 +1,5 @@
-import 'package:oliapro/entities/app_recharge_active_config_entity.dart';
-import 'package:oliapro/generated/json/base/json_convert_content.dart';
+import 'package:nyako/entities/app_recharge_active_config_entity.dart';
+import 'package:nyako/generated/json/base/json_convert_content.dart';
 
 AppRechargeActiveConfigEntity $AppRechargeActiveConfigEntityFromJson(
     Map<String, dynamic> json) {

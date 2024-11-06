@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/pages/main/discover/index.dart';
-import 'package:oliapro/pages/main/discover/widget/discover/item_card.dart';
-import 'package:oliapro/pages/widget/base_empty.dart';
-import 'package:oliapro/services/storage_service.dart';
+import 'package:nyako/pages/main/discover/index.dart';
+import 'package:nyako/pages/main/discover/widget/discover/item_card.dart';
+import 'package:nyako/pages/widget/base_empty.dart';
+import 'package:nyako/services/storage_service.dart';
 
 class Discover extends StatelessWidget {
   const Discover({super.key});

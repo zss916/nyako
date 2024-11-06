@@ -1,5 +1,5 @@
 import 'package:in_app_purchase_android/billing_client_wrappers.dart';
-import 'package:oliapro/utils/mylib/billing/consume.dart';
+import 'package:nyako/utils/mylib/billing/consume.dart';
 
 class GoogleBilling {
   static BillingClient billingClient =

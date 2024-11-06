@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:oliapro/agora/rtm_msg_entity.dart';
-import 'package:oliapro/pages/chat/msgitem/chat_msg_widget.dart';
-import 'package:oliapro/pages/chat/msgitem/chat_msg_wrapper.dart';
-import 'package:oliapro/widget/app_net_image.dart';
+import 'package:nyako/agora/rtm_msg_entity.dart';
+import 'package:nyako/pages/chat/msgitem/chat_msg_widget.dart';
+import 'package:nyako/pages/chat/msgitem/chat_msg_wrapper.dart';
+import 'package:nyako/widget/app_net_image.dart';
 
 class ChatMsgGift extends StatelessWidget {
   final ChatMsgWrapper wrapper;

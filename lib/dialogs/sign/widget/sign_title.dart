@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/language_key.dart';
+import 'package:nyako/common/language_key.dart';
 
 class SignTitle extends StatelessWidget {
   final bool isVip;

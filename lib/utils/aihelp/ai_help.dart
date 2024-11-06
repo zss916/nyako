@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/pages/some/web_page.dart';
-import 'package:oliapro/services/user_info.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/pages/some/web_page.dart';
+import 'package:nyako/services/user_info.dart';
 
 class AiHelp {
   AiHelp._internal();

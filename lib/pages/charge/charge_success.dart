@@ -1,4 +1,4 @@
-import 'package:oliapro/game/game_dialog_manager.dart';
+import 'package:nyako/game/game_dialog_manager.dart';
 
 ///支付成功
 void showRechargeSuccess(

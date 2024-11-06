@@ -1,9 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_common_type.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/pages/call/aiv/index.dart';
+import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/pages/call/aiv/index.dart';
 
 import '../common/language_key.dart';
 

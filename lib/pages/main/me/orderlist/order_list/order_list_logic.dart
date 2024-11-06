@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:oliapro/http/index.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/http/index.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/utils/app_loading.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../../../entities/app_order_entity.dart';

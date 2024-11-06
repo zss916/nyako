@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/common/app_colors.dart';
-import 'package:oliapro/common/app_common_type.dart';
-import 'package:oliapro/common/language_key.dart';
-import 'package:oliapro/generated/assets.dart';
-import 'package:oliapro/routes/a_routes.dart';
-import 'package:oliapro/widget/app_net_image.dart';
+import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_common_type.dart';
+import 'package:nyako/common/language_key.dart';
+import 'package:nyako/generated/assets.dart';
+import 'package:nyako/routes/a_routes.dart';
+import 'package:nyako/widget/app_net_image.dart';
 
 class AppGiftFollowTipController {
   bool _hadSendGift = false;

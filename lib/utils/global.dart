@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:oliapro/services/app_info_service.dart';
-import 'package:oliapro/services/storage_service.dart';
-import 'package:oliapro/services/user_info.dart';
-import 'package:oliapro/utils/app_loading.dart';
+import 'package:nyako/services/app_info_service.dart';
+import 'package:nyako/services/storage_service.dart';
+import 'package:nyako/services/user_info.dart';
+import 'package:nyako/utils/app_loading.dart';
 
 /// 全局静态数据
 class AppGlobal {
