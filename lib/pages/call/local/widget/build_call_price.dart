@@ -48,8 +48,10 @@ class BuildCallPrice extends StatelessWidget {
                       ),
                       TextSpan(
                         text: Tr.app_video_time_unit.tr,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 12),
+                        style: TextStyle(
+                            fontFamily: AppConstants.fontsRegular,
+                            color: Colors.white,
+                            fontSize: 12),
                       )
                     ],
                   ),

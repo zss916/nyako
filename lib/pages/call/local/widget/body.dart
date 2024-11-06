@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/local/index.dart';
 import 'package:nyako/pages/call/local/widget/base_local_portrait.dart';
@@ -42,9 +43,10 @@ class Body extends StatelessWidget {
                   const EdgeInsetsDirectional.only(top: 20, start: 15, end: 15),
               child: Text(
                 logic.showNick,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -54,9 +56,10 @@ class Body extends StatelessWidget {
             ),
             Obx(() => Text(
                   logic.waitingStr.value,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.normal),
                 )),
             const Spacer(),

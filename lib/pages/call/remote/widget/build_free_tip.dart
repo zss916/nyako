@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/utils/app_some_extension.dart';
@@ -28,8 +29,11 @@ class BuildFreeTip extends StatelessWidget {
         maxLines: 1,
         maxFontSize: 14,
         minFontSize: 12,
-        style: const TextStyle(
-            color: Colors.white, fontSize: 14, fontWeight: FontWeight.w500),
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: 14,
+            fontFamily: AppConstants.fontsRegular,
+            fontWeight: FontWeight.w600),
       ),
     );
   }

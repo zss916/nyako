@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/call/remote/index.dart';
 import 'package:nyako/pages/call/remote/widget/base_remote_portrait.dart';
@@ -44,9 +45,10 @@ class Body extends StatelessWidget {
               margin: const EdgeInsetsDirectional.only(top: 15, bottom: 5),
               child: Text(
                 logic.showNick,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold),
               ),
             ),
