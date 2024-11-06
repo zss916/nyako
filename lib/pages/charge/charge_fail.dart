@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/dialogs/sheet_service.dart';
 import 'package:nyako/generated/assets.dart';
@@ -62,9 +63,10 @@ class ChargeFail extends StatelessWidget {
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.bold),
                 ),
                 Container(
@@ -76,9 +78,10 @@ class ChargeFail extends StatelessWidget {
                     textAlign: TextAlign.center,
                     maxFontSize: 15,
                     minFontSize: 13,
-                    style: const TextStyle(
-                        color: Color(0xFF9B989D),
+                    style: TextStyle(
+                        color: const Color(0xFF9B989D),
                         fontSize: 15,
+                        fontFamily: AppConstants.fontsRegular,
                         fontWeight: FontWeight.w500),
                   ),
                 ),
@@ -101,9 +104,10 @@ class ChargeFail extends StatelessWidget {
                             BorderRadiusDirectional.all(Radius.circular(30))),
                     child: Text(
                       btn1,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -129,9 +133,10 @@ class ChargeFail extends StatelessWidget {
                             Radius.circular(30))),
                     child: Text(
                       btn2,
-                      style: const TextStyle(
-                          color: Color(0xFF9B989D),
+                      style: TextStyle(
+                          color: const Color(0xFF9B989D),
                           fontSize: 16,
+                          fontFamily: AppConstants.fontsBold,
                           fontWeight: FontWeight.bold),
                     ),
                   ),

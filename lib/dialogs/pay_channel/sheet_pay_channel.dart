@@ -264,6 +264,7 @@ class _PayChannelState extends State<PayChannel> {
                             child: Text(
                               data[index].title ?? "--",
                               style: TextStyle(
+                                  fontFamily: AppConstants.fontsRegular,
                                   color: data[index].isSelect == true
                                       ? Colors.white
                                       : Colors.black,
@@ -278,10 +279,16 @@ class _PayChannelState extends State<PayChannel> {
                         ),
                       ),
               ),
-              Text(
-                Tr.appPayOrder.tr,
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.black, fontSize: 15),
+              Container(
+                margin: const EdgeInsetsDirectional.only(bottom: 2),
+                child: Text(
+                  Tr.appPayOrder.tr,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: AppConstants.fontsRegular,
+                      fontSize: 15),
+                ),
               ),
               topTitle(),
               Expanded(
@@ -303,9 +310,10 @@ class _PayChannelState extends State<PayChannel> {
                           children: [
                             Text(
                               Tr.appExtraSend.tr,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 14,
+                                  fontFamily: AppConstants.fontsBold,
                                   fontWeight: FontWeight.bold),
                             ),
                             const Spacer(),
@@ -329,14 +337,19 @@ class _PayChannelState extends State<PayChannel> {
                                           children: [
                                             TextSpan(
                                                 text: Tr.appSend.tr,
-                                                style: const TextStyle(
-                                                  color: Color(0xFF9341FF),
+                                                style: TextStyle(
+                                                  color:
+                                                      const Color(0xFF9341FF),
+                                                  fontFamily:
+                                                      AppConstants.fontsRegular,
                                                 )),
                                             TextSpan(
                                               text:
                                                   "${widget.commodite.value} ",
-                                              style: const TextStyle(
-                                                color: Color(0xFF9341FF),
+                                              style: TextStyle(
+                                                color: const Color(0xFF9341FF),
+                                                fontFamily:
+                                                    AppConstants.fontsRegular,
                                               ),
                                             ),
                                             WidgetSpan(
@@ -496,7 +509,10 @@ class _PayChannelState extends State<PayChannel> {
             padding: const EdgeInsetsDirectional.only(start: 10, end: 3),
             child: Text(
               title ?? "--",
-              style: const TextStyle(color: Colors.white, fontSize: 15),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: AppConstants.fontsRegular,
+                  fontSize: 15),
             ),
           ),
           isDown

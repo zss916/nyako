@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/charge_path.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/dialogs/dialog_bind_google.dart';
@@ -82,9 +83,10 @@ class GameDialogManager {
                         Tr.app_recharge_successful.tr,
                         softWrap: true,
                         textAlign: TextAlign.start,
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 15,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                       Container(
@@ -96,15 +98,23 @@ class GameDialogManager {
                             minFontSize: 6,
                             TextSpan(
                               text: content1,
-                              style: const TextStyle(
-                                  color: Color(0xFF9341FF), fontSize: 12),
+                              style: TextStyle(
+                                  color: const Color(0xFF9341FF),
+                                  fontFamily: AppConstants.fontsRegular,
+                                  fontSize: 12),
                               children: [
                                 TextSpan(
                                     text: " $drawCount ",
-                                    style: const TextStyle(
-                                        color: Color(0xFF9341FF),
+                                    style: TextStyle(
+                                        fontFamily: AppConstants.fontsRegular,
+                                        color: const Color(0xFF9341FF),
                                         fontSize: 12)),
-                                TextSpan(text: content2)
+                                TextSpan(
+                                    text: content2,
+                                    style: TextStyle(
+                                        fontFamily: AppConstants.fontsRegular,
+                                        color: const Color(0xFF9341FF),
+                                        fontSize: 12))
                               ],
                             ),
                           )),

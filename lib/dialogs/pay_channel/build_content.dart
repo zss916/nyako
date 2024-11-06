@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/dialogs/pay_channel/widget/pay_button.dart';
 import 'package:nyako/dialogs/reward_dialog/pdd_util.dart';
 import 'package:nyako/entities/app_charge_quick_entity.dart';
@@ -93,10 +94,11 @@ class BuildContent extends StatelessWidget {
                                 channelData.ccName ?? "--",
                                 maxLines: 1,
                                 minFontSize: 10,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 14,
-                                    fontWeight: FontWeight.bold),
+                                    fontFamily: AppConstants.fontsRegular,
+                                    fontWeight: FontWeight.w600),
                               ),
                             ),
                           ],

@@ -50,9 +50,10 @@ class BuildAddCard extends StatelessWidget {
                   minFontSize: 6,
                   maxLines: 1,
                   softWrap: true,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.normal),
                 )),
               ],
@@ -72,9 +73,10 @@ class BuildAddCard extends StatelessWidget {
                   minFontSize: 6,
                   maxLines: 1,
                   softWrap: true,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.normal),
                 )),
                 Container(
@@ -119,9 +121,10 @@ class BuildAddCard extends StatelessWidget {
                   minFontSize: 6,
                   maxLines: 1,
                   softWrap: true,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.normal),
                 )),
                 Container(
