@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nyako/common/app_colors.dart';
+import 'package:nyako/common/app_constants.dart';
 import 'package:nyako/common/language_key.dart';
 import 'package:nyako/generated/assets.dart';
 import 'package:nyako/pages/main/me/change_password/index.dart';
@@ -41,9 +42,10 @@ class SetPassWord extends StatelessWidget {
             margin: const EdgeInsetsDirectional.symmetric(horizontal: 10),
             child: Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
                   fontSize: 24,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -68,9 +70,10 @@ class SetPassWord extends StatelessWidget {
                   Expanded(
                       child: Text(
                     title1,
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.black,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: AppConstants.fontsRegular,
                         fontSize: 15),
                   ))
                 ],
@@ -97,9 +100,10 @@ class SetPassWord extends StatelessWidget {
                     child: Text(
                   title2,
                   softWrap: true,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.w500,
+                      fontFamily: AppConstants.fontsRegular,
+                      fontWeight: FontWeight.w600,
                       fontSize: 15),
                 ))
               ],
@@ -119,9 +123,10 @@ class SetPassWord extends StatelessWidget {
               child: Text(
                 UserInfo.to.getVisitorPassword(),
                 textAlign: TextAlign.start,
-                style: const TextStyle(
-                    color: Color(0xFFBCB6C4),
+                style: TextStyle(
+                    color: const Color(0xFFBCB6C4),
                     fontSize: 15,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               ),
             ),
@@ -138,7 +143,10 @@ class SetPassWord extends StatelessWidget {
                   borderRadius: BorderRadiusDirectional.circular(30)),
               child: Text(
                 Tr.app_base_confirm.tr,
-                style: const TextStyle(color: Colors.white, fontSize: 16),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: AppConstants.fontsBold,
+                    fontSize: 16),
               ),
             ),
           )
