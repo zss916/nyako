@@ -68,13 +68,15 @@ class OrderListPage extends GetView<OrderListLogic> {
                       ),
                     ],
                     labelColor: Colors.black,
-                    labelStyle: const TextStyle(
+                    labelStyle: TextStyle(
                         fontSize: 13,
                         color: Colors.black,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
-                    unselectedLabelStyle: const TextStyle(
+                    unselectedLabelStyle: TextStyle(
                         fontSize: 13,
                         color: Colors.black,
+                        fontFamily: AppConstants.fontsRegular,
                         fontWeight: FontWeight.normal),
                   ),
                 ),
@@ -129,7 +131,10 @@ class OrderListPage extends GetView<OrderListLogic> {
               minFontSize: 6,
               maxLines: 1,
               textAlign: TextAlign.start,
-              style: TextStyle(color: data.txtColor(), fontSize: 12),
+              style: TextStyle(
+                  fontFamily: AppConstants.fontsRegular,
+                  color: data.txtColor(),
+                  fontSize: 12),
             ),
             const SizedBox(
               height: 10,
@@ -231,7 +236,7 @@ class OrderListPage extends GetView<OrderListLogic> {
                   style: TextStyle(
                       color: const Color(0xFF666666),
                       fontSize: 16,
-                      fontFamily: AppConstants.fontsBold,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.w500),
                 )
               ],
@@ -241,7 +246,10 @@ class OrderListPage extends GetView<OrderListLogic> {
             ),
             Text(
               '${Tr.app_order_channelName.tr}: ${data.channelName}',
-              style: const TextStyle(color: Color(0xFF999999), fontSize: 12),
+              style: TextStyle(
+                  color: const Color(0xFF999999),
+                  fontFamily: AppConstants.fontsRegular,
+                  fontSize: 12),
             ),
             const SizedBox(
               height: 10,
@@ -250,8 +258,10 @@ class OrderListPage extends GetView<OrderListLogic> {
               children: [
                 Text(
                   '${Tr.app_order_orderNo.tr}:',
-                  style:
-                      const TextStyle(color: Color(0xFF999999), fontSize: 12),
+                  style: TextStyle(
+                      color: const Color(0xFF999999),
+                      fontFamily: AppConstants.fontsRegular,
+                      fontSize: 12),
                 ),
                 Text(
                   '${data.orderNo}',
@@ -272,9 +282,10 @@ class OrderListPage extends GetView<OrderListLogic> {
               children: [
                 Text(
                   Tr.app_order_one_details.tr,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsRegular,
                       fontWeight: FontWeight.w500),
                 ),
                 Image.asset(
@@ -299,18 +310,20 @@ class OrderListPage extends GetView<OrderListLogic> {
               maxLines: 1,
               maxFontSize: 13,
               minFontSize: 8,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 13,
                   color: Colors.black,
+                  fontFamily: AppConstants.fontsBold,
                   fontWeight: FontWeight.w500),
             ),
           )
         : Tab(
             child: Text(
               text,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.black,
                   fontSize: 13,
+                  fontFamily: AppConstants.fontsRegular,
                   fontWeight: FontWeight.normal),
             ),
           );

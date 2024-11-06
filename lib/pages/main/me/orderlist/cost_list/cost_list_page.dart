@@ -64,13 +64,15 @@ class CostListPage extends GetView<CostListLogic> {
                         text: logic.getMonth(logic.lastlastMoth),
                       ),
                     ],
-                    labelStyle: const TextStyle(
+                    labelStyle: TextStyle(
                         fontSize: 14,
                         color: Colors.black,
+                        fontFamily: AppConstants.fontsBold,
                         fontWeight: FontWeight.bold),
-                    unselectedLabelStyle: const TextStyle(
+                    unselectedLabelStyle: TextStyle(
                         fontSize: 14,
-                        color: Colors.white,
+                        color: const Color(0xFF666666),
+                        fontFamily: AppConstants.fontsRegular,
                         fontWeight: FontWeight.normal),
                   ),
                 ),
@@ -128,9 +130,10 @@ class CostListPage extends GetView<CostListLogic> {
                           maxFontSize: 16,
                           minFontSize: 6,
                           maxLines: 2,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.black,
                               fontSize: 16,
+                              fontFamily: AppConstants.fontsBold,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -144,8 +147,10 @@ class CostListPage extends GetView<CostListLogic> {
                                     data.createdAt!),
                                 [yyyy, '.', mm, '.', dd, '-', HH, ':', nn])
                             : "--",
-                        style: const TextStyle(
-                            color: Color(0xFF999999), fontSize: 12),
+                        style: TextStyle(
+                            color: const Color(0xFF999999),
+                            fontFamily: AppConstants.fontsRegular,
+                            fontSize: 12),
                       ),
                     ],
                   ),
@@ -157,9 +162,10 @@ class CostListPage extends GetView<CostListLogic> {
                     children: [
                       Text(
                         "${data.type == 2 ? '+' : '-'}${data.diamonds ?? '--'}",
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.black,
                             fontSize: 16,
+                            fontFamily: AppConstants.fontsBold,
                             fontWeight: FontWeight.bold),
                       ),
                       Container(
@@ -196,8 +202,10 @@ class CostListPage extends GetView<CostListLogic> {
                   margin: const EdgeInsets.only(top: 4),
                   child: Text(
                     Tr.app_re_registration_no_reward.tr,
-                    style:
-                        const TextStyle(color: Color(0xFFBB06FF), fontSize: 12),
+                    style: TextStyle(
+                        color: const Color(0xFFBB06FF),
+                        fontFamily: AppConstants.fontsRegular,
+                        fontSize: 12),
                   ),
                 ))
               ],
@@ -215,18 +223,20 @@ class CostListPage extends GetView<CostListLogic> {
               maxLines: 1,
               maxFontSize: 14,
               minFontSize: 8,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 14,
                   color: Colors.black,
+                  fontFamily: AppConstants.fontsRegular,
                   fontWeight: FontWeight.w500),
             ),
           )
         : Tab(
             child: Text(
               text,
-              style: const TextStyle(
-                  color: Color(0xFF9B989D),
+              style: TextStyle(
+                  color: const Color(0xFF666666),
                   fontSize: 14,
+                  fontFamily: AppConstants.fontsRegular,
                   fontWeight: FontWeight.w500),
             ),
           );

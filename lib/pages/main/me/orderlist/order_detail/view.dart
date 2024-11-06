@@ -78,7 +78,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                         // color: Colors.red,
                         child: Text(
                           titleStr,
-                          style: TextStyle(color: txtColor, fontSize: 12),
+                          style: TextStyle(
+                              color: txtColor,
+                              fontFamily: AppConstants.fontsRegular,
+                              fontSize: 12),
                         ),
                       )
                     ],
@@ -93,8 +96,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                           Tr.app_str_day.trArgs(["${data.vipDays ?? 0}"]),
                           softWrap: true,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
-                              color: Colors.black, fontSize: 16),
+                          style: TextStyle(
+                              fontFamily: AppConstants.fontsBold,
+                              color: Colors.black,
+                              fontSize: 24),
                         ),
                       ),
                       if (data.showDiamond != 0)
@@ -104,10 +109,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                             Text(
                               "+${data.showDiamond}",
                               style: TextStyle(
-                                  fontFamily: AppConstants.fontsBold,
-                                  color: const Color(0xFFF84D22),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14),
+                                  fontFamily: AppConstants.fontsRegular,
+                                  color: const Color(0xFF9341FF),
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 13),
                             ),
                             Container(
                               margin:
@@ -144,16 +149,18 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_price.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.w500),
               ),
               Text(
                 "${AppFormatUtil.currencyToSymbol(data.currencyCode)} ${data.currencyFee != null ? data.currencyFee! / 100.0 : '--'}",
-                style: const TextStyle(
-                    color: Color(0xFF999999),
+                style: TextStyle(
+                    color: const Color(0xFF999999),
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               ),
             ],
@@ -166,16 +173,18 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_product_info.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
+                    fontFamily: AppConstants.fontsBold,
                     fontSize: 14),
               ),
               Text(
                 "${data.diamonds}${Tr.app_diamond.tr}",
-                style: const TextStyle(
-                    color: Color(0xFF999999),
+                style: TextStyle(
+                    color: const Color(0xFF999999),
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsRegular,
                     fontWeight: FontWeight.w500),
               ),
             ],
@@ -188,16 +197,18 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_createAt.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.w500),
               ),
               Text(
                 data.createdAtTime,
-                style: const TextStyle(
-                    color: Color(0xFF999999),
+                style: TextStyle(
+                    color: const Color(0xFF999999),
                     fontWeight: FontWeight.w500,
+                    fontFamily: AppConstants.fontsRegular,
                     fontSize: 14),
               ),
             ],
@@ -212,9 +223,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                 constraints: const BoxConstraints(maxWidth: 180),
                 child: Text(
                   Tr.app_order_channelName.tr,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -224,9 +236,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                 margin: const EdgeInsetsDirectional.only(start: 20),
                 child: Text(
                   (data.channelName ?? "--"),
-                  style: const TextStyle(
-                      color: Color(0xFF999999),
+                  style: TextStyle(
+                      color: const Color(0xFF999999),
                       fontWeight: FontWeight.w500,
+                      fontFamily: AppConstants.fontsRegular,
                       fontSize: 14),
                 ),
               )),
@@ -242,9 +255,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
               children: [
                 Text(
                   Tr.app_order_tradeNo.tr,
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
                       fontSize: 14,
+                      fontFamily: AppConstants.fontsBold,
                       fontWeight: FontWeight.w500),
                 ),
                 Expanded(
@@ -262,7 +276,7 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                         softWrap: true,
                         style: TextStyle(
                             color: const Color(0xFF999999),
-                            fontFamily: AppConstants.fontsBold,
+                            fontFamily: AppConstants.fontsRegular,
                             fontWeight: FontWeight.w500,
                             fontSize: 12),
                       )),
@@ -289,16 +303,18 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
             children: [
               Text(
                 Tr.app_order_orderNo.tr,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.w500),
               ),
               Text(
                 data.orderNo ?? '--',
-                style: const TextStyle(
-                    color: Color(0xFF999999),
+                style: TextStyle(
+                    color: const Color(0xFF999999),
                     fontWeight: FontWeight.w500,
+                    fontFamily: AppConstants.fontsRegular,
                     fontSize: 14),
               ),
             ],
@@ -337,9 +353,10 @@ class OrderDetailPage extends GetView<OrderDetailLogic> {
                 maxFontSize: 14,
                 minFontSize: 10,
                 textAlign: TextAlign.start,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.black,
                     fontSize: 14,
+                    fontFamily: AppConstants.fontsBold,
                     fontWeight: FontWeight.bold),
               ),
             )),
