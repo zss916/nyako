@@ -1,4 +1,8 @@
 const language_pt = {
+  "nyako_save_account_content":
+      "Salve a senha da conta, para não poder usar a senha para entrar na conta depois de esquecê-la",
+  "nyako_your_not_set_psk": "Você não definiu uma senha",
+  "nyako_your_psk": "Sua senha",
   'nyako_people_online': '%s pessoas online',
   'nyako_times_left': '%s vezes restantes',
   "nyako_delicate_avatar_frame": "Moldura requintada",

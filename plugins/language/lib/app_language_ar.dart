@@ -1,4 +1,8 @@
 const language_ar = {
+  "nyako_save_account_content":
+      " يرجى احفظ كلمة المرور لحسابك حتي  لا يمكنك  ان تسجيل  الدخول لانك نسيتها",
+  "nyako_your_not_set_psk": "لم قم باعدادات كلمة المرور",
+  "nyako_your_psk": "رقم حسابك",
   'nyako_people_online': '%s أشخاص متصلين',
   'nyako_times_left': '%s مرات متبقية',
   "nyako_delicate_avatar_frame": "إطارة متميز",

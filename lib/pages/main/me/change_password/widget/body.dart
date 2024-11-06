@@ -14,12 +14,11 @@ import 'package:nyako/widget/animated_button.dart';
 import 'package:nyako/widget/semantics/semantics_widget.dart';
 
 class SetPassWord extends StatelessWidget {
-  final String title = "Your password";
-  final String title1 = "You have not set a password";
-  final String title2 =
-      "Save the account password, so as not to be unable to log in through the account password due to forgetting";
+  final String title = Tr.appYourPsk.tr;
+  final String title1 = Tr.appYourNotSetPsk.tr;
+  final String title2 = Tr.appSaveAccountContent.tr;
 
-  const SetPassWord({super.key});
+  SetPassWord({super.key});
 
   @override
   Widget build(BuildContext context) {

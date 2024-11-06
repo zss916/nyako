@@ -10,6 +10,6 @@ class ChangePasswordPage extends GetView<ChangePasswordLogic> {
           title: Tr.app_change_pwd.tr,
         ),
         backgroundColor: Colors.white,
-        body: const SetPassWord(),
+        body: SetPassWord(),
       );
 }

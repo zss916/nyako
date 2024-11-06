@@ -1,5 +1,9 @@
 // 泰语
 const language_th = {
+  "nyako_save_account_content":
+      "บันทึกรหัสผ่านบัญชี เพื่อไม่ให้ใช้รหัสผ่านเพื่อเข้าสู่บัญชีหลังจากลืมรหัสผ่าน",
+  "nyako_your_not_set_psk": "คุณยังไม่ได้ตั้งรหัสผ่าน",
+  "nyako_your_psk": "รหัสผ่านของคุณ",
   'nyako_people_online': 'มีผู้ใช้งานออนไลน์ %s คน',
   'nyako_times_left': 'เหลืออีก %s ครั้ง',
   "nyako_delicate_avatar_frame": "กรอบอวตาร",

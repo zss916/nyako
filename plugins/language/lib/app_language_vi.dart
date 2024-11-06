@@ -1,4 +1,8 @@
 const language_vi = {
+  "nyako_save_account_content":
+      "Lưu lại mật khẩu tài khoản để tránh trường hợp quên mật khẩu đăng nhập vào tài khoản không được",
+  "nyako_your_not_set_psk": "Bạn chưa đặt mật khẩu",
+  "nyako_your_psk": "Mật khẩu của bạn",
   'nyako_people_online': '%s người đang trực tuyến',
   'nyako_times_left': '%s lần còn lại',
   "nyako_delicate_avatar_frame": "Khung ảnh tinh xảo",

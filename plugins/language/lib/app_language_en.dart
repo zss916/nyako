@@ -1,4 +1,8 @@
 const language_en = {
+  "nyako_save_account_content":
+      "Save the account password, so as not to be unable to log in through the account password due to forgetting",
+  "nyako_your_not_set_psk": "You have not set a password",
+  "nyako_your_psk": "Your password",
   'nyako_people_online': '%s people online',
   'nyako_times_left': '%s times left',
   "nyako_delicate_avatar_frame": "delicate avatar frame",

@@ -1,4 +1,8 @@
 const language_es = {
+  "nyako_save_account_content":
+      "Guarde la contraseña de la cuenta, para no poder usar la contraseña para iniciar sesión en la cuenta después de olvidarla",
+  "nyako_your_not_set_psk": "No has establecido una contraseña.",
+  "nyako_your_psk": "Tu contraseña",
   'nyako_people_online': '%s personas en línea',
   'nyako_times_left': '%s veces restantes',
   "nyako_delicate_avatar_frame": "Marco exquisito",

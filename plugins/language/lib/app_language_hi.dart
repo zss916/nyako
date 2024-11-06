@@ -1,5 +1,9 @@
 // 印度
 const language_hi = {
+  "nyako_save_account_content":
+      " खाता पासवर्ड सहेजें, ताकि पासवर्ड लॉगिन खाता का सामान्य उपयोग न भूलें",
+  "nyako_your_not_set_psk": " आपने अभी तक अपना पासवर्ड सेट नहीं किया है.",
+  "nyako_your_psk": "आपका पासवर्ड",
   'nyako_people_online': '%s लोग ऑनलाइन हैं',
   'nyako_times_left': '%s बारी बाकी',
   "nyako_delicate_avatar_frame": "नाजुक अवतार फ्रेम",

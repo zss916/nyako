@@ -12,6 +12,9 @@ class Tr {
   static const appPayOrder = "${appName}_pay_order";
   static const appSign = "${appName}_sign";
   static const appCopy = "${appName}_copy";
+  static const appYourPsk = "${appName}_your_psk";
+  static const appYourNotSetPsk = "${appName}_your_not_set_psk";
+  static const appSaveAccountContent = "${appName}_save_account_content";
   static const appPeopleOnline = "${appName}_people_online";
   static const appTimesLeft = "${appName}_times_left";
   static const appDelicateAvatarFrame = "${appName}_delicate_avatar_frame";
